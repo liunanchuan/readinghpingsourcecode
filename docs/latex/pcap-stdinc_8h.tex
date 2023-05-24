@@ -1,0 +1,138 @@
+\hypertarget{pcap-stdinc_8h}{}\doxysection{libpcap-\/1.1.1/pcap-\/stdinc.h 文件参考}
+\label{pcap-stdinc_8h}\index{libpcap-\/1.1.1/pcap-\/stdinc.h@{libpcap-\/1.1.1/pcap-\/stdinc.h}}
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bittypes.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}IP6\+\_\+misc.\+h\char`\"{}}\newline
+pcap-\/stdinc.h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-stdinc_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-stdinc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a5047e1a434f4055a9003e4836f7ed968}{SIZEOF\+\_\+\+CHAR}}~1
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a391756f658c0bdad5fa65c4cd3410ad6}{SIZEOF\+\_\+\+SHORT}}~2
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a44184cf844a916eee78598ab35fc966b}{SIZEOF\+\_\+\+INT}}~4
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_acd1ddb89a6f7f17d1c152499173c3eef}{SIZEOF\+\_\+\+LONG\+\_\+\+LONG}}~8
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}}~char$\ast$
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}~\+\_\+snprintf
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a00ba2ca988495904efc418acbf0627d7}{vsnprintf}}~\+\_\+vsnprintf
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}~\+\_\+strdup
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a00d24c7231be28dbaf71f5408f30e44c}{inline}}~\+\_\+\+\_\+inline
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a106239fcf6108905a1beb6837f7343c8}{\+\_\+\+UINTPTR\+\_\+\+T\+\_\+\+DEFINED}}
+\item 
+\#define \mbox{\hyperlink{pcap-stdinc_8h_a3ce96ec9d1fcd8dfccadb47145718f9d}{\+\_\+\+INTPTR\+\_\+\+T\+\_\+\+DEFINED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef \+\_\+\+W64 unsigned int \mbox{\hyperlink{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}{uintptr\+\_\+t}}
+\item 
+typedef \+\_\+\+W64 int \mbox{\hyperlink{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}{intptr\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-stdinc_8h_a3ce96ec9d1fcd8dfccadb47145718f9d}\label{pcap-stdinc_8h_a3ce96ec9d1fcd8dfccadb47145718f9d}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!\_INTPTR\_T\_DEFINED@{\_INTPTR\_T\_DEFINED}}
+\index{\_INTPTR\_T\_DEFINED@{\_INTPTR\_T\_DEFINED}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{\_INTPTR\_T\_DEFINED}{\_INTPTR\_T\_DEFINED}}
+{\footnotesize\ttfamily \#define \+\_\+\+INTPTR\+\_\+\+T\+\_\+\+DEFINED}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a106239fcf6108905a1beb6837f7343c8}\label{pcap-stdinc_8h_a106239fcf6108905a1beb6837f7343c8}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!\_UINTPTR\_T\_DEFINED@{\_UINTPTR\_T\_DEFINED}}
+\index{\_UINTPTR\_T\_DEFINED@{\_UINTPTR\_T\_DEFINED}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{\_UINTPTR\_T\_DEFINED}{\_UINTPTR\_T\_DEFINED}}
+{\footnotesize\ttfamily \#define \+\_\+\+UINTPTR\+\_\+\+T\+\_\+\+DEFINED}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}\label{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!caddr\_t@{caddr\_t}}
+\index{caddr\_t@{caddr\_t}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{caddr\_t}{caddr\_t}}
+{\footnotesize\ttfamily \#define caddr\+\_\+t~char$\ast$}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a00d24c7231be28dbaf71f5408f30e44c}\label{pcap-stdinc_8h_a00d24c7231be28dbaf71f5408f30e44c}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!inline@{inline}}
+\index{inline@{inline}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{inline}{inline}}
+{\footnotesize\ttfamily \#define inline~\+\_\+\+\_\+inline}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a5047e1a434f4055a9003e4836f7ed968}\label{pcap-stdinc_8h_a5047e1a434f4055a9003e4836f7ed968}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!SIZEOF\_CHAR@{SIZEOF\_CHAR}}
+\index{SIZEOF\_CHAR@{SIZEOF\_CHAR}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_CHAR}{SIZEOF\_CHAR}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+CHAR~1}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a44184cf844a916eee78598ab35fc966b}\label{pcap-stdinc_8h_a44184cf844a916eee78598ab35fc966b}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!SIZEOF\_INT@{SIZEOF\_INT}}
+\index{SIZEOF\_INT@{SIZEOF\_INT}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_INT}{SIZEOF\_INT}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+INT~4}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_acd1ddb89a6f7f17d1c152499173c3eef}\label{pcap-stdinc_8h_acd1ddb89a6f7f17d1c152499173c3eef}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!SIZEOF\_LONG\_LONG@{SIZEOF\_LONG\_LONG}}
+\index{SIZEOF\_LONG\_LONG@{SIZEOF\_LONG\_LONG}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_LONG\_LONG}{SIZEOF\_LONG\_LONG}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+LONG\+\_\+\+LONG~8}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a391756f658c0bdad5fa65c4cd3410ad6}\label{pcap-stdinc_8h_a391756f658c0bdad5fa65c4cd3410ad6}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!SIZEOF\_SHORT@{SIZEOF\_SHORT}}
+\index{SIZEOF\_SHORT@{SIZEOF\_SHORT}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_SHORT}{SIZEOF\_SHORT}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+SHORT~2}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_aa367b75c5aed883fef5befbdf04835a4}\label{pcap-stdinc_8h_aa367b75c5aed883fef5befbdf04835a4}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{snprintf}{snprintf}}
+{\footnotesize\ttfamily \#define snprintf~\+\_\+snprintf}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}\label{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!strdup@{strdup}}
+\index{strdup@{strdup}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{strdup}{strdup}}
+{\footnotesize\ttfamily \#define strdup~\+\_\+strdup}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a00ba2ca988495904efc418acbf0627d7}\label{pcap-stdinc_8h_a00ba2ca988495904efc418acbf0627d7}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{vsnprintf}{vsnprintf}}
+{\footnotesize\ttfamily \#define vsnprintf~\+\_\+vsnprintf}
+
+
+
+\doxysubsection{类型定义说明}
+\mbox{\Hypertarget{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}\label{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!intptr\_t@{intptr\_t}}
+\index{intptr\_t@{intptr\_t}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{intptr\_t}{intptr\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+W64 int \mbox{\hyperlink{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}{intptr\+\_\+t}}}
+
+\mbox{\Hypertarget{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}\label{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}} 
+\index{pcap-\/stdinc.h@{pcap-\/stdinc.h}!uintptr\_t@{uintptr\_t}}
+\index{uintptr\_t@{uintptr\_t}!pcap-\/stdinc.h@{pcap-\/stdinc.h}}
+\doxysubsubsection{\texorpdfstring{uintptr\_t}{uintptr\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+W64 unsigned int \mbox{\hyperlink{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}{uintptr\+\_\+t}}}
+

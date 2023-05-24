@@ -1,0 +1,152 @@
+\hypertarget{ieee80211_8h_source}{}\doxysection{ieee80211.\+h}
+\label{ieee80211_8h_source}\index{libpcap-\/1.1.1/ieee80211.h@{libpcap-\/1.1.1/ieee80211.h}}
+\mbox{\hyperlink{ieee80211_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 2001 Atsushi Onoe}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (c) 2002-\/2005 Sam Leffler, Errno Consulting}}
+\DoxyCodeLine{4 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{7 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{8 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{9 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{10 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{11 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{13 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{14 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{15 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{ *}}
+\DoxyCodeLine{17 \textcolor{comment}{ * Alternatively, this software may be distributed under the terms of the}}
+\DoxyCodeLine{18 \textcolor{comment}{ * GNU General Public License ("{}GPL"{}) version 2 as published by the Free}}
+\DoxyCodeLine{19 \textcolor{comment}{ * Software Foundation.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{22 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{23 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{25 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{26 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{28 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{29 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{30 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * \$FreeBSD: src/sys/net80211/ieee80211.h,v 1.10 2005/07/22 16:55:27 sam Exp \$}}
+\DoxyCodeLine{33 \textcolor{comment}{ */}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef \_NET80211\_IEEE80211\_H\_}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_NET80211\_IEEE80211\_H\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*}}
+\DoxyCodeLine{38 \textcolor{comment}{ * 802.11 protocol definitions.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_VERSION\_MASK      0x03}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_VERSION\_SHIFT     0}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_VERSION\_0         0x00}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_TYPE\_MASK         0x0c}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_TYPE\_SHIFT        2}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_TYPE\_MGT          0x00}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_TYPE\_CTL          0x04}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_TYPE\_DATA         0x08}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_MASK      0xf0}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_SHIFT     4}}
+\DoxyCodeLine{52 \textcolor{comment}{/* for TYPE\_MGT */}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ     0x00}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP    0x10}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ   0x20}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP  0x30}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ     0x40}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP    0x50}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_BEACON        0x80}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_ATIM      0x90}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_DISASSOC      0xa0}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_AUTH      0xb0}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_DEAUTH        0xc0}}
+\DoxyCodeLine{64 \textcolor{comment}{/* for TYPE\_CTL */}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_PS\_POLL       0xa0}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_RTS       0xb0}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CTS       0xc0}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_ACK       0xd0}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CF\_END        0xe0}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK    0xf0}}
+\DoxyCodeLine{71 \textcolor{comment}{/* for TYPE\_DATA (bit combination) */}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_DATA      0x00}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CF\_ACK        0x10}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CF\_POLL       0x20}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL       0x30}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_NODATA        0x40}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK 0x50}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL    0x60}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL    0x70}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_QOS       0x80}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL      0xc0}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_DIR\_MASK          0x03}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_DIR\_NODS          0x00    }\textcolor{comment}{/* STA-\/>STA */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_DIR\_TODS          0x01    }\textcolor{comment}{/* STA-\/>AP  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_DIR\_FROMDS        0x02    }\textcolor{comment}{/* AP -\/>STA */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_DIR\_DSTODS        0x03    }\textcolor{comment}{/* AP -\/>AP  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_MORE\_FRAG         0x04}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_RETRY         0x08}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_PWR\_MGT           0x10}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_MORE\_DATA         0x20}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_WEP           0x40}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define IEEE80211\_FC1\_ORDER         0x80}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define IEEE80211\_SEQ\_FRAG\_MASK         0x000f}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define IEEE80211\_SEQ\_FRAG\_SHIFT        0}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define IEEE80211\_SEQ\_SEQ\_MASK          0xfff0}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define IEEE80211\_SEQ\_SEQ\_SHIFT         4}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define IEEE80211\_NWID\_LEN          32}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_TXOP          0x00ff}}
+\DoxyCodeLine{104 \textcolor{comment}{/* bit 8 is reserved */}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_ACKPOLICY         0x60}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_ACKPOLICY\_S       5}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_ESOP          0x10}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_ESOP\_S            4}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define IEEE80211\_QOS\_TID           0x0f}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define IEEE80211\_MGT\_SUBTYPE\_NAMES \{           \(\backslash\)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{    "{}assoc-\/req"{}},        "{}assoc-\/resp"{},       \(\backslash\)}
+\DoxyCodeLine{113     "{}reassoc-\/req"{},      "{}reassoc-\/resp"{},     \(\backslash\)}
+\DoxyCodeLine{114     "{}probe-\/req"{},        "{}probe-\/resp"{},       \(\backslash\)}
+\DoxyCodeLine{115     "{}reserved\#6"{},       "{}reserved\#7"{},       \(\backslash\)}
+\DoxyCodeLine{116     "{}beacon"{},       "{}atim"{},         \(\backslash\)}
+\DoxyCodeLine{117     "{}disassoc"{},     "{}auth"{},         \(\backslash\)}
+\DoxyCodeLine{118     "{}deauth"{},       "{}reserved\#13"{},      \(\backslash\)}
+\DoxyCodeLine{119     "{}reserved\#14"{},      "{}reserved\#15"{}       \(\backslash\)}
+\DoxyCodeLine{120 \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define IEEE80211\_CTL\_SUBTYPE\_NAMES \{           \(\backslash\)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{    "{}reserved\#0"{}},       "{}reserved\#1"{},       \(\backslash\)}
+\DoxyCodeLine{124     "{}reserved\#2"{},       "{}reserved\#3"{},       \(\backslash\)}
+\DoxyCodeLine{125     "{}reserved\#3"{},       "{}reserved\#5"{},       \(\backslash\)}
+\DoxyCodeLine{126     "{}reserved\#6"{},       "{}reserved\#7"{},       \(\backslash\)}
+\DoxyCodeLine{127     "{}reserved\#8"{},       "{}reserved\#9"{},       \(\backslash\)}
+\DoxyCodeLine{128     "{}ps-\/poll"{},      "{}rts"{},          \(\backslash\)}
+\DoxyCodeLine{129     "{}cts"{},          "{}ack"{},          \(\backslash\)}
+\DoxyCodeLine{130     "{}cf-\/end"{},       "{}cf-\/end-\/ack"{}        \(\backslash\)}
+\DoxyCodeLine{131 \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define IEEE80211\_DATA\_SUBTYPE\_NAMES \{          \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{    "{}data"{}},         "{}data-\/cf-\/ack"{},      \(\backslash\)}
+\DoxyCodeLine{135     "{}data-\/cf-\/poll"{},     "{}data-\/cf-\/ack-\/poll"{}, \(\backslash\)}
+\DoxyCodeLine{136     "{}null"{},         "{}cf-\/ack"{},       \(\backslash\)}
+\DoxyCodeLine{137     "{}cf-\/poll"{},      "{}cf-\/ack-\/poll"{},      \(\backslash\)}
+\DoxyCodeLine{138     "{}qos-\/data"{},     "{}qos-\/data-\/cf-\/ack"{},  \(\backslash\)}
+\DoxyCodeLine{139     "{}qos-\/data-\/cf-\/poll"{}, "{}qos-\/data-\/cf-\/ack-\/poll"{}, \(\backslash\)}
+\DoxyCodeLine{140     "{}qos"{},          "{}reserved\#13"{},      \(\backslash\)}
+\DoxyCodeLine{141     "{}qos-\/cf-\/poll"{},      "{}qos-\/cf-\/ack-\/poll"{}   \(\backslash\)}
+\DoxyCodeLine{142 \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define IEEE80211\_TYPE\_NAMES    \{ "{}mgt"{}}, "{}ctl"{}, "{}data"{}, "{}reserved\#4"{} \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_NET80211\_IEEE80211\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

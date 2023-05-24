@@ -1,0 +1,221 @@
+\hypertarget{os-sunos4_8h_source}{}\doxysection{os-\/sunos4.h}
+\label{os-sunos4_8h_source}\index{libpcap-\/1.1.1/lbl/os-\/sunos4.h@{libpcap-\/1.1.1/lbl/os-\/sunos4.h}}
+\mbox{\hyperlink{os-sunos4_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1989, 1990, 1993, 1994, 1995, 1996}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that: (1) source code distributions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * retain the above copyright notice and this paragraph in its entirety, (2)}}
+\DoxyCodeLine{8 \textcolor{comment}{ * distributions including binary code include the above copyright notice and}}
+\DoxyCodeLine{9 \textcolor{comment}{ * this paragraph in its entirety in the documentation or other materials}}
+\DoxyCodeLine{10 \textcolor{comment}{ * provided with the distribution, and (3) all advertising materials mentioning}}
+\DoxyCodeLine{11 \textcolor{comment}{ * features or use of this software display the following acknowledgement:}}
+\DoxyCodeLine{12 \textcolor{comment}{ * ``This product includes software developed by the University of California,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Lawrence Berkeley Laboratory and its contributors.'' Neither the name of}}
+\DoxyCodeLine{14 \textcolor{comment}{ * the University nor the names of its contributors may be used to endorse}}
+\DoxyCodeLine{15 \textcolor{comment}{ * or promote products derived from this software without specific prior}}
+\DoxyCodeLine{16 \textcolor{comment}{ * written permission.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED}}
+\DoxyCodeLine{18 \textcolor{comment}{ * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF}}
+\DoxyCodeLine{19 \textcolor{comment}{ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/lbl/os-\/sunos4.h,v 1.32 1999-\/10-\/07 23:46:41 mcr Exp \$ (LBL)}}
+\DoxyCodeLine{22 \textcolor{comment}{ */}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* Prototypes missing in SunOS 4 */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifdef FILE}}
+\DoxyCodeLine{26 \textcolor{keywordtype}{int} \_filbuf(FILE *);}
+\DoxyCodeLine{27 \textcolor{keywordtype}{int} \_flsbuf(u\_char, FILE *);}
+\DoxyCodeLine{28 \textcolor{keywordtype}{int} fclose(FILE *);}
+\DoxyCodeLine{29 \textcolor{keywordtype}{int} fflush(FILE *);}
+\DoxyCodeLine{30 \textcolor{keywordtype}{int} fgetc(FILE *);}
+\DoxyCodeLine{31 \textcolor{keywordtype}{int} fprintf(FILE *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{32 \textcolor{keywordtype}{int} fputc(\textcolor{keywordtype}{int}, FILE *);}
+\DoxyCodeLine{33 \textcolor{keywordtype}{int} fputs(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, FILE *);}
+\DoxyCodeLine{34 u\_int   fread(\textcolor{keywordtype}{void} *, u\_int, u\_int, FILE *);}
+\DoxyCodeLine{35 \textcolor{keywordtype}{int} fseek(FILE *, \textcolor{keywordtype}{long}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{36 u\_int   fwrite(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, u\_int, u\_int, FILE *);}
+\DoxyCodeLine{37 \textcolor{keywordtype}{int} pclose(FILE *);}
+\DoxyCodeLine{38 \textcolor{keywordtype}{void}    rewind(FILE *);}
+\DoxyCodeLine{39 \textcolor{keywordtype}{void}    setbuf(FILE *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{40 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-ultrix4_8h_adf8040f62d4c5e32a91622352cc62e5e}{setlinebuf}}(FILE *);}
+\DoxyCodeLine{41 \textcolor{keywordtype}{int} ungetc(\textcolor{keywordtype}{int}, FILE *);}
+\DoxyCodeLine{42 \textcolor{keywordtype}{int} vfprintf(FILE *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{int} vprintf(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ <= 1}}
+\DoxyCodeLine{47 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int);}
+\DoxyCodeLine{48 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_acd05dd935a081148178734b4930031d5}{write}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int);}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keywordtype}{long}    \mbox{\hyperlink{os-sunos4_8h_a4f3f099a09a8b63257b3ef4e9954e848}{a64l}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{53 \textcolor{keyword}{struct  }sockaddr;}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{56 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{57 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a72c50ea095a97296baa33780adea6353}{bcmp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *, u\_int);}
+\DoxyCodeLine{58 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a9fc3f8664f469f650b368506c90c8834}{bcopy}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{void} *, u\_int);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_ab426c21b176346931201b586eca8f197}{bzero}}(\textcolor{keywordtype}{void} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_acde801911074403b7a99843d399093e1}{chroot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{61 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{62 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_ae1e4e53707d8c3fbc36bbc523fbbcda3}{closelog}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{63 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}{connect}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{64 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_aa5a6657e29c699bedd3841832a99f3e9}{crypt}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{65 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aa10914f5d815f5943722ae8be203eeff}{daemon}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{66 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a89b86cf07deb9f31696b1748d29be657}{fchmod}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{67 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a9250be04ffb2db7109b04356399e8e40}{fchown}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{68 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_ad8139e6b6a3e1c75bc059ff9507cbd48}{endgrent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{69 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_acd2bac39cbb74a8b6fde9ac61f02d0f5}{endpwent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{72 \textcolor{keyword}{struct  }ether\_addr;}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 \textcolor{keyword}{struct  }ether\_addr *\mbox{\hyperlink{os-sunos4_8h_a80101fd8479ae64893ab2271f3a70079}{ether\_aton}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{75 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_adfd2c00559413ba0c3cbbaa019401f36}{flock}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{77 \textcolor{keyword}{struct  }\mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}};}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a8a0f92a50668f8517f90b9717df22ee1}{fstat}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} *);}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{81 \textcolor{keyword}{struct }\mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a21e541a988e570aab5c27a5983572f2c}{fstatfs}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}} *);}
+\DoxyCodeLine{84 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ab37281e48f68c8fc6ec8002ae7e01ade}{fsync}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{86 \textcolor{keyword}{struct }timeb;}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{88 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a53348135fbf16873b0821f381c1106d8}{ftime}}(\textcolor{keyword}{struct} timeb *);}
+\DoxyCodeLine{89 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a76a347946c9ac1f133cfe409b505b172}{ftruncate}}(\textcolor{keywordtype}{int}, off\_t);}
+\DoxyCodeLine{90 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aed8cbba610ad1c8d427196a2984b2c0c}{getdtablesize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{91 \textcolor{keywordtype}{long}    \mbox{\hyperlink{os-sunos4_8h_ab7b49a1dc7a37a50ea146982bc01eee1}{gethostid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aef968ac34aee85cdf0a7ea26fa082219}{gethostname}}(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{93 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60}{getopt}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} * \textcolor{keyword}{const} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{94 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a638757347bd9bf886b3d442b98033cf1}{getpagesize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a9b1e810d888de75300d2490edbab3850}{getpass}}(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{96 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a3f9c86acc6f3bf2d3bdc2183400fd92c}{getpeername}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{97 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aab3d89bf9610c19e0d2b59f9ae77b7b4}{getpriority}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{99 \textcolor{keyword}{struct  }rlimit;}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ac7e7a27a353c22831fe2fd0ad75138b6}{getrlimit}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} rlimit *);}
+\DoxyCodeLine{102 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a3176a02298231e3a36c5dc559ecfa4de}{getsockname}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{103 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_abfa9ac1bdb73a7c1ade56853f15b661b}{getsockopt}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{105 \textcolor{keyword}{struct  }timeval;}
+\DoxyCodeLine{106 \textcolor{keyword}{struct  }\mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}};}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{108 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday}}(\textcolor{keyword}{struct} timeval *, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} *);}
+\DoxyCodeLine{109 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a14fba5250b85caae8f2b02fe3b0940ed}{getusershell}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{110 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a0016dfa8c60e53506667c34e0de2fe6b}{getwd}}(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a40830fe36a1f391664c6f654eb65a953}{initgroups}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{112 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}});}
+\DoxyCodeLine{113 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a146d4d3cc4f09081578f7aed440b09e6}{iruserok}}(u\_long, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{114 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ab4155ffea05dab2dafae68fd88a0517f}{isatty}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{115 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a0f9ccf238ef6d954a458c6c9c1f3bda7}{killpg}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{116 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a33eddee13432eee315b71ffb679048a7}{listen}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{118 \textcolor{keyword}{struct  }utmp;}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_abf7e0ae449ac49750b14033a35193f24}{login}}(\textcolor{keyword}{struct} utmp *);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a087886cef4e975924caa098f3c6390e5}{logout}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{122 off\_t   \mbox{\hyperlink{os-sunos4_8h_a5be409c8d98c21628b77dfb6b2b8f1e9}{lseek}}(\textcolor{keywordtype}{int}, off\_t, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{123 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a8a1463b29dc36ef8779dfd239c09fcb5}{lstat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} *);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a567fc2c0116424fbecf9238ecf7c5fe4}{mkstemp}}(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{125 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a533edecc05c149491ebb56c50d4ab245}{mktemp}}(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{126 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a173c0aa968a708f9070dbac834485037}{munmap}}(\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{127 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_adce444b3a44f1c03f1dded27939518ab}{openlog}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{128 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{129 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ad6eb8da5b318991f44cdd98e20939b7d}{puts}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{long}    \mbox{\hyperlink{os-sunos4_8h_a114aeb1751119382aaf3340355b22cfd}{random}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aa569d745c17a5f1e7b5617b97e305606}{readlink}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{134 \textcolor{keyword}{struct  }iovec;}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aacf602ca8b0e7f16583c7263d1af04a0}{readv}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} iovec *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{137 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{138 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a084738d626f8b7b2d9f9cdd4459d59e3}{recvfrom}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int, \textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{139 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}{rename}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{140 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a8ef54136f2c190012de45af7c458c49d}{rcmd}}(\textcolor{keywordtype}{char} **, u\_short, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{141 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a2f4a8d7e0d5184fcd21d06f5f3724517}{rresvport}}(\textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{142 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a4842f0d9f5afc151b43714fc31c24db1}{send}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{143 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a89feed6e12b76fb05833a36ea9c5fa9c}{sendto}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, u\_int, \textcolor{keywordtype}{int}, \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{144 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a4f163149d0e7590ff98d7c8bbd17583d}{setenv}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{145 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a9692bdc05813ad83377c4f93473fd983}{seteuid}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{146 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aad2c7c19dd4f169abe4404906dfbe204}{setpriority}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{147 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}{select}}(\textcolor{keywordtype}{int}, fd\_set *, fd\_set *, fd\_set *, \textcolor{keyword}{struct} timeval *);}
+\DoxyCodeLine{148 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ac9266117049b587709663cd066480eab}{setpgrp}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{149 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a015c67a1cd39fb9dc8910ad7d622c6fa}{setpwent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{150 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a71e19c7ed86aa50a454be029ec62693d}{setrlimit}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} rlimit *);}
+\DoxyCodeLine{151 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{152 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}{setsockopt}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{153 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a540f26e91bc6fc63f4e0fbe0fb8770dc}{shutdown}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{154 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a000ce90dde84441f24b23d5641780bdb}{sigblock}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{155 void    (*\mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} (\textcolor{keywordtype}{int}, \textcolor{keywordtype}{void} (*) (\textcolor{keywordtype}{int}))) (int);}
+\DoxyCodeLine{156 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a6164b494c8ed997871d09ba8ad81f04a}{sigpause}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{157 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a2c4485ec58a1037fecff014aca547457}{sigsetmask}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{159 \textcolor{keyword}{struct  }\mbox{\hyperlink{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}{sigvec}};}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{161 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}{sigvec}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}{sigvec}} *, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}{sigvec}}*);}
+\DoxyCodeLine{162 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf}}(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{size\_t}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{163 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{164 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ab7c84d52ee3f38110c6d163a4116e891}{socketpair}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{165 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aeb52d1ca2084a65df369e6d8fb082eec}{symlink}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{166 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a5b2355fcc8fdb51ee278428da113ebc5}{srandom}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{167 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf}}(\textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{168 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} *);}
+\DoxyCodeLine{169 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}}(\textcolor{keywordtype}{char} *, \textcolor{keyword}{struct} \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}} *);}
+\DoxyCodeLine{170 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{171 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{173 \textcolor{keyword}{struct  }tm;}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a9393c4cc80a2f50a11a399184915ce0d}{strftime}}(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *, \textcolor{keyword}{struct} tm *);}
+\DoxyCodeLine{176 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aeb4648578588c0ec23bd2423ae916a2b}{strncasecmp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{177 \textcolor{keywordtype}{long}    \mbox{\hyperlink{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}{strtol}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} **, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{178 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_ac4fa2e6d36e97983d62b9377cc4f6c73}{sync}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{179 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a8fd4d039dfe941b0576bab9cbe3ee4d9}{syslog}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{180 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{181 \textcolor{keywordtype}{long}    \mbox{\hyperlink{os-sunos4_8h_ae00845adf05e73df234246215b9b83fb}{tell}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{182 time\_t  \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}}(time\_t *);}
+\DoxyCodeLine{183 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{184 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{185 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ab6182394c667c4e4426f98af3309c30d}{toupper}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{186 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a706cc4461aa1e45a95fc514fec810109}{truncate}}(\textcolor{keywordtype}{char} *, off\_t);}
+\DoxyCodeLine{187 \textcolor{keywordtype}{void}    \mbox{\hyperlink{os-sunos4_8h_a9963c80816ceddf2dfd74d15e1e27bf7}{unsetenv}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{188 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aba5b3043c04ae3bf7073855e18e24d9a}{vfork}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{189 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}{vsprintf}}(\textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, ...);}
+\DoxyCodeLine{190 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_a38c23b0b20ef0f2eebe06f770df5eb48}{writev}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} iovec *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#ifdef \_\_STDC\_\_}}
+\DoxyCodeLine{192 \textcolor{keyword}{struct  }rusage;}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_aaa0305cfa0bfcfe2ec3d7b11870bf06c}{utimes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{struct} timeval *);}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ <= 1}}
+\DoxyCodeLine{196 \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9}{wait}}(\textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{197 pid\_t   \mbox{\hyperlink{os-sunos4_8h_a8f43719213946449cf4d1a00babeb514}{wait3}}(\textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int}, \textcolor{keyword}{struct} rusage *);}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{comment}{/* Ugly signal hacking */}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#ifdef SIG\_ERR}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#undef SIG\_ERR}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define SIG\_ERR     (void (*)(int))-\/1}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#undef SIG\_DFL}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define SIG\_DFL     (void (*)(int))0}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#undef SIG\_IGN}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define SIG\_IGN     (void (*)(int))1}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#ifdef KERNEL}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#undef SIG\_CATCH}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define SIG\_CATCH   (void (*)(int))2}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#undef SIG\_HOLD}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define SIG\_HOLD    (void (*)(int))3}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

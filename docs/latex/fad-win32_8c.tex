@@ -1,0 +1,123 @@
+\hypertarget{fad-win32_8c}{}\doxysection{libpcap-\/1.1.1/fad-\/win32.c 文件参考}
+\label{fad-win32_8c}\index{libpcap-\/1.1.1/fad-\/win32.c@{libpcap-\/1.1.1/fad-\/win32.c}}
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+{\ttfamily \#include $<$pcap-\/int.\+h$>$}\newline
+{\ttfamily \#include $<$Packet32.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+fad-\/win32.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-win32_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd}{add\+\_\+addr\+\_\+to\+\_\+list}} (pcap\+\_\+if\+\_\+t $\ast$curdev, struct sockaddr $\ast$addr, struct sockaddr $\ast$\mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}}, struct sockaddr $\ast$broadaddr, struct sockaddr $\ast$dstaddr, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{fad-win32_8c_aebde42f1910515d28de023a28000917d}{pcap\+\_\+add\+\_\+if\+\_\+win32}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$devlist, char $\ast$name, const char $\ast$desc, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+int \mbox{\hyperlink{fad-win32_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{fad-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd}\label{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd}} 
+\index{fad-\/win32.c@{fad-\/win32.c}!add\_addr\_to\_list@{add\_addr\_to\_list}}
+\index{add\_addr\_to\_list@{add\_addr\_to\_list}!fad-\/win32.c@{fad-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{add\_addr\_to\_list()}{add\_addr\_to\_list()}}
+{\footnotesize\ttfamily static int add\+\_\+addr\+\_\+to\+\_\+list (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$}]{curdev,  }\item[{struct sockaddr $\ast$}]{addr,  }\item[{struct sockaddr $\ast$}]{netmask,  }\item[{struct sockaddr $\ast$}]{broadaddr,  }\item[{struct sockaddr $\ast$}]{dstaddr,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{inet_8c_ab5280f09a5b04a55b18a83a9760f1016}{dup\+\_\+sockaddr()}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{fad-win32_8c_aebde42f1910515d28de023a28000917d}{pcap\+\_\+add\+\_\+if\+\_\+win32()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fad-win32_8c_aebde42f1910515d28de023a28000917d}\label{fad-win32_8c_aebde42f1910515d28de023a28000917d}} 
+\index{fad-\/win32.c@{fad-\/win32.c}!pcap\_add\_if\_win32@{pcap\_add\_if\_win32}}
+\index{pcap\_add\_if\_win32@{pcap\_add\_if\_win32}!fad-\/win32.c@{fad-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_add\_if\_win32()}{pcap\_add\_if\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+add\+\_\+if\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{devlist,  }\item[{char $\ast$}]{name,  }\item[{const char $\ast$}]{desc,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd}{add\+\_\+addr\+\_\+to\+\_\+list()}}, \mbox{\hyperlink{inet_8c_ad645673beca798d2ccd8218c8a7ca35a}{add\+\_\+or\+\_\+find\+\_\+if()}} , 以及 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{fad-win32_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-win32_8c_aebde42f1910515d28de023a28000917d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{fad-win32_8c_aebde42f1910515d28de023a28000917d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fad-win32_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}\label{fad-win32_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}} 
+\index{fad-\/win32.c@{fad-\/win32.c}!pcap\_findalldevs@{pcap\_findalldevs}}
+\index{pcap\_findalldevs@{pcap\_findalldevs}!fad-\/win32.c@{fad-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_findalldevs()}{pcap\_findalldevs()}}
+{\footnotesize\ttfamily int pcap\+\_\+findalldevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{fad-win32_8c_aebde42f1910515d28de023a28000917d}{pcap\+\_\+add\+\_\+if\+\_\+win32()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{inet_8c_a185e9c1d81ef81110ed08fe3de0c5400}{pcap\+\_\+freealldevs()}}, \mbox{\hyperlink{pcap-bpf_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-win32_8c_a7b128eaeef627b408f6a6e2a2f5eb45d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{fad-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{fad-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{fad-\/win32.c@{fad-\/win32.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!fad-\/win32.c@{fad-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/fad-\/win32.c,v 1.15 2007-\/09-\/25 20:34:36 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}

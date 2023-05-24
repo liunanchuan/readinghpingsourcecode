@@ -1,0 +1,434 @@
+\hypertarget{nametoaddr_8c}{}\doxysection{libpcap-\/1.1.1/nametoaddr.c 文件参考}
+\label{nametoaddr_8c}\index{libpcap-\/1.1.1/nametoaddr.c@{libpcap-\/1.1.1/nametoaddr.c}}
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gencode.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$pcap/namedb.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ethertype.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}llc.\+h\char`\"{}}\newline
+nametoaddr.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structeproto}{eproto}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{nametoaddr_8c_a80a2a5dc2f477a8e6a0827bb2a8ef0a4}{NTOHL}}(x)~(x) = ntohl(x)
+\item 
+\#define \mbox{\hyperlink{nametoaddr_8c_aed653c9572c03809374a5adf9a928b2d}{NTOHS}}(x)~(x) = ntohs(x)
+\item 
+\#define \mbox{\hyperlink{nametoaddr_8c_adb572398f8d04313a5abbcdf64eba0b9}{AREASHIFT}}~10
+\item 
+\#define \mbox{\hyperlink{nametoaddr_8c_a0d96315d04d0206e71df3276c5aea24e}{AREAMASK}}~0176000
+\item 
+\#define \mbox{\hyperlink{nametoaddr_8c_a752a978c3da6f3e25f46306dcbca0982}{NODEMASK}}~01777
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7}{xdtoi}} (int)
+\item 
+\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$$\ast$ \mbox{\hyperlink{nametoaddr_8c_a612bf5c34646030618ec6e754affbfe0}{pcap\+\_\+nametoaddr}} (const char $\ast$name)
+\item 
+\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} \mbox{\hyperlink{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708}{pcap\+\_\+nametonetaddr}} (const char $\ast$name)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6}{pcap\+\_\+nametoport}} (const char $\ast$name, int $\ast$port, int $\ast$proto)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}{pcap\+\_\+nametoportrange}} (const char $\ast$name, int $\ast$port1, int $\ast$port2, int $\ast$proto)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_a929f13da3ef15488e4a38df049a0f1bb}{pcap\+\_\+nametoproto}} (const char $\ast$str)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_ab00e1d8563c4c82b722de0c388a62517}{pcap\+\_\+nametoeproto}} (const char $\ast$s)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_a460dbda336b5cddb6d0b26eee3097c8f}{pcap\+\_\+nametollc}} (const char $\ast$s)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_a75fa633c6cd068cc4e31c3cc6b67f75d}{\+\_\+\+\_\+pcap\+\_\+atoin}} (const char $\ast$s, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$addr)
+\item 
+int \mbox{\hyperlink{nametoaddr_8c_a05e6bdf1ac92a7905e191fa3ffe2dff3}{\+\_\+\+\_\+pcap\+\_\+atodn}} (const char $\ast$s, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$addr)
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{nametoaddr_8c_a33c35311b723014a87dc8bc137f43c80}{pcap\+\_\+ether\+\_\+aton}} (const char $\ast$s)
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{nametoaddr_8c_aa5594a23a6f9be6a48ea90029f6dc40b}{pcap\+\_\+ether\+\_\+hostton}} (const char $\ast$name)
+\item 
+u\+\_\+short \mbox{\hyperlink{nametoaddr_8c_a5d8994110c9990bd87fde2d58a993205}{\+\_\+\+\_\+pcap\+\_\+nametodnaddr}} (const char $\ast$name)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{nametoaddr_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+struct \mbox{\hyperlink{structeproto}{eproto}} \mbox{\hyperlink{nametoaddr_8c_ac6c11db75097d49acaa479066db63894}{eproto\+\_\+db}} \mbox{[}$\,$\mbox{]}
+\item 
+static struct \mbox{\hyperlink{structeproto}{eproto}} \mbox{\hyperlink{nametoaddr_8c_a2a5359fbb073c4acc5d5974b35e6a158}{llc\+\_\+db}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{nametoaddr_8c_a0d96315d04d0206e71df3276c5aea24e}\label{nametoaddr_8c_a0d96315d04d0206e71df3276c5aea24e}} 
+\index{nametoaddr.c@{nametoaddr.c}!AREAMASK@{AREAMASK}}
+\index{AREAMASK@{AREAMASK}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{AREAMASK}{AREAMASK}}
+{\footnotesize\ttfamily \#define AREAMASK~0176000}
+
+\mbox{\Hypertarget{nametoaddr_8c_adb572398f8d04313a5abbcdf64eba0b9}\label{nametoaddr_8c_adb572398f8d04313a5abbcdf64eba0b9}} 
+\index{nametoaddr.c@{nametoaddr.c}!AREASHIFT@{AREASHIFT}}
+\index{AREASHIFT@{AREASHIFT}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{AREASHIFT}{AREASHIFT}}
+{\footnotesize\ttfamily \#define AREASHIFT~10}
+
+\mbox{\Hypertarget{nametoaddr_8c_a752a978c3da6f3e25f46306dcbca0982}\label{nametoaddr_8c_a752a978c3da6f3e25f46306dcbca0982}} 
+\index{nametoaddr.c@{nametoaddr.c}!NODEMASK@{NODEMASK}}
+\index{NODEMASK@{NODEMASK}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{NODEMASK}{NODEMASK}}
+{\footnotesize\ttfamily \#define NODEMASK~01777}
+
+\mbox{\Hypertarget{nametoaddr_8c_a80a2a5dc2f477a8e6a0827bb2a8ef0a4}\label{nametoaddr_8c_a80a2a5dc2f477a8e6a0827bb2a8ef0a4}} 
+\index{nametoaddr.c@{nametoaddr.c}!NTOHL@{NTOHL}}
+\index{NTOHL@{NTOHL}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{NTOHL}{NTOHL}}
+{\footnotesize\ttfamily \#define NTOHL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x) = ntohl(x)}
+
+\mbox{\Hypertarget{nametoaddr_8c_aed653c9572c03809374a5adf9a928b2d}\label{nametoaddr_8c_aed653c9572c03809374a5adf9a928b2d}} 
+\index{nametoaddr.c@{nametoaddr.c}!NTOHS@{NTOHS}}
+\index{NTOHS@{NTOHS}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{NTOHS}{NTOHS}}
+{\footnotesize\ttfamily \#define NTOHS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x) = ntohs(x)}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{nametoaddr_8c_a05e6bdf1ac92a7905e191fa3ffe2dff3}\label{nametoaddr_8c_a05e6bdf1ac92a7905e191fa3ffe2dff3}} 
+\index{nametoaddr.c@{nametoaddr.c}!\_\_pcap\_atodn@{\_\_pcap\_atodn}}
+\index{\_\_pcap\_atodn@{\_\_pcap\_atodn}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_atodn()}{\_\_pcap\_atodn()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+pcap\+\_\+atodn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a0d96315d04d0206e71df3276c5aea24e}{AREAMASK}}, \mbox{\hyperlink{nametoaddr_8c_adb572398f8d04313a5abbcdf64eba0b9}{AREASHIFT}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{nametoaddr_8c_a752a978c3da6f3e25f46306dcbca0982}{NODEMASK}}, \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c_a05e6bdf1ac92a7905e191fa3ffe2dff3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a75fa633c6cd068cc4e31c3cc6b67f75d}\label{nametoaddr_8c_a75fa633c6cd068cc4e31c3cc6b67f75d}} 
+\index{nametoaddr.c@{nametoaddr.c}!\_\_pcap\_atoin@{\_\_pcap\_atoin}}
+\index{\_\_pcap\_atoin@{\_\_pcap\_atoin}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_atoin()}{\_\_pcap\_atoin()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+pcap\+\_\+atoin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+\mbox{\Hypertarget{nametoaddr_8c_a5d8994110c9990bd87fde2d58a993205}\label{nametoaddr_8c_a5d8994110c9990bd87fde2d58a993205}} 
+\index{nametoaddr.c@{nametoaddr.c}!\_\_pcap\_nametodnaddr@{\_\_pcap\_nametodnaddr}}
+\index{\_\_pcap\_nametodnaddr@{\_\_pcap\_nametodnaddr}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_nametodnaddr()}{\_\_pcap\_nametodnaddr()}}
+{\footnotesize\ttfamily u\+\_\+short \+\_\+\+\_\+pcap\+\_\+nametodnaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c_a5d8994110c9990bd87fde2d58a993205_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a33c35311b723014a87dc8bc137f43c80}\label{nametoaddr_8c_a33c35311b723014a87dc8bc137f43c80}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_ether\_aton@{pcap\_ether\_aton}}
+\index{pcap\_ether\_aton@{pcap\_ether\_aton}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_ether\_aton()}{pcap\_ether\_aton()}}
+{\footnotesize\ttfamily u\+\_\+char $\ast$ pcap\+\_\+ether\+\_\+aton (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}} , 以及 \mbox{\hyperlink{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7}{xdtoi()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{nametoaddr_8c_a33c35311b723014a87dc8bc137f43c80_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_aa5594a23a6f9be6a48ea90029f6dc40b}\label{nametoaddr_8c_aa5594a23a6f9be6a48ea90029f6dc40b}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_ether\_hostton@{pcap\_ether\_hostton}}
+\index{pcap\_ether\_hostton@{pcap\_ether\_hostton}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_ether\_hostton()}{pcap\_ether\_hostton()}}
+{\footnotesize\ttfamily u\+\_\+char $\ast$ pcap\+\_\+ether\+\_\+hostton (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__etherent_afc40b70652293465418325013ada9b78}{pcap\+\_\+etherent\+::addr}}, \mbox{\hyperlink{structpcap__etherent_a2fc24ecb842e2234c373008ca16ac1ba}{pcap\+\_\+etherent\+::name}}, \mbox{\hyperlink{namedb_8h_a37c01089dfa357121f2b8e16a6fc761e}{PCAP\+\_\+\+ETHERS\+\_\+\+FILE}} , 以及 \mbox{\hyperlink{etherent_8c_abd0743e779bf2299f27c34c3f7b0bc4d}{pcap\+\_\+next\+\_\+etherent()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c_aa5594a23a6f9be6a48ea90029f6dc40b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a612bf5c34646030618ec6e754affbfe0}\label{nametoaddr_8c_a612bf5c34646030618ec6e754affbfe0}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametoaddr@{pcap\_nametoaddr}}
+\index{pcap\_nametoaddr@{pcap\_nametoaddr}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoaddr()}{pcap\_nametoaddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$$\ast$ pcap\+\_\+nametoaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a80a2a5dc2f477a8e6a0827bb2a8ef0a4}{NTOHL}}.
+
+\mbox{\Hypertarget{nametoaddr_8c_ab00e1d8563c4c82b722de0c388a62517}\label{nametoaddr_8c_ab00e1d8563c4c82b722de0c388a62517}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametoeproto@{pcap\_nametoeproto}}
+\index{pcap\_nametoeproto@{pcap\_nametoeproto}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoeproto()}{pcap\_nametoeproto()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoeproto (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_ac6c11db75097d49acaa479066db63894}{eproto\+\_\+db}}, \mbox{\hyperlink{structeproto_a05102570069797c30662b9c93ca7f385}{eproto\+::p}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{nametoaddr_8c_ab00e1d8563c4c82b722de0c388a62517_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a460dbda336b5cddb6d0b26eee3097c8f}\label{nametoaddr_8c_a460dbda336b5cddb6d0b26eee3097c8f}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametollc@{pcap\_nametollc}}
+\index{pcap\_nametollc@{pcap\_nametollc}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametollc()}{pcap\_nametollc()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametollc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a2a5359fbb073c4acc5d5974b35e6a158}{llc\+\_\+db}}, \mbox{\hyperlink{structeproto_a05102570069797c30662b9c93ca7f385}{eproto\+::p}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{nametoaddr_8c_a460dbda336b5cddb6d0b26eee3097c8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708}\label{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametonetaddr@{pcap\_nametonetaddr}}
+\index{pcap\_nametonetaddr@{pcap\_nametonetaddr}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametonetaddr()}{pcap\_nametonetaddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} pcap\+\_\+nametonetaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6}\label{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametoport@{pcap\_nametoport}}
+\index{pcap\_nametoport@{pcap\_nametoport}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoport()}{pcap\_nametoport()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoport (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int $\ast$}]{port,  }\item[{int $\ast$}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{opentest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}{warning()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}{pcap\+\_\+nametoportrange()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}\label{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametoportrange@{pcap\_nametoportrange}}
+\index{pcap\_nametoportrange@{pcap\_nametoportrange}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoportrange()}{pcap\_nametoportrange()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoportrange (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int $\ast$}]{port1,  }\item[{int $\ast$}]{port2,  }\item[{int $\ast$}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6}{pcap\+\_\+nametoport()}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}} , 以及 \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_a929f13da3ef15488e4a38df049a0f1bb}\label{nametoaddr_8c_a929f13da3ef15488e4a38df049a0f1bb}} 
+\index{nametoaddr.c@{nametoaddr.c}!pcap\_nametoproto@{pcap\_nametoproto}}
+\index{pcap\_nametoproto@{pcap\_nametoproto}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoproto()}{pcap\_nametoproto()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoproto (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{nametoaddr_8c_a929f13da3ef15488e4a38df049a0f1bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7}\label{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7}} 
+\index{nametoaddr.c@{nametoaddr.c}!xdtoi@{xdtoi}}
+\index{xdtoi@{xdtoi}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{xdtoi()}{xdtoi()}}
+{\footnotesize\ttfamily static int xdtoi (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_a33c35311b723014a87dc8bc137f43c80}{pcap\+\_\+ether\+\_\+aton()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{nametoaddr_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{nametoaddr_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{nametoaddr.c@{nametoaddr.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/nametoaddr.c,v 1.83 2008-\/02-\/06 10:21:30 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{nametoaddr_8c_ac6c11db75097d49acaa479066db63894}\label{nametoaddr_8c_ac6c11db75097d49acaa479066db63894}} 
+\index{nametoaddr.c@{nametoaddr.c}!eproto\_db@{eproto\_db}}
+\index{eproto\_db@{eproto\_db}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{eproto\_db}{eproto\_db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structeproto}{eproto}} eproto\+\_\+db\mbox{[}$\,$\mbox{]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}pup"{}}, \mbox{\hyperlink{ethertype_8h_a17471f2d0d180ef15ed20835686f42bc}{ETHERTYPE\_PUP}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}xns"{}}, \mbox{\hyperlink{ethertype_8h_af8b896efcfca254083401386f9785903}{ETHERTYPE\_NS}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}ip"{}}, \mbox{\hyperlink{ethertype_8h_ae2021b6951d9782a2ba9cb243abdea93}{ETHERTYPE\_IP}} \},}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}arp"{}}, \mbox{\hyperlink{ethertype_8h_a58349316842ce4bdc5ff10568ec5dc31}{ETHERTYPE\_ARP}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}rarp"{}}, \mbox{\hyperlink{ethertype_8h_a1d8bc382d37844a65bae2006a05046f3}{ETHERTYPE\_REVARP}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}sprite"{}}, \mbox{\hyperlink{ethertype_8h_aaf064ed783e9a594ee6cd4679085d375}{ETHERTYPE\_SPRITE}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}mopdl"{}}, \mbox{\hyperlink{ethertype_8h_aa21251d135a8057aba7ed95744313f80}{ETHERTYPE\_MOPDL}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}moprc"{}}, \mbox{\hyperlink{ethertype_8h_a770db23e88aa088be7af0c73b262cf9b}{ETHERTYPE\_MOPRC}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}decnet"{}}, \mbox{\hyperlink{ethertype_8h_a706d57ddf9b56f5ba4523884f95a74b3}{ETHERTYPE\_DN}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}lat"{}}, \mbox{\hyperlink{ethertype_8h_addb47d19e88092d1ac890d3f15009191}{ETHERTYPE\_LAT}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}sca"{}}, \mbox{\hyperlink{ethertype_8h_afa7c9597486411ae8efe8136cccfcd47}{ETHERTYPE\_SCA}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}lanbridge"{}}, \mbox{\hyperlink{ethertype_8h_a1f82a3745df916398443988aa8b5e82e}{ETHERTYPE\_LANBRIDGE}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}vexp"{}}, \mbox{\hyperlink{ethertype_8h_a942b0b84578d73e3b82711a381ad9f35}{ETHERTYPE\_VEXP}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}vprod"{}}, \mbox{\hyperlink{ethertype_8h_a9765c2ca1a19cdfe619a57e428dd0e85}{ETHERTYPE\_VPROD}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}atalk"{}}, \mbox{\hyperlink{ethertype_8h_a1b3ed9773a8bef2701bda5d7b64fce30}{ETHERTYPE\_ATALK}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}atalkarp"{}}, \mbox{\hyperlink{ethertype_8h_aa2692ff7ce9c6412385d9465d0d6d152}{ETHERTYPE\_AARP}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}loopback"{}}, \mbox{\hyperlink{ethertype_8h_a9656435139954003bf149ed68fcc4ca3}{ETHERTYPE\_LOOPBACK}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}decdts"{}}, \mbox{\hyperlink{ethertype_8h_aa5c55be334d1d4be479f511cf92b4743}{ETHERTYPE\_DECDTS}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}decdns"{}}, \mbox{\hyperlink{ethertype_8h_a558bf719e95edffa300bba73e1da8714}{ETHERTYPE\_DECDNS}} \},}
+\DoxyCodeLine{    \{ (\textcolor{keywordtype}{char} *)0, 0 \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_ab00e1d8563c4c82b722de0c388a62517}{pcap\+\_\+nametoeproto()}}.
+
+\mbox{\Hypertarget{nametoaddr_8c_a2a5359fbb073c4acc5d5974b35e6a158}\label{nametoaddr_8c_a2a5359fbb073c4acc5d5974b35e6a158}} 
+\index{nametoaddr.c@{nametoaddr.c}!llc\_db@{llc\_db}}
+\index{llc\_db@{llc\_db}!nametoaddr.c@{nametoaddr.c}}
+\doxysubsubsection{\texorpdfstring{llc\_db}{llc\_db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structeproto}{eproto}} llc\+\_\+db\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}iso"{}}, \mbox{\hyperlink{llc_8h_ad0351b273fabea496c0170797c7af172}{LLCSAP\_ISONS}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}stp"{}}, \mbox{\hyperlink{llc_8h_ac9d60cdb57442fe1cb7e8850d2f57ac1}{LLCSAP\_8021D}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}ipx"{}}, \mbox{\hyperlink{llc_8h_a128f1a82d2924d03b5dcb4f258860e2e}{LLCSAP\_IPX}} \},}
+\DoxyCodeLine{    \{ \textcolor{stringliteral}{"{}netbeui"{}}, \mbox{\hyperlink{llc_8h_a64ba3179e48dc2da17164ba5ec955c58}{LLCSAP\_NETBEUI}} \},}
+\DoxyCodeLine{    \{ (\textcolor{keywordtype}{char} *)0, 0 \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_a460dbda336b5cddb6d0b26eee3097c8f}{pcap\+\_\+nametollc()}}.
+

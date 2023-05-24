@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: interface.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interface.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __HPING_INTERFACE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __HPING_INTERFACE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef _LINUX_MII_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="interface_8h.html#ad69132a0962e3f95164c8e03ffdf5ad5">    5</a></span><span class="preprocessor">#define _LINUX_MII_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/* network interface ioctl&#39;s for MII commands */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SIOCGMIIPHY</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="interface_8h.html#ac00d6572de21cc8ee58cccdfb0da3d91">    9</a></span><span class="preprocessor">#define SIOCGMIIPHY (SIOCDEVPRIVATE)    </span><span class="comment">/* Read from current PHY */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="interface_8h.html#a10a09b4112034e55f4228f0976fe1ddb">   10</a></span><span class="preprocessor">#define SIOCGMIIREG (SIOCDEVPRIVATE+1)  </span><span class="comment">/* Read any PHY register */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="interface_8h.html#a6d1fa55b690d28eafba2f7a47e5f53ea">   11</a></span><span class="preprocessor">#define SIOCSMIIREG (SIOCDEVPRIVATE+2)  </span><span class="comment">/* Write any PHY register */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="interface_8h.html#a8eb213c64af1139bcd7c674d8d5f8fa1">   12</a></span><span class="preprocessor">#define SIOCGPARAMS (SIOCDEVPRIVATE+3)  </span><span class="comment">/* Read operational parameters */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="interface_8h.html#ab97c31d06ce5bc2100c4efebafdf5150">   13</a></span><span class="preprocessor">#define SIOCSPARAMS (SIOCDEVPRIVATE+4)  </span><span class="comment">/* Set operational parameters */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/* This data structure is used for all the MII ioctl&#39;s */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmii__data.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structmii__data.html">mii_data</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structmii__data.html#a0ca027ac6500939fcdcef00f9dc7332b">   18</a></span>    <a class="code hl_define" href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a>   <a class="code hl_variable" href="structmii__data.html#a0ca027ac6500939fcdcef00f9dc7332b">phy_id</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmii__data.html#a4955c4448558cb454080e1d64f16c9b4">   19</a></span>    <a class="code hl_define" href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a>   <a class="code hl_variable" href="structmii__data.html#a4955c4448558cb454080e1d64f16c9b4">reg_num</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmii__data.html#a56da2c8057f2b99b8d88f902096bffb1">   20</a></span>    <a class="code hl_define" href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a>   <a class="code hl_variable" href="structmii__data.html#a56da2c8057f2b99b8d88f902096bffb1">val_in</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structmii__data.html#a902cab76c38cbec41a6a86bdbe4f6a2a">   21</a></span>    <a class="code hl_define" href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a>   <a class="code hl_variable" href="structmii__data.html#a902cab76c38cbec41a6a86bdbe4f6a2a">val_out</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/* Basic Mode Control Register */</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="interface_8h.html#a9137acedc42ff140f244da7473cff29e">   25</a></span><span class="preprocessor">#define MII_BMCR        0x00</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="interface_8h.html#a1001ac1540dc5bb6c4962f63b5fd6c3a">   26</a></span><span class="preprocessor">#define  MII_BMCR_RESET     0x8000</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="interface_8h.html#aaade3d675167c736186a03dad857a7c9">   27</a></span><span class="preprocessor">#define  MII_BMCR_LOOPBACK  0x4000</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="interface_8h.html#a8bb3fa3beb4506367b2cc1e0c660e0d5">   28</a></span><span class="preprocessor">#define  MII_BMCR_100MBIT   0x2000</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="interface_8h.html#ac471ff72c731774ad35017f83ec63765">   29</a></span><span class="preprocessor">#define  MII_BMCR_AN_ENA    0x1000</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="interface_8h.html#a288b983fab32fb073cc42c3817b2c217">   30</a></span><span class="preprocessor">#define  MII_BMCR_ISOLATE   0x0400</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="interface_8h.html#ad306fa317c176d616c1f5b2106eb0acd">   31</a></span><span class="preprocessor">#define  MII_BMCR_RESTART   0x0200</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="interface_8h.html#a2c70f14d3ec36c501d4ab55e2e452060">   32</a></span><span class="preprocessor">#define  MII_BMCR_DUPLEX    0x0100</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="interface_8h.html#abb3fe4fce8d811fed1db18d91c84d787">   33</a></span><span class="preprocessor">#define  MII_BMCR_COLTEST   0x0080</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Basic Mode Status Register */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="interface_8h.html#aa2f632686d6298a7c898b1c805586aab">   36</a></span><span class="preprocessor">#define MII_BMSR        0x01</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="interface_8h.html#a275cd04aaa1eee99cc59bb36bb832a71">   37</a></span><span class="preprocessor">#define  MII_BMSR_CAP_MASK  0xf800</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="interface_8h.html#ad0a6a9bf92a81cbb6aa736a636886c23">   38</a></span><span class="preprocessor">#define  MII_BMSR_100BASET4 0x8000</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="interface_8h.html#afe0d369959255d71f762e12de4ee6e54">   39</a></span><span class="preprocessor">#define  MII_BMSR_100BASETX_FD  0x4000</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="interface_8h.html#a6d71bb3d58edf11d90eb3927982e821a">   40</a></span><span class="preprocessor">#define  MII_BMSR_100BASETX_HD  0x2000</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="interface_8h.html#ac52976d38f25970969219614afc498e0">   41</a></span><span class="preprocessor">#define  MII_BMSR_10BASET_FD    0x1000</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="interface_8h.html#a142eef9467ba6bfced538baa4c62e6a0">   42</a></span><span class="preprocessor">#define  MII_BMSR_10BASET_HD    0x0800</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="interface_8h.html#a81209ef4460583ff2cb54c0b7061cbd5">   43</a></span><span class="preprocessor">#define  MII_BMSR_NO_PREAMBLE   0x0040</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="interface_8h.html#acc58e62feb532961ddb90e8e29990e11">   44</a></span><span class="preprocessor">#define  MII_BMSR_AN_COMPLETE   0x0020</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="interface_8h.html#a0dd8421740c52ecd5e6a53e969d2e48a">   45</a></span><span class="preprocessor">#define  MII_BMSR_REMOTE_FAULT  0x0010</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="interface_8h.html#a541b0ba3820955dd73921b8f3e5036f5">   46</a></span><span class="preprocessor">#define  MII_BMSR_AN_ABLE   0x0008</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="interface_8h.html#afb1910f33aa4f3fea504f3af476bfa41">   47</a></span><span class="preprocessor">#define  MII_BMSR_LINK_VALID    0x0004</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="interface_8h.html#a27a3f60cdfa253fe16e53485712c0407">   48</a></span><span class="preprocessor">#define  MII_BMSR_JABBER    0x0002</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="interface_8h.html#a22f97cd7ff356b6a88daf8f1d2de6d6a">   49</a></span><span class="preprocessor">#define  MII_BMSR_EXT_CAP   0x0001</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="interface_8h.html#aee8534c8aadbd7119a8349c43d4b5198">   51</a></span><span class="preprocessor">#define MII_PHY_ID1     0x02</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="interface_8h.html#a2be3a46d6a54439c3df86f826fc56b62">   52</a></span><span class="preprocessor">#define MII_PHY_ID2     0x03</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/* Auto-Negotiation Advertisement Register */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="interface_8h.html#aacb2ab0ea5579b5d9e30b075991add1d">   55</a></span><span class="preprocessor">#define MII_ANAR        0x04</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/* Auto-Negotiation Link Partner Ability Register */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="interface_8h.html#a445e8381a9ea9724054bfacc10bb4c81">   57</a></span><span class="preprocessor">#define MII_ANLPAR      0x05</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="interface_8h.html#a9045828ea74cd3d9d8af9088bfc67cc8">   58</a></span><span class="preprocessor">#define  MII_AN_NEXT_PAGE   0x8000</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="interface_8h.html#a1a720b1dae8cb79116982dad0a4603a4">   59</a></span><span class="preprocessor">#define  MII_AN_ACK     0x4000</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="interface_8h.html#a8dbac9c287c4b937ca9417c5de8ff1ae">   60</a></span><span class="preprocessor">#define  MII_AN_REMOTE_FAULT    0x2000</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="interface_8h.html#ac78e6368825393673cb8bef5b14ae397">   61</a></span><span class="preprocessor">#define  MII_AN_ABILITY_MASK    0x07e0</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="interface_8h.html#a7540680b8cfa6b31e23bf19bb9761778">   62</a></span><span class="preprocessor">#define  MII_AN_FLOW_CONTROL    0x0400</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="interface_8h.html#a73ff11f0449f598975920e0cc9b55ef3">   63</a></span><span class="preprocessor">#define  MII_AN_100BASET4   0x0200</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="interface_8h.html#a71600e7da1d3bed47778461f90dcd95c">   64</a></span><span class="preprocessor">#define  MII_AN_100BASETX_FD    0x0100</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="interface_8h.html#adefb867d83e26c9855bd7f89e7f9471e">   65</a></span><span class="preprocessor">#define  MII_AN_100BASETX_HD    0x0080</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="interface_8h.html#a2afabdb3e29ec441c132e614760d4f98">   66</a></span><span class="preprocessor">#define  MII_AN_10BASET_FD  0x0040</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="interface_8h.html#a26ff4aab69ee3c2b3de34bce28989b82">   67</a></span><span class="preprocessor">#define  MII_AN_10BASET_HD  0x0020</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="interface_8h.html#a4ec3587246f6e673a38d292075c7aaba">   68</a></span><span class="preprocessor">#define  MII_AN_PROT_MASK   0x001f</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="interface_8h.html#a53052bee6f221288dd9fde303572c40a">   69</a></span><span class="preprocessor">#define  MII_AN_PROT_802_3  0x0001</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/* Auto-Negotiation Expansion Register */</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="interface_8h.html#a6e5634d8831e21f963ddc16b91d5f6b9">   72</a></span><span class="preprocessor">#define MII_ANER        0x06</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="interface_8h.html#ac77961ed549b9ba1e1e524a84fc41ad0">   73</a></span><span class="preprocessor">#define  MII_ANER_MULT_FAULT    0x0010</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="interface_8h.html#a18df340ab59944433bab674a6abfd297">   74</a></span><span class="preprocessor">#define  MII_ANER_LP_NP_ABLE    0x0008</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="interface_8h.html#ab46deb4f3a4cbf5025d65b0bea823e59">   75</a></span><span class="preprocessor">#define  MII_ANER_NP_ABLE   0x0004</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="interface_8h.html#a3ea4a566f9c5a309eed2d4af7709d7c4">   76</a></span><span class="preprocessor">#define  MII_ANER_PAGE_RX   0x0002</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="interface_8h.html#a6cc741a4448d2debb13a89ade33b6ecd">   77</a></span><span class="preprocessor">#define  MII_ANER_LP_AN_ABLE    0x0001</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">/* _LINUX_MII_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="interface_8h.html#abb3aac2fe74ddcfb8978bc1921ac2b75">   81</a></span><span class="preprocessor">#define HPING_IFNAME_LEN    24</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="interface_8h.html#ae5e97e29017627b3aa1dc49d9b3d4145">   82</a></span><span class="preprocessor">#define HPING_IFACE_MAX     64</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="interface_8h.html#aef958a99d9671105fcb27b51890fde9d">   83</a></span><span class="preprocessor">#define HPING_IFADDR_MAX    16</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">/* hping interface rappresentation */</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structhpingif.html">   86</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structhpingif.html">hpingif</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structhpingif.html#aa21d6f1971a1dbdb9ed6b020765711c2">   87</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structhpingif.html#aa21d6f1971a1dbdb9ed6b020765711c2">hif_name</a>[<a class="code hl_define" href="interface_8h.html#abb3aac2fe74ddcfb8978bc1921ac2b75">HPING_IFNAME_LEN</a>];</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structhpingif.html#a6d0d54dff5ef0c4a5dbbefeffe796b9c">   88</a></span>    in_addr_t <a class="code hl_variable" href="structhpingif.html#a6d0d54dff5ef0c4a5dbbefeffe796b9c">hif_addr</a>[<a class="code hl_define" href="interface_8h.html#aef958a99d9671105fcb27b51890fde9d">HPING_IFADDR_MAX</a>];   <span class="comment">/* ipv4 addresses */</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structhpingif.html#a018173bbbc16d83cffa6d7d71d18e51d">   89</a></span>    in_addr_t <a class="code hl_variable" href="structhpingif.html#a018173bbbc16d83cffa6d7d71d18e51d">hif_baddr</a>[<a class="code hl_define" href="interface_8h.html#aef958a99d9671105fcb27b51890fde9d">HPING_IFADDR_MAX</a>];  <span class="comment">/* ipv4 broadcast addresses */</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structhpingif.html#a8ec3b6564a1c840994ee9df12a0d6089">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a8ec3b6564a1c840994ee9df12a0d6089">hif_naddr</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structhpingif.html#a9cfb301071374d26e6469f65a4cee4c3">   91</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a9cfb301071374d26e6469f65a4cee4c3">hif_loopback</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structhpingif.html#a28ca080e0b21a6a6e07406800375d4bf">   92</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a28ca080e0b21a6a6e07406800375d4bf">hif_ptp</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structhpingif.html#a53966c3e5e46399ac66472fd275bde21">   93</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a53966c3e5e46399ac66472fd275bde21">hif_promisc</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structhpingif.html#aa4abf91e01fcb9a909047bcd06bbd507">   94</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#aa4abf91e01fcb9a909047bcd06bbd507">hif_broadcast</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structhpingif.html#afd510bf5382d1a1b35aa13e953e261e2">   95</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#afd510bf5382d1a1b35aa13e953e261e2">hif_nolink</a>; <span class="comment">/* only set with MII-capable devices */</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structhpingif.html#a3ba27b8917e0127ef612f547f8b941c7">   96</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a3ba27b8917e0127ef612f547f8b941c7">hif_mtu</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structhpingif.html#a5e20a5cff58e199a3992ae474caed59d">   97</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structhpingif.html#a5e20a5cff58e199a3992ae474caed59d">hif_index</a>;  <span class="comment">/* only useful for linux sockpacket version */</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="interface_8h.html#a180366790b127c9f6d1f65245f275268">  100</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="interface_8h.html#a180366790b127c9f6d1f65245f275268">hping_get_interfaces</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structhpingif.html">hpingif</a> *hif, <span class="keywordtype">int</span> ilen);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aars_8h_html_a5ece5635db977edd094b1c365c0357a3"><div class="ttname"><a href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a></div><div class="ttdeci">#define __u16</div><div class="ttdef"><b>Definition:</b> ars.h:46</div></div>
+<div class="ttc" id="ainterface_8h_html_a180366790b127c9f6d1f65245f275268"><div class="ttname"><a href="interface_8h.html#a180366790b127c9f6d1f65245f275268">hping_get_interfaces</a></div><div class="ttdeci">int hping_get_interfaces(struct hpingif *hif, int ilen)</div></div>
+<div class="ttc" id="ainterface_8h_html_abb3aac2fe74ddcfb8978bc1921ac2b75"><div class="ttname"><a href="interface_8h.html#abb3aac2fe74ddcfb8978bc1921ac2b75">HPING_IFNAME_LEN</a></div><div class="ttdeci">#define HPING_IFNAME_LEN</div><div class="ttdef"><b>Definition:</b> interface.h:81</div></div>
+<div class="ttc" id="ainterface_8h_html_aef958a99d9671105fcb27b51890fde9d"><div class="ttname"><a href="interface_8h.html#aef958a99d9671105fcb27b51890fde9d">HPING_IFADDR_MAX</a></div><div class="ttdeci">#define HPING_IFADDR_MAX</div><div class="ttdef"><b>Definition:</b> interface.h:83</div></div>
+<div class="ttc" id="astructhpingif_html"><div class="ttname"><a href="structhpingif.html">hpingif</a></div><div class="ttdef"><b>Definition:</b> interface.h:86</div></div>
+<div class="ttc" id="astructhpingif_html_a018173bbbc16d83cffa6d7d71d18e51d"><div class="ttname"><a href="structhpingif.html#a018173bbbc16d83cffa6d7d71d18e51d">hpingif::hif_baddr</a></div><div class="ttdeci">in_addr_t hif_baddr[HPING_IFADDR_MAX]</div><div class="ttdef"><b>Definition:</b> interface.h:89</div></div>
+<div class="ttc" id="astructhpingif_html_a28ca080e0b21a6a6e07406800375d4bf"><div class="ttname"><a href="structhpingif.html#a28ca080e0b21a6a6e07406800375d4bf">hpingif::hif_ptp</a></div><div class="ttdeci">int hif_ptp</div><div class="ttdef"><b>Definition:</b> interface.h:92</div></div>
+<div class="ttc" id="astructhpingif_html_a3ba27b8917e0127ef612f547f8b941c7"><div class="ttname"><a href="structhpingif.html#a3ba27b8917e0127ef612f547f8b941c7">hpingif::hif_mtu</a></div><div class="ttdeci">int hif_mtu</div><div class="ttdef"><b>Definition:</b> interface.h:96</div></div>
+<div class="ttc" id="astructhpingif_html_a53966c3e5e46399ac66472fd275bde21"><div class="ttname"><a href="structhpingif.html#a53966c3e5e46399ac66472fd275bde21">hpingif::hif_promisc</a></div><div class="ttdeci">int hif_promisc</div><div class="ttdef"><b>Definition:</b> interface.h:93</div></div>
+<div class="ttc" id="astructhpingif_html_a5e20a5cff58e199a3992ae474caed59d"><div class="ttname"><a href="structhpingif.html#a5e20a5cff58e199a3992ae474caed59d">hpingif::hif_index</a></div><div class="ttdeci">int hif_index</div><div class="ttdef"><b>Definition:</b> interface.h:97</div></div>
+<div class="ttc" id="astructhpingif_html_a6d0d54dff5ef0c4a5dbbefeffe796b9c"><div class="ttname"><a href="structhpingif.html#a6d0d54dff5ef0c4a5dbbefeffe796b9c">hpingif::hif_addr</a></div><div class="ttdeci">in_addr_t hif_addr[HPING_IFADDR_MAX]</div><div class="ttdef"><b>Definition:</b> interface.h:88</div></div>
+<div class="ttc" id="astructhpingif_html_a8ec3b6564a1c840994ee9df12a0d6089"><div class="ttname"><a href="structhpingif.html#a8ec3b6564a1c840994ee9df12a0d6089">hpingif::hif_naddr</a></div><div class="ttdeci">int hif_naddr</div><div class="ttdef"><b>Definition:</b> interface.h:90</div></div>
+<div class="ttc" id="astructhpingif_html_a9cfb301071374d26e6469f65a4cee4c3"><div class="ttname"><a href="structhpingif.html#a9cfb301071374d26e6469f65a4cee4c3">hpingif::hif_loopback</a></div><div class="ttdeci">int hif_loopback</div><div class="ttdef"><b>Definition:</b> interface.h:91</div></div>
+<div class="ttc" id="astructhpingif_html_aa21d6f1971a1dbdb9ed6b020765711c2"><div class="ttname"><a href="structhpingif.html#aa21d6f1971a1dbdb9ed6b020765711c2">hpingif::hif_name</a></div><div class="ttdeci">char hif_name[HPING_IFNAME_LEN]</div><div class="ttdef"><b>Definition:</b> interface.h:87</div></div>
+<div class="ttc" id="astructhpingif_html_aa4abf91e01fcb9a909047bcd06bbd507"><div class="ttname"><a href="structhpingif.html#aa4abf91e01fcb9a909047bcd06bbd507">hpingif::hif_broadcast</a></div><div class="ttdeci">int hif_broadcast</div><div class="ttdef"><b>Definition:</b> interface.h:94</div></div>
+<div class="ttc" id="astructhpingif_html_afd510bf5382d1a1b35aa13e953e261e2"><div class="ttname"><a href="structhpingif.html#afd510bf5382d1a1b35aa13e953e261e2">hpingif::hif_nolink</a></div><div class="ttdeci">int hif_nolink</div><div class="ttdef"><b>Definition:</b> interface.h:95</div></div>
+<div class="ttc" id="astructmii__data_html"><div class="ttname"><a href="structmii__data.html">mii_data</a></div><div class="ttdef"><b>Definition:</b> interface.h:17</div></div>
+<div class="ttc" id="astructmii__data_html_a0ca027ac6500939fcdcef00f9dc7332b"><div class="ttname"><a href="structmii__data.html#a0ca027ac6500939fcdcef00f9dc7332b">mii_data::phy_id</a></div><div class="ttdeci">__u16 phy_id</div><div class="ttdef"><b>Definition:</b> interface.h:18</div></div>
+<div class="ttc" id="astructmii__data_html_a4955c4448558cb454080e1d64f16c9b4"><div class="ttname"><a href="structmii__data.html#a4955c4448558cb454080e1d64f16c9b4">mii_data::reg_num</a></div><div class="ttdeci">__u16 reg_num</div><div class="ttdef"><b>Definition:</b> interface.h:19</div></div>
+<div class="ttc" id="astructmii__data_html_a56da2c8057f2b99b8d88f902096bffb1"><div class="ttname"><a href="structmii__data.html#a56da2c8057f2b99b8d88f902096bffb1">mii_data::val_in</a></div><div class="ttdeci">__u16 val_in</div><div class="ttdef"><b>Definition:</b> interface.h:20</div></div>
+<div class="ttc" id="astructmii__data_html_a902cab76c38cbec41a6a86bdbe4f6a2a"><div class="ttname"><a href="structmii__data.html#a902cab76c38cbec41a6a86bdbe4f6a2a">mii_data::val_out</a></div><div class="ttdeci">__u16 val_out</div><div class="ttdef"><b>Definition:</b> interface.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

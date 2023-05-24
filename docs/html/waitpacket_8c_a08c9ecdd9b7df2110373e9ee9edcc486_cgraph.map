@@ -1,0 +1,12 @@
+<map id="recv_udp" name="recv_udp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,80,108"/>
+<area shape="rect" id="node2" href="$waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a" title=" " alt="" coords="141,5,197,32"/>
+<area shape="rect" id="node3" href="$os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="279,56,329,83"/>
+<area shape="rect" id="node5" href="$waitpacket_8c.html#a71fa9ecc574ab6b26f3a7c34ad48e179" title=" " alt="" coords="128,107,211,133"/>
+<area shape="rect" id="node6" href="$rtt_8c.html#ae4b580ccace3b0d5f7421742a3937c8f" title=" " alt="" coords="150,157,189,184"/>
+<area shape="rect" id="node4" href="$relid_8c.html#a22a9f04babf49e4b99ef17b0e7861d65" title=" " alt="" coords="259,5,349,32"/>
+<area shape="rect" id="node7" href="$getusec_8c.html#aeae3aba9a4e7957c11ecf4c4e4fbacc7" title=" " alt="" coords="267,107,341,133"/>
+<area shape="rect" id="node9" href="$rtt_8c.html#ae548d949068a57833890ac1b3b31fbd1" title=" " alt="" coords="259,157,349,184"/>
+<area shape="rect" id="node10" href="$os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab" title=" " alt="" coords="281,208,327,235"/>
+<area shape="rect" id="node8" href="$os-sunos4_8h.html#a091a762f60d91b0f5441d9520dc2079c" title=" " alt="" coords="397,107,495,133"/>
+</map>

@@ -1,0 +1,170 @@
+\hypertarget{netdb_8h_source}{}\doxysection{netdb.\+h}
+\label{netdb_8h_source}\index{libpcap-\/1.1.1/Win32/Include/net/netdb.h@{libpcap-\/1.1.1/Win32/Include/net/netdb.h}}
+\mbox{\hyperlink{netdb_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1980, 1983, 1988, 1993}}
+\DoxyCodeLine{3 \textcolor{comment}{ *     The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  This product includes software developed by the University of}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  California, Berkeley and its contributors.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{23 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{24 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{26 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{27 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{28 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{29 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{30 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{31 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  @(\#)netdb.h 8.1 (Berkeley) 6/2/93}}
+\DoxyCodeLine{34 \textcolor{comment}{ *      netdb.h,v 1.4 1995/08/14 04:05:04 hjl Exp}}
+\DoxyCodeLine{35 \textcolor{comment}{ * -\/}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Portions Copyright (c) 1993 by Digital Equipment Corporation.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *}}
+\DoxyCodeLine{38 \textcolor{comment}{ * Permission to use, copy, modify and distribute this software for any}}
+\DoxyCodeLine{39 \textcolor{comment}{ * purpose with or without fee is hereby granted, provided that the above}}
+\DoxyCodeLine{40 \textcolor{comment}{ * copyright notice and this permission notice appear in all copies, and that}}
+\DoxyCodeLine{41 \textcolor{comment}{ * the name of Digital Equipment Corporation not be used in advertising or}}
+\DoxyCodeLine{42 \textcolor{comment}{ * publicity pertaining to distribution of the document or software without}}
+\DoxyCodeLine{43 \textcolor{comment}{ * specific, written prior permission.}}
+\DoxyCodeLine{44 \textcolor{comment}{ *}}
+\DoxyCodeLine{45 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{} AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL}}
+\DoxyCodeLine{46 \textcolor{comment}{ * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES}}
+\DoxyCodeLine{47 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT}}
+\DoxyCodeLine{48 \textcolor{comment}{ * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL}}
+\DoxyCodeLine{49 \textcolor{comment}{ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR}}
+\DoxyCodeLine{50 \textcolor{comment}{ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS}}
+\DoxyCodeLine{51 \textcolor{comment}{ * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS}}
+\DoxyCodeLine{52 \textcolor{comment}{ * SOFTWARE.}}
+\DoxyCodeLine{53 \textcolor{comment}{ * -\/}}
+\DoxyCodeLine{54 \textcolor{comment}{ * -\/-\/Copyright-\/-\/}}
+\DoxyCodeLine{55 \textcolor{comment}{ */}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef \_NETDB\_H\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_NETDB\_H\_}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#if defined(\_POSIX\_THREAD\_SAFE\_FUNCTIONS) || defined(\_REENTRANT)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <winsock2.h>}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{paths_8h}{net/paths.h}}>}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_PATH\_HEQUIV    \_\_PATH\_ETC\_INET"{}/hosts.equiv"{}}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define \_PATH\_HOSTS \_\_PATH\_ETC\_INET"{}/hosts"{}}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define \_PATH\_NETWORKS  \_\_PATH\_ETC\_INET"{}/networks"{}}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define \_PATH\_PROTOCOLS \_\_PATH\_ETC\_INET"{}/protocols"{}}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define \_PATH\_SERVICES  \_\_PATH\_ETC\_INET"{}/services"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define \_PATH\_RESCONF   \_\_PATH\_ETC\_INET"{}/resolv.conf"{}}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define \_PATH\_RPC   \_\_PATH\_ETC\_INET"{}/rpc"{}}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{struct }\mbox{\hyperlink{structrpcent}{rpcent}} \{}
+\DoxyCodeLine{77     \textcolor{keywordtype}{char}    *\mbox{\hyperlink{structrpcent_ac1bff07bec5e29cdbbc1d5968d5bbe5e}{r\_name}};  \textcolor{comment}{/* name of server for this rpc program */}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{char}    **\mbox{\hyperlink{structrpcent_a2774e5c4da9f64049d1dc5da4259c850}{r\_aliases}};   \textcolor{comment}{/* alias list */}}
+\DoxyCodeLine{79     \textcolor{keywordtype}{int} \mbox{\hyperlink{structrpcent_a038e58994ddfedb0f4902beb7d005b75}{r\_number}};   \textcolor{comment}{/* rpc program number */}}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifndef WIN32}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#if defined(\_POSIX\_THREAD\_SAFE\_FUNCTIONS) || defined(\_REENTRANT)}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define \_\_NETDB\_MAXALIASES  35}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define \_\_NETDB\_MAXADDRS    35}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/*}}
+\DoxyCodeLine{89 \textcolor{comment}{ * Error return codes from gethostbyname() and gethostbyaddr()}}
+\DoxyCodeLine{90 \textcolor{comment}{ * (left in extern int h\_errno).}}
+\DoxyCodeLine{91 \textcolor{comment}{ */}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define h\_errno     (*\_\_h\_errno\_location ())}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{94 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{netdb_8h_a2a1ce3f2040007303d36c0b682b5ac10}{h\_errno}};}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define NETDB\_INTERNAL -\/1 }\textcolor{comment}{/* see errno */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define NETDB\_SUCCESS   0 }\textcolor{comment}{/* no problem */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{//\#include <features.h>}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_accc64bf7bad3dd2a6b683c10533aa076}{endhostent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{105 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a3ac0597abceec2060997db1355d462f8}{endprotoent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{106 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a14260003fb562efb32a2e2cdcdef416d}{endrpcent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{108 \textcolor{keyword}{struct }hostent  *\mbox{\hyperlink{netdb_8h_a4b9065f385acd38096aa190110429420}{gethostent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{109 \textcolor{keyword}{struct }netent   *\mbox{\hyperlink{netdb_8h_a3792f0c71a6b163a15e6966f7b2e2faf}{getnetbyaddr}} (\textcolor{keywordtype}{long}, \textcolor{keywordtype}{int}); \textcolor{comment}{/* u\_long? */}}
+\DoxyCodeLine{110 \textcolor{keyword}{struct }netent   *\mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{111 \textcolor{keyword}{struct }netent   *\mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{112 \textcolor{keyword}{struct }protoent *\mbox{\hyperlink{netdb_8h_a816ddf34b4aa42f0b9c70c81ce832fb2}{getprotoent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{113 \textcolor{keyword}{struct }servent  *\mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{114 \textcolor{keyword}{struct }\mbox{\hyperlink{structrpcent}{rpcent}} *\mbox{\hyperlink{netdb_8h_a60071d199df8b3f37b035d07932186e6}{getrpcent}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{115 \textcolor{keyword}{struct }\mbox{\hyperlink{structrpcent}{rpcent}} *\mbox{\hyperlink{netdb_8h_ae90d424f8a6f49a15aa585bc6cc507cd}{getrpcbyname}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{116 \textcolor{keyword}{struct }\mbox{\hyperlink{structrpcent}{rpcent}} *\mbox{\hyperlink{netdb_8h_a1c2a4eff048ecd69da8e61538f04c223}{getrpcbynumber}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{117 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a322d2618d1e0cd0f07fbacc21a97fb8b}{herror}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a930ce54a6ab42d93c3dec6ce4590a0f9}{sethostent}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{119 \textcolor{comment}{/* void     sethostfile (const char *); */}}
+\DoxyCodeLine{120 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a5f503c81a12abf4453d7a3daa0ab43ea}{setprotoent}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{122 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{123 \textcolor{keywordtype}{void}        \mbox{\hyperlink{netdb_8h_a20d9aea9b2893517616c13e0ea4804a8}{setrpcent}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#if defined(\_POSIX\_THREAD\_SAFE\_FUNCTIONS) || defined(\_REENTRANT)}}
+\DoxyCodeLine{126 \textcolor{keyword}{struct }hostent  *gethostbyaddr\_r (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_\_addr,}
+\DoxyCodeLine{127             \textcolor{keywordtype}{int} \_\_length, \textcolor{keywordtype}{int} \_\_type,}
+\DoxyCodeLine{128             \textcolor{keyword}{struct} hostent *\_\_result,}
+\DoxyCodeLine{129             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen, \textcolor{keywordtype}{int} *\_\_h\_errnop);}
+\DoxyCodeLine{130 \textcolor{keyword}{struct }hostent  *gethostbyname\_r (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_name,}
+\DoxyCodeLine{131             \textcolor{keyword}{struct} hostent *\_\_result, \textcolor{keywordtype}{char} *\_\_buffer,}
+\DoxyCodeLine{132             \textcolor{keywordtype}{int} \_\_buflen, \textcolor{keywordtype}{int} *\_\_h\_errnop);}
+\DoxyCodeLine{133 \textcolor{keyword}{struct }hostent  *gethostent\_r (\textcolor{keyword}{struct} hostent *\_\_result,}
+\DoxyCodeLine{134             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen, \textcolor{keywordtype}{int} *\_\_h\_errnop);}
+\DoxyCodeLine{135 \textcolor{keyword}{struct }netent   *getnetbyaddr\_r (\textcolor{keywordtype}{long} \_\_net, \textcolor{keywordtype}{int} \_\_type,}
+\DoxyCodeLine{136             \textcolor{keyword}{struct} netent *\_\_result, \textcolor{keywordtype}{char} *\_\_buffer,}
+\DoxyCodeLine{137             \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{138 \textcolor{keyword}{struct }netent   *getnetbyname\_r (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_name,}
+\DoxyCodeLine{139             \textcolor{keyword}{struct} netent *\_\_result, \textcolor{keywordtype}{char} *\_\_buffer,}
+\DoxyCodeLine{140             \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{141 \textcolor{keyword}{struct }netent   *getnetent\_r (\textcolor{keyword}{struct} netent *\_\_result,}
+\DoxyCodeLine{142             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{143 \textcolor{keyword}{struct }protoent *getprotobyname\_r (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_name,}
+\DoxyCodeLine{144             \textcolor{keyword}{struct} protoent *\_\_result, \textcolor{keywordtype}{char} *\_\_buffer,}
+\DoxyCodeLine{145             \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{146 \textcolor{keyword}{struct }protoent *getprotobynumber\_r (\textcolor{keywordtype}{int} \_\_proto,}
+\DoxyCodeLine{147             \textcolor{keyword}{struct} protoent *\_\_result, \textcolor{keywordtype}{char} *\_\_buffer,}
+\DoxyCodeLine{148             \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{149 \textcolor{keyword}{struct }protoent *getprotoent\_r (\textcolor{keyword}{struct} protoent *\_\_result,}
+\DoxyCodeLine{150             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{151 \textcolor{keyword}{struct }servent  *getservbyname\_r (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_name,}
+\DoxyCodeLine{152             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_\_proto, \textcolor{keyword}{struct} servent *\_\_result,}
+\DoxyCodeLine{153             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{154 \textcolor{keyword}{struct }servent  *getservbyport\_r (\textcolor{keywordtype}{int} \_\_port,}
+\DoxyCodeLine{155             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_\_proto, \textcolor{keyword}{struct} servent *\_\_result,}
+\DoxyCodeLine{156             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{157 \textcolor{keyword}{struct }servent  *getservent\_r (\textcolor{keyword}{struct} servent *\_\_result,}
+\DoxyCodeLine{158             \textcolor{keywordtype}{char} *\_\_buffer, \textcolor{keywordtype}{int} \_\_buflen);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keywordtype}{int} *\_\_h\_errno\_location (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !\_NETDB\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

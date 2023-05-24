@@ -1,0 +1,483 @@
+\hypertarget{sf-pcap-ng_8c}{}\doxysection{libpcap-\/1.1.1/sf-\/pcap-\/ng.c 文件参考}
+\label{sf-pcap-ng_8c}\index{libpcap-\/1.1.1/sf-\/pcap-\/ng.c@{libpcap-\/1.1.1/sf-\/pcap-\/ng.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sf-\/pcap-\/ng.\+h\char`\"{}}\newline
+sf-\/pcap-\/ng.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structblock__header}{block\+\_\+header}}
+\item 
+struct \mbox{\hyperlink{structblock__trailer}{block\+\_\+trailer}}
+\item 
+struct \mbox{\hyperlink{structoption__header}{option\+\_\+header}}
+\item 
+struct \mbox{\hyperlink{structsection__header__block}{section\+\_\+header\+\_\+block}}
+\item 
+struct \mbox{\hyperlink{structinterface__description__block}{interface\+\_\+description\+\_\+block}}
+\item 
+struct \mbox{\hyperlink{structenhanced__packet__block}{enhanced\+\_\+packet\+\_\+block}}
+\item 
+struct \mbox{\hyperlink{structsimple__packet__block}{simple\+\_\+packet\+\_\+block}}
+\item 
+struct \mbox{\hyperlink{structpacket__block}{packet\+\_\+block}}
+\item 
+struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_aa97734239bda6df8b9f4dd1c4a2d1538}{OPT\+\_\+\+ENDOFOPT}}~0 /$\ast$ end of options $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_ada9e13f9d5763b8693b03044b1dd4144}{OPT\+\_\+\+COMMENT}}~1 /$\ast$ comment string $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_ab062f9d901e144f27c90a70808a6fcdb}{BT\+\_\+\+SHB}}~0x0\+A0\+D0\+D0A
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_ac08e1e4728563a03ff6c937bfa8fd845}{BYTE\+\_\+\+ORDER\+\_\+\+MAGIC}}~0x1\+A2\+B3\+C4D
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a664974e15877bcb7edd434e91b2d6576}{PCAP\+\_\+\+NG\+\_\+\+VERSION\+\_\+\+MAJOR}}~1
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a68d5aca5c486e6f714745f13f7662cac}{BT\+\_\+\+IDB}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a328f7838f9090f29e50b3eb219416780}{IF\+\_\+\+NAME}}~2 /$\ast$ interface name string $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_ae816dec591c1f6c1d88520e7f2a325b3}{IF\+\_\+\+DESCRIPTION}}~3 /$\ast$ interface description string $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_aaaa33d0a1f8a7b1fac8cc6825a62abd7}{IF\+\_\+\+IPV4\+ADDR}}~4 /$\ast$ interface\textquotesingle{}s IPv4 address and \mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a8d08312224174d3fef789af8467b54d2}{IF\+\_\+\+IPV6\+ADDR}}~5 /$\ast$ interface\textquotesingle{}s IPv6 address and prefix length $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a664b8eb8a7ce394023e8f55476beb60a}{IF\+\_\+\+MACADDR}}~6 /$\ast$ interface\textquotesingle{}s MAC address $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a955d237278572bba1701e87e724bc52d}{IF\+\_\+\+EUIADDR}}~7 /$\ast$ interface\textquotesingle{}s EUI address $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a68ffa7c535c13ef5379c39ceddcce472}{IF\+\_\+\+SPEED}}~8 /$\ast$ interface\textquotesingle{}s speed, in bits/s $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a349ab84b7e2bcb71880072f8d490dd70}{IF\+\_\+\+TSRESOL}}~9 /$\ast$ interface\textquotesingle{}s \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} stamp resolution $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a696153c4b20cd54fc31b38c9b0410452}{IF\+\_\+\+TZONE}}~10 /$\ast$ interface\textquotesingle{}s \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} zone $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a633e27f423a2a7d03f32fc0d5df10720}{IF\+\_\+\+FILTER}}~11 /$\ast$ filter used when capturing on interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a353726194d2743261c5d14586d4b29b8}{IF\+\_\+\+OS}}~12 /$\ast$ string OS on which capture on this interface was \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a7ea280ffb04ae5b4e926ea34b78b463d}{IF\+\_\+\+FCSLEN}}~13 /$\ast$ FCS length for this interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a2c9ccd056c300d15928790e04cf7a6f8}{IF\+\_\+\+TSOFFSET}}~14 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} stamp offset for this interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_aa600a02635a52015c756e172e29d8e2b}{BT\+\_\+\+EPB}}~0x00000006
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_adb2fb6d296dd0a714a5c630ec54bd23f}{BT\+\_\+\+SPB}}~0x00000003
+\item 
+\#define \mbox{\hyperlink{sf-pcap-ng_8c_a0bd50e7368a09a7c2663f3bb86a5f625}{BT\+\_\+\+PB}}~0x00000002
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$\mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}}, u\+\_\+char $\ast$$\ast$data)
+\item 
+static int \mbox{\hyperlink{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}{read\+\_\+bytes}} (FILE $\ast$fp, void $\ast$buf, size\+\_\+t bytes\+\_\+to\+\_\+read, int fail\+\_\+on\+\_\+eof, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}{read\+\_\+block}} (FILE $\ast$fp, pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$cursor, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static void $\ast$ \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data}} (struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$cursor, size\+\_\+t chunk\+\_\+size, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static struct \mbox{\hyperlink{structoption__header}{option\+\_\+header}} $\ast$ \mbox{\hyperlink{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}{get\+\_\+opthdr\+\_\+from\+\_\+block\+\_\+data}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$cursor, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static void $\ast$ \mbox{\hyperlink{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}{get\+\_\+optvalue\+\_\+from\+\_\+block\+\_\+data}} (struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$cursor, struct \mbox{\hyperlink{structoption__header}{option\+\_\+header}} $\ast$opthdr, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$cursor, u\+\_\+int $\ast$tsresol, u\+\_\+int64\+\_\+t $\ast$tsoffset, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+int \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header}} (pcap\+\_\+t $\ast$p, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} magic, FILE $\ast$fp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{sf-pcap-ng_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{sf-pcap-ng_8c_aa600a02635a52015c756e172e29d8e2b}\label{sf-pcap-ng_8c_aa600a02635a52015c756e172e29d8e2b}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BT\_EPB@{BT\_EPB}}
+\index{BT\_EPB@{BT\_EPB}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BT\_EPB}{BT\_EPB}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+EPB~0x00000006}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a68d5aca5c486e6f714745f13f7662cac}\label{sf-pcap-ng_8c_a68d5aca5c486e6f714745f13f7662cac}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BT\_IDB@{BT\_IDB}}
+\index{BT\_IDB@{BT\_IDB}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BT\_IDB}{BT\_IDB}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+IDB~0x00000001}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a0bd50e7368a09a7c2663f3bb86a5f625}\label{sf-pcap-ng_8c_a0bd50e7368a09a7c2663f3bb86a5f625}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BT\_PB@{BT\_PB}}
+\index{BT\_PB@{BT\_PB}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BT\_PB}{BT\_PB}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+PB~0x00000002}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_ab062f9d901e144f27c90a70808a6fcdb}\label{sf-pcap-ng_8c_ab062f9d901e144f27c90a70808a6fcdb}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BT\_SHB@{BT\_SHB}}
+\index{BT\_SHB@{BT\_SHB}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BT\_SHB}{BT\_SHB}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+SHB~0x0\+A0\+D0\+D0A}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_adb2fb6d296dd0a714a5c630ec54bd23f}\label{sf-pcap-ng_8c_adb2fb6d296dd0a714a5c630ec54bd23f}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BT\_SPB@{BT\_SPB}}
+\index{BT\_SPB@{BT\_SPB}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BT\_SPB}{BT\_SPB}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+SPB~0x00000003}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_ac08e1e4728563a03ff6c937bfa8fd845}\label{sf-pcap-ng_8c_ac08e1e4728563a03ff6c937bfa8fd845}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!BYTE\_ORDER\_MAGIC@{BYTE\_ORDER\_MAGIC}}
+\index{BYTE\_ORDER\_MAGIC@{BYTE\_ORDER\_MAGIC}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{BYTE\_ORDER\_MAGIC}{BYTE\_ORDER\_MAGIC}}
+{\footnotesize\ttfamily \#define BYTE\+\_\+\+ORDER\+\_\+\+MAGIC~0x1\+A2\+B3\+C4D}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_ae816dec591c1f6c1d88520e7f2a325b3}\label{sf-pcap-ng_8c_ae816dec591c1f6c1d88520e7f2a325b3}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_DESCRIPTION@{IF\_DESCRIPTION}}
+\index{IF\_DESCRIPTION@{IF\_DESCRIPTION}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_DESCRIPTION}{IF\_DESCRIPTION}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+DESCRIPTION~3 /$\ast$ interface description string $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a955d237278572bba1701e87e724bc52d}\label{sf-pcap-ng_8c_a955d237278572bba1701e87e724bc52d}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_EUIADDR@{IF\_EUIADDR}}
+\index{IF\_EUIADDR@{IF\_EUIADDR}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_EUIADDR}{IF\_EUIADDR}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+EUIADDR~7 /$\ast$ interface\textquotesingle{}s EUI address $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a7ea280ffb04ae5b4e926ea34b78b463d}\label{sf-pcap-ng_8c_a7ea280ffb04ae5b4e926ea34b78b463d}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_FCSLEN@{IF\_FCSLEN}}
+\index{IF\_FCSLEN@{IF\_FCSLEN}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_FCSLEN}{IF\_FCSLEN}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+FCSLEN~13 /$\ast$ FCS length for this interface $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a633e27f423a2a7d03f32fc0d5df10720}\label{sf-pcap-ng_8c_a633e27f423a2a7d03f32fc0d5df10720}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_FILTER@{IF\_FILTER}}
+\index{IF\_FILTER@{IF\_FILTER}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_FILTER}{IF\_FILTER}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+FILTER~11 /$\ast$ filter used when capturing on interface $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_aaaa33d0a1f8a7b1fac8cc6825a62abd7}\label{sf-pcap-ng_8c_aaaa33d0a1f8a7b1fac8cc6825a62abd7}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_IPV4ADDR@{IF\_IPV4ADDR}}
+\index{IF\_IPV4ADDR@{IF\_IPV4ADDR}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_IPV4ADDR}{IF\_IPV4ADDR}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+IPV4\+ADDR~4 /$\ast$ interface\textquotesingle{}s IPv4 address and \mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}} $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a8d08312224174d3fef789af8467b54d2}\label{sf-pcap-ng_8c_a8d08312224174d3fef789af8467b54d2}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_IPV6ADDR@{IF\_IPV6ADDR}}
+\index{IF\_IPV6ADDR@{IF\_IPV6ADDR}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_IPV6ADDR}{IF\_IPV6ADDR}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+IPV6\+ADDR~5 /$\ast$ interface\textquotesingle{}s IPv6 address and prefix length $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a664b8eb8a7ce394023e8f55476beb60a}\label{sf-pcap-ng_8c_a664b8eb8a7ce394023e8f55476beb60a}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_MACADDR@{IF\_MACADDR}}
+\index{IF\_MACADDR@{IF\_MACADDR}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_MACADDR}{IF\_MACADDR}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+MACADDR~6 /$\ast$ interface\textquotesingle{}s MAC address $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a328f7838f9090f29e50b3eb219416780}\label{sf-pcap-ng_8c_a328f7838f9090f29e50b3eb219416780}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_NAME@{IF\_NAME}}
+\index{IF\_NAME@{IF\_NAME}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_NAME}{IF\_NAME}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+NAME~2 /$\ast$ interface name string $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a353726194d2743261c5d14586d4b29b8}\label{sf-pcap-ng_8c_a353726194d2743261c5d14586d4b29b8}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_OS@{IF\_OS}}
+\index{IF\_OS@{IF\_OS}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_OS}{IF\_OS}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+OS~12 /$\ast$ string OS on which capture on this interface was \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}} $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a68ffa7c535c13ef5379c39ceddcce472}\label{sf-pcap-ng_8c_a68ffa7c535c13ef5379c39ceddcce472}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_SPEED@{IF\_SPEED}}
+\index{IF\_SPEED@{IF\_SPEED}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_SPEED}{IF\_SPEED}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+SPEED~8 /$\ast$ interface\textquotesingle{}s speed, in bits/s $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a2c9ccd056c300d15928790e04cf7a6f8}\label{sf-pcap-ng_8c_a2c9ccd056c300d15928790e04cf7a6f8}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_TSOFFSET@{IF\_TSOFFSET}}
+\index{IF\_TSOFFSET@{IF\_TSOFFSET}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_TSOFFSET}{IF\_TSOFFSET}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+TSOFFSET~14 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} stamp offset for this interface $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a349ab84b7e2bcb71880072f8d490dd70}\label{sf-pcap-ng_8c_a349ab84b7e2bcb71880072f8d490dd70}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_TSRESOL@{IF\_TSRESOL}}
+\index{IF\_TSRESOL@{IF\_TSRESOL}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_TSRESOL}{IF\_TSRESOL}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+TSRESOL~9 /$\ast$ interface\textquotesingle{}s \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} stamp resolution $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a696153c4b20cd54fc31b38c9b0410452}\label{sf-pcap-ng_8c_a696153c4b20cd54fc31b38c9b0410452}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!IF\_TZONE@{IF\_TZONE}}
+\index{IF\_TZONE@{IF\_TZONE}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{IF\_TZONE}{IF\_TZONE}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+TZONE~10 /$\ast$ interface\textquotesingle{}s \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} zone $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_ada9e13f9d5763b8693b03044b1dd4144}\label{sf-pcap-ng_8c_ada9e13f9d5763b8693b03044b1dd4144}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!OPT\_COMMENT@{OPT\_COMMENT}}
+\index{OPT\_COMMENT@{OPT\_COMMENT}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{OPT\_COMMENT}{OPT\_COMMENT}}
+{\footnotesize\ttfamily \#define OPT\+\_\+\+COMMENT~1 /$\ast$ comment string $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_aa97734239bda6df8b9f4dd1c4a2d1538}\label{sf-pcap-ng_8c_aa97734239bda6df8b9f4dd1c4a2d1538}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!OPT\_ENDOFOPT@{OPT\_ENDOFOPT}}
+\index{OPT\_ENDOFOPT@{OPT\_ENDOFOPT}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{OPT\_ENDOFOPT}{OPT\_ENDOFOPT}}
+{\footnotesize\ttfamily \#define OPT\+\_\+\+ENDOFOPT~0 /$\ast$ end of options $\ast$/}
+
+\mbox{\Hypertarget{sf-pcap-ng_8c_a664974e15877bcb7edd434e91b2d6576}\label{sf-pcap-ng_8c_a664974e15877bcb7edd434e91b2d6576}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!PCAP\_NG\_VERSION\_MAJOR@{PCAP\_NG\_VERSION\_MAJOR}}
+\index{PCAP\_NG\_VERSION\_MAJOR@{PCAP\_NG\_VERSION\_MAJOR}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{PCAP\_NG\_VERSION\_MAJOR}{PCAP\_NG\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define PCAP\+\_\+\+NG\+\_\+\+VERSION\+\_\+\+MAJOR~1}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}\label{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!get\_from\_block\_data@{get\_from\_block\_data}}
+\index{get\_from\_block\_data@{get\_from\_block\_data}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{get\_from\_block\_data()}{get\_from\_block\_data()}}
+{\footnotesize\ttfamily static void $\ast$ get\+\_\+from\+\_\+block\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$}]{cursor,  }\item[{size\+\_\+t}]{chunk\+\_\+size,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structblock__cursor_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+cursor\+::block\+\_\+type}}, \mbox{\hyperlink{structblock__cursor_a5e10c1bf4fdc40cfb55e8fb7afdcac53}{block\+\_\+cursor\+::data}}, \mbox{\hyperlink{structblock__cursor_a0882eee630649866788177d930e67371}{block\+\_\+cursor\+::data\+\_\+remaining}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}{get\+\_\+opthdr\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}{get\+\_\+optvalue\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}\label{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!get\_opthdr\_from\_block\_data@{get\_opthdr\_from\_block\_data}}
+\index{get\_opthdr\_from\_block\_data@{get\_opthdr\_from\_block\_data}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{get\_opthdr\_from\_block\_data()}{get\_opthdr\_from\_block\_data()}}
+{\footnotesize\ttfamily static struct \mbox{\hyperlink{structoption__header}{option\+\_\+header}} $\ast$ get\+\_\+opthdr\+\_\+from\+\_\+block\+\_\+data (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$}]{cursor,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{structoption__header_a665abfc9370ba1aa2dc67ce3db7e9cef}{option\+\_\+header\+::option\+\_\+code}}, \mbox{\hyperlink{structoption__header_af6a763c2de30a03a9aeccdf464e62b91}{option\+\_\+header\+::option\+\_\+length}} , 以及 \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}\label{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!get\_optvalue\_from\_block\_data@{get\_optvalue\_from\_block\_data}}
+\index{get\_optvalue\_from\_block\_data@{get\_optvalue\_from\_block\_data}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{get\_optvalue\_from\_block\_data()}{get\_optvalue\_from\_block\_data()}}
+{\footnotesize\ttfamily static void $\ast$ get\+\_\+optvalue\+\_\+from\+\_\+block\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$}]{cursor,  }\item[{struct \mbox{\hyperlink{structoption__header}{option\+\_\+header}} $\ast$}]{opthdr,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data()}} , 以及 \mbox{\hyperlink{structoption__header_af6a763c2de30a03a9aeccdf464e62b91}{option\+\_\+header\+::option\+\_\+length}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}\label{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!pcap\_ng\_check\_header@{pcap\_ng\_check\_header}}
+\index{pcap\_ng\_check\_header@{pcap\_ng\_check\_header}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_ng\_check\_header()}{pcap\_ng\_check\_header()}}
+{\footnotesize\ttfamily int pcap\+\_\+ng\+\_\+check\+\_\+header (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{magic,  }\item[{FILE $\ast$}]{fp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structblock__header_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+header\+::block\+\_\+type}}, \mbox{\hyperlink{structblock__cursor_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+cursor\+::block\+\_\+type}}, \mbox{\hyperlink{sf-pcap-ng_8c_aa600a02635a52015c756e172e29d8e2b}{BT\+\_\+\+EPB}}, \mbox{\hyperlink{sf-pcap-ng_8c_a68d5aca5c486e6f714745f13f7662cac}{BT\+\_\+\+IDB}}, \mbox{\hyperlink{sf-pcap-ng_8c_a0bd50e7368a09a7c2663f3bb86a5f625}{BT\+\_\+\+PB}}, \mbox{\hyperlink{sf-pcap-ng_8c_ab062f9d901e144f27c90a70808a6fcdb}{BT\+\_\+\+SHB}}, \mbox{\hyperlink{sf-pcap-ng_8c_adb2fb6d296dd0a714a5c630ec54bd23f}{BT\+\_\+\+SPB}}, \mbox{\hyperlink{structsection__header__block_a6655d22b5d078eb17133d7f836ee7f14}{section\+\_\+header\+\_\+block\+::byte\+\_\+order\+\_\+magic}}, \mbox{\hyperlink{sf-pcap-ng_8c_ac08e1e4728563a03ff6c937bfa8fd845}{BYTE\+\_\+\+ORDER\+\_\+\+MAGIC}}, \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{structinterface__description__block_a07ec934f7d3403862032b003f740523a}{interface\+\_\+description\+\_\+block\+::linktype}}, \mbox{\hyperlink{structsection__header__block_ab47a080167895f1534dcb26194df8edc}{section\+\_\+header\+\_\+block\+::major\+\_\+version}}, \mbox{\hyperlink{structsection__header__block_af480e9eb460a3ee645280f8f7b069f8e}{section\+\_\+header\+\_\+block\+::minor\+\_\+version}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a664974e15877bcb7edd434e91b2d6576}{PCAP\+\_\+\+NG\+\_\+\+VERSION\+\_\+\+MAJOR}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options()}}, \mbox{\hyperlink{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}{read\+\_\+block()}}, \mbox{\hyperlink{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}{read\+\_\+bytes()}}, \mbox{\hyperlink{structinterface__description__block_aa73496b51e5edb630420e4044792c897}{interface\+\_\+description\+\_\+block\+::snaplen}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{gencode_8c_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}}, \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}} , 以及 \mbox{\hyperlink{structblock__header_a69238681b7294b3ac0be47a7fa113c9e}{block\+\_\+header\+::total\+\_\+length}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}\label{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!pcap\_ng\_next\_packet@{pcap\_ng\_next\_packet}}
+\index{pcap\_ng\_next\_packet@{pcap\_ng\_next\_packet}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_ng\_next\_packet()}{pcap\_ng\_next\_packet()}}
+{\footnotesize\ttfamily static int pcap\+\_\+ng\+\_\+next\+\_\+packet (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$}]{hdr,  }\item[{u\+\_\+char $\ast$$\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structblock__cursor_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+cursor\+::block\+\_\+type}}, \mbox{\hyperlink{sf-pcap-ng_8c_aa600a02635a52015c756e172e29d8e2b}{BT\+\_\+\+EPB}}, \mbox{\hyperlink{sf-pcap-ng_8c_a68d5aca5c486e6f714745f13f7662cac}{BT\+\_\+\+IDB}}, \mbox{\hyperlink{sf-pcap-ng_8c_a0bd50e7368a09a7c2663f3bb86a5f625}{BT\+\_\+\+PB}}, \mbox{\hyperlink{sf-pcap-ng_8c_ab062f9d901e144f27c90a70808a6fcdb}{BT\+\_\+\+SHB}}, \mbox{\hyperlink{sf-pcap-ng_8c_adb2fb6d296dd0a714a5c630ec54bd23f}{BT\+\_\+\+SPB}}, \mbox{\hyperlink{structsection__header__block_a6655d22b5d078eb17133d7f836ee7f14}{section\+\_\+header\+\_\+block\+::byte\+\_\+order\+\_\+magic}}, \mbox{\hyperlink{sf-pcap-ng_8c_ac08e1e4728563a03ff6c937bfa8fd845}{BYTE\+\_\+\+ORDER\+\_\+\+MAGIC}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{structenhanced__packet__block_aac5771ed2efd92508bb4fe650f2ce7d7}{enhanced\+\_\+packet\+\_\+block\+::caplen}}, \mbox{\hyperlink{structpacket__block_aac5771ed2efd92508bb4fe650f2ce7d7}{packet\+\_\+block\+::caplen}}, \mbox{\hyperlink{bpf_8h_a9e2d35fec485b47ff71e2d3de8572e98}{DLT\+\_\+\+USB\+\_\+\+LINUX}}, \mbox{\hyperlink{bpf_8h_ac6ebc3c746098b3169d54cf85996766a}{DLT\+\_\+\+USB\+\_\+\+LINUX\+\_\+\+MMAPPED}}, \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{structenhanced__packet__block_a74a10e3b83878dbe48a03463ec554f52}{enhanced\+\_\+packet\+\_\+block\+::interface\+\_\+id}}, \mbox{\hyperlink{structpacket__block_a34c374b007c03eb87302d9b456ac518d}{packet\+\_\+block\+::interface\+\_\+id}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{structenhanced__packet__block_a728f264db4f5cc304742565a2bcdbeea}{enhanced\+\_\+packet\+\_\+block\+::len}}, \mbox{\hyperlink{structsimple__packet__block_a728f264db4f5cc304742565a2bcdbeea}{simple\+\_\+packet\+\_\+block\+::len}}, \mbox{\hyperlink{structpacket__block_a728f264db4f5cc304742565a2bcdbeea}{packet\+\_\+block\+::len}}, \mbox{\hyperlink{structinterface__description__block_a07ec934f7d3403862032b003f740523a}{interface\+\_\+description\+\_\+block\+::linktype}}, \mbox{\hyperlink{structsection__header__block_ab47a080167895f1534dcb26194df8edc}{section\+\_\+header\+\_\+block\+::major\+\_\+version}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{sf-pcap-ng_8c_a664974e15877bcb7edd434e91b2d6576}{PCAP\+\_\+\+NG\+\_\+\+VERSION\+\_\+\+MAJOR}}, \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options()}}, \mbox{\hyperlink{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}{read\+\_\+block()}}, \mbox{\hyperlink{structinterface__description__block_aa73496b51e5edb630420e4044792c897}{interface\+\_\+description\+\_\+block\+::snaplen}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{pcap-common_8c_afa059dda75b192db1391a32248ccdb65}{swap\+\_\+linux\+\_\+usb\+\_\+header()}}, \mbox{\hyperlink{gencode_8c_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}}, \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}}, \mbox{\hyperlink{structenhanced__packet__block_ac983a72d49e7d4f1d265f305895b7dbd}{enhanced\+\_\+packet\+\_\+block\+::timestamp\+\_\+high}}, \mbox{\hyperlink{structpacket__block_ac983a72d49e7d4f1d265f305895b7dbd}{packet\+\_\+block\+::timestamp\+\_\+high}}, \mbox{\hyperlink{structenhanced__packet__block_a53c5dac6c5d75d6a934b23f0c47dbe3f}{enhanced\+\_\+packet\+\_\+block\+::timestamp\+\_\+low}}, \mbox{\hyperlink{structpacket__block_a53c5dac6c5d75d6a934b23f0c47dbe3f}{packet\+\_\+block\+::timestamp\+\_\+low}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}\label{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!process\_idb\_options@{process\_idb\_options}}
+\index{process\_idb\_options@{process\_idb\_options}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{process\_idb\_options()}{process\_idb\_options()}}
+{\footnotesize\ttfamily static int process\+\_\+idb\+\_\+options (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$}]{cursor,  }\item[{u\+\_\+int $\ast$}]{tsresol,  }\item[{u\+\_\+int64\+\_\+t $\ast$}]{tsoffset,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structblock__cursor_a0882eee630649866788177d930e67371}{block\+\_\+cursor\+::data\+\_\+remaining}}, \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}{get\+\_\+opthdr\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}{get\+\_\+optvalue\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a2c9ccd056c300d15928790e04cf7a6f8}{IF\+\_\+\+TSOFFSET}}, \mbox{\hyperlink{sf-pcap-ng_8c_a349ab84b7e2bcb71880072f8d490dd70}{IF\+\_\+\+TSRESOL}}, \mbox{\hyperlink{sf-pcap-ng_8c_aa97734239bda6df8b9f4dd1c4a2d1538}{OPT\+\_\+\+ENDOFOPT}}, \mbox{\hyperlink{structoption__header_a665abfc9370ba1aa2dc67ce3db7e9cef}{option\+\_\+header\+::option\+\_\+code}}, \mbox{\hyperlink{structoption__header_af6a763c2de30a03a9aeccdf464e62b91}{option\+\_\+header\+::option\+\_\+length}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{pcap-int_8h_a4f25e9658eb0b686983866b37837a31e}{SWAPLL}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}\label{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!read\_block@{read\_block}}
+\index{read\_block@{read\_block}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{read\_block()}{read\_block()}}
+{\footnotesize\ttfamily static int read\+\_\+block (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp,  }\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structblock__cursor}{block\+\_\+cursor}} $\ast$}]{cursor,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structblock__header_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+header\+::block\+\_\+type}}, \mbox{\hyperlink{structblock__cursor_ab050b99102834e378299aeaaac2b29ca}{block\+\_\+cursor\+::block\+\_\+type}}, \mbox{\hyperlink{structblock__cursor_a5e10c1bf4fdc40cfb55e8fb7afdcac53}{block\+\_\+cursor\+::data}}, \mbox{\hyperlink{structblock__cursor_a0882eee630649866788177d930e67371}{block\+\_\+cursor\+::data\+\_\+remaining}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}{read\+\_\+bytes()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{gencode_8c_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}} , 以及 \mbox{\hyperlink{structblock__header_a69238681b7294b3ac0be47a7fa113c9e}{block\+\_\+header\+::total\+\_\+length}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}\label{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!read\_bytes@{read\_bytes}}
+\index{read\_bytes@{read\_bytes}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{read\_bytes()}{read\_bytes()}}
+{\footnotesize\ttfamily static int read\+\_\+bytes (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp,  }\item[{void $\ast$}]{buf,  }\item[{size\+\_\+t}]{bytes\+\_\+to\+\_\+read,  }\item[{int}]{fail\+\_\+on\+\_\+eof,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}{read\+\_\+block()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{sf-pcap-ng_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{sf-pcap-ng_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!sf-\/pcap-\/ng.c@{sf-\/pcap-\/ng.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header\$ (LBL)"{}}}
+
+\end{DoxyCode}

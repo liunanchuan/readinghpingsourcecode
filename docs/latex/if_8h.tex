@@ -1,0 +1,183 @@
+\hypertarget{if_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/net/if.h 文件参考}
+\label{if_8h}\index{libpcap-\/1.1.1/Win32/Include/net/if.h@{libpcap-\/1.1.1/Win32/Include/net/if.h}}
+{\ttfamily \#include $<$pcap-\/stdinc.\+h$>$}\newline
+if.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structif__data}{if\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structif__msghdr}{if\+\_\+msghdr}}
+\item 
+struct \mbox{\hyperlink{structifa__msghdr}{ifa\+\_\+msghdr}}
+\item 
+struct \mbox{\hyperlink{structifma__msghdr}{ifma\+\_\+msghdr}}
+\item 
+struct \mbox{\hyperlink{structifreq}{ifreq}}
+\item 
+struct \mbox{\hyperlink{structifaliasreq}{ifaliasreq}}
+\item 
+struct \mbox{\hyperlink{structifmediareq}{ifmediareq}}
+\item 
+struct \mbox{\hyperlink{structifconf}{ifconf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{if_8h_a9ff985a14ab6df655a21a995b5193343}{IFF\+\_\+\+CANTCHANGE}}
+\item 
+\#define \mbox{\hyperlink{if_8h_ad343e09640efe03ca06b68aa4e89ff21}{IFQ\+\_\+\+MAXLEN}}~50
+\item 
+\#define \mbox{\hyperlink{if_8h_a7f0043cde13e29fd8cffcc6f925f6839}{IFNET\+\_\+\+SLOWHZ}}~1  /$\ast$ granularity is 1 second $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}~16
+\item 
+\#define \mbox{\hyperlink{if_8h_a6ced5f364c0b2a60b54f6938fd9f1b48}{ifr\+\_\+addr}}~ifr\+\_\+ifru.\+ifru\+\_\+addr /$\ast$ address $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a51dc7d5a0e438fdb6b894b0425e894e7}{ifr\+\_\+dstaddr}}~ifr\+\_\+ifru.\+ifru\+\_\+dstaddr /$\ast$ other end of p-\/to-\/p link $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_ae6db006f03bae884d2ffdbdfba4534f8}{ifr\+\_\+broadaddr}}~ifr\+\_\+ifru.\+ifru\+\_\+broadaddr /$\ast$ broadcast address $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a413adcfeaaf2d492c62471a0502a5c4c}{ifr\+\_\+flags}}~ifr\+\_\+ifru.\+ifru\+\_\+flags /$\ast$ flags $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a2527bf4d5894afc37d444ff854552af5}{ifr\+\_\+metric}}~ifr\+\_\+ifru.\+ifru\+\_\+metric /$\ast$ metric $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_ac1a74eb8a69241b4c7b5b4705560e659}{ifr\+\_\+mtu}}~ifr\+\_\+ifru.\+ifru\+\_\+mtu /$\ast$ mtu $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_aa2d6f69abf430d67c83f20612a8786ce}{ifr\+\_\+phys}}~ifr\+\_\+ifru.\+ifru\+\_\+phys /$\ast$ physical wire $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a88d228f085ba548c3bbd489ca380011c}{ifr\+\_\+media}}~ifr\+\_\+ifru.\+ifru\+\_\+media /$\ast$ physical media $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_ac4536172a50f022cb2dff45101fb77f6}{ifr\+\_\+data}}~ifr\+\_\+ifru.\+ifru\+\_\+data /$\ast$ for use by interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a77063523b7426c3353086e384e2b2876}{\+\_\+\+SIZEOF\+\_\+\+ADDR\+\_\+\+IFREQ}}(ifr)
+\item 
+\#define \mbox{\hyperlink{if_8h_a843e43dcc69b3230f7890a49a5f72aac}{ifc\+\_\+buf}}~ifc\+\_\+ifcu.\+ifcu\+\_\+buf /$\ast$ buffer address $\ast$/
+\item 
+\#define \mbox{\hyperlink{if_8h_a62a1dc139d61e10e5f633c0ef7cc1184}{ifc\+\_\+req}}~ifc\+\_\+ifcu.\+ifcu\+\_\+req /$\ast$ array of structures returned $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{if_8h_a77063523b7426c3353086e384e2b2876}\label{if_8h_a77063523b7426c3353086e384e2b2876}} 
+\index{if.h@{if.h}!\_SIZEOF\_ADDR\_IFREQ@{\_SIZEOF\_ADDR\_IFREQ}}
+\index{\_SIZEOF\_ADDR\_IFREQ@{\_SIZEOF\_ADDR\_IFREQ}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{\_SIZEOF\_ADDR\_IFREQ}{\_SIZEOF\_ADDR\_IFREQ}}
+{\footnotesize\ttfamily \#define \+\_\+\+SIZEOF\+\_\+\+ADDR\+\_\+\+IFREQ(\begin{DoxyParamCaption}\item[{}]{ifr }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((ifr).\mbox{\hyperlink{if_8h_a6ced5f364c0b2a60b54f6938fd9f1b48}{ifr\_addr}}.sa\_len > \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} sockaddr) ? \(\backslash\)}
+\DoxyCodeLine{     (\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structifreq}{ifreq}}) -\/ sizeof(struct sockaddr) + \(\backslash\)}
+\DoxyCodeLine{      (ifr).\mbox{\hyperlink{if_8h_a6ced5f364c0b2a60b54f6938fd9f1b48}{ifr\_addr}}.sa\_len) : sizeof(struct ifreq))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{if_8h_a843e43dcc69b3230f7890a49a5f72aac}\label{if_8h_a843e43dcc69b3230f7890a49a5f72aac}} 
+\index{if.h@{if.h}!ifc\_buf@{ifc\_buf}}
+\index{ifc\_buf@{ifc\_buf}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifc\_buf}{ifc\_buf}}
+{\footnotesize\ttfamily \#define ifc\+\_\+buf~ifc\+\_\+ifcu.\+ifcu\+\_\+buf /$\ast$ buffer address $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a62a1dc139d61e10e5f633c0ef7cc1184}\label{if_8h_a62a1dc139d61e10e5f633c0ef7cc1184}} 
+\index{if.h@{if.h}!ifc\_req@{ifc\_req}}
+\index{ifc\_req@{ifc\_req}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifc\_req}{ifc\_req}}
+{\footnotesize\ttfamily \#define ifc\+\_\+req~ifc\+\_\+ifcu.\+ifcu\+\_\+req /$\ast$ array of structures returned $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a9ff985a14ab6df655a21a995b5193343}\label{if_8h_a9ff985a14ab6df655a21a995b5193343}} 
+\index{if.h@{if.h}!IFF\_CANTCHANGE@{IFF\_CANTCHANGE}}
+\index{IFF\_CANTCHANGE@{IFF\_CANTCHANGE}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{IFF\_CANTCHANGE}{IFF\_CANTCHANGE}}
+{\footnotesize\ttfamily \#define IFF\+\_\+\+CANTCHANGE}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    (IFF\_BROADCAST|IFF\_POINTOPOINT|IFF\_RUNNING|IFF\_OACTIVE|\(\backslash\)}
+\DoxyCodeLine{        IFF\_SIMPLEX|IFF\_MULTICAST|IFF\_ALLMULTI)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{if_8h_acd06da230a96d3b7e6f193c5b3142002}\label{if_8h_acd06da230a96d3b7e6f193c5b3142002}} 
+\index{if.h@{if.h}!IFNAMSIZ@{IFNAMSIZ}}
+\index{IFNAMSIZ@{IFNAMSIZ}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{IFNAMSIZ}{IFNAMSIZ}}
+{\footnotesize\ttfamily \#define IFNAMSIZ~16}
+
+\mbox{\Hypertarget{if_8h_a7f0043cde13e29fd8cffcc6f925f6839}\label{if_8h_a7f0043cde13e29fd8cffcc6f925f6839}} 
+\index{if.h@{if.h}!IFNET\_SLOWHZ@{IFNET\_SLOWHZ}}
+\index{IFNET\_SLOWHZ@{IFNET\_SLOWHZ}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{IFNET\_SLOWHZ}{IFNET\_SLOWHZ}}
+{\footnotesize\ttfamily \#define IFNET\+\_\+\+SLOWHZ~1  /$\ast$ granularity is 1 second $\ast$/}
+
+\mbox{\Hypertarget{if_8h_ad343e09640efe03ca06b68aa4e89ff21}\label{if_8h_ad343e09640efe03ca06b68aa4e89ff21}} 
+\index{if.h@{if.h}!IFQ\_MAXLEN@{IFQ\_MAXLEN}}
+\index{IFQ\_MAXLEN@{IFQ\_MAXLEN}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{IFQ\_MAXLEN}{IFQ\_MAXLEN}}
+{\footnotesize\ttfamily \#define IFQ\+\_\+\+MAXLEN~50}
+
+\mbox{\Hypertarget{if_8h_a6ced5f364c0b2a60b54f6938fd9f1b48}\label{if_8h_a6ced5f364c0b2a60b54f6938fd9f1b48}} 
+\index{if.h@{if.h}!ifr\_addr@{ifr\_addr}}
+\index{ifr\_addr@{ifr\_addr}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_addr}{ifr\_addr}}
+{\footnotesize\ttfamily \#define ifr\+\_\+addr~ifr\+\_\+ifru.\+ifru\+\_\+addr /$\ast$ address $\ast$/}
+
+\mbox{\Hypertarget{if_8h_ae6db006f03bae884d2ffdbdfba4534f8}\label{if_8h_ae6db006f03bae884d2ffdbdfba4534f8}} 
+\index{if.h@{if.h}!ifr\_broadaddr@{ifr\_broadaddr}}
+\index{ifr\_broadaddr@{ifr\_broadaddr}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_broadaddr}{ifr\_broadaddr}}
+{\footnotesize\ttfamily \#define ifr\+\_\+broadaddr~ifr\+\_\+ifru.\+ifru\+\_\+broadaddr /$\ast$ broadcast address $\ast$/}
+
+\mbox{\Hypertarget{if_8h_ac4536172a50f022cb2dff45101fb77f6}\label{if_8h_ac4536172a50f022cb2dff45101fb77f6}} 
+\index{if.h@{if.h}!ifr\_data@{ifr\_data}}
+\index{ifr\_data@{ifr\_data}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_data}{ifr\_data}}
+{\footnotesize\ttfamily \#define ifr\+\_\+data~ifr\+\_\+ifru.\+ifru\+\_\+data /$\ast$ for use by interface $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a51dc7d5a0e438fdb6b894b0425e894e7}\label{if_8h_a51dc7d5a0e438fdb6b894b0425e894e7}} 
+\index{if.h@{if.h}!ifr\_dstaddr@{ifr\_dstaddr}}
+\index{ifr\_dstaddr@{ifr\_dstaddr}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_dstaddr}{ifr\_dstaddr}}
+{\footnotesize\ttfamily \#define ifr\+\_\+dstaddr~ifr\+\_\+ifru.\+ifru\+\_\+dstaddr /$\ast$ other end of p-\/to-\/p link $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a413adcfeaaf2d492c62471a0502a5c4c}\label{if_8h_a413adcfeaaf2d492c62471a0502a5c4c}} 
+\index{if.h@{if.h}!ifr\_flags@{ifr\_flags}}
+\index{ifr\_flags@{ifr\_flags}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_flags}{ifr\_flags}}
+{\footnotesize\ttfamily \#define ifr\+\_\+flags~ifr\+\_\+ifru.\+ifru\+\_\+flags /$\ast$ flags $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a88d228f085ba548c3bbd489ca380011c}\label{if_8h_a88d228f085ba548c3bbd489ca380011c}} 
+\index{if.h@{if.h}!ifr\_media@{ifr\_media}}
+\index{ifr\_media@{ifr\_media}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_media}{ifr\_media}}
+{\footnotesize\ttfamily \#define ifr\+\_\+media~ifr\+\_\+ifru.\+ifru\+\_\+media /$\ast$ physical media $\ast$/}
+
+\mbox{\Hypertarget{if_8h_a2527bf4d5894afc37d444ff854552af5}\label{if_8h_a2527bf4d5894afc37d444ff854552af5}} 
+\index{if.h@{if.h}!ifr\_metric@{ifr\_metric}}
+\index{ifr\_metric@{ifr\_metric}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_metric}{ifr\_metric}}
+{\footnotesize\ttfamily \#define ifr\+\_\+metric~ifr\+\_\+ifru.\+ifru\+\_\+metric /$\ast$ metric $\ast$/}
+
+\mbox{\Hypertarget{if_8h_ac1a74eb8a69241b4c7b5b4705560e659}\label{if_8h_ac1a74eb8a69241b4c7b5b4705560e659}} 
+\index{if.h@{if.h}!ifr\_mtu@{ifr\_mtu}}
+\index{ifr\_mtu@{ifr\_mtu}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_mtu}{ifr\_mtu}}
+{\footnotesize\ttfamily \#define ifr\+\_\+mtu~ifr\+\_\+ifru.\+ifru\+\_\+mtu /$\ast$ mtu $\ast$/}
+
+\mbox{\Hypertarget{if_8h_aa2d6f69abf430d67c83f20612a8786ce}\label{if_8h_aa2d6f69abf430d67c83f20612a8786ce}} 
+\index{if.h@{if.h}!ifr\_phys@{ifr\_phys}}
+\index{ifr\_phys@{ifr\_phys}!if.h@{if.h}}
+\doxysubsubsection{\texorpdfstring{ifr\_phys}{ifr\_phys}}
+{\footnotesize\ttfamily \#define ifr\+\_\+phys~ifr\+\_\+ifru.\+ifru\+\_\+phys /$\ast$ physical wire $\ast$/}
+

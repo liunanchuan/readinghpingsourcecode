@@ -1,0 +1,190 @@
+\hypertarget{structars__tcpopt}{}\doxysection{ars\+\_\+tcpopt结构体 参考}
+\label{structars__tcpopt}\index{ars\_tcpopt@{ars\_tcpopt}}
+
+
+{\ttfamily \#include $<$ars.\+h$>$}
+
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structars__tcpopt_a5182523bec98d011e06c3bbcc7dded0a}{kind}}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{len}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>u\_int16\_t \mbox{\hyperlink{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}{size}}\\
+\>\} \mbox{\hyperlink{structars__tcpopt_a8bf1606a45f983cb9473ca4a58c891f0}{mss}}\\
+\>struct \{\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a826530d4b102dbf8286b88f738e5394e}{shift}}\\
+\>\} \mbox{\hyperlink{structars__tcpopt_ace82fe1d432217f5d64c771cab352e15}{win}}\\
+\>struct \{\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_ae6181a128818bb77ea92fee7c2e8a87b}{origin}} \mbox{[}4\mbox{]}\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a5964499a359d7077ed7e1e800e414bf4}{size}} \mbox{[}4\mbox{]}\\
+\>\} \mbox{\hyperlink{structars__tcpopt_aae0c4f803dbf3e263d955186c4696e84}{sack}} \mbox{[}4\mbox{]}\\
+\>struct \{\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_aa48f51965ed460142d6f5764a62a555d}{info}} \mbox{[}4\mbox{]}\\
+\>\} \mbox{\hyperlink{structars__tcpopt_a3fe8f35f70c2e4d22232c5b755434797}{echo}}\\
+\>struct \{\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a9fb98aadc6fbca8722bac71c2a0887b5}{tsval}} \mbox{[}4\mbox{]}\\
+\>\>u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a129383b6ff7dda859904eaf42721cddf}{tsecr}} \mbox{[}4\mbox{]}\\
+\>\} \mbox{\hyperlink{structars__tcpopt_a4e23315ace74ead8b4a23f516a98ed8b}{timestamp}}\\
+\} \mbox{\hyperlink{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}{un}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structars__tcpopt_a3fe8f35f70c2e4d22232c5b755434797}\label{structars__tcpopt_a3fe8f35f70c2e4d22232c5b755434797}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!echo@{echo}}
+\index{echo@{echo}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  echo}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_aa48f51965ed460142d6f5764a62a555d}\label{structars__tcpopt_aa48f51965ed460142d6f5764a62a555d}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!info@{info}}
+\index{info@{info}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t info\mbox{[}4\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a5182523bec98d011e06c3bbcc7dded0a}\label{structars__tcpopt_a5182523bec98d011e06c3bbcc7dded0a}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!kind@{kind}}
+\index{kind@{kind}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{kind}{kind}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t kind}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}}, \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\+\_\+split\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}\label{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!len@{len}}
+\index{len@{len}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t len}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}}, \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+dumb()}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo()}}, \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss()}}, \mbox{\hyperlink{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+sack()}}, \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale()}}, \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\+\_\+split\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a8bf1606a45f983cb9473ca4a58c891f0}\label{structars__tcpopt_a8bf1606a45f983cb9473ca4a58c891f0}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!mss@{mss}}
+\index{mss@{mss}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  mss}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_ae6181a128818bb77ea92fee7c2e8a87b}\label{structars__tcpopt_ae6181a128818bb77ea92fee7c2e8a87b}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!origin@{origin}}
+\index{origin@{origin}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t origin\mbox{[}4\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_aae0c4f803dbf3e263d955186c4696e84}\label{structars__tcpopt_aae0c4f803dbf3e263d955186c4696e84}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!sack@{sack}}
+\index{sack@{sack}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  sack\mbox{[}4\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a826530d4b102dbf8286b88f738e5394e}\label{structars__tcpopt_a826530d4b102dbf8286b88f738e5394e}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!shift@{shift}}
+\index{shift@{shift}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{shift}{shift}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t shift}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}\label{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!size@{size}}
+\index{size@{size}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{size}{size}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily u\+\_\+int16\+\_\+t size}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss()}}, \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\+\_\+split\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a5964499a359d7077ed7e1e800e414bf4}\label{structars__tcpopt_a5964499a359d7077ed7e1e800e414bf4}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!size@{size}}
+\index{size@{size}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{size}{size}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t size\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{structars__tcpopt_a4e23315ace74ead8b4a23f516a98ed8b}\label{structars__tcpopt_a4e23315ace74ead8b4a23f516a98ed8b}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  timestamp}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a129383b6ff7dda859904eaf42721cddf}\label{structars__tcpopt_a129383b6ff7dda859904eaf42721cddf}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!tsecr@{tsecr}}
+\index{tsecr@{tsecr}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{tsecr}{tsecr}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t tsecr\mbox{[}4\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_a9fb98aadc6fbca8722bac71c2a0887b5}\label{structars__tcpopt_a9fb98aadc6fbca8722bac71c2a0887b5}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!tsval@{tsval}}
+\index{tsval@{tsval}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{tsval}{tsval}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t tsval\mbox{[}4\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}\label{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!un@{un}}
+\index{un@{un}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  un}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\+\_\+add\+\_\+tcpopt()}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo()}}, \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss()}}, \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+\mbox{\Hypertarget{structars__tcpopt_ace82fe1d432217f5d64c771cab352e15}\label{structars__tcpopt_ace82fe1d432217f5d64c771cab352e15}} 
+\index{ars\_tcpopt@{ars\_tcpopt}!win@{win}}
+\index{win@{win}!ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  win}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale()}} , 以及 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ars_8h}{ars.\+h}}\end{DoxyCompactItemize}

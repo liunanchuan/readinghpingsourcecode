@@ -1,0 +1,343 @@
+\hypertarget{atmuni31_8h}{}\doxysection{libpcap-\/1.1.1/atmuni31.h 文件参考}
+\label{atmuni31_8h}\index{libpcap-\/1.1.1/atmuni31.h@{libpcap-\/1.1.1/atmuni31.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{atmuni31_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_af394df55872d6e5b4b72f847c806e55d}{VCI\+\_\+\+PPC}}~0x05 /$\ast$ Point-\/to-\/point \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_aa91c4da1bc1fb11e772f03ab80a873bb}{VCI\+\_\+\+BCC}}~0x02 /$\ast$ Broadcast \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a11789f2c016d77112e165ea11a30f108}{VCI\+\_\+\+OAMF4\+SC}}~0x03 /$\ast$ Segment OAM F4 flow cell $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a1281d56cf208b6b599cdfa3c28399452}{VCI\+\_\+\+OAMF4\+EC}}~0x04 /$\ast$ End-\/to-\/end OAM F4 flow cell $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a632f1e0648f8af34eca362d5580c2449}{VCI\+\_\+\+METAC}}~0x01 /$\ast$ Meta \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_af452aef0e1c84346d0465c42a89cd86e}{VCI\+\_\+\+ILMIC}}~0x10 /$\ast$ ILMI msg $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a5816b389b047a90c02ac797c050c9243}{CALL\+\_\+\+PROCEED}}~0x02 /$\ast$ call proceeding $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a65528c74adc6691eac2c7a2f39328064}{CONNECT}}~0x07 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}{connect}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a2312d632d761279653ebdaa084c1e2c0}{CONNECT\+\_\+\+ACK}}~0x0f /$\ast$ connect\+\_\+ack $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ac3b15998ba7221fca6fc579b1cd60557}{SETUP}}~0x05 /$\ast$ setup $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a5bd9a30fc22d9a737ee060d41a4ec479}{RELEASE}}~0x4d /$\ast$ release $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a6a8dd2faae841ba54ec36f943d074fee}{RELEASE\+\_\+\+DONE}}~0x5a /$\ast$ release\+\_\+done $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_acfe2df1dab131d83f22efc4dcc9c6374}{RESTART}}~0x46 /$\ast$ restart $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a022e3333c3eab33c1a2a1e023a854c59}{RESTART\+\_\+\+ACK}}~0x4e /$\ast$ restart ack $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}{STATUS}}~0x7d /$\ast$ status $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a37565ce0087410be0f4517c7a607b5ae}{STATUS\+\_\+\+ENQ}}~0x75 /$\ast$ status ack $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_aa27b5694a8e73bbf90be005385e0de42}{ADD\+\_\+\+PARTY}}~0x80 /$\ast$ add party $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_adba93f10ef07694388156f1c6c0b99a6}{ADD\+\_\+\+PARTY\+\_\+\+ACK}}~0x81 /$\ast$ add party ack $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a31f29e8f1e4aa145533502bef65aa6e7}{ADD\+\_\+\+PARTY\+\_\+\+REJ}}~0x82 /$\ast$ add party rej $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a3ac8770c6a2fd47939fe3427bb5dfbd2}{DROP\+\_\+\+PARTY}}~0x83 /$\ast$ drop party $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a3ba4025b6ad4815211fdfd3e8a811588}{DROP\+\_\+\+PARTY\+\_\+\+ACK}}~0x84 /$\ast$ drop party ack $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a7663924644b0ede74702ddf006b194df}{CAUSE}}~0x08 /$\ast$ cause $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a5aad6bc4045b1c562bc2d47d06d02a19}{ENDPT\+\_\+\+REF}}~0x54 /$\ast$ endpoint reference $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ac050bdef02f1bf2253e5391c7c226d2c}{AAL\+\_\+\+PARA}}~0x58 /$\ast$ ATM adaptation layer parameters $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a3f0f9d73d2a1d350120817a5bee11715}{TRAFF\+\_\+\+DESCRIP}}~0x59 /$\ast$ atm traffic descriptors $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a01f00af29c36596bfdc14566828574c1}{CONNECT\+\_\+\+ID}}~0x5a /$\ast$ connection identifier $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ab329aed11d8cf9299a91806a345f195f}{QOS\+\_\+\+PARA}}~0x5c /$\ast$ quality of service parameters $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ab4e8407dd80943f00ff2a9f091e55f83}{B\+\_\+\+HIGHER}}~0x5d /$\ast$ broadband higher layer information $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_acb1551db48638022f93a543927750b07}{B\+\_\+\+BEARER}}~0x5e /$\ast$ broadband bearer capability $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a053e71ea4638ee00a5632d89101a285d}{B\+\_\+\+LOWER}}~0x5f /$\ast$ broadband lower information $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ad096ae1c7bcbd5ec680698eed50a082f}{CALLING\+\_\+\+PARTY}}~0x6c /$\ast$ calling party number $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a8e9d4f402fbea1434492d520c4bf7477}{CALLED\+\_\+\+PARTY}}~0x70 /$\ast$ called party nmber $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ab5c68d8cc9167b23b178cbdfc05fb718}{Q2931}}~0x09
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_ae04e59dd7211e8845e1f530e8b56e8ed}{PROTO\+\_\+\+POS}}~0 /$\ast$ offset of protocol discriminator $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a95fa360bc1b4b30ec7a43ce184849a89}{CALL\+\_\+\+REF\+\_\+\+POS}}~2 /$\ast$ offset of call reference value $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_af038750bfb0635003df99fd695aad6be}{MSG\+\_\+\+TYPE\+\_\+\+POS}}~5 /$\ast$ offset of message type $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a7b44691a3ec9362ba1b19eeb1788d709}{MSG\+\_\+\+LEN\+\_\+\+POS}}~7 /$\ast$ offset of mesage length $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_aa73ffcf5bc6d973044c58b4d02002051}{IE\+\_\+\+BEGIN\+\_\+\+POS}}~9 /$\ast$ offset of first information element $\ast$/
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_af21b68fcccd6740d3f52d9f5913a0be0}{TYPE\+\_\+\+POS}}~0
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_a2b1906625197c90d6234497fa3dcf841}{LEN\+\_\+\+POS}}~2
+\item 
+\#define \mbox{\hyperlink{atmuni31_8h_adc60ee1aafbdea61e66e1dd0fb472697}{FIELD\+\_\+\+BEGIN\+\_\+\+POS}}~4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{atmuni31_8h_ac050bdef02f1bf2253e5391c7c226d2c}\label{atmuni31_8h_ac050bdef02f1bf2253e5391c7c226d2c}} 
+\index{atmuni31.h@{atmuni31.h}!AAL\_PARA@{AAL\_PARA}}
+\index{AAL\_PARA@{AAL\_PARA}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{AAL\_PARA}{AAL\_PARA}}
+{\footnotesize\ttfamily \#define AAL\+\_\+\+PARA~0x58 /$\ast$ ATM adaptation layer parameters $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_aa27b5694a8e73bbf90be005385e0de42}\label{atmuni31_8h_aa27b5694a8e73bbf90be005385e0de42}} 
+\index{atmuni31.h@{atmuni31.h}!ADD\_PARTY@{ADD\_PARTY}}
+\index{ADD\_PARTY@{ADD\_PARTY}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{ADD\_PARTY}{ADD\_PARTY}}
+{\footnotesize\ttfamily \#define ADD\+\_\+\+PARTY~0x80 /$\ast$ add party $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_adba93f10ef07694388156f1c6c0b99a6}\label{atmuni31_8h_adba93f10ef07694388156f1c6c0b99a6}} 
+\index{atmuni31.h@{atmuni31.h}!ADD\_PARTY\_ACK@{ADD\_PARTY\_ACK}}
+\index{ADD\_PARTY\_ACK@{ADD\_PARTY\_ACK}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{ADD\_PARTY\_ACK}{ADD\_PARTY\_ACK}}
+{\footnotesize\ttfamily \#define ADD\+\_\+\+PARTY\+\_\+\+ACK~0x81 /$\ast$ add party ack $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a31f29e8f1e4aa145533502bef65aa6e7}\label{atmuni31_8h_a31f29e8f1e4aa145533502bef65aa6e7}} 
+\index{atmuni31.h@{atmuni31.h}!ADD\_PARTY\_REJ@{ADD\_PARTY\_REJ}}
+\index{ADD\_PARTY\_REJ@{ADD\_PARTY\_REJ}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{ADD\_PARTY\_REJ}{ADD\_PARTY\_REJ}}
+{\footnotesize\ttfamily \#define ADD\+\_\+\+PARTY\+\_\+\+REJ~0x82 /$\ast$ add party rej $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_acb1551db48638022f93a543927750b07}\label{atmuni31_8h_acb1551db48638022f93a543927750b07}} 
+\index{atmuni31.h@{atmuni31.h}!B\_BEARER@{B\_BEARER}}
+\index{B\_BEARER@{B\_BEARER}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{B\_BEARER}{B\_BEARER}}
+{\footnotesize\ttfamily \#define B\+\_\+\+BEARER~0x5e /$\ast$ broadband bearer capability $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_ab4e8407dd80943f00ff2a9f091e55f83}\label{atmuni31_8h_ab4e8407dd80943f00ff2a9f091e55f83}} 
+\index{atmuni31.h@{atmuni31.h}!B\_HIGHER@{B\_HIGHER}}
+\index{B\_HIGHER@{B\_HIGHER}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{B\_HIGHER}{B\_HIGHER}}
+{\footnotesize\ttfamily \#define B\+\_\+\+HIGHER~0x5d /$\ast$ broadband higher layer information $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a053e71ea4638ee00a5632d89101a285d}\label{atmuni31_8h_a053e71ea4638ee00a5632d89101a285d}} 
+\index{atmuni31.h@{atmuni31.h}!B\_LOWER@{B\_LOWER}}
+\index{B\_LOWER@{B\_LOWER}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{B\_LOWER}{B\_LOWER}}
+{\footnotesize\ttfamily \#define B\+\_\+\+LOWER~0x5f /$\ast$ broadband lower information $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a5816b389b047a90c02ac797c050c9243}\label{atmuni31_8h_a5816b389b047a90c02ac797c050c9243}} 
+\index{atmuni31.h@{atmuni31.h}!CALL\_PROCEED@{CALL\_PROCEED}}
+\index{CALL\_PROCEED@{CALL\_PROCEED}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CALL\_PROCEED}{CALL\_PROCEED}}
+{\footnotesize\ttfamily \#define CALL\+\_\+\+PROCEED~0x02 /$\ast$ call proceeding $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a95fa360bc1b4b30ec7a43ce184849a89}\label{atmuni31_8h_a95fa360bc1b4b30ec7a43ce184849a89}} 
+\index{atmuni31.h@{atmuni31.h}!CALL\_REF\_POS@{CALL\_REF\_POS}}
+\index{CALL\_REF\_POS@{CALL\_REF\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CALL\_REF\_POS}{CALL\_REF\_POS}}
+{\footnotesize\ttfamily \#define CALL\+\_\+\+REF\+\_\+\+POS~2 /$\ast$ offset of call reference value $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a8e9d4f402fbea1434492d520c4bf7477}\label{atmuni31_8h_a8e9d4f402fbea1434492d520c4bf7477}} 
+\index{atmuni31.h@{atmuni31.h}!CALLED\_PARTY@{CALLED\_PARTY}}
+\index{CALLED\_PARTY@{CALLED\_PARTY}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CALLED\_PARTY}{CALLED\_PARTY}}
+{\footnotesize\ttfamily \#define CALLED\+\_\+\+PARTY~0x70 /$\ast$ called party nmber $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_ad096ae1c7bcbd5ec680698eed50a082f}\label{atmuni31_8h_ad096ae1c7bcbd5ec680698eed50a082f}} 
+\index{atmuni31.h@{atmuni31.h}!CALLING\_PARTY@{CALLING\_PARTY}}
+\index{CALLING\_PARTY@{CALLING\_PARTY}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CALLING\_PARTY}{CALLING\_PARTY}}
+{\footnotesize\ttfamily \#define CALLING\+\_\+\+PARTY~0x6c /$\ast$ calling party number $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a7663924644b0ede74702ddf006b194df}\label{atmuni31_8h_a7663924644b0ede74702ddf006b194df}} 
+\index{atmuni31.h@{atmuni31.h}!CAUSE@{CAUSE}}
+\index{CAUSE@{CAUSE}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CAUSE}{CAUSE}}
+{\footnotesize\ttfamily \#define CAUSE~0x08 /$\ast$ cause $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a65528c74adc6691eac2c7a2f39328064}\label{atmuni31_8h_a65528c74adc6691eac2c7a2f39328064}} 
+\index{atmuni31.h@{atmuni31.h}!CONNECT@{CONNECT}}
+\index{CONNECT@{CONNECT}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT}{CONNECT}}
+{\footnotesize\ttfamily \#define CONNECT~0x07 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}{connect}} $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a2312d632d761279653ebdaa084c1e2c0}\label{atmuni31_8h_a2312d632d761279653ebdaa084c1e2c0}} 
+\index{atmuni31.h@{atmuni31.h}!CONNECT\_ACK@{CONNECT\_ACK}}
+\index{CONNECT\_ACK@{CONNECT\_ACK}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_ACK}{CONNECT\_ACK}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+ACK~0x0f /$\ast$ connect\+\_\+ack $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a01f00af29c36596bfdc14566828574c1}\label{atmuni31_8h_a01f00af29c36596bfdc14566828574c1}} 
+\index{atmuni31.h@{atmuni31.h}!CONNECT\_ID@{CONNECT\_ID}}
+\index{CONNECT\_ID@{CONNECT\_ID}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_ID}{CONNECT\_ID}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+ID~0x5a /$\ast$ connection identifier $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a3ac8770c6a2fd47939fe3427bb5dfbd2}\label{atmuni31_8h_a3ac8770c6a2fd47939fe3427bb5dfbd2}} 
+\index{atmuni31.h@{atmuni31.h}!DROP\_PARTY@{DROP\_PARTY}}
+\index{DROP\_PARTY@{DROP\_PARTY}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{DROP\_PARTY}{DROP\_PARTY}}
+{\footnotesize\ttfamily \#define DROP\+\_\+\+PARTY~0x83 /$\ast$ drop party $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a3ba4025b6ad4815211fdfd3e8a811588}\label{atmuni31_8h_a3ba4025b6ad4815211fdfd3e8a811588}} 
+\index{atmuni31.h@{atmuni31.h}!DROP\_PARTY\_ACK@{DROP\_PARTY\_ACK}}
+\index{DROP\_PARTY\_ACK@{DROP\_PARTY\_ACK}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{DROP\_PARTY\_ACK}{DROP\_PARTY\_ACK}}
+{\footnotesize\ttfamily \#define DROP\+\_\+\+PARTY\+\_\+\+ACK~0x84 /$\ast$ drop party ack $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a5aad6bc4045b1c562bc2d47d06d02a19}\label{atmuni31_8h_a5aad6bc4045b1c562bc2d47d06d02a19}} 
+\index{atmuni31.h@{atmuni31.h}!ENDPT\_REF@{ENDPT\_REF}}
+\index{ENDPT\_REF@{ENDPT\_REF}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{ENDPT\_REF}{ENDPT\_REF}}
+{\footnotesize\ttfamily \#define ENDPT\+\_\+\+REF~0x54 /$\ast$ endpoint reference $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_adc60ee1aafbdea61e66e1dd0fb472697}\label{atmuni31_8h_adc60ee1aafbdea61e66e1dd0fb472697}} 
+\index{atmuni31.h@{atmuni31.h}!FIELD\_BEGIN\_POS@{FIELD\_BEGIN\_POS}}
+\index{FIELD\_BEGIN\_POS@{FIELD\_BEGIN\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{FIELD\_BEGIN\_POS}{FIELD\_BEGIN\_POS}}
+{\footnotesize\ttfamily \#define FIELD\+\_\+\+BEGIN\+\_\+\+POS~4}
+
+\mbox{\Hypertarget{atmuni31_8h_aa73ffcf5bc6d973044c58b4d02002051}\label{atmuni31_8h_aa73ffcf5bc6d973044c58b4d02002051}} 
+\index{atmuni31.h@{atmuni31.h}!IE\_BEGIN\_POS@{IE\_BEGIN\_POS}}
+\index{IE\_BEGIN\_POS@{IE\_BEGIN\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{IE\_BEGIN\_POS}{IE\_BEGIN\_POS}}
+{\footnotesize\ttfamily \#define IE\+\_\+\+BEGIN\+\_\+\+POS~9 /$\ast$ offset of first information element $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a2b1906625197c90d6234497fa3dcf841}\label{atmuni31_8h_a2b1906625197c90d6234497fa3dcf841}} 
+\index{atmuni31.h@{atmuni31.h}!LEN\_POS@{LEN\_POS}}
+\index{LEN\_POS@{LEN\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{LEN\_POS}{LEN\_POS}}
+{\footnotesize\ttfamily \#define LEN\+\_\+\+POS~2}
+
+\mbox{\Hypertarget{atmuni31_8h_a7b44691a3ec9362ba1b19eeb1788d709}\label{atmuni31_8h_a7b44691a3ec9362ba1b19eeb1788d709}} 
+\index{atmuni31.h@{atmuni31.h}!MSG\_LEN\_POS@{MSG\_LEN\_POS}}
+\index{MSG\_LEN\_POS@{MSG\_LEN\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{MSG\_LEN\_POS}{MSG\_LEN\_POS}}
+{\footnotesize\ttfamily \#define MSG\+\_\+\+LEN\+\_\+\+POS~7 /$\ast$ offset of mesage length $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_af038750bfb0635003df99fd695aad6be}\label{atmuni31_8h_af038750bfb0635003df99fd695aad6be}} 
+\index{atmuni31.h@{atmuni31.h}!MSG\_TYPE\_POS@{MSG\_TYPE\_POS}}
+\index{MSG\_TYPE\_POS@{MSG\_TYPE\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{MSG\_TYPE\_POS}{MSG\_TYPE\_POS}}
+{\footnotesize\ttfamily \#define MSG\+\_\+\+TYPE\+\_\+\+POS~5 /$\ast$ offset of message type $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_ae04e59dd7211e8845e1f530e8b56e8ed}\label{atmuni31_8h_ae04e59dd7211e8845e1f530e8b56e8ed}} 
+\index{atmuni31.h@{atmuni31.h}!PROTO\_POS@{PROTO\_POS}}
+\index{PROTO\_POS@{PROTO\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{PROTO\_POS}{PROTO\_POS}}
+{\footnotesize\ttfamily \#define PROTO\+\_\+\+POS~0 /$\ast$ offset of protocol discriminator $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_ab5c68d8cc9167b23b178cbdfc05fb718}\label{atmuni31_8h_ab5c68d8cc9167b23b178cbdfc05fb718}} 
+\index{atmuni31.h@{atmuni31.h}!Q2931@{Q2931}}
+\index{Q2931@{Q2931}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{Q2931}{Q2931}}
+{\footnotesize\ttfamily \#define Q2931~0x09}
+
+\mbox{\Hypertarget{atmuni31_8h_ab329aed11d8cf9299a91806a345f195f}\label{atmuni31_8h_ab329aed11d8cf9299a91806a345f195f}} 
+\index{atmuni31.h@{atmuni31.h}!QOS\_PARA@{QOS\_PARA}}
+\index{QOS\_PARA@{QOS\_PARA}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{QOS\_PARA}{QOS\_PARA}}
+{\footnotesize\ttfamily \#define QOS\+\_\+\+PARA~0x5c /$\ast$ quality of service parameters $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a5bd9a30fc22d9a737ee060d41a4ec479}\label{atmuni31_8h_a5bd9a30fc22d9a737ee060d41a4ec479}} 
+\index{atmuni31.h@{atmuni31.h}!RELEASE@{RELEASE}}
+\index{RELEASE@{RELEASE}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{RELEASE}{RELEASE}}
+{\footnotesize\ttfamily \#define RELEASE~0x4d /$\ast$ release $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a6a8dd2faae841ba54ec36f943d074fee}\label{atmuni31_8h_a6a8dd2faae841ba54ec36f943d074fee}} 
+\index{atmuni31.h@{atmuni31.h}!RELEASE\_DONE@{RELEASE\_DONE}}
+\index{RELEASE\_DONE@{RELEASE\_DONE}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{RELEASE\_DONE}{RELEASE\_DONE}}
+{\footnotesize\ttfamily \#define RELEASE\+\_\+\+DONE~0x5a /$\ast$ release\+\_\+done $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_acfe2df1dab131d83f22efc4dcc9c6374}\label{atmuni31_8h_acfe2df1dab131d83f22efc4dcc9c6374}} 
+\index{atmuni31.h@{atmuni31.h}!RESTART@{RESTART}}
+\index{RESTART@{RESTART}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{RESTART}{RESTART}}
+{\footnotesize\ttfamily \#define RESTART~0x46 /$\ast$ restart $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a022e3333c3eab33c1a2a1e023a854c59}\label{atmuni31_8h_a022e3333c3eab33c1a2a1e023a854c59}} 
+\index{atmuni31.h@{atmuni31.h}!RESTART\_ACK@{RESTART\_ACK}}
+\index{RESTART\_ACK@{RESTART\_ACK}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{RESTART\_ACK}{RESTART\_ACK}}
+{\footnotesize\ttfamily \#define RESTART\+\_\+\+ACK~0x4e /$\ast$ restart ack $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_ac3b15998ba7221fca6fc579b1cd60557}\label{atmuni31_8h_ac3b15998ba7221fca6fc579b1cd60557}} 
+\index{atmuni31.h@{atmuni31.h}!SETUP@{SETUP}}
+\index{SETUP@{SETUP}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{SETUP}{SETUP}}
+{\footnotesize\ttfamily \#define SETUP~0x05 /$\ast$ setup $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}\label{atmuni31_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}} 
+\index{atmuni31.h@{atmuni31.h}!STATUS@{STATUS}}
+\index{STATUS@{STATUS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{STATUS}{STATUS}}
+{\footnotesize\ttfamily \#define STATUS~0x7d /$\ast$ status $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a37565ce0087410be0f4517c7a607b5ae}\label{atmuni31_8h_a37565ce0087410be0f4517c7a607b5ae}} 
+\index{atmuni31.h@{atmuni31.h}!STATUS\_ENQ@{STATUS\_ENQ}}
+\index{STATUS\_ENQ@{STATUS\_ENQ}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{STATUS\_ENQ}{STATUS\_ENQ}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+ENQ~0x75 /$\ast$ status ack $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a3f0f9d73d2a1d350120817a5bee11715}\label{atmuni31_8h_a3f0f9d73d2a1d350120817a5bee11715}} 
+\index{atmuni31.h@{atmuni31.h}!TRAFF\_DESCRIP@{TRAFF\_DESCRIP}}
+\index{TRAFF\_DESCRIP@{TRAFF\_DESCRIP}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{TRAFF\_DESCRIP}{TRAFF\_DESCRIP}}
+{\footnotesize\ttfamily \#define TRAFF\+\_\+\+DESCRIP~0x59 /$\ast$ atm traffic descriptors $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_af21b68fcccd6740d3f52d9f5913a0be0}\label{atmuni31_8h_af21b68fcccd6740d3f52d9f5913a0be0}} 
+\index{atmuni31.h@{atmuni31.h}!TYPE\_POS@{TYPE\_POS}}
+\index{TYPE\_POS@{TYPE\_POS}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{TYPE\_POS}{TYPE\_POS}}
+{\footnotesize\ttfamily \#define TYPE\+\_\+\+POS~0}
+
+\mbox{\Hypertarget{atmuni31_8h_aa91c4da1bc1fb11e772f03ab80a873bb}\label{atmuni31_8h_aa91c4da1bc1fb11e772f03ab80a873bb}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_BCC@{VCI\_BCC}}
+\index{VCI\_BCC@{VCI\_BCC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_BCC}{VCI\_BCC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+BCC~0x02 /$\ast$ Broadcast \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_af452aef0e1c84346d0465c42a89cd86e}\label{atmuni31_8h_af452aef0e1c84346d0465c42a89cd86e}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_ILMIC@{VCI\_ILMIC}}
+\index{VCI\_ILMIC@{VCI\_ILMIC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_ILMIC}{VCI\_ILMIC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+ILMIC~0x10 /$\ast$ ILMI msg $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a632f1e0648f8af34eca362d5580c2449}\label{atmuni31_8h_a632f1e0648f8af34eca362d5580c2449}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_METAC@{VCI\_METAC}}
+\index{VCI\_METAC@{VCI\_METAC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_METAC}{VCI\_METAC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+METAC~0x01 /$\ast$ Meta \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a1281d56cf208b6b599cdfa3c28399452}\label{atmuni31_8h_a1281d56cf208b6b599cdfa3c28399452}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_OAMF4EC@{VCI\_OAMF4EC}}
+\index{VCI\_OAMF4EC@{VCI\_OAMF4EC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_OAMF4EC}{VCI\_OAMF4EC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+OAMF4\+EC~0x04 /$\ast$ End-\/to-\/end OAM F4 flow cell $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_a11789f2c016d77112e165ea11a30f108}\label{atmuni31_8h_a11789f2c016d77112e165ea11a30f108}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_OAMF4SC@{VCI\_OAMF4SC}}
+\index{VCI\_OAMF4SC@{VCI\_OAMF4SC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_OAMF4SC}{VCI\_OAMF4SC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+OAMF4\+SC~0x03 /$\ast$ Segment OAM F4 flow cell $\ast$/}
+
+\mbox{\Hypertarget{atmuni31_8h_af394df55872d6e5b4b72f847c806e55d}\label{atmuni31_8h_af394df55872d6e5b4b72f847c806e55d}} 
+\index{atmuni31.h@{atmuni31.h}!VCI\_PPC@{VCI\_PPC}}
+\index{VCI\_PPC@{VCI\_PPC}!atmuni31.h@{atmuni31.h}}
+\doxysubsubsection{\texorpdfstring{VCI\_PPC}{VCI\_PPC}}
+{\footnotesize\ttfamily \#define VCI\+\_\+\+PPC~0x05 /$\ast$ Point-\/to-\/point \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} msg $\ast$/}
+

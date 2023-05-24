@@ -1,0 +1,112 @@
+\hypertarget{findalldevstest_8c}{}\doxysection{libpcap-\/1.1.1/findalldevstest.c 文件参考}
+\label{findalldevstest_8c}\index{libpcap-\/1.1.1/findalldevstest.c@{libpcap-\/1.1.1/findalldevstest.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+findalldevstest.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{findalldevstest_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{findalldevstest_8c_a76c9325f9830b269066295e34a168433}{IPTOSBUFFERS}}~12
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}{ifprint}} (pcap\+\_\+if\+\_\+t $\ast$d)
+\item 
+static char $\ast$ \mbox{\hyperlink{findalldevstest_8c_a7c91401e8df127ce108f5f4ea05b68de}{iptos}} (\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} in)
+\item 
+int \mbox{\hyperlink{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{findalldevstest_8c_a76c9325f9830b269066295e34a168433}\label{findalldevstest_8c_a76c9325f9830b269066295e34a168433}} 
+\index{findalldevstest.c@{findalldevstest.c}!IPTOSBUFFERS@{IPTOSBUFFERS}}
+\index{IPTOSBUFFERS@{IPTOSBUFFERS}!findalldevstest.c@{findalldevstest.c}}
+\doxysubsubsection{\texorpdfstring{IPTOSBUFFERS}{IPTOSBUFFERS}}
+{\footnotesize\ttfamily \#define IPTOSBUFFERS~12}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}\label{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}} 
+\index{findalldevstest.c@{findalldevstest.c}!ifprint@{ifprint}}
+\index{ifprint@{ifprint}!findalldevstest.c@{findalldevstest.c}}
+\doxysubsubsection{\texorpdfstring{ifprint()}{ifprint()}}
+{\footnotesize\ttfamily static void ifprint (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf}{inet\+\_\+ntop()}}, \mbox{\hyperlink{pcap_2pcap_8h_a43a6601bfd438efc02b0ba71c5439647}{PCAP\+\_\+\+IF\+\_\+\+LOOPBACK}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{findalldevstest_8c_a7c91401e8df127ce108f5f4ea05b68de}\label{findalldevstest_8c_a7c91401e8df127ce108f5f4ea05b68de}} 
+\index{findalldevstest.c@{findalldevstest.c}!iptos@{iptos}}
+\index{iptos@{iptos}!findalldevstest.c@{findalldevstest.c}}
+\doxysubsubsection{\texorpdfstring{iptos()}{iptos()}}
+{\footnotesize\ttfamily static char $\ast$ iptos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{findalldevstest_8c_a76c9325f9830b269066295e34a168433}{IPTOSBUFFERS}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{findalldevstest_8c_a7c91401e8df127ce108f5f4ea05b68de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{findalldevstest.c@{findalldevstest.c}!main@{main}}
+\index{main@{main}!findalldevstest.c@{findalldevstest.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}{ifprint()}}, \mbox{\hyperlink{findalldevstest_8c_a7c91401e8df127ce108f5f4ea05b68de}{iptos()}}, \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{fad-getad_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{inet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191}{pcap\+\_\+lookupdev()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,312 @@
+\hypertarget{pcap-dos_8h}{}\doxysection{libpcap-\/1.1.1/pcap-\/dos.h 文件参考}
+\label{pcap-dos_8h}\index{libpcap-\/1.1.1/pcap-\/dos.h@{libpcap-\/1.1.1/pcap-\/dos.h}}
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+pcap-\/dos.h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{pcap-dos_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-dos_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdevice}{device}}
+\item 
+struct \mbox{\hyperlink{structNET__STATS}{NET\+\_\+\+STATS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a9822d89774e0d6ddaa06503950130423}{ETH\+\_\+\+ALEN}}~sizeof(\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}})   /$\ast$ Ether address length $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_adec6db76cf213beb1c4ad4e7bf4d466d}{ETH\+\_\+\+HLEN}}~(2$\ast$\mbox{\hyperlink{pcap-dos_8h_a9822d89774e0d6ddaa06503950130423}{ETH\+\_\+\+ALEN}}+2)  /$\ast$ Ether header length  $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}~1500
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a74ba3dccc98aa76c617d8cf03a4ec9da}{ETH\+\_\+\+MIN}}~60
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a6e1a515d60dc09e1dc05784dc9ddeab6}{ETH\+\_\+\+MAX}}~(\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}+\mbox{\hyperlink{pcap-dos_8h_adec6db76cf213beb1c4ad4e7bf4d466d}{ETH\+\_\+\+HLEN}})
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~1
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~0
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_add1fbb19ba7f1c86c066528de85656ff}{PHARLAP}}~1
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a54261c7b32f7903c5cfdfd4edd5a872b}{DJGPP}}~2
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a8a4a8c1fa2aa5aa927b52e17d76097fe}{DOS4\+GW}}~4
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_abe9b8528078ede4c13a7d84d541ec2e0}{ARGSUSED}}(x)~(void) x
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_ac6afabdc09a49a433ee19d8a9486056d}{min}}(a,  b)~((a) $<$ (b) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}}(a,  b)~((a) $<$ (b) ? (b) \+: (a))
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_acbe25e5efbc6252455b6ff0219412181}{\+\_\+\+U\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\+\_\+\+VAR}}
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_ade55b97fb64d28922a508daa3489a765}{LOCKED\+\_\+\+FUNC}}
+\item 
+\#define \mbox{\hyperlink{pcap-dos_8h_aaeead9feb2dccd34d43a878a44853474}{PCAP\+\_\+\+ASSERT}}(x)
+\end{DoxyCompactItemize}
+\doxysubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}
+\item 
+typedef unsigned char \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}
+\item 
+typedef unsigned short \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}
+\item 
+typedef unsigned long \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}
+\item 
+typedef \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}}\mbox{[}6\mbox{]}
+\item 
+typedef unsigned int \mbox{\hyperlink{pcap-dos_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{UINT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pcap-dos_8h_af883df70fa82504e02fa17e38d653e17}{\+\_\+w32\+\_\+os\+\_\+yield}} (void)
+\item 
+void \mbox{\hyperlink{pcap-dos_8h_a456ba43432fb029cddfc893d7757d519}{pcap\+\_\+assert}} (const char $\ast$what, const char $\ast$file, unsigned \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdevice}{device}} $\ast$\mbox{\hyperlink{pcap-dos_8c_a315e8171d7704b27f1aef1e95d5f4f03}{active\+\_\+dev}} \mbox{\hyperlink{pcap-dos_8h_a5b996b773f4b9cdc957ce084f092409d}{LOCKED\+\_\+\+VAR}}
+\item 
+struct \mbox{\hyperlink{structdevice}{device}} $\ast$ \mbox{\hyperlink{pcap-dos_8h_a12e539ba49af667ce134621fc23c02cd}{probed\+\_\+dev}}
+\item 
+int \mbox{\hyperlink{pcap-dos_8h_af445df5a1038ac09bfd17b3f8614eaa9}{pcap\+\_\+pkt\+\_\+debug}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-dos_8h_acbe25e5efbc6252455b6ff0219412181}\label{pcap-dos_8h_acbe25e5efbc6252455b6ff0219412181}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+\_\+}
+
+\mbox{\Hypertarget{pcap-dos_8h_abe9b8528078ede4c13a7d84d541ec2e0}\label{pcap-dos_8h_abe9b8528078ede4c13a7d84d541ec2e0}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ARGSUSED@{ARGSUSED}}
+\index{ARGSUSED@{ARGSUSED}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ARGSUSED}{ARGSUSED}}
+{\footnotesize\ttfamily \#define ARGSUSED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(void) x}
+
+\mbox{\Hypertarget{pcap-dos_8h_a54261c7b32f7903c5cfdfd4edd5a872b}\label{pcap-dos_8h_a54261c7b32f7903c5cfdfd4edd5a872b}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!DJGPP@{DJGPP}}
+\index{DJGPP@{DJGPP}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{DJGPP}{DJGPP}}
+{\footnotesize\ttfamily \#define DJGPP~2}
+
+\mbox{\Hypertarget{pcap-dos_8h_a8a4a8c1fa2aa5aa927b52e17d76097fe}\label{pcap-dos_8h_a8a4a8c1fa2aa5aa927b52e17d76097fe}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!DOS4GW@{DOS4GW}}
+\index{DOS4GW@{DOS4GW}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{DOS4GW}{DOS4GW}}
+{\footnotesize\ttfamily \#define DOS4\+GW~4}
+
+\mbox{\Hypertarget{pcap-dos_8h_a9822d89774e0d6ddaa06503950130423}\label{pcap-dos_8h_a9822d89774e0d6ddaa06503950130423}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETH\_ALEN@{ETH\_ALEN}}
+\index{ETH\_ALEN@{ETH\_ALEN}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETH\_ALEN}{ETH\_ALEN}}
+{\footnotesize\ttfamily \#define ETH\+\_\+\+ALEN~sizeof(\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}})   /$\ast$ Ether address length $\ast$/}
+
+\mbox{\Hypertarget{pcap-dos_8h_adec6db76cf213beb1c4ad4e7bf4d466d}\label{pcap-dos_8h_adec6db76cf213beb1c4ad4e7bf4d466d}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETH\_HLEN@{ETH\_HLEN}}
+\index{ETH\_HLEN@{ETH\_HLEN}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETH\_HLEN}{ETH\_HLEN}}
+{\footnotesize\ttfamily \#define ETH\+\_\+\+HLEN~(2$\ast$\mbox{\hyperlink{pcap-dos_8h_a9822d89774e0d6ddaa06503950130423}{ETH\+\_\+\+ALEN}}+2)  /$\ast$ Ether header length  $\ast$/}
+
+\mbox{\Hypertarget{pcap-dos_8h_a6e1a515d60dc09e1dc05784dc9ddeab6}\label{pcap-dos_8h_a6e1a515d60dc09e1dc05784dc9ddeab6}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETH\_MAX@{ETH\_MAX}}
+\index{ETH\_MAX@{ETH\_MAX}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETH\_MAX}{ETH\_MAX}}
+{\footnotesize\ttfamily \#define ETH\+\_\+\+MAX~(\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}+\mbox{\hyperlink{pcap-dos_8h_adec6db76cf213beb1c4ad4e7bf4d466d}{ETH\+\_\+\+HLEN}})}
+
+\mbox{\Hypertarget{pcap-dos_8h_a74ba3dccc98aa76c617d8cf03a4ec9da}\label{pcap-dos_8h_a74ba3dccc98aa76c617d8cf03a4ec9da}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETH\_MIN@{ETH\_MIN}}
+\index{ETH\_MIN@{ETH\_MIN}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETH\_MIN}{ETH\_MIN}}
+{\footnotesize\ttfamily \#define ETH\+\_\+\+MIN~60}
+
+\mbox{\Hypertarget{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}\label{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETH\_MTU@{ETH\_MTU}}
+\index{ETH\_MTU@{ETH\_MTU}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETH\_MTU}{ETH\_MTU}}
+{\footnotesize\ttfamily \#define ETH\+\_\+\+MTU~1500}
+
+\mbox{\Hypertarget{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define FALSE~0}
+
+\mbox{\Hypertarget{pcap-dos_8h_ade55b97fb64d28922a508daa3489a765}\label{pcap-dos_8h_ade55b97fb64d28922a508daa3489a765}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!LOCKED\_FUNC@{LOCKED\_FUNC}}
+\index{LOCKED\_FUNC@{LOCKED\_FUNC}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{LOCKED\_FUNC}{LOCKED\_FUNC}}
+{\footnotesize\ttfamily \#define LOCKED\+\_\+\+FUNC}
+
+\mbox{\Hypertarget{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}\label{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!LOCKED\_VAR@{LOCKED\_VAR}}
+\index{LOCKED\_VAR@{LOCKED\_VAR}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{LOCKED\_VAR}{LOCKED\_VAR}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structdevice}{device}} $\ast$\mbox{\hyperlink{pcap-dos_8c_ac069497cd155cec8e6ee50a97de2539d}{dev\+\_\+base}} LOCKED\+\_\+\+VAR}
+
+\mbox{\Hypertarget{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}\label{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!max@{max}}
+\index{max@{max}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \#define max(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) $<$ (b) ? (b) \+: (a))}
+
+\mbox{\Hypertarget{pcap-dos_8h_ac6afabdc09a49a433ee19d8a9486056d}\label{pcap-dos_8h_ac6afabdc09a49a433ee19d8a9486056d}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!min@{min}}
+\index{min@{min}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \#define min(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) $<$ (b) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{pcap-dos_8h_aaeead9feb2dccd34d43a878a44853474}\label{pcap-dos_8h_aaeead9feb2dccd34d43a878a44853474}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!PCAP\_ASSERT@{PCAP\_ASSERT}}
+\index{PCAP\_ASSERT@{PCAP\_ASSERT}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{PCAP\_ASSERT}{PCAP\_ASSERT}}
+{\footnotesize\ttfamily \#define PCAP\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                           \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{                           if (!(x)) \(\backslash\)}
+\DoxyCodeLine{                              pcap\_assert (\#x, \_\_FILE\_\_, \_\_LINE\_\_); \(\backslash\)}
+\DoxyCodeLine{                         \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pcap-dos_8h_add1fbb19ba7f1c86c066528de85656ff}\label{pcap-dos_8h_add1fbb19ba7f1c86c066528de85656ff}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!PHARLAP@{PHARLAP}}
+\index{PHARLAP@{PHARLAP}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{PHARLAP}{PHARLAP}}
+{\footnotesize\ttfamily \#define PHARLAP~1}
+
+\mbox{\Hypertarget{pcap-dos_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{pcap-dos_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define TRUE~1}
+
+
+
+\doxysubsection{类型定义说明}
+\mbox{\Hypertarget{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}\label{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!BOOL@{BOOL}}
+\index{BOOL@{BOOL}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{BOOL}{BOOL}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}}
+
+\mbox{\Hypertarget{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}\label{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!BYTE@{BYTE}}
+\index{BYTE@{BYTE}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{BYTE}{BYTE}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}
+
+\mbox{\Hypertarget{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}\label{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!DWORD@{DWORD}}
+\index{DWORD@{DWORD}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{DWORD}{DWORD}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}}
+
+\mbox{\Hypertarget{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}\label{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!ETHER@{ETHER}}
+\index{ETHER@{ETHER}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{ETHER}{ETHER}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} ETHER\mbox{[}6\mbox{]}}
+
+\mbox{\Hypertarget{pcap-dos_8h_a36cb3b01d81ffd844bbbfb54003e06ec}\label{pcap-dos_8h_a36cb3b01d81ffd844bbbfb54003e06ec}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!UINT@{UINT}}
+\index{UINT@{UINT}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{UINT}{UINT}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{pcap-dos_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{UINT}}}
+
+\mbox{\Hypertarget{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}\label{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!WORD@{WORD}}
+\index{WORD@{WORD}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{WORD}{WORD}}
+{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-dos_8h_af883df70fa82504e02fa17e38d653e17}\label{pcap-dos_8h_af883df70fa82504e02fa17e38d653e17}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!\_w32\_os\_yield@{\_w32\_os\_yield}}
+\index{\_w32\_os\_yield@{\_w32\_os\_yield}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{\_w32\_os\_yield()}{\_w32\_os\_yield()}}
+{\footnotesize\ttfamily void \+\_\+w32\+\_\+os\+\_\+yield (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a1add0cfd93063934c83ec050a8121992}{pcap\+\_\+read\+\_\+dos()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-dos_8h_af883df70fa82504e02fa17e38d653e17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-dos_8h_a456ba43432fb029cddfc893d7757d519}\label{pcap-dos_8h_a456ba43432fb029cddfc893d7757d519}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!pcap\_assert@{pcap\_assert}}
+\index{pcap\_assert@{pcap\_assert}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_assert()}{pcap\_assert()}}
+{\footnotesize\ttfamily void pcap\+\_\+assert (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what,  }\item[{const char $\ast$}]{file,  }\item[{unsigned}]{line }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-dos_8c_ab2e3e511f2294360812433e148d8c271}{close\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a99b3821b3678bd286765612edd17c92d}{FLUSHK}} , 以及 \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{pcap-dos_8h_a456ba43432fb029cddfc893d7757d519_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-dos_8h_a5b996b773f4b9cdc957ce084f092409d}\label{pcap-dos_8h_a5b996b773f4b9cdc957ce084f092409d}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!LOCKED\_VAR@{LOCKED\_VAR}}
+\index{LOCKED\_VAR@{LOCKED\_VAR}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{LOCKED\_VAR}{LOCKED\_VAR}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structdevice}{device}}$\ast$ \mbox{\hyperlink{pcap-dos_8c_ac069497cd155cec8e6ee50a97de2539d}{dev\+\_\+base}} LOCKED\+\_\+\+VAR\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{pcap-dos_8h_af445df5a1038ac09bfd17b3f8614eaa9}\label{pcap-dos_8h_af445df5a1038ac09bfd17b3f8614eaa9}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!pcap\_pkt\_debug@{pcap\_pkt\_debug}}
+\index{pcap\_pkt\_debug@{pcap\_pkt\_debug}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_pkt\_debug}{pcap\_pkt\_debug}}
+{\footnotesize\ttfamily int pcap\+\_\+pkt\+\_\+debug\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a3b89596de37c07644976d22760223140}{init\+\_\+watt32()}}, \mbox{\hyperlink{pcap-dos_8c_a22756b39ec035bc508bd91700ee3d110}{pcap\+\_\+read\+\_\+one()}}, \mbox{\hyperlink{pcap-dos_8c_a85c9278df2ce935980c76f85c233d708}{pkt\+\_\+close()}}, \mbox{\hyperlink{pcap-dos_8c_af1c55f88c466277a54e8e5d34804547a}{pkt\+\_\+xmit()}}, \mbox{\hyperlink{pktdrvr_8c_a849ff06677b32cef04f54103d2fc403c}{Pkt\+Exit\+Driver()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+\mbox{\Hypertarget{pcap-dos_8h_a12e539ba49af667ce134621fc23c02cd}\label{pcap-dos_8h_a12e539ba49af667ce134621fc23c02cd}} 
+\index{pcap-\/dos.h@{pcap-\/dos.h}!probed\_dev@{probed\_dev}}
+\index{probed\_dev@{probed\_dev}!pcap-\/dos.h@{pcap-\/dos.h}}
+\doxysubsubsection{\texorpdfstring{probed\_dev}{probed\_dev}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdevice}{device}}$\ast$ probed\+\_\+dev\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_aa6eef9a21d83e73353d8001bb9b2686f}{pcap\+\_\+lookupdev()}}.
+

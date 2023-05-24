@@ -1,0 +1,751 @@
+\hypertarget{pcap-usb-linux_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/usb-\/linux.c 文件参考}
+\label{pcap-usb-linux_8c}\index{libpcap-\/1.1.1/pcap-\/usb-\/linux.c@{libpcap-\/1.1.1/pcap-\/usb-\/linux.c}}
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/usb-\/linux.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap/usb.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$byteswap.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+pcap-\/usb-\/linux.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmon__bin__stats}{mon\+\_\+bin\+\_\+stats}}
+\item 
+struct \mbox{\hyperlink{structmon__bin__get}{mon\+\_\+bin\+\_\+get}}
+\item 
+struct \mbox{\hyperlink{structmon__bin__mfetch}{mon\+\_\+bin\+\_\+mfetch}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a50113c00c3f19c02269a18d8c8e74d3d}{USB\+\_\+\+IFACE}}~\char`\"{}usbmon\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a7ed903b51b1604f84f3da37cf5c158e6}{USB\+\_\+\+TEXT\+\_\+\+DIR\+\_\+\+OLD}}~\char`\"{}/sys/kernel/debug/usbmon\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a9f4dbc50781a3d445f0f1811f9f65257}{USB\+\_\+\+TEXT\+\_\+\+DIR}}~\char`\"{}/sys/kernel/debug/usb/usbmon\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_ac6a2356a659193639af848b23944ff77}{SYS\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}}~\char`\"{}/sys/bus/usb/devices\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a9be0c3b8b90682365efeb933669dedd0}{PROC\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}}~\char`\"{}/proc/bus/usb\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}{USB\+\_\+\+LINE\+\_\+\+LEN}}~4096
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_ab607d720ebbd922e3314393a40e5fe04}{htols}}(s)~s
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a67675b36eab11df54ab7932af590d29b}{htoll}}(l)~l
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_aa079f468e71b83131e4417dbad171b91}{htol64}}(ll)~ll
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}~0x92
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_aec0edf34896177a3b5abfbc0b7e5c58b}{MON\+\_\+\+IOCQ\+\_\+\+URB\+\_\+\+LEN}}~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 1)
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_aba8fc223768a034a88ecca9a4483f3c2}{MON\+\_\+\+IOCX\+\_\+\+URB}}~\+\_\+\+IOWR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 2, struct mon\+\_\+bin\+\_\+hdr)
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a459974e19929fe5faa0e7abc20eb78c8}{MON\+\_\+\+IOCG\+\_\+\+STATS}}~\+\_\+\+IOR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 3, struct \mbox{\hyperlink{structmon__bin__stats}{mon\+\_\+bin\+\_\+stats}})
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_af3ab473763c2c789a16f6aa5b63b3804}{MON\+\_\+\+IOCT\+\_\+\+RING\+\_\+\+SIZE}}~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 4)
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a05bdacbe2cd6174053172b0bc35ba69c}{MON\+\_\+\+IOCQ\+\_\+\+RING\+\_\+\+SIZE}}~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 5)
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a0de1ff219c17d7119680d3e6106e3a86}{MON\+\_\+\+IOCX\+\_\+\+GET}}~\+\_\+\+IOW(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 6, struct \mbox{\hyperlink{structmon__bin__get}{mon\+\_\+bin\+\_\+get}})
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_ae1c80495eeaefa09b7f50eabdb5dcbe2}{MON\+\_\+\+IOCX\+\_\+\+MFETCH}}~\+\_\+\+IOWR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 7, struct \mbox{\hyperlink{structmon__bin__mfetch}{mon\+\_\+bin\+\_\+mfetch}})
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a484547d2a66930a60a07880d965638e1}{MON\+\_\+\+IOCH\+\_\+\+MFLUSH}}~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 8)
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a481b15fd76bb78ef25543e000580c220}{MON\+\_\+\+BIN\+\_\+\+SETUP}}~0x1 /$\ast$ setup \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}} is present$\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a65685ade6d911a49fe21c4cfd1d310bf}{MON\+\_\+\+BIN\+\_\+\+SETUP\+\_\+\+ZERO}}~0x2 /$\ast$ setup buffer is not available $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_af34b2feee6348a61cce3e13d6e8b4c7e}{MON\+\_\+\+BIN\+\_\+\+DATA\+\_\+\+ZERO}}~0x4 /$\ast$ data buffer is not available $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a1d7c9c870bc5248414c5061800e85476}{MON\+\_\+\+BIN\+\_\+\+ERROR}}~0x8
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_acc22ad64141c7d16638b584ce28781e9}{CTRL\+\_\+\+TIMEOUT}}~(5$\ast$1000)        /$\ast$ \mbox{\hyperlink{hping2_8h_a1a80b671ff8e4ed8bfb5158bdf283d5e}{milliseconds}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a1d46c8a7ba5292aa99ef445df6f190af}{USB\+\_\+\+DIR\+\_\+\+IN}}~0x80
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_af442f8706cfb3d4be5f6ddc10f50cca6}{USB\+\_\+\+TYPE\+\_\+\+STANDARD}}~0x00
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a3e87c09c94711436bc446aa280c10693}{USB\+\_\+\+RECIP\+\_\+\+DEVICE}}~0x00
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_ae10a1fd5f65d075c17536fd3f7d8472e}{USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+DESCRIPTOR}}~6
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a906ba0fa4d6863d2035b57c95e47d85a}{USB\+\_\+\+DT\+\_\+\+DEVICE}}~1
+\item 
+\#define \mbox{\hyperlink{pcap-usb-linux_8c_a3fffea119c04c7680f2e9cf3fadf63b4}{VEC\+\_\+\+SIZE}}~32
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate}} (pcap\+\_\+t $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}{usb\+\_\+stats\+\_\+linux}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461}{usb\+\_\+stats\+\_\+linux\+\_\+bin}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}{usb\+\_\+read\+\_\+linux}} (pcap\+\_\+t $\ast$, int, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}, u\+\_\+char $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin}} (pcap\+\_\+t $\ast$, int, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}, u\+\_\+char $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}{usb\+\_\+read\+\_\+linux\+\_\+mmap}} (pcap\+\_\+t $\ast$, int, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}, u\+\_\+char $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_ae1e7321d1a6d6d653f1ca61152d49e81}{usb\+\_\+inject\+\_\+linux}} (pcap\+\_\+t $\ast$, const void $\ast$, size\+\_\+t)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a8a6d706423403b1e3bae095759278878}{usb\+\_\+setfilter\+\_\+linux}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a1d590ecf89d1462bc74c7ba3d42535ba}{usb\+\_\+setdirection\+\_\+linux}} (pcap\+\_\+t $\ast$, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}})
+\item 
+static void \mbox{\hyperlink{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1}{usb\+\_\+cleanup\+\_\+linux\+\_\+mmap}} (pcap\+\_\+t $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65}{usb\+\_\+dev\+\_\+add}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, int n, char $\ast$err\+\_\+str)
+\item 
+int \mbox{\hyperlink{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc}{usb\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$err\+\_\+str)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42}{usb\+\_\+mmap}} (pcap\+\_\+t $\ast$handle)
+\item 
+static void \mbox{\hyperlink{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}{probe\+\_\+devices}} (int bus)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a}{usb\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\item 
+static int \mbox{\hyperlink{pcap-usb-linux_8c_a189ce42d8c838dfd713f64c99589c8a3}{ascii\+\_\+to\+\_\+int}} (char c)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-usb-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-usb-linux_8c_acc22ad64141c7d16638b584ce28781e9}\label{pcap-usb-linux_8c_acc22ad64141c7d16638b584ce28781e9}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!CTRL\_TIMEOUT@{CTRL\_TIMEOUT}}
+\index{CTRL\_TIMEOUT@{CTRL\_TIMEOUT}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{CTRL\_TIMEOUT}{CTRL\_TIMEOUT}}
+{\footnotesize\ttfamily \#define CTRL\+\_\+\+TIMEOUT~(5$\ast$1000)        /$\ast$ \mbox{\hyperlink{hping2_8h_a1a80b671ff8e4ed8bfb5158bdf283d5e}{milliseconds}} $\ast$/}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_aa079f468e71b83131e4417dbad171b91}\label{pcap-usb-linux_8c_aa079f468e71b83131e4417dbad171b91}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!htol64@{htol64}}
+\index{htol64@{htol64}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{htol64}{htol64}}
+{\footnotesize\ttfamily \#define htol64(\begin{DoxyParamCaption}\item[{}]{ll }\end{DoxyParamCaption})~ll}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a67675b36eab11df54ab7932af590d29b}\label{pcap-usb-linux_8c_a67675b36eab11df54ab7932af590d29b}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!htoll@{htoll}}
+\index{htoll@{htoll}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{htoll}{htoll}}
+{\footnotesize\ttfamily \#define htoll(\begin{DoxyParamCaption}\item[{}]{l }\end{DoxyParamCaption})~l}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_ab607d720ebbd922e3314393a40e5fe04}\label{pcap-usb-linux_8c_ab607d720ebbd922e3314393a40e5fe04}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!htols@{htols}}
+\index{htols@{htols}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{htols}{htols}}
+{\footnotesize\ttfamily \#define htols(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~s}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_af34b2feee6348a61cce3e13d6e8b4c7e}\label{pcap-usb-linux_8c_af34b2feee6348a61cce3e13d6e8b4c7e}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_BIN\_DATA\_ZERO@{MON\_BIN\_DATA\_ZERO}}
+\index{MON\_BIN\_DATA\_ZERO@{MON\_BIN\_DATA\_ZERO}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_BIN\_DATA\_ZERO}{MON\_BIN\_DATA\_ZERO}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+BIN\+\_\+\+DATA\+\_\+\+ZERO~0x4 /$\ast$ data buffer is not available $\ast$/}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a1d7c9c870bc5248414c5061800e85476}\label{pcap-usb-linux_8c_a1d7c9c870bc5248414c5061800e85476}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_BIN\_ERROR@{MON\_BIN\_ERROR}}
+\index{MON\_BIN\_ERROR@{MON\_BIN\_ERROR}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_BIN\_ERROR}{MON\_BIN\_ERROR}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+BIN\+\_\+\+ERROR~0x8}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a481b15fd76bb78ef25543e000580c220}\label{pcap-usb-linux_8c_a481b15fd76bb78ef25543e000580c220}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_BIN\_SETUP@{MON\_BIN\_SETUP}}
+\index{MON\_BIN\_SETUP@{MON\_BIN\_SETUP}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_BIN\_SETUP}{MON\_BIN\_SETUP}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+BIN\+\_\+\+SETUP~0x1 /$\ast$ setup \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}} is present$\ast$/}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a65685ade6d911a49fe21c4cfd1d310bf}\label{pcap-usb-linux_8c_a65685ade6d911a49fe21c4cfd1d310bf}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_BIN\_SETUP\_ZERO@{MON\_BIN\_SETUP\_ZERO}}
+\index{MON\_BIN\_SETUP\_ZERO@{MON\_BIN\_SETUP\_ZERO}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_BIN\_SETUP\_ZERO}{MON\_BIN\_SETUP\_ZERO}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+BIN\+\_\+\+SETUP\+\_\+\+ZERO~0x2 /$\ast$ setup buffer is not available $\ast$/}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}\label{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOC\_MAGIC@{MON\_IOC\_MAGIC}}
+\index{MON\_IOC\_MAGIC@{MON\_IOC\_MAGIC}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOC\_MAGIC}{MON\_IOC\_MAGIC}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOC\+\_\+\+MAGIC~0x92}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a459974e19929fe5faa0e7abc20eb78c8}\label{pcap-usb-linux_8c_a459974e19929fe5faa0e7abc20eb78c8}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCG\_STATS@{MON\_IOCG\_STATS}}
+\index{MON\_IOCG\_STATS@{MON\_IOCG\_STATS}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCG\_STATS}{MON\_IOCG\_STATS}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCG\+\_\+\+STATS~\+\_\+\+IOR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 3, struct \mbox{\hyperlink{structmon__bin__stats}{mon\+\_\+bin\+\_\+stats}})}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a484547d2a66930a60a07880d965638e1}\label{pcap-usb-linux_8c_a484547d2a66930a60a07880d965638e1}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCH\_MFLUSH@{MON\_IOCH\_MFLUSH}}
+\index{MON\_IOCH\_MFLUSH@{MON\_IOCH\_MFLUSH}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCH\_MFLUSH}{MON\_IOCH\_MFLUSH}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCH\+\_\+\+MFLUSH~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 8)}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a05bdacbe2cd6174053172b0bc35ba69c}\label{pcap-usb-linux_8c_a05bdacbe2cd6174053172b0bc35ba69c}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCQ\_RING\_SIZE@{MON\_IOCQ\_RING\_SIZE}}
+\index{MON\_IOCQ\_RING\_SIZE@{MON\_IOCQ\_RING\_SIZE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCQ\_RING\_SIZE}{MON\_IOCQ\_RING\_SIZE}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCQ\+\_\+\+RING\+\_\+\+SIZE~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 5)}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_aec0edf34896177a3b5abfbc0b7e5c58b}\label{pcap-usb-linux_8c_aec0edf34896177a3b5abfbc0b7e5c58b}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCQ\_URB\_LEN@{MON\_IOCQ\_URB\_LEN}}
+\index{MON\_IOCQ\_URB\_LEN@{MON\_IOCQ\_URB\_LEN}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCQ\_URB\_LEN}{MON\_IOCQ\_URB\_LEN}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCQ\+\_\+\+URB\+\_\+\+LEN~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 1)}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_af3ab473763c2c789a16f6aa5b63b3804}\label{pcap-usb-linux_8c_af3ab473763c2c789a16f6aa5b63b3804}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCT\_RING\_SIZE@{MON\_IOCT\_RING\_SIZE}}
+\index{MON\_IOCT\_RING\_SIZE@{MON\_IOCT\_RING\_SIZE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCT\_RING\_SIZE}{MON\_IOCT\_RING\_SIZE}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCT\+\_\+\+RING\+\_\+\+SIZE~\+\_\+\+IO(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 4)}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a0de1ff219c17d7119680d3e6106e3a86}\label{pcap-usb-linux_8c_a0de1ff219c17d7119680d3e6106e3a86}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCX\_GET@{MON\_IOCX\_GET}}
+\index{MON\_IOCX\_GET@{MON\_IOCX\_GET}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCX\_GET}{MON\_IOCX\_GET}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCX\+\_\+\+GET~\+\_\+\+IOW(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 6, struct \mbox{\hyperlink{structmon__bin__get}{mon\+\_\+bin\+\_\+get}})}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_ae1c80495eeaefa09b7f50eabdb5dcbe2}\label{pcap-usb-linux_8c_ae1c80495eeaefa09b7f50eabdb5dcbe2}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCX\_MFETCH@{MON\_IOCX\_MFETCH}}
+\index{MON\_IOCX\_MFETCH@{MON\_IOCX\_MFETCH}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCX\_MFETCH}{MON\_IOCX\_MFETCH}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCX\+\_\+\+MFETCH~\+\_\+\+IOWR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 7, struct \mbox{\hyperlink{structmon__bin__mfetch}{mon\+\_\+bin\+\_\+mfetch}})}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_aba8fc223768a034a88ecca9a4483f3c2}\label{pcap-usb-linux_8c_aba8fc223768a034a88ecca9a4483f3c2}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!MON\_IOCX\_URB@{MON\_IOCX\_URB}}
+\index{MON\_IOCX\_URB@{MON\_IOCX\_URB}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{MON\_IOCX\_URB}{MON\_IOCX\_URB}}
+{\footnotesize\ttfamily \#define MON\+\_\+\+IOCX\+\_\+\+URB~\+\_\+\+IOWR(\mbox{\hyperlink{pcap-usb-linux_8c_a3120d928b587dd2751169d1222d3cb79}{MON\+\_\+\+IOC\+\_\+\+MAGIC}}, 2, struct mon\+\_\+bin\+\_\+hdr)}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a9be0c3b8b90682365efeb933669dedd0}\label{pcap-usb-linux_8c_a9be0c3b8b90682365efeb933669dedd0}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!PROC\_USB\_BUS\_DIR@{PROC\_USB\_BUS\_DIR}}
+\index{PROC\_USB\_BUS\_DIR@{PROC\_USB\_BUS\_DIR}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{PROC\_USB\_BUS\_DIR}{PROC\_USB\_BUS\_DIR}}
+{\footnotesize\ttfamily \#define PROC\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR~\char`\"{}/proc/bus/usb\char`\"{}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_ac6a2356a659193639af848b23944ff77}\label{pcap-usb-linux_8c_ac6a2356a659193639af848b23944ff77}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!SYS\_USB\_BUS\_DIR@{SYS\_USB\_BUS\_DIR}}
+\index{SYS\_USB\_BUS\_DIR@{SYS\_USB\_BUS\_DIR}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{SYS\_USB\_BUS\_DIR}{SYS\_USB\_BUS\_DIR}}
+{\footnotesize\ttfamily \#define SYS\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR~\char`\"{}/sys/bus/usb/devices\char`\"{}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a1d46c8a7ba5292aa99ef445df6f190af}\label{pcap-usb-linux_8c_a1d46c8a7ba5292aa99ef445df6f190af}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_DIR\_IN@{USB\_DIR\_IN}}
+\index{USB\_DIR\_IN@{USB\_DIR\_IN}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_DIR\_IN}{USB\_DIR\_IN}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+DIR\+\_\+\+IN~0x80}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a906ba0fa4d6863d2035b57c95e47d85a}\label{pcap-usb-linux_8c_a906ba0fa4d6863d2035b57c95e47d85a}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_DT\_DEVICE@{USB\_DT\_DEVICE}}
+\index{USB\_DT\_DEVICE@{USB\_DT\_DEVICE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_DT\_DEVICE}{USB\_DT\_DEVICE}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+DT\+\_\+\+DEVICE~1}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a50113c00c3f19c02269a18d8c8e74d3d}\label{pcap-usb-linux_8c_a50113c00c3f19c02269a18d8c8e74d3d}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_IFACE@{USB\_IFACE}}
+\index{USB\_IFACE@{USB\_IFACE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFACE}{USB\_IFACE}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFACE~\char`\"{}usbmon\char`\"{}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}\label{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_LINE\_LEN@{USB\_LINE\_LEN}}
+\index{USB\_LINE\_LEN@{USB\_LINE\_LEN}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_LINE\_LEN}{USB\_LINE\_LEN}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+LINE\+\_\+\+LEN~4096}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a3e87c09c94711436bc446aa280c10693}\label{pcap-usb-linux_8c_a3e87c09c94711436bc446aa280c10693}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_RECIP\_DEVICE@{USB\_RECIP\_DEVICE}}
+\index{USB\_RECIP\_DEVICE@{USB\_RECIP\_DEVICE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_RECIP\_DEVICE}{USB\_RECIP\_DEVICE}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+RECIP\+\_\+\+DEVICE~0x00}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_ae10a1fd5f65d075c17536fd3f7d8472e}\label{pcap-usb-linux_8c_ae10a1fd5f65d075c17536fd3f7d8472e}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_REQ\_GET\_DESCRIPTOR@{USB\_REQ\_GET\_DESCRIPTOR}}
+\index{USB\_REQ\_GET\_DESCRIPTOR@{USB\_REQ\_GET\_DESCRIPTOR}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_REQ\_GET\_DESCRIPTOR}{USB\_REQ\_GET\_DESCRIPTOR}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+DESCRIPTOR~6}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a9f4dbc50781a3d445f0f1811f9f65257}\label{pcap-usb-linux_8c_a9f4dbc50781a3d445f0f1811f9f65257}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_TEXT\_DIR@{USB\_TEXT\_DIR}}
+\index{USB\_TEXT\_DIR@{USB\_TEXT\_DIR}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_TEXT\_DIR}{USB\_TEXT\_DIR}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+TEXT\+\_\+\+DIR~\char`\"{}/sys/kernel/debug/usb/usbmon\char`\"{}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a7ed903b51b1604f84f3da37cf5c158e6}\label{pcap-usb-linux_8c_a7ed903b51b1604f84f3da37cf5c158e6}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_TEXT\_DIR\_OLD@{USB\_TEXT\_DIR\_OLD}}
+\index{USB\_TEXT\_DIR\_OLD@{USB\_TEXT\_DIR\_OLD}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_TEXT\_DIR\_OLD}{USB\_TEXT\_DIR\_OLD}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+TEXT\+\_\+\+DIR\+\_\+\+OLD~\char`\"{}/sys/kernel/debug/usbmon\char`\"{}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_af442f8706cfb3d4be5f6ddc10f50cca6}\label{pcap-usb-linux_8c_af442f8706cfb3d4be5f6ddc10f50cca6}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!USB\_TYPE\_STANDARD@{USB\_TYPE\_STANDARD}}
+\index{USB\_TYPE\_STANDARD@{USB\_TYPE\_STANDARD}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{USB\_TYPE\_STANDARD}{USB\_TYPE\_STANDARD}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+TYPE\+\_\+\+STANDARD~0x00}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a3fffea119c04c7680f2e9cf3fadf63b4}\label{pcap-usb-linux_8c_a3fffea119c04c7680f2e9cf3fadf63b4}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!VEC\_SIZE@{VEC\_SIZE}}
+\index{VEC\_SIZE@{VEC\_SIZE}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{VEC\_SIZE}{VEC\_SIZE}}
+{\footnotesize\ttfamily \#define VEC\+\_\+\+SIZE~32}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a189ce42d8c838dfd713f64c99589c8a3}\label{pcap-usb-linux_8c_a189ce42d8c838dfd713f64c99589c8a3}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!ascii\_to\_int@{ascii\_to\_int}}
+\index{ascii\_to\_int@{ascii\_to\_int}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{ascii\_to\_int()}{ascii\_to\_int()}}
+{\footnotesize\ttfamily static int ascii\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}\label{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!probe\_devices@{probe\_devices}}
+\index{probe\_devices@{probe\_devices}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{probe\_devices()}{probe\_devices()}}
+{\footnotesize\ttfamily static void probe\+\_\+devices (\begin{DoxyParamCaption}\item[{int}]{bus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{pcap-usb-linux_8c_acc22ad64141c7d16638b584ce28781e9}{CTRL\+\_\+\+TIMEOUT}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{pcap-usb-linux_8c_a1d46c8a7ba5292aa99ef445df6f190af}{USB\+\_\+\+DIR\+\_\+\+IN}}, \mbox{\hyperlink{pcap-usb-linux_8c_a906ba0fa4d6863d2035b57c95e47d85a}{USB\+\_\+\+DT\+\_\+\+DEVICE}}, \mbox{\hyperlink{pcap-usb-linux_8c_a3e87c09c94711436bc446aa280c10693}{USB\+\_\+\+RECIP\+\_\+\+DEVICE}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae10a1fd5f65d075c17536fd3f7d8472e}{USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+DESCRIPTOR}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_af442f8706cfb3d4be5f6ddc10f50cca6}{USB\+\_\+\+TYPE\+\_\+\+STANDARD}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}\label{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_activate@{usb\_activate}}
+\index{usb\_activate@{usb\_activate}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_activate()}{usb\_activate()}}
+{\footnotesize\ttfamily static int usb\+\_\+activate (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{bpf_8h_a9e2d35fec485b47ff71e2d3de8572e98}{DLT\+\_\+\+USB\+\_\+\+LINUX}}, \mbox{\hyperlink{bpf_8h_ac6ebc3c746098b3169d54cf85996766a}{DLT\+\_\+\+USB\+\_\+\+LINUX\+\_\+\+MMAPPED}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_af113fa82244cf1246dc09d9399049000}{PCAP\+\_\+\+ERROR}}, \mbox{\hyperlink{pcap_2pcap_8h_a2bdaca673eb2ddf3e63f4cc68342cf56}{PCAP\+\_\+\+ERROR\+\_\+\+RFMON\+\_\+\+NOTSUP}}, \mbox{\hyperlink{pcap-int_8h_a6e157e229eceba8cccc16f0ff9d8e438}{pcap\+\_\+getnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-int_8h_a541d703f493e59bc6e2925ad3a9e913d}{pcap\+\_\+setnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}{probe\+\_\+devices()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}, \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1}{usb\+\_\+cleanup\+\_\+linux\+\_\+mmap()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a50113c00c3f19c02269a18d8c8e74d3d}{USB\+\_\+\+IFACE}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae1e7321d1a6d6d653f1ca61152d49e81}{usb\+\_\+inject\+\_\+linux()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}{USB\+\_\+\+LINE\+\_\+\+LEN}}, \mbox{\hyperlink{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42}{usb\+\_\+mmap()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}{usb\+\_\+read\+\_\+linux()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}{usb\+\_\+read\+\_\+linux\+\_\+mmap()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a1d590ecf89d1462bc74c7ba3d42535ba}{usb\+\_\+setdirection\+\_\+linux()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a8a6d706423403b1e3bae095759278878}{usb\+\_\+setfilter\+\_\+linux()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}{usb\+\_\+stats\+\_\+linux()}}, \mbox{\hyperlink{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461}{usb\+\_\+stats\+\_\+linux\+\_\+bin()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a9f4dbc50781a3d445f0f1811f9f65257}{USB\+\_\+\+TEXT\+\_\+\+DIR}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a7ed903b51b1604f84f3da37cf5c158e6}{USB\+\_\+\+TEXT\+\_\+\+DIR\+\_\+\+OLD}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a}{usb\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1}\label{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_cleanup\_linux\_mmap@{usb\_cleanup\_linux\_mmap}}
+\index{usb\_cleanup\_linux\_mmap@{usb\_cleanup\_linux\_mmap}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_cleanup\_linux\_mmap()}{usb\_cleanup\_linux\_mmap()}}
+{\footnotesize\ttfamily static void usb\+\_\+cleanup\+\_\+linux\+\_\+mmap (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_a173c0aa968a708f9070dbac834485037}{munmap()}} , 以及 \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a}\label{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_create@{usb\_create}}
+\index{usb\_create@{usb\_create}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_create()}{usb\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ usb\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{pcap-usb-linux_8c_a245a6056b9c11af916132abb4f43ab5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65}\label{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_dev\_add@{usb\_dev\_add}}
+\index{usb\_dev\_add@{usb\_dev\_add}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_dev\_add()}{usb\_dev\_add()}}
+{\footnotesize\ttfamily static int usb\+\_\+dev\+\_\+add (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{int}]{n,  }\item[{char $\ast$}]{err\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{inet_8c_ae61261e756b0e199b9d361f500c49f17}{pcap\+\_\+add\+\_\+if()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a50113c00c3f19c02269a18d8c8e74d3d}{USB\+\_\+\+IFACE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc}{usb\+\_\+platform\+\_\+finddevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_ae1e7321d1a6d6d653f1ca61152d49e81}\label{pcap-usb-linux_8c_ae1e7321d1a6d6d653f1ca61152d49e81}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_inject\_linux@{usb\_inject\_linux}}
+\index{usb\_inject\_linux@{usb\_inject\_linux}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_inject\_linux()}{usb\_inject\_linux()}}
+{\footnotesize\ttfamily static int usb\+\_\+inject\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_ae1e7321d1a6d6d653f1ca61152d49e81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42}\label{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_mmap@{usb\_mmap}}
+\index{usb\_mmap@{usb\_mmap}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_mmap()}{usb\_mmap()}}
+{\footnotesize\ttfamily static int usb\+\_\+mmap (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a05bdacbe2cd6174053172b0bc35ba69c}{MON\+\_\+\+IOCQ\+\_\+\+RING\+\_\+\+SIZE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc}\label{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_platform\_finddevs@{usb\_platform\_finddevs}}
+\index{usb\_platform\_finddevs@{usb\_platform\_finddevs}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_platform\_finddevs()}{usb\_platform\_finddevs()}}
+{\footnotesize\ttfamily int usb\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{err\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-usb-linux_8c_a9be0c3b8b90682365efeb933669dedd0}{PROC\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ac6a2356a659193639af848b23944ff77}{SYS\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65}{usb\+\_\+dev\+\_\+add()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}\label{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_read\_linux@{usb\_read\_linux}}
+\index{usb\_read\_linux@{usb\_read\_linux}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_read\_linux()}{usb\_read\_linux()}}
+{\footnotesize\ttfamily static int usb\+\_\+read\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{max\+\_\+packets,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-dos_8c_ab0631f01387208ab11bbe20588854f5f}{etype}}, \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}, \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}{USB\+\_\+\+LINE\+\_\+\+LEN}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}\label{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_read\_linux\_bin@{usb\_read\_linux\_bin}}
+\index{usb\_read\_linux\_bin@{usb\_read\_linux\_bin}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_read\_linux\_bin()}{usb\_read\_linux\_bin()}}
+{\footnotesize\ttfamily static int usb\+\_\+read\+\_\+linux\+\_\+bin (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{max\+\_\+packets,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{structmon__bin__get_a735984d41155bc1032e09bece8f8d66d}{mon\+\_\+bin\+\_\+get\+::data}}, \mbox{\hyperlink{structmon__bin__get_ace1c2e33b74df8973a7d9a19c935af80}{mon\+\_\+bin\+\_\+get\+::data\+\_\+len}}, \mbox{\hyperlink{structpcap__usb__header_a66f59afaeff1fcdb59b5a22e4147f1c0}{pcap\+\_\+usb\+\_\+header\+::data\+\_\+len}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structmon__bin__get_afb54d4068f31c7e4a2d3398610c54feb}{mon\+\_\+bin\+\_\+get\+::hdr}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{pcap-usb-linux_8c_a0de1ff219c17d7119680d3e6106e3a86}{MON\+\_\+\+IOCX\+\_\+\+GET}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}, \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}, \mbox{\hyperlink{structpcap__usb__header_a1c02a0d13529fc8a9e93e467f98aff42}{pcap\+\_\+usb\+\_\+header\+::ts\+\_\+sec}} , 以及 \mbox{\hyperlink{structpcap__usb__header_a1fb9efd05b607a72b47aba1206002436}{pcap\+\_\+usb\+\_\+header\+::ts\+\_\+usec}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}\label{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_read\_linux\_mmap@{usb\_read\_linux\_mmap}}
+\index{usb\_read\_linux\_mmap@{usb\_read\_linux\_mmap}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_read\_linux\_mmap()}{usb\_read\_linux\_mmap()}}
+{\footnotesize\ttfamily static int usb\+\_\+read\+\_\+linux\+\_\+mmap (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{max\+\_\+packets,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{pcap-usb-linux_8c_a484547d2a66930a60a07880d965638e1}{MON\+\_\+\+IOCH\+\_\+\+MFLUSH}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae1c80495eeaefa09b7f50eabdb5dcbe2}{MON\+\_\+\+IOCX\+\_\+\+MFETCH}}, \mbox{\hyperlink{structmon__bin__mfetch_ac75cad9833d463079b6da1b1a3846a3a}{mon\+\_\+bin\+\_\+mfetch\+::nfetch}}, \mbox{\hyperlink{structmon__bin__mfetch_af8b0d658a8b6b5ee84b1b05809bacad2}{mon\+\_\+bin\+\_\+mfetch\+::nflush}}, \mbox{\hyperlink{structmon__bin__mfetch_a7e41dfb89d8a68dbde1a283818af2328}{mon\+\_\+bin\+\_\+mfetch\+::offvec}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}, \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a3fffea119c04c7680f2e9cf3fadf63b4}{VEC\+\_\+\+SIZE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a1d590ecf89d1462bc74c7ba3d42535ba}\label{pcap-usb-linux_8c_a1d590ecf89d1462bc74c7ba3d42535ba}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_setdirection\_linux@{usb\_setdirection\_linux}}
+\index{usb\_setdirection\_linux@{usb\_setdirection\_linux}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_setdirection\_linux()}{usb\_setdirection\_linux()}}
+{\footnotesize\ttfamily static int usb\+\_\+setdirection\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}}}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a1d590ecf89d1462bc74c7ba3d42535ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a8a6d706423403b1e3bae095759278878}\label{pcap-usb-linux_8c_a8a6d706423403b1e3bae095759278878}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_setfilter\_linux@{usb\_setfilter\_linux}}
+\index{usb\_setfilter\_linux@{usb\_setfilter\_linux}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_setfilter\_linux()}{usb\_setfilter\_linux()}}
+{\footnotesize\ttfamily static int usb\+\_\+setfilter\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_a8a6d706423403b1e3bae095759278878_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}\label{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_stats\_linux@{usb\_stats\_linux}}
+\index{usb\_stats\_linux@{usb\_stats\_linux}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_stats\_linux()}{usb\_stats\_linux()}}
+{\footnotesize\ttfamily static int usb\+\_\+stats\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{stats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{pcap\+\_\+stat\+::ps\+\_\+drop}}, \mbox{\hyperlink{structpcap__stat_abc51be1ec5423e462bde5eac5a9b7c56}{pcap\+\_\+stat\+::ps\+\_\+ifdrop}}, \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{pcap\+\_\+stat\+::ps\+\_\+recv}}, \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}, \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae4987f840e2a30ca7dfdacb1a577db61}{USB\+\_\+\+LINE\+\_\+\+LEN}}, \mbox{\hyperlink{pcap-usb-linux_8c_a9f4dbc50781a3d445f0f1811f9f65257}{USB\+\_\+\+TEXT\+\_\+\+DIR}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a7ed903b51b1604f84f3da37cf5c158e6}{USB\+\_\+\+TEXT\+\_\+\+DIR\+\_\+\+OLD}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461}\label{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!usb\_stats\_linux\_bin@{usb\_stats\_linux\_bin}}
+\index{usb\_stats\_linux\_bin@{usb\_stats\_linux\_bin}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{usb\_stats\_linux\_bin()}{usb\_stats\_linux\_bin()}}
+{\footnotesize\ttfamily static int usb\+\_\+stats\+\_\+linux\+\_\+bin (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{stats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structmon__bin__stats_a1ef24eb41fde975653210ce6e46be6d0}{mon\+\_\+bin\+\_\+stats\+::dropped}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a459974e19929fe5faa0e7abc20eb78c8}{MON\+\_\+\+IOCG\+\_\+\+STATS}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{pcap\+\_\+stat\+::ps\+\_\+drop}}, \mbox{\hyperlink{structpcap__stat_abc51be1ec5423e462bde5eac5a9b7c56}{pcap\+\_\+stat\+::ps\+\_\+ifdrop}}, \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{pcap\+\_\+stat\+::ps\+\_\+recv}}, \mbox{\hyperlink{structmon__bin__stats_a2217956577c87fb216e3c20f02bfff1c}{mon\+\_\+bin\+\_\+stats\+::queued}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-usb-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-usb-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/usb-\/linux.c@{pcap-\/usb-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/usb-\/linux.c,v 1.33 2008-\/12-\/23 21:38:50 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}

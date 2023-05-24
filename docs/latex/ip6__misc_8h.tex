@@ -1,0 +1,377 @@
+\hypertarget{ip6__misc_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/ip6\+\_\+misc.h 文件参考}
+\label{ip6__misc_8h}\index{libpcap-\/1.1.1/Win32/Include/ip6\_misc.h@{libpcap-\/1.1.1/Win32/Include/ip6\_misc.h}}
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$ws2tcpip.\+h$>$}\newline
+ip6\+\_\+misc.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{ip6__misc_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_abcddcc195249a64bb13b5fc8b438548d}{IN\+\_\+\+MULTICAST}}(a)~IN\+\_\+\+CLASSD(a)
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_af168ec04d060a593fb5607320c90f06c}{IN\+\_\+\+EXPERIMENTAL}}(a)~((((u\+\_\+int32\+\_\+t) (a)) \& 0xf0000000) == 0xf0000000)
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a3d2d5e8347d77665a4aa3bd3ada19ff0}{IN\+\_\+\+LOOPBACKNET}}~127
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a4070ab87c58e9ea0b339a49d5599a716}{ip6\+\_\+vfc}}~ip6\+\_\+ctlun.\+ip6\+\_\+un2\+\_\+vfc
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a3b7afb14f7a6dce90a6d382445c028ee}{ip6\+\_\+flow}}~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+flow
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a2f12fbab2e739076876c82ae50da4f5a}{ip6\+\_\+plen}}~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+plen
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a51d28c6adc4201dbc5302e83815c7b6b}{ip6\+\_\+nxt}}~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+nxt
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aace8be997ae474eb807fceb2f7b84f2c}{ip6\+\_\+hlim}}~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+hlim
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a22c6f491754e32143a7f9c1bef4b4856}{ip6\+\_\+hops}}~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+hlim
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aed840851ebbf3520d7a072afc8aeda19}{nd\+\_\+rd\+\_\+type}}~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+type
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aeeb140ac4c0bb0d49f8c7f2310b652d7}{nd\+\_\+rd\+\_\+code}}~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+code
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a52c618934c98e0aeaa1ddc5b08ceb1ed}{nd\+\_\+rd\+\_\+cksum}}~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+cksum
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a0b74bcef751956e1ad37ac21bbd29519}{nd\+\_\+rd\+\_\+reserved}}~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+data32\mbox{[}0\mbox{]}
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}{IPPROTO\+\_\+\+HOPOPTS}}~0 /$\ast$ IPv6 hop-\/by-\/hop options $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a029fc3b9526146e54addf53ca297e629}{IPPROTO\+\_\+\+IPV6}}~41  /$\ast$ IPv6 header.  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aedc955d9fee17d8992ad39fbc9feb7c7}{IPPROTO\+\_\+\+ROUTING}}~43 /$\ast$ IPv6 routing header  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ab31ae8fef94a70e83dca388d8eb1e874}{IPPROTO\+\_\+\+FRAGMENT}}~44 /$\ast$ IPv6 fragmentation header $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a4b9d5e2fbcca9ae84db04807a6693c31}{IPPROTO\+\_\+\+ESP}}~50 /$\ast$ encapsulating security payload $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}{IPPROTO\+\_\+\+AH}}~51 /$\ast$ authentication header $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a3a52cdbaf5f9fc647399ef2481c8204d}{IPPROTO\+\_\+\+ICMPV6}}~58 /$\ast$ ICMPv6   $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}{IPPROTO\+\_\+\+NONE}}~59 /$\ast$ IPv6 no next header  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a95d72ab52f56094df17a63accfe8f5e1}{IPPROTO\+\_\+\+DSTOPTS}}~60 /$\ast$ IPv6 destination options $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ae06997f73d0cb6365963400e23d2c0e5}{IPPROTO\+\_\+\+PIM}}~103 /$\ast$ Protocol Independent Multicast.  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a03abb90df75deec378801f8db1b62260}{IPV6\+\_\+\+RTHDR\+\_\+\+TYPE\+\_\+0}}~0
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aa8334d544151f052317c2ae3727c121c}{IP6\+OPT\+\_\+\+PAD1}}~0x00 /$\ast$ 00 0 00000 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_af49f318181963a2e514485b9330f7fb0}{IP6\+OPT\+\_\+\+PADN}}~0x01 /$\ast$ 00 0 00001 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a8e9b8d710aad6957e7c3d0afad761133}{IP6\+OPT\+\_\+\+JUMBO}}~0x\+C2 /$\ast$ 11 0 00010 = 194 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ae6dad3f922622d2ef092e3216b3fb561}{IP6\+OPT\+\_\+\+JUMBO\+\_\+\+LEN}}~6
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a27ff48b19d8137f51c929ae6a5e22de0}{IP6\+OPT\+\_\+\+ROUTER\+\_\+\+ALERT}}~0x05 /$\ast$ 00 0 00101 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a23c94a983ec0c69a09cf995c319c2931}{IP6\+OPT\+\_\+\+RTALERT\+\_\+\+LEN}}~4
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a61dc665a1fc20474ebc6ac00435c37f5}{IP6\+OPT\+\_\+\+RTALERT\+\_\+\+MLD}}~0 /$\ast$ Datagram contains an MLD message $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a054655689a860b2cab6f494760288a98}{IP6\+OPT\+\_\+\+RTALERT\+\_\+\+RSVP}}~1 /$\ast$ Datagram contains an RSVP message $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a92affa9ac98c480c251272736bff7c46}{IP6\+OPT\+\_\+\+RTALERT\+\_\+\+ACTNET}}~2  /$\ast$ contains an Active Networks msg $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ab8d2d3a500608d3cfefa8e8976eaa4c3}{IP6\+OPT\+\_\+\+MINLEN}}~2
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ae804108cbd7faeb2d1c0a6de3f0ec744}{IP6\+OPT\+\_\+\+BINDING\+\_\+\+UPDATE}}~0xc6 /$\ast$ 11 0 00110 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a2d4632a080530d9a583ab1b5ca4f225c}{IP6\+OPT\+\_\+\+BINDING\+\_\+\+ACK}}~0x07 /$\ast$ 00 0 00111 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a099c787a68fe11c78b581171ace579d9}{IP6\+OPT\+\_\+\+BINDING\+\_\+\+REQ}}~0x08 /$\ast$ 00 0 01000 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a9b913461978e94df243ea5c14468b41b}{IP6\+OPT\+\_\+\+HOME\+\_\+\+ADDRESS}}~0xc9 /$\ast$ 11 0 01001 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_ac8d0fb9a8f9cfe7176380685cccfd2de}{IP6\+OPT\+\_\+\+EID}}~0x8a /$\ast$ 10 0 01010 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a1ac0d8d7522fa1fd450c2b97a3de589d}{IP6\+OPT\+\_\+\+TYPE}}(o)~((o) \& 0x\+C0)
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_aa377c02fb595e45472c4910e69dab749}{IP6\+OPT\+\_\+\+TYPE\+\_\+\+SKIP}}~0x00
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a7c16cf693e4b3b759afa1f705f8e8144}{IP6\+OPT\+\_\+\+TYPE\+\_\+\+DISCARD}}~0x40
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a1ee2929fffbcb2baa1fb529e2682a630}{IP6\+OPT\+\_\+\+TYPE\+\_\+\+FORCEICMP}}~0x80
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_af42dea58e34f63d04583cba0f2e8ed56}{IP6\+OPT\+\_\+\+TYPE\+\_\+\+ICMP}}~0x\+C0
+\item 
+\#define \mbox{\hyperlink{ip6__misc_8h_a57d85cd93542e02f4b268dc2e5c08569}{IP6\+OPT\+\_\+\+MUTABLE}}~0x20
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{ip6__misc_8h_af168ec04d060a593fb5607320c90f06c}\label{ip6__misc_8h_af168ec04d060a593fb5607320c90f06c}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IN\_EXPERIMENTAL@{IN\_EXPERIMENTAL}}
+\index{IN\_EXPERIMENTAL@{IN\_EXPERIMENTAL}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IN\_EXPERIMENTAL}{IN\_EXPERIMENTAL}}
+{\footnotesize\ttfamily \#define IN\+\_\+\+EXPERIMENTAL(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((((u\+\_\+int32\+\_\+t) (a)) \& 0xf0000000) == 0xf0000000)}
+
+\mbox{\Hypertarget{ip6__misc_8h_a3d2d5e8347d77665a4aa3bd3ada19ff0}\label{ip6__misc_8h_a3d2d5e8347d77665a4aa3bd3ada19ff0}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IN\_LOOPBACKNET@{IN\_LOOPBACKNET}}
+\index{IN\_LOOPBACKNET@{IN\_LOOPBACKNET}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IN\_LOOPBACKNET}{IN\_LOOPBACKNET}}
+{\footnotesize\ttfamily \#define IN\+\_\+\+LOOPBACKNET~127}
+
+\mbox{\Hypertarget{ip6__misc_8h_abcddcc195249a64bb13b5fc8b438548d}\label{ip6__misc_8h_abcddcc195249a64bb13b5fc8b438548d}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IN\_MULTICAST@{IN\_MULTICAST}}
+\index{IN\_MULTICAST@{IN\_MULTICAST}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IN\_MULTICAST}{IN\_MULTICAST}}
+{\footnotesize\ttfamily \#define IN\+\_\+\+MULTICAST(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~IN\+\_\+\+CLASSD(a)}
+
+\mbox{\Hypertarget{ip6__misc_8h_a3b7afb14f7a6dce90a6d382445c028ee}\label{ip6__misc_8h_a3b7afb14f7a6dce90a6d382445c028ee}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_flow@{ip6\_flow}}
+\index{ip6\_flow@{ip6\_flow}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_flow}{ip6\_flow}}
+{\footnotesize\ttfamily \#define ip6\+\_\+flow~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+flow}
+
+\mbox{\Hypertarget{ip6__misc_8h_aace8be997ae474eb807fceb2f7b84f2c}\label{ip6__misc_8h_aace8be997ae474eb807fceb2f7b84f2c}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_hlim@{ip6\_hlim}}
+\index{ip6\_hlim@{ip6\_hlim}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_hlim}{ip6\_hlim}}
+{\footnotesize\ttfamily \#define ip6\+\_\+hlim~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+hlim}
+
+\mbox{\Hypertarget{ip6__misc_8h_a22c6f491754e32143a7f9c1bef4b4856}\label{ip6__misc_8h_a22c6f491754e32143a7f9c1bef4b4856}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_hops@{ip6\_hops}}
+\index{ip6\_hops@{ip6\_hops}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_hops}{ip6\_hops}}
+{\footnotesize\ttfamily \#define ip6\+\_\+hops~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+hlim}
+
+\mbox{\Hypertarget{ip6__misc_8h_a51d28c6adc4201dbc5302e83815c7b6b}\label{ip6__misc_8h_a51d28c6adc4201dbc5302e83815c7b6b}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_nxt@{ip6\_nxt}}
+\index{ip6\_nxt@{ip6\_nxt}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_nxt}{ip6\_nxt}}
+{\footnotesize\ttfamily \#define ip6\+\_\+nxt~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+nxt}
+
+\mbox{\Hypertarget{ip6__misc_8h_a2f12fbab2e739076876c82ae50da4f5a}\label{ip6__misc_8h_a2f12fbab2e739076876c82ae50da4f5a}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_plen@{ip6\_plen}}
+\index{ip6\_plen@{ip6\_plen}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_plen}{ip6\_plen}}
+{\footnotesize\ttfamily \#define ip6\+\_\+plen~ip6\+\_\+ctlun.\+ip6\+\_\+un1.\+ip6\+\_\+un1\+\_\+plen}
+
+\mbox{\Hypertarget{ip6__misc_8h_a4070ab87c58e9ea0b339a49d5599a716}\label{ip6__misc_8h_a4070ab87c58e9ea0b339a49d5599a716}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!ip6\_vfc@{ip6\_vfc}}
+\index{ip6\_vfc@{ip6\_vfc}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{ip6\_vfc}{ip6\_vfc}}
+{\footnotesize\ttfamily \#define ip6\+\_\+vfc~ip6\+\_\+ctlun.\+ip6\+\_\+un2\+\_\+vfc}
+
+\mbox{\Hypertarget{ip6__misc_8h_a2d4632a080530d9a583ab1b5ca4f225c}\label{ip6__misc_8h_a2d4632a080530d9a583ab1b5ca4f225c}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_BINDING\_ACK@{IP6OPT\_BINDING\_ACK}}
+\index{IP6OPT\_BINDING\_ACK@{IP6OPT\_BINDING\_ACK}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_BINDING\_ACK}{IP6OPT\_BINDING\_ACK}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+BINDING\+\_\+\+ACK~0x07 /$\ast$ 00 0 00111 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a099c787a68fe11c78b581171ace579d9}\label{ip6__misc_8h_a099c787a68fe11c78b581171ace579d9}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_BINDING\_REQ@{IP6OPT\_BINDING\_REQ}}
+\index{IP6OPT\_BINDING\_REQ@{IP6OPT\_BINDING\_REQ}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_BINDING\_REQ}{IP6OPT\_BINDING\_REQ}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+BINDING\+\_\+\+REQ~0x08 /$\ast$ 00 0 01000 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ae804108cbd7faeb2d1c0a6de3f0ec744}\label{ip6__misc_8h_ae804108cbd7faeb2d1c0a6de3f0ec744}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_BINDING\_UPDATE@{IP6OPT\_BINDING\_UPDATE}}
+\index{IP6OPT\_BINDING\_UPDATE@{IP6OPT\_BINDING\_UPDATE}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_BINDING\_UPDATE}{IP6OPT\_BINDING\_UPDATE}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+BINDING\+\_\+\+UPDATE~0xc6 /$\ast$ 11 0 00110 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ac8d0fb9a8f9cfe7176380685cccfd2de}\label{ip6__misc_8h_ac8d0fb9a8f9cfe7176380685cccfd2de}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_EID@{IP6OPT\_EID}}
+\index{IP6OPT\_EID@{IP6OPT\_EID}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_EID}{IP6OPT\_EID}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+EID~0x8a /$\ast$ 10 0 01010 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a9b913461978e94df243ea5c14468b41b}\label{ip6__misc_8h_a9b913461978e94df243ea5c14468b41b}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_HOME\_ADDRESS@{IP6OPT\_HOME\_ADDRESS}}
+\index{IP6OPT\_HOME\_ADDRESS@{IP6OPT\_HOME\_ADDRESS}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_HOME\_ADDRESS}{IP6OPT\_HOME\_ADDRESS}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+HOME\+\_\+\+ADDRESS~0xc9 /$\ast$ 11 0 01001 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a8e9b8d710aad6957e7c3d0afad761133}\label{ip6__misc_8h_a8e9b8d710aad6957e7c3d0afad761133}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_JUMBO@{IP6OPT\_JUMBO}}
+\index{IP6OPT\_JUMBO@{IP6OPT\_JUMBO}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_JUMBO}{IP6OPT\_JUMBO}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+JUMBO~0x\+C2 /$\ast$ 11 0 00010 = 194 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ae6dad3f922622d2ef092e3216b3fb561}\label{ip6__misc_8h_ae6dad3f922622d2ef092e3216b3fb561}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_JUMBO\_LEN@{IP6OPT\_JUMBO\_LEN}}
+\index{IP6OPT\_JUMBO\_LEN@{IP6OPT\_JUMBO\_LEN}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_JUMBO\_LEN}{IP6OPT\_JUMBO\_LEN}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+JUMBO\+\_\+\+LEN~6}
+
+\mbox{\Hypertarget{ip6__misc_8h_ab8d2d3a500608d3cfefa8e8976eaa4c3}\label{ip6__misc_8h_ab8d2d3a500608d3cfefa8e8976eaa4c3}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_MINLEN@{IP6OPT\_MINLEN}}
+\index{IP6OPT\_MINLEN@{IP6OPT\_MINLEN}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_MINLEN}{IP6OPT\_MINLEN}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+MINLEN~2}
+
+\mbox{\Hypertarget{ip6__misc_8h_a57d85cd93542e02f4b268dc2e5c08569}\label{ip6__misc_8h_a57d85cd93542e02f4b268dc2e5c08569}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_MUTABLE@{IP6OPT\_MUTABLE}}
+\index{IP6OPT\_MUTABLE@{IP6OPT\_MUTABLE}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_MUTABLE}{IP6OPT\_MUTABLE}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+MUTABLE~0x20}
+
+\mbox{\Hypertarget{ip6__misc_8h_aa8334d544151f052317c2ae3727c121c}\label{ip6__misc_8h_aa8334d544151f052317c2ae3727c121c}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_PAD1@{IP6OPT\_PAD1}}
+\index{IP6OPT\_PAD1@{IP6OPT\_PAD1}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_PAD1}{IP6OPT\_PAD1}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+PAD1~0x00 /$\ast$ 00 0 00000 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_af49f318181963a2e514485b9330f7fb0}\label{ip6__misc_8h_af49f318181963a2e514485b9330f7fb0}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_PADN@{IP6OPT\_PADN}}
+\index{IP6OPT\_PADN@{IP6OPT\_PADN}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_PADN}{IP6OPT\_PADN}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+PADN~0x01 /$\ast$ 00 0 00001 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a27ff48b19d8137f51c929ae6a5e22de0}\label{ip6__misc_8h_a27ff48b19d8137f51c929ae6a5e22de0}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_ROUTER\_ALERT@{IP6OPT\_ROUTER\_ALERT}}
+\index{IP6OPT\_ROUTER\_ALERT@{IP6OPT\_ROUTER\_ALERT}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_ROUTER\_ALERT}{IP6OPT\_ROUTER\_ALERT}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+ROUTER\+\_\+\+ALERT~0x05 /$\ast$ 00 0 00101 $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a92affa9ac98c480c251272736bff7c46}\label{ip6__misc_8h_a92affa9ac98c480c251272736bff7c46}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_RTALERT\_ACTNET@{IP6OPT\_RTALERT\_ACTNET}}
+\index{IP6OPT\_RTALERT\_ACTNET@{IP6OPT\_RTALERT\_ACTNET}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_RTALERT\_ACTNET}{IP6OPT\_RTALERT\_ACTNET}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+RTALERT\+\_\+\+ACTNET~2  /$\ast$ contains an Active Networks msg $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a23c94a983ec0c69a09cf995c319c2931}\label{ip6__misc_8h_a23c94a983ec0c69a09cf995c319c2931}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_RTALERT\_LEN@{IP6OPT\_RTALERT\_LEN}}
+\index{IP6OPT\_RTALERT\_LEN@{IP6OPT\_RTALERT\_LEN}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_RTALERT\_LEN}{IP6OPT\_RTALERT\_LEN}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+RTALERT\+\_\+\+LEN~4}
+
+\mbox{\Hypertarget{ip6__misc_8h_a61dc665a1fc20474ebc6ac00435c37f5}\label{ip6__misc_8h_a61dc665a1fc20474ebc6ac00435c37f5}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_RTALERT\_MLD@{IP6OPT\_RTALERT\_MLD}}
+\index{IP6OPT\_RTALERT\_MLD@{IP6OPT\_RTALERT\_MLD}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_RTALERT\_MLD}{IP6OPT\_RTALERT\_MLD}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+RTALERT\+\_\+\+MLD~0 /$\ast$ Datagram contains an MLD message $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a054655689a860b2cab6f494760288a98}\label{ip6__misc_8h_a054655689a860b2cab6f494760288a98}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_RTALERT\_RSVP@{IP6OPT\_RTALERT\_RSVP}}
+\index{IP6OPT\_RTALERT\_RSVP@{IP6OPT\_RTALERT\_RSVP}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_RTALERT\_RSVP}{IP6OPT\_RTALERT\_RSVP}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+RTALERT\+\_\+\+RSVP~1 /$\ast$ Datagram contains an RSVP message $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a1ac0d8d7522fa1fd450c2b97a3de589d}\label{ip6__misc_8h_a1ac0d8d7522fa1fd450c2b97a3de589d}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_TYPE@{IP6OPT\_TYPE}}
+\index{IP6OPT\_TYPE@{IP6OPT\_TYPE}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_TYPE}{IP6OPT\_TYPE}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+TYPE(\begin{DoxyParamCaption}\item[{}]{o }\end{DoxyParamCaption})~((o) \& 0x\+C0)}
+
+\mbox{\Hypertarget{ip6__misc_8h_a7c16cf693e4b3b759afa1f705f8e8144}\label{ip6__misc_8h_a7c16cf693e4b3b759afa1f705f8e8144}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_TYPE\_DISCARD@{IP6OPT\_TYPE\_DISCARD}}
+\index{IP6OPT\_TYPE\_DISCARD@{IP6OPT\_TYPE\_DISCARD}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_TYPE\_DISCARD}{IP6OPT\_TYPE\_DISCARD}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+TYPE\+\_\+\+DISCARD~0x40}
+
+\mbox{\Hypertarget{ip6__misc_8h_a1ee2929fffbcb2baa1fb529e2682a630}\label{ip6__misc_8h_a1ee2929fffbcb2baa1fb529e2682a630}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_TYPE\_FORCEICMP@{IP6OPT\_TYPE\_FORCEICMP}}
+\index{IP6OPT\_TYPE\_FORCEICMP@{IP6OPT\_TYPE\_FORCEICMP}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_TYPE\_FORCEICMP}{IP6OPT\_TYPE\_FORCEICMP}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+TYPE\+\_\+\+FORCEICMP~0x80}
+
+\mbox{\Hypertarget{ip6__misc_8h_af42dea58e34f63d04583cba0f2e8ed56}\label{ip6__misc_8h_af42dea58e34f63d04583cba0f2e8ed56}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_TYPE\_ICMP@{IP6OPT\_TYPE\_ICMP}}
+\index{IP6OPT\_TYPE\_ICMP@{IP6OPT\_TYPE\_ICMP}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_TYPE\_ICMP}{IP6OPT\_TYPE\_ICMP}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+TYPE\+\_\+\+ICMP~0x\+C0}
+
+\mbox{\Hypertarget{ip6__misc_8h_aa377c02fb595e45472c4910e69dab749}\label{ip6__misc_8h_aa377c02fb595e45472c4910e69dab749}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IP6OPT\_TYPE\_SKIP@{IP6OPT\_TYPE\_SKIP}}
+\index{IP6OPT\_TYPE\_SKIP@{IP6OPT\_TYPE\_SKIP}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IP6OPT\_TYPE\_SKIP}{IP6OPT\_TYPE\_SKIP}}
+{\footnotesize\ttfamily \#define IP6\+OPT\+\_\+\+TYPE\+\_\+\+SKIP~0x00}
+
+\mbox{\Hypertarget{ip6__misc_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}\label{ip6__misc_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_AH@{IPPROTO\_AH}}
+\index{IPPROTO\_AH@{IPPROTO\_AH}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_AH}{IPPROTO\_AH}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+AH~51 /$\ast$ authentication header $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a95d72ab52f56094df17a63accfe8f5e1}\label{ip6__misc_8h_a95d72ab52f56094df17a63accfe8f5e1}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_DSTOPTS@{IPPROTO\_DSTOPTS}}
+\index{IPPROTO\_DSTOPTS@{IPPROTO\_DSTOPTS}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_DSTOPTS}{IPPROTO\_DSTOPTS}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+DSTOPTS~60 /$\ast$ IPv6 destination options $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a4b9d5e2fbcca9ae84db04807a6693c31}\label{ip6__misc_8h_a4b9d5e2fbcca9ae84db04807a6693c31}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_ESP@{IPPROTO\_ESP}}
+\index{IPPROTO\_ESP@{IPPROTO\_ESP}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_ESP}{IPPROTO\_ESP}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+ESP~50 /$\ast$ encapsulating security payload $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ab31ae8fef94a70e83dca388d8eb1e874}\label{ip6__misc_8h_ab31ae8fef94a70e83dca388d8eb1e874}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_FRAGMENT@{IPPROTO\_FRAGMENT}}
+\index{IPPROTO\_FRAGMENT@{IPPROTO\_FRAGMENT}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_FRAGMENT}{IPPROTO\_FRAGMENT}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+FRAGMENT~44 /$\ast$ IPv6 fragmentation header $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}\label{ip6__misc_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_HOPOPTS@{IPPROTO\_HOPOPTS}}
+\index{IPPROTO\_HOPOPTS@{IPPROTO\_HOPOPTS}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_HOPOPTS}{IPPROTO\_HOPOPTS}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+HOPOPTS~0 /$\ast$ IPv6 hop-\/by-\/hop options $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a3a52cdbaf5f9fc647399ef2481c8204d}\label{ip6__misc_8h_a3a52cdbaf5f9fc647399ef2481c8204d}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_ICMPV6@{IPPROTO\_ICMPV6}}
+\index{IPPROTO\_ICMPV6@{IPPROTO\_ICMPV6}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_ICMPV6}{IPPROTO\_ICMPV6}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+ICMPV6~58 /$\ast$ ICMPv6   $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a029fc3b9526146e54addf53ca297e629}\label{ip6__misc_8h_a029fc3b9526146e54addf53ca297e629}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_IPV6@{IPPROTO\_IPV6}}
+\index{IPPROTO\_IPV6@{IPPROTO\_IPV6}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_IPV6}{IPPROTO\_IPV6}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+IPV6~41  /$\ast$ IPv6 header.  $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}\label{ip6__misc_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_NONE@{IPPROTO\_NONE}}
+\index{IPPROTO\_NONE@{IPPROTO\_NONE}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_NONE}{IPPROTO\_NONE}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+NONE~59 /$\ast$ IPv6 no next header  $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_ae06997f73d0cb6365963400e23d2c0e5}\label{ip6__misc_8h_ae06997f73d0cb6365963400e23d2c0e5}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_PIM@{IPPROTO\_PIM}}
+\index{IPPROTO\_PIM@{IPPROTO\_PIM}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_PIM}{IPPROTO\_PIM}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+PIM~103 /$\ast$ Protocol Independent Multicast.  $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_aedc955d9fee17d8992ad39fbc9feb7c7}\label{ip6__misc_8h_aedc955d9fee17d8992ad39fbc9feb7c7}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPPROTO\_ROUTING@{IPPROTO\_ROUTING}}
+\index{IPPROTO\_ROUTING@{IPPROTO\_ROUTING}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPPROTO\_ROUTING}{IPPROTO\_ROUTING}}
+{\footnotesize\ttfamily \#define IPPROTO\+\_\+\+ROUTING~43 /$\ast$ IPv6 routing header  $\ast$/}
+
+\mbox{\Hypertarget{ip6__misc_8h_a03abb90df75deec378801f8db1b62260}\label{ip6__misc_8h_a03abb90df75deec378801f8db1b62260}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!IPV6\_RTHDR\_TYPE\_0@{IPV6\_RTHDR\_TYPE\_0}}
+\index{IPV6\_RTHDR\_TYPE\_0@{IPV6\_RTHDR\_TYPE\_0}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{IPV6\_RTHDR\_TYPE\_0}{IPV6\_RTHDR\_TYPE\_0}}
+{\footnotesize\ttfamily \#define IPV6\+\_\+\+RTHDR\+\_\+\+TYPE\+\_\+0~0}
+
+\mbox{\Hypertarget{ip6__misc_8h_a52c618934c98e0aeaa1ddc5b08ceb1ed}\label{ip6__misc_8h_a52c618934c98e0aeaa1ddc5b08ceb1ed}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!nd\_rd\_cksum@{nd\_rd\_cksum}}
+\index{nd\_rd\_cksum@{nd\_rd\_cksum}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{nd\_rd\_cksum}{nd\_rd\_cksum}}
+{\footnotesize\ttfamily \#define nd\+\_\+rd\+\_\+cksum~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+cksum}
+
+\mbox{\Hypertarget{ip6__misc_8h_aeeb140ac4c0bb0d49f8c7f2310b652d7}\label{ip6__misc_8h_aeeb140ac4c0bb0d49f8c7f2310b652d7}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!nd\_rd\_code@{nd\_rd\_code}}
+\index{nd\_rd\_code@{nd\_rd\_code}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{nd\_rd\_code}{nd\_rd\_code}}
+{\footnotesize\ttfamily \#define nd\+\_\+rd\+\_\+code~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+code}
+
+\mbox{\Hypertarget{ip6__misc_8h_a0b74bcef751956e1ad37ac21bbd29519}\label{ip6__misc_8h_a0b74bcef751956e1ad37ac21bbd29519}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!nd\_rd\_reserved@{nd\_rd\_reserved}}
+\index{nd\_rd\_reserved@{nd\_rd\_reserved}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{nd\_rd\_reserved}{nd\_rd\_reserved}}
+{\footnotesize\ttfamily \#define nd\+\_\+rd\+\_\+reserved~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+data32\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{ip6__misc_8h_aed840851ebbf3520d7a072afc8aeda19}\label{ip6__misc_8h_aed840851ebbf3520d7a072afc8aeda19}} 
+\index{ip6\_misc.h@{ip6\_misc.h}!nd\_rd\_type@{nd\_rd\_type}}
+\index{nd\_rd\_type@{nd\_rd\_type}!ip6\_misc.h@{ip6\_misc.h}}
+\doxysubsubsection{\texorpdfstring{nd\_rd\_type}{nd\_rd\_type}}
+{\footnotesize\ttfamily \#define nd\+\_\+rd\+\_\+type~nd\+\_\+rd\+\_\+hdr.\+icmp6\+\_\+type}
+

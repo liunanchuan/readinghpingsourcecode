@@ -1,0 +1,213 @@
+\hypertarget{pcap-snoop_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/snoop.c 文件参考}
+\label{pcap-snoop_8c}\index{libpcap-\/1.1.1/pcap-\/snoop.c@{libpcap-\/1.1.1/pcap-\/snoop.c}}
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$sys/file.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$net/raw.\+h$>$}\newline
+{\ttfamily \#include $<$net/if.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in\+\_\+systm.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/ip.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/if\+\_\+ether.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/ip\+\_\+var.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/udp.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/udp\+\_\+var.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/tcp.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/tcpip.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+pcap-\/snoop.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2}{pcap\+\_\+read\+\_\+snoop}} (pcap\+\_\+t $\ast$p, int cnt, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} callback, u\+\_\+char $\ast$user)
+\item 
+static int \mbox{\hyperlink{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336}{pcap\+\_\+inject\+\_\+snoop}} (pcap\+\_\+t $\ast$p, const void $\ast$buf, size\+\_\+t size)
+\item 
+static int \mbox{\hyperlink{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11}{pcap\+\_\+stats\+\_\+snoop}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$ps)
+\item 
+static int \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop}} (pcap\+\_\+t $\ast$p)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\item 
+int \mbox{\hyperlink{pcap-snoop_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-snoop_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}\label{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_activate\_snoop@{pcap\_activate\_snoop}}
+\index{pcap\_activate\_snoop@{pcap\_activate\_snoop}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_activate\_snoop()}{pcap\_activate\_snoop()}}
+{\footnotesize\ttfamily static int pcap\+\_\+activate\+\_\+snoop (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind()}}, \mbox{\hyperlink{pcap-bpf_8c_a70117bf82609f7d0d37e58efc55eb077}{DLT\+\_\+\+DOCSIS}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}, \mbox{\hyperlink{bpf_8h_a9e3dc4b02619a9daf3e58c7f79c97f05}{DLT\+\_\+\+IP\+\_\+\+OVER\+\_\+\+FC}}, \mbox{\hyperlink{bpf_8h_a629ed89c8b4b7537bfac2491ccff56b8}{DLT\+\_\+\+NULL}}, \mbox{\hyperlink{bpf_8h_a08b3257ff9df4c12f04109194c89d7bf}{DLT\+\_\+\+RAW}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}{ifreq\+::ifr\+\_\+name}}, \mbox{\hyperlink{optimize_8c_ad016c0b6c48c3af42f162f11c3b4f241}{install\+\_\+bpf\+\_\+program()}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_af113fa82244cf1246dc09d9399049000}{PCAP\+\_\+\+ERROR}}, \mbox{\hyperlink{pcap_2pcap_8h_a2bdaca673eb2ddf3e63f4cc68342cf56}{PCAP\+\_\+\+ERROR\+\_\+\+RFMON\+\_\+\+NOTSUP}}, \mbox{\hyperlink{pcap-int_8h_a6e157e229eceba8cccc16f0ff9d8e438}{pcap\+\_\+getnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336}{pcap\+\_\+inject\+\_\+snoop()}}, \mbox{\hyperlink{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2}{pcap\+\_\+read\+\_\+snoop()}}, \mbox{\hyperlink{pcap-int_8h_a541d703f493e59bc6e2925ad3a9e913d}{pcap\+\_\+setnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11}{pcap\+\_\+stats\+\_\+snoop()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}{setsockopt()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa}\label{pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_create@{pcap\_create}}
+\index{pcap\_create@{pcap\_create}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_create()}{pcap\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ pcap\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}} , 以及 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336}\label{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_inject\_snoop@{pcap\_inject\_snoop}}
+\index{pcap\_inject\_snoop@{pcap\_inject\_snoop}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_inject\_snoop()}{pcap\_inject\_snoop()}}
+{\footnotesize\ttfamily static int pcap\+\_\+inject\+\_\+snoop (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{os-sunos4_8h_acd05dd935a081148178734b4930031d5}{write()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-snoop_8c_a14b88a933c5761e5038182b4c30bf0c8}\label{pcap-snoop_8c_a14b88a933c5761e5038182b4c30bf0c8}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_platform\_finddevs@{pcap\_platform\_finddevs}}
+\index{pcap\_platform\_finddevs@{pcap\_platform\_finddevs}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_platform\_finddevs()}{pcap\_platform\_finddevs()}}
+{\footnotesize\ttfamily int pcap\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2}\label{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_read\_snoop@{pcap\_read\_snoop}}
+\index{pcap\_read\_snoop@{pcap\_read\_snoop}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_read\_snoop()}{pcap\_read\_snoop()}}
+{\footnotesize\ttfamily static int pcap\+\_\+read\+\_\+snoop (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{cnt,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{bpf__filter_8c_a22d8361f9c26da729a711306eea03264}{bpf\+\_\+filter()}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{bpf_8h_a629ed89c8b4b7537bfac2491ccff56b8}{DLT\+\_\+\+NULL}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11}\label{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!pcap\_stats\_snoop@{pcap\_stats\_snoop}}
+\index{pcap\_stats\_snoop@{pcap\_stats\_snoop}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_stats\_snoop()}{pcap\_stats\_snoop()}}
+{\footnotesize\ttfamily static int pcap\+\_\+stats\+\_\+snoop (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{ps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-snoop_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-snoop_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/snoop.c@{pcap-\/snoop.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/snoop.c@{pcap-\/snoop.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/snoop.c,v 1.59 2008-\/12-\/02 16:25:14 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}

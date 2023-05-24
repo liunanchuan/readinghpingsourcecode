@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: antigetopt.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">antigetopt.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="antigetopt_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __ANTIGETOPT_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __ANTIGETOPT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/* special return codes */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359">    5</a></span><span class="keyword">enum</span> { <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba24df96646bf41cbd3c94a7bf751e7578">AGO_EOF</a>=4000, <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359">AGO_ALONE</a>, <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796">AGO_UNKNOWN</a>, <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323">AGO_REQARG</a>, <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0fa81729045c95781b4938f98c381d98">AGO_RESET</a>, <a class="code hl_enumvalue" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525">AGO_AMBIG</a> };</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/* option flags */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#aede4751cd42aa332c622f8c47939147d">    8</a></span><span class="preprocessor">#define AGO_NOARG (1&lt;&lt;0)        </span><span class="comment">/* no argument */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a8c65eb4f1441ea5db90177394f41bf88">    9</a></span><span class="preprocessor">#define AGO_NEEDARG (1&lt;&lt;1)      </span><span class="comment">/* required argument */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a51a364774e0856e23783cbbfc12cb566">   10</a></span><span class="preprocessor">#define AGO_OPTARG (1&lt;&lt;2)       </span><span class="comment">/* optional argument */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a7f65a9e5621c59010f1e7f6ed1ecaa0b">   11</a></span><span class="preprocessor">#define AGO_EXCEPT0 (1&lt;&lt;3)      </span><span class="comment">/* exception #0 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a6e6759e18089ef276e17d87f26025fe5">   12</a></span><span class="preprocessor">#define AGO_EXCEPT1 (1&lt;&lt;4)      </span><span class="comment">/* exception #1 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a5877f8d852f6d4d6d4ae397310676c20">   13</a></span><span class="preprocessor">#define AGO_EXCEPT2 (1&lt;&lt;5)      </span><span class="comment">/* exception #3 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#ab0a120cea19a89750373d6fbf37034ce">   14</a></span><span class="preprocessor">#define AGO_ENDOFLIST (1&lt;&lt;15)       </span><span class="comment">/* end of argument list marker */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/* option list null term */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="antigetopt_8h.html#a7411dfd63177db1a2bf336d27f574437">   17</a></span><span class="preprocessor">#define AGO_LIST_TERM {&#39;\0&#39;,NULL,0,AGO_ENDOFLIST}</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* The structure that defines an argument */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structago__optlist.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structago__optlist.html">ago_optlist</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structago__optlist.html#abacaf673fd7f1f52c471c60a69701999">   21</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structago__optlist.html#abacaf673fd7f1f52c471c60a69701999">ao_short</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structago__optlist.html#aa57c44e3ccad5e136c3fc5c872895082">   22</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structago__optlist.html#aa57c44e3ccad5e136c3fc5c872895082">ao_long</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structago__optlist.html#a12d8c4d4749a787b1003289d52046219">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structago__optlist.html#a12d8c4d4749a787b1003289d52046219">ao_id</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structago__optlist.html#abcdc1fa8a161b227ac77c9b2a6884d34">   24</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structago__optlist.html#abcdc1fa8a161b227ac77c9b2a6884d34">ao_flags</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="antigetopt_8h.html#a1f1a4a2a7e05bfb9e7da55636fa1105b">ago_optarg</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="antigetopt_8h.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="antigetopt_8h.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span> <a class="code hl_function" href="antigetopt_8h.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keyword">struct</span> <a class="code hl_struct" href="structago__optlist.html">ago_optlist</a> *list);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span>    <a class="code hl_function" href="antigetopt_8h.html#abd0e29fcb17776e5fe3bdd928cdd6b8f">ago_gnu_error</a>(<span class="keywordtype">char</span> *pname, <span class="keywordtype">int</span> <a class="code hl_function" href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">int</span> <a class="code hl_function" href="antigetopt_8h.html#ac73967e5a19294409255f006750f8ccc">ago_set_exception</a>(<span class="keywordtype">int</span> except_nr, <span class="keywordtype">int</span> (*tester)(<span class="keywordtype">void</span>), <span class="keywordtype">char</span> *msg);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif </span><span class="comment">/* __ANTIGETOPT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525">AGO_AMBIG</a></div><div class="ttdeci">@ AGO_AMBIG</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba0fa81729045c95781b4938f98c381d98"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0fa81729045c95781b4938f98c381d98">AGO_RESET</a></div><div class="ttdeci">@ AGO_RESET</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323">AGO_REQARG</a></div><div class="ttdeci">@ AGO_REQARG</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba24df96646bf41cbd3c94a7bf751e7578"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba24df96646bf41cbd3c94a7bf751e7578">AGO_EOF</a></div><div class="ttdeci">@ AGO_EOF</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796">AGO_UNKNOWN</a></div><div class="ttdeci">@ AGO_UNKNOWN</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359"><div class="ttname"><a href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359">AGO_ALONE</a></div><div class="ttdeci">@ AGO_ALONE</div><div class="ttdef"><b>Definition:</b> antigetopt.h:5</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a1f1a4a2a7e05bfb9e7da55636fa1105b"><div class="ttname"><a href="antigetopt_8h.html#a1f1a4a2a7e05bfb9e7da55636fa1105b">ago_optarg</a></div><div class="ttdeci">char * ago_optarg</div><div class="ttdef"><b>Definition:</b> antigetopt.c:18</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a65ce569dd6e9e6939ac83d7ae7bfbe7a"><div class="ttname"><a href="antigetopt_8h.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a></div><div class="ttdeci">char * ago_optname</div><div class="ttdef"><b>Definition:</b> antigetopt.c:19</div></div>
+<div class="ttc" id="aantigetopt_8h_html_a69fd0c7bd1b8d1410d9d4dab0acb2776"><div class="ttname"><a href="antigetopt_8h.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt</a></div><div class="ttdeci">int antigetopt(int argc, char **argv, struct ago_optlist *list)</div><div class="ttdef"><b>Definition:</b> antigetopt.c:41</div></div>
+<div class="ttc" id="aantigetopt_8h_html_abd0e29fcb17776e5fe3bdd928cdd6b8f"><div class="ttname"><a href="antigetopt_8h.html#abd0e29fcb17776e5fe3bdd928cdd6b8f">ago_gnu_error</a></div><div class="ttdeci">void ago_gnu_error(char *pname, int error)</div><div class="ttdef"><b>Definition:</b> antigetopt.c:148</div></div>
+<div class="ttc" id="aantigetopt_8h_html_ac73967e5a19294409255f006750f8ccc"><div class="ttname"><a href="antigetopt_8h.html#ac73967e5a19294409255f006750f8ccc">ago_set_exception</a></div><div class="ttdeci">int ago_set_exception(int except_nr, int(*tester)(void), char *msg)</div><div class="ttdef"><b>Definition:</b> antigetopt.c:178</div></div>
+<div class="ttc" id="aantigetopt_8h_html_adbecdf9d74b32e431fadbab57b196855"><div class="ttname"><a href="antigetopt_8h.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a></div><div class="ttdeci">char ago_optchar</div><div class="ttdef"><b>Definition:</b> antigetopt.c:20</div></div>
+<div class="ttc" id="afiltertest_8c_html_a012a8d8c5ec50aba9e8d09717158c260"><div class="ttname"><a href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error</a></div><div class="ttdeci">static void error(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> filtertest.c:108</div></div>
+<div class="ttc" id="astructago__optlist_html"><div class="ttname"><a href="structago__optlist.html">ago_optlist</a></div><div class="ttdef"><b>Definition:</b> antigetopt.h:20</div></div>
+<div class="ttc" id="astructago__optlist_html_a12d8c4d4749a787b1003289d52046219"><div class="ttname"><a href="structago__optlist.html#a12d8c4d4749a787b1003289d52046219">ago_optlist::ao_id</a></div><div class="ttdeci">int ao_id</div><div class="ttdef"><b>Definition:</b> antigetopt.h:23</div></div>
+<div class="ttc" id="astructago__optlist_html_aa57c44e3ccad5e136c3fc5c872895082"><div class="ttname"><a href="structago__optlist.html#aa57c44e3ccad5e136c3fc5c872895082">ago_optlist::ao_long</a></div><div class="ttdeci">char * ao_long</div><div class="ttdef"><b>Definition:</b> antigetopt.h:22</div></div>
+<div class="ttc" id="astructago__optlist_html_abacaf673fd7f1f52c471c60a69701999"><div class="ttname"><a href="structago__optlist.html#abacaf673fd7f1f52c471c60a69701999">ago_optlist::ao_short</a></div><div class="ttdeci">char ao_short</div><div class="ttdef"><b>Definition:</b> antigetopt.h:21</div></div>
+<div class="ttc" id="astructago__optlist_html_abcdc1fa8a161b227ac77c9b2a6884d34"><div class="ttname"><a href="structago__optlist.html#abcdc1fa8a161b227ac77c9b2a6884d34">ago_optlist::ao_flags</a></div><div class="ttdeci">int ao_flags</div><div class="ttdef"><b>Definition:</b> antigetopt.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

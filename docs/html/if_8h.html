@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Include/net/if.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_ed17a792b07c09ae6ce59b26add31fa3.html">Include</a></li><li class="navelem"><a class="el" href="dir_d5cfc20bbe35f76b90ba8cdd10efa022.html">net</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">if.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="pcap-stdinc_8h_source.html">pcap-stdinc.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+if.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="if_8h__incl.png" border="0" usemap="#alibpcap-1_81_81_2Win32_2Include_2net_2if_8h" alt=""/></div>
+<map name="alibpcap-1_81_81_2Win32_2Include_2net_2if_8h" id="alibpcap-1_81_81_2Win32_2Include_2net_2if_8h">
+<area shape="rect" title=" " alt="" coords="218,5,355,47"/>
+<area shape="rect" href="pcap-stdinc_8h.html" title=" " alt="" coords="237,95,337,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,93,196"/>
+<area shape="rect" title=" " alt="" coords="117,169,176,196"/>
+<area shape="rect" href="bittypes_8h.html" title=" " alt="" coords="201,169,279,196"/>
+<area shape="rect" title=" " alt="" coords="304,169,363,196"/>
+<area shape="rect" title=" " alt="" coords="387,169,429,196"/>
+<area shape="rect" title=" " alt="" coords="453,169,541,196"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="if_8h__dep__incl.png" border="0" usemap="#alibpcap-1_81_81_2Win32_2Include_2net_2if_8hdep" alt=""/></div>
+<map name="alibpcap-1_81_81_2Win32_2Include_2net_2if_8hdep" id="alibpcap-1_81_81_2Win32_2Include_2net_2if_8hdep">
+<area shape="rect" title=" " alt="" coords="1091,5,1229,47"/>
+<area shape="rect" href="getifname_8c.html" title=" " alt="" coords="5,102,96,129"/>
+<area shape="rect" href="if__promisc_8c.html" title=" " alt="" coords="120,102,213,129"/>
+<area shape="rect" href="fad-getad_8c.html" title=" " alt="" coords="237,102,403,129"/>
+<area shape="rect" href="fad-gifc_8c.html" title=" " alt="" coords="427,102,581,129"/>
+<area shape="rect" href="fad-glifc_8c.html" title=" " alt="" coords="605,102,763,129"/>
+<area shape="rect" href="inet_8c.html" title=" " alt="" coords="787,102,919,129"/>
+<area shape="rect" href="pcap-bpf_8c.html" title=" " alt="" coords="944,95,1072,136"/>
+<area shape="rect" href="pcap-can-linux_8c.html" title=" " alt="" coords="1096,95,1224,136"/>
+<area shape="rect" href="pcap-dag_8c.html" title=" " alt="" coords="1248,95,1376,136"/>
+<area shape="rect" href="pcap-dos_8c.html" title=" " alt="" coords="1400,95,1528,136"/>
+<area shape="rect" href="pcap-enet_8c.html" title=" " alt="" coords="1552,95,1680,136"/>
+<area shape="rect" href="pcap-nit_8c.html" title=" " alt="" coords="1704,95,1832,136"/>
+<area shape="rect" href="pcap-pf_8c.html" title=" " alt="" coords="1856,102,2011,129"/>
+<area shape="rect" href="pcap-snit_8c.html" title=" " alt="" coords="2035,95,2163,136"/>
+<area shape="rect" href="pcap-snoop_8c.html" title=" " alt="" coords="2187,95,2315,136"/>
+</map>
+</div>
+</div>
+<p><a href="if_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structif__data.html">if_data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structif__msghdr.html">if_msghdr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifa__msghdr.html">ifa_msghdr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifma__msghdr.html">ifma_msghdr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifreq.html">ifreq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifaliasreq.html">ifaliasreq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifmediareq.html">ifmediareq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structifconf.html">ifconf</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a9ff985a14ab6df655a21a995b5193343"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a9ff985a14ab6df655a21a995b5193343">IFF_CANTCHANGE</a></td></tr>
+<tr class="separator:a9ff985a14ab6df655a21a995b5193343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad343e09640efe03ca06b68aa4e89ff21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#ad343e09640efe03ca06b68aa4e89ff21">IFQ_MAXLEN</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:ad343e09640efe03ca06b68aa4e89ff21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0043cde13e29fd8cffcc6f925f6839"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a7f0043cde13e29fd8cffcc6f925f6839">IFNET_SLOWHZ</a>&#160;&#160;&#160;1		/* granularity is 1 second */</td></tr>
+<tr class="separator:a7f0043cde13e29fd8cffcc6f925f6839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd06da230a96d3b7e6f193c5b3142002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#acd06da230a96d3b7e6f193c5b3142002">IFNAMSIZ</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:acd06da230a96d3b7e6f193c5b3142002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ced5f364c0b2a60b54f6938fd9f1b48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a6ced5f364c0b2a60b54f6938fd9f1b48">ifr_addr</a>&#160;&#160;&#160;ifr_ifru.ifru_addr	/* address */</td></tr>
+<tr class="separator:a6ced5f364c0b2a60b54f6938fd9f1b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51dc7d5a0e438fdb6b894b0425e894e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a51dc7d5a0e438fdb6b894b0425e894e7">ifr_dstaddr</a>&#160;&#160;&#160;ifr_ifru.ifru_dstaddr	/* other end of p-to-p link */</td></tr>
+<tr class="separator:a51dc7d5a0e438fdb6b894b0425e894e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6db006f03bae884d2ffdbdfba4534f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#ae6db006f03bae884d2ffdbdfba4534f8">ifr_broadaddr</a>&#160;&#160;&#160;ifr_ifru.ifru_broadaddr	/* broadcast address */</td></tr>
+<tr class="separator:ae6db006f03bae884d2ffdbdfba4534f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413adcfeaaf2d492c62471a0502a5c4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a413adcfeaaf2d492c62471a0502a5c4c">ifr_flags</a>&#160;&#160;&#160;ifr_ifru.ifru_flags	/* flags */</td></tr>
+<tr class="separator:a413adcfeaaf2d492c62471a0502a5c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2527bf4d5894afc37d444ff854552af5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a2527bf4d5894afc37d444ff854552af5">ifr_metric</a>&#160;&#160;&#160;ifr_ifru.ifru_metric	/* metric */</td></tr>
+<tr class="separator:a2527bf4d5894afc37d444ff854552af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a74eb8a69241b4c7b5b4705560e659"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#ac1a74eb8a69241b4c7b5b4705560e659">ifr_mtu</a>&#160;&#160;&#160;ifr_ifru.ifru_mtu	/* mtu */</td></tr>
+<tr class="separator:ac1a74eb8a69241b4c7b5b4705560e659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d6f69abf430d67c83f20612a8786ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#aa2d6f69abf430d67c83f20612a8786ce">ifr_phys</a>&#160;&#160;&#160;ifr_ifru.ifru_phys	/* physical wire */</td></tr>
+<tr class="separator:aa2d6f69abf430d67c83f20612a8786ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d228f085ba548c3bbd489ca380011c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a88d228f085ba548c3bbd489ca380011c">ifr_media</a>&#160;&#160;&#160;ifr_ifru.ifru_media	/* physical media */</td></tr>
+<tr class="separator:a88d228f085ba548c3bbd489ca380011c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4536172a50f022cb2dff45101fb77f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#ac4536172a50f022cb2dff45101fb77f6">ifr_data</a>&#160;&#160;&#160;ifr_ifru.ifru_data	/* for use by interface */</td></tr>
+<tr class="separator:ac4536172a50f022cb2dff45101fb77f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77063523b7426c3353086e384e2b2876"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a77063523b7426c3353086e384e2b2876">_SIZEOF_ADDR_IFREQ</a>(ifr)</td></tr>
+<tr class="separator:a77063523b7426c3353086e384e2b2876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a843e43dcc69b3230f7890a49a5f72aac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a843e43dcc69b3230f7890a49a5f72aac">ifc_buf</a>&#160;&#160;&#160;ifc_ifcu.ifcu_buf	/* buffer address */</td></tr>
+<tr class="separator:a843e43dcc69b3230f7890a49a5f72aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a1dc139d61e10e5f633c0ef7cc1184"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="if_8h.html#a62a1dc139d61e10e5f633c0ef7cc1184">ifc_req</a>&#160;&#160;&#160;ifc_ifcu.ifcu_req	/* array of structures returned */</td></tr>
+<tr class="separator:a62a1dc139d61e10e5f633c0ef7cc1184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a77063523b7426c3353086e384e2b2876" name="a77063523b7426c3353086e384e2b2876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77063523b7426c3353086e384e2b2876">&#9670;&nbsp;</a></span>_SIZEOF_ADDR_IFREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _SIZEOF_ADDR_IFREQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ifr</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((ifr).<a class="code hl_define" href="if_8h.html#a6ced5f364c0b2a60b54f6938fd9f1b48">ifr_addr</a>.sa_len &gt; <span class="keyword">sizeof</span>(<span class="keyword">struct</span> sockaddr) ? \</div>
+<div class="line">     (<span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code hl_struct" href="structifreq.html">ifreq</a>) - sizeof(struct sockaddr) + \</div>
+<div class="line">      (ifr).<a class="code hl_define" href="if_8h.html#a6ced5f364c0b2a60b54f6938fd9f1b48">ifr_addr</a>.sa_len) : sizeof(struct ifreq))</div>
+<div class="ttc" id="aif_8h_html_a6ced5f364c0b2a60b54f6938fd9f1b48"><div class="ttname"><a href="if_8h.html#a6ced5f364c0b2a60b54f6938fd9f1b48">ifr_addr</a></div><div class="ttdeci">#define ifr_addr</div><div class="ttdef"><b>Definition:</b> if.h:170</div></div>
+<div class="ttc" id="astructifreq_html"><div class="ttname"><a href="structifreq.html">ifreq</a></div><div class="ttdef"><b>Definition:</b> if.h:156</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a843e43dcc69b3230f7890a49a5f72aac" name="a843e43dcc69b3230f7890a49a5f72aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a843e43dcc69b3230f7890a49a5f72aac">&#9670;&nbsp;</a></span>ifc_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifc_buf&#160;&#160;&#160;ifc_ifcu.ifcu_buf	/* buffer address */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62a1dc139d61e10e5f633c0ef7cc1184" name="a62a1dc139d61e10e5f633c0ef7cc1184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a1dc139d61e10e5f633c0ef7cc1184">&#9670;&nbsp;</a></span>ifc_req</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifc_req&#160;&#160;&#160;ifc_ifcu.ifcu_req	/* array of structures returned */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ff985a14ab6df655a21a995b5193343" name="a9ff985a14ab6df655a21a995b5193343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff985a14ab6df655a21a995b5193343">&#9670;&nbsp;</a></span>IFF_CANTCHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IFF_CANTCHANGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (IFF_BROADCAST|IFF_POINTOPOINT|IFF_RUNNING|IFF_OACTIVE|\</div>
+<div class="line">        IFF_SIMPLEX|IFF_MULTICAST|IFF_ALLMULTI)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acd06da230a96d3b7e6f193c5b3142002" name="acd06da230a96d3b7e6f193c5b3142002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd06da230a96d3b7e6f193c5b3142002">&#9670;&nbsp;</a></span>IFNAMSIZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IFNAMSIZ&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f0043cde13e29fd8cffcc6f925f6839" name="a7f0043cde13e29fd8cffcc6f925f6839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f0043cde13e29fd8cffcc6f925f6839">&#9670;&nbsp;</a></span>IFNET_SLOWHZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IFNET_SLOWHZ&#160;&#160;&#160;1		/* granularity is 1 second */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad343e09640efe03ca06b68aa4e89ff21" name="ad343e09640efe03ca06b68aa4e89ff21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad343e09640efe03ca06b68aa4e89ff21">&#9670;&nbsp;</a></span>IFQ_MAXLEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IFQ_MAXLEN&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ced5f364c0b2a60b54f6938fd9f1b48" name="a6ced5f364c0b2a60b54f6938fd9f1b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ced5f364c0b2a60b54f6938fd9f1b48">&#9670;&nbsp;</a></span>ifr_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_addr&#160;&#160;&#160;ifr_ifru.ifru_addr	/* address */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6db006f03bae884d2ffdbdfba4534f8" name="ae6db006f03bae884d2ffdbdfba4534f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6db006f03bae884d2ffdbdfba4534f8">&#9670;&nbsp;</a></span>ifr_broadaddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_broadaddr&#160;&#160;&#160;ifr_ifru.ifru_broadaddr	/* broadcast address */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4536172a50f022cb2dff45101fb77f6" name="ac4536172a50f022cb2dff45101fb77f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4536172a50f022cb2dff45101fb77f6">&#9670;&nbsp;</a></span>ifr_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_data&#160;&#160;&#160;ifr_ifru.ifru_data	/* for use by interface */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51dc7d5a0e438fdb6b894b0425e894e7" name="a51dc7d5a0e438fdb6b894b0425e894e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51dc7d5a0e438fdb6b894b0425e894e7">&#9670;&nbsp;</a></span>ifr_dstaddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_dstaddr&#160;&#160;&#160;ifr_ifru.ifru_dstaddr	/* other end of p-to-p link */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a413adcfeaaf2d492c62471a0502a5c4c" name="a413adcfeaaf2d492c62471a0502a5c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413adcfeaaf2d492c62471a0502a5c4c">&#9670;&nbsp;</a></span>ifr_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_flags&#160;&#160;&#160;ifr_ifru.ifru_flags	/* flags */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88d228f085ba548c3bbd489ca380011c" name="a88d228f085ba548c3bbd489ca380011c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d228f085ba548c3bbd489ca380011c">&#9670;&nbsp;</a></span>ifr_media</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_media&#160;&#160;&#160;ifr_ifru.ifru_media	/* physical media */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2527bf4d5894afc37d444ff854552af5" name="a2527bf4d5894afc37d444ff854552af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2527bf4d5894afc37d444ff854552af5">&#9670;&nbsp;</a></span>ifr_metric</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_metric&#160;&#160;&#160;ifr_ifru.ifru_metric	/* metric */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1a74eb8a69241b4c7b5b4705560e659" name="ac1a74eb8a69241b4c7b5b4705560e659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a74eb8a69241b4c7b5b4705560e659">&#9670;&nbsp;</a></span>ifr_mtu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_mtu&#160;&#160;&#160;ifr_ifru.ifru_mtu	/* mtu */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2d6f69abf430d67c83f20612a8786ce" name="aa2d6f69abf430d67c83f20612a8786ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d6f69abf430d67c83f20612a8786ce">&#9670;&nbsp;</a></span>ifr_phys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ifr_phys&#160;&#160;&#160;ifr_ifru.ifru_phys	/* physical wire */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

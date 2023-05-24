@@ -1,0 +1,427 @@
+\hypertarget{addrinfo_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/addrinfo.h 文件参考}
+\label{addrinfo_8h}\index{libpcap-\/1.1.1/Win32/Include/addrinfo.h@{libpcap-\/1.1.1/Win32/Include/addrinfo.h}}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaddrinfo}{addrinfo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_aac746f03bb5099da0a427a99ecf1e36a}{EAI\+\_\+\+ADDRFAMILY}}~1 /$\ast$ address family for hostname not supported $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a7a0f2f10f8778fe201a68932d18434e5}{EAI\+\_\+\+AGAIN}}~2 /$\ast$ temporary failure in name resolution $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a3f3b38f2ac6688612a0fd20f3e6210be}{EAI\+\_\+\+BADFLAGS}}~3 /$\ast$ invalid value for ai\+\_\+flags $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_acfc712115bf29357d33472da2209dc15}{EAI\+\_\+\+FAIL}}~4 /$\ast$ non-\/recoverable failure in name resolution $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a1d195add54c14a8903441848fb2f7da6}{EAI\+\_\+\+FAMILY}}~5 /$\ast$ ai\+\_\+family not supported $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\+\_\+\+MEMORY}}~6 /$\ast$ memory allocation failure $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_aae1a32f26ffbb7461251d7c4a7c3a0a2}{EAI\+\_\+\+NODATA}}~7 /$\ast$ no address associated with hostname $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a0bb00f48d6ba1e8c55b7d85c8e3a19a7}{EAI\+\_\+\+NONAME}}~8 /$\ast$ hostname nor servname provided, or not known $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_ac7f08e3ee3c38f7c869beb5a44c9f651}{EAI\+\_\+\+SERVICE}}~9 /$\ast$ servname not supported for ai\+\_\+socktype $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a110777c2c99dab32101324b3b1dd1df5}{EAI\+\_\+\+SOCKTYPE}}~10 /$\ast$ ai\+\_\+socktype not supported $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a8e864fa95f26341c27127deb6237c88c}{EAI\+\_\+\+SYSTEM}}~11 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}} \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} returned in \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a06480e6a72c58c6649d2ad19c98bff27}{EAI\+\_\+\+BADHINTS}}~12
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_ac22bd096438839c946a37c0619c6eabf}{EAI\+\_\+\+PROTOCOL}}~13
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_afcb75b949ba49308678186c339c78fdc}{EAI\+\_\+\+MAX}}~14
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a93598d1131d75df799acd66eccd039b0}{NETDB\+\_\+\+INTERNAL}}~-\/1 /$\ast$ see \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}{AI\+\_\+\+PASSIVE}}~0x00000001 /$\ast$ get address to use \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind}}() $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}}~0x00000002 /$\ast$ fill ai\+\_\+canonname $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}{AI\+\_\+\+NUMERICHOST}}~0x00000004 /$\ast$ prevent name resolution $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a8a1b9167c484fa490eefcdb4ad207929}{AI\+\_\+\+MASK}}~(\mbox{\hyperlink{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}{AI\+\_\+\+PASSIVE}} $\vert$ \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}} $\vert$ \mbox{\hyperlink{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}{AI\+\_\+\+NUMERICHOST}})
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a1813fe6d7b10af5ea92ec03bd65ca39d}{AI\+\_\+\+ALL}}~0x00000100 /$\ast$ IPv6 and IPv4-\/mapped (with \mbox{\hyperlink{addrinfo_8h_abbc1e064042dab1058c40d9cd1fc63f0}{AI\+\_\+\+V4\+MAPPED}}) $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a105a4530f28974413451353b10c206ac}{AI\+\_\+\+V4\+MAPPED\+\_\+\+CFG}}~0x00000200 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}} IPv4-\/mapped if kernel supports $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_abe581892df09df05b21fee09e1584659}{AI\+\_\+\+ADDRCONFIG}}~0x00000400 /$\ast$ only if \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} address is assigned $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_abbc1e064042dab1058c40d9cd1fc63f0}{AI\+\_\+\+V4\+MAPPED}}~0x00000800 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}} IPv4-\/mapped IPv6 address $\ast$/
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a618934c69d6209216d271383f8103a2d}{AI\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{addrinfo_8h_a105a4530f28974413451353b10c206ac}{AI\+\_\+\+V4\+MAPPED\+\_\+\+CFG}} $\vert$ \mbox{\hyperlink{addrinfo_8h_abe581892df09df05b21fee09e1584659}{AI\+\_\+\+ADDRCONFIG}})
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_aebc53e498b2434654a1d44070d9ccd40}{NI\+\_\+\+MAXHOST}}~1025
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_aefdeadf85356cc2fa0870d86a6055eb1}{NI\+\_\+\+MAXSERV}}~32
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_ae58777c663bd21ceafae51b23ba493ca}{NI\+\_\+\+NOFQDN}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a62f12304e7a43038f40cd579ad57829f}{NI\+\_\+\+NUMERICHOST}}~0x00000002
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_a21bd81bf080250b73395a02e70a4212e}{NI\+\_\+\+NAMEREQD}}~0x00000004
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_af6d346aae7109d19b9ccab7c510a3cad}{NI\+\_\+\+NUMERICSERV}}~0x00000008
+\item 
+\#define \mbox{\hyperlink{addrinfo_8h_ac8270b4222f6d9ebf05cba519b48be49}{NI\+\_\+\+DGRAM}}~0x00000010
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{addrinfo_8h_ab3ea0e0f67dca182dc4a4cf4df7f29ee}{freeaddrinfo}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$)
+\item 
+void \mbox{\hyperlink{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}{freehostent}} (struct hostent $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{addrinfo_8h_a2188e19091eb51ac870bb7ed19f44658}{gai\+\_\+strerror}} (int)
+\item 
+int \mbox{\hyperlink{addrinfo_8h_a0399cf551e1061c0828721601957e03e}{getaddrinfo}} (const char $\ast$, const char $\ast$, const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$)
+\item 
+int \mbox{\hyperlink{addrinfo_8h_ae1985b06e8b5c4efe3bd2ac8e2c833ab}{getnameinfo}} (const struct sockaddr $\ast$, size\+\_\+t, char $\ast$, size\+\_\+t, char $\ast$, size\+\_\+t, int)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617}{getipnodebyaddr}} (const void $\ast$, size\+\_\+t, int, int $\ast$)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4}{getipnodebyname}} (const char $\ast$, int, int, int $\ast$)
+\item 
+int \mbox{\hyperlink{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}{inet\+\_\+pton}} (int, const char $\ast$, void $\ast$)
+\item 
+const char $\ast$ \mbox{\hyperlink{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf}{inet\+\_\+ntop}} (int, const void $\ast$, char $\ast$, size\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{addrinfo_8h_abe581892df09df05b21fee09e1584659}\label{addrinfo_8h_abe581892df09df05b21fee09e1584659}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_ADDRCONFIG@{AI\_ADDRCONFIG}}
+\index{AI\_ADDRCONFIG@{AI\_ADDRCONFIG}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_ADDRCONFIG}{AI\_ADDRCONFIG}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+ADDRCONFIG~0x00000400 /$\ast$ only if \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} address is assigned $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a1813fe6d7b10af5ea92ec03bd65ca39d}\label{addrinfo_8h_a1813fe6d7b10af5ea92ec03bd65ca39d}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_ALL@{AI\_ALL}}
+\index{AI\_ALL@{AI\_ALL}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_ALL}{AI\_ALL}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+ALL~0x00000100 /$\ast$ IPv6 and IPv4-\/mapped (with \mbox{\hyperlink{addrinfo_8h_abbc1e064042dab1058c40d9cd1fc63f0}{AI\+\_\+\+V4\+MAPPED}}) $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}\label{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_CANONNAME@{AI\_CANONNAME}}
+\index{AI\_CANONNAME@{AI\_CANONNAME}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_CANONNAME}{AI\_CANONNAME}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+CANONNAME~0x00000002 /$\ast$ fill ai\+\_\+canonname $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a618934c69d6209216d271383f8103a2d}\label{addrinfo_8h_a618934c69d6209216d271383f8103a2d}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_DEFAULT@{AI\_DEFAULT}}
+\index{AI\_DEFAULT@{AI\_DEFAULT}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_DEFAULT}{AI\_DEFAULT}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+DEFAULT~(\mbox{\hyperlink{addrinfo_8h_a105a4530f28974413451353b10c206ac}{AI\+\_\+\+V4\+MAPPED\+\_\+\+CFG}} $\vert$ \mbox{\hyperlink{addrinfo_8h_abe581892df09df05b21fee09e1584659}{AI\+\_\+\+ADDRCONFIG}})}
+
+\mbox{\Hypertarget{addrinfo_8h_a8a1b9167c484fa490eefcdb4ad207929}\label{addrinfo_8h_a8a1b9167c484fa490eefcdb4ad207929}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_MASK@{AI\_MASK}}
+\index{AI\_MASK@{AI\_MASK}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_MASK}{AI\_MASK}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+MASK~(\mbox{\hyperlink{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}{AI\+\_\+\+PASSIVE}} $\vert$ \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}} $\vert$ \mbox{\hyperlink{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}{AI\+\_\+\+NUMERICHOST}})}
+
+\mbox{\Hypertarget{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}\label{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_NUMERICHOST@{AI\_NUMERICHOST}}
+\index{AI\_NUMERICHOST@{AI\_NUMERICHOST}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_NUMERICHOST}{AI\_NUMERICHOST}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+NUMERICHOST~0x00000004 /$\ast$ prevent name resolution $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}\label{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_PASSIVE@{AI\_PASSIVE}}
+\index{AI\_PASSIVE@{AI\_PASSIVE}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_PASSIVE}{AI\_PASSIVE}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+PASSIVE~0x00000001 /$\ast$ get address to use \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind}}() $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_abbc1e064042dab1058c40d9cd1fc63f0}\label{addrinfo_8h_abbc1e064042dab1058c40d9cd1fc63f0}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_V4MAPPED@{AI\_V4MAPPED}}
+\index{AI\_V4MAPPED@{AI\_V4MAPPED}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_V4MAPPED}{AI\_V4MAPPED}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+V4\+MAPPED~0x00000800 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}} IPv4-\/mapped IPv6 address $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a105a4530f28974413451353b10c206ac}\label{addrinfo_8h_a105a4530f28974413451353b10c206ac}} 
+\index{addrinfo.h@{addrinfo.h}!AI\_V4MAPPED\_CFG@{AI\_V4MAPPED\_CFG}}
+\index{AI\_V4MAPPED\_CFG@{AI\_V4MAPPED\_CFG}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{AI\_V4MAPPED\_CFG}{AI\_V4MAPPED\_CFG}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+V4\+MAPPED\+\_\+\+CFG~0x00000200 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}} IPv4-\/mapped if kernel supports $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_aac746f03bb5099da0a427a99ecf1e36a}\label{addrinfo_8h_aac746f03bb5099da0a427a99ecf1e36a}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_ADDRFAMILY@{EAI\_ADDRFAMILY}}
+\index{EAI\_ADDRFAMILY@{EAI\_ADDRFAMILY}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_ADDRFAMILY}{EAI\_ADDRFAMILY}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+ADDRFAMILY~1 /$\ast$ address family for hostname not supported $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a7a0f2f10f8778fe201a68932d18434e5}\label{addrinfo_8h_a7a0f2f10f8778fe201a68932d18434e5}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_AGAIN@{EAI\_AGAIN}}
+\index{EAI\_AGAIN@{EAI\_AGAIN}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_AGAIN}{EAI\_AGAIN}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+AGAIN~2 /$\ast$ temporary failure in name resolution $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a3f3b38f2ac6688612a0fd20f3e6210be}\label{addrinfo_8h_a3f3b38f2ac6688612a0fd20f3e6210be}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_BADFLAGS@{EAI\_BADFLAGS}}
+\index{EAI\_BADFLAGS@{EAI\_BADFLAGS}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_BADFLAGS}{EAI\_BADFLAGS}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+BADFLAGS~3 /$\ast$ invalid value for ai\+\_\+flags $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a06480e6a72c58c6649d2ad19c98bff27}\label{addrinfo_8h_a06480e6a72c58c6649d2ad19c98bff27}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_BADHINTS@{EAI\_BADHINTS}}
+\index{EAI\_BADHINTS@{EAI\_BADHINTS}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_BADHINTS}{EAI\_BADHINTS}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+BADHINTS~12}
+
+\mbox{\Hypertarget{addrinfo_8h_acfc712115bf29357d33472da2209dc15}\label{addrinfo_8h_acfc712115bf29357d33472da2209dc15}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_FAIL@{EAI\_FAIL}}
+\index{EAI\_FAIL@{EAI\_FAIL}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_FAIL}{EAI\_FAIL}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+FAIL~4 /$\ast$ non-\/recoverable failure in name resolution $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a1d195add54c14a8903441848fb2f7da6}\label{addrinfo_8h_a1d195add54c14a8903441848fb2f7da6}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_FAMILY@{EAI\_FAMILY}}
+\index{EAI\_FAMILY@{EAI\_FAMILY}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_FAMILY}{EAI\_FAMILY}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+FAMILY~5 /$\ast$ ai\+\_\+family not supported $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_afcb75b949ba49308678186c339c78fdc}\label{addrinfo_8h_afcb75b949ba49308678186c339c78fdc}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_MAX@{EAI\_MAX}}
+\index{EAI\_MAX@{EAI\_MAX}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_MAX}{EAI\_MAX}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+MAX~14}
+
+\mbox{\Hypertarget{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}\label{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_MEMORY@{EAI\_MEMORY}}
+\index{EAI\_MEMORY@{EAI\_MEMORY}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_MEMORY}{EAI\_MEMORY}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+MEMORY~6 /$\ast$ memory allocation failure $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_aae1a32f26ffbb7461251d7c4a7c3a0a2}\label{addrinfo_8h_aae1a32f26ffbb7461251d7c4a7c3a0a2}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_NODATA@{EAI\_NODATA}}
+\index{EAI\_NODATA@{EAI\_NODATA}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_NODATA}{EAI\_NODATA}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+NODATA~7 /$\ast$ no address associated with hostname $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a0bb00f48d6ba1e8c55b7d85c8e3a19a7}\label{addrinfo_8h_a0bb00f48d6ba1e8c55b7d85c8e3a19a7}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_NONAME@{EAI\_NONAME}}
+\index{EAI\_NONAME@{EAI\_NONAME}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_NONAME}{EAI\_NONAME}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+NONAME~8 /$\ast$ hostname nor servname provided, or not known $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_ac22bd096438839c946a37c0619c6eabf}\label{addrinfo_8h_ac22bd096438839c946a37c0619c6eabf}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_PROTOCOL@{EAI\_PROTOCOL}}
+\index{EAI\_PROTOCOL@{EAI\_PROTOCOL}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_PROTOCOL}{EAI\_PROTOCOL}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+PROTOCOL~13}
+
+\mbox{\Hypertarget{addrinfo_8h_ac7f08e3ee3c38f7c869beb5a44c9f651}\label{addrinfo_8h_ac7f08e3ee3c38f7c869beb5a44c9f651}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_SERVICE@{EAI\_SERVICE}}
+\index{EAI\_SERVICE@{EAI\_SERVICE}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_SERVICE}{EAI\_SERVICE}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+SERVICE~9 /$\ast$ servname not supported for ai\+\_\+socktype $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a110777c2c99dab32101324b3b1dd1df5}\label{addrinfo_8h_a110777c2c99dab32101324b3b1dd1df5}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_SOCKTYPE@{EAI\_SOCKTYPE}}
+\index{EAI\_SOCKTYPE@{EAI\_SOCKTYPE}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_SOCKTYPE}{EAI\_SOCKTYPE}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+SOCKTYPE~10 /$\ast$ ai\+\_\+socktype not supported $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a8e864fa95f26341c27127deb6237c88c}\label{addrinfo_8h_a8e864fa95f26341c27127deb6237c88c}} 
+\index{addrinfo.h@{addrinfo.h}!EAI\_SYSTEM@{EAI\_SYSTEM}}
+\index{EAI\_SYSTEM@{EAI\_SYSTEM}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{EAI\_SYSTEM}{EAI\_SYSTEM}}
+{\footnotesize\ttfamily \#define EAI\+\_\+\+SYSTEM~11 /$\ast$ \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}} \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} returned in \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_a93598d1131d75df799acd66eccd039b0}\label{addrinfo_8h_a93598d1131d75df799acd66eccd039b0}} 
+\index{addrinfo.h@{addrinfo.h}!NETDB\_INTERNAL@{NETDB\_INTERNAL}}
+\index{NETDB\_INTERNAL@{NETDB\_INTERNAL}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NETDB\_INTERNAL}{NETDB\_INTERNAL}}
+{\footnotesize\ttfamily \#define NETDB\+\_\+\+INTERNAL~-\/1 /$\ast$ see \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/}
+
+\mbox{\Hypertarget{addrinfo_8h_ac8270b4222f6d9ebf05cba519b48be49}\label{addrinfo_8h_ac8270b4222f6d9ebf05cba519b48be49}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_DGRAM@{NI\_DGRAM}}
+\index{NI\_DGRAM@{NI\_DGRAM}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_DGRAM}{NI\_DGRAM}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+DGRAM~0x00000010}
+
+\mbox{\Hypertarget{addrinfo_8h_aebc53e498b2434654a1d44070d9ccd40}\label{addrinfo_8h_aebc53e498b2434654a1d44070d9ccd40}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_MAXHOST@{NI\_MAXHOST}}
+\index{NI\_MAXHOST@{NI\_MAXHOST}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_MAXHOST}{NI\_MAXHOST}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+MAXHOST~1025}
+
+\mbox{\Hypertarget{addrinfo_8h_aefdeadf85356cc2fa0870d86a6055eb1}\label{addrinfo_8h_aefdeadf85356cc2fa0870d86a6055eb1}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_MAXSERV@{NI\_MAXSERV}}
+\index{NI\_MAXSERV@{NI\_MAXSERV}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_MAXSERV}{NI\_MAXSERV}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+MAXSERV~32}
+
+\mbox{\Hypertarget{addrinfo_8h_a21bd81bf080250b73395a02e70a4212e}\label{addrinfo_8h_a21bd81bf080250b73395a02e70a4212e}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_NAMEREQD@{NI\_NAMEREQD}}
+\index{NI\_NAMEREQD@{NI\_NAMEREQD}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_NAMEREQD}{NI\_NAMEREQD}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+NAMEREQD~0x00000004}
+
+\mbox{\Hypertarget{addrinfo_8h_ae58777c663bd21ceafae51b23ba493ca}\label{addrinfo_8h_ae58777c663bd21ceafae51b23ba493ca}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_NOFQDN@{NI\_NOFQDN}}
+\index{NI\_NOFQDN@{NI\_NOFQDN}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_NOFQDN}{NI\_NOFQDN}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+NOFQDN~0x00000001}
+
+\mbox{\Hypertarget{addrinfo_8h_a62f12304e7a43038f40cd579ad57829f}\label{addrinfo_8h_a62f12304e7a43038f40cd579ad57829f}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_NUMERICHOST@{NI\_NUMERICHOST}}
+\index{NI\_NUMERICHOST@{NI\_NUMERICHOST}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_NUMERICHOST}{NI\_NUMERICHOST}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+NUMERICHOST~0x00000002}
+
+\mbox{\Hypertarget{addrinfo_8h_af6d346aae7109d19b9ccab7c510a3cad}\label{addrinfo_8h_af6d346aae7109d19b9ccab7c510a3cad}} 
+\index{addrinfo.h@{addrinfo.h}!NI\_NUMERICSERV@{NI\_NUMERICSERV}}
+\index{NI\_NUMERICSERV@{NI\_NUMERICSERV}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{NI\_NUMERICSERV}{NI\_NUMERICSERV}}
+{\footnotesize\ttfamily \#define NI\+\_\+\+NUMERICSERV~0x00000008}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{addrinfo_8h_ab3ea0e0f67dca182dc4a4cf4df7f29ee}\label{addrinfo_8h_ab3ea0e0f67dca182dc4a4cf4df7f29ee}} 
+\index{addrinfo.h@{addrinfo.h}!freeaddrinfo@{freeaddrinfo}}
+\index{freeaddrinfo@{freeaddrinfo}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{freeaddrinfo()}{freeaddrinfo()}}
+{\footnotesize\ttfamily void freeaddrinfo (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{ai }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{addrinfo\+::ai\+\_\+canonname}} , 以及 \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}, \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}, \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}} , 以及 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addrinfo_8h_ab3ea0e0f67dca182dc4a4cf4df7f29ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}\label{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}} 
+\index{addrinfo.h@{addrinfo.h}!freehostent@{freehostent}}
+\index{freehostent@{freehostent}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{freehostent()}{freehostent()}}
+{\footnotesize\ttfamily void freehostent (\begin{DoxyParamCaption}\item[{struct hostent $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{addrinfo_8h_a2188e19091eb51ac870bb7ed19f44658}\label{addrinfo_8h_a2188e19091eb51ac870bb7ed19f44658}} 
+\index{addrinfo.h@{addrinfo.h}!gai\_strerror@{gai\_strerror}}
+\index{gai\_strerror@{gai\_strerror}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{gai\_strerror()}{gai\_strerror()}}
+{\footnotesize\ttfamily char $\ast$ gai\+\_\+strerror (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{addrinfo_8h_a0399cf551e1061c0828721601957e03e}\label{addrinfo_8h_a0399cf551e1061c0828721601957e03e}} 
+\index{addrinfo.h@{addrinfo.h}!getaddrinfo@{getaddrinfo}}
+\index{getaddrinfo@{getaddrinfo}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{getaddrinfo()}{getaddrinfo()}}
+{\footnotesize\ttfamily int getaddrinfo (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617}\label{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617}} 
+\index{addrinfo.h@{addrinfo.h}!getipnodebyaddr@{getipnodebyaddr}}
+\index{getipnodebyaddr@{getipnodebyaddr}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{getipnodebyaddr()}{getipnodebyaddr()}}
+{\footnotesize\ttfamily struct hostent $\ast$ getipnodebyaddr (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{size\+\_\+t}]{,  }\item[{int}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4}\label{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4}} 
+\index{addrinfo.h@{addrinfo.h}!getipnodebyname@{getipnodebyname}}
+\index{getipnodebyname@{getipnodebyname}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{getipnodebyname()}{getipnodebyname()}}
+{\footnotesize\ttfamily struct hostent $\ast$ getipnodebyname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{addrinfo_8h_ae1985b06e8b5c4efe3bd2ac8e2c833ab}\label{addrinfo_8h_ae1985b06e8b5c4efe3bd2ac8e2c833ab}} 
+\index{addrinfo.h@{addrinfo.h}!getnameinfo@{getnameinfo}}
+\index{getnameinfo@{getnameinfo}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{getnameinfo()}{getnameinfo()}}
+{\footnotesize\ttfamily int getnameinfo (\begin{DoxyParamCaption}\item[{const struct sockaddr $\ast$}]{,  }\item[{size\+\_\+t}]{,  }\item[{char $\ast$}]{,  }\item[{size\+\_\+t}]{,  }\item[{char $\ast$}]{,  }\item[{size\+\_\+t}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf}\label{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf}} 
+\index{addrinfo.h@{addrinfo.h}!inet\_ntop@{inet\_ntop}}
+\index{inet\_ntop@{inet\_ntop}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{inet\_ntop()}{inet\_ntop()}}
+{\footnotesize\ttfamily const char $\ast$ inet\+\_\+ntop (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const void $\ast$}]{,  }\item[{char $\ast$}]{,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}{ifprint()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}\label{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}} 
+\index{addrinfo.h@{addrinfo.h}!inet\_pton@{inet\_pton}}
+\index{inet\_pton@{inet\_pton}!addrinfo.h@{addrinfo.h}}
+\doxysubsubsection{\texorpdfstring{inet\_pton()}{inet\_pton()}}
+{\footnotesize\ttfamily int inet\+\_\+pton (\begin{DoxyParamCaption}\item[{int}]{af,  }\item[{const char $\ast$}]{src,  }\item[{void $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} , 以及 \mbox{\hyperlink{inet__pton_8c_a9611e4d2e430d90aaeaa1fa86652479f}{inet\+\_\+aton()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b_icgraph}
+\end{center}
+\end{figure}

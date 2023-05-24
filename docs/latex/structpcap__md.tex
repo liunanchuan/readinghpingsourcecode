@@ -1,0 +1,118 @@
+\hypertarget{structpcap__md}{}\doxysection{pcap\+\_\+md结构体 参考}
+\label{structpcap__md}\index{pcap\_md@{pcap\_md}}
+
+
+{\ttfamily \#include $<$pcap-\/int.\+h$>$}
+
+
+
+pcap\+\_\+md 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structpcap__md__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} \mbox{\hyperlink{structpcap__md_abed353eef29f266a2d23608954c36613}{stat}}
+\item 
+int \mbox{\hyperlink{structpcap__md_af549817e1f6722391efd27a25485c1d5}{use\+\_\+bpf}}
+\item 
+u\+\_\+long \mbox{\hyperlink{structpcap__md_a68af4abcfbc3968830a4385c25468a0a}{Tot\+Pkts}}
+\item 
+u\+\_\+long \mbox{\hyperlink{structpcap__md_a2934ca233781e01e32931bb4649d0174}{Tot\+Accepted}}
+\item 
+u\+\_\+long \mbox{\hyperlink{structpcap__md_a4d31c04f74bc18c985d08a546896acc5}{Tot\+Drops}}
+\item 
+long \mbox{\hyperlink{structpcap__md_a2b90fcb95ba726d8126cf4c6758dbdd6}{Tot\+Missed}}
+\item 
+long \mbox{\hyperlink{structpcap__md_af689a35aff8e0bcb72cff050af5d043b}{Orig\+Missed}}
+\item 
+char $\ast$ \mbox{\hyperlink{structpcap__md_af2ff1e3088c734549b4c3676c5e86a22}{device}}
+\item 
+int \mbox{\hyperlink{structpcap__md_a493b57f443cc38b3d3df9c1e584d9d82}{timeout}}
+\item 
+int \mbox{\hyperlink{structpcap__md_a43da16fc7283effdd5689aa43d676dd4}{must\+\_\+do\+\_\+on\+\_\+close}}
+\item 
+struct \mbox{\hyperlink{structpcap}{pcap}} $\ast$ \mbox{\hyperlink{structpcap__md_a243e44f22fbbb94fb37ec4a406d7e033}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structpcap__md_af2ff1e3088c734549b4c3676c5e86a22}\label{structpcap__md_af2ff1e3088c734549b4c3676c5e86a22}} 
+\index{pcap\_md@{pcap\_md}!device@{device}}
+\index{device@{device}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily char$\ast$ \mbox{\hyperlink{structdevice}{device}}}
+
+\mbox{\Hypertarget{structpcap__md_a43da16fc7283effdd5689aa43d676dd4}\label{structpcap__md_a43da16fc7283effdd5689aa43d676dd4}} 
+\index{pcap\_md@{pcap\_md}!must\_do\_on\_close@{must\_do\_on\_close}}
+\index{must\_do\_on\_close@{must\_do\_on\_close}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{must\_do\_on\_close}{must\_do\_on\_close}}
+{\footnotesize\ttfamily int must\+\_\+do\+\_\+on\+\_\+close}
+
+\mbox{\Hypertarget{structpcap__md_a243e44f22fbbb94fb37ec4a406d7e033}\label{structpcap__md_a243e44f22fbbb94fb37ec4a406d7e033}} 
+\index{pcap\_md@{pcap\_md}!next@{next}}
+\index{next@{next}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap}{pcap}}$\ast$ next}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-int_8h_a95f720506e53a906175ab22a65b8f34e}{pcap\+\_\+remove\+\_\+from\+\_\+pcaps\+\_\+to\+\_\+close()}}.
+
+\mbox{\Hypertarget{structpcap__md_af689a35aff8e0bcb72cff050af5d043b}\label{structpcap__md_af689a35aff8e0bcb72cff050af5d043b}} 
+\index{pcap\_md@{pcap\_md}!OrigMissed@{OrigMissed}}
+\index{OrigMissed@{OrigMissed}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{OrigMissed}{OrigMissed}}
+{\footnotesize\ttfamily long Orig\+Missed}
+
+\mbox{\Hypertarget{structpcap__md_abed353eef29f266a2d23608954c36613}\label{structpcap__md_abed353eef29f266a2d23608954c36613}} 
+\index{pcap\_md@{pcap\_md}!stat@{stat}}
+\index{stat@{stat}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{stat}{stat}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} stat}
+
+\mbox{\Hypertarget{structpcap__md_a493b57f443cc38b3d3df9c1e584d9d82}\label{structpcap__md_a493b57f443cc38b3d3df9c1e584d9d82}} 
+\index{pcap\_md@{pcap\_md}!timeout@{timeout}}
+\index{timeout@{timeout}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{timeout}{timeout}}
+{\footnotesize\ttfamily int timeout}
+
+\mbox{\Hypertarget{structpcap__md_a2934ca233781e01e32931bb4649d0174}\label{structpcap__md_a2934ca233781e01e32931bb4649d0174}} 
+\index{pcap\_md@{pcap\_md}!TotAccepted@{TotAccepted}}
+\index{TotAccepted@{TotAccepted}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{TotAccepted}{TotAccepted}}
+{\footnotesize\ttfamily u\+\_\+long Tot\+Accepted}
+
+\mbox{\Hypertarget{structpcap__md_a4d31c04f74bc18c985d08a546896acc5}\label{structpcap__md_a4d31c04f74bc18c985d08a546896acc5}} 
+\index{pcap\_md@{pcap\_md}!TotDrops@{TotDrops}}
+\index{TotDrops@{TotDrops}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{TotDrops}{TotDrops}}
+{\footnotesize\ttfamily u\+\_\+long Tot\+Drops}
+
+\mbox{\Hypertarget{structpcap__md_a2b90fcb95ba726d8126cf4c6758dbdd6}\label{structpcap__md_a2b90fcb95ba726d8126cf4c6758dbdd6}} 
+\index{pcap\_md@{pcap\_md}!TotMissed@{TotMissed}}
+\index{TotMissed@{TotMissed}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{TotMissed}{TotMissed}}
+{\footnotesize\ttfamily long Tot\+Missed}
+
+\mbox{\Hypertarget{structpcap__md_a68af4abcfbc3968830a4385c25468a0a}\label{structpcap__md_a68af4abcfbc3968830a4385c25468a0a}} 
+\index{pcap\_md@{pcap\_md}!TotPkts@{TotPkts}}
+\index{TotPkts@{TotPkts}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{TotPkts}{TotPkts}}
+{\footnotesize\ttfamily u\+\_\+long Tot\+Pkts}
+
+\mbox{\Hypertarget{structpcap__md_af549817e1f6722391efd27a25485c1d5}\label{structpcap__md_af549817e1f6722391efd27a25485c1d5}} 
+\index{pcap\_md@{pcap\_md}!use\_bpf@{use\_bpf}}
+\index{use\_bpf@{use\_bpf}!pcap\_md@{pcap\_md}}
+\doxysubsubsection{\texorpdfstring{use\_bpf}{use\_bpf}}
+{\footnotesize\ttfamily int use\+\_\+bpf}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\mbox{\hyperlink{pcap-int_8h}{pcap-\/int.\+h}}\end{DoxyCompactItemize}

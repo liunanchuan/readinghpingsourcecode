@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: pcap_t结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle"><div class="title">pcap_t结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="pcap-int_8h_source.html">pcap-int.h</a>&gt;</code></p>
+<div class="dynheader">
+pcap_t 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structpcap__coll__graph.png" border="0" usemap="#apcap__t_coll__map" alt="Collaboration graph"/></div>
+<map name="apcap__t_coll__map" id="apcap__t_coll__map">
+<area shape="rect" title=" " alt="" coords="217,392,278,419"/>
+<area shape="rect" href="structpcap__sf.html" title=" " alt="" coords="5,95,73,121"/>
+<area shape="rect" href="structpcap.html" title=" " alt="" coords="270,199,331,225"/>
+<area shape="rect" href="structpcap__md.html" title=" " alt="" coords="290,303,365,329"/>
+<area shape="rect" href="structpcap__stat.html" title=" " alt="" coords="220,95,299,121"/>
+<area shape="rect" href="structpcap__opt.html" title=" " alt="" coords="113,95,187,121"/>
+<area shape="rect" href="structbpf__program.html" title=" " alt="" coords="548,95,643,121"/>
+<area shape="rect" href="structbpf__insn.html" title=" " alt="" coords="560,5,631,32"/>
+<area shape="rect" href="structpcap__pkthdr.html" title=" " alt="" coords="398,95,491,121"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a6f8059414f0228f0256115e024eeed4b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a6f8059414f0228f0256115e024eeed4b">fd</a></td></tr>
+<tr class="separator:a6f8059414f0228f0256115e024eeed4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc6f4ab17b75045008c7312e8113628"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a2dc6f4ab17b75045008c7312e8113628">selectable_fd</a></td></tr>
+<tr class="separator:a2dc6f4ab17b75045008c7312e8113628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccd8921f38d8d73068731023f739eac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a4ccd8921f38d8d73068731023f739eac">send_fd</a></td></tr>
+<tr class="separator:a4ccd8921f38d8d73068731023f739eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee1d8beef8b5b64ccb0c5b61c5beea8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a8ee1d8beef8b5b64ccb0c5b61c5beea8">snapshot</a></td></tr>
+<tr class="separator:a8ee1d8beef8b5b64ccb0c5b61c5beea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f63781fb4328501b07c3ccf6e16b19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a34f63781fb4328501b07c3ccf6e16b19">linktype</a></td></tr>
+<tr class="separator:a34f63781fb4328501b07c3ccf6e16b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affccd57aca6e350473a1715a396bde4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#affccd57aca6e350473a1715a396bde4d">linktype_ext</a></td></tr>
+<tr class="separator:affccd57aca6e350473a1715a396bde4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada90f5f80c98d158e9bf8046916ff13a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#ada90f5f80c98d158e9bf8046916ff13a">tzoff</a></td></tr>
+<tr class="separator:ada90f5f80c98d158e9bf8046916ff13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7ea92f45bd273dde380a45ddced592"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#aed7ea92f45bd273dde380a45ddced592">offset</a></td></tr>
+<tr class="separator:aed7ea92f45bd273dde380a45ddced592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66e4426e5dabb26bd0b5be1af1bfa0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#aa66e4426e5dabb26bd0b5be1af1bfa0c">activated</a></td></tr>
+<tr class="separator:aa66e4426e5dabb26bd0b5be1af1bfa0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef31045f451a95207379af67cf1fd49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#acef31045f451a95207379af67cf1fd49">oldstyle</a></td></tr>
+<tr class="separator:acef31045f451a95207379af67cf1fd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b93aab20ee01061537788f55e7ce3d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a2b93aab20ee01061537788f55e7ce3d9">break_loop</a></td></tr>
+<tr class="separator:a2b93aab20ee01061537788f55e7ce3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4bcdb974c6aebf14fb88806257628e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpcap__sf.html">pcap_sf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a5b4bcdb974c6aebf14fb88806257628e">sf</a></td></tr>
+<tr class="separator:a5b4bcdb974c6aebf14fb88806257628e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c49da7bca1ba9d181cc95f7f7fdc583"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpcap__md.html">pcap_md</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a9c49da7bca1ba9d181cc95f7f7fdc583">md</a></td></tr>
+<tr class="separator:a9c49da7bca1ba9d181cc95f7f7fdc583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e07be4a78785365726eec63a6700cf"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpcap__opt.html">pcap_opt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a15e07be4a78785365726eec63a6700cf">opt</a></td></tr>
+<tr class="separator:a15e07be4a78785365726eec63a6700cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199ab88d4ca8eab30e1cb7d35edacca5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a199ab88d4ca8eab30e1cb7d35edacca5">bufsize</a></td></tr>
+<tr class="separator:a199ab88d4ca8eab30e1cb7d35edacca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080ee3ec73066011e25185da0dcea995"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a080ee3ec73066011e25185da0dcea995">buffer</a></td></tr>
+<tr class="separator:a080ee3ec73066011e25185da0dcea995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b29eff86c3fe30e608f70fbe91d30f"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a14b29eff86c3fe30e608f70fbe91d30f">bp</a></td></tr>
+<tr class="separator:a14b29eff86c3fe30e608f70fbe91d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21aaf27a7ac21de349cae5888fb050a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a21aaf27a7ac21de349cae5888fb050a3">cc</a></td></tr>
+<tr class="separator:a21aaf27a7ac21de349cae5888fb050a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02cb66a71251b07f20a8abe45632b596"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a02cb66a71251b07f20a8abe45632b596">pkt</a></td></tr>
+<tr class="separator:a02cb66a71251b07f20a8abe45632b596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4a9ed378f9e1024e2f281e8b17d141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap_2pcap_8h.html#ab506e3602b2ac94641699a4b7818b129">pcap_direction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a1b4a9ed378f9e1024e2f281e8b17d141">direction</a></td></tr>
+<tr class="separator:a1b4a9ed378f9e1024e2f281e8b17d141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acebf996670fc811f811f41ad5bb3670d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#afd90f637d8652d1b5be529a50dff3c05">activate_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#acebf996670fc811f811f41ad5bb3670d">activate_op</a></td></tr>
+<tr class="separator:acebf996670fc811f811f41ad5bb3670d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30402d3dca197741f6f3534eab269505"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a752a409eadb310e1e5d442c084c95069">can_set_rfmon_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a30402d3dca197741f6f3534eab269505">can_set_rfmon_op</a></td></tr>
+<tr class="separator:a30402d3dca197741f6f3534eab269505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f73eef5dd000c73732bac11107824b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a890c5b154b2f48695b55e237bfa8e83b">read_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a09f73eef5dd000c73732bac11107824b">read_op</a></td></tr>
+<tr class="separator:a09f73eef5dd000c73732bac11107824b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe79e0d95c45805a83f165365c8b3cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a469c0762d71ed3ba5cb0d4798d36ba27">inject_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#adfe79e0d95c45805a83f165365c8b3cc">inject_op</a></td></tr>
+<tr class="separator:adfe79e0d95c45805a83f165365c8b3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1fcf597cf77b72b2994d5d19105fd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a74a3d4ce9710a5e8c12a39052366898b">setfilter_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a7e1fcf597cf77b72b2994d5d19105fd3">setfilter_op</a></td></tr>
+<tr class="separator:a7e1fcf597cf77b72b2994d5d19105fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a697ec75c687aa086d0359d7300d60510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#ad09f5b25f0ad1e21b1397ec8c3d74481">setdirection_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a697ec75c687aa086d0359d7300d60510">setdirection_op</a></td></tr>
+<tr class="separator:a697ec75c687aa086d0359d7300d60510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9486030287100e42d5589bc6ff69cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a7d23c1590f19ef96f50885a02671187b">set_datalink_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a2b9486030287100e42d5589bc6ff69cb">set_datalink_op</a></td></tr>
+<tr class="separator:a2b9486030287100e42d5589bc6ff69cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ccacd25d57b020647cc5ab074db607"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a6592cbb3abc428c87de0f18705cfed7f">getnonblock_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a68ccacd25d57b020647cc5ab074db607">getnonblock_op</a></td></tr>
+<tr class="separator:a68ccacd25d57b020647cc5ab074db607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf02ce89f232158830658f74e5e04fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a7bd091f3d0e1735965e76b9dcf1e9b37">setnonblock_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#abf02ce89f232158830658f74e5e04fbd">setnonblock_op</a></td></tr>
+<tr class="separator:abf02ce89f232158830658f74e5e04fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8683ea2736b66f8caf717161e704738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#ab545f97260e02f6a2bdaf97da9463561">stats_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#ae8683ea2736b66f8caf717161e704738">stats_op</a></td></tr>
+<tr class="separator:ae8683ea2736b66f8caf717161e704738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59368c251d083e891b48f20bd0e29521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap_2pcap_8h.html#a4da5ed7abea875423886ba3f1bcf7588">pcap_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a59368c251d083e891b48f20bd0e29521">oneshot_callback</a></td></tr>
+<tr class="separator:a59368c251d083e891b48f20bd0e29521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0944224cb1a189980594c43a12817a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcap-int_8h.html#a8ece48e5f0e776a248a855821c657c2a">cleanup_op_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#ace0944224cb1a189980594c43a12817a">cleanup_op</a></td></tr>
+<tr class="separator:ace0944224cb1a189980594c43a12817a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5df78b3a2824a36a9a82c2c029e6c7c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structbpf__program.html">bpf_program</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#ab5df78b3a2824a36a9a82c2c029e6c7c">fcode</a></td></tr>
+<tr class="separator:ab5df78b3a2824a36a9a82c2c029e6c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065540d2a2fa4c8bd32bdc93a1b0917f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a065540d2a2fa4c8bd32bdc93a1b0917f">errbuf</a> [<a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>+1]</td></tr>
+<tr class="separator:a065540d2a2fa4c8bd32bdc93a1b0917f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5bf969a057eef06e9bf4d661105964"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a5f5bf969a057eef06e9bf4d661105964">dlt_count</a></td></tr>
+<tr class="separator:a5f5bf969a057eef06e9bf4d661105964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab766b1ece5224aa10a04302ea4ff1277"><td class="memItemLeft" align="right" valign="top">u_int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#ab766b1ece5224aa10a04302ea4ff1277">dlt_list</a></td></tr>
+<tr class="separator:ab766b1ece5224aa10a04302ea4ff1277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6146626d8ba975affd0758624debc0fa"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap.html#a6146626d8ba975affd0758624debc0fa">pcap_header</a></td></tr>
+<tr class="separator:a6146626d8ba975affd0758624debc0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="acebf996670fc811f811f41ad5bb3670d" name="acebf996670fc811f811f41ad5bb3670d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acebf996670fc811f811f41ad5bb3670d">&#9670;&nbsp;</a></span>activate_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#afd90f637d8652d1b5be529a50dff3c05">activate_op_t</a> activate_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa66e4426e5dabb26bd0b5be1af1bfa0c" name="aa66e4426e5dabb26bd0b5be1af1bfa0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66e4426e5dabb26bd0b5be1af1bfa0c">&#9670;&nbsp;</a></span>activated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int activated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14b29eff86c3fe30e608f70fbe91d30f" name="a14b29eff86c3fe30e608f70fbe91d30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b29eff86c3fe30e608f70fbe91d30f">&#9670;&nbsp;</a></span>bp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* bp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b93aab20ee01061537788f55e7ce3d9" name="a2b93aab20ee01061537788f55e7ce3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b93aab20ee01061537788f55e7ce3d9">&#9670;&nbsp;</a></span>break_loop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int break_loop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a080ee3ec73066011e25185da0dcea995" name="a080ee3ec73066011e25185da0dcea995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080ee3ec73066011e25185da0dcea995">&#9670;&nbsp;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a199ab88d4ca8eab30e1cb7d35edacca5" name="a199ab88d4ca8eab30e1cb7d35edacca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199ab88d4ca8eab30e1cb7d35edacca5">&#9670;&nbsp;</a></span>bufsize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bufsize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30402d3dca197741f6f3534eab269505" name="a30402d3dca197741f6f3534eab269505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30402d3dca197741f6f3534eab269505">&#9670;&nbsp;</a></span>can_set_rfmon_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a752a409eadb310e1e5d442c084c95069">can_set_rfmon_op_t</a> can_set_rfmon_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21aaf27a7ac21de349cae5888fb050a3" name="a21aaf27a7ac21de349cae5888fb050a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21aaf27a7ac21de349cae5888fb050a3">&#9670;&nbsp;</a></span>cc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace0944224cb1a189980594c43a12817a" name="ace0944224cb1a189980594c43a12817a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0944224cb1a189980594c43a12817a">&#9670;&nbsp;</a></span>cleanup_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a8ece48e5f0e776a248a855821c657c2a">cleanup_op_t</a> cleanup_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a1b4a9ed378f9e1024e2f281e8b17d141" name="a1b4a9ed378f9e1024e2f281e8b17d141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4a9ed378f9e1024e2f281e8b17d141">&#9670;&nbsp;</a></span>direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap_2pcap_8h.html#ab506e3602b2ac94641699a4b7818b129">pcap_direction_t</a> direction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f5bf969a057eef06e9bf4d661105964" name="a5f5bf969a057eef06e9bf4d661105964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5bf969a057eef06e9bf4d661105964">&#9670;&nbsp;</a></span>dlt_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dlt_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab766b1ece5224aa10a04302ea4ff1277" name="ab766b1ece5224aa10a04302ea4ff1277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab766b1ece5224aa10a04302ea4ff1277">&#9670;&nbsp;</a></span>dlt_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int* dlt_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a065540d2a2fa4c8bd32bdc93a1b0917f" name="a065540d2a2fa4c8bd32bdc93a1b0917f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065540d2a2fa4c8bd32bdc93a1b0917f">&#9670;&nbsp;</a></span>errbuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char errbuf[<a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="ab5df78b3a2824a36a9a82c2c029e6c7c" name="ab5df78b3a2824a36a9a82c2c029e6c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5df78b3a2824a36a9a82c2c029e6c7c">&#9670;&nbsp;</a></span>fcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structbpf__program.html">bpf_program</a> fcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f8059414f0228f0256115e024eeed4b" name="a6f8059414f0228f0256115e024eeed4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8059414f0228f0256115e024eeed4b">&#9670;&nbsp;</a></span>fd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a68ccacd25d57b020647cc5ab074db607" name="a68ccacd25d57b020647cc5ab074db607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ccacd25d57b020647cc5ab074db607">&#9670;&nbsp;</a></span>getnonblock_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a6592cbb3abc428c87de0f18705cfed7f">getnonblock_op_t</a> getnonblock_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfe79e0d95c45805a83f165365c8b3cc" name="adfe79e0d95c45805a83f165365c8b3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe79e0d95c45805a83f165365c8b3cc">&#9670;&nbsp;</a></span>inject_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a469c0762d71ed3ba5cb0d4798d36ba27">inject_op_t</a> inject_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a34f63781fb4328501b07c3ccf6e16b19" name="a34f63781fb4328501b07c3ccf6e16b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f63781fb4328501b07c3ccf6e16b19">&#9670;&nbsp;</a></span>linktype</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int linktype</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="affccd57aca6e350473a1715a396bde4d" name="affccd57aca6e350473a1715a396bde4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affccd57aca6e350473a1715a396bde4d">&#9670;&nbsp;</a></span>linktype_ext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int linktype_ext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c49da7bca1ba9d181cc95f7f7fdc583" name="a9c49da7bca1ba9d181cc95f7f7fdc583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c49da7bca1ba9d181cc95f7f7fdc583">&#9670;&nbsp;</a></span>md</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpcap__md.html">pcap_md</a> md</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-int_8h.html#a95f720506e53a906175ab22a65b8f34e">pcap_remove_from_pcaps_to_close()</a>.</p>
+
+</div>
+</div>
+<a id="aed7ea92f45bd273dde380a45ddced592" name="aed7ea92f45bd273dde380a45ddced592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7ea92f45bd273dde380a45ddced592">&#9670;&nbsp;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acef31045f451a95207379af67cf1fd49" name="acef31045f451a95207379af67cf1fd49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef31045f451a95207379af67cf1fd49">&#9670;&nbsp;</a></span>oldstyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int oldstyle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59368c251d083e891b48f20bd0e29521" name="a59368c251d083e891b48f20bd0e29521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59368c251d083e891b48f20bd0e29521">&#9670;&nbsp;</a></span>oneshot_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap_2pcap_8h.html#a4da5ed7abea875423886ba3f1bcf7588">pcap_handler</a> oneshot_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15e07be4a78785365726eec63a6700cf" name="a15e07be4a78785365726eec63a6700cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e07be4a78785365726eec63a6700cf">&#9670;&nbsp;</a></span>opt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpcap__opt.html">pcap_opt</a> opt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a6146626d8ba975affd0758624debc0fa" name="a6146626d8ba975affd0758624debc0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6146626d8ba975affd0758624debc0fa">&#9670;&nbsp;</a></span>pcap_header</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a> pcap_header</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02cb66a71251b07f20a8abe45632b596" name="a02cb66a71251b07f20a8abe45632b596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02cb66a71251b07f20a8abe45632b596">&#9670;&nbsp;</a></span>pkt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* pkt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a09f73eef5dd000c73732bac11107824b" name="a09f73eef5dd000c73732bac11107824b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f73eef5dd000c73732bac11107824b">&#9670;&nbsp;</a></span>read_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a890c5b154b2f48695b55e237bfa8e83b">read_op_t</a> read_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a2dc6f4ab17b75045008c7312e8113628" name="a2dc6f4ab17b75045008c7312e8113628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc6f4ab17b75045008c7312e8113628">&#9670;&nbsp;</a></span>selectable_fd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int selectable_fd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ccd8921f38d8d73068731023f739eac" name="a4ccd8921f38d8d73068731023f739eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ccd8921f38d8d73068731023f739eac">&#9670;&nbsp;</a></span>send_fd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int send_fd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b9486030287100e42d5589bc6ff69cb" name="a2b9486030287100e42d5589bc6ff69cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9486030287100e42d5589bc6ff69cb">&#9670;&nbsp;</a></span>set_datalink_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a7d23c1590f19ef96f50885a02671187b">set_datalink_op_t</a> set_datalink_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a697ec75c687aa086d0359d7300d60510" name="a697ec75c687aa086d0359d7300d60510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697ec75c687aa086d0359d7300d60510">&#9670;&nbsp;</a></span>setdirection_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#ad09f5b25f0ad1e21b1397ec8c3d74481">setdirection_op_t</a> setdirection_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="a7e1fcf597cf77b72b2994d5d19105fd3" name="a7e1fcf597cf77b72b2994d5d19105fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1fcf597cf77b72b2994d5d19105fd3">&#9670;&nbsp;</a></span>setfilter_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a74a3d4ce9710a5e8c12a39052366898b">setfilter_op_t</a> setfilter_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="abf02ce89f232158830658f74e5e04fbd" name="abf02ce89f232158830658f74e5e04fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf02ce89f232158830658f74e5e04fbd">&#9670;&nbsp;</a></span>setnonblock_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#a7bd091f3d0e1735965e76b9dcf1e9b37">setnonblock_op_t</a> setnonblock_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b4bcdb974c6aebf14fb88806257628e" name="a5b4bcdb974c6aebf14fb88806257628e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b4bcdb974c6aebf14fb88806257628e">&#9670;&nbsp;</a></span>sf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpcap__sf.html">pcap_sf</a> sf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ee1d8beef8b5b64ccb0c5b61c5beea8" name="a8ee1d8beef8b5b64ccb0c5b61c5beea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee1d8beef8b5b64ccb0c5b61c5beea8">&#9670;&nbsp;</a></span>snapshot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int snapshot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="ae8683ea2736b66f8caf717161e704738" name="ae8683ea2736b66f8caf717161e704738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8683ea2736b66f8caf717161e704738">&#9670;&nbsp;</a></span>stats_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcap-int_8h.html#ab545f97260e02f6a2bdaf97da9463561">stats_op_t</a> stats_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-dos_8c.html#ada98e95bb2fbda9dfa5bdebc208ae1ac">pcap_activate_dos()</a>.</p>
+
+</div>
+</div>
+<a id="ada90f5f80c98d158e9bf8046916ff13a" name="ada90f5f80c98d158e9bf8046916ff13a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada90f5f80c98d158e9bf8046916ff13a">&#9670;&nbsp;</a></span>tzoff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tzoff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>libpcap-1.1.1/<a class="el" href="pcap-int_8h_source.html">pcap-int.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

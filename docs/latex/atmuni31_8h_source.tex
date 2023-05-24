@@ -1,0 +1,93 @@
+\hypertarget{atmuni31_8h_source}{}\doxysection{atmuni31.\+h}
+\label{atmuni31_8h_source}\index{libpcap-\/1.1.1/atmuni31.h@{libpcap-\/1.1.1/atmuni31.h}}
+\mbox{\hyperlink{atmuni31_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1997 Yen Yen Lim and North Dakota State University}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *      This product includes software developed by Yen Yen Lim and}}
+\DoxyCodeLine{16 \textcolor{comment}{        North Dakota State University}}
+\DoxyCodeLine{17 \textcolor{comment}{ * 4. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{19 \textcolor{comment}{ *}}
+\DoxyCodeLine{20 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{21 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED}}
+\DoxyCodeLine{22 \textcolor{comment}{ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}}
+\DoxyCodeLine{23 \textcolor{comment}{ * DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,}}
+\DoxyCodeLine{24 \textcolor{comment}{ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES}}
+\DoxyCodeLine{25 \textcolor{comment}{ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{26 \textcolor{comment}{ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{27 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,}}
+\DoxyCodeLine{28 \textcolor{comment}{ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN}}
+\DoxyCodeLine{29 \textcolor{comment}{ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE}}
+\DoxyCodeLine{30 \textcolor{comment}{ * POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/atmuni31.h,v 1.3 2007-\/10-\/22 19:28:58 guy Exp \$ (LBL)}}
+\DoxyCodeLine{33 \textcolor{comment}{ */}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Based on UNI3.1 standard by ATM Forum */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* ATM traffic types based on VPI=0 and (the following VCI */}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define VCI\_PPC         0x05    }\textcolor{comment}{/* Point-\/to-\/point signal msg */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define VCI\_BCC         0x02    }\textcolor{comment}{/* Broadcast signal msg */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define VCI\_OAMF4SC     0x03    }\textcolor{comment}{/* Segment OAM F4 flow cell */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define VCI\_OAMF4EC     0x04    }\textcolor{comment}{/* End-\/to-\/end OAM F4 flow cell */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define VCI\_METAC       0x01    }\textcolor{comment}{/* Meta signal msg */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define VCI\_ILMIC       0x10    }\textcolor{comment}{/* ILMI msg */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/* Q.2931 signalling messages */}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define CALL\_PROCEED        0x02    }\textcolor{comment}{/* call proceeding */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define CONNECT         0x07    }\textcolor{comment}{/* connect */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define CONNECT\_ACK     0x0f    }\textcolor{comment}{/* connect\_ack */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define SETUP           0x05    }\textcolor{comment}{/* setup */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define RELEASE         0x4d    }\textcolor{comment}{/* release */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define RELEASE\_DONE        0x5a    }\textcolor{comment}{/* release\_done */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define RESTART         0x46    }\textcolor{comment}{/* restart */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define RESTART\_ACK     0x4e    }\textcolor{comment}{/* restart ack */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define STATUS          0x7d    }\textcolor{comment}{/* status */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define STATUS\_ENQ      0x75    }\textcolor{comment}{/* status ack */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define ADD\_PARTY       0x80    }\textcolor{comment}{/* add party */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define ADD\_PARTY\_ACK       0x81    }\textcolor{comment}{/* add party ack */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define ADD\_PARTY\_REJ       0x82    }\textcolor{comment}{/* add party rej */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define DROP\_PARTY      0x83    }\textcolor{comment}{/* drop party */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define DROP\_PARTY\_ACK      0x84    }\textcolor{comment}{/* drop party ack */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{/* Information Element Parameters in the signalling messages */}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define CAUSE           0x08    }\textcolor{comment}{/* cause */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define ENDPT\_REF       0x54    }\textcolor{comment}{/* endpoint reference */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define AAL\_PARA        0x58    }\textcolor{comment}{/* ATM adaptation layer parameters */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define TRAFF\_DESCRIP       0x59    }\textcolor{comment}{/* atm traffic descriptors */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define CONNECT\_ID      0x5a    }\textcolor{comment}{/* connection identifier */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define QOS\_PARA        0x5c    }\textcolor{comment}{/* quality of service parameters */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define B\_HIGHER        0x5d    }\textcolor{comment}{/* broadband higher layer information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define B\_BEARER        0x5e    }\textcolor{comment}{/* broadband bearer capability */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define B\_LOWER         0x5f    }\textcolor{comment}{/* broadband lower information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define CALLING\_PARTY       0x6c    }\textcolor{comment}{/* calling party number */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define CALLED\_PARTY        0x70    }\textcolor{comment}{/* called party nmber */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define Q2931           0x09}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/* Q.2931 signalling general messages format */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PROTO\_POS       0   }\textcolor{comment}{/* offset of protocol discriminator */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define CALL\_REF\_POS    2   }\textcolor{comment}{/* offset of call reference value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define MSG\_TYPE\_POS    5   }\textcolor{comment}{/* offset of message type */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define MSG\_LEN\_POS     7   }\textcolor{comment}{/* offset of mesage length */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define IE\_BEGIN\_POS    9   }\textcolor{comment}{/* offset of first information element */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/* format of signalling messages */}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define TYPE\_POS    0}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define LEN\_POS     2}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define FIELD\_BEGIN\_POS 4}}
+
+\end{DoxyCode}

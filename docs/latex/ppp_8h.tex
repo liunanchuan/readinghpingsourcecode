@@ -1,0 +1,295 @@
+\hypertarget{ppp_8h}{}\doxysection{libpcap-\/1.1.1/ppp.h 文件参考}
+\label{ppp_8h}\index{libpcap-\/1.1.1/ppp.h@{libpcap-\/1.1.1/ppp.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{ppp_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ae8ca4c160b75942f5459e410a658cf79}{PPP\+\_\+\+ADDRESS}}~0xff /$\ast$ The address byte value $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ac9778867e75a74de0a21989c11b40df8}{PPP\+\_\+\+CONTROL}}~0x03 /$\ast$ The control byte value $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ab58538c4cab14c67e195f80a1b04256c}{PPP\+\_\+\+PPPD\+\_\+\+IN}}~0x00 /$\ast$ non-\/standard for \mbox{\hyperlink{bpf_8h_a6a4853ced148388bf284a712e71ec3f5}{DLT\+\_\+\+PPP\+\_\+\+PPPD}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ae3f6256b337b8f01d388f3d45e51ffb2}{PPP\+\_\+\+PPPD\+\_\+\+OUT}}~0x01 /$\ast$ non-\/standard for \mbox{\hyperlink{bpf_8h_a6a4853ced148388bf284a712e71ec3f5}{DLT\+\_\+\+PPP\+\_\+\+PPPD}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a4feebc12f6bc0f2035315b1e6ef2e084}{PPP\+\_\+\+IP}}~0x0021 /$\ast$ Raw IP $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a51efc859bbc88bc78ea0d9bcfba0abdb}{PPP\+\_\+\+OSI}}~0x0023 /$\ast$ OSI Network Layer $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a9ce7ac3030c953d1bf565c88e79b581f}{PPP\+\_\+\+NS}}~0x0025 /$\ast$ Xerox NS IDP $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a60755e73c1603f373acba5231d9cafe9}{PPP\+\_\+\+DECNET}}~0x0027 /$\ast$ DECnet Phase IV $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_af1baad72fc878832bf5f5fc9695c89c8}{PPP\+\_\+\+APPLE}}~0x0029 /$\ast$ Appletalk $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a52875f307f1bee68fec467d5527a8824}{PPP\+\_\+\+IPX}}~0x002b /$\ast$ Novell IPX $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a7010ace00f20208c3455f7130c77c9e1}{PPP\+\_\+\+VJC}}~0x002d /$\ast$ Van Jacobson Compressed TCP/IP $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aeb79c7130a803b18b122de1f7da50768}{PPP\+\_\+\+VJNC}}~0x002f /$\ast$ Van Jacobson Uncompressed TCP/IP $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aa494ff5644e4806345bc3343cd0004d5}{PPP\+\_\+\+BRPDU}}~0x0031 /$\ast$ Bridging PDU $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a74b08c32211fcbd7cc2ada5b5f13115a}{PPP\+\_\+\+STII}}~0x0033 /$\ast$ Stream Protocol (ST-\/II) $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a1e763bea5b0f66ee3735d3debf82cb76}{PPP\+\_\+\+VINES}}~0x0035 /$\ast$ Banyan Vines $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a93e04918ae90e53b5a28b94a1b1a0875}{PPP\+\_\+\+IPV6}}~0x0057 /$\ast$ Internet Protocol version 6 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_abe3f5a741faf40f45513e22eb080e3e7}{PPP\+\_\+\+HELLO}}~0x0201 /$\ast$ 802.\+1d Hello Packets $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ac2ddec7584dc8c4b6f4f64413bb9d4f7}{PPP\+\_\+\+LUXCOM}}~0x0231 /$\ast$ Luxcom $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a2e3e10c5075555ac0641084f7e5038f1}{PPP\+\_\+\+SNS}}~0x0233 /$\ast$ Sigma Network Systems $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ae54ba2b15ae6099532cb775a78965c8d}{PPP\+\_\+\+MPLS\+\_\+\+UCAST}}~0x0281  /$\ast$ rfc 3032 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ac8ceb51c1d7c0493303f2c23b5ddf0eb}{PPP\+\_\+\+MPLS\+\_\+\+MCAST}}~0x0283  /$\ast$ rfc 3022 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a6cb174dd1fa3f0779f98fe52771f9649}{PPP\+\_\+\+IPCP}}~0x8021 /$\ast$ IP Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aaca013b61cb8f9feecce3720578bb54a}{PPP\+\_\+\+OSICP}}~0x8023 /$\ast$ OSI Network Layer Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ae2b577a81e7311d3f138f9508ca7b8a4}{PPP\+\_\+\+NSCP}}~0x8025 /$\ast$ Xerox NS IDP Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a9ea7c8a32645e8c7226995103fcebe54}{PPP\+\_\+\+DECNETCP}}~0x8027 /$\ast$ DECnet Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a4d9415dbc6efaefc6f63d07d2d13fbab}{PPP\+\_\+\+APPLECP}}~0x8029 /$\ast$ Appletalk Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a43af8c608b36f96c9ee44d6768cf2afa}{PPP\+\_\+\+IPXCP}}~0x802b /$\ast$ Novell IPX Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ab383c1c8ea0ba29e1947dfe47f885bd5}{PPP\+\_\+\+STIICP}}~0x8033 /$\ast$ Strean Protocol Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a0aa9200043bc691343137cc827d6ce13}{PPP\+\_\+\+VINESCP}}~0x8035 /$\ast$ Banyan Vines Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_a38085ca2e1fa410eb6f47c93d2a9b902}{PPP\+\_\+\+IPV6\+CP}}~0x8057 /$\ast$ IPv6 Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aed95d358f4ab5dd4049545a20e96c867}{PPP\+\_\+\+MPLSCP}}~0x8281  /$\ast$ rfc 3022 $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_ab50cd30943f9cf472f5e708578fa264b}{PPP\+\_\+\+LCP}}~0xc021 /$\ast$ Link Control Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aa6fef05ef609f0a4d90fa05cf0c3ff01}{PPP\+\_\+\+PAP}}~0xc023 /$\ast$ Password Authentication Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aa603976808faf6f9e27289d2dddda8bd}{PPP\+\_\+\+LQM}}~0xc025 /$\ast$ Link Quality Monitoring $\ast$/
+\item 
+\#define \mbox{\hyperlink{ppp_8h_aef60b6001f859647ffee52ff7064c4e8}{PPP\+\_\+\+CHAP}}~0xc223 /$\ast$ Challenge Handshake Authentication Protocol $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{ppp_8h_ae8ca4c160b75942f5459e410a658cf79}\label{ppp_8h_ae8ca4c160b75942f5459e410a658cf79}} 
+\index{ppp.h@{ppp.h}!PPP\_ADDRESS@{PPP\_ADDRESS}}
+\index{PPP\_ADDRESS@{PPP\_ADDRESS}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_ADDRESS}{PPP\_ADDRESS}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+ADDRESS~0xff /$\ast$ The address byte value $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_af1baad72fc878832bf5f5fc9695c89c8}\label{ppp_8h_af1baad72fc878832bf5f5fc9695c89c8}} 
+\index{ppp.h@{ppp.h}!PPP\_APPLE@{PPP\_APPLE}}
+\index{PPP\_APPLE@{PPP\_APPLE}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_APPLE}{PPP\_APPLE}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+APPLE~0x0029 /$\ast$ Appletalk $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a4d9415dbc6efaefc6f63d07d2d13fbab}\label{ppp_8h_a4d9415dbc6efaefc6f63d07d2d13fbab}} 
+\index{ppp.h@{ppp.h}!PPP\_APPLECP@{PPP\_APPLECP}}
+\index{PPP\_APPLECP@{PPP\_APPLECP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_APPLECP}{PPP\_APPLECP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+APPLECP~0x8029 /$\ast$ Appletalk Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aa494ff5644e4806345bc3343cd0004d5}\label{ppp_8h_aa494ff5644e4806345bc3343cd0004d5}} 
+\index{ppp.h@{ppp.h}!PPP\_BRPDU@{PPP\_BRPDU}}
+\index{PPP\_BRPDU@{PPP\_BRPDU}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_BRPDU}{PPP\_BRPDU}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+BRPDU~0x0031 /$\ast$ Bridging PDU $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aef60b6001f859647ffee52ff7064c4e8}\label{ppp_8h_aef60b6001f859647ffee52ff7064c4e8}} 
+\index{ppp.h@{ppp.h}!PPP\_CHAP@{PPP\_CHAP}}
+\index{PPP\_CHAP@{PPP\_CHAP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_CHAP}{PPP\_CHAP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+CHAP~0xc223 /$\ast$ Challenge Handshake Authentication Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ac9778867e75a74de0a21989c11b40df8}\label{ppp_8h_ac9778867e75a74de0a21989c11b40df8}} 
+\index{ppp.h@{ppp.h}!PPP\_CONTROL@{PPP\_CONTROL}}
+\index{PPP\_CONTROL@{PPP\_CONTROL}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_CONTROL}{PPP\_CONTROL}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+CONTROL~0x03 /$\ast$ The control byte value $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a60755e73c1603f373acba5231d9cafe9}\label{ppp_8h_a60755e73c1603f373acba5231d9cafe9}} 
+\index{ppp.h@{ppp.h}!PPP\_DECNET@{PPP\_DECNET}}
+\index{PPP\_DECNET@{PPP\_DECNET}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_DECNET}{PPP\_DECNET}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+DECNET~0x0027 /$\ast$ DECnet Phase IV $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a9ea7c8a32645e8c7226995103fcebe54}\label{ppp_8h_a9ea7c8a32645e8c7226995103fcebe54}} 
+\index{ppp.h@{ppp.h}!PPP\_DECNETCP@{PPP\_DECNETCP}}
+\index{PPP\_DECNETCP@{PPP\_DECNETCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_DECNETCP}{PPP\_DECNETCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+DECNETCP~0x8027 /$\ast$ DECnet Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_abe3f5a741faf40f45513e22eb080e3e7}\label{ppp_8h_abe3f5a741faf40f45513e22eb080e3e7}} 
+\index{ppp.h@{ppp.h}!PPP\_HELLO@{PPP\_HELLO}}
+\index{PPP\_HELLO@{PPP\_HELLO}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_HELLO}{PPP\_HELLO}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+HELLO~0x0201 /$\ast$ 802.\+1d Hello Packets $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a4feebc12f6bc0f2035315b1e6ef2e084}\label{ppp_8h_a4feebc12f6bc0f2035315b1e6ef2e084}} 
+\index{ppp.h@{ppp.h}!PPP\_IP@{PPP\_IP}}
+\index{PPP\_IP@{PPP\_IP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IP}{PPP\_IP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IP~0x0021 /$\ast$ Raw IP $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a6cb174dd1fa3f0779f98fe52771f9649}\label{ppp_8h_a6cb174dd1fa3f0779f98fe52771f9649}} 
+\index{ppp.h@{ppp.h}!PPP\_IPCP@{PPP\_IPCP}}
+\index{PPP\_IPCP@{PPP\_IPCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IPCP}{PPP\_IPCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IPCP~0x8021 /$\ast$ IP Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a93e04918ae90e53b5a28b94a1b1a0875}\label{ppp_8h_a93e04918ae90e53b5a28b94a1b1a0875}} 
+\index{ppp.h@{ppp.h}!PPP\_IPV6@{PPP\_IPV6}}
+\index{PPP\_IPV6@{PPP\_IPV6}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IPV6}{PPP\_IPV6}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IPV6~0x0057 /$\ast$ Internet Protocol version 6 $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a38085ca2e1fa410eb6f47c93d2a9b902}\label{ppp_8h_a38085ca2e1fa410eb6f47c93d2a9b902}} 
+\index{ppp.h@{ppp.h}!PPP\_IPV6CP@{PPP\_IPV6CP}}
+\index{PPP\_IPV6CP@{PPP\_IPV6CP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IPV6CP}{PPP\_IPV6CP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IPV6\+CP~0x8057 /$\ast$ IPv6 Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a52875f307f1bee68fec467d5527a8824}\label{ppp_8h_a52875f307f1bee68fec467d5527a8824}} 
+\index{ppp.h@{ppp.h}!PPP\_IPX@{PPP\_IPX}}
+\index{PPP\_IPX@{PPP\_IPX}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IPX}{PPP\_IPX}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IPX~0x002b /$\ast$ Novell IPX $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a43af8c608b36f96c9ee44d6768cf2afa}\label{ppp_8h_a43af8c608b36f96c9ee44d6768cf2afa}} 
+\index{ppp.h@{ppp.h}!PPP\_IPXCP@{PPP\_IPXCP}}
+\index{PPP\_IPXCP@{PPP\_IPXCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_IPXCP}{PPP\_IPXCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+IPXCP~0x802b /$\ast$ Novell IPX Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ab50cd30943f9cf472f5e708578fa264b}\label{ppp_8h_ab50cd30943f9cf472f5e708578fa264b}} 
+\index{ppp.h@{ppp.h}!PPP\_LCP@{PPP\_LCP}}
+\index{PPP\_LCP@{PPP\_LCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_LCP}{PPP\_LCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+LCP~0xc021 /$\ast$ Link Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aa603976808faf6f9e27289d2dddda8bd}\label{ppp_8h_aa603976808faf6f9e27289d2dddda8bd}} 
+\index{ppp.h@{ppp.h}!PPP\_LQM@{PPP\_LQM}}
+\index{PPP\_LQM@{PPP\_LQM}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_LQM}{PPP\_LQM}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+LQM~0xc025 /$\ast$ Link Quality Monitoring $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ac2ddec7584dc8c4b6f4f64413bb9d4f7}\label{ppp_8h_ac2ddec7584dc8c4b6f4f64413bb9d4f7}} 
+\index{ppp.h@{ppp.h}!PPP\_LUXCOM@{PPP\_LUXCOM}}
+\index{PPP\_LUXCOM@{PPP\_LUXCOM}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_LUXCOM}{PPP\_LUXCOM}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+LUXCOM~0x0231 /$\ast$ Luxcom $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ac8ceb51c1d7c0493303f2c23b5ddf0eb}\label{ppp_8h_ac8ceb51c1d7c0493303f2c23b5ddf0eb}} 
+\index{ppp.h@{ppp.h}!PPP\_MPLS\_MCAST@{PPP\_MPLS\_MCAST}}
+\index{PPP\_MPLS\_MCAST@{PPP\_MPLS\_MCAST}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_MPLS\_MCAST}{PPP\_MPLS\_MCAST}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+MPLS\+\_\+\+MCAST~0x0283  /$\ast$ rfc 3022 $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ae54ba2b15ae6099532cb775a78965c8d}\label{ppp_8h_ae54ba2b15ae6099532cb775a78965c8d}} 
+\index{ppp.h@{ppp.h}!PPP\_MPLS\_UCAST@{PPP\_MPLS\_UCAST}}
+\index{PPP\_MPLS\_UCAST@{PPP\_MPLS\_UCAST}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_MPLS\_UCAST}{PPP\_MPLS\_UCAST}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+MPLS\+\_\+\+UCAST~0x0281  /$\ast$ rfc 3032 $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aed95d358f4ab5dd4049545a20e96c867}\label{ppp_8h_aed95d358f4ab5dd4049545a20e96c867}} 
+\index{ppp.h@{ppp.h}!PPP\_MPLSCP@{PPP\_MPLSCP}}
+\index{PPP\_MPLSCP@{PPP\_MPLSCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_MPLSCP}{PPP\_MPLSCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+MPLSCP~0x8281  /$\ast$ rfc 3022 $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a9ce7ac3030c953d1bf565c88e79b581f}\label{ppp_8h_a9ce7ac3030c953d1bf565c88e79b581f}} 
+\index{ppp.h@{ppp.h}!PPP\_NS@{PPP\_NS}}
+\index{PPP\_NS@{PPP\_NS}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_NS}{PPP\_NS}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+NS~0x0025 /$\ast$ Xerox NS IDP $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ae2b577a81e7311d3f138f9508ca7b8a4}\label{ppp_8h_ae2b577a81e7311d3f138f9508ca7b8a4}} 
+\index{ppp.h@{ppp.h}!PPP\_NSCP@{PPP\_NSCP}}
+\index{PPP\_NSCP@{PPP\_NSCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_NSCP}{PPP\_NSCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+NSCP~0x8025 /$\ast$ Xerox NS IDP Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a51efc859bbc88bc78ea0d9bcfba0abdb}\label{ppp_8h_a51efc859bbc88bc78ea0d9bcfba0abdb}} 
+\index{ppp.h@{ppp.h}!PPP\_OSI@{PPP\_OSI}}
+\index{PPP\_OSI@{PPP\_OSI}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_OSI}{PPP\_OSI}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+OSI~0x0023 /$\ast$ OSI Network Layer $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aaca013b61cb8f9feecce3720578bb54a}\label{ppp_8h_aaca013b61cb8f9feecce3720578bb54a}} 
+\index{ppp.h@{ppp.h}!PPP\_OSICP@{PPP\_OSICP}}
+\index{PPP\_OSICP@{PPP\_OSICP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_OSICP}{PPP\_OSICP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+OSICP~0x8023 /$\ast$ OSI Network Layer Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aa6fef05ef609f0a4d90fa05cf0c3ff01}\label{ppp_8h_aa6fef05ef609f0a4d90fa05cf0c3ff01}} 
+\index{ppp.h@{ppp.h}!PPP\_PAP@{PPP\_PAP}}
+\index{PPP\_PAP@{PPP\_PAP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_PAP}{PPP\_PAP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+PAP~0xc023 /$\ast$ Password Authentication Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ab58538c4cab14c67e195f80a1b04256c}\label{ppp_8h_ab58538c4cab14c67e195f80a1b04256c}} 
+\index{ppp.h@{ppp.h}!PPP\_PPPD\_IN@{PPP\_PPPD\_IN}}
+\index{PPP\_PPPD\_IN@{PPP\_PPPD\_IN}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_PPPD\_IN}{PPP\_PPPD\_IN}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+PPPD\+\_\+\+IN~0x00 /$\ast$ non-\/standard for \mbox{\hyperlink{bpf_8h_a6a4853ced148388bf284a712e71ec3f5}{DLT\+\_\+\+PPP\+\_\+\+PPPD}} $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ae3f6256b337b8f01d388f3d45e51ffb2}\label{ppp_8h_ae3f6256b337b8f01d388f3d45e51ffb2}} 
+\index{ppp.h@{ppp.h}!PPP\_PPPD\_OUT@{PPP\_PPPD\_OUT}}
+\index{PPP\_PPPD\_OUT@{PPP\_PPPD\_OUT}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_PPPD\_OUT}{PPP\_PPPD\_OUT}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+PPPD\+\_\+\+OUT~0x01 /$\ast$ non-\/standard for \mbox{\hyperlink{bpf_8h_a6a4853ced148388bf284a712e71ec3f5}{DLT\+\_\+\+PPP\+\_\+\+PPPD}} $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a2e3e10c5075555ac0641084f7e5038f1}\label{ppp_8h_a2e3e10c5075555ac0641084f7e5038f1}} 
+\index{ppp.h@{ppp.h}!PPP\_SNS@{PPP\_SNS}}
+\index{PPP\_SNS@{PPP\_SNS}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_SNS}{PPP\_SNS}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+SNS~0x0233 /$\ast$ Sigma Network Systems $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a74b08c32211fcbd7cc2ada5b5f13115a}\label{ppp_8h_a74b08c32211fcbd7cc2ada5b5f13115a}} 
+\index{ppp.h@{ppp.h}!PPP\_STII@{PPP\_STII}}
+\index{PPP\_STII@{PPP\_STII}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_STII}{PPP\_STII}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+STII~0x0033 /$\ast$ Stream Protocol (ST-\/II) $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_ab383c1c8ea0ba29e1947dfe47f885bd5}\label{ppp_8h_ab383c1c8ea0ba29e1947dfe47f885bd5}} 
+\index{ppp.h@{ppp.h}!PPP\_STIICP@{PPP\_STIICP}}
+\index{PPP\_STIICP@{PPP\_STIICP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_STIICP}{PPP\_STIICP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+STIICP~0x8033 /$\ast$ Strean Protocol Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a1e763bea5b0f66ee3735d3debf82cb76}\label{ppp_8h_a1e763bea5b0f66ee3735d3debf82cb76}} 
+\index{ppp.h@{ppp.h}!PPP\_VINES@{PPP\_VINES}}
+\index{PPP\_VINES@{PPP\_VINES}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_VINES}{PPP\_VINES}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+VINES~0x0035 /$\ast$ Banyan Vines $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a0aa9200043bc691343137cc827d6ce13}\label{ppp_8h_a0aa9200043bc691343137cc827d6ce13}} 
+\index{ppp.h@{ppp.h}!PPP\_VINESCP@{PPP\_VINESCP}}
+\index{PPP\_VINESCP@{PPP\_VINESCP}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_VINESCP}{PPP\_VINESCP}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+VINESCP~0x8035 /$\ast$ Banyan Vines Control Protocol $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_a7010ace00f20208c3455f7130c77c9e1}\label{ppp_8h_a7010ace00f20208c3455f7130c77c9e1}} 
+\index{ppp.h@{ppp.h}!PPP\_VJC@{PPP\_VJC}}
+\index{PPP\_VJC@{PPP\_VJC}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_VJC}{PPP\_VJC}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+VJC~0x002d /$\ast$ Van Jacobson Compressed TCP/IP $\ast$/}
+
+\mbox{\Hypertarget{ppp_8h_aeb79c7130a803b18b122de1f7da50768}\label{ppp_8h_aeb79c7130a803b18b122de1f7da50768}} 
+\index{ppp.h@{ppp.h}!PPP\_VJNC@{PPP\_VJNC}}
+\index{PPP\_VJNC@{PPP\_VJNC}!ppp.h@{ppp.h}}
+\doxysubsubsection{\texorpdfstring{PPP\_VJNC}{PPP\_VJNC}}
+{\footnotesize\ttfamily \#define PPP\+\_\+\+VJNC~0x002f /$\ast$ Van Jacobson Uncompressed TCP/IP $\ast$/}
+

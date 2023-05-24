@@ -1,0 +1,118 @@
+\hypertarget{inetprivate_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/inetprivate.h 文件参考}
+\label{inetprivate_8h}\index{libpcap-\/1.1.1/Win32/Include/inetprivate.h@{libpcap-\/1.1.1/Win32/Include/inetprivate.h}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$net/netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/nameser.\+h$>$}\newline
+inetprivate.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inetprivate_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inetprivate_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{inetprivate_8h_a7f4363b273abb171424e2bd7b0f47b78}{\+\_\+sethtent}} (int f)
+\item 
+void \mbox{\hyperlink{inetprivate_8h_a799e089f651b73789c9fbb98e772415e}{\+\_\+endhtent}} (void)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{inetprivate_8h_ac93980bd6589385e3daf18bd08290f00}{\+\_\+gethtent}} (void)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{inetprivate_8h_ab1e1b3d06291c166af6299a7ec9b76c0}{\+\_\+gethtbyname}} (const char $\ast$name)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{inetprivate_8h_aa0f6916b984b91a9fe78dbe0f40858b4}{\+\_\+gethtbyaddr}} (const char $\ast$addr, int len, int type)
+\item 
+int \mbox{\hyperlink{inetprivate_8h_aab075c0a15e3a668ca1201bdbfbfac10}{\+\_\+validuser}} (FILE $\ast$hostf, const char $\ast$rhost, const char $\ast$luser, const char $\ast$ruser, int baselen)
+\item 
+int \mbox{\hyperlink{inetprivate_8h_aac624cabde4872a2136954a176e00933}{\+\_\+checkhost}} (const char $\ast$rhost, const char $\ast$lhost, int len)
+\item 
+char $\ast$ \mbox{\hyperlink{inetprivate_8h_af146aac4f822e089419175ebf69897b2}{hostalias}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{inetprivate_8h_a6bd17fde1c110b0e3933ee6c6410db3d}{sethostfile}} (char $\ast$name)
+\item 
+void \mbox{\hyperlink{inetprivate_8h_af001bdae42664b44116e0a3dde6a4c28}{\+\_\+res\+\_\+close}} (void)
+\item 
+void \mbox{\hyperlink{inetprivate_8h_a48044600e71ccd5965b18a187065f96b}{ruserpass}} (const char $\ast$host, char $\ast$$\ast$aname, char $\ast$$\ast$apass)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{inetprivate_8h_aac624cabde4872a2136954a176e00933}\label{inetprivate_8h_aac624cabde4872a2136954a176e00933}} 
+\index{inetprivate.h@{inetprivate.h}!\_checkhost@{\_checkhost}}
+\index{\_checkhost@{\_checkhost}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_checkhost()}{\_checkhost()}}
+{\footnotesize\ttfamily int \+\_\+checkhost (\begin{DoxyParamCaption}\item[{const char $\ast$}]{rhost,  }\item[{const char $\ast$}]{lhost,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_a799e089f651b73789c9fbb98e772415e}\label{inetprivate_8h_a799e089f651b73789c9fbb98e772415e}} 
+\index{inetprivate.h@{inetprivate.h}!\_endhtent@{\_endhtent}}
+\index{\_endhtent@{\_endhtent}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_endhtent()}{\_endhtent()}}
+{\footnotesize\ttfamily void \+\_\+endhtent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_aa0f6916b984b91a9fe78dbe0f40858b4}\label{inetprivate_8h_aa0f6916b984b91a9fe78dbe0f40858b4}} 
+\index{inetprivate.h@{inetprivate.h}!\_gethtbyaddr@{\_gethtbyaddr}}
+\index{\_gethtbyaddr@{\_gethtbyaddr}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_gethtbyaddr()}{\_gethtbyaddr()}}
+{\footnotesize\ttfamily struct hostent $\ast$ \+\_\+gethtbyaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{addr,  }\item[{int}]{len,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_ab1e1b3d06291c166af6299a7ec9b76c0}\label{inetprivate_8h_ab1e1b3d06291c166af6299a7ec9b76c0}} 
+\index{inetprivate.h@{inetprivate.h}!\_gethtbyname@{\_gethtbyname}}
+\index{\_gethtbyname@{\_gethtbyname}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_gethtbyname()}{\_gethtbyname()}}
+{\footnotesize\ttfamily struct hostent $\ast$ \+\_\+gethtbyname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_ac93980bd6589385e3daf18bd08290f00}\label{inetprivate_8h_ac93980bd6589385e3daf18bd08290f00}} 
+\index{inetprivate.h@{inetprivate.h}!\_gethtent@{\_gethtent}}
+\index{\_gethtent@{\_gethtent}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_gethtent()}{\_gethtent()}}
+{\footnotesize\ttfamily struct hostent $\ast$ \+\_\+gethtent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_af001bdae42664b44116e0a3dde6a4c28}\label{inetprivate_8h_af001bdae42664b44116e0a3dde6a4c28}} 
+\index{inetprivate.h@{inetprivate.h}!\_res\_close@{\_res\_close}}
+\index{\_res\_close@{\_res\_close}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_res\_close()}{\_res\_close()}}
+{\footnotesize\ttfamily void \+\_\+res\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_a7f4363b273abb171424e2bd7b0f47b78}\label{inetprivate_8h_a7f4363b273abb171424e2bd7b0f47b78}} 
+\index{inetprivate.h@{inetprivate.h}!\_sethtent@{\_sethtent}}
+\index{\_sethtent@{\_sethtent}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_sethtent()}{\_sethtent()}}
+{\footnotesize\ttfamily void \+\_\+sethtent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_aab075c0a15e3a668ca1201bdbfbfac10}\label{inetprivate_8h_aab075c0a15e3a668ca1201bdbfbfac10}} 
+\index{inetprivate.h@{inetprivate.h}!\_validuser@{\_validuser}}
+\index{\_validuser@{\_validuser}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{\_validuser()}{\_validuser()}}
+{\footnotesize\ttfamily int \+\_\+validuser (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{hostf,  }\item[{const char $\ast$}]{rhost,  }\item[{const char $\ast$}]{luser,  }\item[{const char $\ast$}]{ruser,  }\item[{int}]{baselen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_af146aac4f822e089419175ebf69897b2}\label{inetprivate_8h_af146aac4f822e089419175ebf69897b2}} 
+\index{inetprivate.h@{inetprivate.h}!hostalias@{hostalias}}
+\index{hostalias@{hostalias}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{hostalias()}{hostalias()}}
+{\footnotesize\ttfamily char $\ast$ hostalias (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_a48044600e71ccd5965b18a187065f96b}\label{inetprivate_8h_a48044600e71ccd5965b18a187065f96b}} 
+\index{inetprivate.h@{inetprivate.h}!ruserpass@{ruserpass}}
+\index{ruserpass@{ruserpass}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{ruserpass()}{ruserpass()}}
+{\footnotesize\ttfamily void ruserpass (\begin{DoxyParamCaption}\item[{const char $\ast$}]{host,  }\item[{char $\ast$$\ast$}]{aname,  }\item[{char $\ast$$\ast$}]{apass }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inetprivate_8h_a6bd17fde1c110b0e3933ee6c6410db3d}\label{inetprivate_8h_a6bd17fde1c110b0e3933ee6c6410db3d}} 
+\index{inetprivate.h@{inetprivate.h}!sethostfile@{sethostfile}}
+\index{sethostfile@{sethostfile}!inetprivate.h@{inetprivate.h}}
+\doxysubsubsection{\texorpdfstring{sethostfile()}{sethostfile()}}
+{\footnotesize\ttfamily void sethostfile (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+

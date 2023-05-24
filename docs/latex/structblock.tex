@@ -1,0 +1,286 @@
+\hypertarget{structblock}{}\doxysection{block结构体 参考}
+\label{structblock}\index{block@{block}}
+
+
+{\ttfamily \#include $<$gencode.\+h$>$}
+
+
+
+block 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{structblock__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structblock_a7441ef0865bcb3db9b8064dd7375c1ea}{id}}
+\item 
+struct \mbox{\hyperlink{structslist}{slist}} $\ast$ \mbox{\hyperlink{structblock_a1f06889ad08e9604a0551f90bec551be}{stmts}}
+\item 
+struct \mbox{\hyperlink{structstmt}{stmt}} \mbox{\hyperlink{structblock_ad745dd282eeeadb12388159724e00233}{s}}
+\item 
+int \mbox{\hyperlink{structblock_a29e4cceb1cfe4649dfe576defe5558e9}{mark}}
+\item 
+int \mbox{\hyperlink{structblock_adec542a73719d72be346841c92f8775e}{longjt}}
+\item 
+int \mbox{\hyperlink{structblock_aad48b4f7362d30fcf4ffa11f7e51c47b}{longjf}}
+\item 
+int \mbox{\hyperlink{structblock_acf4d33ee4cff36f69b924471174dcb11}{level}}
+\item 
+int \mbox{\hyperlink{structblock_aed7ea92f45bd273dde380a45ddced592}{offset}}
+\item 
+int \mbox{\hyperlink{structblock_a63824e330f67129ae657ddc1120c30f2}{sense}}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}} \mbox{\hyperlink{structblock_aefdb4218d099371a81ca60762894528e}{et}}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}} \mbox{\hyperlink{structblock_acdc4116bd4176d8a3a9a2a6e1424fb83}{ef}}
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{structblock_acc701d7d7d005dac151d763277a1661e}{head}}
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{structblock_a41f94cfa50b95c0727b104d9edc8bbe1}{link}}
+\item 
+\mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} \mbox{\hyperlink{structblock_a913b6875aa2bfea50e59c37f48027c33}{dom}}
+\item 
+\mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} \mbox{\hyperlink{structblock_a6c719e39f90c34f577b238026036db43}{closure}}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}} $\ast$ \mbox{\hyperlink{structblock_a8f0dc71672dfcbdbd99b94db5393633c}{in\+\_\+edges}}
+\item 
+\mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} \mbox{\hyperlink{structblock_adb3c1cf21267a486d46950e39faff474}{def}}
+\item 
+\mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} \mbox{\hyperlink{structblock_af9614e0d3cb1ef0a91ee1a9fb33c5e22}{kill}}
+\item 
+\mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} \mbox{\hyperlink{structblock_a074f9b37e5785bb33861ea06a1fe1c53}{in\+\_\+use}}
+\item 
+\mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} \mbox{\hyperlink{structblock_af93d0927205f5b7b18848c6fafc9ae50}{out\+\_\+use}}
+\item 
+int \mbox{\hyperlink{structblock_af5da64ebc8a09a27f4eb99ea1765e1fd}{oval}}
+\item 
+int \mbox{\hyperlink{structblock_aef989d02c8ed82e59004ed53a5dfe30a}{val}} \mbox{[}\mbox{\hyperlink{gencode_8h_ad3a22aaa854e1588d50e977c11fd0da0}{N\+\_\+\+ATOMS}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structblock_a6c719e39f90c34f577b238026036db43}\label{structblock_a6c719e39f90c34f577b238026036db43}} 
+\index{block@{block}!closure@{closure}}
+\index{closure@{closure}!block@{block}}
+\doxysubsubsection{\texorpdfstring{closure}{closure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} closure}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a5659cc1dda392449b515075a5cd5999b}{find\+\_\+closure()}} , 以及 \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}.
+
+\mbox{\Hypertarget{structblock_adb3c1cf21267a486d46950e39faff474}\label{structblock_adb3c1cf21267a486d46950e39faff474}} 
+\index{block@{block}!def@{def}}
+\index{def@{def}!block@{block}}
+\doxysubsubsection{\texorpdfstring{def}{def}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} def}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a8f7d87e17e6e84739d6d80fb7b7da5f6}{compute\+\_\+local\+\_\+ud()}}.
+
+\mbox{\Hypertarget{structblock_a913b6875aa2bfea50e59c37f48027c33}\label{structblock_a913b6875aa2bfea50e59c37f48027c33}} 
+\index{block@{block}!dom@{dom}}
+\index{dom@{dom}!block@{block}}
+\doxysubsubsection{\texorpdfstring{dom}{dom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} dom}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a44caccee0210204767c61ef402eebbb6}{find\+\_\+dom()}} , 以及 \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}.
+
+\mbox{\Hypertarget{structblock_acdc4116bd4176d8a3a9a2a6e1424fb83}\label{structblock_acdc4116bd4176d8a3a9a2a6e1424fb83}} 
+\index{block@{block}!ef@{ef}}
+\index{ef@{ef}!block@{block}}
+\doxysubsubsection{\texorpdfstring{ef}{ef}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structedge}{edge}} ef}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_afbb1b7213787e3b800af0db050d3d93c}{eq\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a6724cf6f63b23f795d262146d227b366}{find\+\_\+edom()}}, \mbox{\hyperlink{optimize_8c_ab49a2cdccbe3cf825bf67d91a942aff7}{find\+\_\+inedges()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a9fda00bccb92717174f5de5afccb908b}{opt\+\_\+blks()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}} , 以及 \mbox{\hyperlink{optimize_8c_a9e287d7bac576363a17b51d215f79f80}{propedom()}}.
+
+\mbox{\Hypertarget{structblock_aefdb4218d099371a81ca60762894528e}\label{structblock_aefdb4218d099371a81ca60762894528e}} 
+\index{block@{block}!et@{et}}
+\index{et@{et}!block@{block}}
+\doxysubsubsection{\texorpdfstring{et}{et}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structedge}{edge}} et}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_afbb1b7213787e3b800af0db050d3d93c}{eq\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a6724cf6f63b23f795d262146d227b366}{find\+\_\+edom()}}, \mbox{\hyperlink{optimize_8c_ab49a2cdccbe3cf825bf67d91a942aff7}{find\+\_\+inedges()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a9fda00bccb92717174f5de5afccb908b}{opt\+\_\+blks()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}, \mbox{\hyperlink{optimize_8c_ab3cf30a711c271ca87fe10c245a37eed}{opt\+\_\+j()}} , 以及 \mbox{\hyperlink{optimize_8c_a9e287d7bac576363a17b51d215f79f80}{propedom()}}.
+
+\mbox{\Hypertarget{structblock_acc701d7d7d005dac151d763277a1661e}\label{structblock_acc701d7d7d005dac151d763277a1661e}} 
+\index{block@{block}!head@{head}}
+\index{head@{head}!block@{block}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}}$\ast$ head}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a750d5d9f35fadca0c7fbd9a508a83876}{finish\+\_\+parse()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}} , 以及 \mbox{\hyperlink{gencode_8c_adae9e51b46a5908a67327ec7a692e757}{new\+\_\+block()}}.
+
+\mbox{\Hypertarget{structblock_a7441ef0865bcb3db9b8064dd7375c1ea}\label{structblock_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+\index{block@{block}!id@{id}}
+\index{id@{id}!block@{block}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int id}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_aa5b3859be5eba2230b65d3cbb6d7573f}{and\+\_\+pullup()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_a5659cc1dda392449b515075a5cd5999b}{find\+\_\+closure()}}, \mbox{\hyperlink{optimize_8c_a44caccee0210204767c61ef402eebbb6}{find\+\_\+dom()}}, \mbox{\hyperlink{optimize_8c_aa017549ece173ed87b6aa2d7641c8de5}{number\+\_\+blks\+\_\+r()}} , 以及 \mbox{\hyperlink{optimize_8c_ab107ce5a86491a65f148236a6c49a820}{or\+\_\+pullup()}}.
+
+\mbox{\Hypertarget{structblock_a8f0dc71672dfcbdbd99b94db5393633c}\label{structblock_a8f0dc71672dfcbdbd99b94db5393633c}} 
+\index{block@{block}!in\_edges@{in\_edges}}
+\index{in\_edges@{in\_edges}!block@{block}}
+\doxysubsubsection{\texorpdfstring{in\_edges}{in\_edges}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structedge}{edge}}$\ast$ in\+\_\+edges}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_aa5b3859be5eba2230b65d3cbb6d7573f}{and\+\_\+pullup()}}, \mbox{\hyperlink{optimize_8c_ab49a2cdccbe3cf825bf67d91a942aff7}{find\+\_\+inedges()}}, \mbox{\hyperlink{optimize_8c_ae1ef59a20ba6116e9d68ac320de8341f}{link\+\_\+inedge()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}} , 以及 \mbox{\hyperlink{optimize_8c_ab107ce5a86491a65f148236a6c49a820}{or\+\_\+pullup()}}.
+
+\mbox{\Hypertarget{structblock_a074f9b37e5785bb33861ea06a1fe1c53}\label{structblock_a074f9b37e5785bb33861ea06a1fe1c53}} 
+\index{block@{block}!in\_use@{in\_use}}
+\index{in\_use@{in\_use}!block@{block}}
+\doxysubsubsection{\texorpdfstring{in\_use}{in\_use}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} in\+\_\+use}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a8f7d87e17e6e84739d6d80fb7b7da5f6}{compute\+\_\+local\+\_\+ud()}} , 以及 \mbox{\hyperlink{optimize_8c_a356b0b407678652ba9f28b101632f644}{find\+\_\+ud()}}.
+
+\mbox{\Hypertarget{structblock_af9614e0d3cb1ef0a91ee1a9fb33c5e22}\label{structblock_af9614e0d3cb1ef0a91ee1a9fb33c5e22}} 
+\index{block@{block}!kill@{kill}}
+\index{kill@{kill}!block@{block}}
+\doxysubsubsection{\texorpdfstring{kill}{kill}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} kill}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a8f7d87e17e6e84739d6d80fb7b7da5f6}{compute\+\_\+local\+\_\+ud()}}.
+
+\mbox{\Hypertarget{structblock_acf4d33ee4cff36f69b924471174dcb11}\label{structblock_acf4d33ee4cff36f69b924471174dcb11}} 
+\index{block@{block}!level@{level}}
+\index{level@{level}!block@{block}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int level}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a5659cc1dda392449b515075a5cd5999b}{find\+\_\+closure()}}, \mbox{\hyperlink{optimize_8c_a44caccee0210204767c61ef402eebbb6}{find\+\_\+dom()}}, \mbox{\hyperlink{optimize_8c_a6724cf6f63b23f795d262146d227b366}{find\+\_\+edom()}}, \mbox{\hyperlink{optimize_8c_ab49a2cdccbe3cf825bf67d91a942aff7}{find\+\_\+inedges()}}, \mbox{\hyperlink{optimize_8c_a67eea563a6a48a1409c73824ea17e158}{find\+\_\+levels\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_a356b0b407678652ba9f28b101632f644}{find\+\_\+ud()}} , 以及 \mbox{\hyperlink{optimize_8c_a9fda00bccb92717174f5de5afccb908b}{opt\+\_\+blks()}}.
+
+\mbox{\Hypertarget{structblock_a41f94cfa50b95c0727b104d9edc8bbe1}\label{structblock_a41f94cfa50b95c0727b104d9edc8bbe1}} 
+\index{block@{block}!link@{link}}
+\index{link@{link}!block@{block}}
+\doxysubsubsection{\texorpdfstring{link}{link}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}}$\ast$ link}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a5659cc1dda392449b515075a5cd5999b}{find\+\_\+closure()}}, \mbox{\hyperlink{optimize_8c_a44caccee0210204767c61ef402eebbb6}{find\+\_\+dom()}}, \mbox{\hyperlink{optimize_8c_a6724cf6f63b23f795d262146d227b366}{find\+\_\+edom()}}, \mbox{\hyperlink{optimize_8c_ab49a2cdccbe3cf825bf67d91a942aff7}{find\+\_\+inedges()}}, \mbox{\hyperlink{optimize_8c_a67eea563a6a48a1409c73824ea17e158}{find\+\_\+levels\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_a356b0b407678652ba9f28b101632f644}{find\+\_\+ud()}}, \mbox{\hyperlink{optimize_8c_aa3c92cb7436367d4da48ca528218dff0}{intern\+\_\+blocks()}} , 以及 \mbox{\hyperlink{optimize_8c_a9fda00bccb92717174f5de5afccb908b}{opt\+\_\+blks()}}.
+
+\mbox{\Hypertarget{structblock_aad48b4f7362d30fcf4ffa11f7e51c47b}\label{structblock_aad48b4f7362d30fcf4ffa11f7e51c47b}} 
+\index{block@{block}!longjf@{longjf}}
+\index{longjf@{longjf}!block@{block}}
+\doxysubsubsection{\texorpdfstring{longjf}{longjf}}
+{\footnotesize\ttfamily int longjf}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}} , 以及 \mbox{\hyperlink{optimize_8c_addbfaa636b06101d5041570e3d1ee832}{count\+\_\+stmts()}}.
+
+\mbox{\Hypertarget{structblock_adec542a73719d72be346841c92f8775e}\label{structblock_adec542a73719d72be346841c92f8775e}} 
+\index{block@{block}!longjt@{longjt}}
+\index{longjt@{longjt}!block@{block}}
+\doxysubsubsection{\texorpdfstring{longjt}{longjt}}
+{\footnotesize\ttfamily int longjt}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}} , 以及 \mbox{\hyperlink{optimize_8c_addbfaa636b06101d5041570e3d1ee832}{count\+\_\+stmts()}}.
+
+\mbox{\Hypertarget{structblock_a29e4cceb1cfe4649dfe576defe5558e9}\label{structblock_a29e4cceb1cfe4649dfe576defe5558e9}} 
+\index{block@{block}!mark@{mark}}
+\index{mark@{mark}!block@{block}}
+\doxysubsubsection{\texorpdfstring{mark}{mark}}
+{\footnotesize\ttfamily int mark}
+
+\mbox{\Hypertarget{structblock_aed7ea92f45bd273dde380a45ddced592}\label{structblock_aed7ea92f45bd273dde380a45ddced592}} 
+\index{block@{block}!offset@{offset}}
+\index{offset@{offset}!block@{block}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily int offset}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{gencode_8c_a1c577e0e7d181cf2a6d904db869590c1}{gen\+\_\+bcmp()}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a67883eec995b503e9f0963fcef1d56d3}{gen\+\_\+cmp\+\_\+ge()}}, \mbox{\hyperlink{gencode_8c_a8c04329c660e776fc26ac3f9af02f440}{gen\+\_\+cmp\+\_\+gt()}}, \mbox{\hyperlink{gencode_8c_a7a28e28f0a2909f96fe182a6a010bfa4}{gen\+\_\+cmp\+\_\+le()}}, \mbox{\hyperlink{gencode_8c_a972f5e481ea3fbbab302a83b56d8f711}{gen\+\_\+cmp\+\_\+lt()}}, \mbox{\hyperlink{gencode_8c_a83f97d83b2d8f92765bbccbefeb252c9}{gen\+\_\+hostop()}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}} , 以及 \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}.
+
+\mbox{\Hypertarget{structblock_af93d0927205f5b7b18848c6fafc9ae50}\label{structblock_af93d0927205f5b7b18848c6fafc9ae50}} 
+\index{block@{block}!out\_use@{out\_use}}
+\index{out\_use@{out\_use}!block@{block}}
+\doxysubsubsection{\texorpdfstring{out\_use}{out\_use}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}} out\+\_\+use}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a356b0b407678652ba9f28b101632f644}{find\+\_\+ud()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a1909bcccafe40bb75c3ba627aa913cbe}{opt\+\_\+deadstores()}}, \mbox{\hyperlink{optimize_8c_afc71b1d4136079ce7039bb92e3be85e1}{opt\+\_\+peep()}} , 以及 \mbox{\hyperlink{optimize_8c_a086bc0d41104226c8e3d855676834d23}{use\+\_\+conflict()}}.
+
+\mbox{\Hypertarget{structblock_af5da64ebc8a09a27f4eb99ea1765e1fd}\label{structblock_af5da64ebc8a09a27f4eb99ea1765e1fd}} 
+\index{block@{block}!oval@{oval}}
+\index{oval@{oval}!block@{block}}
+\doxysubsubsection{\texorpdfstring{oval}{oval}}
+{\footnotesize\ttfamily int oval}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a882a605d64e8dff3111abf94c303c079}{fold\+\_\+edge()}} , 以及 \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}.
+
+\mbox{\Hypertarget{structblock_ad745dd282eeeadb12388159724e00233}\label{structblock_ad745dd282eeeadb12388159724e00233}} 
+\index{block@{block}!s@{s}}
+\index{s@{s}!block@{block}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structstmt}{stmt}} s}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a8f7d87e17e6e84739d6d80fb7b7da5f6}{compute\+\_\+local\+\_\+ud()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_afbb1b7213787e3b800af0db050d3d93c}{eq\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a882a605d64e8dff3111abf94c303c079}{fold\+\_\+edge()}}, \mbox{\hyperlink{gencode_8c_ac13ef9dc4a68ebc088cf9ced12ddc1f7}{gen\+\_\+check\+\_\+802\+\_\+11\+\_\+data\+\_\+frame()}}, \mbox{\hyperlink{gencode_8c_af23005c142c1f7875bc6517323fee4b8}{gen\+\_\+ipfrag()}}, \mbox{\hyperlink{gencode_8c_abebac9f84a2d479b2440a89936dd0ed1}{gen\+\_\+len()}}, \mbox{\hyperlink{gencode_8c_a04555710eb38558a5b643e3578e4ff9f}{gen\+\_\+load()}}, \mbox{\hyperlink{gencode_8c_a088d7aeb7208798db34a8592cf8fec89}{gen\+\_\+mac\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_ab14e56454df06ecc7b74d23c8af51257}{gen\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_ac19a5083758224f3693cc27140e45ae1}{gen\+\_\+ppi\+\_\+dlt\+\_\+check()}}, \mbox{\hyperlink{gencode_8c_ad54245ee8fc82d9474bff9e7baa35eed}{gen\+\_\+protochain()}}, \mbox{\hyperlink{gencode_8c_a0237e7c2ee05474bda50d14ad8c28b63}{gen\+\_\+retblk()}}, \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}, \mbox{\hyperlink{optimize_8c_ab985a0191832c651a74d790bd3efe50a}{make\+\_\+marks()}}, \mbox{\hyperlink{gencode_8c_adae9e51b46a5908a67327ec7a692e757}{new\+\_\+block()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a1909bcccafe40bb75c3ba627aa913cbe}{opt\+\_\+deadstores()}}, \mbox{\hyperlink{optimize_8c_afc71b1d4136079ce7039bb92e3be85e1}{opt\+\_\+peep()}} , 以及 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+\mbox{\Hypertarget{structblock_a63824e330f67129ae657ddc1120c30f2}\label{structblock_a63824e330f67129ae657ddc1120c30f2}} 
+\index{block@{block}!sense@{sense}}
+\index{sense@{sense}!block@{block}}
+\doxysubsubsection{\texorpdfstring{sense}{sense}}
+{\footnotesize\ttfamily int sense}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a88311365879e54ee27aeb33ee91d9070}{backpatch()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}} , 以及 \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}}.
+
+\mbox{\Hypertarget{structblock_a1f06889ad08e9604a0551f90bec551be}\label{structblock_a1f06889ad08e9604a0551f90bec551be}} 
+\index{block@{block}!stmts@{stmts}}
+\index{stmts@{stmts}!block@{block}}
+\doxysubsubsection{\texorpdfstring{stmts}{stmts}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structslist}{slist}}$\ast$ stmts}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a8f7d87e17e6e84739d6d80fb7b7da5f6}{compute\+\_\+local\+\_\+ud()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_addbfaa636b06101d5041570e3d1ee832}{count\+\_\+stmts()}}, \mbox{\hyperlink{optimize_8c_afbb1b7213787e3b800af0db050d3d93c}{eq\+\_\+blk()}}, \mbox{\hyperlink{gencode_8c_abc89927abca90d5d99d04f6ad571418e}{gen\+\_\+byteop()}}, \mbox{\hyperlink{gencode_8c_ac13ef9dc4a68ebc088cf9ced12ddc1f7}{gen\+\_\+check\+\_\+802\+\_\+11\+\_\+data\+\_\+frame()}}, \mbox{\hyperlink{gencode_8c_af23005c142c1f7875bc6517323fee4b8}{gen\+\_\+ipfrag()}}, \mbox{\hyperlink{gencode_8c_abebac9f84a2d479b2440a89936dd0ed1}{gen\+\_\+len()}}, \mbox{\hyperlink{gencode_8c_a088d7aeb7208798db34a8592cf8fec89}{gen\+\_\+mac\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_ab14e56454df06ecc7b74d23c8af51257}{gen\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_ac19a5083758224f3693cc27140e45ae1}{gen\+\_\+ppi\+\_\+dlt\+\_\+check()}}, \mbox{\hyperlink{gencode_8c_ad54245ee8fc82d9474bff9e7baa35eed}{gen\+\_\+protochain()}}, \mbox{\hyperlink{gencode_8c_abe12e5867d5ebc74857e8a1af7a241bb}{gen\+\_\+relation()}}, \mbox{\hyperlink{gencode_8c_a2ae459dc9edbeaf1b3a40d59adf7cae3}{gen\+\_\+uncond()}}, \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}, \mbox{\hyperlink{gencode_8c_aa2580cb5ee1bf6b42026bfabcde04c4d}{insert\+\_\+compute\+\_\+vloffsets()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_a1909bcccafe40bb75c3ba627aa913cbe}{opt\+\_\+deadstores()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}} , 以及 \mbox{\hyperlink{optimize_8c_afc71b1d4136079ce7039bb92e3be85e1}{opt\+\_\+peep()}}.
+
+\mbox{\Hypertarget{structblock_aef989d02c8ed82e59004ed53a5dfe30a}\label{structblock_aef989d02c8ed82e59004ed53a5dfe30a}} 
+\index{block@{block}!val@{val}}
+\index{val@{val}!block@{block}}
+\doxysubsubsection{\texorpdfstring{val}{val}}
+{\footnotesize\ttfamily int val\mbox{[}\mbox{\hyperlink{gencode_8h_ad3a22aaa854e1588d50e977c11fd0da0}{N\+\_\+\+ATOMS}}\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_aa5b3859be5eba2230b65d3cbb6d7573f}{and\+\_\+pullup()}}, \mbox{\hyperlink{optimize_8c_a882a605d64e8dff3111abf94c303c079}{fold\+\_\+edge()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_afc71b1d4136079ce7039bb92e3be85e1}{opt\+\_\+peep()}}, \mbox{\hyperlink{optimize_8c_ab107ce5a86491a65f148236a6c49a820}{or\+\_\+pullup()}} , 以及 \mbox{\hyperlink{optimize_8c_a086bc0d41104226c8e3d855676834d23}{use\+\_\+conflict()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\mbox{\hyperlink{gencode_8h}{gencode.\+h}}\end{DoxyCompactItemize}

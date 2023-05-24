@@ -1,0 +1,54 @@
+\hypertarget{bluetooth_8h_source}{}\doxysection{bluetooth.\+h}
+\label{bluetooth_8h_source}\index{libpcap-\/1.1.1/pcap/bluetooth.h@{libpcap-\/1.1.1/pcap/bluetooth.h}}
+\mbox{\hyperlink{bluetooth_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 2006 Paolo Abeni (Italy)}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{10 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{11 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{13 \textcolor{comment}{ * documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{14 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote }}
+\DoxyCodeLine{15 \textcolor{comment}{ * products derived from this software without specific prior written }}
+\DoxyCodeLine{16 \textcolor{comment}{ * permission.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{19 \textcolor{comment}{ * "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{20 \textcolor{comment}{ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{21 \textcolor{comment}{ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{22 \textcolor{comment}{ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{24 \textcolor{comment}{ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{25 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{26 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{27 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{28 \textcolor{comment}{ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{29 \textcolor{comment}{ *}}
+\DoxyCodeLine{30 \textcolor{comment}{ * bluetooth data struct}}
+\DoxyCodeLine{31 \textcolor{comment}{ * By Paolo Abeni <paolo.abeni@email.it>}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/bluetooth.h,v 1.1 2007-\/09-\/22 02:10:17 guy Exp \$}}
+\DoxyCodeLine{34 \textcolor{comment}{ */}}
+\DoxyCodeLine{35  }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef \_PCAP\_BLUETOOTH\_STRUCTS\_H\_\_}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define \_PCAP\_BLUETOOTH\_STRUCTS\_H\_\_}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/*}}
+\DoxyCodeLine{40 \textcolor{comment}{ * Header prepended libpcap to each bluetooth h:4 frame.}}
+\DoxyCodeLine{41 \textcolor{comment}{ * fields are in network byte order}}
+\DoxyCodeLine{42 \textcolor{comment}{ */}}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_pcap\_bluetooth\_h4\_header \{}
+\DoxyCodeLine{44     u\_int32\_t \mbox{\hyperlink{structpcap__bluetooth__h4__header_a1dff81190aba32ff171ca268e68dc77e}{direction}}; \textcolor{comment}{/* if first bit is set direction is incoming */}}
+\DoxyCodeLine{45 \} \mbox{\hyperlink{structpcap__bluetooth__h4__header}{pcap\_bluetooth\_h4\_header}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

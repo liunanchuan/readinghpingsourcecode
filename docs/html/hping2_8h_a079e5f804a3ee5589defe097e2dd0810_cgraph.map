@@ -1,0 +1,42 @@
+<map id="wait_packet" name="wait_packet">
+<area shape="rect" id="node1" title=" " alt="" coords="5,487,97,513"/>
+<area shape="rect" id="node2" href="$display__ipopt_8c.html#a1aa67cccb8bf6e80f459c88d7929dc5a" title=" " alt="" coords="149,411,248,437"/>
+<area shape="rect" id="node3" href="$os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="837,689,888,716"/>
+<area shape="rect" id="node4" href="$waitpacket_8c.html#a05fdc831f79de0355dbf137f64d42b65" title=" " alt="" coords="304,259,403,285"/>
+<area shape="rect" id="node11" href="$waitpacket_8c.html#a20f566b998cc83ce3dba6c95968ae5b5" title=" " alt="" coords="157,461,240,488"/>
+<area shape="rect" id="node12" href="$waitpacket_8c.html#a54057a0631275d3190715cabe7d92d11" title=" " alt="" coords="149,512,249,539"/>
+<area shape="rect" id="node13" href="$statistics_8c.html#a9502a50722e34ad90ea6b673d9f4f373" title=" " alt="" coords="145,1221,252,1248"/>
+<area shape="rect" id="node16" href="$waitpacket_8c.html#aa9a6df377e8120782df851e0b127f20f" title=" " alt="" coords="471,56,565,83"/>
+<area shape="rect" id="node20" href="$waitpacket_8c.html#a10dea52f814d363f8fd045a18f6cd60f" title=" " alt="" coords="157,841,240,868"/>
+<area shape="rect" id="node38" href="$waitpacket_8c.html#a7ffe144369534044a0367b0026746519" title=" " alt="" coords="482,664,554,691"/>
+<area shape="rect" id="node40" href="$waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486" title=" " alt="" coords="481,1069,555,1096"/>
+<area shape="rect" id="node5" href="$datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4" title=" " alt="" coords="483,208,553,235"/>
+<area shape="rect" id="node10" href="$memstr_8c.html#a233320a99fcad58a39af83d31f6e418b" title=" " alt="" coords="485,157,551,184"/>
+<area shape="rect" id="node6" href="$os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="673,107,726,133"/>
+<area shape="rect" id="node7" href="$os-sunos4_8h.html#a5be409c8d98c21628b77dfb6b2b8f1e9" title=" " alt="" coords="673,157,726,184"/>
+<area shape="rect" id="node8" href="$os-sunos4_8h.html#ad5f1d47e8cc6b2c92be35a2402ad4ed5" title=" " alt="" coords="672,56,727,83"/>
+<area shape="rect" id="node9" href="$os-sunos4_8h.html#a6f85ef730e632194fed8c4b77f21dde9" title=" " alt="" coords="676,208,723,235"/>
+<area shape="rect" id="node14" href="$libpcap__stuff_8c.html#aef7635934d0a645b406df4b16566e315" title=" " alt="" coords="309,1272,397,1299"/>
+<area shape="rect" id="node15" href="$pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="474,1272,562,1299"/>
+<area shape="rect" id="node17" href="$libpcap__stuff_8c.html#af124a32c3dc51b141516b388e2675e12" title=" " alt="" coords="658,5,741,32"/>
+<area shape="rect" id="node18" href="$pcap_8c.html#a4e9828471a6774070097ecb59c234fd9" title=" " alt="" coords="821,5,904,32"/>
+<area shape="rect" id="node19" href="$pcap_8c.html#a60ce104cdf28420d3361cd36d15be44c" title=" " alt="" coords="956,5,1063,32"/>
+<area shape="rect" id="node21" href="$waitpacket_8c.html#a17ff5c8f9232e34703f288cf42a8add1" title=" " alt="" coords="300,816,407,843"/>
+<area shape="rect" id="node22" href="$logicmp_8c.html#a944bae4d8711e885cd894d85c53de1ef" title=" " alt="" coords="455,917,581,944"/>
+<area shape="rect" id="node26" href="$waitpacket_8c.html#a5f2ae8f5675f03c10361bb8a1b7d891f" title=" " alt="" coords="307,588,399,615"/>
+<area shape="rect" id="node27" href="$logicmp_8c.html#aac9878df803f44af5f3b528c59c8480e" title=" " alt="" coords="455,867,581,893"/>
+<area shape="rect" id="node28" href="$waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a" title=" " alt="" coords="671,1069,727,1096"/>
+<area shape="rect" id="node30" href="$waitpacket_8c.html#ae22d7ab3b3cb6d63746507d598e18222" title=" " alt="" coords="301,1044,405,1071"/>
+<area shape="rect" id="node32" href="$rtt_8c.html#ae4b580ccace3b0d5f7421742a3937c8f" title=" " alt="" coords="680,1171,719,1197"/>
+<area shape="rect" id="node37" href="$waitpacket_8c.html#a71fa9ecc574ab6b26f3a7c34ad48e179" title=" " alt="" coords="658,715,741,741"/>
+<area shape="rect" id="node23" href="$gethostname_8c.html#aaca32c63740c80e6796dc38aa853ce29" title=" " alt="" coords="647,1019,751,1045"/>
+<area shape="rect" id="node24" href="$inet__aton_8c.html#a9611e4d2e430d90aaeaa1fa86652479f" title=" " alt="" coords="825,968,900,995"/>
+<area shape="rect" id="node25" href="$strlcpy_8c.html#aeb79f86261de904967d433c1b5e9a1de" title=" " alt="" coords="832,1019,893,1045"/>
+<area shape="rect" id="node29" href="$relid_8c.html#a22a9f04babf49e4b99ef17b0e7861d65" title=" " alt="" coords="817,1069,908,1096"/>
+<area shape="rect" id="node31" href="$waitpacket_8c.html#a49eb359cdc82f7c10b7ef80bcd6598d6" title=" " alt="" coords="457,1120,579,1147"/>
+<area shape="rect" id="node33" href="$getusec_8c.html#aeae3aba9a4e7957c11ecf4c4e4fbacc7" title=" " alt="" coords="825,1221,900,1248"/>
+<area shape="rect" id="node35" href="$rtt_8c.html#ae548d949068a57833890ac1b3b31fbd1" title=" " alt="" coords="818,1120,907,1147"/>
+<area shape="rect" id="node36" href="$os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab" title=" " alt="" coords="839,1171,886,1197"/>
+<area shape="rect" id="node34" href="$os-sunos4_8h.html#a091a762f60d91b0f5441d9520dc2079c" title=" " alt="" coords="961,1221,1058,1248"/>
+<area shape="rect" id="node39" href="$waitpacket_8c.html#af149840075919b47789e4c7d95a411f2" title=" " alt="" coords="629,613,769,640"/>
+</map>

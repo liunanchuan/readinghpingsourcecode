@@ -1,0 +1,219 @@
+\hypertarget{dlpisubs_8c}{}\doxysection{libpcap-\/1.1.1/dlpisubs.c 文件参考}
+\label{dlpisubs_8c}\index{libpcap-\/1.1.1/dlpisubs.c@{libpcap-\/1.1.1/dlpisubs.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/dlpi.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stream.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stropts.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dlpisubs.\+h\char`\"{}}\newline
+dlpisubs.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dlpisubs_8c_ade795dbde780005db34483d24c86bdaa}{DL\+\_\+\+IPATM}}~0x12 /$\ast$ ATM Classical IP interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{dlpisubs_8c_a7c29c8e3cdf55612364846b7ff6af7d3}{MAXDLBUF}}~8192
+\item 
+\#define \mbox{\hyperlink{dlpisubs_8c_a9c5951e81984168f51631e006ee44013}{PKTBUFSIZE}}~(\mbox{\hyperlink{pcap-dlpi_8c_a7c29c8e3cdf55612364846b7ff6af7d3}{MAXDLBUF}} $\ast$ sizeof(\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{dlpisubs_8c_ab6a22a3acc3c005966fbba27897e728c}{pcap\+\_\+stats\+\_\+dlpi}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$ps)
+\item 
+int \mbox{\hyperlink{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321}{pcap\+\_\+process\+\_\+pkts}} (pcap\+\_\+t $\ast$p, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} callback, u\+\_\+char $\ast$user, int \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, u\+\_\+char $\ast$bufp, int len)
+\item 
+int \mbox{\hyperlink{dlpisubs_8c_a4372e7f44c76d6b6d5a44f72bcaf33ba}{pcap\+\_\+process\+\_\+mactype}} (pcap\+\_\+t $\ast$p, u\+\_\+int mactype)
+\item 
+int \mbox{\hyperlink{dlpisubs_8c_a67aa13d5055a3d1a9be410ec0234f264}{pcap\+\_\+alloc\+\_\+databuf}} (pcap\+\_\+t $\ast$p)
+\item 
+int \mbox{\hyperlink{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}{strioctl}} (int fd, int cmd, int len, char $\ast$dp)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{dlpisubs_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{dlpisubs_8c_ade795dbde780005db34483d24c86bdaa}\label{dlpisubs_8c_ade795dbde780005db34483d24c86bdaa}} 
+\index{dlpisubs.c@{dlpisubs.c}!DL\_IPATM@{DL\_IPATM}}
+\index{DL\_IPATM@{DL\_IPATM}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{DL\_IPATM}{DL\_IPATM}}
+{\footnotesize\ttfamily \#define DL\+\_\+\+IPATM~0x12 /$\ast$ ATM Classical IP interface $\ast$/}
+
+\mbox{\Hypertarget{dlpisubs_8c_a7c29c8e3cdf55612364846b7ff6af7d3}\label{dlpisubs_8c_a7c29c8e3cdf55612364846b7ff6af7d3}} 
+\index{dlpisubs.c@{dlpisubs.c}!MAXDLBUF@{MAXDLBUF}}
+\index{MAXDLBUF@{MAXDLBUF}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{MAXDLBUF}{MAXDLBUF}}
+{\footnotesize\ttfamily \#define MAXDLBUF~8192}
+
+\mbox{\Hypertarget{dlpisubs_8c_a9c5951e81984168f51631e006ee44013}\label{dlpisubs_8c_a9c5951e81984168f51631e006ee44013}} 
+\index{dlpisubs.c@{dlpisubs.c}!PKTBUFSIZE@{PKTBUFSIZE}}
+\index{PKTBUFSIZE@{PKTBUFSIZE}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{PKTBUFSIZE}{PKTBUFSIZE}}
+{\footnotesize\ttfamily \#define PKTBUFSIZE~(\mbox{\hyperlink{pcap-dlpi_8c_a7c29c8e3cdf55612364846b7ff6af7d3}{MAXDLBUF}} $\ast$ sizeof(\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}))}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{dlpisubs_8c_a67aa13d5055a3d1a9be410ec0234f264}\label{dlpisubs_8c_a67aa13d5055a3d1a9be410ec0234f264}} 
+\index{dlpisubs.c@{dlpisubs.c}!pcap\_alloc\_databuf@{pcap\_alloc\_databuf}}
+\index{pcap\_alloc\_databuf@{pcap\_alloc\_databuf}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_alloc\_databuf()}{pcap\_alloc\_databuf()}}
+{\footnotesize\ttfamily int pcap\+\_\+alloc\+\_\+databuf (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{dlpisubs_8c_a9c5951e81984168f51631e006ee44013}{PKTBUFSIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dlpi_8c_a49b2500071f1db1336f6e0c7374e3c18}{pcap\+\_\+activate\+\_\+dlpi()}} , 以及 \mbox{\hyperlink{pcap-libdlpi_8c_abb02c563551c957697b24a9b3e9c786b}{pcap\+\_\+activate\+\_\+libdlpi()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_a67aa13d5055a3d1a9be410ec0234f264_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_a67aa13d5055a3d1a9be410ec0234f264_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dlpisubs_8c_a4372e7f44c76d6b6d5a44f72bcaf33ba}\label{dlpisubs_8c_a4372e7f44c76d6b6d5a44f72bcaf33ba}} 
+\index{dlpisubs.c@{dlpisubs.c}!pcap\_process\_mactype@{pcap\_process\_mactype}}
+\index{pcap\_process\_mactype@{pcap\_process\_mactype}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_process\_mactype()}{pcap\_process\_mactype()}}
+{\footnotesize\ttfamily int pcap\+\_\+process\+\_\+mactype (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{u\+\_\+int}]{mactype }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{dlpisubs_8c_ade795dbde780005db34483d24c86bdaa}{DL\+\_\+\+IPATM}}, \mbox{\hyperlink{pcap-bpf_8c_a70117bf82609f7d0d37e58efc55eb077}{DLT\+\_\+\+DOCSIS}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}, \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}}, \mbox{\hyperlink{bpf_8h_a863dac884dda26ce90c909732fdb7b48}{DLT\+\_\+\+SUNATM}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dlpi_8c_a49b2500071f1db1336f6e0c7374e3c18}{pcap\+\_\+activate\+\_\+dlpi()}} , 以及 \mbox{\hyperlink{pcap-libdlpi_8c_abb02c563551c957697b24a9b3e9c786b}{pcap\+\_\+activate\+\_\+libdlpi()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_a4372e7f44c76d6b6d5a44f72bcaf33ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321}\label{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321}} 
+\index{dlpisubs.c@{dlpisubs.c}!pcap\_process\_pkts@{pcap\_process\_pkts}}
+\index{pcap\_process\_pkts@{pcap\_process\_pkts}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_process\_pkts()}{pcap\_process\_pkts()}}
+{\footnotesize\ttfamily int pcap\+\_\+process\+\_\+pkts (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user,  }\item[{int}]{count,  }\item[{u\+\_\+char $\ast$}]{bufp,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf__filter_8c_a22d8361f9c26da729a711306eea03264}{bpf\+\_\+filter()}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday()}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{pcap-dos_8h_ac6afabdc09a49a433ee19d8a9486056d}{min}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-libdlpi_8c_ac9412d85176f2735765953d2b20696e0}{pcap\+\_\+read\+\_\+libdlpi()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dlpisubs_8c_ab6a22a3acc3c005966fbba27897e728c}\label{dlpisubs_8c_ab6a22a3acc3c005966fbba27897e728c}} 
+\index{dlpisubs.c@{dlpisubs.c}!pcap\_stats\_dlpi@{pcap\_stats\_dlpi}}
+\index{pcap\_stats\_dlpi@{pcap\_stats\_dlpi}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_stats\_dlpi()}{pcap\_stats\_dlpi()}}
+{\footnotesize\ttfamily int pcap\+\_\+stats\+\_\+dlpi (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{ps }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{pcap\+\_\+stat\+::ps\+\_\+drop}} , 以及 \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{pcap\+\_\+stat\+::ps\+\_\+recv}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dlpi_8c_a49b2500071f1db1336f6e0c7374e3c18}{pcap\+\_\+activate\+\_\+dlpi()}} , 以及 \mbox{\hyperlink{pcap-libdlpi_8c_abb02c563551c957697b24a9b3e9c786b}{pcap\+\_\+activate\+\_\+libdlpi()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_ab6a22a3acc3c005966fbba27897e728c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}\label{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}} 
+\index{dlpisubs.c@{dlpisubs.c}!strioctl@{strioctl}}
+\index{strioctl@{strioctl}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{strioctl()}{strioctl()}}
+{\footnotesize\ttfamily int strioctl (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{cmd,  }\item[{int}]{len,  }\item[{char $\ast$}]{dp }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}} , 以及 \mbox{\hyperlink{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}{strioctl()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-snit_8c_a4a5db1310294b89131acfd401e2b9d76}{nit\+\_\+setflags()}}, \mbox{\hyperlink{pcap-dlpi_8c_a49b2500071f1db1336f6e0c7374e3c18}{pcap\+\_\+activate\+\_\+dlpi()}}, \mbox{\hyperlink{pcap-snit_8c_a3d71e704d4a9ce2c9970c3e4d07b23e7}{pcap\+\_\+activate\+\_\+snit()}}, \mbox{\hyperlink{pcap-dlpi_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}} , 以及 \mbox{\hyperlink{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}{strioctl()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{dlpisubs_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{dlpisubs_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{dlpisubs.c@{dlpisubs.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!dlpisubs.c@{dlpisubs.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/dlpisubs.c,v 1.3 2008-\/12-\/02 16:40:19 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}

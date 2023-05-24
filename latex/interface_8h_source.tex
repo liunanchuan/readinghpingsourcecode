@@ -1,0 +1,107 @@
+\hypertarget{interface_8h_source}{}\doxysection{interface.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_HPING\_INTERFACE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_HPING\_INTERFACE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef \_LINUX\_MII\_H}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define \_LINUX\_MII\_H}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{/* network interface ioctl's for MII commands */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SIOCGMIIPHY}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SIOCGMIIPHY (SIOCDEVPRIVATE)    }\textcolor{comment}{/* Read from current PHY */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define SIOCGMIIREG (SIOCDEVPRIVATE+1)  }\textcolor{comment}{/* Read any PHY register */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define SIOCSMIIREG (SIOCDEVPRIVATE+2)  }\textcolor{comment}{/* Write any PHY register */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define SIOCGPARAMS (SIOCDEVPRIVATE+3)  }\textcolor{comment}{/* Read operational parameters */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define SIOCSPARAMS (SIOCDEVPRIVATE+4)  }\textcolor{comment}{/* Set operational parameters */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* This data structure is used for all the MII ioctl's */}}
+\DoxyCodeLine{17 \textcolor{keyword}{struct }\mbox{\hyperlink{structmii__data}{mii\_data}} \{}
+\DoxyCodeLine{18     \_\_u16   phy\_id;}
+\DoxyCodeLine{19     \_\_u16   reg\_num;}
+\DoxyCodeLine{20     \_\_u16   val\_in;}
+\DoxyCodeLine{21     \_\_u16   val\_out;}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* Basic Mode Control Register */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define MII\_BMCR        0x00}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define  MII\_BMCR\_RESET     0x8000}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define  MII\_BMCR\_LOOPBACK  0x4000}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define  MII\_BMCR\_100MBIT   0x2000}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define  MII\_BMCR\_AN\_ENA    0x1000}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define  MII\_BMCR\_ISOLATE   0x0400}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define  MII\_BMCR\_RESTART   0x0200}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define  MII\_BMCR\_DUPLEX    0x0100}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define  MII\_BMCR\_COLTEST   0x0080}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Basic Mode Status Register */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define MII\_BMSR        0x01}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define  MII\_BMSR\_CAP\_MASK  0xf800}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define  MII\_BMSR\_100BASET4 0x8000}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define  MII\_BMSR\_100BASETX\_FD  0x4000}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define  MII\_BMSR\_100BASETX\_HD  0x2000}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define  MII\_BMSR\_10BASET\_FD    0x1000}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define  MII\_BMSR\_10BASET\_HD    0x0800}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define  MII\_BMSR\_NO\_PREAMBLE   0x0040}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define  MII\_BMSR\_AN\_COMPLETE   0x0020}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define  MII\_BMSR\_REMOTE\_FAULT  0x0010}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define  MII\_BMSR\_AN\_ABLE   0x0008}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define  MII\_BMSR\_LINK\_VALID    0x0004}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define  MII\_BMSR\_JABBER    0x0002}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define  MII\_BMSR\_EXT\_CAP   0x0001}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define MII\_PHY\_ID1     0x02}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define MII\_PHY\_ID2     0x03}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/* Auto-\/Negotiation Advertisement Register */}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define MII\_ANAR        0x04}}
+\DoxyCodeLine{56 \textcolor{comment}{/* Auto-\/Negotiation Link Partner Ability Register */}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define MII\_ANLPAR      0x05}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define  MII\_AN\_NEXT\_PAGE   0x8000}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define  MII\_AN\_ACK     0x4000}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define  MII\_AN\_REMOTE\_FAULT    0x2000}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define  MII\_AN\_ABILITY\_MASK    0x07e0}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define  MII\_AN\_FLOW\_CONTROL    0x0400}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define  MII\_AN\_100BASET4   0x0200}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define  MII\_AN\_100BASETX\_FD    0x0100}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define  MII\_AN\_100BASETX\_HD    0x0080}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define  MII\_AN\_10BASET\_FD  0x0040}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define  MII\_AN\_10BASET\_HD  0x0020}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define  MII\_AN\_PROT\_MASK   0x001f}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define  MII\_AN\_PROT\_802\_3  0x0001}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{/* Auto-\/Negotiation Expansion Register */}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define MII\_ANER        0x06}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define  MII\_ANER\_MULT\_FAULT    0x0010}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define  MII\_ANER\_LP\_NP\_ABLE    0x0008}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define  MII\_ANER\_NP\_ABLE   0x0004}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define  MII\_ANER\_PAGE\_RX   0x0002}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define  MII\_ANER\_LP\_AN\_ABLE    0x0001}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_LINUX\_MII\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define HPING\_IFNAME\_LEN    24}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define HPING\_IFACE\_MAX     64}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define HPING\_IFADDR\_MAX    16}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{/* hping interface rappresentation */}}
+\DoxyCodeLine{86 \textcolor{keyword}{struct }\mbox{\hyperlink{structhpingif}{hpingif}} \{}
+\DoxyCodeLine{87     \textcolor{keywordtype}{char} hif\_name[HPING\_IFNAME\_LEN];}
+\DoxyCodeLine{88     in\_addr\_t hif\_addr[HPING\_IFADDR\_MAX];   \textcolor{comment}{/* ipv4 addresses */}}
+\DoxyCodeLine{89     in\_addr\_t hif\_baddr[HPING\_IFADDR\_MAX];  \textcolor{comment}{/* ipv4 broadcast addresses */}}
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} hif\_naddr;}
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} hif\_loopback;}
+\DoxyCodeLine{92     \textcolor{keywordtype}{int} hif\_ptp;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} hif\_promisc;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int} hif\_broadcast;}
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} hif\_nolink; \textcolor{comment}{/* only set with MII-\/capable devices */}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int} hif\_mtu;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{int} hif\_index;  \textcolor{comment}{/* only useful for linux sockpacket version */}}
+\DoxyCodeLine{98 \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keywordtype}{int} hping\_get\_interfaces(\textcolor{keyword}{struct} \mbox{\hyperlink{structhpingif}{hpingif}} *hif, \textcolor{keywordtype}{int} ilen);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

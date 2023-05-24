@@ -1,0 +1,68 @@
+\hypertarget{os-osf4_8h}{}\doxysection{libpcap-\/1.1.1/lbl/os-\/osf4.h 文件参考}
+\label{os-osf4_8h}\index{libpcap-\/1.1.1/lbl/os-\/osf4.h@{libpcap-\/1.1.1/lbl/os-\/osf4.h}}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf}} (char $\ast$, size\+\_\+t, const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}{vsnprintf}} (char $\ast$, size\+\_\+t, const char $\ast$, va\+\_\+list)
+\item 
+int \mbox{\hyperlink{os-osf4_8h_ab12b50e5f7e4369d431c2283a208bb77}{pfopen}} (char $\ast$, int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{os-osf4_8h_ab12b50e5f7e4369d431c2283a208bb77}\label{os-osf4_8h_ab12b50e5f7e4369d431c2283a208bb77}} 
+\index{os-\/osf4.h@{os-\/osf4.h}!pfopen@{pfopen}}
+\index{pfopen@{pfopen}!os-\/osf4.h@{os-\/osf4.h}}
+\doxysubsubsection{\texorpdfstring{pfopen()}{pfopen()}}
+{\footnotesize\ttfamily int pfopen (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-pf_8c_ad2e28cca9656f97146400f5f9ce20b67}{pcap\+\_\+activate\+\_\+pf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-osf4_8h_ab12b50e5f7e4369d431c2283a208bb77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}\label{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}} 
+\index{os-\/osf4.h@{os-\/osf4.h}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!os-\/osf4.h@{os-\/osf4.h}}
+\doxysubsubsection{\texorpdfstring{snprintf()}{snprintf()}}
+{\footnotesize\ttfamily int snprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{sz,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format()}}, \mbox{\hyperlink{structstate_a214402067aedcae7c5723a17b7886e27}{state\+::str}}, \mbox{\hyperlink{structstate_aad50db3bff52eed270f16ef9e6acd8b1}{state\+::sz}}, \mbox{\hyperlink{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6}{vsnprintf()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}{vsprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}\label{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}} 
+\index{os-\/osf4.h@{os-\/osf4.h}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!os-\/osf4.h@{os-\/osf4.h}}
+\doxysubsubsection{\texorpdfstring{vsnprintf()}{vsnprintf()}}
+{\footnotesize\ttfamily int vsnprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{sz,  }\item[{const char $\ast$}]{format,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}}, \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format()}}, \mbox{\hyperlink{structstate_ad80ffe6c93c17258c88d3e8615785012}{state\+::max\+\_\+sz}}, \mbox{\hyperlink{structstate_a69e534834c0430b4aff255ed9eefd754}{state\+::reserve}}, \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}}, \mbox{\hyperlink{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}{sn\+\_\+append\+\_\+char()}}, \mbox{\hyperlink{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}{sn\+\_\+reserve()}}, \mbox{\hyperlink{structstate_a214402067aedcae7c5723a17b7886e27}{state\+::str}}, \mbox{\hyperlink{structstate_aad50db3bff52eed270f16ef9e6acd8b1}{state\+::sz}}, \mbox{\hyperlink{structstate_a472825078d73c2517e1a9c295801553e}{state\+::theend}} , 以及 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3_cgraph}
+\end{center}
+\end{figure}

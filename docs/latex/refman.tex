@@ -1,0 +1,590 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \usepackage{fixltx2e} % for \textsubscript
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage{CJKutf8}
+  % Define default fonts
+  % Font selection
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \usepackage{sectsty}
+  \allsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize 制作者 Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize 制作者 Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifpdf
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
+      \else
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={hping3s},%
+      pdfsubject={The documentation for hping3s}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \usepackage{etoc}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  \begin{CJK}{UTF8}{gbsn}
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large hping3s}\\
+  \vspace*{1cm}
+  {\large 制作者 Doxygen 1.9.4}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\chapter{结构体索引}
+\input{annotated}
+\chapter{文件索引}
+\input{files}
+\chapter{结构体说明}
+\input{structadbuf}
+\input{structaddrinfo}
+\input{structafd}
+\input{structago__exception}
+\input{structago__optlist}
+\input{structars__d__keyword__info}
+\input{structars__icmphdr}
+\input{structars__iface}
+\input{structars__igrpentry}
+\input{structars__igrphdr}
+\input{structars__iphdr}
+\input{structars__ipopt}
+\input{structars__layer}
+\input{structars__layer__info}
+\input{structars__packet}
+\input{structars__pseudohdr}
+\input{structars__tcphdr}
+\input{structars__tcpopt}
+\input{structars__udphdr}
+\input{structarth}
+\input{structBindingsList}
+\input{structblock}
+\input{structblock__cursor}
+\input{structblock__header}
+\input{structblock__trailer}
+\input{structbpf__hdr}
+\input{structbpf__insn}
+\input{structbpf__program}
+\input{structbpf__version}
+\input{structCardHandle}
+\input{structchunk}
+\input{structCommonChars}
+\input{structdelaytable__element}
+\input{structdevice}
+\input{structdlt__choice}
+\input{structedge}
+\input{structenhanced__packet__block}
+\input{structeproto}
+\input{structEthernetIIHeader}
+\input{structexplore}
+\input{structFailingModules}
+\input{structFddiHeader}
+\input{unionHardwareAddress}
+\input{structhcmphdr}
+\input{structHEADER}
+\input{structhpingif}
+\input{structicmp__tstamp__data}
+\input{structIeee802Dot2SnapHeader}
+\input{structIeee802Dot5Header}
+\input{structif__data}
+\input{structif__msghdr}
+\input{structifa__msghdr}
+\input{structiface__t}
+\input{structifaliasreq}
+\input{structifconf}
+\input{structifma__msghdr}
+\input{structifmediareq}
+\input{structifreq}
+\input{structinterface__description__block}
+\input{structiso__rec}
+\input{structlinknamelist__t}
+\input{structlinktype__map}
+\input{structlinkwalk__t}
+\input{structMacChars}
+\input{structMacStatusTable}
+\input{structMacUpperDispatch}
+\input{structmc__context}
+\input{structmii__data}
+\input{structmon__bin__get}
+\input{structmon__bin__mfetch}
+\input{structmon__bin__stats}
+\input{structstruct__sbnz}
+\input{structMulticastList}
+\input{structmyicmphdr}
+\input{structmyiphdr}
+\input{structmytcphdr}
+\input{structmyudphdr}
+\input{structNET__STATS}
+\input{structoneshot__userdata}
+\input{structoption__header}
+\input{structpacket__block}
+\input{structpacket__header}
+\input{structpcap__addr}
+\input{structpcap__bluetooth__h4__header}
+\input{structpcap__dag__node__t}
+\input{structpcap__etherent}
+\input{structpcap__file__header}
+\input{structpcap__if}
+\input{structpcap__md}
+\input{structpcap__opt}
+\input{structpcap__pkthdr}
+\input{structpcap__sf}
+\input{structpcap__sf__patched__pkthdr}
+\input{structpcap__sf__pkthdr}
+\input{structpcap__stat}
+\input{structpcap}
+\input{structpcap__timeval}
+\input{structpcap__usb__header}
+\input{structpcap__usb__header__mmapped}
+\input{structpcap__usb__setup}
+\input{structPKT__FRAME}
+\input{structPKT__INFO}
+\input{structPKT__STAT}
+\input{structPktBuf}
+\input{structportinfo}
+\input{structProtDispatch}
+\input{structProtocolChars}
+\input{structpseudohdr}
+\input{structqual}
+\input{structReqBlock}
+\input{structrpcent}
+\input{structrrec}
+\input{structRX__ELEMENT}
+\input{structRxBufDescr}
+\input{structRxBufDescrRec}
+\input{structsbn__basepow}
+\input{structsection__header__block}
+\input{structsimple__packet__block}
+\input{structslist}
+\input{structsll__header}
+\input{structsockaddr__storage}
+\input{structsockinet}
+\input{structstate}
+\input{structstmt}
+\input{structsunatm__hdr}
+\input{structTDBufDescr}
+\input{structTDBufDescrRec}
+\input{unionthdr}
+\input{structTX__ELEMENT}
+\input{structTxBufDescr}
+\input{structTxBufDescrRec}
+\input{structunit__t}
+\input{structusb__isodesc}
+\input{structvalnode}
+\input{structvlan__tag}
+\input{structvmapinfo}
+\chapter{文件说明}
+\input{adbuf_8c}
+\input{adbuf_8h}
+\input{adbuf_8h_source}
+\input{antigetopt_8c}
+\input{antigetopt_8h}
+\input{antigetopt_8h_source}
+\input{apd_8c}
+\input{apdutils_8c}
+\input{apdutils_8h}
+\input{apdutils_8h_source}
+\input{ars_8c}
+\input{ars_8h}
+\input{ars_8h_source}
+\input{arsglue_8c}
+\input{binding_8c}
+\input{byteorder_8c}
+\input{byteorder_8h}
+\input{byteorder_8h_source}
+\input{bytesex_8h}
+\input{bytesex_8h_source}
+\input{cksum_8c}
+\input{datafiller_8c}
+\input{datahandler_8c}
+\input{display__ipopt_8c}
+\input{fixtypes_8h}
+\input{fixtypes_8h_source}
+\input{gentables_8c}
+\input{gethostname_8c}
+\input{getifname_8c}
+\input{getlhs_8c}
+\input{getusec_8c}
+\input{globals_8h}
+\input{globals_8h_source}
+\input{hcmp_8h}
+\input{hcmp_8h_source}
+\input{hex_8c}
+\input{hex_8h}
+\input{hex_8h_source}
+\input{hping2_8h}
+\input{hping2_8h_source}
+\input{hstring_8c}
+\input{hstring_8h}
+\input{hstring_8h_source}
+\input{if__promisc_8c}
+\input{in_8h}
+\input{in_8h_source}
+\input{interface_8c}
+\input{interface_8h}
+\input{interface_8h_source}
+\input{ip__opt__build_8c}
+\input{arcnet_8h}
+\input{arcnet_8h_source}
+\input{atmuni31_8h}
+\input{atmuni31_8h_source}
+\input{bpf__filter_8c}
+\input{bpf__dump_8c}
+\input{bpf__image_8c}
+\input{dlpisubs_8c}
+\input{dlpisubs_8h}
+\input{dlpisubs_8h_source}
+\input{etherent_8c}
+\input{ethertype_8h}
+\input{ethertype_8h_source}
+\input{fad-getad_8c}
+\input{fad-gifc_8c}
+\input{fad-glifc_8c}
+\input{fad-null_8c}
+\input{fad-sita_8c}
+\input{fad-win32_8c}
+\input{filtertest_8c}
+\input{findalldevstest_8c}
+\input{gencode_8c}
+\input{gencode_8h}
+\input{gencode_8h_source}
+\input{ieee80211_8h}
+\input{ieee80211_8h_source}
+\input{inet_8c}
+\input{os-aix4_8h}
+\input{os-aix4_8h_source}
+\input{os-hpux11_8h}
+\input{os-hpux11_8h_source}
+\input{os-osf4_8h}
+\input{os-osf4_8h_source}
+\input{os-osf5_8h}
+\input{os-osf5_8h_source}
+\input{os-solaris2_8h}
+\input{os-solaris2_8h_source}
+\input{os-sunos4_8h}
+\input{os-sunos4_8h_source}
+\input{os-ultrix4_8h}
+\input{os-ultrix4_8h_source}
+\input{llc_8h}
+\input{llc_8h_source}
+\input{snprintf_8c}
+\input{bin2c_8c}
+\input{ndis2_8c}
+\input{ndis2_8h}
+\input{ndis2_8h_source}
+\input{pktdrvr_8c}
+\input{pktdrvr_8h}
+\input{pktdrvr_8h_source}
+\input{nametoaddr_8c}
+\input{nlpid_8h}
+\input{nlpid_8h_source}
+\input{opentest_8c}
+\input{optimize_8c}
+\input{pcap-bpf_8c}
+\input{pcap-bpf_8h}
+\input{pcap-bpf_8h_source}
+\input{pcap-bt-linux_8c}
+\input{pcap-bt-linux_8h}
+\input{pcap-bt-linux_8h_source}
+\input{pcap-can-linux_8c}
+\input{pcap-can-linux_8h}
+\input{pcap-can-linux_8h_source}
+\input{pcap-common_8c}
+\input{pcap-common_8h}
+\input{pcap-common_8h_source}
+\input{pcap-dag_8c}
+\input{pcap-dag_8h}
+\input{pcap-dag_8h_source}
+\input{pcap-dlpi_8c}
+\input{pcap-dos_8c}
+\input{pcap-dos_8h}
+\input{pcap-dos_8h_source}
+\input{pcap-enet_8c}
+\input{pcap-int_8h}
+\input{pcap-int_8h_source}
+\input{pcap-libdlpi_8c}
+\input{pcap-linux_8c}
+\input{pcap-namedb_8h}
+\input{pcap-namedb_8h_source}
+\input{pcap-nit_8c}
+\input{pcap-null_8c}
+\input{pcap-pf_8c}
+\input{pcap-septel_8c}
+\input{pcap-septel_8h}
+\input{pcap-septel_8h_source}
+\input{pcap-sita_8c}
+\input{pcap-sita_8h}
+\input{pcap-sita_8h_source}
+\input{pcap-snf_8c}
+\input{pcap-snf_8h}
+\input{pcap-snf_8h_source}
+\input{pcap-snit_8c}
+\input{pcap-snoop_8c}
+\input{pcap-stdinc_8h}
+\input{pcap-stdinc_8h_source}
+\input{pcap-usb-linux_8c}
+\input{pcap-usb-linux_8h}
+\input{pcap-usb-linux_8h_source}
+\input{pcap-win32_8c}
+\input{pcap_8c}
+\input{pcap_8h}
+\input{pcap_8h_source}
+\input{pcap_2pcap_8h}
+\input{pcap_2pcap_8h_source}
+\input{bluetooth_8h}
+\input{bluetooth_8h_source}
+\input{bpf_8h}
+\input{bpf_8h_source}
+\input{ipnet_8h}
+\input{ipnet_8h_source}
+\input{namedb_8h}
+\input{namedb_8h_source}
+\input{sll_8h}
+\input{sll_8h_source}
+\input{usb_8h}
+\input{usb_8h_source}
+\input{vlan_8h}
+\input{vlan_8h_source}
+\input{ppp_8h}
+\input{ppp_8h_source}
+\input{savefile_8c}
+\input{selpolltest_8c}
+\input{sf-pcap-ng_8c}
+\input{sf-pcap-ng_8h}
+\input{sf-pcap-ng_8h_source}
+\input{sf-pcap_8c}
+\input{sf-pcap_8h}
+\input{sf-pcap_8h_source}
+\input{sunatmpos_8h}
+\input{sunatmpos_8h_source}
+\input{addrinfo_8h}
+\input{addrinfo_8h_source}
+\input{nameser_8h}
+\input{nameser_8h_source}
+\input{bittypes_8h}
+\input{bittypes_8h_source}
+\input{cdecl__ext_8h}
+\input{cdecl__ext_8h_source}
+\input{Gnuc_8h}
+\input{Gnuc_8h_source}
+\input{inetprivate_8h}
+\input{inetprivate_8h_source}
+\input{ip6__misc_8h}
+\input{ip6__misc_8h_source}
+\input{if_8h}
+\input{if_8h_source}
+\input{netdb_8h}
+\input{netdb_8h_source}
+\input{paths_8h}
+\input{paths_8h_source}
+\input{sockstorage_8h}
+\input{sockstorage_8h_source}
+\input{ffs_8c}
+\input{gai__strerror_8c}
+\input{getaddrinfo_8c}
+\input{getnetbynm_8c}
+\input{getnetent_8c}
+\input{getopt_8c}
+\input{getservent_8c}
+\input{inet__aton_8c}
+\input{inet__net_8c}
+\input{inet__pton_8c}
+\input{libpcap__stuff_8c}
+\input{listen_8c}
+\input{logicmp_8c}
+\input{main_8c}
+\input{memlock_8c}
+\input{memlockall_8c}
+\input{memstr_8c}
+\input{memunlock_8c}
+\input{memunlockall_8c}
+\input{opensockraw_8c}
+\input{parseoptions_8c}
+\input{random_8c}
+\input{rapd_8c}
+\input{release_8h}
+\input{release_8h_source}
+\input{relid_8c}
+\input{resolve_8c}
+\input{rtt_8c}
+\input{sbignum-tables_8c}
+\input{sbignum-tables_8h}
+\input{sbignum-tables_8h_source}
+\input{sbignum_8c}
+\input{sbignum_8h}
+\input{sbignum_8h_source}
+\input{scan_8c}
+\input{script_8c}
+\input{send_8c}
+\input{sendhcmp_8c}
+\input{sendicmp_8c}
+\input{sendip_8c}
+\input{sendip__handler_8c}
+\input{sendrawip_8c}
+\input{sendtcp_8c}
+\input{sendudp_8c}
+\input{signal_8c}
+\input{sockopt_8c}
+\input{split_8c}
+\input{statistics_8c}
+\input{strlcpy_8c}
+\input{systype_8h}
+\input{systype_8h_source}
+\input{usage_8c}
+\input{version_8c}
+\input{waitpacket_8c}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{CJK}
+\end{document}

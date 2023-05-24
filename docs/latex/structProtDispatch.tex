@@ -1,0 +1,90 @@
+\hypertarget{structProtDispatch}{}\doxysection{Prot\+Dispatch结构体 参考}
+\label{structProtDispatch}\index{ProtDispatch@{ProtDispatch}}
+
+
+{\ttfamily \#include $<$ndis2.\+h$>$}
+
+
+
+Prot\+Dispatch 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{structProtDispatch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCommonChars}{Common\+Chars}} $\ast$ \mbox{\hyperlink{structProtDispatch_a89201b61af8b7a56cb7842d71b593b7f}{back\+Pointer}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structProtDispatch_a29bb851466268efcf57e7e81e2d0ab09}{flags}}
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_a22bcbbbbf6502a461a61fe6fb96141ee}{request\+Confirm}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_afff90c2a723d3f75b0fc6ecbf43d7e36}{transmit\+Confirm}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_abd2e5515acfc00e2f7dd4aacc483c328}{receive\+Lookahead}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_a5360832f34d469e3a7c83097c9cf1c85}{indication\+Complete}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_a83adefda48a32c197db87570676c7ebb}{receive\+Chain}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structProtDispatch_ac0ddee4d1b511b76f9fbb63d99b4b1c3}{status}} )(void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structProtDispatch_a89201b61af8b7a56cb7842d71b593b7f}\label{structProtDispatch_a89201b61af8b7a56cb7842d71b593b7f}} 
+\index{ProtDispatch@{ProtDispatch}!backPointer@{backPointer}}
+\index{backPointer@{backPointer}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{backPointer}{backPointer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCommonChars}{Common\+Chars}}$\ast$ back\+Pointer}
+
+\mbox{\Hypertarget{structProtDispatch_a29bb851466268efcf57e7e81e2d0ab09}\label{structProtDispatch_a29bb851466268efcf57e7e81e2d0ab09}} 
+\index{ProtDispatch@{ProtDispatch}!flags@{flags}}
+\index{flags@{flags}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} flags}
+
+\mbox{\Hypertarget{structProtDispatch_a5360832f34d469e3a7c83097c9cf1c85}\label{structProtDispatch_a5360832f34d469e3a7c83097c9cf1c85}} 
+\index{ProtDispatch@{ProtDispatch}!indicationComplete@{indicationComplete}}
+\index{indicationComplete@{indicationComplete}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{indicationComplete}{indicationComplete}}
+{\footnotesize\ttfamily void($\ast$ indication\+Complete) (void)}
+
+\mbox{\Hypertarget{structProtDispatch_a83adefda48a32c197db87570676c7ebb}\label{structProtDispatch_a83adefda48a32c197db87570676c7ebb}} 
+\index{ProtDispatch@{ProtDispatch}!receiveChain@{receiveChain}}
+\index{receiveChain@{receiveChain}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{receiveChain}{receiveChain}}
+{\footnotesize\ttfamily void($\ast$ receive\+Chain) (void)}
+
+\mbox{\Hypertarget{structProtDispatch_abd2e5515acfc00e2f7dd4aacc483c328}\label{structProtDispatch_abd2e5515acfc00e2f7dd4aacc483c328}} 
+\index{ProtDispatch@{ProtDispatch}!receiveLookahead@{receiveLookahead}}
+\index{receiveLookahead@{receiveLookahead}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{receiveLookahead}{receiveLookahead}}
+{\footnotesize\ttfamily void($\ast$ receive\+Lookahead) (void)}
+
+\mbox{\Hypertarget{structProtDispatch_a22bcbbbbf6502a461a61fe6fb96141ee}\label{structProtDispatch_a22bcbbbbf6502a461a61fe6fb96141ee}} 
+\index{ProtDispatch@{ProtDispatch}!requestConfirm@{requestConfirm}}
+\index{requestConfirm@{requestConfirm}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{requestConfirm}{requestConfirm}}
+{\footnotesize\ttfamily void($\ast$ request\+Confirm) (void)}
+
+\mbox{\Hypertarget{structProtDispatch_ac0ddee4d1b511b76f9fbb63d99b4b1c3}\label{structProtDispatch_ac0ddee4d1b511b76f9fbb63d99b4b1c3}} 
+\index{ProtDispatch@{ProtDispatch}!status@{status}}
+\index{status@{status}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily void($\ast$ status) (void)}
+
+\mbox{\Hypertarget{structProtDispatch_afff90c2a723d3f75b0fc6ecbf43d7e36}\label{structProtDispatch_afff90c2a723d3f75b0fc6ecbf43d7e36}} 
+\index{ProtDispatch@{ProtDispatch}!transmitConfirm@{transmitConfirm}}
+\index{transmitConfirm@{transmitConfirm}!ProtDispatch@{ProtDispatch}}
+\doxysubsubsection{\texorpdfstring{transmitConfirm}{transmitConfirm}}
+{\footnotesize\ttfamily void($\ast$ transmit\+Confirm) (void)}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/msdos/\mbox{\hyperlink{ndis2_8h}{ndis2.\+h}}\end{DoxyCompactItemize}

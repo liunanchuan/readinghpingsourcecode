@@ -1,0 +1,109 @@
+\hypertarget{sbignum-tables_8c}{}\doxysection{sbignum-\/tables.c 文件参考}
+\label{sbignum-tables_8c}\index{sbignum-\/tables.c@{sbignum-\/tables.c}}
+{\ttfamily \#include \char`\"{}sbignum-\/tables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sbignum.\+h\char`\"{}}\newline
+sbignum-\/tables.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{sbignum-tables_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{sbignum-tables_8c_ac17ddd6d46f440054b900a082f40929d}{cset}} = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\char`\"{}
+\item 
+int8\+\_\+t \mbox{\hyperlink{sbignum-tables_8c_a09d18deb07243cb33e5de71801338e08}{r\+\_\+cset}} \mbox{[}256\mbox{]}
+\item 
+int8\+\_\+t \mbox{\hyperlink{sbignum-tables_8c_a1faa6dfc9bf80fd16f6519979d005f62}{bitstable}} \mbox{[}256\mbox{]}
+\item 
+double \mbox{\hyperlink{sbignum-tables_8c_a0b6c556c241aa49223b50237837beb70}{basetable}} \mbox{[}37\mbox{]}
+\item 
+struct \mbox{\hyperlink{structsbn__basepow}{sbn\+\_\+basepow}} \mbox{\hyperlink{sbignum-tables_8c_a09404c84bd56da5b20a2f3c152d762aa}{basepowtable}} \mbox{[}37\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{sbignum-tables_8c_a09404c84bd56da5b20a2f3c152d762aa}\label{sbignum-tables_8c_a09404c84bd56da5b20a2f3c152d762aa}} 
+\index{sbignum-\/tables.c@{sbignum-\/tables.c}!basepowtable@{basepowtable}}
+\index{basepowtable@{basepowtable}!sbignum-\/tables.c@{sbignum-\/tables.c}}
+\doxysubsubsection{\texorpdfstring{basepowtable}{basepowtable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structsbn__basepow}{sbn\+\_\+basepow}} basepowtable\mbox{[}37\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}}.
+
+\mbox{\Hypertarget{sbignum-tables_8c_a0b6c556c241aa49223b50237837beb70}\label{sbignum-tables_8c_a0b6c556c241aa49223b50237837beb70}} 
+\index{sbignum-\/tables.c@{sbignum-\/tables.c}!basetable@{basetable}}
+\index{basetable@{basetable}!sbignum-\/tables.c@{sbignum-\/tables.c}}
+\doxysubsubsection{\texorpdfstring{basetable}{basetable}}
+{\footnotesize\ttfamily double basetable\mbox{[}37\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee}{mpz\+\_\+sizeinbase()}}.
+
+\mbox{\Hypertarget{sbignum-tables_8c_a1faa6dfc9bf80fd16f6519979d005f62}\label{sbignum-tables_8c_a1faa6dfc9bf80fd16f6519979d005f62}} 
+\index{sbignum-\/tables.c@{sbignum-\/tables.c}!bitstable@{bitstable}}
+\index{bitstable@{bitstable}!sbignum-\/tables.c@{sbignum-\/tables.c}}
+\doxysubsubsection{\texorpdfstring{bitstable}{bitstable}}
+{\footnotesize\ttfamily int8\+\_\+t bitstable\mbox{[}256\mbox{]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, }
+\DoxyCodeLine{    1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, }
+\DoxyCodeLine{    1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, }
+\DoxyCodeLine{    1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, }
+\DoxyCodeLine{    2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, }
+\DoxyCodeLine{    3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, }
+\DoxyCodeLine{    3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, }
+\DoxyCodeLine{    4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8, }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum-tables_8c_ac17ddd6d46f440054b900a082f40929d}\label{sbignum-tables_8c_ac17ddd6d46f440054b900a082f40929d}} 
+\index{sbignum-\/tables.c@{sbignum-\/tables.c}!cset@{cset}}
+\index{cset@{cset}!sbignum-\/tables.c@{sbignum-\/tables.c}}
+\doxysubsubsection{\texorpdfstring{cset}{cset}}
+{\footnotesize\ttfamily char$\ast$ cset = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\char`\"{}}
+
+\mbox{\Hypertarget{sbignum-tables_8c_a09d18deb07243cb33e5de71801338e08}\label{sbignum-tables_8c_a09d18deb07243cb33e5de71801338e08}} 
+\index{sbignum-\/tables.c@{sbignum-\/tables.c}!r\_cset@{r\_cset}}
+\index{r\_cset@{r\_cset}!sbignum-\/tables.c@{sbignum-\/tables.c}}
+\doxysubsubsection{\texorpdfstring{r\_cset}{r\_cset}}
+{\footnotesize\ttfamily int8\+\_\+t r\+\_\+cset\mbox{[}256\mbox{]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{     0,  1,  2,  3,  4,  5,  6,  7,  8,  9, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, }
+\DoxyCodeLine{    25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{    -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

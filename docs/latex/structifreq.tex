@@ -1,0 +1,104 @@
+\hypertarget{structifreq}{}\doxysection{ifreq结构体 参考}
+\label{structifreq}\index{ifreq@{ifreq}}
+
+
+{\ttfamily \#include $<$if.\+h$>$}
+
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}{ifr\+\_\+name}} \mbox{[}\mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct sockaddr \mbox{\hyperlink{structifreq_aa896d8107f6b0cb1b0f79492f5ce29da}{ifru\_addr}}\\
+\>struct sockaddr \mbox{\hyperlink{structifreq_a4ab65a523feaf64ebd9ea1921d08cb6c}{ifru\_dstaddr}}\\
+\>struct sockaddr \mbox{\hyperlink{structifreq_a4a88f63395acc19af58548339a97e1d3}{ifru\_broadaddr}}\\
+\>short \mbox{\hyperlink{structifreq_a7bcae7db180f8f46a355848d1a25f0ce}{ifru\_flags}}\\
+\>int \mbox{\hyperlink{structifreq_afa66154bb9880ac13132bee05bb7f81a}{ifru\_metric}}\\
+\>int \mbox{\hyperlink{structifreq_a6187147731f4df210721842fc94fb449}{ifru\_mtu}}\\
+\>int \mbox{\hyperlink{structifreq_a51a8ffd29e3dd0f28e14f33fb867d582}{ifru\_phys}}\\
+\>int \mbox{\hyperlink{structifreq_a3c510d30a66df4eb22d8afc5334b9066}{ifru\_media}}\\
+\>\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}} \mbox{\hyperlink{structifreq_ab206a50d78d01f37b34e3430bf4cc75f}{ifru\_data}}\\
+\} \mbox{\hyperlink{structifreq_acf2c49f7ca0db1eee52598e200842b92}{ifr\_ifru}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structifreq_acf2c49f7ca0db1eee52598e200842b92}\label{structifreq_acf2c49f7ca0db1eee52598e200842b92}} 
+\index{ifreq@{ifreq}!ifr\_ifru@{ifr\_ifru}}
+\index{ifr\_ifru@{ifr\_ifru}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  ifr\+\_\+ifru}
+
+\mbox{\Hypertarget{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}\label{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}} 
+\index{ifreq@{ifreq}!ifr\_name@{ifr\_name}}
+\index{ifr\_name@{ifr\_name}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifr\_name}{ifr\_name}}
+{\footnotesize\ttfamily char ifr\+\_\+name\mbox{[}\mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a983baf5089f49a441ec053fb53bad095}{activate\+\_\+old()}}, \mbox{\hyperlink{inet_8c_ab33d156eb14d2b242dc3cf9218a03c81}{add\+\_\+addr\+\_\+to\+\_\+iflist()}}, \mbox{\hyperlink{pcap-can-linux_8c_a17de993776f7d667e7dcd634b6e13f65}{can\+\_\+activate()}}, \mbox{\hyperlink{pcap-bpf_8c_acec2b61b77e0abc5bf6abf636892c94d}{check\+\_\+setif\+\_\+failure()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{hping2_8h_a4a10e3c2d78485a88a6846f317d196a0}{if\+\_\+promisc\+\_\+off()}}, \mbox{\hyperlink{hping2_8h_a298f69a0fbd93d7703e09283998083c6}{if\+\_\+promisc\+\_\+on()}}, \mbox{\hyperlink{pcap-linux_8c_a13b9caf18a63aa318a536ab8043fcd56}{iface\+\_\+get\+\_\+arptype()}}, \mbox{\hyperlink{pcap-linux_8c_aa2b94257ec0a1caa4b8f12ec1c8ff39a}{iface\+\_\+get\+\_\+mtu()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{pcap-snit_8c_a3d71e704d4a9ce2c9970c3e4d07b23e7}{pcap\+\_\+activate\+\_\+snit()}}, \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}, \mbox{\hyperlink{pcap-bpf_8c_aaf543ffda3d4ae8bdcbea95316dfbb94}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+bpf()}}, \mbox{\hyperlink{pcap-bpf_8c_ab1319ab916da18f7a7acf7dba1457010}{pcap\+\_\+cleanup\+\_\+bpf()}}, \mbox{\hyperlink{pcap-linux_8c_a8d091b827ecc32c7ab2469ae36f77b15}{pcap\+\_\+cleanup\+\_\+linux()}}, \mbox{\hyperlink{fad-gifc_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}}, \mbox{\hyperlink{pcap-linux_8c_afb293431bb9ec076f757d3444d875f0f}{scan\+\_\+proc\+\_\+net\+\_\+dev()}} , 以及 \mbox{\hyperlink{pcap-linux_8c_a775e9e3fa61d2f1f0baffb4983bfecc7}{scan\+\_\+sys\+\_\+class\+\_\+net()}}.
+
+\mbox{\Hypertarget{structifreq_aa896d8107f6b0cb1b0f79492f5ce29da}\label{structifreq_aa896d8107f6b0cb1b0f79492f5ce29da}} 
+\index{ifreq@{ifreq}!ifru\_addr@{ifru\_addr}}
+\index{ifru\_addr@{ifru\_addr}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_addr}{ifru\_addr}}
+{\footnotesize\ttfamily struct sockaddr ifru\+\_\+addr}
+
+\mbox{\Hypertarget{structifreq_a4a88f63395acc19af58548339a97e1d3}\label{structifreq_a4a88f63395acc19af58548339a97e1d3}} 
+\index{ifreq@{ifreq}!ifru\_broadaddr@{ifru\_broadaddr}}
+\index{ifru\_broadaddr@{ifru\_broadaddr}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_broadaddr}{ifru\_broadaddr}}
+{\footnotesize\ttfamily struct sockaddr ifru\+\_\+broadaddr}
+
+\mbox{\Hypertarget{structifreq_ab206a50d78d01f37b34e3430bf4cc75f}\label{structifreq_ab206a50d78d01f37b34e3430bf4cc75f}} 
+\index{ifreq@{ifreq}!ifru\_data@{ifru\_data}}
+\index{ifru\_data@{ifru\_data}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_data}{ifru\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}} ifru\+\_\+data}
+
+\mbox{\Hypertarget{structifreq_a4ab65a523feaf64ebd9ea1921d08cb6c}\label{structifreq_a4ab65a523feaf64ebd9ea1921d08cb6c}} 
+\index{ifreq@{ifreq}!ifru\_dstaddr@{ifru\_dstaddr}}
+\index{ifru\_dstaddr@{ifru\_dstaddr}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_dstaddr}{ifru\_dstaddr}}
+{\footnotesize\ttfamily struct sockaddr ifru\+\_\+dstaddr}
+
+\mbox{\Hypertarget{structifreq_a7bcae7db180f8f46a355848d1a25f0ce}\label{structifreq_a7bcae7db180f8f46a355848d1a25f0ce}} 
+\index{ifreq@{ifreq}!ifru\_flags@{ifru\_flags}}
+\index{ifru\_flags@{ifru\_flags}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_flags}{ifru\_flags}}
+{\footnotesize\ttfamily short ifru\+\_\+flags}
+
+\mbox{\Hypertarget{structifreq_a3c510d30a66df4eb22d8afc5334b9066}\label{structifreq_a3c510d30a66df4eb22d8afc5334b9066}} 
+\index{ifreq@{ifreq}!ifru\_media@{ifru\_media}}
+\index{ifru\_media@{ifru\_media}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_media}{ifru\_media}}
+{\footnotesize\ttfamily int ifru\+\_\+media}
+
+\mbox{\Hypertarget{structifreq_afa66154bb9880ac13132bee05bb7f81a}\label{structifreq_afa66154bb9880ac13132bee05bb7f81a}} 
+\index{ifreq@{ifreq}!ifru\_metric@{ifru\_metric}}
+\index{ifru\_metric@{ifru\_metric}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_metric}{ifru\_metric}}
+{\footnotesize\ttfamily int ifru\+\_\+metric}
+
+\mbox{\Hypertarget{structifreq_a6187147731f4df210721842fc94fb449}\label{structifreq_a6187147731f4df210721842fc94fb449}} 
+\index{ifreq@{ifreq}!ifru\_mtu@{ifru\_mtu}}
+\index{ifru\_mtu@{ifru\_mtu}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_mtu}{ifru\_mtu}}
+{\footnotesize\ttfamily int ifru\+\_\+mtu}
+
+\mbox{\Hypertarget{structifreq_a51a8ffd29e3dd0f28e14f33fb867d582}\label{structifreq_a51a8ffd29e3dd0f28e14f33fb867d582}} 
+\index{ifreq@{ifreq}!ifru\_phys@{ifru\_phys}}
+\index{ifru\_phys@{ifru\_phys}!ifreq@{ifreq}}
+\doxysubsubsection{\texorpdfstring{ifru\_phys}{ifru\_phys}}
+{\footnotesize\ttfamily int ifru\+\_\+phys}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\+Win32/\+Include/net/\mbox{\hyperlink{if_8h}{if.\+h}}\end{DoxyCompactItemize}

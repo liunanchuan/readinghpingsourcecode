@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/pcap-snoop.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">pcap-snoop.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;sys/param.h&gt;</code><br />
+<code>#include &lt;sys/file.h&gt;</code><br />
+<code>#include &lt;sys/ioctl.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;net/raw.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="if_8h_source.html">net/if.h</a>&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;netinet/in_systm.h&gt;</code><br />
+<code>#include &lt;netinet/ip.h&gt;</code><br />
+<code>#include &lt;netinet/if_ether.h&gt;</code><br />
+<code>#include &lt;netinet/ip_var.h&gt;</code><br />
+<code>#include &lt;netinet/udp.h&gt;</code><br />
+<code>#include &lt;netinet/udp_var.h&gt;</code><br />
+<code>#include &lt;netinet/tcp.h&gt;</code><br />
+<code>#include &lt;netinet/tcpip.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="pcap-int_8h_source.html">pcap-int.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+pcap-snoop.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c__incl.png" border="0" usemap="#alibpcap-1_81_81_2pcap-snoop_8c" alt=""/></div>
+<map name="alibpcap-1_81_81_2pcap-snoop_8c" id="alibpcap-1_81_81_2pcap-snoop_8c">
+<area shape="rect" title=" " alt="" coords="1021,5,1149,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,100,121"/>
+<area shape="rect" title=" " alt="" coords="125,95,199,121"/>
+<area shape="rect" title=" " alt="" coords="223,95,306,121"/>
+<area shape="rect" title=" " alt="" coords="331,95,428,121"/>
+<area shape="rect" title=" " alt="" coords="262,244,345,271"/>
+<area shape="rect" title=" " alt="" coords="658,95,733,121"/>
+<area shape="rect" href="if_8h.html" title=" " alt="" coords="757,95,820,121"/>
+<area shape="rect" title=" " alt="" coords="844,95,931,121"/>
+<area shape="rect" title=" " alt="" coords="955,95,1084,121"/>
+<area shape="rect" title=" " alt="" coords="1108,95,1195,121"/>
+<area shape="rect" title=" " alt="" coords="1219,95,1337,121"/>
+<area shape="rect" title=" " alt="" coords="1361,95,1472,121"/>
+<area shape="rect" title=" " alt="" coords="1496,95,1593,121"/>
+<area shape="rect" title=" " alt="" coords="1618,95,1741,121"/>
+<area shape="rect" title=" " alt="" coords="1765,95,1860,121"/>
+<area shape="rect" title=" " alt="" coords="1885,95,1989,121"/>
+<area shape="rect" title=" " alt="" coords="2013,95,2076,121"/>
+<area shape="rect" title=" " alt="" coords="590,244,651,271"/>
+<area shape="rect" title=" " alt="" coords="2101,95,2165,121"/>
+<area shape="rect" title=" " alt="" coords="2189,95,2255,121"/>
+<area shape="rect" title=" " alt="" coords="2279,95,2347,121"/>
+<area shape="rect" href="pcap-int_8h.html" title=" " alt="" coords="504,95,583,121"/>
+<area shape="rect" href="pcap-stdinc_8h.html" title=" " alt="" coords="860,169,960,196"/>
+<area shape="rect" title=" " alt="" coords="675,244,763,271"/>
+<area shape="rect" title=" " alt="" coords="787,244,846,271"/>
+<area shape="rect" href="bittypes_8h.html" title=" " alt="" coords="871,244,949,271"/>
+<area shape="rect" title=" " alt="" coords="974,244,1033,271"/>
+<area shape="rect" title=" " alt="" coords="1057,244,1099,271"/>
+<area shape="rect" title=" " alt="" coords="1123,244,1211,271"/>
+<area shape="rect" href="pcap_2pcap_8h.html" title=" " alt="" coords="397,169,490,196"/>
+<area shape="rect" title=" " alt="" coords="514,169,583,196"/>
+<area shape="rect" title=" " alt="" coords="369,244,459,271"/>
+<area shape="rect" href="bpf_8h.html" title=" " alt="" coords="483,244,566,271"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a328efbf9e31adbebeb07671d5a704bf2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#a328efbf9e31adbebeb07671d5a704bf2">pcap_read_snoop</a> (pcap_t *p, int cnt, <a class="el" href="pcap_2pcap_8h.html#a4da5ed7abea875423886ba3f1bcf7588">pcap_handler</a> callback, u_char *user)</td></tr>
+<tr class="separator:a328efbf9e31adbebeb07671d5a704bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c62bbc854d75d462f7b65ad33824336"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#a6c62bbc854d75d462f7b65ad33824336">pcap_inject_snoop</a> (pcap_t *p, const void *buf, size_t size)</td></tr>
+<tr class="separator:a6c62bbc854d75d462f7b65ad33824336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1a379cc4f0d40891e3c8c0d926bc11"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#acd1a379cc4f0d40891e3c8c0d926bc11">pcap_stats_snoop</a> (pcap_t *p, struct <a class="el" href="structpcap__stat.html">pcap_stat</a> *ps)</td></tr>
+<tr class="separator:acd1a379cc4f0d40891e3c8c0d926bc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe81ec21835beeddf56717bcc0bb6cda"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda">pcap_activate_snoop</a> (pcap_t *p)</td></tr>
+<tr class="separator:afe81ec21835beeddf56717bcc0bb6cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79459f4198464b94a23dbc29b5f26faa"><td class="memItemLeft" align="right" valign="top">pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa">pcap_create</a> (const char *<a class="el" href="structdevice.html">device</a>, char *ebuf)</td></tr>
+<tr class="separator:a79459f4198464b94a23dbc29b5f26faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b88a933c5761e5038182b4c30bf0c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#a14b88a933c5761e5038182b4c30bf0c8">pcap_platform_finddevs</a> (pcap_if_t **alldevsp, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:a14b88a933c5761e5038182b4c30bf0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memItemLeft" align="right" valign="top">static const char rcsid[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcap-snoop_8c.html#a5578b12d2cc7e3ee27ff908df9e14a21">_U_</a></td></tr>
+<tr class="separator:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="afe81ec21835beeddf56717bcc0bb6cda" name="afe81ec21835beeddf56717bcc0bb6cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe81ec21835beeddf56717bcc0bb6cda">&#9670;&nbsp;</a></span>pcap_activate_snoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pcap_activate_snoop </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="os-sunos4_8h.html#afa56c9d41eaf75f4db8c02351ece79ae">bind()</a>, <a class="el" href="pcap-bpf_8c.html#a70117bf82609f7d0d37e58efc55eb077">DLT_DOCSIS</a>, <a class="el" href="bpf_8h.html#a2adfa9ce9372b56bd4b1c402be9a3d4b">DLT_EN10MB</a>, <a class="el" href="bpf_8h.html#ada695e43f9e5d43d4c8b7666dc6312c6">DLT_FDDI</a>, <a class="el" href="bpf_8h.html#a9e3dc4b02619a9daf3e58c7f79c97f05">DLT_IP_OVER_FC</a>, <a class="el" href="bpf_8h.html#a629ed89c8b4b7537bfac2491ccff56b8">DLT_NULL</a>, <a class="el" href="bpf_8h.html#a08b3257ff9df4c12f04109194c89d7bf">DLT_RAW</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="structifreq.html#a03e3ec87db4dc6b971c4b1470f21adcc">ifreq::ifr_name</a>, <a class="el" href="optimize_8c.html#ad016c0b6c48c3af42f162f11c3b4f241">install_bpf_program()</a>, <a class="el" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00">ioctl()</a>, <a class="el" href="pcap-int_8h.html#a50639981820eecf318e85605bda37f8e">pcap_cleanup_live_common()</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_2pcap_8h.html#af113fa82244cf1246dc09d9399049000">PCAP_ERROR</a>, <a class="el" href="pcap_2pcap_8h.html#a2bdaca673eb2ddf3e63f4cc68342cf56">PCAP_ERROR_RFMON_NOTSUP</a>, <a class="el" href="pcap-int_8h.html#a6e157e229eceba8cccc16f0ff9d8e438">pcap_getnonblock_fd()</a>, <a class="el" href="pcap-snoop_8c.html#a6c62bbc854d75d462f7b65ad33824336">pcap_inject_snoop()</a>, <a class="el" href="pcap-snoop_8c.html#a328efbf9e31adbebeb07671d5a704bf2">pcap_read_snoop()</a>, <a class="el" href="pcap-int_8h.html#a541d703f493e59bc6e2925ad3a9e913d">pcap_setnonblock_fd()</a>, <a class="el" href="pcap-snoop_8c.html#acd1a379cc4f0d40891e3c8c0d926bc11">pcap_stats_snoop()</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="os-sunos4_8h.html#a3d0f7782b71851613d36bc556d2c3b51">setsockopt()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494">socket()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa">pcap_create()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_cgraph.png" border="0" usemap="#apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_cgraph" alt=""/></div>
+<map name="apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_cgraph" id="apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_cgraph">
+<area shape="rect" title=" " alt="" coords="5,284,151,311"/>
+<area shape="rect" href="os-sunos4_8h.html#afa56c9d41eaf75f4db8c02351ece79ae" title=" " alt="" coords="269,5,315,32"/>
+<area shape="rect" href="optimize_8c.html#ad016c0b6c48c3af42f162f11c3b4f241" title=" " alt="" coords="225,56,359,83"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="437,309,536,336"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="463,183,510,209"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="199,107,385,133"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="219,309,365,336"/>
+<area shape="rect" href="pcap-snoop_8c.html#a6c62bbc854d75d462f7b65ad33824336" title=" " alt="" coords="227,411,357,437"/>
+<area shape="rect" href="pcap-snoop_8c.html#a328efbf9e31adbebeb07671d5a704bf2" title=" " alt="" coords="230,461,354,488"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="219,360,365,387"/>
+<area shape="rect" href="pcap-snoop_8c.html#acd1a379cc4f0d40891e3c8c0d926bc11" title=" " alt="" coords="228,208,356,235"/>
+<area shape="rect" href="os-sunos4_8h.html#a3d0f7782b71851613d36bc556d2c3b51" title=" " alt="" coords="249,512,335,539"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="261,563,323,589"/>
+<area shape="rect" href="bpf__filter_8c.html#a02879e2e75653664227c363668abc809" title=" " alt="" coords="441,31,533,57"/>
+<area shape="rect" href="gencode_8c.html#ae91597f8e7d1b02123008f7847d7bfd7" title=" " alt="" coords="433,81,540,108"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="588,309,651,336"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="460,132,513,159"/>
+<area shape="rect" href="os-sunos4_8h.html#acd05dd935a081148178734b4930031d5" title=" " alt="" coords="461,411,512,437"/>
+<area shape="rect" href="bpf__filter_8c.html#a22d8361f9c26da729a711306eea03264" title=" " alt="" coords="451,461,523,488"/>
+<area shape="rect" href="os-sunos4_8h.html#a6f85ef730e632194fed8c4b77f21dde9" title=" " alt="" coords="463,512,510,539"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_icgraph.png" border="0" usemap="#apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_icgraph" alt=""/></div>
+<map name="apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_icgraph" id="apcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda_icgraph">
+<area shape="rect" title=" " alt="" coords="147,5,292,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a79459f4198464b94a23dbc29b5f26faa" name="a79459f4198464b94a23dbc29b5f26faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79459f4198464b94a23dbc29b5f26faa">&#9670;&nbsp;</a></span>pcap_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcap_t * pcap_create </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>ebuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda">pcap_activate_snoop()</a> , 以及 <a class="el" href="pcap-int_8h.html#abe06eda470b7e92f65881ae5fe645fb1">pcap_create_common()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph.png" border="0" usemap="#apcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph" alt=""/></div>
+<map name="apcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph" id="apcap-snoop_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,487,99,513"/>
+<area shape="rect" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda" title=" " alt="" coords="149,309,295,336"/>
+<area shape="rect" href="pcap_8c.html#a9c7fbdb07a06bfc69bcb3351d86cecaa" title=" " alt="" coords="147,639,297,665"/>
+<area shape="rect" href="os-sunos4_8h.html#afa56c9d41eaf75f4db8c02351ece79ae" title=" " alt="" coords="395,259,442,285"/>
+<area shape="rect" href="optimize_8c.html#ad016c0b6c48c3af42f162f11c3b4f241" title=" " alt="" coords="351,461,486,488"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="584,335,683,361"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="610,563,657,589"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="540,715,727,741"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="346,360,491,387"/>
+<area shape="rect" href="pcap-snoop_8c.html#a6c62bbc854d75d462f7b65ad33824336" title=" " alt="" coords="353,5,484,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#a328efbf9e31adbebeb07671d5a704bf2" title=" " alt="" coords="357,56,481,83"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="346,107,491,133"/>
+<area shape="rect" href="pcap-snoop_8c.html#acd1a379cc4f0d40891e3c8c0d926bc11" title=" " alt="" coords="355,512,483,539"/>
+<area shape="rect" href="os-sunos4_8h.html#a3d0f7782b71851613d36bc556d2c3b51" title=" " alt="" coords="375,157,462,184"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="388,208,449,235"/>
+<area shape="rect" href="bpf__filter_8c.html#a02879e2e75653664227c363668abc809" title=" " alt="" coords="587,461,679,488"/>
+<area shape="rect" href="gencode_8c.html#ae91597f8e7d1b02123008f7847d7bfd7" title=" " alt="" coords="775,588,881,615"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="797,335,859,361"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="801,715,855,741"/>
+<area shape="rect" href="os-sunos4_8h.html#acd05dd935a081148178734b4930031d5" title=" " alt="" coords="608,5,659,32"/>
+<area shape="rect" href="bpf__filter_8c.html#a22d8361f9c26da729a711306eea03264" title=" " alt="" coords="597,107,669,133"/>
+<area shape="rect" href="os-sunos4_8h.html#a6f85ef730e632194fed8c4b77f21dde9" title=" " alt="" coords="610,56,657,83"/>
+<area shape="rect" href="pcap_8c.html#a984837a05bf4aad28d3ae7ae37a00381" title=" " alt="" coords="370,765,467,792"/>
+<area shape="rect" href="pcap_8c.html#af59bee9f6f1cc23c2566b338cacae32c" title=" " alt="" coords="345,816,492,843"/>
+<area shape="rect" href="pcap_8c.html#a0a4bfd1489e87910ece325c36df20b4b" title=" " alt="" coords="355,664,482,691"/>
+<area shape="rect" href="pcap_8c.html#a11a7be84460ad3f22d35145ba8e5ea67" title=" " alt="" coords="356,613,481,640"/>
+<area shape="rect" href="pcap_8c.html#a813e3b44d47490feca79c53e24f38f55" title=" " alt="" coords="565,765,701,792"/>
+<area shape="rect" href="pcap_8c.html#a10744f9b68c5101f601357e1915901f1" title=" " alt="" coords="582,816,685,843"/>
+<area shape="rect" href="pcap_8c.html#a47f9ba0bf6f52422d5e26870f8136a2a" title=" " alt="" coords="557,639,709,665"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c62bbc854d75d462f7b65ad33824336" name="a6c62bbc854d75d462f7b65ad33824336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c62bbc854d75d462f7b65ad33824336">&#9670;&nbsp;</a></span>pcap_inject_snoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pcap_inject_snoop </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="os-sunos4_8h.html#acd05dd935a081148178734b4930031d5">write()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda">pcap_activate_snoop()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_cgraph.png" border="0" usemap="#apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_cgraph" alt=""/></div>
+<map name="apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_cgraph" id="apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,136,57"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="184,5,283,32"/>
+<area shape="rect" href="os-sunos4_8h.html#acd05dd935a081148178734b4930031d5" title=" " alt="" coords="208,56,259,83"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="331,5,393,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_icgraph.png" border="0" usemap="#apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_icgraph" alt=""/></div>
+<map name="apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_icgraph" id="apcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336_icgraph">
+<area shape="rect" title=" " alt="" coords="340,5,471,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda" title=" " alt="" coords="147,5,292,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14b88a933c5761e5038182b4c30bf0c8" name="a14b88a933c5761e5038182b4c30bf0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b88a933c5761e5038182b4c30bf0c8">&#9670;&nbsp;</a></span>pcap_platform_finddevs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pcap_platform_finddevs </td>
+          <td>(</td>
+          <td class="paramtype">pcap_if_t **&#160;</td>
+          <td class="paramname"><em>alldevsp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a328efbf9e31adbebeb07671d5a704bf2" name="a328efbf9e31adbebeb07671d5a704bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328efbf9e31adbebeb07671d5a704bf2">&#9670;&nbsp;</a></span>pcap_read_snoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pcap_read_snoop </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcap_2pcap_8h.html#a4da5ed7abea875423886ba3f1bcf7588">pcap_handler</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_char *&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="bpf__filter_8c.html#a22d8361f9c26da729a711306eea03264">bpf_filter()</a>, <a class="el" href="structpcap__pkthdr.html#aac5771ed2efd92508bb4fe650f2ce7d7">pcap_pkthdr::caplen</a>, <a class="el" href="bpf_8h.html#a629ed89c8b4b7537bfac2491ccff56b8">DLT_NULL</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="structpcap__pkthdr.html#a728f264db4f5cc304742565a2bcdbeea">pcap_pkthdr::len</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="os-sunos4_8h.html#a6f85ef730e632194fed8c4b77f21dde9">read()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="structpcap__pkthdr.html#a21be78b2818c91cb205885b8a6f5aed8">pcap_pkthdr::ts</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda">pcap_activate_snoop()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_cgraph.png" border="0" usemap="#apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_cgraph" alt=""/></div>
+<map name="apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_cgraph" id="apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" href="bpf__filter_8c.html#a22d8361f9c26da729a711306eea03264" title=" " alt="" coords="191,5,263,32"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="177,56,276,83"/>
+<area shape="rect" href="os-sunos4_8h.html#a6f85ef730e632194fed8c4b77f21dde9" title=" " alt="" coords="203,107,250,133"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="324,56,387,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_icgraph.png" border="0" usemap="#apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_icgraph" alt=""/></div>
+<map name="apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_icgraph" id="apcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2_icgraph">
+<area shape="rect" title=" " alt="" coords="340,5,464,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda" title=" " alt="" coords="147,5,292,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd1a379cc4f0d40891e3c8c0d926bc11" name="acd1a379cc4f0d40891e3c8c0d926bc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1a379cc4f0d40891e3c8c0d926bc11">&#9670;&nbsp;</a></span>pcap_stats_snoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pcap_stats_snoop </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structpcap__stat.html">pcap_stat</a> *&#160;</td>
+          <td class="paramname"><em>ps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00">ioctl()</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a> , 以及 <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda">pcap_activate_snoop()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_cgraph.png" border="0" usemap="#apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_cgraph" alt=""/></div>
+<map name="apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_cgraph" id="apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,133,57"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="207,5,254,32"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="181,56,280,83"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="328,56,391,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_icgraph.png" border="0" usemap="#apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_icgraph" alt=""/></div>
+<map name="apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_icgraph" id="apcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11_icgraph">
+<area shape="rect" title=" " alt="" coords="340,5,468,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#afe81ec21835beeddf56717bcc0bb6cda" title=" " alt="" coords="147,5,292,32"/>
+<area shape="rect" href="pcap-snoop_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a5578b12d2cc7e3ee27ff908df9e14a21" name="a5578b12d2cc7e3ee27ff908df9e14a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5578b12d2cc7e3ee27ff908df9e14a21">&#9670;&nbsp;</a></span>_U_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char rcsid [] _U_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;@(#) $Header: /tcpdump/master/libpcap/pcap-snoop.c,v 1.59 2008-12-02 16:25:14 guy Exp $ (LBL)&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

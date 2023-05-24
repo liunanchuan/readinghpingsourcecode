@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Include/arpa/nameser.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_ed17a792b07c09ae6ce59b26add31fa3.html">Include</a></li><li class="navelem"><a class="el" href="dir_eac5eec9d64ac47ded581b7300502fb5.html">arpa</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">nameser.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="nameser_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ++Copyright++ 1983, 1989, 1993</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * -</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (c) 1983, 1989, 1993</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *    The Regents of the University of California.  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * 1. Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *    notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *    notice, this list of conditions and the following disclaimer in the</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *    documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * 3. All advertising materials mentioning features or use of this software</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *    must display the following acknowledgement:</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *  This product includes software developed by the University of</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *  California, Berkeley and its contributors.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * 4. Neither the name of the University nor the names of its contributors</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *    may be used to endorse or promote products derived from this software</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *    without specific prior written permission.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS&#39;&#39; AND</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * -</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * Portions Copyright (c) 1993 by Digital Equipment Corporation.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * Permission to use, copy, modify, and distribute this software for any</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * purpose with or without fee is hereby granted, provided that the above</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * copyright notice and this permission notice appear in all copies, and that</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * the name of Digital Equipment Corporation not be used in advertising or</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * publicity pertaining to distribution of the document or software without</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * specific, written prior permission.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * SOFTWARE.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * -</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> * --Copyright--</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> *      @(#)nameser.h   8.1 (Berkeley) 6/2/93</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> *  nameser.h,v 1.2 1995/05/06 14:23:54 hjl Exp</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#ifndef _NAMESER_H_</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#define _NAMESER_H_</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#include &lt;sys/param.h&gt;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#if (!defined(BSD)) || (BSD &lt; 199306)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor"># include &lt;sys/bitypes.h&gt;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor"># include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &lt;sys/cdefs.h&gt;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#else </span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#include &lt;<a class="code" href="pcap-stdinc_8h.html">pcap-stdinc.h</a>&gt;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#define __LITTLE_ENDIAN 1</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#define __BYTE_ORDER __LITTLE_ENDIAN</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"> * revision information.  this is the release date in YYYYMMDD format.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"> * it can change every day so the right thing to do with it is use it</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"> * in preprocessor commands such as &quot;#if (__BIND &gt; 19931104)&quot;.  do not</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"> * compare for equality; rather, use it to determine whether your resolver</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"> * is new enough to contain a certain feature.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="nameser_8h.html#abe08985c8fa0285b6a66d19a89433e78">   86</a></span><span class="preprocessor">#define __BIND      19940417    </span><span class="comment">/* interface version stamp */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> * Define constants based on rfc883</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="nameser_8h.html#aec9c73a8c49efe97e0545187fa8b856d">   91</a></span><span class="preprocessor">#define PACKETSZ    512     </span><span class="comment">/* maximum packet size */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="nameser_8h.html#a7e49780fcec2ca98abd7b5acb9c51991">   92</a></span><span class="preprocessor">#define MAXDNAME    256     </span><span class="comment">/* maximum domain name */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="nameser_8h.html#a435ea8894e87701f66e9f36dbee3048e">   93</a></span><span class="preprocessor">#define MAXCDNAME   255     </span><span class="comment">/* maximum compressed domain name */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="nameser_8h.html#a57ef44e89326a371a47cfd186bf1f6a8">   94</a></span><span class="preprocessor">#define MAXLABEL    63      </span><span class="comment">/* maximum length of domain label */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="nameser_8h.html#ae4037ec89590e6cb22786be5319e7ad2">   95</a></span><span class="preprocessor">#define HFIXEDSZ    12      </span><span class="comment">/* #/bytes of fixed data in header */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="nameser_8h.html#a23b1a00ed028a175c227b33315cb696a">   96</a></span><span class="preprocessor">#define QFIXEDSZ    4       </span><span class="comment">/* #/bytes of fixed data in query */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="nameser_8h.html#afa19d50689106533b5971913edcc34a3">   97</a></span><span class="preprocessor">#define RRFIXEDSZ   10      </span><span class="comment">/* #/bytes of fixed data in r record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="nameser_8h.html#a9dff6e3ce489e09dee1e90f407367775">   98</a></span><span class="preprocessor">#define INT32SZ     4       </span><span class="comment">/* for systems without 32-bit ints */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="nameser_8h.html#af9f8961aa7a7fee1b23f4e8b16db2d22">   99</a></span><span class="preprocessor">#define INT16SZ     2       </span><span class="comment">/* for systems without 16-bit ints */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="nameser_8h.html#a001221f197fa18c54d6fc0833afe43ce">  100</a></span><span class="preprocessor">#define INADDRSZ    4       </span><span class="comment">/* for sizeof(struct inaddr) != 4 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * Internet nameserver port number</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="nameser_8h.html#ab53a3cbe9cc44ecb87eb8e72ea7dc262">  105</a></span><span class="preprocessor">#define NAMESERVER_PORT 53</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"> * Currently defined opcodes</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="nameser_8h.html#ae5ff1f63e632fba61c45cfb0a2b19066">  110</a></span><span class="preprocessor">#define QUERY       0x0     </span><span class="comment">/* standard query */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="nameser_8h.html#a019a06f90cd887d8022f3dcce1180b51">  111</a></span><span class="preprocessor">#define IQUERY      0x1     </span><span class="comment">/* inverse query */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="nameser_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">  112</a></span><span class="preprocessor">#define STATUS      0x2     </span><span class="comment">/* nameserver status query */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">/*#define xxx       0x3     */</span><span class="comment">/* 0x3 reserved */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="nameser_8h.html#abf3ed5d1601d6b8ac5d61bc4f37abefb">  114</a></span><span class="preprocessor">#define NS_NOTIFY_OP    0x4     </span><span class="comment">/* notify secondary of SOA change */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#ifdef ALLOW_UPDATES</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">/* non standard - supports ALLOW_UPDATES stuff from Mike Schwartz */</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor"># define UPDATEA    0x9     </span><span class="comment">/* add resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor"># define UPDATED    0xa     </span><span class="comment">/* delete a specific resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor"># define UPDATEDA   0xb     </span><span class="comment">/* delete all named resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor"># define UPDATEM    0xc     </span><span class="comment">/* modify a specific resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor"># define UPDATEMA   0xd     </span><span class="comment">/* modify all named resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor"># define ZONEINIT   0xe     </span><span class="comment">/* initial zone transfer */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor"># define ZONEREF    0xf     </span><span class="comment">/* incremental zone referesh */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"> * Currently defined response codes</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#ifdef HAVE_ADDRINFO</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#define NOERROR     0       </span><span class="comment">/* no error */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif </span><span class="comment">/* HAVE_ADDRINFO */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="nameser_8h.html#ac80ccd3411b3398c6e8cd1a96627a4fa">  132</a></span><span class="preprocessor">#define FORMERR     1       </span><span class="comment">/* format error */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="nameser_8h.html#ad2a930d5bda1668f19001886613edbaa">  133</a></span><span class="preprocessor">#define SERVFAIL    2       </span><span class="comment">/* server failure */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="nameser_8h.html#ab710bad10a5e84f08cb36ed4950ff1b0">  134</a></span><span class="preprocessor">#define NXDOMAIN    3       </span><span class="comment">/* non existent domain */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="nameser_8h.html#a78a3e1e631331ac035e38bea9196336b">  135</a></span><span class="preprocessor">#define NOTIMP      4       </span><span class="comment">/* not implemented */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="nameser_8h.html#ac846cd5d68d1b8a88c2f77ddade87c6e">  136</a></span><span class="preprocessor">#define REFUSED     5       </span><span class="comment">/* query refused */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#ifdef ALLOW_UPDATES</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">/* non standard */</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor"># define NOCHANGE   0xf     </span><span class="comment">/* update failed to change db */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment"> * Type values for resources and queries</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="nameser_8h.html#a11241ed27971fdd50a08f46de115cc89">  145</a></span><span class="preprocessor">#define T_A     1       </span><span class="comment">/* host address */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="nameser_8h.html#a0a6ac5132f1f9199707b0b83d0c0ffbd">  146</a></span><span class="preprocessor">#define T_NS        2       </span><span class="comment">/* authoritative server */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="nameser_8h.html#afbaecd243f545ada17ffab2da8f55296">  147</a></span><span class="preprocessor">#define T_MD        3       </span><span class="comment">/* mail destination */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="nameser_8h.html#a41b858a0bf5df3d62b590a1483255c9a">  148</a></span><span class="preprocessor">#define T_MF        4       </span><span class="comment">/* mail forwarder */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="nameser_8h.html#a3b1f450c75d14e4a17f4d157641999e5">  149</a></span><span class="preprocessor">#define T_CNAME     5       </span><span class="comment">/* canonical name */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="nameser_8h.html#a951721e7ce0e59fbcb618f0036ebb4cb">  150</a></span><span class="preprocessor">#define T_SOA       6       </span><span class="comment">/* start of authority zone */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="nameser_8h.html#ab96aaa2f27ec917f0fc981bb0977f0e9">  151</a></span><span class="preprocessor">#define T_MB        7       </span><span class="comment">/* mailbox domain name */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="nameser_8h.html#aeb7938e0a0cd295c7c4a5e1f67cdb8d4">  152</a></span><span class="preprocessor">#define T_MG        8       </span><span class="comment">/* mail group member */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="nameser_8h.html#a400000cc23c229264dfc40bea52614d2">  153</a></span><span class="preprocessor">#define T_MR        9       </span><span class="comment">/* mail rename name */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="nameser_8h.html#afb8e7ff3357caa8dd3252695cefece51">  154</a></span><span class="preprocessor">#define T_NULL      10      </span><span class="comment">/* null resource record */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="nameser_8h.html#a87ac06dc0d7c15d15cefeadc97b0ba7e">  155</a></span><span class="preprocessor">#define T_WKS       11      </span><span class="comment">/* well known service */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="nameser_8h.html#a26e251e7a38ee37f65a6895d49ccf17f">  156</a></span><span class="preprocessor">#define T_PTR       12      </span><span class="comment">/* domain name pointer */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="nameser_8h.html#a0f4d4d3a8e1e38927ea2f4d92d28afb2">  157</a></span><span class="preprocessor">#define T_HINFO     13      </span><span class="comment">/* host information */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="nameser_8h.html#a946bd2b3282942fed85f943bc124562d">  158</a></span><span class="preprocessor">#define T_MINFO     14      </span><span class="comment">/* mailbox information */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="nameser_8h.html#a379fb519f8a88b3f63f69e519d801cee">  159</a></span><span class="preprocessor">#define T_MX        15      </span><span class="comment">/* mail routing information */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="nameser_8h.html#a78854da665a47f26bc432d33a9e880ae">  160</a></span><span class="preprocessor">#define T_TXT       16      </span><span class="comment">/* text strings */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="nameser_8h.html#a7de5f753762756a9e198aa948e45e841">  161</a></span><span class="preprocessor">#define T_RP        17      </span><span class="comment">/* responsible person */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="nameser_8h.html#a32efcb6ef40fc2bc546ecd7bd457552e">  162</a></span><span class="preprocessor">#define T_AFSDB     18      </span><span class="comment">/* AFS cell database */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="nameser_8h.html#a0578e5bdd50d51105941a9c9bf980e37">  163</a></span><span class="preprocessor">#define T_X25       19      </span><span class="comment">/* X_25 calling address */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="nameser_8h.html#ae451340e41889528075a785065c48e79">  164</a></span><span class="preprocessor">#define T_ISDN      20      </span><span class="comment">/* ISDN calling address */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="nameser_8h.html#ab9a76f27f872767d27c8a7ac6fde5c48">  165</a></span><span class="preprocessor">#define T_RT        21      </span><span class="comment">/* router */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="nameser_8h.html#a851cfabd3cce351da8a31eec1ef1bcf2">  166</a></span><span class="preprocessor">#define T_NSAP      22      </span><span class="comment">/* NSAP address */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="nameser_8h.html#a7d2b3a8cbc57464b4f5e8388e6f60098">  167</a></span><span class="preprocessor">#define T_NSAP_PTR  23      </span><span class="comment">/* reverse NSAP lookup (deprecated) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="nameser_8h.html#a6e224ad0c2dba8c46b6be41640a23631">  168</a></span><span class="preprocessor">#define T_SIG       24      </span><span class="comment">/* security signature */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="nameser_8h.html#a77d5459649c5af68a94ef9f378f8eb63">  169</a></span><span class="preprocessor">#define T_KEY       25      </span><span class="comment">/* security key */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="nameser_8h.html#acf1931b3fe446dfd0953183cf663e7b0">  170</a></span><span class="preprocessor">#define T_PX        26      </span><span class="comment">/* X.400 mail mapping */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="nameser_8h.html#adcd39a2fdca0578361ecdd7775132311">  171</a></span><span class="preprocessor">#define T_GPOS      27      </span><span class="comment">/* geographical position (withdrawn) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="nameser_8h.html#a9988cc1cc24b640d7fc9d8f602104405">  172</a></span><span class="preprocessor">#define T_AAAA      28      </span><span class="comment">/* IP6 Address */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="nameser_8h.html#a44f0645b1fdbdea5a841e2c98486a686">  173</a></span><span class="preprocessor">#define T_LOC       29      </span><span class="comment">/* Location Information */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="comment">/* non standard */</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="nameser_8h.html#afc0dbfbb74674695a09b1fe6059710ad">  175</a></span><span class="preprocessor">#define T_UINFO     100     </span><span class="comment">/* user (finger) information */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="nameser_8h.html#a966b7b0dbaf7b32df19a28c26e289a8c">  176</a></span><span class="preprocessor">#define T_UID       101     </span><span class="comment">/* user ID */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="nameser_8h.html#a328644041848577dd873d25afba92299">  177</a></span><span class="preprocessor">#define T_GID       102     </span><span class="comment">/* group ID */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="nameser_8h.html#ab614c1552f9933fee9584eec4d7e762e">  178</a></span><span class="preprocessor">#define T_UNSPEC    103     </span><span class="comment">/* Unspecified format (binary data) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">/* Query type values which do not appear in resource records */</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="nameser_8h.html#a5c138445dd7a660d2c574c094a8fedfa">  180</a></span><span class="preprocessor">#define T_AXFR      252     </span><span class="comment">/* transfer zone of authority */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="nameser_8h.html#aeb3f3b5b73465a6ed020f667dc5a9bd0">  181</a></span><span class="preprocessor">#define T_MAILB     253     </span><span class="comment">/* transfer mailbox records */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="nameser_8h.html#a178e0dc3f735cdb0a0041651f987a2dc">  182</a></span><span class="preprocessor">#define T_MAILA     254     </span><span class="comment">/* transfer mail agent records */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="nameser_8h.html#aaa8cccf76c5fbc1c7f8ece56a9226560">  183</a></span><span class="preprocessor">#define T_ANY       255     </span><span class="comment">/* wildcard match */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment"> * Values for class field</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="nameser_8h.html#a35948d7e3f6c9b1e187879d6fb1db4d8">  189</a></span><span class="preprocessor">#define C_IN        1       </span><span class="comment">/* the arpa internet */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="nameser_8h.html#a1a4e22b4aae62b5054360e91b566624d">  190</a></span><span class="preprocessor">#define C_CHAOS     3       </span><span class="comment">/* for chaos net (MIT) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="nameser_8h.html#a13269220f12c5460425330c607e1b592">  191</a></span><span class="preprocessor">#define C_HS        4       </span><span class="comment">/* for Hesiod name server (MIT) (XXX) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">/* Query class values which do not appear in resource records */</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="nameser_8h.html#a06925467b895f4750a285abeef6120de">  193</a></span><span class="preprocessor">#define C_ANY       255     </span><span class="comment">/* wildcard match */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment"> * Status return codes for T_UNSPEC conversion routines</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="nameser_8h.html#ad8acb5c9f34280cdf4f476f577710abd">  198</a></span><span class="preprocessor">#define CONV_SUCCESS    0</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="nameser_8h.html#a6e0ead6aad465aeff9ae761653209329">  199</a></span><span class="preprocessor">#define CONV_OVERFLOW   (-1)</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="nameser_8h.html#a6a0177d7fca38bbf39434c1eb9fc82bd">  200</a></span><span class="preprocessor">#define CONV_BADFMT (-2)</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="nameser_8h.html#acd7ca28d0930a560fc3a9366ebb7717d">  201</a></span><span class="preprocessor">#define CONV_BADCKSUM   (-3)</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="nameser_8h.html#a9a43963489e2e4e248bf5c8a9a74eab4">  202</a></span><span class="preprocessor">#define CONV_BADBUFLEN  (-4)</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#ifndef __BYTE_ORDER</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">#if (BSD &gt;= 199103)</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor"># include &lt;machine/endian.h&gt;</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="preprocessor">#ifdef linux</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor"># include &lt;endian.h&gt;</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="nameser_8h.html#aeccf3e279c16687d91cd28d0463cbde6">  211</a></span><span class="preprocessor">#define __LITTLE_ENDIAN 1234    </span><span class="comment">/* least-significant byte first (vax, pc) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="nameser_8h.html#aa2c4bb6d7658760c2b3c668362e126ea">  212</a></span><span class="preprocessor">#define __BIG_ENDIAN    4321    </span><span class="comment">/* most-significant byte first (IBM, net) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="nameser_8h.html#a64af42767719609f6990cc15fde055ca">  213</a></span><span class="preprocessor">#define __PDP_ENDIAN    3412    </span><span class="comment">/* LSB first in word, MSW first in long (pdp)*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">#if defined(vax) || defined(ns32000) || defined(sun386) || defined(i386) || \</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">    defined(MIPSEL) || defined(_MIPSEL) || defined(BIT_ZERO_ON_RIGHT) || \</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">    defined(__alpha__) || defined(__alpha)</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#define __BYTE_ORDER    __LITTLE_ENDIAN</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#if defined(sel) || defined(pyr) || defined(mc68000) || defined(sparc) || \</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">    defined(is68k) || defined(tahoe) || defined(ibm032) || defined(ibm370) || \</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">    defined(MIPSEB) || defined(_MIPSEB) || defined(_IBMR2) || defined(DGUX) ||\</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">    defined(apollo) || defined(__convex__) || defined(_CRAY) || \</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">    defined(__hppa) || defined(__hp9000) || \</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">    defined(__hp9000s300) || defined(__hp9000s700) || \</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">    defined (BIT_ZERO_ON_LEFT) || defined(m68k)</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">#define __BYTE_ORDER    __BIG_ENDIAN</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#endif </span><span class="comment">/* linux */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#endif </span><span class="comment">/* BSD */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif </span><span class="comment">/* __BYTE_ORDER */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#if !defined(__BYTE_ORDER) || \</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">    (__BYTE_ORDER != __BIG_ENDIAN &amp;&amp; __BYTE_ORDER != __LITTLE_ENDIAN &amp;&amp; \</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">    __BYTE_ORDER != __PDP_ENDIAN)</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">/* you must determine what the correct bit order is for</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">     * your compiler - the next line is an intentional error</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment">     * which will force your compiles to bomb until you fix</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">     * the above macros.</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="nameser_8h.html#aef0444027960cee1b5ac5bbe5dab7c04">  242</a></span>  <a class="code hl_function" href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error</a> <span class="stringliteral">&quot;Undefined or invalid __BYTE_ORDER&quot;</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment"> * Structure for query header.  The order of the fields is machine- and</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"> * compiler-dependent, depending on the byte/bit order and the layout</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment"> * of bit fields.  We use bit fields only in int variables, as this</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment"> * is all ANSI requires.  This requires a somewhat confusing rearrangement.</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="structHEADER.html">  252</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="structHEADER.html#a50d6aa2bf63622320919cf7b4a294939">  253</a></span>    <span class="keywordtype">unsigned</span>    <a class="code hl_variable" href="structHEADER.html#a50d6aa2bf63622320919cf7b4a294939">id</a> :16;     <span class="comment">/* query identification number */</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="preprocessor">#if __BYTE_ORDER == __BIG_ENDIAN</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="comment">/* fields in third byte */</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">unsigned</span>    qr: 1;      <span class="comment">/* response flag */</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordtype">unsigned</span>    opcode: 4;  <span class="comment">/* purpose of message */</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordtype">unsigned</span>    aa: 1;      <span class="comment">/* authoritive answer */</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordtype">unsigned</span>    tc: 1;      <span class="comment">/* truncated message */</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordtype">unsigned</span>    rd: 1;      <span class="comment">/* recursion desired */</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="comment">/* fields in fourth byte */</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">unsigned</span>    ra: 1;      <span class="comment">/* recursion available */</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordtype">unsigned</span>    pr: 1;      <span class="comment">/* primary server req&#39;d (!standard) */</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordtype">unsigned</span>    unused :2;  <span class="comment">/* unused bits (MBZ as of 4.9.3a3) */</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordtype">unsigned</span>    rcode :4;   <span class="comment">/* response code */</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="preprocessor">#if __BYTE_ORDER == __LITTLE_ENDIAN || __BYTE_ORDER == __PDP_ENDIAN</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="comment">/* fields in third byte */</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keywordtype">unsigned</span>    rd :1;      <span class="comment">/* recursion desired */</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordtype">unsigned</span>    tc :1;      <span class="comment">/* truncated message */</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordtype">unsigned</span>    aa :1;      <span class="comment">/* authoritive answer */</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordtype">unsigned</span>    opcode :4;  <span class="comment">/* purpose of message */</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">unsigned</span>    qr :1;      <span class="comment">/* response flag */</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="comment">/* fields in fourth byte */</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordtype">unsigned</span>    rcode :4;   <span class="comment">/* response code */</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordtype">unsigned</span>    unused :2;  <span class="comment">/* unused bits (MBZ as of 4.9.3a3) */</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordtype">unsigned</span>    pr :1;      <span class="comment">/* primary server req&#39;d (!standard) */</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordtype">unsigned</span>    ra :1;      <span class="comment">/* recursion available */</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            <span class="comment">/* remaining bytes */</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="structHEADER.html#ada386612d32a9d73c1d31061b0a15428">  281</a></span>    <span class="keywordtype">unsigned</span>    <a class="code hl_variable" href="structHEADER.html#ada386612d32a9d73c1d31061b0a15428">qdcount</a> :16;    <span class="comment">/* number of question entries */</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="structHEADER.html#a3c62308acfb5816632406223323b53d1">  282</a></span>    <span class="keywordtype">unsigned</span>    <a class="code hl_variable" href="structHEADER.html#a3c62308acfb5816632406223323b53d1">ancount</a> :16;    <span class="comment">/* number of answer entries */</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="structHEADER.html#a2eecdec4187cfbdae4de216be8dc2398">  283</a></span>    <span class="keywordtype">unsigned</span>    <a class="code hl_variable" href="structHEADER.html#a2eecdec4187cfbdae4de216be8dc2398">nscount</a> :16;    <span class="comment">/* number of authority entries */</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="structHEADER.html#ab980b431679e60dc6a1b849e5438bafd">  284</a></span>    <span class="keywordtype">unsigned</span>    <a class="code hl_variable" href="structHEADER.html#ab980b431679e60dc6a1b849e5438bafd">arcount</a> :16;    <span class="comment">/* number of resource entries */</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>} <a class="code hl_struct" href="structHEADER.html">HEADER</a>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment"> * Defines for handling compressed domain names</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="nameser_8h.html#a1c6be50272fd222ea4341cf8d7161ddb">  290</a></span><span class="preprocessor">#define INDIR_MASK  0xc0</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment"> * Structure for passing resource records around.</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="structrrec.html">  295</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrrec.html">rrec</a> {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="structrrec.html#af27de701f4bed9453aeb6c34f8fc46ee">  296</a></span>    int16_t     <a class="code hl_variable" href="structrrec.html#af27de701f4bed9453aeb6c34f8fc46ee">r_zone</a>;         <span class="comment">/* zone number */</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="structrrec.html#a0318534d1b6295c497cf759260a1094c">  297</a></span>    int16_t     <a class="code hl_variable" href="structrrec.html#a0318534d1b6295c497cf759260a1094c">r_class</a>;        <span class="comment">/* class number */</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="structrrec.html#ab6789c674eb55544b64fc919f3e0ff70">  298</a></span>    int16_t     <a class="code hl_variable" href="structrrec.html#ab6789c674eb55544b64fc919f3e0ff70">r_type</a>;         <span class="comment">/* type number */</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="structrrec.html#a829032fd532112a718d70b26a18b2d05">  299</a></span>    u_int32_t   <a class="code hl_variable" href="structrrec.html#a829032fd532112a718d70b26a18b2d05">r_ttl</a>;          <span class="comment">/* time to live */</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="structrrec.html#a72b69b2f3e2848762cbd8de89c4f9f0c">  300</a></span>    <span class="keywordtype">int</span>     <a class="code hl_variable" href="structrrec.html#a72b69b2f3e2848762cbd8de89c4f9f0c">r_size</a>;         <span class="comment">/* size of data area */</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="structrrec.html#a4298ec565665ee4e72e4b28434546602">  301</a></span>    <span class="keywordtype">char</span>        *<a class="code hl_variable" href="structrrec.html#a4298ec565665ee4e72e4b28434546602">r_data</a>;        <span class="comment">/* pointer to data */</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>};</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">//extern    u_int16_t   _getshort __P((const u_char *));</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">//extern    u_int32_t   _getlong __P((const u_char *));</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment"> * Inline versions of get/put short/long.  Pointer is advanced.</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="comment"> * These macros demonstrate the property of C whereby it can be</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="comment"> * portable or it can be elegant but rarely both.</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="nameser_8h.html#a64d6bd96c7bd26d3aa87d168d990bc02">  313</a></span><span class="preprocessor">#define GETSHORT(s, cp) { \</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">    register u_char *t_cp = (u_char *)(cp); \</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">    (s) = ((u_int16_t)t_cp[0] &lt;&lt; 8) \</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">        | ((u_int16_t)t_cp[1]) \</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">        ; \</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    (cp) += INT16SZ; \</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">}</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="nameser_8h.html#a1ea21ad3910a34af9fabf1948c941c0e">  321</a></span><span class="preprocessor">#define GETLONG(l, cp) { \</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">    register u_char *t_cp = (u_char *)(cp); \</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">    (l) = ((u_int32_t)t_cp[0] &lt;&lt; 24) \</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">        | ((u_int32_t)t_cp[1] &lt;&lt; 16) \</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">        | ((u_int32_t)t_cp[2] &lt;&lt; 8) \</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">        | ((u_int32_t)t_cp[3]) \</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">        ; \</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">    (cp) += INT32SZ; \</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="preprocessor">}</span></div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="nameser_8h.html#a886d59a438b49ec9ad3895dbdb7a6140">  331</a></span><span class="preprocessor">#define PUTSHORT(s, cp) { \</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">    register u_int16_t t_s = (u_int16_t)(s); \</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="preprocessor">    register u_char *t_cp = (u_char *)(cp); \</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">    *t_cp++ = t_s &gt;&gt; 8; \</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="preprocessor">    *t_cp   = t_s; \</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">    (cp) += INT16SZ; \</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">}</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="nameser_8h.html#a1e7b84ba4da72b43577117d32ea48f45">  339</a></span><span class="preprocessor">#define PUTLONG(l, cp) { \</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="preprocessor">    register u_int32_t t_l = (u_int32_t)(l); \</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="preprocessor">    register u_char *t_cp = (u_char *)(cp); \</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="preprocessor">    *t_cp++ = t_l &gt;&gt; 24; \</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">    *t_cp++ = t_l &gt;&gt; 16; \</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="preprocessor">    *t_cp++ = t_l &gt;&gt; 8; \</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="preprocessor">    *t_cp   = t_l; \</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">    (cp) += INT32SZ; \</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">}</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#endif </span><span class="comment">/* !_NAMESER_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="afiltertest_8c_html_a012a8d8c5ec50aba9e8d09717158c260"><div class="ttname"><a href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error</a></div><div class="ttdeci">static void error(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> filtertest.c:108</div></div>
+<div class="ttc" id="apcap-stdinc_8h_html"><div class="ttname"><a href="pcap-stdinc_8h.html">pcap-stdinc.h</a></div></div>
+<div class="ttc" id="astructHEADER_html"><div class="ttname"><a href="structHEADER.html">HEADER</a></div><div class="ttdef"><b>Definition:</b> nameser.h:252</div></div>
+<div class="ttc" id="astructHEADER_html_a2eecdec4187cfbdae4de216be8dc2398"><div class="ttname"><a href="structHEADER.html#a2eecdec4187cfbdae4de216be8dc2398">HEADER::nscount</a></div><div class="ttdeci">unsigned nscount</div><div class="ttdef"><b>Definition:</b> nameser.h:283</div></div>
+<div class="ttc" id="astructHEADER_html_a3c62308acfb5816632406223323b53d1"><div class="ttname"><a href="structHEADER.html#a3c62308acfb5816632406223323b53d1">HEADER::ancount</a></div><div class="ttdeci">unsigned ancount</div><div class="ttdef"><b>Definition:</b> nameser.h:282</div></div>
+<div class="ttc" id="astructHEADER_html_a50d6aa2bf63622320919cf7b4a294939"><div class="ttname"><a href="structHEADER.html#a50d6aa2bf63622320919cf7b4a294939">HEADER::id</a></div><div class="ttdeci">unsigned id</div><div class="ttdef"><b>Definition:</b> nameser.h:253</div></div>
+<div class="ttc" id="astructHEADER_html_ab980b431679e60dc6a1b849e5438bafd"><div class="ttname"><a href="structHEADER.html#ab980b431679e60dc6a1b849e5438bafd">HEADER::arcount</a></div><div class="ttdeci">unsigned arcount</div><div class="ttdef"><b>Definition:</b> nameser.h:284</div></div>
+<div class="ttc" id="astructHEADER_html_ada386612d32a9d73c1d31061b0a15428"><div class="ttname"><a href="structHEADER.html#ada386612d32a9d73c1d31061b0a15428">HEADER::qdcount</a></div><div class="ttdeci">unsigned qdcount</div><div class="ttdef"><b>Definition:</b> nameser.h:281</div></div>
+<div class="ttc" id="astructrrec_html"><div class="ttname"><a href="structrrec.html">rrec</a></div><div class="ttdef"><b>Definition:</b> nameser.h:295</div></div>
+<div class="ttc" id="astructrrec_html_a0318534d1b6295c497cf759260a1094c"><div class="ttname"><a href="structrrec.html#a0318534d1b6295c497cf759260a1094c">rrec::r_class</a></div><div class="ttdeci">int16_t r_class</div><div class="ttdef"><b>Definition:</b> nameser.h:297</div></div>
+<div class="ttc" id="astructrrec_html_a4298ec565665ee4e72e4b28434546602"><div class="ttname"><a href="structrrec.html#a4298ec565665ee4e72e4b28434546602">rrec::r_data</a></div><div class="ttdeci">char * r_data</div><div class="ttdef"><b>Definition:</b> nameser.h:301</div></div>
+<div class="ttc" id="astructrrec_html_a72b69b2f3e2848762cbd8de89c4f9f0c"><div class="ttname"><a href="structrrec.html#a72b69b2f3e2848762cbd8de89c4f9f0c">rrec::r_size</a></div><div class="ttdeci">int r_size</div><div class="ttdef"><b>Definition:</b> nameser.h:300</div></div>
+<div class="ttc" id="astructrrec_html_a829032fd532112a718d70b26a18b2d05"><div class="ttname"><a href="structrrec.html#a829032fd532112a718d70b26a18b2d05">rrec::r_ttl</a></div><div class="ttdeci">u_int32_t r_ttl</div><div class="ttdef"><b>Definition:</b> nameser.h:299</div></div>
+<div class="ttc" id="astructrrec_html_ab6789c674eb55544b64fc919f3e0ff70"><div class="ttname"><a href="structrrec.html#ab6789c674eb55544b64fc919f3e0ff70">rrec::r_type</a></div><div class="ttdeci">int16_t r_type</div><div class="ttdef"><b>Definition:</b> nameser.h:298</div></div>
+<div class="ttc" id="astructrrec_html_af27de701f4bed9453aeb6c34f8fc46ee"><div class="ttname"><a href="structrrec.html#af27de701f4bed9453aeb6c34f8fc46ee">rrec::r_zone</a></div><div class="ttdeci">int16_t r_zone</div><div class="ttdef"><b>Definition:</b> nameser.h:296</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

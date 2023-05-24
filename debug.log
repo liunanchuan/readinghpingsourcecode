@@ -1,0 +1,432 @@
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+$1 = 10
+$2 = 0
+$3 = 0
+$4 = 0
+$5 = 0
+$6 = 0
+$7 = "192.168.0.115", '\000' <repeats 1010 times>
+$8 = 0
+$9 = "192.168.0.115", '\000' <repeats 1010 times>
+./debug.sh:6: Error in sourced command file:
+No default breakpoint address now.
+./debug.sh:6: Error in sourced command file:
+No default breakpoint address now.
+./debug.sh:6: Error in sourced command file:
+No default breakpoint address now.
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+$1 = '\000' <repeats 1023 times>
+Function "info" not defined.
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555587b0 in main at main.c:177
+	stop only if targetname != "\0"
+	breakpoint already hit 1 time
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555587b0 in main at main.c:177
+	stop only if targetname != "\000"
+	breakpoint already hit 1 time
+$1 = '\000' <repeats 1023 times>
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555587b0 in main at main.c:177
+	stop only if targetname != '\000'
+	breakpoint already hit 1 time
+Program not restarted.
+Continuing.
+[Inferior 1 (process 77686) exited with code 01]
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555587b0 in main at main.c:177
+	stop only if targetname != '\0'
+	breakpoint already hit 1 time
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+$1 = '\000' <repeats 1023 times>
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555587b0 in main at main.c:177
+	stop only if targetname != 0
+	breakpoint already hit 1 time
+$2 = 1
+$3 = 0
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+$1 = '\000' <repeats 1023 times>
+Breakpoint 1 at 0x47b0: file main.c, line 177.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=10, argv=0x7fffffffdda8) at main.c:177
+1: x/s targetname  0x55555557fa00 <targetname>:	""
+1: x/s targetname  0x55555557fa00 <targetname>:	""
+1: x/s targetname  0x55555557fa00 <targetname>:	"192.168.0.115"
+$1 = 0
+$2 = {s_addr = 1929423040}
+Attempt to extract a component of a value that is not a structure pointer.
+Attempt to extract a component of a value that is not a structure.
+Attempt to extract a component of a value that is not a structure pointer.
+$3 = "192.168.0.115", '\000' <repeats 1010 times>
+$4 = "192.168.0.115", '\000' <repeats 1010 times>
+No symbol "saved_ifname" in current context.
+$5 = "192.168.0.114", '\000' <repeats 1010 times>
+$6 = "wlan0", '\000' <repeats 1018 times>
+$7 = 0
+$8 = 0
+open_sockraw () at opensockraw.c:22
+main (argc=10, argv=0x7fffffffdda8) at main.c:238
+$9 = 3
+$10 = "wlan0", '\000' <repeats 1018 times>
+$11 = "192.168.0.1", '\000' <repeats 1012 times>
+Argument list to give program being debugged when it is started is "-c 10 -I wlan0 -a 192.168.0.1  192.168.0.115 -p 22".
+$12 = {s_addr = 16820416}
+$13 = '\000' <repeats 1023 times>
+$14 = '\000' <repeats 1023 times>
+$15 = -1
+$16 = 1772
+No symbol "TABLESIZE" in current context.
+[Inferior 1 (process 77862) exited with code 01]
+The program is not being run.
+The program is not being run.
+The program is not being run.
+The program is not being run.
+Breakpoint 1 at 0x9350: file antigetopt.c, line 67.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 104236) exited with code 01]
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000055555555d350 in antigetopt at antigetopt.c:67
+Breakpoint 1 at 0x9130: file antigetopt.c, line 50.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+$1 = 0x0
+$2 = (char **) 0x7fffffffdda0
+$3 = (char **) 0x7fffffffdda0
+$4 = 160 '\240'
+$5 = 0x7fffffffe18f "-c"
+$6 = 0x7fffffffe18f "-c"
+$7 = 0
+Breakpoint 1 at 0x9130: file antigetopt.c, line 50.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+$1 = (char **) 0x7fffffffdd98
+$2 = (char **) 0x0
+$3 = (char **) 0x7fffffffdd98
+$4 = 0x7fffffffe17f "/usr/sbin/hping"
+$5 = 0x7fffffffe18f "-c"
+$6 = 0x0
+$7 = 0
+$8 = 45 '-'
+$9 = 99 'c'
+$10 = (struct ago_optlist *) 0x555555578420 <hping_optlist>
+$11 = 99 'c'
+$12 = 0
+$13 = 0 '\000'
+$14 = 99 'c'
+$15 = 0x7fffffffe18f "-c"
+$16 = 0x7fffffffe192 "10"
+$17 = 2
+$18 = 0x7fffffffe192 "10"
+$19 = 0x7fffffffe192 "10"
+$20 = 0x7fffffffe192 "10"
+$21 = (char **) 0x7fffffffddb0
+$22 = 0x7fffffffe195 "-I"
+parse_options (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98) at parseoptions.c:214
+
+Breakpoint 1, antigetopt (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+$23 = 0x7fffffffe17f "/usr/sbin/hping"
+No symbol "save_options" in current context.
+$24 = 0x7fffffffe195 "-I"
+$25 = 0x7fffffffe195 "-I"
+$26 = 0
+$27 = 45 '-'
+$28 = 119 'w'
+$29 = 0x7fffffffe195 "-I"
+ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe195 "-I", islong=islong@entry=0x7fffffffd7e8, amb=amb@entry=0x7fffffffd7ec) at antigetopt.c:201
+$30 = 0x7fffffffe195 "-I"
+$31 = (int *) 0x7fffffffd7e8
+$32 = -8808
+$33 = (int *) 0x7fffffffd7ec
+$34 = 32767
+$35 = 0
+$36 = 73 'I'
+$37 = 0 '\000'
+$38 = 73 'I'
+$39 = 73 'I'
+Run till exit from #0  ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe196 "I", islong=islong@entry=0x7fffffffd7e8, amb=amb@entry=0x7fffffffd7ec) at antigetopt.c:206
+0x000055555555d225 in antigetopt (argc=argc@entry=10, argv=0x7fffffffddb0, argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:99
+Value returned is $40 = (struct ago_optlist *) 0x555555578480 <hping_optlist+96>
+$41 = 73 'I'
+$42 = 0
+$43 = 0x7fffffffe192 "10"
+$44 = 0x7fffffffe198 "wlan0"
+$45 = 0x7fffffffe19e "-a"
+parse_options (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98) at parseoptions.c:214
+$46 = 4
+
+Breakpoint 1, antigetopt (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+Run till exit from #0  antigetopt (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+0x000055555555991d in parse_options (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98) at parseoptions.c:213
+Value returned is $47 = 12
+$48 = 12
+Breakpoint 1 at 0x5908: file parseoptions.c, line 213.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, parse_options (argc=argc@entry=10, argv=argv@entry=0x7fffffffdd98) at parseoptions.c:213
+warning: Source file is more recent than executable.
+$1 = <optimized out>
+Breakpoint 1 at 0x5908: file parseoptions.c, line 213.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, parse_options (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8) at parseoptions.c:213
+warning: Source file is more recent than executable.
+$1 = 0
+$2 = 0
+$3 = 10
+$4 = 14
+$5 = 4001
+$6 = 0
+$7 = "192.168.0.1", '\000' <repeats 1012 times>
+$8 = 7
+$9 = 0x7fffffffe1be "80"
+$10 = 0x7fffffffe1be "80"
+$11 = 0
+$12 = 0
+$13 = 0
+Undefined command: "".  Try "help".
+$14 = 0
+$15 = 1
+$16 = 0
+$17 = 0
+main (argc=7, argv=0x7fffffffddc8) at main.c:203
+$18 = 0
+$19 = 0
+$20 = 0
+$21 = 0
+resolve (addr=addr@entry=0x55555557d360 <remote>, hostname=hostname@entry=0x55555557fa00 <targetname> "192.168.0.1") at resolve.c:50
+warning: Source file is more recent than executable.
+resolve_addr (addr=0x55555557d360 <remote>, hostname=0x55555557fa00 <targetname> "192.168.0.1") at resolve.c:30
+main (argc=7, argv=0x7fffffffddc8) at main.c:218
+$22 = "192.168.0.1", '\000' <repeats 1012 times>
+$23 = "wlan0", '\000' <repeats 1018 times>
+open_pcap () at libpcap_stuff.c:29
+main (argc=7, argv=0x7fffffffddc8) at main.c:255
+get_linkhdr_size (ifname=ifname@entry=0x55555557f200 <ifname> "wlan0") at getlhs.c:89
+$24 = (pcap_t *) 0x5555555872f0
+$25 = 14
+main (argc=7, argv=0x7fffffffddc8) at main.c:260
+No symbol "iftraddr" in current context.
+$26 = "192.168.0.114", '\000' <repeats 1010 times>
+$27 = '\000' <repeats 1023 times>
+$28 = -1
+$29 = 2532
+No symbol "n" in current context.
+Signal (signo=signo@entry=14, func=0x55555555e610 <send_packet>) at signal.c:13
+Run till exit from #0  Signal (signo=signo@entry=14, func=0x55555555e610 <send_packet>) at signal.c:13
+main (argc=7, argv=0x7fffffffddc8) at main.c:295
+Value returned is $30 = (void (*)(int)) 0x0
+Breakpoint 2 at 0x55555555e610: file send.c, line 69.
+Continuing.
+
+Breakpoint 2, send_packet (signal_id=14) at send.c:69
+Undefined command: "N".  Try "help".
+$31 = 0
+No source file named parseoptions.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 14018) exited normally]
+Breakpoint 1 at 0x5908: file parseoptions.c, line 213.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, parse_options (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8) at parseoptions.c:213
+warning: Source file is more recent than executable.
+antigetopt (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+warning: Source file is more recent than executable.
+$1 = 0x0
+$2 = (char **) 0x7fffffffddd0
+$3 = 0x7fffffffe1a3 "--count"
+$4 = -142535440
+$5 = <optimized out>
+value has been optimized out
+$6 = <optimized out>
+$7 = <optimized out>
+value has been optimized out
+value has been optimized out
+value has been optimized out
+$8 = 0x7fffffffe1a3 "--count"
+$9 = 0
+ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe1a3 "--count", islong=islong@entry=0x7fffffffd818, amb=amb@entry=0x7fffffffd81c) at antigetopt.c:201
+$10 = (int *) 0x7fffffffd818
+$11 = -142535440
+$12 = 45 '-'
+$13 = 45 '-'
+$14 = 99 'c'
+$15 = 99 'c'
+$16 = 0x7fffffffe1a5 "count"
+Run till exit from #0  ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe1a5 "count", islong=islong@entry=0x7fffffffd818, amb=amb@entry=0x7fffffffd81c) at antigetopt.c:226
+0x000055555555d225 in antigetopt (argc=argc@entry=7, argv=0x7fffffffddd0, argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:99
+Value returned is $17 = (struct ago_optlist *) 0x555555578420 <hping_optlist>
+$18 = 99 'c'
+$19 = 0
+$20 = 1
+$21 = 0x7fffffffe1a4 "-count"
+$22 = (char **) 0x7fffffffddd0
+$23 = 0x7fffffffe1a3 "--count"
+$24 = (char **) 0x7fffffffddd8
+$25 = (char **) 0x7fffffffdde0
+$26 = 0x7fffffffe1b1 "192.168.0.1"
+$27 = 99 'c'
+$28 = 0x7fffffffe1ae "-S"
+$29 = 0x7fffffffe1a4 "-count"
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=6, argv=0x7fffffffdde0, argv@entry=0x7fffffffddd8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+$1 = 0
+$2 = 49 '1'
+$3 = 0x7fffffffe1aa "c10"
+$4 = 0x7fffffffe1ae "-S"
+$5 = 0x7fffffffe1aa "c10"
+ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe1aa "c10", islong=islong@entry=0x7fffffffd828, amb=amb@entry=0x0) at antigetopt.c:201
+Cannot access memory at address 0x0
+$6 = (int *) 0x0
+$7 = 99 'c'
+Run till exit from #0  ago_lookup (list=list@entry=0x555555578420 <hping_optlist>, arg=0x7fffffffe1aa "c10", islong=islong@entry=0x7fffffffd828, amb=amb@entry=0x0) at antigetopt.c:247
+0x000055555555d35f in antigetopt (argc=argc@entry=6, argv=<optimized out>, argv@entry=0x7fffffffddd8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:67
+Value returned is $8 = (struct ago_optlist *) 0x555555578420 <hping_optlist>
+$9 = (struct ago_optlist *) 0x555555578420 <hping_optlist>
+$10 = 0
+$11 = 99 'c'
+$12 = 49 '1'
+$13 = 0x7fffffffe1ae "-S"
+$14 = 0x7fffffffe1aa "c10"
+$15 = 0x7fffffffe1ab "10"
+$16 = 0x7fffffffe1b1 "192.168.0.1"
+$17 = 0x0
+$18 = 0x0
+parse_options (argc=argc@entry=6, argv=argv@entry=0x7fffffffddd8) at parseoptions.c:214
+warning: Source file is more recent than executable.
+$19 = 4003
+Attempt to extract a component of a value that is not a structure pointer.
+[Inferior 1 (process 23542) exited with code 01]
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=6, argv=0x7fffffffdde0, argv@entry=0x7fffffffddd8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+$1 = (char **) 0x7fffffffdde0
+$2 = 0x7fffffffe1a9 "-c10"
+$3 = 0x7fffffffe1ae "-S"
+$4 = 0x7fffffffe1ae "-S"
+$5 = 0x7fffffffe1ab "10"
+$6 = 99 'c'
+$7 = 0x0
+$8 = 0x7fffffffe1aa "c10"
+parse_options (argc=argc@entry=6, argv=argv@entry=0x7fffffffddd8) at parseoptions.c:214
+warning: Source file is more recent than executable.
+$9 = 4003
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=7, argv=0x7fffffffddd0, argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+$1 = 0x7fffffffe1a7 "c10"
+$2 = (char **) 0x7fffffffddd8
+$3 = 0x7fffffffe1ab "10"
+Please answer y or n.
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=7, argv=0x7fffffffddd0, argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+$1 = 0x7fffffffe1a8 "cn"
+$2 = 99 'c'
+$3 = 0x7fffffffe1a9 "n"
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=7, argv=0x7fffffffddd0, argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+$1 = 99 'c'
+$2 = 0x7fffffffe1a8 "zc"
+$3 = 1
+$4 = 0x7fffffffe1a9 "c"
+$5 = 0x7fffffffe1a8 "zc"
+parse_options (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8) at parseoptions.c:214
+warning: Source file is more recent than executable.
+antigetopt (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+$6 = (char **) 0x7fffffffddd8
+$7 = 0x7fffffffe1ab "10"
+$8 = (char **) 0x7fffffffddc8
+$9 = 0x7fffffffe197 "/usr/sbin/hping"
+$10 = 0x7fffffffe1a9 "c"
+$11 = 99 'c'
+$12 = 0x7fffffffe1a9 "c"
+$13 = 0 '\000'
+$14 = 0x7fffffffe1ab "10"
+$15 = 0x7fffffffe1ae "-S"
+parse_options (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8) at parseoptions.c:214
+antigetopt (argc=argc@entry=7, argv=argv@entry=0x7fffffffddc8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+$16 = 0x7fffffffe1aa ""
+$17 = 0x7fffffffe1ae "-S"
+$18 = (char **) 0x7fffffffdde0
+$19 = 0x7fffffffe1ae "-S"

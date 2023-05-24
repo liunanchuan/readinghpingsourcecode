@@ -1,0 +1,983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/inet.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">inet.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;sys/param.h&gt;</code><br />
+<code>#include &lt;sys/file.h&gt;</code><br />
+<code>#include &lt;sys/ioctl.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="if_8h_source.html">net/if.h</a>&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="pcap-int_8h_source.html">pcap-int.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+inet.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c__incl.png" border="0" usemap="#alibpcap-1_81_81_2inet_8c" alt=""/></div>
+<map name="alibpcap-1_81_81_2inet_8c" id="alibpcap-1_81_81_2inet_8c">
+<area shape="rect" title=" " alt="" coords="660,5,792,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,100,107"/>
+<area shape="rect" title=" " alt="" coords="125,80,199,107"/>
+<area shape="rect" title=" " alt="" coords="223,80,306,107"/>
+<area shape="rect" title=" " alt="" coords="331,80,428,107"/>
+<area shape="rect" href="if_8h.html" title=" " alt="" coords="452,80,515,107"/>
+<area shape="rect" title=" " alt="" coords="539,80,625,107"/>
+<area shape="rect" title=" " alt="" coords="649,80,715,107"/>
+<area shape="rect" title=" " alt="" coords="739,80,801,107"/>
+<area shape="rect" title=" " alt="" coords="825,80,904,107"/>
+<area shape="rect" title=" " alt="" coords="919,229,981,256"/>
+<area shape="rect" title=" " alt="" coords="979,80,1043,107"/>
+<area shape="rect" title=" " alt="" coords="1068,80,1133,107"/>
+<area shape="rect" title=" " alt="" coords="1157,80,1225,107"/>
+<area shape="rect" href="pcap-int_8h.html" title=" " alt="" coords="1249,80,1328,107"/>
+<area shape="rect" href="pcap-stdinc_8h.html" title=" " alt="" coords="433,155,533,181"/>
+<area shape="rect" title=" " alt="" coords="202,229,290,256"/>
+<area shape="rect" title=" " alt="" coords="314,229,373,256"/>
+<area shape="rect" href="bittypes_8h.html" title=" " alt="" coords="397,229,476,256"/>
+<area shape="rect" title=" " alt="" coords="501,229,559,256"/>
+<area shape="rect" title=" " alt="" coords="583,229,626,256"/>
+<area shape="rect" title=" " alt="" coords="650,229,738,256"/>
+<area shape="rect" href="pcap_2pcap_8h.html" title=" " alt="" coords="1122,155,1215,181"/>
+<area shape="rect" title=" " alt="" coords="1254,155,1323,181"/>
+<area shape="rect" title=" " alt="" coords="1013,229,1103,256"/>
+<area shape="rect" title=" " alt="" coords="1127,229,1210,256"/>
+<area shape="rect" href="bpf_8h.html" title=" " alt="" coords="1234,229,1317,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a9ec306f36d50c7375e74f0d1c55a3a67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#a9ec306f36d50c7375e74f0d1c55a3a67">INT_MAX</a>&#160;&#160;&#160;2147483647</td></tr>
+<tr class="separator:a9ec306f36d50c7375e74f0d1c55a3a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af17a330b2e20405eae7e09b4ab7bea83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#af17a330b2e20405eae7e09b4ab7bea83">ISLOOPBACK</a>(name,  flags)</td></tr>
+<tr class="separator:af17a330b2e20405eae7e09b4ab7bea83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb93bcce9682d7644080b859849f59d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#aedb93bcce9682d7644080b859849f59d">IF_NAMESIZE</a>&#160;&#160;&#160;<a class="el" href="if_8h.html#acd06da230a96d3b7e6f193c5b3142002">IFNAMSIZ</a></td></tr>
+<tr class="separator:aedb93bcce9682d7644080b859849f59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ab5280f09a5b04a55b18a83a9760f1016"><td class="memItemLeft" align="right" valign="top">struct sockaddr *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#ab5280f09a5b04a55b18a83a9760f1016">dup_sockaddr</a> (struct sockaddr *sa, size_t sa_length)</td></tr>
+<tr class="separator:ab5280f09a5b04a55b18a83a9760f1016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be3fd117b515a98a255470f01892971"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#a0be3fd117b515a98a255470f01892971">get_instance</a> (const char *name)</td></tr>
+<tr class="separator:a0be3fd117b515a98a255470f01892971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad645673beca798d2ccd8218c8a7ca35a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a">add_or_find_if</a> (pcap_if_t **curdev_ret, pcap_if_t **alldevs, const char *name, u_int flags, const char *description, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ad645673beca798d2ccd8218c8a7ca35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33d156eb14d2b242dc3cf9218a03c81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81">add_addr_to_iflist</a> (pcap_if_t **alldevs, const char *name, u_int flags, struct sockaddr *addr, size_t addr_size, struct sockaddr *<a class="el" href="gencode_8c.html#a98fbcc64be2e1b5ec40bde6104a21137">netmask</a>, size_t netmask_size, struct sockaddr *broadaddr, size_t broadaddr_size, struct sockaddr *dstaddr, size_t dstaddr_size, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ab33d156eb14d2b242dc3cf9218a03c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61261e756b0e199b9d361f500c49f17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17">pcap_add_if</a> (pcap_if_t **devlist, const char *name, u_int flags, const char *description, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ae61261e756b0e199b9d361f500c49f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185e9c1d81ef81110ed08fe3de0c5400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#a185e9c1d81ef81110ed08fe3de0c5400">pcap_freealldevs</a> (pcap_if_t *alldevs)</td></tr>
+<tr class="separator:a185e9c1d81ef81110ed08fe3de0c5400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83fbe09ddc9c7f354ab4f2b293f8191"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191">pcap_lookupdev</a> (char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ad83fbe09ddc9c7f354ab4f2b293f8191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35276d0fa530c51a455f298fa1ec453"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#aa35276d0fa530c51a455f298fa1ec453">pcap_lookupnet</a> (const char *<a class="el" href="structdevice.html">device</a>, <a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a> *netp, <a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a> *maskp, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:aa35276d0fa530c51a455f298fa1ec453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memItemLeft" align="right" valign="top">static const char rcsid[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inet_8c.html#a5578b12d2cc7e3ee27ff908df9e14a21">_U_</a></td></tr>
+<tr class="separator:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="aedb93bcce9682d7644080b859849f59d" name="aedb93bcce9682d7644080b859849f59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb93bcce9682d7644080b859849f59d">&#9670;&nbsp;</a></span>IF_NAMESIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_NAMESIZE&#160;&#160;&#160;<a class="el" href="if_8h.html#acd06da230a96d3b7e6f193c5b3142002">IFNAMSIZ</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ec306f36d50c7375e74f0d1c55a3a67" name="a9ec306f36d50c7375e74f0d1c55a3a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec306f36d50c7375e74f0d1c55a3a67">&#9670;&nbsp;</a></span>INT_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT_MAX&#160;&#160;&#160;2147483647</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af17a330b2e20405eae7e09b4ab7bea83" name="af17a330b2e20405eae7e09b4ab7bea83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af17a330b2e20405eae7e09b4ab7bea83">&#9670;&nbsp;</a></span>ISLOOPBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ISLOOPBACK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">flags&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((name)[0] == <span class="charliteral">&#39;l&#39;</span> &amp;&amp; (name)[1] == <span class="charliteral">&#39;o&#39;</span> &amp;&amp; \</div>
+<div class="line">    (isdigit((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)((name)[2])) || (name)[2] == <span class="charliteral">&#39;\0&#39;</span>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ab33d156eb14d2b242dc3cf9218a03c81" name="ab33d156eb14d2b242dc3cf9218a03c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab33d156eb14d2b242dc3cf9218a03c81">&#9670;&nbsp;</a></span>add_addr_to_iflist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int add_addr_to_iflist </td>
+          <td>(</td>
+          <td class="paramtype">pcap_if_t **&#160;</td>
+          <td class="paramname"><em>alldevs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sockaddr *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>addr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sockaddr *&#160;</td>
+          <td class="paramname"><em>netmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>netmask_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sockaddr *&#160;</td>
+          <td class="paramname"><em>broadaddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>broadaddr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sockaddr *&#160;</td>
+          <td class="paramname"><em>dstaddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dstaddr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a">add_or_find_if()</a>, <a class="el" href="pcap-stdinc_8h.html#a0c3c2cf6b572d3e4659668a6d2ddc265">caddr_t</a>, <a class="el" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0">close()</a>, <a class="el" href="inet_8c.html#ab5280f09a5b04a55b18a83a9760f1016">dup_sockaddr()</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="structifreq.html#a03e3ec87db4dc6b971c4b1470f21adcc">ifreq::ifr_name</a>, <a class="el" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00">ioctl()</a>, <a class="el" href="gencode_8c.html#a98fbcc64be2e1b5ec40bde6104a21137">netmask</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>, <a class="el" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494">socket()</a> , 以及 <a class="el" href="pcap-int_8h.html#aebad41fc6f10b606b4f94a930b153a17">strlcpy</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d">pcap_findalldevs()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ab33d156eb14d2b242dc3cf9218a03c81_cgraph.png" border="0" usemap="#ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_cgraph" alt=""/></div>
+<map name="ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_cgraph" id="ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_cgraph">
+<area shape="rect" title=" " alt="" coords="5,1829,129,1856"/>
+<area shape="rect" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a" title=" " alt="" coords="177,183,280,209"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="1492,1829,1545,1856"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="1275,1019,1373,1045"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="1301,1551,1347,1577"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="1293,1829,1355,1856"/>
+<area shape="rect" href="inet_8c.html#ab5280f09a5b04a55b18a83a9760f1016" title=" " alt="" coords="177,2133,280,2160"/>
+<area shape="rect" href="inet_8c.html#a0be3fd117b515a98a255470f01892971" title=" " alt="" coords="336,81,432,108"/>
+<area shape="rect" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="495,5,583,32"/>
+<area shape="rect" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e" title=" " alt="" coords="328,183,440,209"/>
+<area shape="rect" href="pcap_8c.html#a2a0ce9a906ccf7f78dd7960472d0387d" title=" " alt="" coords="488,56,591,83"/>
+<area shape="rect" href="pcap_8c.html#a94808ac826c2166a6c4dd6420745d59c" title=" " alt="" coords="643,107,762,133"/>
+<area shape="rect" href="pcap-bpf_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="493,537,586,564"/>
+<area shape="rect" href="pcap_8c.html#a0a4bfd1489e87910ece325c36df20b4b" title=" " alt="" coords="1043,208,1170,235"/>
+<area shape="rect" href="pcap_8c.html#a11a7be84460ad3f22d35145ba8e5ea67" title=" " alt="" coords="1044,157,1169,184"/>
+<area shape="rect" href="pcap_8c.html#a60d72dd797482b8befb9845da9891f8e" title=" " alt="" coords="639,157,767,184"/>
+<area shape="rect" href="pcap_8c.html#a984837a05bf4aad28d3ae7ae37a00381" title=" " alt="" coords="1058,56,1155,83"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="1231,765,1417,792"/>
+<area shape="rect" href="pcap_8c.html#a813e3b44d47490feca79c53e24f38f55" title=" " alt="" coords="1256,31,1392,57"/>
+<area shape="rect" href="pcap_8c.html#a10744f9b68c5101f601357e1915901f1" title=" " alt="" coords="1273,81,1375,108"/>
+<area shape="rect" href="gencode_8c.html#ae91597f8e7d1b02123008f7847d7bfd7" title=" " alt="" coords="1465,1019,1572,1045"/>
+<area shape="rect" href="pcap-dag_8c.html#aa5a11bf2bc4ccb7fae6da1d5e599e58b" title=" " alt="" coords="659,512,746,539"/>
+<area shape="rect" href="pcap_8c.html#a9c7fbdb07a06bfc69bcb3351d86cecaa" title=" " alt="" coords="823,335,974,361"/>
+<area shape="rect" href="pcap-bpf_8c.html#a18ac15bc16cfc96b0beb31400a3483b0" title=" " alt="" coords="835,1297,963,1324"/>
+<area shape="rect" href="pcap-bpf_8c.html#aaf543ffda3d4ae8bdcbea95316dfbb94" title=" " alt="" coords="815,1525,983,1552"/>
+<area shape="rect" href="pcap-snf_8c.html#ad88721a600440242739f88f5277b6d12" title=" " alt="" coords="661,563,744,589"/>
+<area shape="rect" href="pcap-dag_8c.html#a8085f939c5818965f6bd56ba1fb13b56" title=" " alt="" coords="851,512,947,539"/>
+<area shape="rect" href="pcap-dag_8c.html#ac3a41c986d130144dc3c7083f9dc2e3f" title=" " alt="" coords="1047,715,1167,741"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="1487,1069,1550,1096"/>
+<area shape="rect" href="pcap-dag_8c.html#a2d4e1ba266579786a55b8057c6234fae" title=" " alt="" coords="1066,613,1147,640"/>
+<area shape="rect" href="pcap-dag_8c.html#aab99e8135462b22417e699191f34ef52" title=" " alt="" coords="1032,461,1181,488"/>
+<area shape="rect" href="pcap-dag_8c.html#a401d356ce2b7bbc51c14eff3b26cdc89" title=" " alt="" coords="1069,360,1144,387"/>
+<area shape="rect" href="pcap-dag_8c.html#a67e99b8e81cab81f4445e17341636218" title=" " alt="" coords="1047,411,1167,437"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="1034,765,1179,792"/>
+<area shape="rect" href="pcap_8c.html#af59bee9f6f1cc23c2566b338cacae32c" title=" " alt="" coords="1033,259,1180,285"/>
+<area shape="rect" href="pcap_8c.html#a47f9ba0bf6f52422d5e26870f8136a2a" title=" " alt="" coords="1248,157,1400,184"/>
+<area shape="rect" href="pcap-bpf_8c.html#a91e64f2e8ee14a50b18733d71806e326" title=" " alt="" coords="1069,1323,1144,1349"/>
+<area shape="rect" href="os-sunos4_8h.html#ab426c21b176346931201b586eca8f197" title=" " alt="" coords="1079,1272,1134,1299"/>
+<area shape="rect" href="pcap-bpf_8c.html#acec2b61b77e0abc5bf6abf636892c94d" title=" " alt="" coords="1041,1779,1172,1805"/>
+<area shape="rect" href="os-sunos4_8h.html#a638757347bd9bf886b3d442b98033cf1" title=" " alt="" coords="1061,1221,1153,1248"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab1319ab916da18f7a7acf7dba1457010" title=" " alt="" coords="1043,1728,1170,1755"/>
+<area shape="rect" href="pcap-bpf_8c.html#a02d1840e95ee2e631cefc19826229c67" title=" " alt="" coords="1050,1120,1163,1147"/>
+<area shape="rect" href="pcap-bpf_8c.html#aa874721bd1c8c314ad22e9a3162ddd89" title=" " alt="" coords="1053,1019,1160,1045"/>
+<area shape="rect" href="pcap-bpf_8c.html#aeb4a9bf3e5e0f7b5191ed72db478287a" title=" " alt="" coords="1031,1525,1183,1552"/>
+<area shape="rect" href="pcap-bpf_8c.html#abf2da4ba6bcf18a809835042c3e3248e" title=" " alt="" coords="1032,1475,1181,1501"/>
+<area shape="rect" href="pcap-bpf_8c.html#aff3f64212f7bf2c6a24d8d79884a4271" title=" " alt="" coords="1044,1171,1169,1197"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="1034,1069,1179,1096"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab8e3bc45aa154ec93c9f0accf92398e6" title=" " alt="" coords="1051,1373,1162,1400"/>
+<area shape="rect" href="pcap-snf_8c.html#a6f246e6bbb4df2bfd9e1d88fdc21bac8" title=" " alt="" coords="852,804,945,831"/>
+<area shape="rect" href="os-sunos4_8h.html#a97ce99d5c8dc667647947290cc74a6d8" title=" " alt="" coords="868,563,929,589"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ab33d156eb14d2b242dc3cf9218a03c81_icgraph.png" border="0" usemap="#ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_icgraph" alt=""/></div>
+<map name="ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_icgraph" id="ainet_8c_ab33d156eb14d2b242dc3cf9218a03c81_icgraph">
+<area shape="rect" title=" " alt="" coords="656,56,780,83"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="489,56,608,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="331,5,436,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="325,107,441,133"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad645673beca798d2ccd8218c8a7ca35a" name="ad645673beca798d2ccd8218c8a7ca35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad645673beca798d2ccd8218c8a7ca35a">&#9670;&nbsp;</a></span>add_or_find_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int add_or_find_if </td>
+          <td>(</td>
+          <td class="paramtype">pcap_if_t **&#160;</td>
+          <td class="paramname"><em>curdev_ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pcap_if_t **&#160;</td>
+          <td class="paramname"><em>alldevs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="inet_8c.html#a0be3fd117b515a98a255470f01892971">get_instance()</a>, <a class="el" href="inet_8c.html#af17a330b2e20405eae7e09b4ab7bea83">ISLOOPBACK</a>, <a class="el" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560">pcap_close()</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_2pcap_8h.html#a43a6601bfd438efc02b0ba71c5439647">PCAP_IF_LOOPBACK</a>, <a class="el" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e">pcap_open_live()</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="pcap-stdinc_8h.html#a9254b089d435892385cf14d0ab4a7a2d">strdup</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81">add_addr_to_iflist()</a>, <a class="el" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17">pcap_add_if()</a> , 以及 <a class="el" href="fad-win32_8c.html#aebde42f1910515d28de023a28000917d">pcap_add_if_win32()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ad645673beca798d2ccd8218c8a7ca35a_cgraph.png" border="0" usemap="#ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_cgraph" alt=""/></div>
+<map name="ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_cgraph" id="ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,574,108,601"/>
+<area shape="rect" href="inet_8c.html#a0be3fd117b515a98a255470f01892971" title=" " alt="" coords="164,473,260,500"/>
+<area shape="rect" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="323,650,411,677"/>
+<area shape="rect" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e" title=" " alt="" coords="156,890,268,917"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="1301,828,1400,854"/>
+<area shape="rect" href="pcap_8c.html#a2a0ce9a906ccf7f78dd7960472d0387d" title=" " alt="" coords="316,802,419,829"/>
+<area shape="rect" href="pcap_8c.html#a94808ac826c2166a6c4dd6420745d59c" title=" " alt="" coords="471,802,590,829"/>
+<area shape="rect" href="pcap-bpf_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="321,929,414,956"/>
+<area shape="rect" href="pcap_8c.html#a0a4bfd1489e87910ece325c36df20b4b" title=" " alt="" coords="862,1272,989,1298"/>
+<area shape="rect" href="pcap_8c.html#a11a7be84460ad3f22d35145ba8e5ea67" title=" " alt="" coords="863,1221,988,1248"/>
+<area shape="rect" href="pcap_8c.html#a60d72dd797482b8befb9845da9891f8e" title=" " alt="" coords="467,1620,595,1646"/>
+<area shape="rect" href="pcap_8c.html#a984837a05bf4aad28d3ae7ae37a00381" title=" " alt="" coords="877,372,974,398"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="1257,524,1444,550"/>
+<area shape="rect" href="pcap_8c.html#a813e3b44d47490feca79c53e24f38f55" title=" " alt="" coords="1065,372,1201,398"/>
+<area shape="rect" href="pcap_8c.html#a10744f9b68c5101f601357e1915901f1" title=" " alt="" coords="1082,321,1185,348"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="1519,1537,1572,1564"/>
+<area shape="rect" href="gencode_8c.html#ae91597f8e7d1b02123008f7847d7bfd7" title=" " alt="" coords="1492,841,1599,868"/>
+<area shape="rect" href="pcap-dag_8c.html#aa5a11bf2bc4ccb7fae6da1d5e599e58b" title=" " alt="" coords="487,853,574,880"/>
+<area shape="rect" href="pcap_8c.html#a9c7fbdb07a06bfc69bcb3351d86cecaa" title=" " alt="" coords="643,878,793,905"/>
+<area shape="rect" href="pcap-bpf_8c.html#a18ac15bc16cfc96b0beb31400a3483b0" title=" " alt="" coords="861,1120,989,1146"/>
+<area shape="rect" href="pcap-bpf_8c.html#aaf543ffda3d4ae8bdcbea95316dfbb94" title=" " alt="" coords="841,1170,1009,1197"/>
+<area shape="rect" href="pcap-snf_8c.html#ad88721a600440242739f88f5277b6d12" title=" " alt="" coords="489,904,572,930"/>
+<area shape="rect" href="pcap-dag_8c.html#a8085f939c5818965f6bd56ba1fb13b56" title=" " alt="" coords="670,296,766,322"/>
+<area shape="rect" href="pcap-dag_8c.html#ac3a41c986d130144dc3c7083f9dc2e3f" title=" " alt="" coords="865,473,985,500"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="1514,892,1577,918"/>
+<area shape="rect" href="pcap-dag_8c.html#a2d4e1ba266579786a55b8057c6234fae" title=" " alt="" coords="885,220,966,246"/>
+<area shape="rect" href="pcap-dag_8c.html#aab99e8135462b22417e699191f34ef52" title=" " alt="" coords="1059,68,1208,94"/>
+<area shape="rect" href="pcap-dag_8c.html#a401d356ce2b7bbc51c14eff3b26cdc89" title=" " alt="" coords="888,270,963,297"/>
+<area shape="rect" href="pcap-dag_8c.html#a67e99b8e81cab81f4445e17341636218" title=" " alt="" coords="865,321,985,348"/>
+<area shape="rect" href="pcap-dag_8c.html#a826a7b25dafd3e82eb71ef0b5050c570" title=" " alt="" coords="879,169,972,196"/>
+<area shape="rect" href="pcap-dag_8c.html#a86cf02a84036cac7f1d200e14f5e622a" title=" " alt="" coords="865,574,985,601"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="1061,676,1206,702"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="1061,625,1206,652"/>
+<area shape="rect" href="pcap_8c.html#af59bee9f6f1cc23c2566b338cacae32c" title=" " alt="" coords="852,878,999,905"/>
+<area shape="rect" href="pcap_8c.html#a47f9ba0bf6f52422d5e26870f8136a2a" title=" " alt="" coords="1057,1790,1209,1817"/>
+<area shape="rect" href="pcap-bpf_8c.html#a91e64f2e8ee14a50b18733d71806e326" title=" " alt="" coords="1096,1132,1171,1158"/>
+<area shape="rect" href="os-sunos4_8h.html#ab426c21b176346931201b586eca8f197" title=" " alt="" coords="1106,1081,1161,1108"/>
+<area shape="rect" href="pcap-bpf_8c.html#acec2b61b77e0abc5bf6abf636892c94d" title=" " alt="" coords="1068,1537,1199,1564"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="1327,1334,1374,1361"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="1320,1588,1381,1614"/>
+<area shape="rect" href="os-sunos4_8h.html#a638757347bd9bf886b3d442b98033cf1" title=" " alt="" coords="1087,929,1179,956"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab1319ab916da18f7a7acf7dba1457010" title=" " alt="" coords="1070,1486,1197,1513"/>
+<area shape="rect" href="pcap-bpf_8c.html#a02d1840e95ee2e631cefc19826229c67" title=" " alt="" coords="1077,980,1190,1006"/>
+<area shape="rect" href="pcap-bpf_8c.html#aa874721bd1c8c314ad22e9a3162ddd89" title=" " alt="" coords="1080,878,1187,905"/>
+<area shape="rect" href="pcap-bpf_8c.html#aeb4a9bf3e5e0f7b5191ed72db478287a" title=" " alt="" coords="1057,1284,1209,1310"/>
+<area shape="rect" href="pcap-bpf_8c.html#abf2da4ba6bcf18a809835042c3e3248e" title=" " alt="" coords="1059,1385,1208,1412"/>
+<area shape="rect" href="pcap-bpf_8c.html#aff3f64212f7bf2c6a24d8d79884a4271" title=" " alt="" coords="1071,1030,1196,1057"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab8e3bc45aa154ec93c9f0accf92398e6" title=" " alt="" coords="1078,1233,1189,1260"/>
+<area shape="rect" href="pcap-snf_8c.html#a6f246e6bbb4df2bfd9e1d88fdc21bac8" title=" " alt="" coords="671,752,765,778"/>
+<area shape="rect" href="os-sunos4_8h.html#a97ce99d5c8dc667647947290cc74a6d8" title=" " alt="" coords="687,929,749,956"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ad645673beca798d2ccd8218c8a7ca35a_icgraph.png" border="0" usemap="#ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_icgraph" alt=""/></div>
+<map name="ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_icgraph" id="ainet_8c_ad645673beca798d2ccd8218c8a7ca35a_icgraph">
+<area shape="rect" title=" " alt="" coords="1301,259,1404,285"/>
+<area shape="rect" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81" title=" " alt="" coords="715,31,839,57"/>
+<area shape="rect" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17" title=" " alt="" coords="1141,259,1233,285"/>
+<area shape="rect" href="fad-win32_8c.html#aebde42f1910515d28de023a28000917d" title=" " alt="" coords="1120,411,1253,437"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="510,56,629,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="331,5,436,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="325,56,441,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+<area shape="rect" href="pcap-bt-linux_8c.html#af33c1907230627118031bd60e780ca7c" title=" " alt="" coords="706,335,849,361"/>
+<area shape="rect" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921" title=" " alt="" coords="912,81,1065,108"/>
+<area shape="rect" href="pcap-dos_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="929,284,1048,311"/>
+<area shape="rect" href="pcap-dlpi_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="909,335,1069,361"/>
+<area shape="rect" href="pcap-linux_8c.html#afb293431bb9ec076f757d3444d875f0f" title=" " alt="" coords="710,132,845,159"/>
+<area shape="rect" href="pcap-linux_8c.html#a775e9e3fa61d2f1f0baffb4983bfecc7" title=" " alt="" coords="707,411,848,437"/>
+<area shape="rect" href="pcap-septel_8c.html#acdc1e2f12d872a02062f3047e5375dd3" title=" " alt="" coords="905,183,1072,209"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a67fa0c92ab06bf8e7aaccfd87fcb7f65" title=" " alt="" coords="939,233,1038,260"/>
+<area shape="rect" href="pcap-linux_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="489,233,649,260"/>
+<area shape="rect" href="pcap-bpf_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="697,81,857,108"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a15687eb86e6e27d6dfc3078cceeac6dc" title=" " alt="" coords="701,233,854,260"/>
+<area shape="rect" href="fad-win32_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="929,487,1048,513"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab5280f09a5b04a55b18a83a9760f1016" name="ab5280f09a5b04a55b18a83a9760f1016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5280f09a5b04a55b18a83a9760f1016">&#9670;&nbsp;</a></span>dup_sockaddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sockaddr * dup_sockaddr </td>
+          <td>(</td>
+          <td class="paramtype">struct sockaddr *&#160;</td>
+          <td class="paramname"><em>sa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>sa_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81">add_addr_to_iflist()</a> , 以及 <a class="el" href="fad-win32_8c.html#a9426bbce4d74e23e38d1add1ecbe92dd">add_addr_to_list()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ab5280f09a5b04a55b18a83a9760f1016_icgraph.png" border="0" usemap="#ainet_8c_ab5280f09a5b04a55b18a83a9760f1016_icgraph" alt=""/></div>
+<map name="ainet_8c_ab5280f09a5b04a55b18a83a9760f1016_icgraph" id="ainet_8c_ab5280f09a5b04a55b18a83a9760f1016_icgraph">
+<area shape="rect" title=" " alt="" coords="845,95,948,121"/>
+<area shape="rect" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81" title=" " alt="" coords="673,63,797,89"/>
+<area shape="rect" href="fad-win32_8c.html#a9426bbce4d74e23e38d1add1ecbe92dd" title=" " alt="" coords="677,120,794,147"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="499,60,618,87"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="332,5,437,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="327,107,443,133"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+<area shape="rect" href="fad-win32_8c.html#aebde42f1910515d28de023a28000917d" title=" " alt="" coords="492,132,625,159"/>
+<area shape="rect" href="fad-win32_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="325,157,444,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0be3fd117b515a98a255470f01892971" name="a0be3fd117b515a98a255470f01892971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be3fd117b515a98a255470f01892971">&#9670;&nbsp;</a></span>get_instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int get_instance </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="inet_8c.html#a9ec306f36d50c7375e74f0d1c55a3a67">INT_MAX</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a">add_or_find_if()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_a0be3fd117b515a98a255470f01892971_icgraph.png" border="0" usemap="#ainet_8c_a0be3fd117b515a98a255470f01892971_icgraph" alt=""/></div>
+<map name="ainet_8c_a0be3fd117b515a98a255470f01892971_icgraph" id="ainet_8c_a0be3fd117b515a98a255470f01892971_icgraph">
+<area shape="rect" title=" " alt="" coords="1452,259,1548,285"/>
+<area shape="rect" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a" title=" " alt="" coords="1301,259,1404,285"/>
+<area shape="rect" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81" title=" " alt="" coords="715,31,839,57"/>
+<area shape="rect" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17" title=" " alt="" coords="1141,259,1233,285"/>
+<area shape="rect" href="fad-win32_8c.html#aebde42f1910515d28de023a28000917d" title=" " alt="" coords="1120,411,1253,437"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="510,56,629,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="331,5,436,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="325,56,441,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+<area shape="rect" href="pcap-bt-linux_8c.html#af33c1907230627118031bd60e780ca7c" title=" " alt="" coords="706,335,849,361"/>
+<area shape="rect" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921" title=" " alt="" coords="912,81,1065,108"/>
+<area shape="rect" href="pcap-dos_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="929,284,1048,311"/>
+<area shape="rect" href="pcap-dlpi_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="909,335,1069,361"/>
+<area shape="rect" href="pcap-linux_8c.html#afb293431bb9ec076f757d3444d875f0f" title=" " alt="" coords="710,132,845,159"/>
+<area shape="rect" href="pcap-linux_8c.html#a775e9e3fa61d2f1f0baffb4983bfecc7" title=" " alt="" coords="707,411,848,437"/>
+<area shape="rect" href="pcap-septel_8c.html#acdc1e2f12d872a02062f3047e5375dd3" title=" " alt="" coords="905,183,1072,209"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a67fa0c92ab06bf8e7aaccfd87fcb7f65" title=" " alt="" coords="939,233,1038,260"/>
+<area shape="rect" href="pcap-linux_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="489,233,649,260"/>
+<area shape="rect" href="pcap-bpf_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="697,81,857,108"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a15687eb86e6e27d6dfc3078cceeac6dc" title=" " alt="" coords="701,233,854,260"/>
+<area shape="rect" href="fad-win32_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="929,487,1048,513"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae61261e756b0e199b9d361f500c49f17" name="ae61261e756b0e199b9d361f500c49f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61261e756b0e199b9d361f500c49f17">&#9670;&nbsp;</a></span>pcap_add_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pcap_add_if </td>
+          <td>(</td>
+          <td class="paramtype">pcap_if_t **&#160;</td>
+          <td class="paramname"><em>devlist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a">add_or_find_if()</a> , 以及 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-bt-linux_8c.html#af33c1907230627118031bd60e780ca7c">bt_platform_finddevs()</a>, <a class="el" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921">dag_platform_finddevs()</a>, <a class="el" href="pcap-dos_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d">pcap_findalldevs()</a>, <a class="el" href="pcap-dlpi_8c.html#a14b88a933c5761e5038182b4c30bf0c8">pcap_platform_finddevs()</a>, <a class="el" href="pcap-linux_8c.html#afb293431bb9ec076f757d3444d875f0f">scan_proc_net_dev()</a>, <a class="el" href="pcap-linux_8c.html#a775e9e3fa61d2f1f0baffb4983bfecc7">scan_sys_class_net()</a>, <a class="el" href="pcap-septel_8c.html#acdc1e2f12d872a02062f3047e5375dd3">septel_platform_finddevs()</a> , 以及 <a class="el" href="pcap-usb-linux_8c.html#a67fa0c92ab06bf8e7aaccfd87fcb7f65">usb_dev_add()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ae61261e756b0e199b9d361f500c49f17_cgraph.png" border="0" usemap="#ainet_8c_ae61261e756b0e199b9d361f500c49f17_cgraph" alt=""/></div>
+<map name="ainet_8c_ae61261e756b0e199b9d361f500c49f17_cgraph" id="ainet_8c_ae61261e756b0e199b9d361f500c49f17_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,97,159"/>
+<area shape="rect" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a" title=" " alt="" coords="145,132,248,159"/>
+<area shape="rect" href="inet_8c.html#a0be3fd117b515a98a255470f01892971" title=" " alt="" coords="304,56,400,83"/>
+<area shape="rect" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="463,5,551,32"/>
+<area shape="rect" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e" title=" " alt="" coords="296,157,408,184"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="1243,1221,1341,1248"/>
+<area shape="rect" href="pcap_8c.html#a2a0ce9a906ccf7f78dd7960472d0387d" title=" " alt="" coords="456,56,559,83"/>
+<area shape="rect" href="pcap_8c.html#a94808ac826c2166a6c4dd6420745d59c" title=" " alt="" coords="611,107,730,133"/>
+<area shape="rect" href="pcap-bpf_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="461,588,554,615"/>
+<area shape="rect" href="pcap_8c.html#a0a4bfd1489e87910ece325c36df20b4b" title=" " alt="" coords="1011,157,1138,184"/>
+<area shape="rect" href="pcap_8c.html#a11a7be84460ad3f22d35145ba8e5ea67" title=" " alt="" coords="1012,208,1137,235"/>
+<area shape="rect" href="pcap_8c.html#a60d72dd797482b8befb9845da9891f8e" title=" " alt="" coords="607,208,735,235"/>
+<area shape="rect" href="pcap_8c.html#a984837a05bf4aad28d3ae7ae37a00381" title=" " alt="" coords="1026,56,1123,83"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="1199,461,1385,488"/>
+<area shape="rect" href="pcap_8c.html#a813e3b44d47490feca79c53e24f38f55" title=" " alt="" coords="1224,31,1360,57"/>
+<area shape="rect" href="pcap_8c.html#a10744f9b68c5101f601357e1915901f1" title=" " alt="" coords="1241,81,1343,108"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="1460,765,1513,792"/>
+<area shape="rect" href="gencode_8c.html#ae91597f8e7d1b02123008f7847d7bfd7" title=" " alt="" coords="1433,917,1540,944"/>
+<area shape="rect" href="pcap-dag_8c.html#aa5a11bf2bc4ccb7fae6da1d5e599e58b" title=" " alt="" coords="627,563,714,589"/>
+<area shape="rect" href="pcap_8c.html#a9c7fbdb07a06bfc69bcb3351d86cecaa" title=" " alt="" coords="791,360,942,387"/>
+<area shape="rect" href="pcap-bpf_8c.html#a18ac15bc16cfc96b0beb31400a3483b0" title=" " alt="" coords="803,1449,931,1476"/>
+<area shape="rect" href="pcap-bpf_8c.html#aaf543ffda3d4ae8bdcbea95316dfbb94" title=" " alt="" coords="783,1019,951,1045"/>
+<area shape="rect" href="pcap-snf_8c.html#ad88721a600440242739f88f5277b6d12" title=" " alt="" coords="629,613,712,640"/>
+<area shape="rect" href="pcap-dag_8c.html#a8085f939c5818965f6bd56ba1fb13b56" title=" " alt="" coords="819,563,915,589"/>
+<area shape="rect" href="pcap-dag_8c.html#ac3a41c986d130144dc3c7083f9dc2e3f" title=" " alt="" coords="1015,917,1135,944"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="1455,1019,1518,1045"/>
+<area shape="rect" href="pcap-dag_8c.html#a2d4e1ba266579786a55b8057c6234fae" title=" " alt="" coords="1034,512,1115,539"/>
+<area shape="rect" href="pcap-dag_8c.html#aab99e8135462b22417e699191f34ef52" title=" " alt="" coords="1000,360,1149,387"/>
+<area shape="rect" href="pcap-dag_8c.html#a401d356ce2b7bbc51c14eff3b26cdc89" title=" " alt="" coords="1037,563,1112,589"/>
+<area shape="rect" href="pcap-dag_8c.html#a67e99b8e81cab81f4445e17341636218" title=" " alt="" coords="1015,613,1135,640"/>
+<area shape="rect" href="pcap-dag_8c.html#a826a7b25dafd3e82eb71ef0b5050c570" title=" " alt="" coords="1028,664,1121,691"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="1002,1120,1147,1147"/>
+<area shape="rect" href="pcap_8c.html#af59bee9f6f1cc23c2566b338cacae32c" title=" " alt="" coords="1001,259,1148,285"/>
+<area shape="rect" href="pcap_8c.html#a47f9ba0bf6f52422d5e26870f8136a2a" title=" " alt="" coords="1216,157,1368,184"/>
+<area shape="rect" href="pcap-bpf_8c.html#a91e64f2e8ee14a50b18733d71806e326" title=" " alt="" coords="1037,1171,1112,1197"/>
+<area shape="rect" href="os-sunos4_8h.html#ab426c21b176346931201b586eca8f197" title=" " alt="" coords="1047,1627,1102,1653"/>
+<area shape="rect" href="pcap-bpf_8c.html#acec2b61b77e0abc5bf6abf636892c94d" title=" " alt="" coords="1009,1272,1140,1299"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="1269,1475,1315,1501"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="1261,993,1323,1020"/>
+<area shape="rect" href="os-sunos4_8h.html#a638757347bd9bf886b3d442b98033cf1" title=" " alt="" coords="1029,1728,1121,1755"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab1319ab916da18f7a7acf7dba1457010" title=" " alt="" coords="1011,816,1138,843"/>
+<area shape="rect" href="pcap-bpf_8c.html#a02d1840e95ee2e631cefc19826229c67" title=" " alt="" coords="1018,1475,1131,1501"/>
+<area shape="rect" href="pcap-bpf_8c.html#aa874721bd1c8c314ad22e9a3162ddd89" title=" " alt="" coords="1021,1677,1128,1704"/>
+<area shape="rect" href="pcap-bpf_8c.html#aeb4a9bf3e5e0f7b5191ed72db478287a" title=" " alt="" coords="999,1880,1151,1907"/>
+<area shape="rect" href="pcap-bpf_8c.html#abf2da4ba6bcf18a809835042c3e3248e" title=" " alt="" coords="1000,1931,1149,1957"/>
+<area shape="rect" href="pcap-bpf_8c.html#aff3f64212f7bf2c6a24d8d79884a4271" title=" " alt="" coords="1012,1525,1137,1552"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="1002,1779,1147,1805"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab8e3bc45aa154ec93c9f0accf92398e6" title=" " alt="" coords="1019,1424,1130,1451"/>
+<area shape="rect" href="pcap-snf_8c.html#a6f246e6bbb4df2bfd9e1d88fdc21bac8" title=" " alt="" coords="820,791,913,817"/>
+<area shape="rect" href="os-sunos4_8h.html#a97ce99d5c8dc667647947290cc74a6d8" title=" " alt="" coords="836,613,897,640"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ae61261e756b0e199b9d361f500c49f17_icgraph.png" border="0" usemap="#ainet_8c_ae61261e756b0e199b9d361f500c49f17_icgraph" alt=""/></div>
+<map name="ainet_8c_ae61261e756b0e199b9d361f500c49f17_icgraph" id="ainet_8c_ae61261e756b0e199b9d361f500c49f17_icgraph">
+<area shape="rect" title=" " alt="" coords="1120,233,1212,260"/>
+<area shape="rect" href="pcap-bt-linux_8c.html#af33c1907230627118031bd60e780ca7c" title=" " alt="" coords="706,157,849,184"/>
+<area shape="rect" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921" title=" " alt="" coords="912,56,1065,83"/>
+<area shape="rect" href="pcap-dos_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="929,157,1048,184"/>
+<area shape="rect" href="pcap-dlpi_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="909,208,1069,235"/>
+<area shape="rect" href="pcap-linux_8c.html#afb293431bb9ec076f757d3444d875f0f" title=" " alt="" coords="710,309,845,336"/>
+<area shape="rect" href="pcap-linux_8c.html#a775e9e3fa61d2f1f0baffb4983bfecc7" title=" " alt="" coords="707,360,848,387"/>
+<area shape="rect" href="pcap-septel_8c.html#acdc1e2f12d872a02062f3047e5375dd3" title=" " alt="" coords="905,411,1072,437"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a67fa0c92ab06bf8e7aaccfd87fcb7f65" title=" " alt="" coords="939,259,1038,285"/>
+<area shape="rect" href="pcap-linux_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="489,309,649,336"/>
+<area shape="rect" href="pcap-bpf_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="697,56,857,83"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="510,56,629,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="331,5,436,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="325,56,441,83"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+<area shape="rect" href="pcap-usb-linux_8c.html#a15687eb86e6e27d6dfc3078cceeac6dc" title=" " alt="" coords="701,259,854,285"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a185e9c1d81ef81110ed08fe3de0c5400" name="a185e9c1d81ef81110ed08fe3de0c5400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185e9c1d81ef81110ed08fe3de0c5400">&#9670;&nbsp;</a></span>pcap_freealldevs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pcap_freealldevs </td>
+          <td>(</td>
+          <td class="paramtype">pcap_if_t *&#160;</td>
+          <td class="paramname"><em>alldevs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d">pcap_findalldevs()</a> , 以及 <a class="el" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191">pcap_lookupdev()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_a185e9c1d81ef81110ed08fe3de0c5400_icgraph.png" border="0" usemap="#ainet_8c_a185e9c1d81ef81110ed08fe3de0c5400_icgraph" alt=""/></div>
+<map name="ainet_8c_a185e9c1d81ef81110ed08fe3de0c5400_icgraph" id="ainet_8c_a185e9c1d81ef81110ed08fe3de0c5400_icgraph">
+<area shape="rect" title=" " alt="" coords="656,81,776,108"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="489,56,608,83"/>
+<area shape="rect" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191" title=" " alt="" coords="325,107,441,133"/>
+<area shape="rect" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1" title=" " alt="" coords="331,5,436,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="187,81,237,108"/>
+<area shape="rect" href="pcap-sita_8c.html#a880fa868cc99403bbbeca18a97386ac6" title=" " alt="" coords="147,5,277,32"/>
+<area shape="rect" href="pcap-sita_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad83fbe09ddc9c7f354ab4f2b293f8191" name="ad83fbe09ddc9c7f354ab4f2b293f8191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83fbe09ddc9c7f354ab4f2b293f8191">&#9670;&nbsp;</a></span>pcap_lookupdev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * pcap_lookupdev </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="inet_8c.html#aedb93bcce9682d7644080b859849f59d">IF_NAMESIZE</a>, <a class="el" href="structdevice.html#a8f8f80d37794cde9472343e4487ba3eb">device::name</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d">pcap_findalldevs()</a>, <a class="el" href="inet_8c.html#a185e9c1d81ef81110ed08fe3de0c5400">pcap_freealldevs()</a>, <a class="el" href="pcap_2pcap_8h.html#a43a6601bfd438efc02b0ba71c5439647">PCAP_IF_LOOPBACK</a> , 以及 <a class="el" href="pcap-int_8h.html#aebad41fc6f10b606b4f94a930b153a17">strlcpy</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_cgraph.png" border="0" usemap="#ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_cgraph" alt=""/></div>
+<map name="ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_cgraph" id="ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_cgraph">
+<area shape="rect" title=" " alt="" coords="5,740,121,767"/>
+<area shape="rect" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d" title=" " alt="" coords="169,715,288,741"/>
+<area shape="rect" href="inet_8c.html#a185e9c1d81ef81110ed08fe3de0c5400" title=" " alt="" coords="356,765,476,792"/>
+<area shape="rect" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81" title=" " alt="" coords="745,1145,869,1172"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="2015,765,2113,792"/>
+<area shape="rect" href="pcap-bpf_8c.html#a14b88a933c5761e5038182b4c30bf0c8" title=" " alt="" coords="336,664,496,691"/>
+<area shape="rect" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a" title=" " alt="" coords="917,613,1020,640"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="2210,1449,2263,1476"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="2041,1272,2087,1299"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="2033,1627,2095,1653"/>
+<area shape="rect" href="inet_8c.html#ab5280f09a5b04a55b18a83a9760f1016" title=" " alt="" coords="917,1145,1020,1172"/>
+<area shape="rect" href="inet_8c.html#a0be3fd117b515a98a255470f01892971" title=" " alt="" coords="1076,664,1172,691"/>
+<area shape="rect" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="1235,563,1323,589"/>
+<area shape="rect" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e" title=" " alt="" coords="1068,436,1180,463"/>
+<area shape="rect" href="pcap_8c.html#a2a0ce9a906ccf7f78dd7960472d0387d" title=" " alt="" coords="1228,461,1331,488"/>
+<area shape="rect" href="pcap_8c.html#a94808ac826c2166a6c4dd6420745d59c" title=" " alt="" coords="1383,563,1502,589"/>
+<area shape="rect" href="pcap-bpf_8c.html#a79459f4198464b94a23dbc29b5f26faa" title=" " alt="" coords="1233,385,1326,412"/>
+<area shape="rect" href="pcap_8c.html#a0a4bfd1489e87910ece325c36df20b4b" title=" " alt="" coords="1783,107,1910,133"/>
+<area shape="rect" href="pcap_8c.html#a11a7be84460ad3f22d35145ba8e5ea67" title=" " alt="" coords="1784,157,1909,184"/>
+<area shape="rect" href="pcap_8c.html#a60d72dd797482b8befb9845da9891f8e" title=" " alt="" coords="1379,5,1507,32"/>
+<area shape="rect" href="pcap_8c.html#a984837a05bf4aad28d3ae7ae37a00381" title=" " alt="" coords="1798,309,1895,336"/>
+<area shape="rect" href="pcap_8c.html#adbcee4ffb0e6d2d6713fd8ab48102975" title=" " alt="" coords="1971,563,2157,589"/>
+<area shape="rect" href="pcap_8c.html#a813e3b44d47490feca79c53e24f38f55" title=" " alt="" coords="1996,309,2132,336"/>
+<area shape="rect" href="pcap_8c.html#a10744f9b68c5101f601357e1915901f1" title=" " alt="" coords="2013,360,2115,387"/>
+<area shape="rect" href="pcap-dag_8c.html#aa5a11bf2bc4ccb7fae6da1d5e599e58b" title=" " alt="" coords="1399,309,1486,336"/>
+<area shape="rect" href="pcap_8c.html#a9c7fbdb07a06bfc69bcb3351d86cecaa" title=" " alt="" coords="1563,284,1714,311"/>
+<area shape="rect" href="pcap-bpf_8c.html#a18ac15bc16cfc96b0beb31400a3483b0" title=" " alt="" coords="1575,1044,1703,1071"/>
+<area shape="rect" href="pcap-bpf_8c.html#aaf543ffda3d4ae8bdcbea95316dfbb94" title=" " alt="" coords="1555,1348,1723,1375"/>
+<area shape="rect" href="pcap-snf_8c.html#ad88721a600440242739f88f5277b6d12" title=" " alt="" coords="1401,360,1484,387"/>
+<area shape="rect" href="pcap-dag_8c.html#a8085f939c5818965f6bd56ba1fb13b56" title=" " alt="" coords="1591,461,1687,488"/>
+<area shape="rect" href="pcap_8c.html#a4c69b372fbbf1031c57c8cbe650ecb03" title=" " alt="" coords="1774,563,1919,589"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="2205,1171,2268,1197"/>
+<area shape="rect" href="pcap_8c.html#af59bee9f6f1cc23c2566b338cacae32c" title=" " alt="" coords="1773,208,1920,235"/>
+<area shape="rect" href="pcap_8c.html#a47f9ba0bf6f52422d5e26870f8136a2a" title=" " alt="" coords="1988,107,2140,133"/>
+<area shape="rect" href="pcap-bpf_8c.html#a91e64f2e8ee14a50b18733d71806e326" title=" " alt="" coords="1809,1019,1884,1045"/>
+<area shape="rect" href="os-sunos4_8h.html#ab426c21b176346931201b586eca8f197" title=" " alt="" coords="1819,867,1874,893"/>
+<area shape="rect" href="pcap-bpf_8c.html#acec2b61b77e0abc5bf6abf636892c94d" title=" " alt="" coords="1781,1424,1912,1451"/>
+<area shape="rect" href="os-sunos4_8h.html#a638757347bd9bf886b3d442b98033cf1" title=" " alt="" coords="1801,917,1893,944"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab1319ab916da18f7a7acf7dba1457010" title=" " alt="" coords="1783,1373,1910,1400"/>
+<area shape="rect" href="pcap-bpf_8c.html#a02d1840e95ee2e631cefc19826229c67" title=" " alt="" coords="1790,968,1903,995"/>
+<area shape="rect" href="pcap-bpf_8c.html#aa874721bd1c8c314ad22e9a3162ddd89" title=" " alt="" coords="1793,765,1900,792"/>
+<area shape="rect" href="pcap-bpf_8c.html#aeb4a9bf3e5e0f7b5191ed72db478287a" title=" " alt="" coords="1771,1221,1923,1248"/>
+<area shape="rect" href="pcap-bpf_8c.html#abf2da4ba6bcf18a809835042c3e3248e" title=" " alt="" coords="1772,1272,1921,1299"/>
+<area shape="rect" href="pcap-bpf_8c.html#aff3f64212f7bf2c6a24d8d79884a4271" title=" " alt="" coords="1784,1069,1909,1096"/>
+<area shape="rect" href="pcap_8c.html#ae6393956e7cde6166fc9e21eaa85f29c" title=" " alt="" coords="1774,816,1919,843"/>
+<area shape="rect" href="pcap-bpf_8c.html#ab8e3bc45aa154ec93c9f0accf92398e6" title=" " alt="" coords="1791,1120,1902,1147"/>
+<area shape="rect" href="pcap-snf_8c.html#a6f246e6bbb4df2bfd9e1d88fdc21bac8" title=" " alt="" coords="1592,512,1685,539"/>
+<area shape="rect" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921" title=" " alt="" coords="544,613,697,640"/>
+<area shape="rect" href="pcap-snf_8c.html#a27404504af4ad14af6d4ce24ecc5ba66" title=" " alt="" coords="545,664,696,691"/>
+<area shape="rect" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17" title=" " alt="" coords="761,613,853,640"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_icgraph.png" border="0" usemap="#ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_icgraph" alt=""/></div>
+<map name="ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_icgraph" id="ainet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,220,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa35276d0fa530c51a455f298fa1ec453" name="aa35276d0fa530c51a455f298fa1ec453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa35276d0fa530c51a455f298fa1ec453">&#9670;&nbsp;</a></span>pcap_lookupnet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pcap_lookupnet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a> *&#160;</td>
+          <td class="paramname"><em>netp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a> *&#160;</td>
+          <td class="paramname"><em>maskp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0">close()</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="structifreq.html#a03e3ec87db4dc6b971c4b1470f21adcc">ifreq::ifr_name</a>, <a class="el" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00">ioctl()</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494">socket()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_aa35276d0fa530c51a455f298fa1ec453_cgraph.png" border="0" usemap="#ainet_8c_aa35276d0fa530c51a455f298fa1ec453_cgraph" alt=""/></div>
+<map name="ainet_8c_aa35276d0fa530c51a455f298fa1ec453_cgraph" id="ainet_8c_aa35276d0fa530c51a455f298fa1ec453_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,119,108"/>
+<area shape="rect" href="os-sunos4_8h.html#ae152484c890a24e4d9b4980e7b965be0" title=" " alt="" coords="189,5,243,32"/>
+<area shape="rect" href="os-sunos4_8h.html#a0b54bbe3103711f0f1ce73d2184b7b00" title=" " alt="" coords="193,56,239,83"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="167,107,265,133"/>
+<area shape="rect" href="os-sunos4_8h.html#ad8757ba7b643ff8279abf9593f543494" title=" " alt="" coords="185,157,247,184"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="313,107,376,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="inet_8c_aa35276d0fa530c51a455f298fa1ec453_icgraph.png" border="0" usemap="#ainet_8c_aa35276d0fa530c51a455f298fa1ec453_icgraph" alt=""/></div>
+<map name="ainet_8c_aa35276d0fa530c51a455f298fa1ec453_icgraph" id="ainet_8c_aa35276d0fa530c51a455f298fa1ec453_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,217,32"/>
+<area shape="rect" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a5578b12d2cc7e3ee27ff908df9e14a21" name="a5578b12d2cc7e3ee27ff908df9e14a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5578b12d2cc7e3ee27ff908df9e14a21">&#9670;&nbsp;</a></span>_U_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char rcsid [] _U_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;@(#) $Header: /tcpdump/master/libpcap/inet.c,v 1.79 2008-04-20 18:19:02 guy Exp $ (LBL)&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

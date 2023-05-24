@@ -1,0 +1,489 @@
+\hypertarget{split_8c}{}\doxysection{split.\+c 文件参考}
+\label{split_8c}\index{split.c@{split.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ars.\+h\char`\"{}}\newline
+split.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{split_8c_a906ec20ca6e8383fc1aa62aac27b9d84}{ARS\+\_\+\+SPLIT\+\_\+\+DONE}}~0
+\item 
+\#define \mbox{\hyperlink{split_8c_a75becedc27f9bd716bfb397f7627d442}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IP}}~1
+\item 
+\#define \mbox{\hyperlink{split_8c_a372e2d9468b53d72e8d88cd516e30bb8}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IPOPT}}~2
+\item 
+\#define \mbox{\hyperlink{split_8c_aa0d49a2603bacb3e6f66f792edca3053}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+ICMP}}~3
+\item 
+\#define \mbox{\hyperlink{split_8c_a415eff8a6d2c79bb8d3e07b71c88deac}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+UDP}}~4
+\item 
+\#define \mbox{\hyperlink{split_8c_a3ea48d789dfd5bf9429404681c5249ae}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCP}}~5
+\item 
+\#define \mbox{\hyperlink{split_8c_a32526f405990db0f1227bc0665015724}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCPOPT}}~6
+\item 
+\#define \mbox{\hyperlink{split_8c_a99346348753187af5d0c576d5ace11d7}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRP}}~7
+\item 
+\#define \mbox{\hyperlink{split_8c_aa1977dece7a819bc7e97c6e9d7d86d83}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRPENTRY}}~8
+\item 
+\#define \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}~9
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{split_8c_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip}} (struct \mbox{\hyperlink{structars__iphdr}{ars\+\_\+iphdr}} $\ast$\mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{split_8c_ac39947e366c86a671125aab2b36103b8}{ars\+\_\+guess\+\_\+ipoff}} (void $\ast$packet, size\+\_\+t size, int $\ast$lhs)
+\item 
+int \mbox{\hyperlink{split_8c_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum}} (struct \mbox{\hyperlink{structars__iphdr}{ars\+\_\+iphdr}} $\ast$\mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}})
+\item 
+int \mbox{\hyperlink{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf}{ars\+\_\+check\+\_\+icmp\+\_\+cksum}} (struct \mbox{\hyperlink{structars__icmphdr}{ars\+\_\+icmphdr}} $\ast$icmp, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_aacd81d7a386a95272cfd88d256d3aaed}{ars\+\_\+split\+\_\+ipopt}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_aade59bcf45da14e51d9da3d2db0f9c72}{ars\+\_\+split\+\_\+icmp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_a728ee81320f386e40fd9eff85eb7f425}{ars\+\_\+split\+\_\+udp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_aa6199a795f02d7e6bb2e4ef824398090}{ars\+\_\+split\+\_\+tcp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\+\_\+split\+\_\+tcpopt}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_addee705cd8463099b6ce1268dc23ce1e}{ars\+\_\+split\+\_\+igrp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309}{ars\+\_\+split\+\_\+igrpentry}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_a2051cb725dc9d2cc58d15d548f7146da}{ars\+\_\+split\+\_\+data}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\item 
+int \mbox{\hyperlink{split_8c_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet}} (void $\ast$packet, size\+\_\+t size, int ipoff, struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt)
+\item 
+void \mbox{\hyperlink{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186}{ars\+\_\+ip\+\_\+next\+\_\+state}} (int ipproto, int $\ast$\mbox{\hyperlink{structstate}{state}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int($\ast$ \mbox{\hyperlink{split_8c_aa470c2d4f38742bdc5c49ae221135cd8}{ars\+\_\+split\+\_\+state\+\_\+handler}} \mbox{[}$\,$\mbox{]})(struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{split_8c_a906ec20ca6e8383fc1aa62aac27b9d84}\label{split_8c_a906ec20ca6e8383fc1aa62aac27b9d84}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_DONE@{ARS\_SPLIT\_DONE}}
+\index{ARS\_SPLIT\_DONE@{ARS\_SPLIT\_DONE}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_DONE}{ARS\_SPLIT\_DONE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+DONE~0}
+
+\mbox{\Hypertarget{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}\label{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_DATA@{ARS\_SPLIT\_GET\_DATA}}
+\index{ARS\_SPLIT\_GET\_DATA@{ARS\_SPLIT\_GET\_DATA}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_DATA}{ARS\_SPLIT\_GET\_DATA}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA~9}
+
+\mbox{\Hypertarget{split_8c_aa0d49a2603bacb3e6f66f792edca3053}\label{split_8c_aa0d49a2603bacb3e6f66f792edca3053}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_ICMP@{ARS\_SPLIT\_GET\_ICMP}}
+\index{ARS\_SPLIT\_GET\_ICMP@{ARS\_SPLIT\_GET\_ICMP}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_ICMP}{ARS\_SPLIT\_GET\_ICMP}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+ICMP~3}
+
+\mbox{\Hypertarget{split_8c_a99346348753187af5d0c576d5ace11d7}\label{split_8c_a99346348753187af5d0c576d5ace11d7}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_IGRP@{ARS\_SPLIT\_GET\_IGRP}}
+\index{ARS\_SPLIT\_GET\_IGRP@{ARS\_SPLIT\_GET\_IGRP}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_IGRP}{ARS\_SPLIT\_GET\_IGRP}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRP~7}
+
+\mbox{\Hypertarget{split_8c_aa1977dece7a819bc7e97c6e9d7d86d83}\label{split_8c_aa1977dece7a819bc7e97c6e9d7d86d83}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_IGRPENTRY@{ARS\_SPLIT\_GET\_IGRPENTRY}}
+\index{ARS\_SPLIT\_GET\_IGRPENTRY@{ARS\_SPLIT\_GET\_IGRPENTRY}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_IGRPENTRY}{ARS\_SPLIT\_GET\_IGRPENTRY}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRPENTRY~8}
+
+\mbox{\Hypertarget{split_8c_a75becedc27f9bd716bfb397f7627d442}\label{split_8c_a75becedc27f9bd716bfb397f7627d442}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_IP@{ARS\_SPLIT\_GET\_IP}}
+\index{ARS\_SPLIT\_GET\_IP@{ARS\_SPLIT\_GET\_IP}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_IP}{ARS\_SPLIT\_GET\_IP}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IP~1}
+
+\mbox{\Hypertarget{split_8c_a372e2d9468b53d72e8d88cd516e30bb8}\label{split_8c_a372e2d9468b53d72e8d88cd516e30bb8}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_IPOPT@{ARS\_SPLIT\_GET\_IPOPT}}
+\index{ARS\_SPLIT\_GET\_IPOPT@{ARS\_SPLIT\_GET\_IPOPT}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_IPOPT}{ARS\_SPLIT\_GET\_IPOPT}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IPOPT~2}
+
+\mbox{\Hypertarget{split_8c_a3ea48d789dfd5bf9429404681c5249ae}\label{split_8c_a3ea48d789dfd5bf9429404681c5249ae}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_TCP@{ARS\_SPLIT\_GET\_TCP}}
+\index{ARS\_SPLIT\_GET\_TCP@{ARS\_SPLIT\_GET\_TCP}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_TCP}{ARS\_SPLIT\_GET\_TCP}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCP~5}
+
+\mbox{\Hypertarget{split_8c_a32526f405990db0f1227bc0665015724}\label{split_8c_a32526f405990db0f1227bc0665015724}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_TCPOPT@{ARS\_SPLIT\_GET\_TCPOPT}}
+\index{ARS\_SPLIT\_GET\_TCPOPT@{ARS\_SPLIT\_GET\_TCPOPT}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_TCPOPT}{ARS\_SPLIT\_GET\_TCPOPT}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCPOPT~6}
+
+\mbox{\Hypertarget{split_8c_a415eff8a6d2c79bb8d3e07b71c88deac}\label{split_8c_a415eff8a6d2c79bb8d3e07b71c88deac}} 
+\index{split.c@{split.c}!ARS\_SPLIT\_GET\_UDP@{ARS\_SPLIT\_GET\_UDP}}
+\index{ARS\_SPLIT\_GET\_UDP@{ARS\_SPLIT\_GET\_UDP}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_SPLIT\_GET\_UDP}{ARS\_SPLIT\_GET\_UDP}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+UDP~4}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf}\label{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf}} 
+\index{split.c@{split.c}!ars\_check\_icmp\_cksum@{ars\_check\_icmp\_cksum}}
+\index{ars\_check\_icmp\_cksum@{ars\_check\_icmp\_cksum}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_check\_icmp\_cksum()}{ars\_check\_icmp\_cksum()}}
+{\footnotesize\ttfamily int ars\+\_\+check\+\_\+icmp\+\_\+cksum (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__icmphdr}{ars\+\_\+icmphdr}} $\ast$}]{icmp,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a334e7533211976bde06b8993431ecc30}{ars\+\_\+cksum()}} , 以及 \mbox{\hyperlink{structars__icmphdr_a5ac4d40ff194847164757a9cd6f59393}{ars\+\_\+icmphdr\+::checksum}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{split_8c_aade59bcf45da14e51d9da3d2db0f9c72}{ars\+\_\+split\+\_\+icmp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a607d30a8f190001e54e88b7478e885bf}\label{split_8c_a607d30a8f190001e54e88b7478e885bf}} 
+\index{split.c@{split.c}!ars\_check\_ip\_cksum@{ars\_check\_ip\_cksum}}
+\index{ars\_check\_ip\_cksum@{ars\_check\_ip\_cksum}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_check\_ip\_cksum()}{ars\_check\_ip\_cksum()}}
+{\footnotesize\ttfamily int ars\+\_\+check\+\_\+ip\+\_\+cksum (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__iphdr}{ars\+\_\+iphdr}} $\ast$}]{ip }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a334e7533211976bde06b8993431ecc30}{ars\+\_\+cksum()}}, \mbox{\hyperlink{structars__iphdr_a2e0a6add4070845e799bff9728765de8}{ars\+\_\+iphdr\+::check}}, \mbox{\hyperlink{structmyiphdr_a2e0a6add4070845e799bff9728765de8}{myiphdr\+::check}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}} , 以及 \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip()}} , 以及 \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{split_8c_a607d30a8f190001e54e88b7478e885bf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a607d30a8f190001e54e88b7478e885bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_ac39947e366c86a671125aab2b36103b8}\label{split_8c_ac39947e366c86a671125aab2b36103b8}} 
+\index{split.c@{split.c}!ars\_guess\_ipoff@{ars\_guess\_ipoff}}
+\index{ars\_guess\_ipoff@{ars\_guess\_ipoff}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_guess\_ipoff()}{ars\_guess\_ipoff()}}
+{\footnotesize\ttfamily int ars\+\_\+guess\+\_\+ipoff (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{lhs }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a471d88729a8efefdccc483c8c36bdb90}{ARS\+\_\+\+ERROR}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{split_8c_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip()}} , 以及 \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_ac39947e366c86a671125aab2b36103b8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{split_8c_ac39947e366c86a671125aab2b36103b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186}\label{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186}} 
+\index{split.c@{split.c}!ars\_ip\_next\_state@{ars\_ip\_next\_state}}
+\index{ars\_ip\_next\_state@{ars\_ip\_next\_state}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_ip\_next\_state()}{ars\_ip\_next\_state()}}
+{\footnotesize\ttfamily void ars\+\_\+ip\+\_\+next\+\_\+state (\begin{DoxyParamCaption}\item[{int}]{ipproto,  }\item[{int $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{in_8h_adb0f36f185742c118972d14c67edc22f}{ARS\+\_\+\+IPPROTO\+\_\+\+ICMP}}, \mbox{\hyperlink{in_8h_aa97de37a1c503d34cc93d4b768ee2aa2}{ARS\+\_\+\+IPPROTO\+\_\+\+IGRP}}, \mbox{\hyperlink{in_8h_a9d7364239be58f9aaa7f11048cca73ae}{ARS\+\_\+\+IPPROTO\+\_\+\+IPIP}}, \mbox{\hyperlink{in_8h_a6f4474bcf11c8c917ba4c891655689f4}{ARS\+\_\+\+IPPROTO\+\_\+\+TCP}}, \mbox{\hyperlink{in_8h_a7a615e10b96d4509b25fa1687a7fa4e1}{ARS\+\_\+\+IPPROTO\+\_\+\+UDP}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_aa0d49a2603bacb3e6f66f792edca3053}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+ICMP}}, \mbox{\hyperlink{split_8c_a99346348753187af5d0c576d5ace11d7}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRP}}, \mbox{\hyperlink{split_8c_a75becedc27f9bd716bfb397f7627d442}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IP}}, \mbox{\hyperlink{split_8c_a3ea48d789dfd5bf9429404681c5249ae}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCP}} , 以及 \mbox{\hyperlink{split_8c_a415eff8a6d2c79bb8d3e07b71c88deac}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+UDP}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip()}} , 以及 \mbox{\hyperlink{split_8c_aacd81d7a386a95272cfd88d256d3aaed}{ars\+\_\+split\+\_\+ipopt()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a481d59fddb08ee4c5b3985c95e727bcd}\label{split_8c_a481d59fddb08ee4c5b3985c95e727bcd}} 
+\index{split.c@{split.c}!ars\_seems\_ip@{ars\_seems\_ip}}
+\index{ars\_seems\_ip@{ars\_seems\_ip}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_seems\_ip()}{ars\_seems\_ip()}}
+{\footnotesize\ttfamily int ars\+\_\+seems\+\_\+ip (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__iphdr}{ars\+\_\+iphdr}} $\ast$}]{ip,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{split_8c_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum()}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}} , 以及 \mbox{\hyperlink{structmyiphdr_af686b52749a9ad1d63eb745cf0c1fce8}{myiphdr\+::version}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_ac39947e366c86a671125aab2b36103b8}{ars\+\_\+guess\+\_\+ipoff()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a481d59fddb08ee4c5b3985c95e727bcd_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a481d59fddb08ee4c5b3985c95e727bcd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a2051cb725dc9d2cc58d15d548f7146da}\label{split_8c_a2051cb725dc9d2cc58d15d548f7146da}} 
+\index{split.c@{split.c}!ars\_split\_data@{ars\_split\_data}}
+\index{ars\_split\_data@{ars\_split\_data}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_data()}{ars\_split\_data()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1a0861f5793b91de1c4c9358c72eea07}{ars\+\_\+add\+\_\+data()}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}} , 以及 \mbox{\hyperlink{split_8c_a906ec20ca6e8383fc1aa62aac27b9d84}{ARS\+\_\+\+SPLIT\+\_\+\+DONE}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a2051cb725dc9d2cc58d15d548f7146da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_aade59bcf45da14e51d9da3d2db0f9c72}\label{split_8c_aade59bcf45da14e51d9da3d2db0f9c72}} 
+\index{split.c@{split.c}!ars\_split\_icmp@{ars\_split\_icmp}}
+\index{ars\_split\_icmp@{ars\_split\_icmp}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_icmp()}{ars\_split\_icmp()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+icmp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a69c72255daed019058e26bb8fbba56f2}{ars\+\_\+add\+\_\+icmphdr()}}, \mbox{\hyperlink{split_8c_a6b9d2d8541bae8e74d2be03876a7b5cf}{ars\+\_\+check\+\_\+icmp\+\_\+cksum()}}, \mbox{\hyperlink{ars_8h_a3f95b6b474b9e214520477644f33e693}{ARS\+\_\+\+ICMP\+\_\+\+ECHO}}, \mbox{\hyperlink{ars_8h_a60449757e30f3b2ea9d415a4606ea37c}{ARS\+\_\+\+ICMP\+\_\+\+ECHOREPLY}}, \mbox{\hyperlink{ars_8h_ab862f6d74952819abca6e03e282078d6}{ARS\+\_\+\+ICMP\+\_\+\+INFO\+\_\+\+REPLY}}, \mbox{\hyperlink{ars_8h_a509d88d3ce512f127e6544aa3291774e}{ARS\+\_\+\+ICMP\+\_\+\+INFO\+\_\+\+REQUEST}}, \mbox{\hyperlink{ars_8h_a814d10ce1c04d827d4721b19400c2597}{ARS\+\_\+\+ICMP\+\_\+\+TIMESTAMP}}, \mbox{\hyperlink{ars_8h_ac344c72e1741f1c8ef32747d11f26cac}{ARS\+\_\+\+ICMP\+\_\+\+TIMESTAMPREPLY}}, \mbox{\hyperlink{ars_8h_a0118c9841706e7717832816f2f3af069}{ARS\+\_\+\+ICMPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a00fe88bf5cda21aa5e3e4666f295b4ec}{ARS\+\_\+\+SPLIT\+\_\+\+FBADCKSUM}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_a75becedc27f9bd716bfb397f7627d442}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IP}} , 以及 \mbox{\hyperlink{structars__icmphdr_aa05eefca31ad6bd4617aac0176b8366e}{ars\+\_\+icmphdr\+::type}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_aade59bcf45da14e51d9da3d2db0f9c72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_addee705cd8463099b6ce1268dc23ce1e}\label{split_8c_addee705cd8463099b6ce1268dc23ce1e}} 
+\index{split.c@{split.c}!ars\_split\_igrp@{ars\_split\_igrp}}
+\index{ars\_split\_igrp@{ars\_split\_igrp}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_igrp()}{ars\_split\_igrp()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+igrp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_aa1977dece7a819bc7e97c6e9d7d86d83}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRPENTRY}}, \mbox{\hyperlink{ars_8h_aa7182a16964d17ccae65d52e2078b59a}{ARS\+\_\+\+TYPE\+\_\+\+IGRP}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_addee705cd8463099b6ce1268dc23ce1e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309}\label{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309}} 
+\index{split.c@{split.c}!ars\_split\_igrpentry@{ars\_split\_igrpentry}}
+\index{ars\_split\_igrpentry@{ars\_split\_igrpentry}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_igrpentry()}{ars\_split\_igrpentry()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+igrpentry (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_aa1977dece7a819bc7e97c6e9d7d86d83}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IGRPENTRY}}, \mbox{\hyperlink{ars_8h_af395b1e39c02c0b973a60331bd98684e}{ARS\+\_\+\+TYPE\+\_\+\+IGRPENTRY}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}\label{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}} 
+\index{split.c@{split.c}!ars\_split\_ip@{ars\_split\_ip}}
+\index{ars\_split\_ip@{ars\_split\_ip}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_ip()}{ars\_split\_ip()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+ip (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a96a021f2a062c189a2a76c52c125d955}{ars\+\_\+add\+\_\+iphdr()}}, \mbox{\hyperlink{split_8c_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum()}}, \mbox{\hyperlink{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186}{ars\+\_\+ip\+\_\+next\+\_\+state()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a00fe88bf5cda21aa5e3e4666f295b4ec}{ARS\+\_\+\+SPLIT\+\_\+\+FBADCKSUM}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_a372e2d9468b53d72e8d88cd516e30bb8}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IPOPT}}, \mbox{\hyperlink{structars__packet_a13307a0c81bbf19030ea4732534efbec}{ars\+\_\+packet\+::aux}}, \mbox{\hyperlink{structars__packet_a9de6bfc936a69cb54ed00430d6524dff}{ars\+\_\+packet\+::aux\+\_\+ipproto}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{ars_8h_a74e75242132eaabbc1c512488a135926}{MIN}} , 以及 \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{myiphdr\+::protocol}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_aacd81d7a386a95272cfd88d256d3aaed}\label{split_8c_aacd81d7a386a95272cfd88d256d3aaed}} 
+\index{split.c@{split.c}!ars\_split\_ipopt@{ars\_split\_ipopt}}
+\index{ars\_split\_ipopt@{ars\_split\_ipopt}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_ipopt()}{ars\_split\_ipopt()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+ipopt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{split_8c_ad32c6d6ddaaf5a5e0b911b56f3808186}{ars\+\_\+ip\+\_\+next\+\_\+state()}}, \mbox{\hyperlink{ars_8h_ae22d3f0fb1a09600e6e984ec540c2092}{ARS\+\_\+\+IPOPT\+\_\+\+END}}, \mbox{\hyperlink{ars_8h_a8790f8ced806002049ad9ddff0f5c89c}{ARS\+\_\+\+IPOPT\+\_\+\+NOOP}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_a372e2d9468b53d72e8d88cd516e30bb8}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IPOPT}}, \mbox{\hyperlink{ars_8h_aa25ec4cefad8e6d10a2347ea8f16379d}{ARS\+\_\+\+TYPE\+\_\+\+IPOPT}}, \mbox{\hyperlink{structars__packet_a13307a0c81bbf19030ea4732534efbec}{ars\+\_\+packet\+::aux}}, \mbox{\hyperlink{structars__packet_a9de6bfc936a69cb54ed00430d6524dff}{ars\+\_\+packet\+::aux\+\_\+ipproto}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__ipopt_aff1a49ace550ffdd4860e52422343ba5}{ars\+\_\+ipopt\+::flags}}, \mbox{\hyperlink{structars__ipopt_a5182523bec98d011e06c3bbcc7dded0a}{ars\+\_\+ipopt\+::kind}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{ars_8h_a74e75242132eaabbc1c512488a135926}{MIN}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_aacd81d7a386a95272cfd88d256d3aaed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a50794dabefd2dbfd27da3d8b54d379f5}\label{split_8c_a50794dabefd2dbfd27da3d8b54d379f5}} 
+\index{split.c@{split.c}!ars\_split\_packet@{ars\_split\_packet}}
+\index{ars\_split\_packet@{ars\_split\_packet}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_packet()}{ars\_split\_packet()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+packet (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int}]{ipoff,  }\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{split_8c_ac39947e366c86a671125aab2b36103b8}{ars\+\_\+guess\+\_\+ipoff()}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{split_8c_a906ec20ca6e8383fc1aa62aac27b9d84}{ARS\+\_\+\+SPLIT\+\_\+\+DONE}}, \mbox{\hyperlink{split_8c_a75becedc27f9bd716bfb397f7627d442}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+IP}}, \mbox{\hyperlink{split_8c_aa470c2d4f38742bdc5c49ae221135cd8}{ars\+\_\+split\+\_\+state\+\_\+handler}}, \mbox{\hyperlink{ars_8h_a735063ab43755806f01c91e556b0b519}{ARS\+\_\+\+TYPE\+\_\+\+IP}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{ars_8h_a74e75242132eaabbc1c512488a135926}{MIN}} , 以及 \mbox{\hyperlink{structmyiphdr_a6551f504ae847a655574224316890281}{myiphdr\+::tot\+\_\+len}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a50794dabefd2dbfd27da3d8b54d379f5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_aa6199a795f02d7e6bb2e4ef824398090}\label{split_8c_aa6199a795f02d7e6bb2e4ef824398090}} 
+\index{split.c@{split.c}!ars\_split\_tcp@{ars\_split\_tcp}}
+\index{ars\_split\_tcp@{ars\_split\_tcp}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_tcp()}{ars\_split\_tcp()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+tcp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{ars_8c_a598390035eb5a96bfc9b26c2a00bd391}{ars\+\_\+add\+\_\+tcphdr()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a7b7275594e4793959743943019f0a428}{ars\+\_\+remove\+\_\+layer()}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a00fe88bf5cda21aa5e3e4666f295b4ec}{ARS\+\_\+\+SPLIT\+\_\+\+FBADCKSUM}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_a32526f405990db0f1227bc0665015724}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCPOPT}}, \mbox{\hyperlink{ars_8h_afc9585950141c333f78c0abe1f1f3688}{ARS\+\_\+\+TYPE\+\_\+\+TCP}}, \mbox{\hyperlink{ars_8c_a9e47a057eb550803c626841b78a8dfc6}{ars\+\_\+udptcp\+\_\+cksum()}}, \mbox{\hyperlink{structars__packet_a13307a0c81bbf19030ea4732534efbec}{ars\+\_\+packet\+::aux}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{ars_8h_a74e75242132eaabbc1c512488a135926}{MIN}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}} , 以及 \mbox{\hyperlink{structars__tcphdr_a4ee81b74e0cdb8b9465e4e2ca12f6dbc}{ars\+\_\+tcphdr\+::th\+\_\+sum}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_aa6199a795f02d7e6bb2e4ef824398090_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a2725c19b46085b0b1dae7a520009522c}\label{split_8c_a2725c19b46085b0b1dae7a520009522c}} 
+\index{split.c@{split.c}!ars\_split\_tcpopt@{ars\_split\_tcpopt}}
+\index{ars\_split\_tcpopt@{ars\_split\_tcpopt}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_tcpopt()}{ars\_split\_tcpopt()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+tcpopt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{split_8c_a32526f405990db0f1227bc0665015724}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+TCPOPT}}, \mbox{\hyperlink{ars_8h_a66a775b58206e40b7ca580501f191f16}{ARS\+\_\+\+TCPOPT\+\_\+\+EOL}}, \mbox{\hyperlink{ars_8h_ae9b07510f4f1a271dee29953244ce4bb}{ARS\+\_\+\+TCPOPT\+\_\+\+NOP}}, \mbox{\hyperlink{ars_8h_ace9ff12798996971c5f239c6c07a6c36}{ARS\+\_\+\+TCPOPT\+\_\+\+SACK\+\_\+\+PERM}}, \mbox{\hyperlink{ars_8h_a41d082957dc67679e848d14055141fab}{ARS\+\_\+\+TYPE\+\_\+\+TCPOPT}}, \mbox{\hyperlink{structars__packet_a13307a0c81bbf19030ea4732534efbec}{ars\+\_\+packet\+::aux}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__tcpopt_a5182523bec98d011e06c3bbcc7dded0a}{ars\+\_\+tcpopt\+::kind}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{ars_8h_a74e75242132eaabbc1c512488a135926}{MIN}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}} , 以及 \mbox{\hyperlink{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}{ars\+\_\+tcpopt\+::size}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a2725c19b46085b0b1dae7a520009522c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{split_8c_a728ee81320f386e40fd9eff85eb7f425}\label{split_8c_a728ee81320f386e40fd9eff85eb7f425}} 
+\index{split.c@{split.c}!ars\_split\_udp@{ars\_split\_udp}}
+\index{ars\_split\_udp@{ars\_split\_udp}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_udp()}{ars\_split\_udp()}}
+{\footnotesize\ttfamily int ars\+\_\+split\+\_\+udp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a1ce7c6839c7cd151386d7c774f2764c0}{ars\+\_\+add\+\_\+generic()}}, \mbox{\hyperlink{ars_8c_a799f01a17a1ca063f83133e69692b45a}{ars\+\_\+add\+\_\+udphdr()}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a7b7275594e4793959743943019f0a428}{ars\+\_\+remove\+\_\+layer()}}, \mbox{\hyperlink{ars_8c_aebcdf7d54a17d16b195a5edbde303446}{ars\+\_\+set\+\_\+flags()}}, \mbox{\hyperlink{ars_8h_a00fe88bf5cda21aa5e3e4666f295b4ec}{ARS\+\_\+\+SPLIT\+\_\+\+FBADCKSUM}}, \mbox{\hyperlink{ars_8h_a4056457cc230379b373e7c50da69b523}{ARS\+\_\+\+SPLIT\+\_\+\+FTRUNC}}, \mbox{\hyperlink{split_8c_ad4f4a3f6008a0e85c8b749e18aa4c8b2}{ARS\+\_\+\+SPLIT\+\_\+\+GET\+\_\+\+DATA}}, \mbox{\hyperlink{ars_8h_a86b4dd5f23f1024318ee2414ef3cda59}{ARS\+\_\+\+TYPE\+\_\+\+UDP}}, \mbox{\hyperlink{ars_8h_ac40df7d18e897479521f678050d7729f}{ARS\+\_\+\+UDPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{ars_8c_a9e47a057eb550803c626841b78a8dfc6}{ars\+\_\+udptcp\+\_\+cksum()}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{ars\+\_\+packet\+::p\+\_\+layer\+\_\+nr}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{structars__udphdr_a7d322b5a2fc66eea1fb792dbc707ddd8}{ars\+\_\+udphdr\+::uh\+\_\+sum}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{split_8c_a728ee81320f386e40fd9eff85eb7f425_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{split_8c_aa470c2d4f38742bdc5c49ae221135cd8}\label{split_8c_aa470c2d4f38742bdc5c49ae221135cd8}} 
+\index{split.c@{split.c}!ars\_split\_state\_handler@{ars\_split\_state\_handler}}
+\index{ars\_split\_state\_handler@{ars\_split\_state\_handler}!split.c@{split.c}}
+\doxysubsubsection{\texorpdfstring{ars\_split\_state\_handler}{ars\_split\_state\_handler}}
+{\footnotesize\ttfamily int($\ast$ ars\+\_\+split\+\_\+state\+\_\+handler\mbox{[}$\,$\mbox{]})(struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, void $\ast$packet, size\+\_\+t size, int $\ast$\mbox{\hyperlink{structstate}{state}}, int $\ast$len) (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size,  }\item[{int $\ast$}]{state,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    NULL,}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\_split\_ip}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_aacd81d7a386a95272cfd88d256d3aaed}{ars\_split\_ipopt}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_aade59bcf45da14e51d9da3d2db0f9c72}{ars\_split\_icmp}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_a728ee81320f386e40fd9eff85eb7f425}{ars\_split\_udp}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_aa6199a795f02d7e6bb2e4ef824398090}{ars\_split\_tcp}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\_split\_tcpopt}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_addee705cd8463099b6ce1268dc23ce1e}{ars\_split\_igrp}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309}{ars\_split\_igrpentry}},}
+\DoxyCodeLine{    \mbox{\hyperlink{split_8c_a2051cb725dc9d2cc58d15d548f7146da}{ars\_split\_data}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet()}}.
+

@@ -1,0 +1,1873 @@
+\hypertarget{gencode_8h}{}\doxysection{libpcap-\/1.1.1/gencode.h 文件参考}
+\label{gencode_8h}\index{libpcap-\/1.1.1/gencode.h@{libpcap-\/1.1.1/gencode.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstmt}{stmt}}
+\item 
+struct \mbox{\hyperlink{structslist}{slist}}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}}
+\item 
+struct \mbox{\hyperlink{structblock}{block}}
+\item 
+struct \mbox{\hyperlink{structarth}{arth}}
+\item 
+struct \mbox{\hyperlink{structqual}{qual}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a9d373a9b65ff25b2db84c07394e1c212}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}(x)
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a58ae72fe6e0866b1fb9196b8cb742890}{Q\+\_\+\+HOST}}~1
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a690b7885f6374aef47f72fb375cf0ba8}{Q\+\_\+\+NET}}~2
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a38da5766a38543268d70d8839bdd7c70}{Q\+\_\+\+PORT}}~3
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a38924d2c76d3d9e7cf5c65bff24e7877}{Q\+\_\+\+GATEWAY}}~4
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a6ab97312ec0ad44622e9b5e37d80f109}{Q\+\_\+\+PROTO}}~5
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a26bb15a10557eb61e6c3566526ba7e50}{Q\+\_\+\+PROTOCHAIN}}~6
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a03063b4cd610749e2960fdc4c445ccec}{Q\+\_\+\+PORTRANGE}}~7
+\item 
+\#define \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}}~1
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}{Q\+\_\+\+IP}}~2
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a6261aeefc0555cc8358a2e237a4f3db8}{Q\+\_\+\+ARP}}~3
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ae3a9fcad3ab4dd3a9c8ea647b0da730f}{Q\+\_\+\+RARP}}~4
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad52d4d920c67ba8b5733bb37ffe37c64}{Q\+\_\+\+SCTP}}~5
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a3593b205e1e9789f2e6ac2b599dfaa54}{Q\+\_\+\+TCP}}~6
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a13632344e0999fd68e6085d28b37f2bd}{Q\+\_\+\+UDP}}~7
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a39e90ed16b97cb2d199171d6c4791b29}{Q\+\_\+\+ICMP}}~8
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5585c5580104bbc57bdbcf23a7271595}{Q\+\_\+\+IGMP}}~9
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a866dfcb6f0cb3c3e17952e302789f809}{Q\+\_\+\+IGRP}}~10
+\item 
+\#define \mbox{\hyperlink{gencode_8h_afae80334f7cc3c4aa85ef0a80f55a3d6}{Q\+\_\+\+ATALK}}~11
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a2cd310e0f691cb074e3102c512c187d5}{Q\+\_\+\+DECNET}}~12
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad3be69fa811c2bd1d589674f5325048e}{Q\+\_\+\+LAT}}~13
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aa894482c5328c891712a3ed5b108e927}{Q\+\_\+\+SCA}}~14
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a60a6fa1a850ff5056c78438acb5929ad}{Q\+\_\+\+MOPRC}}~15
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ab1e2618b6e30687c154a4d9d8797663b}{Q\+\_\+\+MOPDL}}~16
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}{Q\+\_\+\+IPV6}}~17
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a4d49463c657d79857449e4661fc9e6b2}{Q\+\_\+\+ICMPV6}}~18
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a6c2864a2b3a717282ba1f5f3ccc2deed}{Q\+\_\+\+AH}}~19
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a7925ff44e3abc7b57f7a18438b658c1b}{Q\+\_\+\+ESP}}~20
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ade68497dc85f94c9957363b0bdb468a5}{Q\+\_\+\+PIM}}~21
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ac0b8ac58ece3005ed8665659d46c1b29}{Q\+\_\+\+VRRP}}~22
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a398bd5ae2469565670f6d01da3fccdbc}{Q\+\_\+\+AARP}}~23
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0ae6532238ca8e9f84f22affc8afeb7f}{Q\+\_\+\+ISO}}~24
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5c985faa808841abf54719989ebd591f}{Q\+\_\+\+ESIS}}~25
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a45c9f4201a9983d82aa76b48429c4475}{Q\+\_\+\+ISIS}}~26
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aba625a40200b04aa5f17dedb22d01f33}{Q\+\_\+\+CLNP}}~27
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a2e8319e0a7f150a64561448725885e1d}{Q\+\_\+\+STP}}~28
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a73ce1d8c21a188c6595f817ddacfe204}{Q\+\_\+\+IPX}}~29
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad8b911f20c053cc25630dfb2c74bfb58}{Q\+\_\+\+NETBEUI}}~30
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a4628136e594ca4f0b0abe3abad35b7fc}{Q\+\_\+\+ISIS\+\_\+\+L1}}~31
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a2b6fdc22b0a0999a1d5f9ab6cd730a26}{Q\+\_\+\+ISIS\+\_\+\+L2}}~32
+\item 
+\#define \mbox{\hyperlink{gencode_8h_adecc5ad16acb3ad1ab1ba61f1017c8ea}{Q\+\_\+\+ISIS\+\_\+\+IIH}}~33
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a81736e8d3cfa0470a2f1c81928e7718b}{Q\+\_\+\+ISIS\+\_\+\+LAN\+\_\+\+IIH}}~34
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a85e7c56f0ed02d8d882bc71922d57ea7}{Q\+\_\+\+ISIS\+\_\+\+PTP\+\_\+\+IIH}}~35
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aea61d5a08eaa2605df021ceedf223902}{Q\+\_\+\+ISIS\+\_\+\+SNP}}~36
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aa297ae8e9771ad7f3914bfcf74a32703}{Q\+\_\+\+ISIS\+\_\+\+CSNP}}~37
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aa497f6bfa8eedfb806b7106406b7d8d3}{Q\+\_\+\+ISIS\+\_\+\+PSNP}}~38
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ab944592153bdcd9efd0624af499f3c62}{Q\+\_\+\+ISIS\+\_\+\+LSP}}~39
+\item 
+\#define \mbox{\hyperlink{gencode_8h_afebf889ab1f1bba65bb45644578e80dc}{Q\+\_\+\+RADIO}}~40
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ae06ecbd337137107b3af05aa0c4d4bd3}{Q\+\_\+\+SRC}}~1
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a33d7db8d2c4694cad8fc1deb47800d22}{Q\+\_\+\+DST}}~2
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aeb5c13520f5f09f3ff3f854c2db53fcf}{Q\+\_\+\+OR}}~3
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0a5284c4112e1875b928ca001f0e976f}{Q\+\_\+\+AND}}~4
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a1e135354506d183ce33b2b81c3b8031f}{Q\+\_\+\+ADDR1}}~5
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a26c347a7e8675595c222b93ff0ad90af}{Q\+\_\+\+ADDR2}}~6
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a88363a40e552625cd5d8753b8f1385d0}{Q\+\_\+\+ADDR3}}~7
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ada76f59433d5d06097bfb69751ddb63e}{Q\+\_\+\+ADDR4}}~8
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a46c449445c5d7f77f266148e152699d3}{Q\+\_\+\+DEFAULT}}~0
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5adc7fa0fdedd562f2abc681e6c2067b}{Q\+\_\+\+UNDEF}}~255
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aaa651d955d2c033003cdc5fc3cea5a52}{A\+\_\+\+METAC}}~22 /$\ast$ Meta signalling Circuit $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a3f4c5b6a799797bf6ce2cc9158e3c520}{A\+\_\+\+BCC}}~23 /$\ast$ Broadcast Circuit $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a9e2425ec726bee5c1d0d43ea625349d0}{A\+\_\+\+OAMF4\+SC}}~24 /$\ast$ Segment OAM F4 Circuit $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aa03d36bdd829ed8f0a686c1ecf381e43}{A\+\_\+\+OAMF4\+EC}}~25 /$\ast$ End-\/to-\/End OAM F4 Circuit $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5a4a49a98ee0ba13e1513b72f1d1bb97}{A\+\_\+\+SC}}~26 /$\ast$ Signalling Circuit$\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0753d783706b89568203d98989ca6b82}{A\+\_\+\+ILMIC}}~27 /$\ast$ ILMI Circuit $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a804f92c877f78967212a1828c1517653}{A\+\_\+\+OAM}}~28 /$\ast$ OAM cells \+: F4 only $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a3e1afb3101fe7ae7b628795ceaf827e9}{A\+\_\+\+OAMF4}}~29 /$\ast$ OAM F4 cells\+: Segment + End-\/to-\/end $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aff8d561a1ca2b7e6ebd31231a05f1544}{A\+\_\+\+LANE}}~30 /$\ast$ LANE traffic $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0f5ca9c7e7ab3098efc9a7c0a402cdf3}{A\+\_\+\+LLC}}~31 /$\ast$ LLC-\/encapsulated traffic $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aad01db6c9be2b56353c6410ae9c148b4}{A\+\_\+\+SETUP}}~41 /$\ast$ Setup message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_abd40dfff6bd956b241193b8d29f65ffd}{A\+\_\+\+CALLPROCEED}}~42 /$\ast$ Call proceeding message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a68fd1ec7f93b8411d1cb322098cdb9c6}{A\+\_\+\+CONNECT}}~43 /$\ast$ Connect message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a634b69875ab85ccf87234033f4d67af2}{A\+\_\+\+CONNECTACK}}~44 /$\ast$ Connect Ack message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0d9c8e71c9cdab2434cc76179387af73}{A\+\_\+\+RELEASE}}~45 /$\ast$ Release message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5b2d17ccaf9fe5a7425238d7dab32049}{A\+\_\+\+RELEASE\+\_\+\+DONE}}~46 /$\ast$ Release message $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}{A\+\_\+\+VPI}}~51
+\item 
+\#define \mbox{\hyperlink{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}{A\+\_\+\+VCI}}~52
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a1401c0ec613fbe04d1cb3c28c459c573}{A\+\_\+\+PROTOTYPE}}~53
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a0fbe4c45d47b800a3cd9414da91e870a}{A\+\_\+\+MSGTYPE}}~54
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a5d6adffe35244db7c1aa2873368056d0}{A\+\_\+\+CALLREFTYPE}}~55
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a34172bdeee1efd4c1f89ad8da538f175}{A\+\_\+\+CONNECTMSG}}
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a00ded8fbcf512e124afc27f56fa0b835}{A\+\_\+\+METACONNECT}}
+\item 
+\#define \mbox{\hyperlink{gencode_8h_af070ae8c03803422b27f78395c1da80e}{M\+\_\+\+FISU}}~22 /$\ast$ FISU $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_acff2e4809fb803720e5cfdee87adaf1e}{M\+\_\+\+LSSU}}~23 /$\ast$ LSSU $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad2ba3a2c843991308322b14f99b4eec3}{M\+\_\+\+MSU}}~24 /$\ast$ MSU $\ast$/
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a30c77d0d1153115eae55c2da2fd1ff2e}{M\+\_\+\+SIO}}~1
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a9b997fe9ae69a228b5c18daaa0ee3874}{M\+\_\+\+OPC}}~2
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a3a6678681cceb6c348052f8bcf8d7349}{M\+\_\+\+DPC}}~3
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a67b7afda867910dc86057c0217d73a1f}{M\+\_\+\+SLS}}~4
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a39d1bbb866513fcc685c136c81ffc988}{ATOMMASK}}(n)~(1 $<$$<$ (n))
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a8b7c4580833925bc9e67c6914def8e25}{ATOMELEM}}(d,  n)~(d \& \mbox{\hyperlink{gencode_8h_a39d1bbb866513fcc685c136c81ffc988}{ATOMMASK}}(n))
+\item 
+\#define \mbox{\hyperlink{gencode_8h_ad3a22aaa854e1588d50e977c11fd0da0}{N\+\_\+\+ATOMS}}~(\mbox{\hyperlink{bpf_8h_a3d0784c48bb96cbd327445d6dae322d3}{BPF\+\_\+\+MEMWORDS}}+2)
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a7afd4c1ff792d9dda017800c0d316174}{JT}}(b)~((b)-\/$>$et.\+succ)
+\item 
+\#define \mbox{\hyperlink{gencode_8h_a98dd75a734b015fc600725ee8f11006b}{JF}}(b)~((b)-\/$>$ef.\+succ)
+\end{DoxyCompactItemize}
+\doxysubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}}
+\item 
+typedef \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$ \mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structarth}{arth}} $\ast$ \mbox{\hyperlink{gencode_8h_a9bfc1dd3eb4a2d4b985b7a45761665e6}{gen\+\_\+loadi}} (int)
+\item 
+struct \mbox{\hyperlink{structarth}{arth}} $\ast$ \mbox{\hyperlink{gencode_8h_a09c15b884b2850a244973eccb2081622}{gen\+\_\+load}} (int, struct \mbox{\hyperlink{structarth}{arth}} $\ast$, int)
+\item 
+struct \mbox{\hyperlink{structarth}{arth}} $\ast$ \mbox{\hyperlink{gencode_8h_ae8334723ecf8facd80f3d8a9f706659b}{gen\+\_\+loadlen}} (void)
+\item 
+struct \mbox{\hyperlink{structarth}{arth}} $\ast$ \mbox{\hyperlink{gencode_8h_a0102c8bfabfa51da7722e58d01c62257}{gen\+\_\+neg}} (struct \mbox{\hyperlink{structarth}{arth}} $\ast$)
+\item 
+struct \mbox{\hyperlink{structarth}{arth}} $\ast$ \mbox{\hyperlink{gencode_8h_a97a7d872b5a8b7f1541c204593250c1c}{gen\+\_\+arth}} (int, struct \mbox{\hyperlink{structarth}{arth}} $\ast$, struct \mbox{\hyperlink{structarth}{arth}} $\ast$)
+\item 
+void \mbox{\hyperlink{gencode_8h_af84b135a69d437cec246769fe373f5be}{gen\+\_\+and}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$, struct \mbox{\hyperlink{structblock}{block}} $\ast$)
+\item 
+void \mbox{\hyperlink{gencode_8h_a12a1ea04ef292c4af893acfeb229f97f}{gen\+\_\+or}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$, struct \mbox{\hyperlink{structblock}{block}} $\ast$)
+\item 
+void \mbox{\hyperlink{gencode_8h_a1a0b468d16c3c5bba62ca5fa71ba61e1}{gen\+\_\+not}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a9783c6bbd132f7f0562334ebb2c2417f}{gen\+\_\+scode}} (const char $\ast$, struct \mbox{\hyperlink{structqual}{qual}})
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a0da7056369cb7a37bd69623a4a29ddc9}{gen\+\_\+ecode}} (const u\+\_\+char $\ast$, struct \mbox{\hyperlink{structqual}{qual}})
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a935b7cdc3ad117d7f7c426096966c7a0}{gen\+\_\+acode}} (const u\+\_\+char $\ast$, struct \mbox{\hyperlink{structqual}{qual}})
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ae41727b2bf7e4a2961376d3c6fad708f}{gen\+\_\+mcode}} (const char $\ast$, const char $\ast$, int, struct \mbox{\hyperlink{structqual}{qual}})
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a9bb42d4615a047772542156307620808}{gen\+\_\+ncode}} (const char $\ast$, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}, struct \mbox{\hyperlink{structqual}{qual}})
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a7f5e28e4e2e81c8770ef6498ee1895b5}{gen\+\_\+proto\+\_\+abbrev}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a87caf83ba4ff130c31b191c978e0b971}{gen\+\_\+relation}} (int, struct \mbox{\hyperlink{structarth}{arth}} $\ast$, struct \mbox{\hyperlink{structarth}{arth}} $\ast$, int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ad7750a57ed4e3c8e0b8c25c0588a394b}{gen\+\_\+less}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a33e4fd5eedbb3e98997f5dd4c165f63c}{gen\+\_\+greater}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a85cf15ecc3536173f0a3c8d805e72a74}{gen\+\_\+byteop}} (int, int, int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a8240c920ac31c254f2f74ff92c5a93b0}{gen\+\_\+broadcast}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ad93122c4473a2157f42b74947c62077e}{gen\+\_\+multicast}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a4f3bde0ac1adadd4372f574b366dd293}{gen\+\_\+inbound}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a906509f531064350d8cc8747d63cea8c}{gen\+\_\+vlan}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_afbfb7c5d5925d261b989fe7a7a874a03}{gen\+\_\+mpls}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ade2389af18d7e526a5ffd3226e65f949}{gen\+\_\+pppoed}} (void)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a1eda5e37aef5416c2ad04e080b6e2313}{gen\+\_\+pppoes}} (void)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ac417f375702a941a60502ed47874365e}{gen\+\_\+atmfield\+\_\+code}} (int atmfield, \mbox{\hyperlink{bpf_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\+\_\+int32}} jvalue, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} jtype, int reverse)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ae7dfaf0f64c34469ed97e96ec0054c67}{gen\+\_\+atmtype\+\_\+abbrev}} (int type)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev}} (int type)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a537190b411d8c2b06fb133e782c33e99}{gen\+\_\+mtp2type\+\_\+abbrev}} (int type)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ad167f0fea09b21a582c8a2231e1f1bc9}{gen\+\_\+mtp3field\+\_\+code}} (int mtp3field, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} jvalue, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} jtype, int reverse)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ac52fe4d04ce1c4283a40a0ca125ca962}{gen\+\_\+pf\+\_\+ifname}} (const char $\ast$)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a8518977fad3d519d54e4199a5466857f}{gen\+\_\+pf\+\_\+rnr}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_af6fa7ec5c78970c80834b433290fc54b}{gen\+\_\+pf\+\_\+srnr}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a23352d318d2940cf80a4b8c872dbd4a6}{gen\+\_\+pf\+\_\+ruleset}} (char $\ast$)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_ae7c9e6dd913ff6c69cefb29a1723d9b1}{gen\+\_\+pf\+\_\+reason}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a7654480cd356e06ac51ebcd069aa8247}{gen\+\_\+pf\+\_\+action}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_aac7e67e00ebe5cff970631285b9d0975}{gen\+\_\+pf\+\_\+dir}} (int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_afcec5c4d056b4022b6ec7400ddbde2a6}{gen\+\_\+p80211\+\_\+type}} (int, int)
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{gencode_8h_a84b25ed4789c08647f8085896b1c9279}{gen\+\_\+p80211\+\_\+fcdir}} (int)
+\item 
+void \mbox{\hyperlink{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc}{bpf\+\_\+optimize}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$$\ast$)
+\item 
+void \mbox{\hyperlink{gencode_8h_ac6dabcdf7ac7b1a194f6d1b4355e4709}{bpf\+\_\+error}} (const char $\ast$,...) \mbox{\hyperlink{Gnuc_8h_a4a410a9dbdf16bf40bc18d86562f42bb}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}((noreturn
+\item 
+void \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}} (\mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf}}, 1, 2)))
+\item 
+void \mbox{\hyperlink{gencode_8h_a0baef9a6ee47eac0134570f3953b4cd5}{finish\+\_\+parse}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{gencode_8h_a06ebda13bd00544e570c6d87fa8f6ad0}{sdup}} (const char $\ast$)
+\item 
+struct \mbox{\hyperlink{structbpf__insn}{bpf\+\_\+insn}} $\ast$ \mbox{\hyperlink{gencode_8h_af1fc7669f2731a91acf384f52b2737ca}{icode\+\_\+to\+\_\+fcode}} (struct \mbox{\hyperlink{structblock}{block}} $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{gencode_8h_ae4592116c9e6fe65054655e560cae7e4}{pcap\+\_\+parse}} (void)
+\item 
+void \mbox{\hyperlink{gencode_8h_adcf2bf00a9a9336772c054424c17dc15}{lex\+\_\+init}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{gencode_8h_a69643329eb9dd7a8dabfcbabf3ab4992}{lex\+\_\+cleanup}} (void)
+\item 
+void \mbox{\hyperlink{gencode_8h_ae6ad953d507d11908c51b861eb239a7d}{sappend}} (struct \mbox{\hyperlink{structslist}{slist}} $\ast$, struct \mbox{\hyperlink{structslist}{slist}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{gencode_8h_ada5296a0da902e2384cd4d180df590b1}{no\+\_\+optimize}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{gencode_8h_a9d373a9b65ff25b2db84c07394e1c212}\label{gencode_8h_a9d373a9b65ff25b2db84c07394e1c212}} 
+\index{gencode.h@{gencode.h}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+attribute\+\_\+\+\_\+(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_a3f4c5b6a799797bf6ce2cc9158e3c520}\label{gencode_8h_a3f4c5b6a799797bf6ce2cc9158e3c520}} 
+\index{gencode.h@{gencode.h}!A\_BCC@{A\_BCC}}
+\index{A\_BCC@{A\_BCC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_BCC}{A\_BCC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+BCC~23 /$\ast$ Broadcast Circuit $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_abd40dfff6bd956b241193b8d29f65ffd}\label{gencode_8h_abd40dfff6bd956b241193b8d29f65ffd}} 
+\index{gencode.h@{gencode.h}!A\_CALLPROCEED@{A\_CALLPROCEED}}
+\index{A\_CALLPROCEED@{A\_CALLPROCEED}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_CALLPROCEED}{A\_CALLPROCEED}}
+{\footnotesize\ttfamily \#define A\+\_\+\+CALLPROCEED~42 /$\ast$ Call proceeding message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a5d6adffe35244db7c1aa2873368056d0}\label{gencode_8h_a5d6adffe35244db7c1aa2873368056d0}} 
+\index{gencode.h@{gencode.h}!A\_CALLREFTYPE@{A\_CALLREFTYPE}}
+\index{A\_CALLREFTYPE@{A\_CALLREFTYPE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_CALLREFTYPE}{A\_CALLREFTYPE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+CALLREFTYPE~55}
+
+\mbox{\Hypertarget{gencode_8h_a68fd1ec7f93b8411d1cb322098cdb9c6}\label{gencode_8h_a68fd1ec7f93b8411d1cb322098cdb9c6}} 
+\index{gencode.h@{gencode.h}!A\_CONNECT@{A\_CONNECT}}
+\index{A\_CONNECT@{A\_CONNECT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_CONNECT}{A\_CONNECT}}
+{\footnotesize\ttfamily \#define A\+\_\+\+CONNECT~43 /$\ast$ Connect message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a634b69875ab85ccf87234033f4d67af2}\label{gencode_8h_a634b69875ab85ccf87234033f4d67af2}} 
+\index{gencode.h@{gencode.h}!A\_CONNECTACK@{A\_CONNECTACK}}
+\index{A\_CONNECTACK@{A\_CONNECTACK}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_CONNECTACK}{A\_CONNECTACK}}
+{\footnotesize\ttfamily \#define A\+\_\+\+CONNECTACK~44 /$\ast$ Connect Ack message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a34172bdeee1efd4c1f89ad8da538f175}\label{gencode_8h_a34172bdeee1efd4c1f89ad8da538f175}} 
+\index{gencode.h@{gencode.h}!A\_CONNECTMSG@{A\_CONNECTMSG}}
+\index{A\_CONNECTMSG@{A\_CONNECTMSG}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_CONNECTMSG}{A\_CONNECTMSG}}
+{\footnotesize\ttfamily \#define A\+\_\+\+CONNECTMSG}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   70   \textcolor{comment}{/* returns Q.2931 signalling messages for}}
+\DoxyCodeLine{\textcolor{comment}{                   establishing and destroying switched}}
+\DoxyCodeLine{\textcolor{comment}{                   virtual connection */}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gencode_8h_a0753d783706b89568203d98989ca6b82}\label{gencode_8h_a0753d783706b89568203d98989ca6b82}} 
+\index{gencode.h@{gencode.h}!A\_ILMIC@{A\_ILMIC}}
+\index{A\_ILMIC@{A\_ILMIC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_ILMIC}{A\_ILMIC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+ILMIC~27 /$\ast$ ILMI Circuit $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_aff8d561a1ca2b7e6ebd31231a05f1544}\label{gencode_8h_aff8d561a1ca2b7e6ebd31231a05f1544}} 
+\index{gencode.h@{gencode.h}!A\_LANE@{A\_LANE}}
+\index{A\_LANE@{A\_LANE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_LANE}{A\_LANE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+LANE~30 /$\ast$ LANE traffic $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a0f5ca9c7e7ab3098efc9a7c0a402cdf3}\label{gencode_8h_a0f5ca9c7e7ab3098efc9a7c0a402cdf3}} 
+\index{gencode.h@{gencode.h}!A\_LLC@{A\_LLC}}
+\index{A\_LLC@{A\_LLC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_LLC}{A\_LLC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+LLC~31 /$\ast$ LLC-\/encapsulated traffic $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_aaa651d955d2c033003cdc5fc3cea5a52}\label{gencode_8h_aaa651d955d2c033003cdc5fc3cea5a52}} 
+\index{gencode.h@{gencode.h}!A\_METAC@{A\_METAC}}
+\index{A\_METAC@{A\_METAC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_METAC}{A\_METAC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+METAC~22 /$\ast$ Meta signalling Circuit $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a00ded8fbcf512e124afc27f56fa0b835}\label{gencode_8h_a00ded8fbcf512e124afc27f56fa0b835}} 
+\index{gencode.h@{gencode.h}!A\_METACONNECT@{A\_METACONNECT}}
+\index{A\_METACONNECT@{A\_METACONNECT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_METACONNECT}{A\_METACONNECT}}
+{\footnotesize\ttfamily \#define A\+\_\+\+METACONNECT}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   71   \textcolor{comment}{/* returns Q.2931 signalling messages for}}
+\DoxyCodeLine{\textcolor{comment}{                   establishing and destroying predefined}}
+\DoxyCodeLine{\textcolor{comment}{                   virtual circuits, such as broadcast}}
+\DoxyCodeLine{\textcolor{comment}{                   circuit, oamf4 segment circuit, oamf4}}
+\DoxyCodeLine{\textcolor{comment}{                   end-\/to-\/end circuits, ILMI circuits or}}
+\DoxyCodeLine{\textcolor{comment}{                   connection signalling circuit. */}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gencode_8h_a0fbe4c45d47b800a3cd9414da91e870a}\label{gencode_8h_a0fbe4c45d47b800a3cd9414da91e870a}} 
+\index{gencode.h@{gencode.h}!A\_MSGTYPE@{A\_MSGTYPE}}
+\index{A\_MSGTYPE@{A\_MSGTYPE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_MSGTYPE}{A\_MSGTYPE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+MSGTYPE~54}
+
+\mbox{\Hypertarget{gencode_8h_a804f92c877f78967212a1828c1517653}\label{gencode_8h_a804f92c877f78967212a1828c1517653}} 
+\index{gencode.h@{gencode.h}!A\_OAM@{A\_OAM}}
+\index{A\_OAM@{A\_OAM}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_OAM}{A\_OAM}}
+{\footnotesize\ttfamily \#define A\+\_\+\+OAM~28 /$\ast$ OAM cells \+: F4 only $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a3e1afb3101fe7ae7b628795ceaf827e9}\label{gencode_8h_a3e1afb3101fe7ae7b628795ceaf827e9}} 
+\index{gencode.h@{gencode.h}!A\_OAMF4@{A\_OAMF4}}
+\index{A\_OAMF4@{A\_OAMF4}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_OAMF4}{A\_OAMF4}}
+{\footnotesize\ttfamily \#define A\+\_\+\+OAMF4~29 /$\ast$ OAM F4 cells\+: Segment + End-\/to-\/end $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_aa03d36bdd829ed8f0a686c1ecf381e43}\label{gencode_8h_aa03d36bdd829ed8f0a686c1ecf381e43}} 
+\index{gencode.h@{gencode.h}!A\_OAMF4EC@{A\_OAMF4EC}}
+\index{A\_OAMF4EC@{A\_OAMF4EC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_OAMF4EC}{A\_OAMF4EC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+OAMF4\+EC~25 /$\ast$ End-\/to-\/End OAM F4 Circuit $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a9e2425ec726bee5c1d0d43ea625349d0}\label{gencode_8h_a9e2425ec726bee5c1d0d43ea625349d0}} 
+\index{gencode.h@{gencode.h}!A\_OAMF4SC@{A\_OAMF4SC}}
+\index{A\_OAMF4SC@{A\_OAMF4SC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_OAMF4SC}{A\_OAMF4SC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+OAMF4\+SC~24 /$\ast$ Segment OAM F4 Circuit $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a1401c0ec613fbe04d1cb3c28c459c573}\label{gencode_8h_a1401c0ec613fbe04d1cb3c28c459c573}} 
+\index{gencode.h@{gencode.h}!A\_PROTOTYPE@{A\_PROTOTYPE}}
+\index{A\_PROTOTYPE@{A\_PROTOTYPE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_PROTOTYPE}{A\_PROTOTYPE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+PROTOTYPE~53}
+
+\mbox{\Hypertarget{gencode_8h_a0d9c8e71c9cdab2434cc76179387af73}\label{gencode_8h_a0d9c8e71c9cdab2434cc76179387af73}} 
+\index{gencode.h@{gencode.h}!A\_RELEASE@{A\_RELEASE}}
+\index{A\_RELEASE@{A\_RELEASE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_RELEASE}{A\_RELEASE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+RELEASE~45 /$\ast$ Release message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a5b2d17ccaf9fe5a7425238d7dab32049}\label{gencode_8h_a5b2d17ccaf9fe5a7425238d7dab32049}} 
+\index{gencode.h@{gencode.h}!A\_RELEASE\_DONE@{A\_RELEASE\_DONE}}
+\index{A\_RELEASE\_DONE@{A\_RELEASE\_DONE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_RELEASE\_DONE}{A\_RELEASE\_DONE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+RELEASE\+\_\+\+DONE~46 /$\ast$ Release message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a5a4a49a98ee0ba13e1513b72f1d1bb97}\label{gencode_8h_a5a4a49a98ee0ba13e1513b72f1d1bb97}} 
+\index{gencode.h@{gencode.h}!A\_SC@{A\_SC}}
+\index{A\_SC@{A\_SC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_SC}{A\_SC}}
+{\footnotesize\ttfamily \#define A\+\_\+\+SC~26 /$\ast$ Signalling Circuit$\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_aad01db6c9be2b56353c6410ae9c148b4}\label{gencode_8h_aad01db6c9be2b56353c6410ae9c148b4}} 
+\index{gencode.h@{gencode.h}!A\_SETUP@{A\_SETUP}}
+\index{A\_SETUP@{A\_SETUP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_SETUP}{A\_SETUP}}
+{\footnotesize\ttfamily \#define A\+\_\+\+SETUP~41 /$\ast$ Setup message $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}\label{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}} 
+\index{gencode.h@{gencode.h}!A\_VCI@{A\_VCI}}
+\index{A\_VCI@{A\_VCI}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_VCI}{A\_VCI}}
+{\footnotesize\ttfamily \#define A\+\_\+\+VCI~52}
+
+\mbox{\Hypertarget{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}\label{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}} 
+\index{gencode.h@{gencode.h}!A\_VPI@{A\_VPI}}
+\index{A\_VPI@{A\_VPI}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{A\_VPI}{A\_VPI}}
+{\footnotesize\ttfamily \#define A\+\_\+\+VPI~51}
+
+\mbox{\Hypertarget{gencode_8h_a8b7c4580833925bc9e67c6914def8e25}\label{gencode_8h_a8b7c4580833925bc9e67c6914def8e25}} 
+\index{gencode.h@{gencode.h}!ATOMELEM@{ATOMELEM}}
+\index{ATOMELEM@{ATOMELEM}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{ATOMELEM}{ATOMELEM}}
+{\footnotesize\ttfamily \#define ATOMELEM(\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{n }\end{DoxyParamCaption})~(d \& \mbox{\hyperlink{gencode_8h_a39d1bbb866513fcc685c136c81ffc988}{ATOMMASK}}(n))}
+
+\mbox{\Hypertarget{gencode_8h_a39d1bbb866513fcc685c136c81ffc988}\label{gencode_8h_a39d1bbb866513fcc685c136c81ffc988}} 
+\index{gencode.h@{gencode.h}!ATOMMASK@{ATOMMASK}}
+\index{ATOMMASK@{ATOMMASK}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{ATOMMASK}{ATOMMASK}}
+{\footnotesize\ttfamily \#define ATOMMASK(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(1 $<$$<$ (n))}
+
+\mbox{\Hypertarget{gencode_8h_a98dd75a734b015fc600725ee8f11006b}\label{gencode_8h_a98dd75a734b015fc600725ee8f11006b}} 
+\index{gencode.h@{gencode.h}!JF@{JF}}
+\index{JF@{JF}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{JF}{JF}}
+{\footnotesize\ttfamily \#define JF(\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})~((b)-\/$>$ef.\+succ)}
+
+\mbox{\Hypertarget{gencode_8h_a7afd4c1ff792d9dda017800c0d316174}\label{gencode_8h_a7afd4c1ff792d9dda017800c0d316174}} 
+\index{gencode.h@{gencode.h}!JT@{JT}}
+\index{JT@{JT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{JT}{JT}}
+{\footnotesize\ttfamily \#define JT(\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})~((b)-\/$>$et.\+succ)}
+
+\mbox{\Hypertarget{gencode_8h_a3a6678681cceb6c348052f8bcf8d7349}\label{gencode_8h_a3a6678681cceb6c348052f8bcf8d7349}} 
+\index{gencode.h@{gencode.h}!M\_DPC@{M\_DPC}}
+\index{M\_DPC@{M\_DPC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_DPC}{M\_DPC}}
+{\footnotesize\ttfamily \#define M\+\_\+\+DPC~3}
+
+\mbox{\Hypertarget{gencode_8h_af070ae8c03803422b27f78395c1da80e}\label{gencode_8h_af070ae8c03803422b27f78395c1da80e}} 
+\index{gencode.h@{gencode.h}!M\_FISU@{M\_FISU}}
+\index{M\_FISU@{M\_FISU}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_FISU}{M\_FISU}}
+{\footnotesize\ttfamily \#define M\+\_\+\+FISU~22 /$\ast$ FISU $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_acff2e4809fb803720e5cfdee87adaf1e}\label{gencode_8h_acff2e4809fb803720e5cfdee87adaf1e}} 
+\index{gencode.h@{gencode.h}!M\_LSSU@{M\_LSSU}}
+\index{M\_LSSU@{M\_LSSU}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_LSSU}{M\_LSSU}}
+{\footnotesize\ttfamily \#define M\+\_\+\+LSSU~23 /$\ast$ LSSU $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_ad2ba3a2c843991308322b14f99b4eec3}\label{gencode_8h_ad2ba3a2c843991308322b14f99b4eec3}} 
+\index{gencode.h@{gencode.h}!M\_MSU@{M\_MSU}}
+\index{M\_MSU@{M\_MSU}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_MSU}{M\_MSU}}
+{\footnotesize\ttfamily \#define M\+\_\+\+MSU~24 /$\ast$ MSU $\ast$/}
+
+\mbox{\Hypertarget{gencode_8h_a9b997fe9ae69a228b5c18daaa0ee3874}\label{gencode_8h_a9b997fe9ae69a228b5c18daaa0ee3874}} 
+\index{gencode.h@{gencode.h}!M\_OPC@{M\_OPC}}
+\index{M\_OPC@{M\_OPC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_OPC}{M\_OPC}}
+{\footnotesize\ttfamily \#define M\+\_\+\+OPC~2}
+
+\mbox{\Hypertarget{gencode_8h_a30c77d0d1153115eae55c2da2fd1ff2e}\label{gencode_8h_a30c77d0d1153115eae55c2da2fd1ff2e}} 
+\index{gencode.h@{gencode.h}!M\_SIO@{M\_SIO}}
+\index{M\_SIO@{M\_SIO}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_SIO}{M\_SIO}}
+{\footnotesize\ttfamily \#define M\+\_\+\+SIO~1}
+
+\mbox{\Hypertarget{gencode_8h_a67b7afda867910dc86057c0217d73a1f}\label{gencode_8h_a67b7afda867910dc86057c0217d73a1f}} 
+\index{gencode.h@{gencode.h}!M\_SLS@{M\_SLS}}
+\index{M\_SLS@{M\_SLS}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{M\_SLS}{M\_SLS}}
+{\footnotesize\ttfamily \#define M\+\_\+\+SLS~4}
+
+\mbox{\Hypertarget{gencode_8h_ad3a22aaa854e1588d50e977c11fd0da0}\label{gencode_8h_ad3a22aaa854e1588d50e977c11fd0da0}} 
+\index{gencode.h@{gencode.h}!N\_ATOMS@{N\_ATOMS}}
+\index{N\_ATOMS@{N\_ATOMS}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{N\_ATOMS}{N\_ATOMS}}
+{\footnotesize\ttfamily \#define N\+\_\+\+ATOMS~(\mbox{\hyperlink{bpf_8h_a3d0784c48bb96cbd327445d6dae322d3}{BPF\+\_\+\+MEMWORDS}}+2)}
+
+\mbox{\Hypertarget{gencode_8h_a398bd5ae2469565670f6d01da3fccdbc}\label{gencode_8h_a398bd5ae2469565670f6d01da3fccdbc}} 
+\index{gencode.h@{gencode.h}!Q\_AARP@{Q\_AARP}}
+\index{Q\_AARP@{Q\_AARP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_AARP}{Q\_AARP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+AARP~23}
+
+\mbox{\Hypertarget{gencode_8h_a1e135354506d183ce33b2b81c3b8031f}\label{gencode_8h_a1e135354506d183ce33b2b81c3b8031f}} 
+\index{gencode.h@{gencode.h}!Q\_ADDR1@{Q\_ADDR1}}
+\index{Q\_ADDR1@{Q\_ADDR1}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ADDR1}{Q\_ADDR1}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ADDR1~5}
+
+\mbox{\Hypertarget{gencode_8h_a26c347a7e8675595c222b93ff0ad90af}\label{gencode_8h_a26c347a7e8675595c222b93ff0ad90af}} 
+\index{gencode.h@{gencode.h}!Q\_ADDR2@{Q\_ADDR2}}
+\index{Q\_ADDR2@{Q\_ADDR2}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ADDR2}{Q\_ADDR2}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ADDR2~6}
+
+\mbox{\Hypertarget{gencode_8h_a88363a40e552625cd5d8753b8f1385d0}\label{gencode_8h_a88363a40e552625cd5d8753b8f1385d0}} 
+\index{gencode.h@{gencode.h}!Q\_ADDR3@{Q\_ADDR3}}
+\index{Q\_ADDR3@{Q\_ADDR3}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ADDR3}{Q\_ADDR3}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ADDR3~7}
+
+\mbox{\Hypertarget{gencode_8h_ada76f59433d5d06097bfb69751ddb63e}\label{gencode_8h_ada76f59433d5d06097bfb69751ddb63e}} 
+\index{gencode.h@{gencode.h}!Q\_ADDR4@{Q\_ADDR4}}
+\index{Q\_ADDR4@{Q\_ADDR4}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ADDR4}{Q\_ADDR4}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ADDR4~8}
+
+\mbox{\Hypertarget{gencode_8h_a6c2864a2b3a717282ba1f5f3ccc2deed}\label{gencode_8h_a6c2864a2b3a717282ba1f5f3ccc2deed}} 
+\index{gencode.h@{gencode.h}!Q\_AH@{Q\_AH}}
+\index{Q\_AH@{Q\_AH}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_AH}{Q\_AH}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+AH~19}
+
+\mbox{\Hypertarget{gencode_8h_a0a5284c4112e1875b928ca001f0e976f}\label{gencode_8h_a0a5284c4112e1875b928ca001f0e976f}} 
+\index{gencode.h@{gencode.h}!Q\_AND@{Q\_AND}}
+\index{Q\_AND@{Q\_AND}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_AND}{Q\_AND}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+AND~4}
+
+\mbox{\Hypertarget{gencode_8h_a6261aeefc0555cc8358a2e237a4f3db8}\label{gencode_8h_a6261aeefc0555cc8358a2e237a4f3db8}} 
+\index{gencode.h@{gencode.h}!Q\_ARP@{Q\_ARP}}
+\index{Q\_ARP@{Q\_ARP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ARP}{Q\_ARP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ARP~3}
+
+\mbox{\Hypertarget{gencode_8h_afae80334f7cc3c4aa85ef0a80f55a3d6}\label{gencode_8h_afae80334f7cc3c4aa85ef0a80f55a3d6}} 
+\index{gencode.h@{gencode.h}!Q\_ATALK@{Q\_ATALK}}
+\index{Q\_ATALK@{Q\_ATALK}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ATALK}{Q\_ATALK}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ATALK~11}
+
+\mbox{\Hypertarget{gencode_8h_aba625a40200b04aa5f17dedb22d01f33}\label{gencode_8h_aba625a40200b04aa5f17dedb22d01f33}} 
+\index{gencode.h@{gencode.h}!Q\_CLNP@{Q\_CLNP}}
+\index{Q\_CLNP@{Q\_CLNP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_CLNP}{Q\_CLNP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+CLNP~27}
+
+\mbox{\Hypertarget{gencode_8h_a2cd310e0f691cb074e3102c512c187d5}\label{gencode_8h_a2cd310e0f691cb074e3102c512c187d5}} 
+\index{gencode.h@{gencode.h}!Q\_DECNET@{Q\_DECNET}}
+\index{Q\_DECNET@{Q\_DECNET}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_DECNET}{Q\_DECNET}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+DECNET~12}
+
+\mbox{\Hypertarget{gencode_8h_a46c449445c5d7f77f266148e152699d3}\label{gencode_8h_a46c449445c5d7f77f266148e152699d3}} 
+\index{gencode.h@{gencode.h}!Q\_DEFAULT@{Q\_DEFAULT}}
+\index{Q\_DEFAULT@{Q\_DEFAULT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_DEFAULT}{Q\_DEFAULT}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+DEFAULT~0}
+
+\mbox{\Hypertarget{gencode_8h_a33d7db8d2c4694cad8fc1deb47800d22}\label{gencode_8h_a33d7db8d2c4694cad8fc1deb47800d22}} 
+\index{gencode.h@{gencode.h}!Q\_DST@{Q\_DST}}
+\index{Q\_DST@{Q\_DST}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_DST}{Q\_DST}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+DST~2}
+
+\mbox{\Hypertarget{gencode_8h_a5c985faa808841abf54719989ebd591f}\label{gencode_8h_a5c985faa808841abf54719989ebd591f}} 
+\index{gencode.h@{gencode.h}!Q\_ESIS@{Q\_ESIS}}
+\index{Q\_ESIS@{Q\_ESIS}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ESIS}{Q\_ESIS}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ESIS~25}
+
+\mbox{\Hypertarget{gencode_8h_a7925ff44e3abc7b57f7a18438b658c1b}\label{gencode_8h_a7925ff44e3abc7b57f7a18438b658c1b}} 
+\index{gencode.h@{gencode.h}!Q\_ESP@{Q\_ESP}}
+\index{Q\_ESP@{Q\_ESP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ESP}{Q\_ESP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ESP~20}
+
+\mbox{\Hypertarget{gencode_8h_a38924d2c76d3d9e7cf5c65bff24e7877}\label{gencode_8h_a38924d2c76d3d9e7cf5c65bff24e7877}} 
+\index{gencode.h@{gencode.h}!Q\_GATEWAY@{Q\_GATEWAY}}
+\index{Q\_GATEWAY@{Q\_GATEWAY}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_GATEWAY}{Q\_GATEWAY}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+GATEWAY~4}
+
+\mbox{\Hypertarget{gencode_8h_a58ae72fe6e0866b1fb9196b8cb742890}\label{gencode_8h_a58ae72fe6e0866b1fb9196b8cb742890}} 
+\index{gencode.h@{gencode.h}!Q\_HOST@{Q\_HOST}}
+\index{Q\_HOST@{Q\_HOST}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_HOST}{Q\_HOST}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+HOST~1}
+
+\mbox{\Hypertarget{gencode_8h_a39e90ed16b97cb2d199171d6c4791b29}\label{gencode_8h_a39e90ed16b97cb2d199171d6c4791b29}} 
+\index{gencode.h@{gencode.h}!Q\_ICMP@{Q\_ICMP}}
+\index{Q\_ICMP@{Q\_ICMP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ICMP}{Q\_ICMP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ICMP~8}
+
+\mbox{\Hypertarget{gencode_8h_a4d49463c657d79857449e4661fc9e6b2}\label{gencode_8h_a4d49463c657d79857449e4661fc9e6b2}} 
+\index{gencode.h@{gencode.h}!Q\_ICMPV6@{Q\_ICMPV6}}
+\index{Q\_ICMPV6@{Q\_ICMPV6}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ICMPV6}{Q\_ICMPV6}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ICMPV6~18}
+
+\mbox{\Hypertarget{gencode_8h_a5585c5580104bbc57bdbcf23a7271595}\label{gencode_8h_a5585c5580104bbc57bdbcf23a7271595}} 
+\index{gencode.h@{gencode.h}!Q\_IGMP@{Q\_IGMP}}
+\index{Q\_IGMP@{Q\_IGMP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_IGMP}{Q\_IGMP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+IGMP~9}
+
+\mbox{\Hypertarget{gencode_8h_a866dfcb6f0cb3c3e17952e302789f809}\label{gencode_8h_a866dfcb6f0cb3c3e17952e302789f809}} 
+\index{gencode.h@{gencode.h}!Q\_IGRP@{Q\_IGRP}}
+\index{Q\_IGRP@{Q\_IGRP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_IGRP}{Q\_IGRP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+IGRP~10}
+
+\mbox{\Hypertarget{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}\label{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}} 
+\index{gencode.h@{gencode.h}!Q\_IP@{Q\_IP}}
+\index{Q\_IP@{Q\_IP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_IP}{Q\_IP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+IP~2}
+
+\mbox{\Hypertarget{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}\label{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}} 
+\index{gencode.h@{gencode.h}!Q\_IPV6@{Q\_IPV6}}
+\index{Q\_IPV6@{Q\_IPV6}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_IPV6}{Q\_IPV6}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+IPV6~17}
+
+\mbox{\Hypertarget{gencode_8h_a73ce1d8c21a188c6595f817ddacfe204}\label{gencode_8h_a73ce1d8c21a188c6595f817ddacfe204}} 
+\index{gencode.h@{gencode.h}!Q\_IPX@{Q\_IPX}}
+\index{Q\_IPX@{Q\_IPX}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_IPX}{Q\_IPX}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+IPX~29}
+
+\mbox{\Hypertarget{gencode_8h_a45c9f4201a9983d82aa76b48429c4475}\label{gencode_8h_a45c9f4201a9983d82aa76b48429c4475}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS@{Q\_ISIS}}
+\index{Q\_ISIS@{Q\_ISIS}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS}{Q\_ISIS}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS~26}
+
+\mbox{\Hypertarget{gencode_8h_aa297ae8e9771ad7f3914bfcf74a32703}\label{gencode_8h_aa297ae8e9771ad7f3914bfcf74a32703}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_CSNP@{Q\_ISIS\_CSNP}}
+\index{Q\_ISIS\_CSNP@{Q\_ISIS\_CSNP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_CSNP}{Q\_ISIS\_CSNP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+CSNP~37}
+
+\mbox{\Hypertarget{gencode_8h_adecc5ad16acb3ad1ab1ba61f1017c8ea}\label{gencode_8h_adecc5ad16acb3ad1ab1ba61f1017c8ea}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_IIH@{Q\_ISIS\_IIH}}
+\index{Q\_ISIS\_IIH@{Q\_ISIS\_IIH}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_IIH}{Q\_ISIS\_IIH}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+IIH~33}
+
+\mbox{\Hypertarget{gencode_8h_a4628136e594ca4f0b0abe3abad35b7fc}\label{gencode_8h_a4628136e594ca4f0b0abe3abad35b7fc}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_L1@{Q\_ISIS\_L1}}
+\index{Q\_ISIS\_L1@{Q\_ISIS\_L1}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_L1}{Q\_ISIS\_L1}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+L1~31}
+
+\mbox{\Hypertarget{gencode_8h_a2b6fdc22b0a0999a1d5f9ab6cd730a26}\label{gencode_8h_a2b6fdc22b0a0999a1d5f9ab6cd730a26}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_L2@{Q\_ISIS\_L2}}
+\index{Q\_ISIS\_L2@{Q\_ISIS\_L2}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_L2}{Q\_ISIS\_L2}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+L2~32}
+
+\mbox{\Hypertarget{gencode_8h_a81736e8d3cfa0470a2f1c81928e7718b}\label{gencode_8h_a81736e8d3cfa0470a2f1c81928e7718b}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_LAN\_IIH@{Q\_ISIS\_LAN\_IIH}}
+\index{Q\_ISIS\_LAN\_IIH@{Q\_ISIS\_LAN\_IIH}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_LAN\_IIH}{Q\_ISIS\_LAN\_IIH}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+LAN\+\_\+\+IIH~34}
+
+\mbox{\Hypertarget{gencode_8h_ab944592153bdcd9efd0624af499f3c62}\label{gencode_8h_ab944592153bdcd9efd0624af499f3c62}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_LSP@{Q\_ISIS\_LSP}}
+\index{Q\_ISIS\_LSP@{Q\_ISIS\_LSP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_LSP}{Q\_ISIS\_LSP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+LSP~39}
+
+\mbox{\Hypertarget{gencode_8h_aa497f6bfa8eedfb806b7106406b7d8d3}\label{gencode_8h_aa497f6bfa8eedfb806b7106406b7d8d3}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_PSNP@{Q\_ISIS\_PSNP}}
+\index{Q\_ISIS\_PSNP@{Q\_ISIS\_PSNP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_PSNP}{Q\_ISIS\_PSNP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+PSNP~38}
+
+\mbox{\Hypertarget{gencode_8h_a85e7c56f0ed02d8d882bc71922d57ea7}\label{gencode_8h_a85e7c56f0ed02d8d882bc71922d57ea7}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_PTP\_IIH@{Q\_ISIS\_PTP\_IIH}}
+\index{Q\_ISIS\_PTP\_IIH@{Q\_ISIS\_PTP\_IIH}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_PTP\_IIH}{Q\_ISIS\_PTP\_IIH}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+PTP\+\_\+\+IIH~35}
+
+\mbox{\Hypertarget{gencode_8h_aea61d5a08eaa2605df021ceedf223902}\label{gencode_8h_aea61d5a08eaa2605df021ceedf223902}} 
+\index{gencode.h@{gencode.h}!Q\_ISIS\_SNP@{Q\_ISIS\_SNP}}
+\index{Q\_ISIS\_SNP@{Q\_ISIS\_SNP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISIS\_SNP}{Q\_ISIS\_SNP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISIS\+\_\+\+SNP~36}
+
+\mbox{\Hypertarget{gencode_8h_a0ae6532238ca8e9f84f22affc8afeb7f}\label{gencode_8h_a0ae6532238ca8e9f84f22affc8afeb7f}} 
+\index{gencode.h@{gencode.h}!Q\_ISO@{Q\_ISO}}
+\index{Q\_ISO@{Q\_ISO}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_ISO}{Q\_ISO}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+ISO~24}
+
+\mbox{\Hypertarget{gencode_8h_ad3be69fa811c2bd1d589674f5325048e}\label{gencode_8h_ad3be69fa811c2bd1d589674f5325048e}} 
+\index{gencode.h@{gencode.h}!Q\_LAT@{Q\_LAT}}
+\index{Q\_LAT@{Q\_LAT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_LAT}{Q\_LAT}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+LAT~13}
+
+\mbox{\Hypertarget{gencode_8h_abb7fd9195ebf4866c4723343ad784645}\label{gencode_8h_abb7fd9195ebf4866c4723343ad784645}} 
+\index{gencode.h@{gencode.h}!Q\_LINK@{Q\_LINK}}
+\index{Q\_LINK@{Q\_LINK}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_LINK}{Q\_LINK}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+LINK~1}
+
+\mbox{\Hypertarget{gencode_8h_ab1e2618b6e30687c154a4d9d8797663b}\label{gencode_8h_ab1e2618b6e30687c154a4d9d8797663b}} 
+\index{gencode.h@{gencode.h}!Q\_MOPDL@{Q\_MOPDL}}
+\index{Q\_MOPDL@{Q\_MOPDL}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_MOPDL}{Q\_MOPDL}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+MOPDL~16}
+
+\mbox{\Hypertarget{gencode_8h_a60a6fa1a850ff5056c78438acb5929ad}\label{gencode_8h_a60a6fa1a850ff5056c78438acb5929ad}} 
+\index{gencode.h@{gencode.h}!Q\_MOPRC@{Q\_MOPRC}}
+\index{Q\_MOPRC@{Q\_MOPRC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_MOPRC}{Q\_MOPRC}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+MOPRC~15}
+
+\mbox{\Hypertarget{gencode_8h_a690b7885f6374aef47f72fb375cf0ba8}\label{gencode_8h_a690b7885f6374aef47f72fb375cf0ba8}} 
+\index{gencode.h@{gencode.h}!Q\_NET@{Q\_NET}}
+\index{Q\_NET@{Q\_NET}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_NET}{Q\_NET}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+NET~2}
+
+\mbox{\Hypertarget{gencode_8h_ad8b911f20c053cc25630dfb2c74bfb58}\label{gencode_8h_ad8b911f20c053cc25630dfb2c74bfb58}} 
+\index{gencode.h@{gencode.h}!Q\_NETBEUI@{Q\_NETBEUI}}
+\index{Q\_NETBEUI@{Q\_NETBEUI}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_NETBEUI}{Q\_NETBEUI}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+NETBEUI~30}
+
+\mbox{\Hypertarget{gencode_8h_aeb5c13520f5f09f3ff3f854c2db53fcf}\label{gencode_8h_aeb5c13520f5f09f3ff3f854c2db53fcf}} 
+\index{gencode.h@{gencode.h}!Q\_OR@{Q\_OR}}
+\index{Q\_OR@{Q\_OR}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_OR}{Q\_OR}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+OR~3}
+
+\mbox{\Hypertarget{gencode_8h_ade68497dc85f94c9957363b0bdb468a5}\label{gencode_8h_ade68497dc85f94c9957363b0bdb468a5}} 
+\index{gencode.h@{gencode.h}!Q\_PIM@{Q\_PIM}}
+\index{Q\_PIM@{Q\_PIM}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_PIM}{Q\_PIM}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+PIM~21}
+
+\mbox{\Hypertarget{gencode_8h_a38da5766a38543268d70d8839bdd7c70}\label{gencode_8h_a38da5766a38543268d70d8839bdd7c70}} 
+\index{gencode.h@{gencode.h}!Q\_PORT@{Q\_PORT}}
+\index{Q\_PORT@{Q\_PORT}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_PORT}{Q\_PORT}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+PORT~3}
+
+\mbox{\Hypertarget{gencode_8h_a03063b4cd610749e2960fdc4c445ccec}\label{gencode_8h_a03063b4cd610749e2960fdc4c445ccec}} 
+\index{gencode.h@{gencode.h}!Q\_PORTRANGE@{Q\_PORTRANGE}}
+\index{Q\_PORTRANGE@{Q\_PORTRANGE}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_PORTRANGE}{Q\_PORTRANGE}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+PORTRANGE~7}
+
+\mbox{\Hypertarget{gencode_8h_a6ab97312ec0ad44622e9b5e37d80f109}\label{gencode_8h_a6ab97312ec0ad44622e9b5e37d80f109}} 
+\index{gencode.h@{gencode.h}!Q\_PROTO@{Q\_PROTO}}
+\index{Q\_PROTO@{Q\_PROTO}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_PROTO}{Q\_PROTO}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+PROTO~5}
+
+\mbox{\Hypertarget{gencode_8h_a26bb15a10557eb61e6c3566526ba7e50}\label{gencode_8h_a26bb15a10557eb61e6c3566526ba7e50}} 
+\index{gencode.h@{gencode.h}!Q\_PROTOCHAIN@{Q\_PROTOCHAIN}}
+\index{Q\_PROTOCHAIN@{Q\_PROTOCHAIN}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_PROTOCHAIN}{Q\_PROTOCHAIN}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+PROTOCHAIN~6}
+
+\mbox{\Hypertarget{gencode_8h_afebf889ab1f1bba65bb45644578e80dc}\label{gencode_8h_afebf889ab1f1bba65bb45644578e80dc}} 
+\index{gencode.h@{gencode.h}!Q\_RADIO@{Q\_RADIO}}
+\index{Q\_RADIO@{Q\_RADIO}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_RADIO}{Q\_RADIO}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+RADIO~40}
+
+\mbox{\Hypertarget{gencode_8h_ae3a9fcad3ab4dd3a9c8ea647b0da730f}\label{gencode_8h_ae3a9fcad3ab4dd3a9c8ea647b0da730f}} 
+\index{gencode.h@{gencode.h}!Q\_RARP@{Q\_RARP}}
+\index{Q\_RARP@{Q\_RARP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_RARP}{Q\_RARP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+RARP~4}
+
+\mbox{\Hypertarget{gencode_8h_aa894482c5328c891712a3ed5b108e927}\label{gencode_8h_aa894482c5328c891712a3ed5b108e927}} 
+\index{gencode.h@{gencode.h}!Q\_SCA@{Q\_SCA}}
+\index{Q\_SCA@{Q\_SCA}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_SCA}{Q\_SCA}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+SCA~14}
+
+\mbox{\Hypertarget{gencode_8h_ad52d4d920c67ba8b5733bb37ffe37c64}\label{gencode_8h_ad52d4d920c67ba8b5733bb37ffe37c64}} 
+\index{gencode.h@{gencode.h}!Q\_SCTP@{Q\_SCTP}}
+\index{Q\_SCTP@{Q\_SCTP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_SCTP}{Q\_SCTP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+SCTP~5}
+
+\mbox{\Hypertarget{gencode_8h_ae06ecbd337137107b3af05aa0c4d4bd3}\label{gencode_8h_ae06ecbd337137107b3af05aa0c4d4bd3}} 
+\index{gencode.h@{gencode.h}!Q\_SRC@{Q\_SRC}}
+\index{Q\_SRC@{Q\_SRC}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_SRC}{Q\_SRC}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+SRC~1}
+
+\mbox{\Hypertarget{gencode_8h_a2e8319e0a7f150a64561448725885e1d}\label{gencode_8h_a2e8319e0a7f150a64561448725885e1d}} 
+\index{gencode.h@{gencode.h}!Q\_STP@{Q\_STP}}
+\index{Q\_STP@{Q\_STP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_STP}{Q\_STP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+STP~28}
+
+\mbox{\Hypertarget{gencode_8h_a3593b205e1e9789f2e6ac2b599dfaa54}\label{gencode_8h_a3593b205e1e9789f2e6ac2b599dfaa54}} 
+\index{gencode.h@{gencode.h}!Q\_TCP@{Q\_TCP}}
+\index{Q\_TCP@{Q\_TCP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_TCP}{Q\_TCP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+TCP~6}
+
+\mbox{\Hypertarget{gencode_8h_a13632344e0999fd68e6085d28b37f2bd}\label{gencode_8h_a13632344e0999fd68e6085d28b37f2bd}} 
+\index{gencode.h@{gencode.h}!Q\_UDP@{Q\_UDP}}
+\index{Q\_UDP@{Q\_UDP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_UDP}{Q\_UDP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+UDP~7}
+
+\mbox{\Hypertarget{gencode_8h_a5adc7fa0fdedd562f2abc681e6c2067b}\label{gencode_8h_a5adc7fa0fdedd562f2abc681e6c2067b}} 
+\index{gencode.h@{gencode.h}!Q\_UNDEF@{Q\_UNDEF}}
+\index{Q\_UNDEF@{Q\_UNDEF}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_UNDEF}{Q\_UNDEF}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+UNDEF~255}
+
+\mbox{\Hypertarget{gencode_8h_ac0b8ac58ece3005ed8665659d46c1b29}\label{gencode_8h_ac0b8ac58ece3005ed8665659d46c1b29}} 
+\index{gencode.h@{gencode.h}!Q\_VRRP@{Q\_VRRP}}
+\index{Q\_VRRP@{Q\_VRRP}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{Q\_VRRP}{Q\_VRRP}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+VRRP~22}
+
+
+
+\doxysubsection{类型定义说明}
+\mbox{\Hypertarget{gencode_8h_a14faf45653539e9be0ef6648a746a47a}\label{gencode_8h_a14faf45653539e9be0ef6648a746a47a}} 
+\index{gencode.h@{gencode.h}!atomset@{atomset}}
+\index{atomset@{atomset}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{atomset}{atomset}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} \mbox{\hyperlink{gencode_8h_a14faf45653539e9be0ef6648a746a47a}{atomset}}}
+
+\mbox{\Hypertarget{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}\label{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}} 
+\index{gencode.h@{gencode.h}!uset@{uset}}
+\index{uset@{uset}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{uset}{uset}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}$\ast$ \mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}}}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{gencode_8h_ac6dabcdf7ac7b1a194f6d1b4355e4709}\label{gencode_8h_ac6dabcdf7ac7b1a194f6d1b4355e4709}} 
+\index{gencode.h@{gencode.h}!bpf\_error@{bpf\_error}}
+\index{bpf\_error@{bpf\_error}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{bpf\_error()}{bpf\_error()}}
+{\footnotesize\ttfamily void bpf\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc}\label{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc}} 
+\index{gencode.h@{gencode.h}!bpf\_optimize@{bpf\_optimize}}
+\index{bpf\_optimize@{bpf\_optimize}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{bpf\_optimize()}{bpf\_optimize()}}
+{\footnotesize\ttfamily void bpf\+\_\+optimize (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$$\ast$}]{rootp }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{optimize_8c_aa3c92cb7436367d4da48ca528218dff0}{intern\+\_\+blocks()}}, \mbox{\hyperlink{optimize_8c_a9b63627955423d0040bad513fe5323b2}{opt\+\_\+cleanup()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}, \mbox{\hyperlink{optimize_8c_ad664f1145b3994daced3429c2d5e6143}{opt\+\_\+loop()}}, \mbox{\hyperlink{optimize_8c_a1fbed3bf7d35910ff28950615069d792}{opt\+\_\+root()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{gencode_8c_a302cc863a0f560cde4327495113f55aa}{root}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a0baef9a6ee47eac0134570f3953b4cd5}\label{gencode_8h_a0baef9a6ee47eac0134570f3953b4cd5}} 
+\index{gencode.h@{gencode.h}!finish\_parse@{finish\_parse}}
+\index{finish\_parse@{finish\_parse}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{finish\_parse()}{finish\_parse()}}
+{\footnotesize\ttfamily void finish\+\_\+parse (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a88311365879e54ee27aeb33ee91d9070}{backpatch()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_ac19a5083758224f3693cc27140e45ae1}{gen\+\_\+ppi\+\_\+dlt\+\_\+check()}}, \mbox{\hyperlink{gencode_8c_a0237e7c2ee05474bda50d14ad8c28b63}{gen\+\_\+retblk()}}, \mbox{\hyperlink{structblock_acc701d7d7d005dac151d763277a1661e}{block\+::head}}, \mbox{\hyperlink{gencode_8c_aa2580cb5ee1bf6b42026bfabcde04c4d}{insert\+\_\+compute\+\_\+vloffsets()}}, \mbox{\hyperlink{gencode_8c_a302cc863a0f560cde4327495113f55aa}{root}} , 以及 \mbox{\hyperlink{gencode_8c_a50cfacfae55017276b69cd587333b70b}{snaplen}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a0baef9a6ee47eac0134570f3953b4cd5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a97004ad95faa3887342fc18888a2a588}\label{gencode_8h_a97004ad95faa3887342fc18888a2a588}} 
+\index{gencode.h@{gencode.h}!format@{format}}
+\index{format@{format}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily void format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf}}}]{,  }\item[{1}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf()}}, \mbox{\hyperlink{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}{vsnprintf()}} , 以及 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{gencode_8h_a97004ad95faa3887342fc18888a2a588_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a935b7cdc3ad117d7f7c426096966c7a0}\label{gencode_8h_a935b7cdc3ad117d7f7c426096966c7a0}} 
+\index{gencode.h@{gencode.h}!gen\_acode@{gen\_acode}}
+\index{gen\_acode@{gen\_acode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_acode()}{gen\_acode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+acode (\begin{DoxyParamCaption}\item[{const u\+\_\+char $\ast$}]{eaddr,  }\item[{struct \mbox{\hyperlink{structqual}{qual}}}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_af84b135a69d437cec246769fe373f5be}\label{gencode_8h_af84b135a69d437cec246769fe373f5be}} 
+\index{gencode.h@{gencode.h}!gen\_and@{gen\_and}}
+\index{gen\_and@{gen\_and}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_and()}{gen\_and()}}
+{\footnotesize\ttfamily void gen\+\_\+and (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{b0,  }\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{b1 }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a88311365879e54ee27aeb33ee91d9070}{backpatch()}}, \mbox{\hyperlink{structblock_acc701d7d7d005dac151d763277a1661e}{block\+::head}}, \mbox{\hyperlink{gencode_8c_a2552e81906a80a238e3aae6ddcd0836a}{merge()}} , 以及 \mbox{\hyperlink{structblock_a63824e330f67129ae657ddc1120c30f2}{block\+::sense}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a750d5d9f35fadca0c7fbd9a508a83876}{finish\+\_\+parse()}}, \mbox{\hyperlink{gencode_8c_a6f2e63e5bbc14024f41ce0240f5cf372}{gen\+\_\+ahostop()}}, \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ae7dfaf0f64c34469ed97e96ec0054c67}{gen\+\_\+atmtype\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_a1c577e0e7d181cf2a6d904db869590c1}{gen\+\_\+bcmp()}}, \mbox{\hyperlink{gencode_8c_afcf8ceb3765c2436ca27ad927b3affc2}{gen\+\_\+broadcast()}}, \mbox{\hyperlink{gencode_8c_ac13ef9dc4a68ebc088cf9ced12ddc1f7}{gen\+\_\+check\+\_\+802\+\_\+11\+\_\+data\+\_\+frame()}}, \mbox{\hyperlink{gencode_8c_ad8380ef55f5cf5395911ad0c8b28779e}{gen\+\_\+dnhostop()}}, \mbox{\hyperlink{gencode_8c_a1fcb62cc912ca4ab6515974ba7a01476}{gen\+\_\+ehostop()}}, \mbox{\hyperlink{gencode_8c_a7d07fc48416760fa31d017b1e00041ad}{gen\+\_\+ether\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a015a6c34e07b541e6d2d8245135964dd}{gen\+\_\+fhostop()}}, \mbox{\hyperlink{gencode_8c_a55e8d1e00dcf1f191d42fe4acee1fbad}{gen\+\_\+gateway()}}, \mbox{\hyperlink{gencode_8c_a83f97d83b2d8f92765bbccbefeb252c9}{gen\+\_\+hostop()}}, \mbox{\hyperlink{gencode_8c_af30406dd99c4b943056f6364828a0360}{gen\+\_\+ipfchostop()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_ad0d2f730f10ef712090d1744ebb38fcd}{gen\+\_\+linux\+\_\+sll\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a04555710eb38558a5b643e3578e4ff9f}{gen\+\_\+load()}}, \mbox{\hyperlink{gencode_8c_a544d4e04920024ec3d5759f0e283d531}{gen\+\_\+mpls()}}, \mbox{\hyperlink{gencode_8c_a6a953b0539ecc94ceeac86944411f732}{gen\+\_\+mpls\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a537190b411d8c2b06fb133e782c33e99}{gen\+\_\+mtp2type\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ab14e56454df06ecc7b74d23c8af51257}{gen\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a9f42a31e126dd90e46596ebf999786f5}{gen\+\_\+port()}}, \mbox{\hyperlink{gencode_8c_a67a61cf29c9cdf44068067e0cd64f1f5}{gen\+\_\+portop()}}, \mbox{\hyperlink{gencode_8c_acb8fbc0723bea6b1c9d861b60712630d}{gen\+\_\+portrange()}}, \mbox{\hyperlink{gencode_8c_a9cbcee323ab190fd59e4b4ba4c80a13e}{gen\+\_\+portrangeatom()}}, \mbox{\hyperlink{gencode_8c_a75303678d909bb073ef14f3c2c002592}{gen\+\_\+portrangeop()}}, \mbox{\hyperlink{gencode_8c_a3bb1bd404477547ed3cc813edcc248ac}{gen\+\_\+proto()}}, \mbox{\hyperlink{gencode_8c_ad54245ee8fc82d9474bff9e7baa35eed}{gen\+\_\+protochain()}}, \mbox{\hyperlink{gencode_8c_abe12e5867d5ebc74857e8a1af7a241bb}{gen\+\_\+relation()}}, \mbox{\hyperlink{gencode_8c_a2ca04239958f46685358c0024ecb023a}{gen\+\_\+thostop()}}, \mbox{\hyperlink{gencode_8c_a71e7ed35f1c71897f33594caef17ba24}{gen\+\_\+vlan()}} , 以及 \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{gencode_8h_af84b135a69d437cec246769fe373f5be_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_af84b135a69d437cec246769fe373f5be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a97a7d872b5a8b7f1541c204593250c1c}\label{gencode_8h_a97a7d872b5a8b7f1541c204593250c1c}} 
+\index{gencode.h@{gencode.h}!gen\_arth@{gen\_arth}}
+\index{gen\_arth@{gen\_arth}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_arth()}{gen\_arth()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structarth}{arth}} $\ast$ gen\+\_\+arth (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{a0,  }\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{a1 }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_ae9c91cca5af963ff9b192fae4a50219b}{alloc\+\_\+reg()}}, \mbox{\hyperlink{bpf_8h_ab86299ce44ef72cd7d679d54f4319422}{BPF\+\_\+\+ALU}}, \mbox{\hyperlink{bpf_8h_a18eb0b2f44582cb7152c370d7bc65258}{BPF\+\_\+\+ST}}, \mbox{\hyperlink{bpf_8h_a8d3288dafba4427f9c56a99850184008}{BPF\+\_\+X}}, \mbox{\hyperlink{gencode_8c_a9aeeeffddfa3f2364c476bb1d3000ea5}{free\+\_\+reg()}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}}, \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}, \mbox{\hyperlink{gencode_8c_acc2d1f82a2c8cb15d39d10e0256e7d82}{sappend()}}, \mbox{\hyperlink{gencode_8c_a42b091c10ec97c15abe6e56b09d46118}{xfer\+\_\+to\+\_\+a()}} , 以及 \mbox{\hyperlink{gencode_8c_a94716172b8e9aaa22a4a4799cac4611c}{xfer\+\_\+to\+\_\+x()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a97a7d872b5a8b7f1541c204593250c1c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ac417f375702a941a60502ed47874365e}\label{gencode_8h_ac417f375702a941a60502ed47874365e}} 
+\index{gencode.h@{gencode.h}!gen\_atmfield\_code@{gen\_atmfield\_code}}
+\index{gen\_atmfield\_code@{gen\_atmfield\_code}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_atmfield\_code()}{gen\_atmfield\_code()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+atmfield\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{atmfield,  }\item[{\mbox{\hyperlink{bpf_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\+\_\+int32}}}]{jvalue,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{jtype,  }\item[{int}]{reverse }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8h_a5d6adffe35244db7c1aa2873368056d0}{A\+\_\+\+CALLREFTYPE}}, \mbox{\hyperlink{gencode_8h_a0fbe4c45d47b800a3cd9414da91e870a}{A\+\_\+\+MSGTYPE}}, \mbox{\hyperlink{gencode_8h_a1401c0ec613fbe04d1cb3c28c459c573}{A\+\_\+\+PROTOTYPE}}, \mbox{\hyperlink{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}{A\+\_\+\+VCI}}, \mbox{\hyperlink{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}{A\+\_\+\+VPI}}, \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_a492aca4cef923bf24e2a12fc037b6908}{is\+\_\+atm}}, \mbox{\hyperlink{atmuni31_8h_af038750bfb0635003df99fd695aad6be}{MSG\+\_\+\+TYPE\+\_\+\+POS}}, \mbox{\hyperlink{gencode_8c_a417034244cdcdc872192380fc4db9411}{off\+\_\+payload}}, \mbox{\hyperlink{gencode_8c_a16cf837a32a6d9d2e33014e51bf29528}{off\+\_\+proto}}, \mbox{\hyperlink{gencode_8c_ab00fc4e960f1a063c5d05606229c9946}{off\+\_\+vci}}, \mbox{\hyperlink{gencode_8c_a4439d30118b8d5ff479d4b2dc9e94cff}{off\+\_\+vpi}} , 以及 \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ae7dfaf0f64c34469ed97e96ec0054c67}{gen\+\_\+atmtype\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}} , 以及 \mbox{\hyperlink{gencode_8c_a0da4d9d350780688b5929569ef794b82}{gen\+\_\+msg\+\_\+abbrev()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ac417f375702a941a60502ed47874365e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ac417f375702a941a60502ed47874365e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a5dd41ff822745a0a5295c6dd94c5c723}\label{gencode_8h_a5dd41ff822745a0a5295c6dd94c5c723}} 
+\index{gencode.h@{gencode.h}!gen\_atmmulti\_abbrev@{gen\_atmmulti\_abbrev}}
+\index{gen\_atmmulti\_abbrev@{gen\_atmmulti\_abbrev}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_atmmulti\_abbrev()}{gen\_atmmulti\_abbrev()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+atmmulti\+\_\+abbrev (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8h_abd40dfff6bd956b241193b8d29f65ffd}{A\+\_\+\+CALLPROCEED}}, \mbox{\hyperlink{gencode_8h_a68fd1ec7f93b8411d1cb322098cdb9c6}{A\+\_\+\+CONNECT}}, \mbox{\hyperlink{gencode_8h_a634b69875ab85ccf87234033f4d67af2}{A\+\_\+\+CONNECTACK}}, \mbox{\hyperlink{gencode_8h_a34172bdeee1efd4c1f89ad8da538f175}{A\+\_\+\+CONNECTMSG}}, \mbox{\hyperlink{gencode_8h_aaa651d955d2c033003cdc5fc3cea5a52}{A\+\_\+\+METAC}}, \mbox{\hyperlink{gencode_8h_a00ded8fbcf512e124afc27f56fa0b835}{A\+\_\+\+METACONNECT}}, \mbox{\hyperlink{gencode_8h_a804f92c877f78967212a1828c1517653}{A\+\_\+\+OAM}}, \mbox{\hyperlink{gencode_8h_a3e1afb3101fe7ae7b628795ceaf827e9}{A\+\_\+\+OAMF4}}, \mbox{\hyperlink{gencode_8h_a0d9c8e71c9cdab2434cc76179387af73}{A\+\_\+\+RELEASE}}, \mbox{\hyperlink{gencode_8h_a5b2d17ccaf9fe5a7425238d7dab32049}{A\+\_\+\+RELEASE\+\_\+\+DONE}}, \mbox{\hyperlink{gencode_8h_a5a4a49a98ee0ba13e1513b72f1d1bb97}{A\+\_\+\+SC}}, \mbox{\hyperlink{gencode_8h_aad01db6c9be2b56353c6410ae9c148b4}{A\+\_\+\+SETUP}}, \mbox{\hyperlink{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}{A\+\_\+\+VCI}}, \mbox{\hyperlink{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}{A\+\_\+\+VPI}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_ac417f375702a941a60502ed47874365e}{gen\+\_\+atmfield\+\_\+code()}}, \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ae7dfaf0f64c34469ed97e96ec0054c67}{gen\+\_\+atmtype\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_a0da4d9d350780688b5929569ef794b82}{gen\+\_\+msg\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}} , 以及 \mbox{\hyperlink{gencode_8c_a492aca4cef923bf24e2a12fc037b6908}{is\+\_\+atm}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a5dd41ff822745a0a5295c6dd94c5c723_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{gencode_8h_a5dd41ff822745a0a5295c6dd94c5c723_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae7dfaf0f64c34469ed97e96ec0054c67}\label{gencode_8h_ae7dfaf0f64c34469ed97e96ec0054c67}} 
+\index{gencode.h@{gencode.h}!gen\_atmtype\_abbrev@{gen\_atmtype\_abbrev}}
+\index{gen\_atmtype\_abbrev@{gen\_atmtype\_abbrev}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_atmtype\_abbrev()}{gen\_atmtype\_abbrev()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+atmtype\+\_\+abbrev (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8h_a3f4c5b6a799797bf6ce2cc9158e3c520}{A\+\_\+\+BCC}}, \mbox{\hyperlink{gencode_8h_a0753d783706b89568203d98989ca6b82}{A\+\_\+\+ILMIC}}, \mbox{\hyperlink{gencode_8h_aff8d561a1ca2b7e6ebd31231a05f1544}{A\+\_\+\+LANE}}, \mbox{\hyperlink{gencode_8h_a0f5ca9c7e7ab3098efc9a7c0a402cdf3}{A\+\_\+\+LLC}}, \mbox{\hyperlink{gencode_8h_aaa651d955d2c033003cdc5fc3cea5a52}{A\+\_\+\+METAC}}, \mbox{\hyperlink{gencode_8h_aa03d36bdd829ed8f0a686c1ecf381e43}{A\+\_\+\+OAMF4\+EC}}, \mbox{\hyperlink{gencode_8h_a9e2425ec726bee5c1d0d43ea625349d0}{A\+\_\+\+OAMF4\+SC}}, \mbox{\hyperlink{gencode_8h_a1401c0ec613fbe04d1cb3c28c459c573}{A\+\_\+\+PROTOTYPE}}, \mbox{\hyperlink{gencode_8h_a5a4a49a98ee0ba13e1513b72f1d1bb97}{A\+\_\+\+SC}}, \mbox{\hyperlink{gencode_8h_afd86c460fbed6e51437ad3f97c74c252}{A\+\_\+\+VCI}}, \mbox{\hyperlink{gencode_8h_aa0fd1fb93c00271be11961a2548dbce7}{A\+\_\+\+VPI}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_ac417f375702a941a60502ed47874365e}{gen\+\_\+atmfield\+\_\+code()}}, \mbox{\hyperlink{gencode_8c_a492aca4cef923bf24e2a12fc037b6908}{is\+\_\+atm}}, \mbox{\hyperlink{gencode_8c_ab6241a2901c4678b8a5bf8805defe80a}{is\+\_\+lane}}, \mbox{\hyperlink{gencode_8c_a74d7de343b4e7e43875a1bc971e223e2}{off\+\_\+linktype}}, \mbox{\hyperlink{gencode_8c_a133f050191990c0a9281702c1c84b87e}{off\+\_\+mac}}, \mbox{\hyperlink{gencode_8c_ac7b9eceddff037d169947b07f6a39be5}{off\+\_\+macpl}}, \mbox{\hyperlink{gencode_8c_a9f62b73c5384c1dce9d2c15fe71190da}{off\+\_\+nl}}, \mbox{\hyperlink{gencode_8c_a1161b404316e694f2468727ef54af33c}{off\+\_\+nl\+\_\+nosnap}}, \mbox{\hyperlink{gencode_8c_a417034244cdcdc872192380fc4db9411}{off\+\_\+payload}}, \mbox{\hyperlink{sunatmpos_8h_a4990d1054c06fae8f98309f0dfe44349}{PT\+\_\+\+LANE}} , 以及 \mbox{\hyperlink{sunatmpos_8h_ac68c5516e698f35d62a077c623db4c0a}{PT\+\_\+\+LLC}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ae7dfaf0f64c34469ed97e96ec0054c67_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{gencode_8h_ae7dfaf0f64c34469ed97e96ec0054c67_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a8240c920ac31c254f2f74ff92c5a93b0}\label{gencode_8h_a8240c920ac31c254f2f74ff92c5a93b0}} 
+\index{gencode.h@{gencode.h}!gen\_broadcast@{gen\_broadcast}}
+\index{gen\_broadcast@{gen\_broadcast}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_broadcast()}{gen\_broadcast()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+broadcast (\begin{DoxyParamCaption}\item[{int}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a4704a67cc902593a20c052c044540cbc}{abroadcast}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{bpf_8h_a8545a6e7695afc8df6d4ea61f0576c22}{BPF\+\_\+W}}, \mbox{\hyperlink{bpf_8h_a3f09da5a46633b5f3018524ba609db91}{DLT\+\_\+\+ARCNET}}, \mbox{\hyperlink{bpf_8h_a093c70187a8511964e97e77828fe0bc7}{DLT\+\_\+\+ARCNET\+\_\+\+LINUX}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}, \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}}, \mbox{\hyperlink{bpf_8h_ac92b6c71dbcc3de9f19a235660422ef4}{DLT\+\_\+\+IEEE802\+\_\+11}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{pcap-bpf_8c_ac6040305574b360f11d28515d7506bd9}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}, \mbox{\hyperlink{bpf_8h_a9e3dc4b02619a9daf3e58c7f79c97f05}{DLT\+\_\+\+IP\+\_\+\+OVER\+\_\+\+FC}}, \mbox{\hyperlink{bpf_8h_ab14d6d53c433663ac546ef32b83bd7ee}{DLT\+\_\+\+PPI}}, \mbox{\hyperlink{pcap-bpf_8c_a6b824791fd4972ee56fcb5448100b62b}{DLT\+\_\+\+PRISM\+\_\+\+HEADER}}, \mbox{\hyperlink{bpf_8h_a863dac884dda26ce90c909732fdb7b48}{DLT\+\_\+\+SUNATM}}, \mbox{\hyperlink{ethertype_8h_ae2021b6951d9782a2ba9cb243abdea93}{ETHERTYPE\+\_\+\+IP}}, \mbox{\hyperlink{gencode_8c_a6f2e63e5bbc14024f41ce0240f5cf372}{gen\+\_\+ahostop()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a1fcb62cc912ca4ab6515974ba7a01476}{gen\+\_\+ehostop()}}, \mbox{\hyperlink{gencode_8c_a015a6c34e07b541e6d2d8245135964dd}{gen\+\_\+fhostop()}}, \mbox{\hyperlink{gencode_8c_af30406dd99c4b943056f6364828a0360}{gen\+\_\+ipfchostop()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}}, \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}}, \mbox{\hyperlink{gencode_8c_a2ca04239958f46685358c0024ecb023a}{gen\+\_\+thostop()}}, \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}, \mbox{\hyperlink{gencode_8c_ab6241a2901c4678b8a5bf8805defe80a}{is\+\_\+lane}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a01b5d18f52b9a04b6d8463192ae201c2}{OR\+\_\+\+NET}}, \mbox{\hyperlink{pcap_2pcap_8h_a9423c03c24a0aa2166b1044999eac103}{PCAP\+\_\+\+NETMASK\+\_\+\+UNKNOWN}}, \mbox{\hyperlink{gencode_8h_a46c449445c5d7f77f266148e152699d3}{Q\+\_\+\+DEFAULT}}, \mbox{\hyperlink{gencode_8h_a33d7db8d2c4694cad8fc1deb47800d22}{Q\+\_\+\+DST}}, \mbox{\hyperlink{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}{Q\+\_\+\+IP}}, \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}} , 以及 \mbox{\hyperlink{sunatmpos_8h_a3ab232dcb7cbb49c4c79cd04e6e82d2b}{SUNATM\+\_\+\+PKT\+\_\+\+BEGIN\+\_\+\+POS}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a8240c920ac31c254f2f74ff92c5a93b0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a85cf15ecc3536173f0a3c8d805e72a74}\label{gencode_8h_a85cf15ecc3536173f0a3c8d805e72a74}} 
+\index{gencode.h@{gencode.h}!gen\_byteop@{gen\_byteop}}
+\index{gen\_byteop@{gen\_byteop}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_byteop()}{gen\_byteop()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+byteop (\begin{DoxyParamCaption}\item[{int}]{op,  }\item[{int}]{idx,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_ab86299ce44ef72cd7d679d54f4319422}{BPF\+\_\+\+ALU}}, \mbox{\hyperlink{bpf_8h_ae3b2d3bb71489f34170a425b52e9a08f}{BPF\+\_\+\+AND}}, \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{bpf_8h_a69ec7dfd1f8a23000f821e5e3488b4f5}{BPF\+\_\+K}}, \mbox{\hyperlink{bpf_8h_a2a4d72068fd965b9bfc6bee0923dc48a}{BPF\+\_\+\+OR}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a8c04329c660e776fc26ac3f9af02f440}{gen\+\_\+cmp\+\_\+gt()}}, \mbox{\hyperlink{gencode_8c_a972f5e481ea3fbbab302a83b56d8f711}{gen\+\_\+cmp\+\_\+lt()}}, \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}}, \mbox{\hyperlink{gencode_8c_acbd8cb2182286c7a59634c8f2248223e}{JMP}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_adae9e51b46a5908a67327ec7a692e757}{new\+\_\+block()}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}} , 以及 \mbox{\hyperlink{structblock_a1f06889ad08e9604a0551f90bec551be}{block\+::stmts}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a85cf15ecc3536173f0a3c8d805e72a74_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a0da7056369cb7a37bd69623a4a29ddc9}\label{gencode_8h_a0da7056369cb7a37bd69623a4a29ddc9}} 
+\index{gencode.h@{gencode.h}!gen\_ecode@{gen\_ecode}}
+\index{gen\_ecode@{gen\_ecode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_ecode()}{gen\_ecode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+ecode (\begin{DoxyParamCaption}\item[{const u\+\_\+char $\ast$}]{eaddr,  }\item[{struct \mbox{\hyperlink{structqual}{qual}}}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_a33e4fd5eedbb3e98997f5dd4c165f63c}\label{gencode_8h_a33e4fd5eedbb3e98997f5dd4c165f63c}} 
+\index{gencode.h@{gencode.h}!gen\_greater@{gen\_greater}}
+\index{gen\_greater@{gen\_greater}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_greater()}{gen\_greater()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+greater (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a6312290c0ad0e392f3fb7f96b0b7d8aa}{BPF\+\_\+\+JGE}} , 以及 \mbox{\hyperlink{gencode_8c_abebac9f84a2d479b2440a89936dd0ed1}{gen\+\_\+len()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a33e4fd5eedbb3e98997f5dd4c165f63c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a4f3bde0ac1adadd4372f574b366dd293}\label{gencode_8h_a4f3bde0ac1adadd4372f574b366dd293}} 
+\index{gencode.h@{gencode.h}!gen\_inbound@{gen\_inbound}}
+\index{gen\_inbound@{gen\_inbound}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_inbound()}{gen\_inbound()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+inbound (\begin{DoxyParamCaption}\item[{int}]{dir }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{bpf_8h_a920afaf0ab6ed5e76f8f96826a9130e8}{DLT\+\_\+\+IPNET}}, \mbox{\hyperlink{bpf_8h_a7c0592a5ba1300503ecfbbe905b8aa73}{DLT\+\_\+\+JUNIPER\+\_\+\+ATM1}}, \mbox{\hyperlink{bpf_8h_a84a0228478906318217ab170a0757e94}{DLT\+\_\+\+JUNIPER\+\_\+\+ATM2}}, \mbox{\hyperlink{bpf_8h_af4ae9d5338574d53e1e3264923020833}{DLT\+\_\+\+JUNIPER\+\_\+\+CHDLC}}, \mbox{\hyperlink{bpf_8h_af399bed3bd8d06aad26729140cf7fc6f}{DLT\+\_\+\+JUNIPER\+\_\+\+ES}}, \mbox{\hyperlink{bpf_8h_a2ef8d68db055bf62ab0803fec83a2821}{DLT\+\_\+\+JUNIPER\+\_\+\+ETHER}}, \mbox{\hyperlink{bpf_8h_accb286d02c19248430267d9393fc7f48}{DLT\+\_\+\+JUNIPER\+\_\+\+FRELAY}}, \mbox{\hyperlink{bpf_8h_a10d5d2872db7aee717a194a7bf241e5c}{DLT\+\_\+\+JUNIPER\+\_\+\+GGSN}}, \mbox{\hyperlink{bpf_8h_a3c18099bd21696fabd09933941e79fde}{DLT\+\_\+\+JUNIPER\+\_\+\+ISM}}, \mbox{\hyperlink{bpf_8h_aa75d40fc2a0b68e316147ae50159f5e7}{DLT\+\_\+\+JUNIPER\+\_\+\+MFR}}, \mbox{\hyperlink{bpf_8h_a24e94688eba389352347ae1682130736}{DLT\+\_\+\+JUNIPER\+\_\+\+MLFR}}, \mbox{\hyperlink{bpf_8h_a67c8ea3423c9646de298a2ab671bbf34}{DLT\+\_\+\+JUNIPER\+\_\+\+MLPPP}}, \mbox{\hyperlink{bpf_8h_aad76265394cc87b7b94859b8b588426d}{DLT\+\_\+\+JUNIPER\+\_\+\+MONITOR}}, \mbox{\hyperlink{bpf_8h_ac43a24908cb6f6ef091ca25031a9c017}{DLT\+\_\+\+JUNIPER\+\_\+\+PPP}}, \mbox{\hyperlink{bpf_8h_af56a45afc0691c25b892aed4df5ad0a4}{DLT\+\_\+\+JUNIPER\+\_\+\+PPPOE}}, \mbox{\hyperlink{bpf_8h_adbb0eaee99190d4ed1475b899dfbb5f7}{DLT\+\_\+\+JUNIPER\+\_\+\+PPPOE\+\_\+\+ATM}}, \mbox{\hyperlink{bpf_8h_acb7fd3af4f6283df2cab358a8f5abb42}{DLT\+\_\+\+JUNIPER\+\_\+\+SERVICES}}, \mbox{\hyperlink{bpf_8h_a71d599bfe1ea05da9ffca82ffe33ee6a}{DLT\+\_\+\+JUNIPER\+\_\+\+ST}}, \mbox{\hyperlink{bpf_8h_a5020fbe2b224879e4a5df944ef1c0e4c}{DLT\+\_\+\+JUNIPER\+\_\+\+VP}}, \mbox{\hyperlink{bpf_8h_a891ce25074040021b9510c8338f6fbb0}{DLT\+\_\+\+LINUX\+\_\+\+SLL}}, \mbox{\hyperlink{bpf_8h_a2421055e8b85ad04c91f6da2428979b4}{DLT\+\_\+\+PFLOG}}, \mbox{\hyperlink{bpf_8h_a6a4853ced148388bf284a712e71ec3f5}{DLT\+\_\+\+PPP\+\_\+\+PPPD}}, \mbox{\hyperlink{bpf_8h_a56ceaa589567f2e3c6f1b42b650fae62}{DLT\+\_\+\+SLIP}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a04555710eb38558a5b643e3578e4ff9f}{gen\+\_\+load()}}, \mbox{\hyperlink{gencode_8c_ace3c35a26ee91c6f609dd93beec05996}{gen\+\_\+loadi()}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{gencode_8c_abe12e5867d5ebc74857e8a1af7a241bb}{gen\+\_\+relation()}}, \mbox{\hyperlink{ipnet_8h_ae6e13a45c91f20f3d72d4e72fbe93794}{IPNET\+\_\+\+INBOUND}}, \mbox{\hyperlink{ipnet_8h_aecd9aee24e255ee8be1921b0eb07ed56}{IPNET\+\_\+\+OUTBOUND}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{sll_8h_aedd2e710b810cc94799a0802992b8720}{LINUX\+\_\+\+SLL\+\_\+\+HOST}}, \mbox{\hyperlink{sll_8h_ab6c118a4ba304b74a583b1f22273c047}{LINUX\+\_\+\+SLL\+\_\+\+OUTGOING}}, \mbox{\hyperlink{gencode_8c_a7c96e9bda39249f5b672b9d807cf3275}{offsetof}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}, \mbox{\hyperlink{ppp_8h_ab58538c4cab14c67e195f80a1b04256c}{PPP\+\_\+\+PPPD\+\_\+\+IN}}, \mbox{\hyperlink{ppp_8h_ae3f6256b337b8f01d388f3d45e51ffb2}{PPP\+\_\+\+PPPD\+\_\+\+OUT}} , 以及 \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a4f3bde0ac1adadd4372f574b366dd293_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ad7750a57ed4e3c8e0b8c25c0588a394b}\label{gencode_8h_ad7750a57ed4e3c8e0b8c25c0588a394b}} 
+\index{gencode.h@{gencode.h}!gen\_less@{gen\_less}}
+\index{gen\_less@{gen\_less}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_less()}{gen\_less()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+less (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_aa394be708300b02c14ab2c683e5a3daf}{BPF\+\_\+\+JGT}}, \mbox{\hyperlink{gencode_8c_abebac9f84a2d479b2440a89936dd0ed1}{gen\+\_\+len()}} , 以及 \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ad7750a57ed4e3c8e0b8c25c0588a394b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a09c15b884b2850a244973eccb2081622}\label{gencode_8h_a09c15b884b2850a244973eccb2081622}} 
+\index{gencode.h@{gencode.h}!gen\_load@{gen\_load}}
+\index{gen\_load@{gen\_load}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_load()}{gen\_load()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structarth}{arth}} $\ast$ gen\+\_\+load (\begin{DoxyParamCaption}\item[{int}]{proto,  }\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{inst,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_ae9c91cca5af963ff9b192fae4a50219b}{alloc\+\_\+reg()}}, \mbox{\hyperlink{structarth_aff7ef236be2602411d989b0c8b0ed855}{arth\+::b}}, \mbox{\hyperlink{bpf_8h_a948adc1bfe26d8ace7f037c5001c1c90}{BPF\+\_\+\+ADD}}, \mbox{\hyperlink{bpf_8h_ab86299ce44ef72cd7d679d54f4319422}{BPF\+\_\+\+ALU}}, \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{bpf_8h_a008a906521bd64e2647ddb108e5dcaf7}{BPF\+\_\+\+IND}}, \mbox{\hyperlink{bpf_8h_a30b582bb7e2eecf2897d1c6ecb313aa8}{BPF\+\_\+\+LD}}, \mbox{\hyperlink{bpf_8h_ab49ae94d593107003cd73724667494b5}{BPF\+\_\+\+MISC}}, \mbox{\hyperlink{bpf_8h_a18eb0b2f44582cb7152c370d7bc65258}{BPF\+\_\+\+ST}}, \mbox{\hyperlink{bpf_8h_a9c76fefa5ec23e6830663a09411a4193}{BPF\+\_\+\+TAX}}, \mbox{\hyperlink{bpf_8h_a8545a6e7695afc8df6d4ea61f0576c22}{BPF\+\_\+W}}, \mbox{\hyperlink{bpf_8h_a8d3288dafba4427f9c56a99850184008}{BPF\+\_\+X}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{pcap-bpf_8c_ac6040305574b360f11d28515d7506bd9}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}, \mbox{\hyperlink{pcap-bpf_8c_a6b824791fd4972ee56fcb5448100b62b}{DLT\+\_\+\+PRISM\+\_\+\+HEADER}}, \mbox{\hyperlink{gencode_8c_a9aeeeffddfa3f2364c476bb1d3000ea5}{free\+\_\+reg()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_af23005c142c1f7875bc6517323fee4b8}{gen\+\_\+ipfrag()}}, \mbox{\hyperlink{gencode_8c_a3c8122371373e97a82b1ced74d312cc8}{gen\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_af9217ef5df139ff99084bb692496ce90}{gen\+\_\+loadx\+\_\+iphdrlen()}}, \mbox{\hyperlink{gencode_8c_aa077416ae8fa842067632b7522e1b341}{gen\+\_\+off\+\_\+macpl()}}, \mbox{\hyperlink{gencode_8c_abe52f07bbbf9d62c4378a89e07a3db7c}{gen\+\_\+proto\+\_\+abbrev()}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{gencode_8c_aa28f2b4cc14bf8f60cc21bcd8e8537a7}{off\+\_\+ll}}, \mbox{\hyperlink{gencode_8c_ac7b9eceddff037d169947b07f6a39be5}{off\+\_\+macpl}}, \mbox{\hyperlink{gencode_8c_a9f62b73c5384c1dce9d2c15fe71190da}{off\+\_\+nl}}, \mbox{\hyperlink{gencode_8h_a6261aeefc0555cc8358a2e237a4f3db8}{Q\+\_\+\+ARP}}, \mbox{\hyperlink{gencode_8h_afae80334f7cc3c4aa85ef0a80f55a3d6}{Q\+\_\+\+ATALK}}, \mbox{\hyperlink{gencode_8h_a2cd310e0f691cb074e3102c512c187d5}{Q\+\_\+\+DECNET}}, \mbox{\hyperlink{gencode_8h_a39e90ed16b97cb2d199171d6c4791b29}{Q\+\_\+\+ICMP}}, \mbox{\hyperlink{gencode_8h_a4d49463c657d79857449e4661fc9e6b2}{Q\+\_\+\+ICMPV6}}, \mbox{\hyperlink{gencode_8h_a5585c5580104bbc57bdbcf23a7271595}{Q\+\_\+\+IGMP}}, \mbox{\hyperlink{gencode_8h_a866dfcb6f0cb3c3e17952e302789f809}{Q\+\_\+\+IGRP}}, \mbox{\hyperlink{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}{Q\+\_\+\+IP}}, \mbox{\hyperlink{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}{Q\+\_\+\+IPV6}}, \mbox{\hyperlink{gencode_8h_ad3be69fa811c2bd1d589674f5325048e}{Q\+\_\+\+LAT}}, \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}}, \mbox{\hyperlink{gencode_8h_ab1e2618b6e30687c154a4d9d8797663b}{Q\+\_\+\+MOPDL}}, \mbox{\hyperlink{gencode_8h_a60a6fa1a850ff5056c78438acb5929ad}{Q\+\_\+\+MOPRC}}, \mbox{\hyperlink{gencode_8h_ade68497dc85f94c9957363b0bdb468a5}{Q\+\_\+\+PIM}}, \mbox{\hyperlink{gencode_8h_afebf889ab1f1bba65bb45644578e80dc}{Q\+\_\+\+RADIO}}, \mbox{\hyperlink{gencode_8h_ae3a9fcad3ab4dd3a9c8ea647b0da730f}{Q\+\_\+\+RARP}}, \mbox{\hyperlink{gencode_8h_aa894482c5328c891712a3ed5b108e927}{Q\+\_\+\+SCA}}, \mbox{\hyperlink{gencode_8h_ad52d4d920c67ba8b5733bb37ffe37c64}{Q\+\_\+\+SCTP}}, \mbox{\hyperlink{gencode_8h_a3593b205e1e9789f2e6ac2b599dfaa54}{Q\+\_\+\+TCP}}, \mbox{\hyperlink{gencode_8h_a13632344e0999fd68e6085d28b37f2bd}{Q\+\_\+\+UDP}}, \mbox{\hyperlink{gencode_8h_ac0b8ac58ece3005ed8665659d46c1b29}{Q\+\_\+\+VRRP}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}}, \mbox{\hyperlink{structblock_ad745dd282eeeadb12388159724e00233}{block\+::s}}, \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}, \mbox{\hyperlink{gencode_8c_acc2d1f82a2c8cb15d39d10e0256e7d82}{sappend()}}, \mbox{\hyperlink{gencode_8c_a42b091c10ec97c15abe6e56b09d46118}{xfer\+\_\+to\+\_\+a()}} , 以及 \mbox{\hyperlink{gencode_8c_a94716172b8e9aaa22a4a4799cac4611c}{xfer\+\_\+to\+\_\+x()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a3b38e180c68c1e91fd5e673084f7b22e}{gen\+\_\+inbound()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a09c15b884b2850a244973eccb2081622_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{gencode_8h_a09c15b884b2850a244973eccb2081622_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a9bfc1dd3eb4a2d4b985b7a45761665e6}\label{gencode_8h_a9bfc1dd3eb4a2d4b985b7a45761665e6}} 
+\index{gencode.h@{gencode.h}!gen\_loadi@{gen\_loadi}}
+\index{gen\_loadi@{gen\_loadi}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_loadi()}{gen\_loadi()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structarth}{arth}} $\ast$ gen\+\_\+loadi (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_ae9c91cca5af963ff9b192fae4a50219b}{alloc\+\_\+reg()}}, \mbox{\hyperlink{bpf_8h_a41872e2b8a33cf6d4f1d4d8f73c86f45}{BPF\+\_\+\+IMM}}, \mbox{\hyperlink{bpf_8h_a30b582bb7e2eecf2897d1c6ecb313aa8}{BPF\+\_\+\+LD}}, \mbox{\hyperlink{bpf_8h_a18eb0b2f44582cb7152c370d7bc65258}{BPF\+\_\+\+ST}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{gencode_8c_aa5335a4f003f5509f70eb93e3724dbb1}{newchunk()}}, \mbox{\hyperlink{structslist_a7c8ee186f75ca8d5f092b8e9f961dca3}{slist\+::next}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}} , 以及 \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a3b38e180c68c1e91fd5e673084f7b22e}{gen\+\_\+inbound()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a9bfc1dd3eb4a2d4b985b7a45761665e6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{gencode_8h_a9bfc1dd3eb4a2d4b985b7a45761665e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae8334723ecf8facd80f3d8a9f706659b}\label{gencode_8h_ae8334723ecf8facd80f3d8a9f706659b}} 
+\index{gencode.h@{gencode.h}!gen\_loadlen@{gen\_loadlen}}
+\index{gen\_loadlen@{gen\_loadlen}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_loadlen()}{gen\_loadlen()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structarth}{arth}} $\ast$ gen\+\_\+loadlen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_ae9c91cca5af963ff9b192fae4a50219b}{alloc\+\_\+reg()}}, \mbox{\hyperlink{bpf_8h_a30b582bb7e2eecf2897d1c6ecb313aa8}{BPF\+\_\+\+LD}}, \mbox{\hyperlink{bpf_8h_ab7c3d599228eb36f70861a8b36c98c57}{BPF\+\_\+\+LEN}}, \mbox{\hyperlink{bpf_8h_a18eb0b2f44582cb7152c370d7bc65258}{BPF\+\_\+\+ST}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{gencode_8c_aa5335a4f003f5509f70eb93e3724dbb1}{newchunk()}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}} , 以及 \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ae8334723ecf8facd80f3d8a9f706659b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae41727b2bf7e4a2961376d3c6fad708f}\label{gencode_8h_ae41727b2bf7e4a2961376d3c6fad708f}} 
+\index{gencode.h@{gencode.h}!gen\_mcode@{gen\_mcode}}
+\index{gen\_mcode@{gen\_mcode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_mcode()}{gen\_mcode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+mcode (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2,  }\item[{int}]{masklen,  }\item[{struct \mbox{\hyperlink{structqual}{qual}}}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_afbfb7c5d5925d261b989fe7a7a874a03}\label{gencode_8h_afbfb7c5d5925d261b989fe7a7a874a03}} 
+\index{gencode.h@{gencode.h}!gen\_mpls@{gen\_mpls}}
+\index{gen\_mpls@{gen\_mpls}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_mpls()}{gen\_mpls()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+mpls (\begin{DoxyParamCaption}\item[{int}]{label\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_a8545a6e7695afc8df6d4ea61f0576c22}{BPF\+\_\+W}}, \mbox{\hyperlink{bpf_8h_ae1d848d9438699c5e35e2f35d375d6d3}{DLT\+\_\+\+C\+\_\+\+HDLC}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_abd6a9c219e10570fdf4b02c351a5dffe}{DLT\+\_\+\+PPP}}, \mbox{\hyperlink{ethertype_8h_a366bec338345160bb4022acfe49b342b}{ETHERTYPE\+\_\+\+MPLS}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{gencode_8c_af5a1f8eeb6d59048bb466528fd951f0d}{label\+\_\+stack\+\_\+depth}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8c_a9f62b73c5384c1dce9d2c15fe71190da}{off\+\_\+nl}}, \mbox{\hyperlink{gencode_8c_a1161b404316e694f2468727ef54af33c}{off\+\_\+nl\+\_\+nosnap}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a7e975c4617a8378713ce34e24adb524c}{OR\+\_\+\+MACPL}}, \mbox{\hyperlink{gencode_8c_a6e9aa0da1d2a2e8cb7e09b0ea07786f4}{orig\+\_\+nl}} , 以及 \mbox{\hyperlink{ppp_8h_ae54ba2b15ae6099532cb775a78965c8d}{PPP\+\_\+\+MPLS\+\_\+\+UCAST}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_afbfb7c5d5925d261b989fe7a7a874a03_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a537190b411d8c2b06fb133e782c33e99}\label{gencode_8h_a537190b411d8c2b06fb133e782c33e99}} 
+\index{gencode.h@{gencode.h}!gen\_mtp2type\_abbrev@{gen\_mtp2type\_abbrev}}
+\index{gen\_mtp2type\_abbrev@{gen\_mtp2type\_abbrev}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_mtp2type\_abbrev()}{gen\_mtp2type\_abbrev()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+mtp2type\+\_\+abbrev (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{bpf_8h_aa394be708300b02c14ab2c683e5a3daf}{BPF\+\_\+\+JGT}}, \mbox{\hyperlink{bpf_8h_ac62cfe3870637c6c88c942c8fdea8e55}{DLT\+\_\+\+ERF}}, \mbox{\hyperlink{bpf_8h_ab7191af73121cad434e6f49dcfb1c30f}{DLT\+\_\+\+MTP2}}, \mbox{\hyperlink{bpf_8h_a65fea645c5e17d944023666a1104d9be}{DLT\+\_\+\+MTP2\+\_\+\+WITH\+\_\+\+PHDR}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8h_af070ae8c03803422b27f78395c1da80e}{M\+\_\+\+FISU}}, \mbox{\hyperlink{gencode_8h_acff2e4809fb803720e5cfdee87adaf1e}{M\+\_\+\+LSSU}}, \mbox{\hyperlink{gencode_8h_ad2ba3a2c843991308322b14f99b4eec3}{M\+\_\+\+MSU}}, \mbox{\hyperlink{gencode_8c_a833ccd890050154d2dfd6dc9e5d295ba}{off\+\_\+li}} , 以及 \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785ab6df88bf155fd596ae0ef0a4f28f124d}{OR\+\_\+\+PACKET}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a537190b411d8c2b06fb133e782c33e99_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ad167f0fea09b21a582c8a2231e1f1bc9}\label{gencode_8h_ad167f0fea09b21a582c8a2231e1f1bc9}} 
+\index{gencode.h@{gencode.h}!gen\_mtp3field\_code@{gen\_mtp3field\_code}}
+\index{gen\_mtp3field\_code@{gen\_mtp3field\_code}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_mtp3field\_code()}{gen\_mtp3field\_code()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+mtp3field\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{mtp3field,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{jvalue,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{jtype,  }\item[{int}]{reverse }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_a8545a6e7695afc8df6d4ea61f0576c22}{BPF\+\_\+W}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8h_a3a6678681cceb6c348052f8bcf8d7349}{M\+\_\+\+DPC}}, \mbox{\hyperlink{gencode_8h_a9b997fe9ae69a228b5c18daaa0ee3874}{M\+\_\+\+OPC}}, \mbox{\hyperlink{gencode_8h_a30c77d0d1153115eae55c2da2fd1ff2e}{M\+\_\+\+SIO}}, \mbox{\hyperlink{gencode_8h_a67b7afda867910dc86057c0217d73a1f}{M\+\_\+\+SLS}}, \mbox{\hyperlink{gencode_8c_abce23356a3f1ffa3d5f4d1c8974e7b33}{off\+\_\+dpc}}, \mbox{\hyperlink{gencode_8c_ac12fa1a755c13266d96179aa5e70df47}{off\+\_\+opc}}, \mbox{\hyperlink{gencode_8c_afb50064c7a149c369599a2283f88a0bb}{off\+\_\+sio}}, \mbox{\hyperlink{gencode_8c_a7b67e53af0b843b8b602d01d7097e390}{off\+\_\+sls}} , 以及 \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785ab6df88bf155fd596ae0ef0a4f28f124d}{OR\+\_\+\+PACKET}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ad167f0fea09b21a582c8a2231e1f1bc9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ad93122c4473a2157f42b74947c62077e}\label{gencode_8h_ad93122c4473a2157f42b74947c62077e}} 
+\index{gencode.h@{gencode.h}!gen\_multicast@{gen\_multicast}}
+\index{gen\_multicast@{gen\_multicast}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_multicast()}{gen\_multicast()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+multicast (\begin{DoxyParamCaption}\item[{int}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a4704a67cc902593a20c052c044540cbc}{abroadcast}}, \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{bpf_8h_a29066100396aa055e299940df5ffbeca}{BPF\+\_\+\+JSET}}, \mbox{\hyperlink{bpf_8h_a3f09da5a46633b5f3018524ba609db91}{DLT\+\_\+\+ARCNET}}, \mbox{\hyperlink{bpf_8h_a093c70187a8511964e97e77828fe0bc7}{DLT\+\_\+\+ARCNET\+\_\+\+LINUX}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}, \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}}, \mbox{\hyperlink{bpf_8h_ac92b6c71dbcc3de9f19a235660422ef4}{DLT\+\_\+\+IEEE802\+\_\+11}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{pcap-bpf_8c_ac6040305574b360f11d28515d7506bd9}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}, \mbox{\hyperlink{bpf_8h_a9e3dc4b02619a9daf3e58c7f79c97f05}{DLT\+\_\+\+IP\+\_\+\+OVER\+\_\+\+FC}}, \mbox{\hyperlink{bpf_8h_ab14d6d53c433663ac546ef32b83bd7ee}{DLT\+\_\+\+PPI}}, \mbox{\hyperlink{pcap-bpf_8c_a6b824791fd4972ee56fcb5448100b62b}{DLT\+\_\+\+PRISM\+\_\+\+HEADER}}, \mbox{\hyperlink{bpf_8h_a863dac884dda26ce90c909732fdb7b48}{DLT\+\_\+\+SUNATM}}, \mbox{\hyperlink{ethertype_8h_ae2021b6951d9782a2ba9cb243abdea93}{ETHERTYPE\+\_\+\+IP}}, \mbox{\hyperlink{ethertype_8h_ac25537090a27d590178d14ab1b63b66b}{ETHERTYPE\+\_\+\+IPV6}}, \mbox{\hyperlink{gencode_8c_a6f2e63e5bbc14024f41ce0240f5cf372}{gen\+\_\+ahostop()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a67883eec995b503e9f0963fcef1d56d3}{gen\+\_\+cmp\+\_\+ge()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a29ad3953798797a8028f718789102c8c}{gen\+\_\+load\+\_\+a()}}, \mbox{\hyperlink{gencode_8c_a088d7aeb7208798db34a8592cf8fec89}{gen\+\_\+mac\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}}, \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}}, \mbox{\hyperlink{gencode_8c_ab6241a2901c4678b8a5bf8805defe80a}{is\+\_\+lane}}, \mbox{\hyperlink{gencode_8c_acbd8cb2182286c7a59634c8f2248223e}{JMP}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8c_adae9e51b46a5908a67327ec7a692e757}{new\+\_\+block()}}, \mbox{\hyperlink{gencode_8c_a133f050191990c0a9281702c1c84b87e}{off\+\_\+mac}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a01b5d18f52b9a04b6d8463192ae201c2}{OR\+\_\+\+NET}}, \mbox{\hyperlink{gencode_8h_a46c449445c5d7f77f266148e152699d3}{Q\+\_\+\+DEFAULT}}, \mbox{\hyperlink{gencode_8h_a33d7db8d2c4694cad8fc1deb47800d22}{Q\+\_\+\+DST}}, \mbox{\hyperlink{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}{Q\+\_\+\+IP}}, \mbox{\hyperlink{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}{Q\+\_\+\+IPV6}}, \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}}, \mbox{\hyperlink{structblock_ad745dd282eeeadb12388159724e00233}{block\+::s}}, \mbox{\hyperlink{structblock_a1f06889ad08e9604a0551f90bec551be}{block\+::stmts}} , 以及 \mbox{\hyperlink{sunatmpos_8h_a3ab232dcb7cbb49c4c79cd04e6e82d2b}{SUNATM\+\_\+\+PKT\+\_\+\+BEGIN\+\_\+\+POS}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ad93122c4473a2157f42b74947c62077e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a9bb42d4615a047772542156307620808}\label{gencode_8h_a9bb42d4615a047772542156307620808}} 
+\index{gencode.h@{gencode.h}!gen\_ncode@{gen\_ncode}}
+\index{gen\_ncode@{gen\_ncode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_ncode()}{gen\_ncode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+ncode (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{v,  }\item[{struct \mbox{\hyperlink{structqual}{qual}}}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_a0102c8bfabfa51da7722e58d01c62257}\label{gencode_8h_a0102c8bfabfa51da7722e58d01c62257}} 
+\index{gencode.h@{gencode.h}!gen\_neg@{gen\_neg}}
+\index{gen\_neg@{gen\_neg}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_neg()}{gen\_neg()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structarth}{arth}} $\ast$ gen\+\_\+neg (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_ab86299ce44ef72cd7d679d54f4319422}{BPF\+\_\+\+ALU}}, \mbox{\hyperlink{bpf_8h_a4b14e20d67cc30e4233a07e44c8a5135}{BPF\+\_\+\+NEG}}, \mbox{\hyperlink{bpf_8h_a18eb0b2f44582cb7152c370d7bc65258}{BPF\+\_\+\+ST}}, \mbox{\hyperlink{structstmt_a59ee882590cba062e4c62312341fa641}{stmt\+::k}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structslist_ad745dd282eeeadb12388159724e00233}{slist\+::s}}, \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}, \mbox{\hyperlink{gencode_8c_acc2d1f82a2c8cb15d39d10e0256e7d82}{sappend()}} , 以及 \mbox{\hyperlink{gencode_8c_a42b091c10ec97c15abe6e56b09d46118}{xfer\+\_\+to\+\_\+a()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a0102c8bfabfa51da7722e58d01c62257_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a1a0b468d16c3c5bba62ca5fa71ba61e1}\label{gencode_8h_a1a0b468d16c3c5bba62ca5fa71ba61e1}} 
+\index{gencode.h@{gencode.h}!gen\_not@{gen\_not}}
+\index{gen\_not@{gen\_not}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_not()}{gen\_not()}}
+{\footnotesize\ttfamily void gen\+\_\+not (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structblock_a63824e330f67129ae657ddc1120c30f2}{block\+::sense}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_afcf8ceb3765c2436ca27ad927b3affc2}{gen\+\_\+broadcast()}}, \mbox{\hyperlink{gencode_8c_abc89927abca90d5d99d04f6ad571418e}{gen\+\_\+byteop()}}, \mbox{\hyperlink{gencode_8c_ac13ef9dc4a68ebc088cf9ced12ddc1f7}{gen\+\_\+check\+\_\+802\+\_\+11\+\_\+data\+\_\+frame()}}, \mbox{\hyperlink{gencode_8c_a7d07fc48416760fa31d017b1e00041ad}{gen\+\_\+ether\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a55e8d1e00dcf1f191d42fe4acee1fbad}{gen\+\_\+gateway()}}, \mbox{\hyperlink{gencode_8c_af23005c142c1f7875bc6517323fee4b8}{gen\+\_\+ipfrag()}}, \mbox{\hyperlink{gencode_8c_aaaf1788e8a3f9409c1f9f5a4c5660750}{gen\+\_\+less()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_ab14e56454df06ecc7b74d23c8af51257}{gen\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_abe12e5867d5ebc74857e8a1af7a241bb}{gen\+\_\+relation()}} , 以及 \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a1a0b468d16c3c5bba62ca5fa71ba61e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a12a1ea04ef292c4af893acfeb229f97f}\label{gencode_8h_a12a1ea04ef292c4af893acfeb229f97f}} 
+\index{gencode.h@{gencode.h}!gen\_or@{gen\_or}}
+\index{gen\_or@{gen\_or}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_or()}{gen\_or()}}
+{\footnotesize\ttfamily void gen\+\_\+or (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{b0,  }\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{b1 }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a88311365879e54ee27aeb33ee91d9070}{backpatch()}}, \mbox{\hyperlink{structblock_acc701d7d7d005dac151d763277a1661e}{block\+::head}}, \mbox{\hyperlink{gencode_8c_a2552e81906a80a238e3aae6ddcd0836a}{merge()}} , 以及 \mbox{\hyperlink{structblock_a63824e330f67129ae657ddc1120c30f2}{block\+::sense}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a6f2e63e5bbc14024f41ce0240f5cf372}{gen\+\_\+ahostop()}}, \mbox{\hyperlink{gencode_8c_a5dd41ff822745a0a5295c6dd94c5c723}{gen\+\_\+atmmulti\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_afcf8ceb3765c2436ca27ad927b3affc2}{gen\+\_\+broadcast()}}, \mbox{\hyperlink{gencode_8c_ad8380ef55f5cf5395911ad0c8b28779e}{gen\+\_\+dnhostop()}}, \mbox{\hyperlink{gencode_8c_a1fcb62cc912ca4ab6515974ba7a01476}{gen\+\_\+ehostop()}}, \mbox{\hyperlink{gencode_8c_a7d07fc48416760fa31d017b1e00041ad}{gen\+\_\+ether\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_a015a6c34e07b541e6d2d8245135964dd}{gen\+\_\+fhostop()}}, \mbox{\hyperlink{gencode_8c_a55e8d1e00dcf1f191d42fe4acee1fbad}{gen\+\_\+gateway()}}, \mbox{\hyperlink{gencode_8c_aa5b4e95a0d787aa38a4d0c2de8863442}{gen\+\_\+host()}}, \mbox{\hyperlink{gencode_8c_a83f97d83b2d8f92765bbccbefeb252c9}{gen\+\_\+hostop()}}, \mbox{\hyperlink{gencode_8c_af30406dd99c4b943056f6364828a0360}{gen\+\_\+ipfchostop()}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_ad0d2f730f10ef712090d1744ebb38fcd}{gen\+\_\+linux\+\_\+sll\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_ab14e56454df06ecc7b74d23c8af51257}{gen\+\_\+multicast()}}, \mbox{\hyperlink{gencode_8c_a9f42a31e126dd90e46596ebf999786f5}{gen\+\_\+port()}}, \mbox{\hyperlink{gencode_8c_a67a61cf29c9cdf44068067e0cd64f1f5}{gen\+\_\+portop()}}, \mbox{\hyperlink{gencode_8c_acb8fbc0723bea6b1c9d861b60712630d}{gen\+\_\+portrange()}}, \mbox{\hyperlink{gencode_8c_a75303678d909bb073ef14f3c2c002592}{gen\+\_\+portrangeop()}}, \mbox{\hyperlink{gencode_8c_a3bb1bd404477547ed3cc813edcc248ac}{gen\+\_\+proto()}}, \mbox{\hyperlink{gencode_8c_abe52f07bbbf9d62c4378a89e07a3db7c}{gen\+\_\+proto\+\_\+abbrev()}}, \mbox{\hyperlink{gencode_8c_ad54245ee8fc82d9474bff9e7baa35eed}{gen\+\_\+protochain()}}, \mbox{\hyperlink{gencode_8c_a2ca04239958f46685358c0024ecb023a}{gen\+\_\+thostop()}} , 以及 \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{gencode_8h_a12a1ea04ef292c4af893acfeb229f97f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a12a1ea04ef292c4af893acfeb229f97f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a84b25ed4789c08647f8085896b1c9279}\label{gencode_8h_a84b25ed4789c08647f8085896b1c9279}} 
+\index{gencode.h@{gencode.h}!gen\_p80211\_fcdir@{gen\_p80211\_fcdir}}
+\index{gen\_p80211\_fcdir@{gen\_p80211\_fcdir}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_p80211\_fcdir()}{gen\_p80211\_fcdir()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+p80211\+\_\+fcdir (\begin{DoxyParamCaption}\item[{int}]{fcdir }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_ac92b6c71dbcc3de9f19a235660422ef4}{DLT\+\_\+\+IEEE802\+\_\+11}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{pcap-bpf_8c_ac6040305574b360f11d28515d7506bd9}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}, \mbox{\hyperlink{pcap-bpf_8c_a6b824791fd4972ee56fcb5448100b62b}{DLT\+\_\+\+PRISM\+\_\+\+HEADER}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{ieee80211_8h_aaeeacbf8cb6fcb873f0f54e387cd34a1}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+MASK}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}} , 以及 \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a84b25ed4789c08647f8085896b1c9279_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_afcec5c4d056b4022b6ec7400ddbde2a6}\label{gencode_8h_afcec5c4d056b4022b6ec7400ddbde2a6}} 
+\index{gencode.h@{gencode.h}!gen\_p80211\_type@{gen\_p80211\_type}}
+\index{gen\_p80211\_type@{gen\_p80211\_type}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_p80211\_type()}{gen\_p80211\_type()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+p80211\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{mask }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a8f5c358d471020bee3c7c0158dd4caa9}{BPF\+\_\+B}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_ac92b6c71dbcc3de9f19a235660422ef4}{DLT\+\_\+\+IEEE802\+\_\+11}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{pcap-bpf_8c_ac6040305574b360f11d28515d7506bd9}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}, \mbox{\hyperlink{pcap-bpf_8c_a6b824791fd4972ee56fcb5448100b62b}{DLT\+\_\+\+PRISM\+\_\+\+HEADER}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}} , 以及 \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_afcec5c4d056b4022b6ec7400ddbde2a6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a7654480cd356e06ac51ebcd069aa8247}\label{gencode_8h_a7654480cd356e06ac51ebcd069aa8247}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_action@{gen\_pf\_action}}
+\index{gen\_pf\_action@{gen\_pf\_action}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_action()}{gen\_pf\_action()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+action (\begin{DoxyParamCaption}\item[{int}]{action }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a7654480cd356e06ac51ebcd069aa8247_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_aac7e67e00ebe5cff970631285b9d0975}\label{gencode_8h_aac7e67e00ebe5cff970631285b9d0975}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_dir@{gen\_pf\_dir}}
+\index{gen\_pf\_dir@{gen\_pf\_dir}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_dir()}{gen\_pf\_dir()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+dir (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_ac52fe4d04ce1c4283a40a0ca125ca962}\label{gencode_8h_ac52fe4d04ce1c4283a40a0ca125ca962}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_ifname@{gen\_pf\_ifname}}
+\index{gen\_pf\_ifname@{gen\_pf\_ifname}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_ifname()}{gen\_pf\_ifname()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+ifname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ifname }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ac52fe4d04ce1c4283a40a0ca125ca962_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae7c9e6dd913ff6c69cefb29a1723d9b1}\label{gencode_8h_ae7c9e6dd913ff6c69cefb29a1723d9b1}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_reason@{gen\_pf\_reason}}
+\index{gen\_pf\_reason@{gen\_pf\_reason}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_reason()}{gen\_pf\_reason()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+reason (\begin{DoxyParamCaption}\item[{int}]{reason }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ae7c9e6dd913ff6c69cefb29a1723d9b1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a8518977fad3d519d54e4199a5466857f}\label{gencode_8h_a8518977fad3d519d54e4199a5466857f}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_rnr@{gen\_pf\_rnr}}
+\index{gen\_pf\_rnr@{gen\_pf\_rnr}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_rnr()}{gen\_pf\_rnr()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+rnr (\begin{DoxyParamCaption}\item[{int}]{rnr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{gencode_8h_a8518977fad3d519d54e4199a5466857f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a23352d318d2940cf80a4b8c872dbd4a6}\label{gencode_8h_a23352d318d2940cf80a4b8c872dbd4a6}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_ruleset@{gen\_pf\_ruleset}}
+\index{gen\_pf\_ruleset@{gen\_pf\_ruleset}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_ruleset()}{gen\_pf\_ruleset()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+ruleset (\begin{DoxyParamCaption}\item[{char $\ast$}]{ruleset }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a23352d318d2940cf80a4b8c872dbd4a6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_af6fa7ec5c78970c80834b433290fc54b}\label{gencode_8h_af6fa7ec5c78970c80834b433290fc54b}} 
+\index{gencode.h@{gencode.h}!gen\_pf\_srnr@{gen\_pf\_srnr}}
+\index{gen\_pf\_srnr@{gen\_pf\_srnr}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pf\_srnr()}{gen\_pf\_srnr()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pf\+\_\+srnr (\begin{DoxyParamCaption}\item[{int}]{srnr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{gencode_8h_af6fa7ec5c78970c80834b433290fc54b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ade2389af18d7e526a5ffd3226e65f949}\label{gencode_8h_ade2389af18d7e526a5ffd3226e65f949}} 
+\index{gencode.h@{gencode.h}!gen\_pppoed@{gen\_pppoed}}
+\index{gen\_pppoed@{gen\_pppoed}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pppoed()}{gen\_pppoed()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pppoed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ethertype_8h_a3220ecead6256e7906514961a2518d04}{ETHERTYPE\+\_\+\+PPPOED}} , 以及 \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ade2389af18d7e526a5ffd3226e65f949_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a1eda5e37aef5416c2ad04e080b6e2313}\label{gencode_8h_a1eda5e37aef5416c2ad04e080b6e2313}} 
+\index{gencode.h@{gencode.h}!gen\_pppoes@{gen\_pppoes}}
+\index{gen\_pppoes@{gen\_pppoes}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_pppoes()}{gen\_pppoes()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+pppoes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ethertype_8h_ad775890d6c0530483264ee309fada197}{ETHERTYPE\+\_\+\+PPPOES}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_acdf4c231538d394ce30c425cad9353c7}{is\+\_\+pppoes}}, \mbox{\hyperlink{gencode_8c_a74d7de343b4e7e43875a1bc971e223e2}{off\+\_\+linktype}}, \mbox{\hyperlink{gencode_8c_a9f62b73c5384c1dce9d2c15fe71190da}{off\+\_\+nl}}, \mbox{\hyperlink{gencode_8c_a1161b404316e694f2468727ef54af33c}{off\+\_\+nl\+\_\+nosnap}}, \mbox{\hyperlink{gencode_8c_a00bb7510de0cc24b92a363286c1b7e79}{orig\+\_\+linktype}} , 以及 \mbox{\hyperlink{gencode_8c_a6e9aa0da1d2a2e8cb7e09b0ea07786f4}{orig\+\_\+nl}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a1eda5e37aef5416c2ad04e080b6e2313_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a7f5e28e4e2e81c8770ef6498ee1895b5}\label{gencode_8h_a7f5e28e4e2e81c8770ef6498ee1895b5}} 
+\index{gencode.h@{gencode.h}!gen\_proto\_abbrev@{gen\_proto\_abbrev}}
+\index{gen\_proto\_abbrev@{gen\_proto\_abbrev}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_proto\_abbrev()}{gen\_proto\_abbrev()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+proto\+\_\+abbrev (\begin{DoxyParamCaption}\item[{int}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{ethertype_8h_aa2692ff7ce9c6412385d9465d0d6d152}{ETHERTYPE\+\_\+\+AARP}}, \mbox{\hyperlink{ethertype_8h_a58349316842ce4bdc5ff10568ec5dc31}{ETHERTYPE\+\_\+\+ARP}}, \mbox{\hyperlink{ethertype_8h_a1b3ed9773a8bef2701bda5d7b64fce30}{ETHERTYPE\+\_\+\+ATALK}}, \mbox{\hyperlink{ethertype_8h_a706d57ddf9b56f5ba4523884f95a74b3}{ETHERTYPE\+\_\+\+DN}}, \mbox{\hyperlink{ethertype_8h_ae2021b6951d9782a2ba9cb243abdea93}{ETHERTYPE\+\_\+\+IP}}, \mbox{\hyperlink{ethertype_8h_ac25537090a27d590178d14ab1b63b66b}{ETHERTYPE\+\_\+\+IPV6}}, \mbox{\hyperlink{ethertype_8h_addb47d19e88092d1ac890d3f15009191}{ETHERTYPE\+\_\+\+LAT}}, \mbox{\hyperlink{ethertype_8h_aa21251d135a8057aba7ed95744313f80}{ETHERTYPE\+\_\+\+MOPDL}}, \mbox{\hyperlink{ethertype_8h_a770db23e88aa088be7af0c73b262cf9b}{ETHERTYPE\+\_\+\+MOPRC}}, \mbox{\hyperlink{ethertype_8h_a1d8bc382d37844a65bae2006a05046f3}{ETHERTYPE\+\_\+\+REVARP}}, \mbox{\hyperlink{ethertype_8h_afa7c9597486411ae8efe8136cccfcd47}{ETHERTYPE\+\_\+\+SCA}}, \mbox{\hyperlink{gencode_8c_a61b2c6d87b6c74a83363f9b28847ec60}{gen\+\_\+linktype()}}, \mbox{\hyperlink{gencode_8c_ad9f72f43761d7d4e83f2089862ad2eaa}{gen\+\_\+or()}}, \mbox{\hyperlink{gencode_8c_a3bb1bd404477547ed3cc813edcc248ac}{gen\+\_\+proto()}}, \mbox{\hyperlink{gencode_8c_a517be4ff177b5a3d70c10cb2ca7ea31e}{IPPROTO\+\_\+\+AH}}, \mbox{\hyperlink{gencode_8c_a4b9d5e2fbcca9ae84db04807a6693c31}{IPPROTO\+\_\+\+ESP}}, \mbox{\hyperlink{ip6__misc_8h_a3a52cdbaf5f9fc647399ef2481c8204d}{IPPROTO\+\_\+\+ICMPV6}}, \mbox{\hyperlink{gencode_8c_a27694062feaa6fa3bd01d6df67f36762}{IPPROTO\+\_\+\+IGMP}}, \mbox{\hyperlink{gencode_8c_a7289a849375e4ebe1d2712173ae75c64}{IPPROTO\+\_\+\+IGRP}}, \mbox{\hyperlink{gencode_8c_ae06997f73d0cb6365963400e23d2c0e5}{IPPROTO\+\_\+\+PIM}}, \mbox{\hyperlink{gencode_8c_afce983cef8c9dfb0595ee46f7a955aa8}{IPPROTO\+\_\+\+SCTP}}, \mbox{\hyperlink{gencode_8c_aac136e0282d41a9f9bf3fb80d93815b9}{IPPROTO\+\_\+\+VRRP}}, \mbox{\hyperlink{nlpid_8h_abda5e148c0ef75d1aa77aed9825457b7}{ISIS\+\_\+\+L1\+\_\+\+CSNP}}, \mbox{\hyperlink{nlpid_8h_ad80d20f505a456a990acbc0c8b61145c}{ISIS\+\_\+\+L1\+\_\+\+LAN\+\_\+\+IIH}}, \mbox{\hyperlink{nlpid_8h_a21681d30a7ef3e2e21e5cef62e205c73}{ISIS\+\_\+\+L1\+\_\+\+LSP}}, \mbox{\hyperlink{nlpid_8h_a05d7a286a7f053c7c07b03c01a4159f3}{ISIS\+\_\+\+L1\+\_\+\+PSNP}}, \mbox{\hyperlink{nlpid_8h_a3083848ad9e0b36d143c424438ab1f52}{ISIS\+\_\+\+L2\+\_\+\+CSNP}}, \mbox{\hyperlink{nlpid_8h_a41d32c50c516e707f8ee956e6ddbf582}{ISIS\+\_\+\+L2\+\_\+\+LAN\+\_\+\+IIH}}, \mbox{\hyperlink{nlpid_8h_aadeb761a74f1ccf4f0332ca122d7dbb4}{ISIS\+\_\+\+L2\+\_\+\+LSP}}, \mbox{\hyperlink{nlpid_8h_a84c9bbc30f751f6788628ec7894d47b0}{ISIS\+\_\+\+L2\+\_\+\+PSNP}}, \mbox{\hyperlink{nlpid_8h_a403935a1ba771633654d5b61990abaab}{ISIS\+\_\+\+PTP\+\_\+\+IIH}}, \mbox{\hyperlink{nlpid_8h_a5246f338b99d70bb67f26fdbf2c25c8b}{ISO10589\+\_\+\+ISIS}}, \mbox{\hyperlink{nlpid_8h_a31b3a6f2f0a5bd58f7c76ac25e655680}{ISO8473\+\_\+\+CLNP}}, \mbox{\hyperlink{nlpid_8h_ac46252393a469e6335e3689dd8a9c45b}{ISO9542\+\_\+\+ESIS}}, \mbox{\hyperlink{llc_8h_ac9d60cdb57442fe1cb7e8850d2f57ac1}{LLCSAP\+\_\+8021D}}, \mbox{\hyperlink{llc_8h_a128f1a82d2924d03b5dcb4f258860e2e}{LLCSAP\+\_\+\+IPX}}, \mbox{\hyperlink{llc_8h_ad0351b273fabea496c0170797c7af172}{LLCSAP\+\_\+\+ISONS}}, \mbox{\hyperlink{llc_8h_a64ba3179e48dc2da17164ba5ec955c58}{LLCSAP\+\_\+\+NETBEUI}}, \mbox{\hyperlink{gencode_8h_a398bd5ae2469565670f6d01da3fccdbc}{Q\+\_\+\+AARP}}, \mbox{\hyperlink{gencode_8h_a6c2864a2b3a717282ba1f5f3ccc2deed}{Q\+\_\+\+AH}}, \mbox{\hyperlink{gencode_8h_a6261aeefc0555cc8358a2e237a4f3db8}{Q\+\_\+\+ARP}}, \mbox{\hyperlink{gencode_8h_afae80334f7cc3c4aa85ef0a80f55a3d6}{Q\+\_\+\+ATALK}}, \mbox{\hyperlink{gencode_8h_aba625a40200b04aa5f17dedb22d01f33}{Q\+\_\+\+CLNP}}, \mbox{\hyperlink{gencode_8h_a2cd310e0f691cb074e3102c512c187d5}{Q\+\_\+\+DECNET}}, \mbox{\hyperlink{gencode_8h_a46c449445c5d7f77f266148e152699d3}{Q\+\_\+\+DEFAULT}}, \mbox{\hyperlink{gencode_8h_a5c985faa808841abf54719989ebd591f}{Q\+\_\+\+ESIS}}, \mbox{\hyperlink{gencode_8h_a7925ff44e3abc7b57f7a18438b658c1b}{Q\+\_\+\+ESP}}, \mbox{\hyperlink{gencode_8h_a39e90ed16b97cb2d199171d6c4791b29}{Q\+\_\+\+ICMP}}, \mbox{\hyperlink{gencode_8h_a4d49463c657d79857449e4661fc9e6b2}{Q\+\_\+\+ICMPV6}}, \mbox{\hyperlink{gencode_8h_a5585c5580104bbc57bdbcf23a7271595}{Q\+\_\+\+IGMP}}, \mbox{\hyperlink{gencode_8h_a866dfcb6f0cb3c3e17952e302789f809}{Q\+\_\+\+IGRP}}, \mbox{\hyperlink{gencode_8h_ad2f3aa3c85c9020509ad8bb08bc2374f}{Q\+\_\+\+IP}}, \mbox{\hyperlink{gencode_8h_a38dcbc56157167e4d24ae510f071e0d4}{Q\+\_\+\+IPV6}}, \mbox{\hyperlink{gencode_8h_a73ce1d8c21a188c6595f817ddacfe204}{Q\+\_\+\+IPX}}, \mbox{\hyperlink{gencode_8h_a45c9f4201a9983d82aa76b48429c4475}{Q\+\_\+\+ISIS}}, \mbox{\hyperlink{gencode_8h_aa297ae8e9771ad7f3914bfcf74a32703}{Q\+\_\+\+ISIS\+\_\+\+CSNP}}, \mbox{\hyperlink{gencode_8h_adecc5ad16acb3ad1ab1ba61f1017c8ea}{Q\+\_\+\+ISIS\+\_\+\+IIH}}, \mbox{\hyperlink{gencode_8h_a4628136e594ca4f0b0abe3abad35b7fc}{Q\+\_\+\+ISIS\+\_\+\+L1}}, \mbox{\hyperlink{gencode_8h_a2b6fdc22b0a0999a1d5f9ab6cd730a26}{Q\+\_\+\+ISIS\+\_\+\+L2}}, \mbox{\hyperlink{gencode_8h_ab944592153bdcd9efd0624af499f3c62}{Q\+\_\+\+ISIS\+\_\+\+LSP}}, \mbox{\hyperlink{gencode_8h_aa497f6bfa8eedfb806b7106406b7d8d3}{Q\+\_\+\+ISIS\+\_\+\+PSNP}}, \mbox{\hyperlink{gencode_8h_aea61d5a08eaa2605df021ceedf223902}{Q\+\_\+\+ISIS\+\_\+\+SNP}}, \mbox{\hyperlink{gencode_8h_a0ae6532238ca8e9f84f22affc8afeb7f}{Q\+\_\+\+ISO}}, \mbox{\hyperlink{gencode_8h_ad3be69fa811c2bd1d589674f5325048e}{Q\+\_\+\+LAT}}, \mbox{\hyperlink{gencode_8h_abb7fd9195ebf4866c4723343ad784645}{Q\+\_\+\+LINK}}, \mbox{\hyperlink{gencode_8h_ab1e2618b6e30687c154a4d9d8797663b}{Q\+\_\+\+MOPDL}}, \mbox{\hyperlink{gencode_8h_a60a6fa1a850ff5056c78438acb5929ad}{Q\+\_\+\+MOPRC}}, \mbox{\hyperlink{gencode_8h_ad8b911f20c053cc25630dfb2c74bfb58}{Q\+\_\+\+NETBEUI}}, \mbox{\hyperlink{gencode_8h_ade68497dc85f94c9957363b0bdb468a5}{Q\+\_\+\+PIM}}, \mbox{\hyperlink{gencode_8h_afebf889ab1f1bba65bb45644578e80dc}{Q\+\_\+\+RADIO}}, \mbox{\hyperlink{gencode_8h_ae3a9fcad3ab4dd3a9c8ea647b0da730f}{Q\+\_\+\+RARP}}, \mbox{\hyperlink{gencode_8h_aa894482c5328c891712a3ed5b108e927}{Q\+\_\+\+SCA}}, \mbox{\hyperlink{gencode_8h_ad52d4d920c67ba8b5733bb37ffe37c64}{Q\+\_\+\+SCTP}}, \mbox{\hyperlink{gencode_8h_a2e8319e0a7f150a64561448725885e1d}{Q\+\_\+\+STP}}, \mbox{\hyperlink{gencode_8h_a3593b205e1e9789f2e6ac2b599dfaa54}{Q\+\_\+\+TCP}}, \mbox{\hyperlink{gencode_8h_a13632344e0999fd68e6085d28b37f2bd}{Q\+\_\+\+UDP}} , 以及 \mbox{\hyperlink{gencode_8h_ac0b8ac58ece3005ed8665659d46c1b29}{Q\+\_\+\+VRRP}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a04555710eb38558a5b643e3578e4ff9f}{gen\+\_\+load()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a7f5e28e4e2e81c8770ef6498ee1895b5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a7f5e28e4e2e81c8770ef6498ee1895b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a87caf83ba4ff130c31b191c978e0b971}\label{gencode_8h_a87caf83ba4ff130c31b191c978e0b971}} 
+\index{gencode.h@{gencode.h}!gen\_relation@{gen\_relation}}
+\index{gen\_relation@{gen\_relation}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_relation()}{gen\_relation()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+relation (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{a0,  }\item[{struct \mbox{\hyperlink{structarth}{arth}} $\ast$}]{a1,  }\item[{int}]{reversed }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structarth_aff7ef236be2602411d989b0c8b0ed855}{arth\+::b}}, \mbox{\hyperlink{bpf_8h_ab86299ce44ef72cd7d679d54f4319422}{BPF\+\_\+\+ALU}}, \mbox{\hyperlink{bpf_8h_afc69af82c5689ebe9e01f190a89de86a}{BPF\+\_\+\+JEQ}}, \mbox{\hyperlink{bpf_8h_ad6639784c48311f01e23f7e75bec890a}{BPF\+\_\+\+JMP}}, \mbox{\hyperlink{bpf_8h_afa7148994c00392244febb2ba5a6216c}{BPF\+\_\+\+SUB}}, \mbox{\hyperlink{bpf_8h_a8d3288dafba4427f9c56a99850184008}{BPF\+\_\+X}}, \mbox{\hyperlink{gencode_8c_a9aeeeffddfa3f2364c476bb1d3000ea5}{free\+\_\+reg()}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_a72f481a3f4d8eecd71b3ce63bf0f690d}{gen\+\_\+not()}}, \mbox{\hyperlink{gencode_8c_acbd8cb2182286c7a59634c8f2248223e}{JMP}}, \mbox{\hyperlink{gencode_8c_adae9e51b46a5908a67327ec7a692e757}{new\+\_\+block()}}, \mbox{\hyperlink{gencode_8c_a13e1c70fbfc6498493d8d0fbbdf98ab8}{new\+\_\+stmt()}}, \mbox{\hyperlink{structarth_a5bd76ceacb6e4637e54165aa5481d4e6}{arth\+::regno}}, \mbox{\hyperlink{structarth_a8c5ad1df4f116289a430c6b9fbe09dbf}{arth\+::s}}, \mbox{\hyperlink{gencode_8c_acc2d1f82a2c8cb15d39d10e0256e7d82}{sappend()}}, \mbox{\hyperlink{structblock_a1f06889ad08e9604a0551f90bec551be}{block\+::stmts}}, \mbox{\hyperlink{gencode_8c_a42b091c10ec97c15abe6e56b09d46118}{xfer\+\_\+to\+\_\+a()}} , 以及 \mbox{\hyperlink{gencode_8c_a94716172b8e9aaa22a4a4799cac4611c}{xfer\+\_\+to\+\_\+x()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a3b38e180c68c1e91fd5e673084f7b22e}{gen\+\_\+inbound()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a87caf83ba4ff130c31b191c978e0b971_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{gencode_8h_a87caf83ba4ff130c31b191c978e0b971_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a9783c6bbd132f7f0562334ebb2c2417f}\label{gencode_8h_a9783c6bbd132f7f0562334ebb2c2417f}} 
+\index{gencode.h@{gencode.h}!gen\_scode@{gen\_scode}}
+\index{gen\_scode@{gen\_scode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_scode()}{gen\_scode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+scode (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{struct \mbox{\hyperlink{structqual}{qual}}}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gencode_8h_a906509f531064350d8cc8747d63cea8c}\label{gencode_8h_a906509f531064350d8cc8747d63cea8c}} 
+\index{gencode.h@{gencode.h}!gen\_vlan@{gen\_vlan}}
+\index{gen\_vlan@{gen\_vlan}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{gen\_vlan()}{gen\_vlan()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}} $\ast$ gen\+\_\+vlan (\begin{DoxyParamCaption}\item[{int}]{vlan\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{bpf_8h_aa642b49eec6b8a0b2bab705cd5d0292c}{BPF\+\_\+H}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{ethertype_8h_a07fb0f2498c8b8dd62cc44da13bb092a}{ETHERTYPE\+\_\+8021Q}}, \mbox{\hyperlink{gencode_8c_a8af4d2ed176a759d4667e3e107c08283}{gen\+\_\+and()}}, \mbox{\hyperlink{gencode_8c_af993d4d5b4551a4b6ad9c0e36c88484b}{gen\+\_\+cmp()}}, \mbox{\hyperlink{gencode_8c_a6f77e4d0fb1d03a799dbd95f0f3787e5}{gen\+\_\+mcmp()}}, \mbox{\hyperlink{gencode_8c_af5a1f8eeb6d59048bb466528fd951f0d}{label\+\_\+stack\+\_\+depth}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{gencode_8c_a74d7de343b4e7e43875a1bc971e223e2}{off\+\_\+linktype}}, \mbox{\hyperlink{gencode_8c_ac7b9eceddff037d169947b07f6a39be5}{off\+\_\+macpl}}, \mbox{\hyperlink{gencode_8c_a9f62b73c5384c1dce9d2c15fe71190da}{off\+\_\+nl}}, \mbox{\hyperlink{gencode_8c_a1161b404316e694f2468727ef54af33c}{off\+\_\+nl\+\_\+nosnap}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a08c072479a975b15a204cbe91c09170a}{OR\+\_\+\+LINK}}, \mbox{\hyperlink{gencode_8c_a522d1cec05951ebdbd614f499282b785a7e975c4617a8378713ce34e24adb524c}{OR\+\_\+\+MACPL}} , 以及 \mbox{\hyperlink{gencode_8c_a6e9aa0da1d2a2e8cb7e09b0ea07786f4}{orig\+\_\+nl}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a906509f531064350d8cc8747d63cea8c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_af1fc7669f2731a91acf384f52b2737ca}\label{gencode_8h_af1fc7669f2731a91acf384f52b2737ca}} 
+\index{gencode.h@{gencode.h}!icode\_to\_fcode@{icode\_to\_fcode}}
+\index{icode\_to\_fcode@{icode\_to\_fcode}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{icode\_to\_fcode()}{icode\_to\_fcode()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbpf__insn}{bpf\+\_\+insn}} $\ast$ icode\+\_\+to\+\_\+fcode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structblock}{block}} $\ast$}]{root,  }\item[{int $\ast$}]{lenp }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{optimize_8c_addbfaa636b06101d5041570e3d1ee832}{count\+\_\+stmts()}}, \mbox{\hyperlink{optimize_8c_a80000af905a2cacca4241017ed09e896}{fstart}}, \mbox{\hyperlink{optimize_8c_a0d7a5e8362d1c213ae5357003039dee2}{ftail}}, \mbox{\hyperlink{gencode_8c_a302cc863a0f560cde4327495113f55aa}{root}} , 以及 \mbox{\hyperlink{optimize_8c_a12f975c3088536c7119ab74719ad4bb0}{un\+Mark\+All}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_af1fc7669f2731a91acf384f52b2737ca_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_af1fc7669f2731a91acf384f52b2737ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a69643329eb9dd7a8dabfcbabf3ab4992}\label{gencode_8h_a69643329eb9dd7a8dabfcbabf3ab4992}} 
+\index{gencode.h@{gencode.h}!lex\_cleanup@{lex\_cleanup}}
+\index{lex\_cleanup@{lex\_cleanup}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{lex\_cleanup()}{lex\_cleanup()}}
+{\footnotesize\ttfamily void lex\+\_\+cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a69643329eb9dd7a8dabfcbabf3ab4992_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_adcf2bf00a9a9336772c054424c17dc15}\label{gencode_8h_adcf2bf00a9a9336772c054424c17dc15}} 
+\index{gencode.h@{gencode.h}!lex\_init@{lex\_init}}
+\index{lex\_init@{lex\_init}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{lex\_init()}{lex\_init()}}
+{\footnotesize\ttfamily void lex\+\_\+init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_adcf2bf00a9a9336772c054424c17dc15_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae4592116c9e6fe65054655e560cae7e4}\label{gencode_8h_ae4592116c9e6fe65054655e560cae7e4}} 
+\index{gencode.h@{gencode.h}!pcap\_parse@{pcap\_parse}}
+\index{pcap\_parse@{pcap\_parse}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_parse()}{pcap\_parse()}}
+{\footnotesize\ttfamily int pcap\+\_\+parse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ae4592116c9e6fe65054655e560cae7e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_ae6ad953d507d11908c51b861eb239a7d}\label{gencode_8h_ae6ad953d507d11908c51b861eb239a7d}} 
+\index{gencode.h@{gencode.h}!sappend@{sappend}}
+\index{sappend@{sappend}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{sappend()}{sappend()}}
+{\footnotesize\ttfamily void sappend (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structslist}{slist}} $\ast$}]{s0,  }\item[{struct \mbox{\hyperlink{structslist}{slist}} $\ast$}]{s1 }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structslist_a7c8ee186f75ca8d5f092b8e9f961dca3}{slist\+::next}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a1f27a914895482efc312c004621fecd3}{gen\+\_\+arth()}}, \mbox{\hyperlink{gencode_8c_a04555710eb38558a5b643e3578e4ff9f}{gen\+\_\+load()}}, \mbox{\hyperlink{gencode_8c_a773a651a3391d9937da370a9668723b7}{gen\+\_\+load\+\_\+802\+\_\+11\+\_\+header\+\_\+len()}}, \mbox{\hyperlink{gencode_8c_a29ad3953798797a8028f718789102c8c}{gen\+\_\+load\+\_\+a()}}, \mbox{\hyperlink{gencode_8c_aa6ac4f688814c19a395de80bf9afafd8}{gen\+\_\+load\+\_\+avs\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_a21ef2a05d82152e44887c26ffa75025f}{gen\+\_\+load\+\_\+llrel()}}, \mbox{\hyperlink{gencode_8c_aed6f70bb89750f98566d2af1347490f6}{gen\+\_\+load\+\_\+macplrel()}}, \mbox{\hyperlink{gencode_8c_a1d54335f6b9a4ccfd6d2dceffb84283e}{gen\+\_\+load\+\_\+ppi\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_ad7adea05a70d20f7421f80b4e2560cbe}{gen\+\_\+load\+\_\+prism\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_a1de0156c7efc9bc12d742fd21986afc0}{gen\+\_\+load\+\_\+radiotap\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_af9217ef5df139ff99084bb692496ce90}{gen\+\_\+loadx\+\_\+iphdrlen()}}, \mbox{\hyperlink{gencode_8c_a5334becb521624bc6712f8739aa48bca}{gen\+\_\+ncmp()}}, \mbox{\hyperlink{gencode_8c_a9cdfdee35a1a81e36fa2cb0cf5cc74e3}{gen\+\_\+neg()}}, \mbox{\hyperlink{gencode_8c_abe12e5867d5ebc74857e8a1af7a241bb}{gen\+\_\+relation()}}, \mbox{\hyperlink{gencode_8c_aa2580cb5ee1bf6b42026bfabcde04c4d}{insert\+\_\+compute\+\_\+vloffsets()}} , 以及 \mbox{\hyperlink{optimize_8c_a1fbed3bf7d35910ff28950615069d792}{opt\+\_\+root()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_ae6ad953d507d11908c51b861eb239a7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gencode_8h_a06ebda13bd00544e570c6d87fa8f6ad0}\label{gencode_8h_a06ebda13bd00544e570c6d87fa8f6ad0}} 
+\index{gencode.h@{gencode.h}!sdup@{sdup}}
+\index{sdup@{sdup}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{sdup()}{sdup()}}
+{\footnotesize\ttfamily char $\ast$ sdup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_aa5335a4f003f5509f70eb93e3724dbb1}{newchunk()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gencode_8h_a06ebda13bd00544e570c6d87fa8f6ad0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{gencode_8h_ada5296a0da902e2384cd4d180df590b1}\label{gencode_8h_ada5296a0da902e2384cd4d180df590b1}} 
+\index{gencode.h@{gencode.h}!no\_optimize@{no\_optimize}}
+\index{no\_optimize@{no\_optimize}!gencode.h@{gencode.h}}
+\doxysubsubsection{\texorpdfstring{no\_optimize}{no\_optimize}}
+{\footnotesize\ttfamily int no\+\_\+optimize\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a773a651a3391d9937da370a9668723b7}{gen\+\_\+load\+\_\+802\+\_\+11\+\_\+header\+\_\+len()}}, \mbox{\hyperlink{gencode_8c_ad7adea05a70d20f7421f80b4e2560cbe}{gen\+\_\+load\+\_\+prism\+\_\+llprefixlen()}}, \mbox{\hyperlink{gencode_8c_ad54245ee8fc82d9474bff9e7baa35eed}{gen\+\_\+protochain()}}, \mbox{\hyperlink{gencode_8c_ad767146bc64e70be762befd8bfe79f39}{gen\+\_\+wlanhostop()}} , 以及 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+

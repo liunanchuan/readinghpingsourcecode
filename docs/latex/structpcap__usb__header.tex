@@ -1,0 +1,150 @@
+\hypertarget{structpcap__usb__header}{}\doxysection{pcap\+\_\+usb\+\_\+header结构体 参考}
+\label{structpcap__usb__header}\index{pcap\_usb\_header@{pcap\_usb\_header}}
+
+
+{\ttfamily \#include $<$usb.\+h$>$}
+
+
+
+pcap\+\_\+usb\+\_\+header 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{structpcap__usb__header__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int64\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a376ab64711449ff4ffda74bb35bb2076}{id}}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structpcap__usb__header_aa4fa6626515b23686a07b969ad155153}{event\+\_\+type}}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structpcap__usb__header_aabb9084a9333141abf31db536bcc83d8}{transfer\+\_\+type}}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a223e1811570144bd344afa075513699d}{endpoint\+\_\+number}}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structpcap__usb__header_ae1bf90e48b29d45bb41a3403e0465daa}{device\+\_\+address}}
+\item 
+u\+\_\+int16\+\_\+t \mbox{\hyperlink{structpcap__usb__header_ae1ad9de945cf649cb34fd60d22089ee2}{bus\+\_\+id}}
+\item 
+char \mbox{\hyperlink{structpcap__usb__header_a189ca1eaafe22bfb35ba9afe41a98d4f}{setup\+\_\+flag}}
+\item 
+char \mbox{\hyperlink{structpcap__usb__header_a5e872aafa74082801e295033e9d0a6a6}{data\+\_\+flag}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a1c02a0d13529fc8a9e93e467f98aff42}{ts\+\_\+sec}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a1fb9efd05b607a72b47aba1206002436}{ts\+\_\+usec}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a369536ebfe385731562c0b55dd6f3a7c}{status}}
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a5fea650a194bc21fb2f9484b0bba0194}{urb\+\_\+len}}
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{structpcap__usb__header_a66f59afaeff1fcdb59b5a22e4147f1c0}{data\+\_\+len}}
+\item 
+\mbox{\hyperlink{structpcap__usb__setup}{pcap\+\_\+usb\+\_\+setup}} \mbox{\hyperlink{structpcap__usb__header_adacfe7c19b2f7423b2c4afafe2a725e6}{setup}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structpcap__usb__header_ae1ad9de945cf649cb34fd60d22089ee2}\label{structpcap__usb__header_ae1ad9de945cf649cb34fd60d22089ee2}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!bus\_id@{bus\_id}}
+\index{bus\_id@{bus\_id}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{bus\_id}{bus\_id}}
+{\footnotesize\ttfamily u\+\_\+int16\+\_\+t bus\+\_\+id}
+
+\mbox{\Hypertarget{structpcap__usb__header_a5e872aafa74082801e295033e9d0a6a6}\label{structpcap__usb__header_a5e872aafa74082801e295033e9d0a6a6}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!data\_flag@{data\_flag}}
+\index{data\_flag@{data\_flag}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{data\_flag}{data\_flag}}
+{\footnotesize\ttfamily char data\+\_\+flag}
+
+\mbox{\Hypertarget{structpcap__usb__header_a66f59afaeff1fcdb59b5a22e4147f1c0}\label{structpcap__usb__header_a66f59afaeff1fcdb59b5a22e4147f1c0}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!data\_len@{data\_len}}
+\index{data\_len@{data\_len}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{data\_len}{data\_len}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t data\+\_\+len}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin()}}.
+
+\mbox{\Hypertarget{structpcap__usb__header_ae1bf90e48b29d45bb41a3403e0465daa}\label{structpcap__usb__header_ae1bf90e48b29d45bb41a3403e0465daa}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!device\_address@{device\_address}}
+\index{device\_address@{device\_address}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{device\_address}{device\_address}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t device\+\_\+address}
+
+\mbox{\Hypertarget{structpcap__usb__header_a223e1811570144bd344afa075513699d}\label{structpcap__usb__header_a223e1811570144bd344afa075513699d}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!endpoint\_number@{endpoint\_number}}
+\index{endpoint\_number@{endpoint\_number}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{endpoint\_number}{endpoint\_number}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t endpoint\+\_\+number}
+
+\mbox{\Hypertarget{structpcap__usb__header_aa4fa6626515b23686a07b969ad155153}\label{structpcap__usb__header_aa4fa6626515b23686a07b969ad155153}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!event\_type@{event\_type}}
+\index{event\_type@{event\_type}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{event\_type}{event\_type}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t event\+\_\+type}
+
+\mbox{\Hypertarget{structpcap__usb__header_a376ab64711449ff4ffda74bb35bb2076}\label{structpcap__usb__header_a376ab64711449ff4ffda74bb35bb2076}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!id@{id}}
+\index{id@{id}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily u\+\_\+int64\+\_\+t id}
+
+\mbox{\Hypertarget{structpcap__usb__header_adacfe7c19b2f7423b2c4afafe2a725e6}\label{structpcap__usb__header_adacfe7c19b2f7423b2c4afafe2a725e6}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!setup@{setup}}
+\index{setup@{setup}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{setup}{setup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcap__usb__setup}{pcap\+\_\+usb\+\_\+setup}} setup}
+
+\mbox{\Hypertarget{structpcap__usb__header_a189ca1eaafe22bfb35ba9afe41a98d4f}\label{structpcap__usb__header_a189ca1eaafe22bfb35ba9afe41a98d4f}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!setup\_flag@{setup\_flag}}
+\index{setup\_flag@{setup\_flag}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{setup\_flag}{setup\_flag}}
+{\footnotesize\ttfamily char setup\+\_\+flag}
+
+\mbox{\Hypertarget{structpcap__usb__header_a369536ebfe385731562c0b55dd6f3a7c}\label{structpcap__usb__header_a369536ebfe385731562c0b55dd6f3a7c}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!status@{status}}
+\index{status@{status}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily int32\+\_\+t status}
+
+\mbox{\Hypertarget{structpcap__usb__header_aabb9084a9333141abf31db536bcc83d8}\label{structpcap__usb__header_aabb9084a9333141abf31db536bcc83d8}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!transfer\_type@{transfer\_type}}
+\index{transfer\_type@{transfer\_type}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{transfer\_type}{transfer\_type}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t transfer\+\_\+type}
+
+\mbox{\Hypertarget{structpcap__usb__header_a1c02a0d13529fc8a9e93e467f98aff42}\label{structpcap__usb__header_a1c02a0d13529fc8a9e93e467f98aff42}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!ts\_sec@{ts\_sec}}
+\index{ts\_sec@{ts\_sec}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{ts\_sec}{ts\_sec}}
+{\footnotesize\ttfamily int64\+\_\+t ts\+\_\+sec}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin()}}.
+
+\mbox{\Hypertarget{structpcap__usb__header_a1fb9efd05b607a72b47aba1206002436}\label{structpcap__usb__header_a1fb9efd05b607a72b47aba1206002436}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!ts\_usec@{ts\_usec}}
+\index{ts\_usec@{ts\_usec}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{ts\_usec}{ts\_usec}}
+{\footnotesize\ttfamily int32\+\_\+t ts\+\_\+usec}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin()}}.
+
+\mbox{\Hypertarget{structpcap__usb__header_a5fea650a194bc21fb2f9484b0bba0194}\label{structpcap__usb__header_a5fea650a194bc21fb2f9484b0bba0194}} 
+\index{pcap\_usb\_header@{pcap\_usb\_header}!urb\_len@{urb\_len}}
+\index{urb\_len@{urb\_len}!pcap\_usb\_header@{pcap\_usb\_header}}
+\doxysubsubsection{\texorpdfstring{urb\_len}{urb\_len}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t urb\+\_\+len}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/pcap/\mbox{\hyperlink{usb_8h}{usb.\+h}}\end{DoxyCompactItemize}

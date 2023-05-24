@@ -1,0 +1,748 @@
+\hypertarget{getaddrinfo_8c}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Src/getaddrinfo.c 文件参考}
+\label{getaddrinfo_8c}\index{libpcap-\/1.1.1/Win32/Src/getaddrinfo.c@{libpcap-\/1.1.1/Win32/Src/getaddrinfo.c}}
+{\ttfamily \#include $<$pcap-\/stdinc.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/nameser.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}cdecl\+\_\+ext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bittypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sockstorage.\+h\char`\"{}}\newline
+getaddrinfo.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsockinet}{sockinet}}
+\item 
+struct \mbox{\hyperlink{structafd}{afd}}
+\item 
+struct \mbox{\hyperlink{structexplore}{explore}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}}~0
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}}~0
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a7ebc9a785e5ab85457c98595aac81589}{YES}}~1
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a996bde01ecac342918f0a2c4e7ce7bd5}{NO}}~0
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a2534379a3d9eddfcc0d931136f4fe8d3}{WILD\+\_\+\+AF}}(ex)~((ex)-\/$>$e\+\_\+wild \& 0x01)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a72f791d27e05eb1c3073de7d099c12ee}{WILD\+\_\+\+SOCKTYPE}}(ex)~((ex)-\/$>$e\+\_\+wild \& 0x02)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_ac8e3c4b06568f84f581f967586bfd26e}{WILD\+\_\+\+PROTOCOL}}(ex)~((ex)-\/$>$e\+\_\+wild \& 0x04)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a41eb8387c2455711b3f11ecbc860e6f7}{PTON\+\_\+\+MAX}}~4
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}{GET\+\_\+\+AI}}(ai,  \mbox{\hyperlink{structafd}{afd}},  addr)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}{GET\+\_\+\+PORT}}(ai,  \mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}})
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_af050f6c824f066fb6a94477e9c0df56a}{GET\+\_\+\+CANONNAME}}(ai,  str)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_aec32974c32a825941875f62693cee2f5}{ERR}}(err)
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_a1e5a56a47765952cf2cf544f1209dbac}{MATCH\+\_\+\+FAMILY}}(x,  y,  w)~ ((x) == (y) $\vert$$\vert$ ((w) \&\& ((x) == PF\+\_\+\+UNSPEC $\vert$$\vert$ (y) == PF\+\_\+\+UNSPEC)))
+\item 
+\#define \mbox{\hyperlink{getaddrinfo_8c_ac07017d71423519522ae12b4e3aab988}{MATCH}}(x,  y,  w)~ ((x) == (y) $\vert$$\vert$ ((w) \&\& ((x) == \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}} $\vert$$\vert$ (y) == \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}})))
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}{str\+\_\+isnumber}} \mbox{\hyperlink{getaddrinfo_8c_a25b6d773b89ae0804a47c188e2aad76b}{\+\_\+\+\_\+P}} ((const char $\ast$))
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn}} \mbox{\hyperlink{getaddrinfo_8c_aaf6fe23fef1fb75c4659a604c23c016f}{\+\_\+\+\_\+P}} ((const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$, const char $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$))
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name}} \mbox{\hyperlink{getaddrinfo_8c_a2b27fbe8ceec04898cc2e5f9b9f21957}{\+\_\+\+\_\+P}} ((const char $\ast$, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$, char $\ast$, const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$))
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}{get\+\_\+canonname}} \mbox{\hyperlink{getaddrinfo_8c_ab9c96a24d40be3c4e2342836b0ae2185}{\+\_\+\+\_\+P}} ((const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$))
+\item 
+static struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$\mbox{\hyperlink{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}{get\+\_\+ai}} \mbox{\hyperlink{getaddrinfo_8c_a0c0b0f7f710ca4fb2f3a8307512933f4}{\+\_\+\+\_\+P}} ((const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$, const char $\ast$))
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch}} \mbox{\hyperlink{getaddrinfo_8c_ac459813169d69e7d5556e3e9e18d0ac9}{\+\_\+\+\_\+P}} ((const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$))
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\+\_\+port}} \mbox{\hyperlink{getaddrinfo_8c_a0de547b4a507f8a4e21439ff4695bb08}{\+\_\+\+\_\+P}} ((struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$, int))
+\item 
+static const struct \mbox{\hyperlink{structafd}{afd}} $\ast$\mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd}} \mbox{\hyperlink{getaddrinfo_8c_ad3991f944e68e0c20ba7aa080215c642}{\+\_\+\+\_\+P}} ((int))
+\item 
+void \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ai)
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}{str\+\_\+isnumber}} (char $\ast$p) const
+\item 
+int \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo}} (char $\ast$hostname, char $\ast$servname, const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$hints, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const char $\ast$hostname, const char $\ast$servname, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const char $\ast$hostname, const char $\ast$servname, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const char $\ast$hostname, const char $\ast$servname, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const char $\ast$hostname, const char $\ast$servname, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name}} (char $\ast$addr, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$\mbox{\hyperlink{structafd}{afd}}, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$res, char $\ast$numaddr, const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const char $\ast$servname) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}{get\+\_\+canonname}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ai, const char $\ast$str) const
+\item 
+static struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ \mbox{\hyperlink{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}{get\+\_\+ai}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$pai, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$\mbox{\hyperlink{structafd}{afd}}, const char $\ast$addr) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ai, const char $\ast$servname) const
+\item 
+static int \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\+\_\+port}} (struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ai, const char $\ast$servname, int matchonly)
+\item 
+static const struct \mbox{\hyperlink{structafd}{afd}} $\ast$ \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd}} (int af)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{getaddrinfo_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+static const char \mbox{\hyperlink{getaddrinfo_8c_ae78bf9b45dde8c27ca4de70ae402dc84}{in\+\_\+addrany}} \mbox{[}$\,$\mbox{]} = \{ 0, 0, 0, 0 \}
+\item 
+static const char \mbox{\hyperlink{getaddrinfo_8c_a4ed9ddd919dac9f5f06f4cff8ab9178e}{in6\+\_\+addrany}} \mbox{[}$\,$\mbox{]}
+\item 
+static const char \mbox{\hyperlink{getaddrinfo_8c_a017932885321b821941624d63716bf42}{in\+\_\+loopback}} \mbox{[}$\,$\mbox{]} = \{ 127, 0, 0, 1 \}
+\item 
+static const char \mbox{\hyperlink{getaddrinfo_8c_a9733dd07a7ceb930965ec5420b27000f}{in6\+\_\+loopback}} \mbox{[}$\,$\mbox{]}
+\item 
+static const struct \mbox{\hyperlink{structafd}{afd}} \mbox{\hyperlink{getaddrinfo_8c_ab3e3cc101f38bc4a428a72fe77582403}{afdl}} \mbox{[}$\,$\mbox{]}
+\item 
+static const struct \mbox{\hyperlink{structexplore}{explore}} \mbox{\hyperlink{getaddrinfo_8c_ae77c0aa1e576d13aba0a18be51d57bac}{explore}} \mbox{[}$\,$\mbox{]}
+\item 
+static char $\ast$ \mbox{\hyperlink{getaddrinfo_8c_a43de0dcdc7abe12a76c7268098f5aba6}{ai\+\_\+errlist}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}\label{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!ANY@{ANY}}
+\index{ANY@{ANY}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{ANY}{ANY}}
+{\footnotesize\ttfamily \#define ANY~0}
+
+\mbox{\Hypertarget{getaddrinfo_8c_aec32974c32a825941875f62693cee2f5}\label{getaddrinfo_8c_aec32974c32a825941875f62693cee2f5}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!ERR@{ERR}}
+\index{ERR@{ERR}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{ERR}{ERR}}
+{\footnotesize\ttfamily \#define ERR(\begin{DoxyParamCaption}\item[{}]{err }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    \textcolor{comment}{/* external reference: error, and label bad */} \(\backslash\)}
+\DoxyCodeLine{    error = (err); \(\backslash\)}
+\DoxyCodeLine{    goto bad; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}\label{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!GET\_AI@{GET\_AI}}
+\index{GET\_AI@{GET\_AI}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{GET\_AI}{GET\_AI}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+AI(\begin{DoxyParamCaption}\item[{}]{ai,  }\item[{}]{\mbox{\hyperlink{structafd}{afd}},  }\item[{}]{addr }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    \textcolor{comment}{/* external reference: pai, error, and label free */} \(\backslash\)}
+\DoxyCodeLine{    (ai) = \mbox{\hyperlink{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}{get\_ai}}(pai, (\mbox{\hyperlink{structafd}{afd}}), (addr)); \(\backslash\)}
+\DoxyCodeLine{    if ((ai) == NULL) \{ \(\backslash\)}
+\DoxyCodeLine{        error = \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\_MEMORY}}; \(\backslash\)}
+\DoxyCodeLine{        goto free; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_af050f6c824f066fb6a94477e9c0df56a}\label{getaddrinfo_8c_af050f6c824f066fb6a94477e9c0df56a}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!GET\_CANONNAME@{GET\_CANONNAME}}
+\index{GET\_CANONNAME@{GET\_CANONNAME}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{GET\_CANONNAME}{GET\_CANONNAME}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+CANONNAME(\begin{DoxyParamCaption}\item[{}]{ai,  }\item[{}]{str }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    \textcolor{comment}{/* external reference: pai, error and label free */} \(\backslash\)}
+\DoxyCodeLine{    error = \mbox{\hyperlink{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}{get\_canonname}}(pai, (ai), (str)); \(\backslash\)}
+\DoxyCodeLine{    if (\mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} != 0) \(\backslash\)}
+\DoxyCodeLine{        goto free; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}\label{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!GET\_PORT@{GET\_PORT}}
+\index{GET\_PORT@{GET\_PORT}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{GET\_PORT}{GET\_PORT}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+PORT(\begin{DoxyParamCaption}\item[{}]{ai,  }\item[{}]{\mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}} }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    \textcolor{comment}{/* external reference: error and label free */} \(\backslash\)}
+\DoxyCodeLine{    error = \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\_port}}((ai), (\mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}}), 0); \(\backslash\)}
+\DoxyCodeLine{    if (\mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} != 0) \(\backslash\)}
+\DoxyCodeLine{        goto free; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_ac07017d71423519522ae12b4e3aab988}\label{getaddrinfo_8c_ac07017d71423519522ae12b4e3aab988}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!MATCH@{MATCH}}
+\index{MATCH@{MATCH}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{MATCH}{MATCH}}
+{\footnotesize\ttfamily \#define MATCH(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{w }\end{DoxyParamCaption})~ ((x) == (y) $\vert$$\vert$ ((w) \&\& ((x) == \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}} $\vert$$\vert$ (y) == \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}})))}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a1e5a56a47765952cf2cf544f1209dbac}\label{getaddrinfo_8c_a1e5a56a47765952cf2cf544f1209dbac}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!MATCH\_FAMILY@{MATCH\_FAMILY}}
+\index{MATCH\_FAMILY@{MATCH\_FAMILY}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{MATCH\_FAMILY}{MATCH\_FAMILY}}
+{\footnotesize\ttfamily \#define MATCH\+\_\+\+FAMILY(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{w }\end{DoxyParamCaption})~ ((x) == (y) $\vert$$\vert$ ((w) \&\& ((x) == PF\+\_\+\+UNSPEC $\vert$$\vert$ (y) == PF\+\_\+\+UNSPEC)))}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a996bde01ecac342918f0a2c4e7ce7bd5}\label{getaddrinfo_8c_a996bde01ecac342918f0a2c4e7ce7bd5}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!NO@{NO}}
+\index{NO@{NO}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{NO}{NO}}
+{\footnotesize\ttfamily \#define NO~0}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a41eb8387c2455711b3f11ecbc860e6f7}\label{getaddrinfo_8c_a41eb8387c2455711b3f11ecbc860e6f7}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!PTON\_MAX@{PTON\_MAX}}
+\index{PTON\_MAX@{PTON\_MAX}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{PTON\_MAX}{PTON\_MAX}}
+{\footnotesize\ttfamily \#define PTON\+\_\+\+MAX~4}
+
+\mbox{\Hypertarget{getaddrinfo_8c_aa90cac659d18e8ef6294c7ae337f6b58}\label{getaddrinfo_8c_aa90cac659d18e8ef6294c7ae337f6b58}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!SUCCESS@{SUCCESS}}
+\index{SUCCESS@{SUCCESS}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{SUCCESS}{SUCCESS}}
+{\footnotesize\ttfamily \#define SUCCESS~0}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a2534379a3d9eddfcc0d931136f4fe8d3}\label{getaddrinfo_8c_a2534379a3d9eddfcc0d931136f4fe8d3}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!WILD\_AF@{WILD\_AF}}
+\index{WILD\_AF@{WILD\_AF}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{WILD\_AF}{WILD\_AF}}
+{\footnotesize\ttfamily \#define WILD\+\_\+\+AF(\begin{DoxyParamCaption}\item[{}]{ex }\end{DoxyParamCaption})~((ex)-\/$>$e\+\_\+wild \& 0x01)}
+
+\mbox{\Hypertarget{getaddrinfo_8c_ac8e3c4b06568f84f581f967586bfd26e}\label{getaddrinfo_8c_ac8e3c4b06568f84f581f967586bfd26e}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!WILD\_PROTOCOL@{WILD\_PROTOCOL}}
+\index{WILD\_PROTOCOL@{WILD\_PROTOCOL}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{WILD\_PROTOCOL}{WILD\_PROTOCOL}}
+{\footnotesize\ttfamily \#define WILD\+\_\+\+PROTOCOL(\begin{DoxyParamCaption}\item[{}]{ex }\end{DoxyParamCaption})~((ex)-\/$>$e\+\_\+wild \& 0x04)}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a72f791d27e05eb1c3073de7d099c12ee}\label{getaddrinfo_8c_a72f791d27e05eb1c3073de7d099c12ee}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!WILD\_SOCKTYPE@{WILD\_SOCKTYPE}}
+\index{WILD\_SOCKTYPE@{WILD\_SOCKTYPE}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{WILD\_SOCKTYPE}{WILD\_SOCKTYPE}}
+{\footnotesize\ttfamily \#define WILD\+\_\+\+SOCKTYPE(\begin{DoxyParamCaption}\item[{}]{ex }\end{DoxyParamCaption})~((ex)-\/$>$e\+\_\+wild \& 0x02)}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a7ebc9a785e5ab85457c98595aac81589}\label{getaddrinfo_8c_a7ebc9a785e5ab85457c98595aac81589}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!YES@{YES}}
+\index{YES@{YES}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{YES}{YES}}
+{\footnotesize\ttfamily \#define YES~1}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{getaddrinfo_8c_a25b6d773b89ae0804a47c188e2aad76b}\label{getaddrinfo_8c_a25b6d773b89ae0804a47c188e2aad76b}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}{str\+\_\+isnumber}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const char $\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a2b27fbe8ceec04898cc2e5f9b9f21957}\label{getaddrinfo_8c_a2b27fbe8ceec04898cc2e5f9b9f21957}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const char $\ast$, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$, char $\ast$, const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_ac459813169d69e7d5556e3e9e18d0ac9}\label{getaddrinfo_8c_ac459813169d69e7d5556e3e9e18d0ac9}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_aaf6fe23fef1fb75c4659a604c23c016f}\label{getaddrinfo_8c_aaf6fe23fef1fb75c4659a604c23c016f}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$, const char $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a0c0b0f7f710ca4fb2f3a8307512933f4}\label{getaddrinfo_8c_a0c0b0f7f710ca4fb2f3a8307512933f4}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily static struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$\mbox{\hyperlink{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}{get\+\_\+ai}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const struct \mbox{\hyperlink{structafd}{afd}} $\ast$, const char $\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_ab9c96a24d40be3c4e2342836b0ae2185}\label{getaddrinfo_8c_ab9c96a24d40be3c4e2342836b0ae2185}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}{get\+\_\+canonname}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_ad3991f944e68e0c20ba7aa080215c642}\label{getaddrinfo_8c_ad3991f944e68e0c20ba7aa080215c642}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily static const struct \mbox{\hyperlink{structafd}{afd}} $\ast$\mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(int)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a0de547b4a507f8a4e21439ff4695bb08}\label{getaddrinfo_8c_a0de547b4a507f8a4e21439ff4695bb08}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_\_P@{\_\_P}}
+\index{\_\_P@{\_\_P}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_\_P()}{\_\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\+\_\+port}} \+\_\+\+\_\+P (\begin{DoxyParamCaption}\item[{(struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$, const char $\ast$, int)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}\label{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!explore\_fqdn@{explore\_fqdn}}
+\index{explore\_fqdn@{explore\_fqdn}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{explore\_fqdn()}{explore\_fqdn()}}
+{\footnotesize\ttfamily static int explore\+\_\+fqdn (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const char $\ast$}]{hostname,  }\item[{const char $\ast$}]{servname,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{addrinfo_8h_abe581892df09df05b21fee09e1584659}{AI\+\_\+\+ADDRCONFIG}}, \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{addrinfo\+::ai\+\_\+flags}}, \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}, \mbox{\hyperlink{addrinfo_8h_a7a0f2f10f8778fe201a68932d18434e5}{EAI\+\_\+\+AGAIN}}, \mbox{\hyperlink{addrinfo_8h_acfc712115bf29357d33472da2209dc15}{EAI\+\_\+\+FAIL}}, \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\+\_\+\+MEMORY}}, \mbox{\hyperlink{addrinfo_8h_aae1a32f26ffbb7461251d7c4a7c3a0a2}{EAI\+\_\+\+NODATA}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd()}}, \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo()}}, \mbox{\hyperlink{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}{freehostent()}}, \mbox{\hyperlink{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}{GET\+\_\+\+AI}}, \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}, \mbox{\hyperlink{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}{GET\+\_\+\+PORT}}, \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}}, \mbox{\hyperlink{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4}{getipnodebyname()}}, \mbox{\hyperlink{netdb_8h_a2a1ce3f2040007303d36c0b682b5ac10}{h\+\_\+errno}} , 以及 \mbox{\hyperlink{addrinfo_8h_a93598d1131d75df799acd66eccd039b0}{NETDB\+\_\+\+INTERNAL}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}\label{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!explore\_null@{explore\_null}}
+\index{explore\_null@{explore\_null}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{explore\_null()}{explore\_null()}}
+{\footnotesize\ttfamily static int explore\+\_\+null (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const char $\ast$}]{hostname,  }\item[{const char $\ast$}]{servname,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a1fbec89396f7cdbee140f550968ebcc0}{afd\+::a\+\_\+addrany}}, \mbox{\hyperlink{structafd_a85c7f2d210fc2cf56d72e89d7bbd1f68}{afd\+::a\+\_\+loopback}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{addrinfo\+::ai\+\_\+flags}}, \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}, \mbox{\hyperlink{addrinfo_8h_aec9e92ed53442d64cbc9b68d92ad970b}{AI\+\_\+\+PASSIVE}}, \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd()}}, \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo()}}, \mbox{\hyperlink{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}{GET\+\_\+\+AI}}, \mbox{\hyperlink{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}{GET\+\_\+\+PORT}}, \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}\label{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!explore\_numeric@{explore\_numeric}}
+\index{explore\_numeric@{explore\_numeric}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{explore\_numeric()}{explore\_numeric()}}
+{\footnotesize\ttfamily static int explore\+\_\+numeric (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const char $\ast$}]{hostname,  }\item[{const char $\ast$}]{servname,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a6d870dddf303728e64654f3da05f3152}{afd\+::a\+\_\+af}}, \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{addrinfo\+::ai\+\_\+flags}}, \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}, \mbox{\hyperlink{addrinfo_8h_a1d195add54c14a8903441848fb2f7da6}{EAI\+\_\+\+FAMILY}}, \mbox{\hyperlink{getaddrinfo_8c_aec32974c32a825941875f62693cee2f5}{ERR}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd()}}, \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo()}}, \mbox{\hyperlink{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}{GET\+\_\+\+AI}}, \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}, \mbox{\hyperlink{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}{GET\+\_\+\+PORT}}, \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}}, \mbox{\hyperlink{ip6__misc_8h_af168ec04d060a593fb5607320c90f06c}{IN\+\_\+\+EXPERIMENTAL}}, \mbox{\hyperlink{ip6__misc_8h_a3d2d5e8347d77665a4aa3bd3ada19ff0}{IN\+\_\+\+LOOPBACKNET}}, \mbox{\hyperlink{ip6__misc_8h_abcddcc195249a64bb13b5fc8b438548d}{IN\+\_\+\+MULTICAST}}, \mbox{\hyperlink{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}{inet\+\_\+pton()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_a41eb8387c2455711b3f11ecbc860e6f7}{PTON\+\_\+\+MAX}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}\label{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!explore\_numeric\_scope@{explore\_numeric\_scope}}
+\index{explore\_numeric\_scope@{explore\_numeric\_scope}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{explore\_numeric\_scope()}{explore\_numeric\_scope()}}
+{\footnotesize\ttfamily static int explore\+\_\+numeric\+\_\+scope (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const char $\ast$}]{hostname,  }\item[{const char $\ast$}]{servname,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a91e050bb6101d29aacc033251810b038}{afd\+::a\+\_\+scoped}}, \mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{addrinfo\+::ai\+\_\+addr}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}, \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\+\_\+\+MEMORY}}, \mbox{\hyperlink{addrinfo_8h_a0bb00f48d6ba1e8c55b7d85c8e3a19a7}{EAI\+\_\+\+NONAME}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}, \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd()}}, \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}} , 以及 \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}\label{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!find\_afd@{find\_afd}}
+\index{find\_afd@{find\_afd}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{find\_afd()}{find\_afd()}}
+{\footnotesize\ttfamily static const struct \mbox{\hyperlink{structafd}{afd}} $\ast$ find\+\_\+afd (\begin{DoxyParamCaption}\item[{int}]{af }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a6d870dddf303728e64654f3da05f3152}{afd\+::a\+\_\+af}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ab3e3cc101f38bc4a428a72fe77582403}{afdl}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}\label{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!freeaddrinfo@{freeaddrinfo}}
+\index{freeaddrinfo@{freeaddrinfo}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{freeaddrinfo()}{freeaddrinfo()}}
+{\footnotesize\ttfamily void freeaddrinfo (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{ai }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{addrinfo\+::ai\+\_\+canonname}} , 以及 \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}, \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}, \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}} , 以及 \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}\label{getaddrinfo_8c_a38673abcec98b8295ffb46694bb3c548}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!get\_ai@{get\_ai}}
+\index{get\_ai@{get\_ai}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{get\_ai()}{get\_ai()}}
+{\footnotesize\ttfamily static struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$ get\+\_\+ai (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const struct \mbox{\hyperlink{structafd}{afd}} $\ast$}]{afd,  }\item[{const char $\ast$}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a7ed0d98de242b44e0893db0cb0a11233}{afd\+::a\+\_\+addrlen}}, \mbox{\hyperlink{structafd_a6d870dddf303728e64654f3da05f3152}{afd\+::a\+\_\+af}}, \mbox{\hyperlink{structafd_ab7117e541e43fd6854c5cf23a04beb66}{afd\+::a\+\_\+off}}, \mbox{\hyperlink{structafd_a479d938e6e8bbe2ca5b2cb1a84e0682b}{afd\+::a\+\_\+socklen}}, \mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{addrinfo\+::ai\+\_\+addr}}, \mbox{\hyperlink{structaddrinfo_a98d686f4346a14c118092536d61ecf8d}{addrinfo\+::ai\+\_\+addrlen}} , 以及 \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}.
+
+\mbox{\Hypertarget{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}\label{getaddrinfo_8c_ac44e77354f59d35e5298483a28d15d93}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!get\_canonname@{get\_canonname}}
+\index{get\_canonname@{get\_canonname}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{get\_canonname()}{get\_canonname()}}
+{\footnotesize\ttfamily static int get\+\_\+canonname (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{ai,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{addrinfo_8h_ab2912e6cffeb2353df550f10bbe64cf4}{AI\+\_\+\+CANONNAME}}, \mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{addrinfo\+::ai\+\_\+canonname}}, \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{addrinfo\+::ai\+\_\+flags}}, \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\+\_\+\+MEMORY}} , 以及 \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}.
+
+\mbox{\Hypertarget{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}\label{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily static int get\+\_\+name (\begin{DoxyParamCaption}\item[{char $\ast$}]{addr,  }\item[{const struct \mbox{\hyperlink{structafd}{afd}} $\ast$}]{afd,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res,  }\item[{char $\ast$}]{numaddr,  }\item[{const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{pai,  }\item[{const char $\ast$}]{servname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a7ed0d98de242b44e0893db0cb0a11233}{afd\+::a\+\_\+addrlen}}, \mbox{\hyperlink{structafd_a6d870dddf303728e64654f3da05f3152}{afd\+::a\+\_\+af}}, \mbox{\hyperlink{addrinfo_8h_a33d8eb0c89167f95dcdaf23386631174}{EAI\+\_\+\+MEMORY}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo()}}, \mbox{\hyperlink{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}{freehostent()}}, \mbox{\hyperlink{getaddrinfo_8c_adcb8d945e68d3d88d7cbfee63ed70538}{GET\+\_\+\+AI}}, \mbox{\hyperlink{getaddrinfo_8c_af050f6c824f066fb6a94477e9c0df56a}{GET\+\_\+\+CANONNAME}}, \mbox{\hyperlink{getaddrinfo_8c_ab6aaa1999edacb53bebc036b137e7bdc}{GET\+\_\+\+PORT}}, \mbox{\hyperlink{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617}{getipnodebyaddr()}}, \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}\label{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!get\_port@{get\_port}}
+\index{get\_port@{get\_port}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{get\_port()}{get\_port()}}
+{\footnotesize\ttfamily static int get\+\_\+port (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{ai,  }\item[{const char $\ast$}]{servname,  }\item[{int}]{matchonly }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{addrinfo\+::ai\+\_\+addr}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_a2109130e73586150c41fed16311e1af6}{addrinfo\+::ai\+\_\+socktype}}, \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}}, \mbox{\hyperlink{addrinfo_8h_ac7f08e3ee3c38f7c869beb5a44c9f651}{EAI\+\_\+\+SERVICE}}, \mbox{\hyperlink{addrinfo_8h_a110777c2c99dab32101324b3b1dd1df5}{EAI\+\_\+\+SOCKTYPE}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}{str\+\_\+isnumber()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}\label{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!get\_portmatch@{get\_portmatch}}
+\index{get\_portmatch@{get\_portmatch}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{get\_portmatch()}{get\_portmatch()}}
+{\footnotesize\ttfamily static int get\+\_\+portmatch (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{ai,  }\item[{const char $\ast$}]{servname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\+\_\+port()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}, \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}\label{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!getaddrinfo@{getaddrinfo}}
+\index{getaddrinfo@{getaddrinfo}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{getaddrinfo()}{getaddrinfo()}}
+{\footnotesize\ttfamily int getaddrinfo (\begin{DoxyParamCaption}\item[{char $\ast$}]{hostname,  }\item[{char $\ast$}]{servname,  }\item[{const struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$}]{hints,  }\item[{struct \mbox{\hyperlink{structaddrinfo}{addrinfo}} $\ast$$\ast$}]{res }\end{DoxyParamCaption}) const}
+
+
+
+引用了 \mbox{\hyperlink{structafd_a6d870dddf303728e64654f3da05f3152}{afd\+::a\+\_\+af}}, \mbox{\hyperlink{getaddrinfo_8c_ab3e3cc101f38bc4a428a72fe77582403}{afdl}}, \mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{addrinfo\+::ai\+\_\+addr}}, \mbox{\hyperlink{structaddrinfo_a98d686f4346a14c118092536d61ecf8d}{addrinfo\+::ai\+\_\+addrlen}}, \mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{addrinfo\+::ai\+\_\+canonname}}, \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{addrinfo\+::ai\+\_\+family}}, \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{addrinfo\+::ai\+\_\+flags}}, \mbox{\hyperlink{addrinfo_8h_a8a1b9167c484fa490eefcdb4ad207929}{AI\+\_\+\+MASK}}, \mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{addrinfo\+::ai\+\_\+next}}, \mbox{\hyperlink{addrinfo_8h_a2a7070b38894743c536630b2ab25dcef}{AI\+\_\+\+NUMERICHOST}}, \mbox{\hyperlink{structaddrinfo_a6ade486587feaa03d492eb84cfc83451}{addrinfo\+::ai\+\_\+protocol}}, \mbox{\hyperlink{structaddrinfo_a2109130e73586150c41fed16311e1af6}{addrinfo\+::ai\+\_\+socktype}}, \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}}, \mbox{\hyperlink{structexplore_af1262389aa0a7466e956d78865250a32}{explore\+::e\+\_\+af}}, \mbox{\hyperlink{structexplore_a682c7e4565042744dc41c456eae98317}{explore\+::e\+\_\+protocol}}, \mbox{\hyperlink{structexplore_ad4c6146f932f09c1c46ca6a49c7995ce}{explore\+::e\+\_\+socktype}}, \mbox{\hyperlink{addrinfo_8h_a3f3b38f2ac6688612a0fd20f3e6210be}{EAI\+\_\+\+BADFLAGS}}, \mbox{\hyperlink{addrinfo_8h_a06480e6a72c58c6649d2ad19c98bff27}{EAI\+\_\+\+BADHINTS}}, \mbox{\hyperlink{addrinfo_8h_acfc712115bf29357d33472da2209dc15}{EAI\+\_\+\+FAIL}}, \mbox{\hyperlink{addrinfo_8h_a1d195add54c14a8903441848fb2f7da6}{EAI\+\_\+\+FAMILY}}, \mbox{\hyperlink{addrinfo_8h_a0bb00f48d6ba1e8c55b7d85c8e3a19a7}{EAI\+\_\+\+NONAME}}, \mbox{\hyperlink{getaddrinfo_8c_aec32974c32a825941875f62693cee2f5}{ERR}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope()}}, \mbox{\hyperlink{getaddrinfo_8c_a5996eed1e393834ce228347f23443db9}{freeaddrinfo()}}, \mbox{\hyperlink{getaddrinfo_8c_adb5abff46c149c73fd153aeae570916a}{get\+\_\+portmatch()}}, \mbox{\hyperlink{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}{inet\+\_\+pton()}}, \mbox{\hyperlink{getaddrinfo_8c_ac07017d71423519522ae12b4e3aab988}{MATCH}}, \mbox{\hyperlink{getaddrinfo_8c_a1e5a56a47765952cf2cf544f1209dbac}{MATCH\+\_\+\+FAMILY}}, \mbox{\hyperlink{getaddrinfo_8c_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}}, \mbox{\hyperlink{getaddrinfo_8c_a2534379a3d9eddfcc0d931136f4fe8d3}{WILD\+\_\+\+AF}}, \mbox{\hyperlink{getaddrinfo_8c_ac8e3c4b06568f84f581f967586bfd26e}{WILD\+\_\+\+PROTOCOL}}, \mbox{\hyperlink{getaddrinfo_8c_a72f791d27e05eb1c3073de7d099c12ee}{WILD\+\_\+\+SOCKTYPE}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_a7ebc9a785e5ab85457c98595aac81589}{YES}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}\label{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!str\_isnumber@{str\_isnumber}}
+\index{str\_isnumber@{str\_isnumber}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{str\_isnumber()}{str\_isnumber()}}
+{\footnotesize\ttfamily static int str\+\_\+isnumber (\begin{DoxyParamCaption}\item[{char $\ast$}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{getaddrinfo_8c_a996bde01ecac342918f0a2c4e7ce7bd5}{NO}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_a7ebc9a785e5ab85457c98595aac81589}{YES}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_a895b8f0b49ce01fe9a2bb4a57f22978a}{get\+\_\+port()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getaddrinfo_8c_a6f50559b3b4114f5ce1cc194a9f59dbb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{getaddrinfo_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{getaddrinfo_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{     \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/Win32/Src/getaddrinfo.c,v 1.3 2008-\/09-\/15 23:37:51 guy Exp \$"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_ab3e3cc101f38bc4a428a72fe77582403}\label{getaddrinfo_8c_ab3e3cc101f38bc4a428a72fe77582403}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!afdl@{afdl}}
+\index{afdl@{afdl}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{afdl}{afdl}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structafd}{afd}} afdl\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \{PF\_INET, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }in\_addr),}
+\DoxyCodeLine{     sizeof(struct sockaddr\_in),}
+\DoxyCodeLine{     \mbox{\hyperlink{gencode_8c_a7c96e9bda39249f5b672b9d807cf3275}{offsetof}}(struct sockaddr\_in, sin\_addr),}
+\DoxyCodeLine{     \mbox{\hyperlink{getaddrinfo_8c_ae78bf9b45dde8c27ca4de70ae402dc84}{in\_addrany}}, \mbox{\hyperlink{getaddrinfo_8c_a017932885321b821941624d63716bf42}{in\_loopback}}, 0\},}
+\DoxyCodeLine{    \{0, 0, 0, 0, NULL, NULL, 0\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_a8576753043ba868e17eb8f658b7ec49b}{find\+\_\+afd()}} , 以及 \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}.
+
+\mbox{\Hypertarget{getaddrinfo_8c_a43de0dcdc7abe12a76c7268098f5aba6}\label{getaddrinfo_8c_a43de0dcdc7abe12a76c7268098f5aba6}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!ai\_errlist@{ai\_errlist}}
+\index{ai\_errlist@{ai\_errlist}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{ai\_errlist}{ai\_errlist}}
+{\footnotesize\ttfamily char$\ast$ ai\+\_\+errlist\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Success"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Address family for hostname not supported"{}},    }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Temporary failure in name resolution"{}},     }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Invalid value for ai\_flags"{}},               }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Non-\/recoverable failure in name resolution"{}},   }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}ai\_family not supported"{}},          }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Memory allocation failure"{}},            }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}No address associated with hostname"{}},      }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}hostname nor servname provided, or not known"{}}, }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}servname not supported for ai\_socktype"{}},   }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}ai\_socktype not supported"{}},            }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}System error returned in errno"{}},       }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Invalid value for hints"{}},          }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Resolved protocol is unknown"{}},         }
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Unknown error"{}},                }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_ae77c0aa1e576d13aba0a18be51d57bac}\label{getaddrinfo_8c_ae77c0aa1e576d13aba0a18be51d57bac}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!explore@{explore}}
+\index{explore@{explore}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{explore}{explore}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structexplore}{explore}} \mbox{\hyperlink{structexplore}{explore}}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \{ PF\_INET, SOCK\_DGRAM, IPPROTO\_UDP, \textcolor{stringliteral}{"{}udp"{}}, 0x07 \},}
+\DoxyCodeLine{    \{ PF\_INET, SOCK\_STREAM, IPPROTO\_TCP, \textcolor{stringliteral}{"{}tcp"{}}, 0x07 \},}
+\DoxyCodeLine{    \{ PF\_INET, SOCK\_RAW, \mbox{\hyperlink{getaddrinfo_8c_a756cb5435a9a4479ee2066ab9da0dbae}{ANY}}, NULL, 0x05 \},}
+\DoxyCodeLine{    \{ -\/1, 0, 0, NULL, 0 \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_a4ed9ddd919dac9f5f06f4cff8ab9178e}\label{getaddrinfo_8c_a4ed9ddd919dac9f5f06f4cff8ab9178e}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!in6\_addrany@{in6\_addrany}}
+\index{in6\_addrany@{in6\_addrany}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{in6\_addrany}{in6\_addrany}}
+{\footnotesize\ttfamily const char in6\+\_\+addrany\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_a9733dd07a7ceb930965ec5420b27000f}\label{getaddrinfo_8c_a9733dd07a7ceb930965ec5420b27000f}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!in6\_loopback@{in6\_loopback}}
+\index{in6\_loopback@{in6\_loopback}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{in6\_loopback}{in6\_loopback}}
+{\footnotesize\ttfamily const char in6\+\_\+loopback\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{getaddrinfo_8c_ae78bf9b45dde8c27ca4de70ae402dc84}\label{getaddrinfo_8c_ae78bf9b45dde8c27ca4de70ae402dc84}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!in\_addrany@{in\_addrany}}
+\index{in\_addrany@{in\_addrany}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{in\_addrany}{in\_addrany}}
+{\footnotesize\ttfamily const char in\+\_\+addrany\mbox{[}$\,$\mbox{]} = \{ 0, 0, 0, 0 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{getaddrinfo_8c_a017932885321b821941624d63716bf42}\label{getaddrinfo_8c_a017932885321b821941624d63716bf42}} 
+\index{getaddrinfo.c@{getaddrinfo.c}!in\_loopback@{in\_loopback}}
+\index{in\_loopback@{in\_loopback}!getaddrinfo.c@{getaddrinfo.c}}
+\doxysubsubsection{\texorpdfstring{in\_loopback}{in\_loopback}}
+{\footnotesize\ttfamily const char in\+\_\+loopback\mbox{[}$\,$\mbox{]} = \{ 127, 0, 0, 1 \}\hspace{0.3cm}{\ttfamily [static]}}
+

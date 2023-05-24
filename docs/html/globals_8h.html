@@ -1,0 +1,2270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: globals.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">globals.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;pcap.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+globals.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="globals_8h__incl.png" border="0" usemap="#aglobals_8h" alt=""/></div>
+<map name="aglobals_8h" id="aglobals_8h">
+<area shape="rect" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" title=" " alt="" coords="12,80,73,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="globals_8h__dep__incl.png" border="0" usemap="#aglobals_8hdep" alt=""/></div>
+<map name="aglobals_8hdep" id="aglobals_8hdep">
+<area shape="rect" title=" " alt="" coords="1411,5,1485,32"/>
+<area shape="rect" href="binding_8c.html" title=" " alt="" coords="5,80,80,107"/>
+<area shape="rect" href="cksum_8c.html" title=" " alt="" coords="104,80,176,107"/>
+<area shape="rect" href="datafiller_8c.html" title=" " alt="" coords="200,80,283,107"/>
+<area shape="rect" href="datahandler_8c.html" title=" " alt="" coords="307,80,407,107"/>
+<area shape="rect" href="display__ipopt_8c.html" title=" " alt="" coords="432,80,541,107"/>
+<area shape="rect" href="getifname_8c.html" title=" " alt="" coords="565,80,656,107"/>
+<area shape="rect" href="getlhs_8c.html" title=" " alt="" coords="681,80,749,107"/>
+<area shape="rect" href="if__promisc_8c.html" title=" " alt="" coords="773,80,867,107"/>
+<area shape="rect" href="ip__opt__build_8c.html" title=" " alt="" coords="891,80,994,107"/>
+<area shape="rect" href="libpcap__stuff_8c.html" title=" " alt="" coords="1019,80,1125,107"/>
+<area shape="rect" href="listen_8c.html" title=" " alt="" coords="1149,80,1213,107"/>
+<area shape="rect" href="logicmp_8c.html" title=" " alt="" coords="1238,80,1317,107"/>
+<area shape="rect" href="parseoptions_8c.html" title=" " alt="" coords="1341,80,1448,107"/>
+<area shape="rect" href="relid_8c.html" title=" " alt="" coords="1473,80,1530,107"/>
+<area shape="rect" href="rtt_8c.html" title=" " alt="" coords="1555,80,1600,107"/>
+<area shape="rect" href="scan_8c.html" title=" " alt="" coords="1624,80,1685,107"/>
+<area shape="rect" href="send_8c.html" title=" " alt="" coords="1709,80,1771,107"/>
+<area shape="rect" href="sendhcmp_8c.html" title=" " alt="" coords="1795,80,1888,107"/>
+<area shape="rect" href="sendicmp_8c.html" title=" " alt="" coords="1913,80,2002,107"/>
+<area shape="rect" href="sendip_8c.html" title=" " alt="" coords="2026,80,2097,107"/>
+<area shape="rect" href="sendip__handler_8c.html" title=" " alt="" coords="2121,80,2241,107"/>
+<area shape="rect" href="sendrawip_8c.html" title=" " alt="" coords="2266,80,2358,107"/>
+<area shape="rect" href="sendtcp_8c.html" title=" " alt="" coords="2382,80,2461,107"/>
+<area shape="rect" href="sendudp_8c.html" title=" " alt="" coords="2485,80,2568,107"/>
+<area shape="rect" href="statistics_8c.html" title=" " alt="" coords="2593,80,2679,107"/>
+<area shape="rect" href="waitpacket_8c.html" title=" " alt="" coords="2704,80,2800,107"/>
+</map>
+</div>
+</div>
+<p><a href="globals_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a16c2da0f27de9c87f077d2b62b1c57db"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a16c2da0f27de9c87f077d2b62b1c57db">rtt_min</a></td></tr>
+<tr class="separator:a16c2da0f27de9c87f077d2b62b1c57db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500bb3dc86c57e2c20341e6b218004b0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a500bb3dc86c57e2c20341e6b218004b0">rtt_max</a></td></tr>
+<tr class="separator:a500bb3dc86c57e2c20341e6b218004b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1521cc16e96b4a60e4c0f18d6f0a5261"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a1521cc16e96b4a60e4c0f18d6f0a5261">rtt_avg</a></td></tr>
+<tr class="separator:a1521cc16e96b4a60e4c0f18d6f0a5261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18025c8e9ed6306d6aeae4bdd42ddad2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a18025c8e9ed6306d6aeae4bdd42ddad2">tcp_th_flags</a></td></tr>
+<tr class="separator:a18025c8e9ed6306d6aeae4bdd42ddad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad062de78f81964cdcb6cce72bab12f45"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ad062de78f81964cdcb6cce72bab12f45">linkhdr_size</a></td></tr>
+<tr class="separator:ad062de78f81964cdcb6cce72bab12f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ef580bdac2e4e8dc2f4fbe18862bff"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ac7ef580bdac2e4e8dc2f4fbe18862bff">h_if_mtu</a></td></tr>
+<tr class="separator:ac7ef580bdac2e4e8dc2f4fbe18862bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ddecdfd283068214166bf9164830a0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a90ddecdfd283068214166bf9164830a0">virtual_mtu</a></td></tr>
+<tr class="separator:a90ddecdfd283068214166bf9164830a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8c545f2e7670dc0608df5a9b6cb9c3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#acd8c545f2e7670dc0608df5a9b6cb9c3">ip_frag_offset</a></td></tr>
+<tr class="separator:acd8c545f2e7670dc0608df5a9b6cb9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd6583d65e0d285b795ae6e710f3dd3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a8bd6583d65e0d285b795ae6e710f3dd3">signlen</a></td></tr>
+<tr class="separator:a8bd6583d65e0d285b795ae6e710f3dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f966a11150f357db42ad679f4657799"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a8f966a11150f357db42ad679f4657799">lsr_length</a></td></tr>
+<tr class="separator:a8f966a11150f357db42ad679f4657799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13155c4475d7adc98be9c48c91ac7dbe"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a13155c4475d7adc98be9c48c91ac7dbe">ssr_length</a></td></tr>
+<tr class="separator:a13155c4475d7adc98be9c48c91ac7dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d158f399b84d0e5a06af1a1f175d2a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a06d158f399b84d0e5a06af1a1f175d2a">ip_tos</a></td></tr>
+<tr class="separator:a06d158f399b84d0e5a06af1a1f175d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d855b390b5233e065543bb6fd44882"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a93d855b390b5233e065543bb6fd44882">set_seqnum</a></td></tr>
+<tr class="separator:a93d855b390b5233e065543bb6fd44882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c149f286b6ea5d70093287263dc9ff9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a8c149f286b6ea5d70093287263dc9ff9">tcp_seqnum</a></td></tr>
+<tr class="separator:a8c149f286b6ea5d70093287263dc9ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2bef02d678549b2cc5efaa467c69a3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aee2bef02d678549b2cc5efaa467c69a3">set_ack</a></td></tr>
+<tr class="separator:aee2bef02d678549b2cc5efaa467c69a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b1211faeb05d58fc7623ca073168d4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa9b1211faeb05d58fc7623ca073168d4">ip_header_length</a></td></tr>
+<tr class="separator:aa9b1211faeb05d58fc7623ca073168d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01379907bb07fdd57dabeef377fd092"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af01379907bb07fdd57dabeef377fd092">tcp_ack</a></td></tr>
+<tr class="separator:af01379907bb07fdd57dabeef377fd092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca4bef60e2a57436eb1413dcf482e5f"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#acca4bef60e2a57436eb1413dcf482e5f">data_size</a></td></tr>
+<tr class="separator:acca4bef60e2a57436eb1413dcf482e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ab3d2fe7486d30b88de7261fff3130"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af1ab3d2fe7486d30b88de7261fff3130">opt_debug</a></td></tr>
+<tr class="separator:af1ab3d2fe7486d30b88de7261fff3130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab640fbc677c01c857d7c98019846ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a9ab640fbc677c01c857d7c98019846ca">sockpacket</a></td></tr>
+<tr class="separator:a9ab640fbc677c01c857d7c98019846ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8deaa534e5c3e5a3d687d1aaccf34c20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a8deaa534e5c3e5a3d687d1aaccf34c20">sockraw</a></td></tr>
+<tr class="separator:a8deaa534e5c3e5a3d687d1aaccf34c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09cb00fd8967ae97f149e1fa8efb664c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a09cb00fd8967ae97f149e1fa8efb664c">sent_pkt</a></td></tr>
+<tr class="separator:a09cb00fd8967ae97f149e1fa8efb664c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935054c9eb5f6a70eb4c93981b7b8112"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a935054c9eb5f6a70eb4c93981b7b8112">recv_pkt</a></td></tr>
+<tr class="separator:a935054c9eb5f6a70eb4c93981b7b8112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d10d6d9dd09994f0772d3979b249c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a41d10d6d9dd09994f0772d3979b249c3">out_of_sequence_pkt</a></td></tr>
+<tr class="separator:a41d10d6d9dd09994f0772d3979b249c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a412ae544cb411a594a6439b0e9402f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a3a412ae544cb411a594a6439b0e9402f">sending_wait</a></td></tr>
+<tr class="separator:a3a412ae544cb411a594a6439b0e9402f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96cc2ab9bdc36c4832e315e1fb0f27d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af96cc2ab9bdc36c4832e315e1fb0f27d">opt_rawipmode</a></td></tr>
+<tr class="separator:af96cc2ab9bdc36c4832e315e1fb0f27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590a0ee97a08e5687390742d730a4695"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a590a0ee97a08e5687390742d730a4695">opt_icmpmode</a></td></tr>
+<tr class="separator:a590a0ee97a08e5687390742d730a4695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829a520a76fb048736c250eff24e85e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a829a520a76fb048736c250eff24e85e9">opt_udpmode</a></td></tr>
+<tr class="separator:a829a520a76fb048736c250eff24e85e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b996d1c2d960279b890682aa86f8f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae3b996d1c2d960279b890682aa86f8f4">opt_scanmode</a></td></tr>
+<tr class="separator:ae3b996d1c2d960279b890682aa86f8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9439861ce4c9d4aac2eaa1ab5f709ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae9439861ce4c9d4aac2eaa1ab5f709ee">opt_listenmode</a></td></tr>
+<tr class="separator:ae9439861ce4c9d4aac2eaa1ab5f709ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ceab431a08f1b4eb39510becbf8d97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa5ceab431a08f1b4eb39510becbf8d97">opt_waitinusec</a></td></tr>
+<tr class="separator:aa5ceab431a08f1b4eb39510becbf8d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03fa3634c3a68cb821416acf01c30af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa03fa3634c3a68cb821416acf01c30af">opt_numeric</a></td></tr>
+<tr class="separator:aa03fa3634c3a68cb821416acf01c30af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c818a352be4462d0952223528ad60b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a4c818a352be4462d0952223528ad60b9">opt_gethost</a></td></tr>
+<tr class="separator:a4c818a352be4462d0952223528ad60b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7929d58cee8e286616c8f3c1f565cea3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7929d58cee8e286616c8f3c1f565cea3">opt_quiet</a></td></tr>
+<tr class="separator:a7929d58cee8e286616c8f3c1f565cea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70d8695428cf9ef7d6cf16ca1c45eb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae70d8695428cf9ef7d6cf16ca1c45eb6">opt_relid</a></td></tr>
+<tr class="separator:ae70d8695428cf9ef7d6cf16ca1c45eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f4ea085bf2d0bc01b00966edb1c49fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7f4ea085bf2d0bc01b00966edb1c49fe">opt_fragment</a></td></tr>
+<tr class="separator:a7f4ea085bf2d0bc01b00966edb1c49fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad045ac0fa8dc2af7313302c1080c01e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ad045ac0fa8dc2af7313302c1080c01e3">opt_df</a></td></tr>
+<tr class="separator:ad045ac0fa8dc2af7313302c1080c01e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201576c8c944ebbc9c6524e6808f3b2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a201576c8c944ebbc9c6524e6808f3b2a">opt_mf</a></td></tr>
+<tr class="separator:a201576c8c944ebbc9c6524e6808f3b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c6795825554fff6f4b5ad6fbed441a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a68c6795825554fff6f4b5ad6fbed441a">opt_verbose</a></td></tr>
+<tr class="separator:a68c6795825554fff6f4b5ad6fbed441a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4cc9bd75a7c87624a52f8b84ffa83d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae4cc9bd75a7c87624a52f8b84ffa83d2">opt_winid_order</a></td></tr>
+<tr class="separator:ae4cc9bd75a7c87624a52f8b84ffa83d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52250405b6953484a30f1480670319b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a52250405b6953484a30f1480670319b9">opt_keepstill</a></td></tr>
+<tr class="separator:a52250405b6953484a30f1480670319b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d84cc1de1587151b8f4e5dbf6edef53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7d84cc1de1587151b8f4e5dbf6edef53">opt_datafromfile</a></td></tr>
+<tr class="separator:a7d84cc1de1587151b8f4e5dbf6edef53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273a4d215c7333288b66782bfc34c262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a273a4d215c7333288b66782bfc34c262">opt_hexdump</a></td></tr>
+<tr class="separator:a273a4d215c7333288b66782bfc34c262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a24de9dab7bf14c58093a5b29c7c1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af6a24de9dab7bf14c58093a5b29c7c1d">opt_contdump</a></td></tr>
+<tr class="separator:af6a24de9dab7bf14c58093a5b29c7c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9fec9eed0aeb69739f27aa82017b9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a0b9fec9eed0aeb69739f27aa82017b9b">opt_sign</a></td></tr>
+<tr class="separator:a0b9fec9eed0aeb69739f27aa82017b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74e287fe1a3d45eeee223c1a9bf2ee1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af74e287fe1a3d45eeee223c1a9bf2ee1">opt_safe</a></td></tr>
+<tr class="separator:af74e287fe1a3d45eeee223c1a9bf2ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a924353adc62215ae2439e220925f4c72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a924353adc62215ae2439e220925f4c72">opt_end</a></td></tr>
+<tr class="separator:a924353adc62215ae2439e220925f4c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c529fef1d3cd0002e3fe2ccabe2dd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a91c529fef1d3cd0002e3fe2ccabe2dd5">opt_traceroute</a></td></tr>
+<tr class="separator:a91c529fef1d3cd0002e3fe2ccabe2dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762fb7acc59299bae49670d52e1b8320"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a762fb7acc59299bae49670d52e1b8320">opt_seqnum</a></td></tr>
+<tr class="separator:a762fb7acc59299bae49670d52e1b8320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d838f95efbd6f6d7d28cb66290f9937"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a5d838f95efbd6f6d7d28cb66290f9937">opt_incdport</a></td></tr>
+<tr class="separator:a5d838f95efbd6f6d7d28cb66290f9937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0925e905101ef98f39d269c4c5d490"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a8a0925e905101ef98f39d269c4c5d490">opt_force_incdport</a></td></tr>
+<tr class="separator:a8a0925e905101ef98f39d269c4c5d490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1681ef71240d47c5a5b46e45bbb9a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a1c1681ef71240d47c5a5b46e45bbb9a3">opt_icmptype</a></td></tr>
+<tr class="separator:a1c1681ef71240d47c5a5b46e45bbb9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1585931ddc259e896a3b10542a1e8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a4c1585931ddc259e896a3b10542a1e8e">opt_icmpcode</a></td></tr>
+<tr class="separator:a4c1585931ddc259e896a3b10542a1e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a205ebd500802c77d1d9ea715a14c2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a6a205ebd500802c77d1d9ea715a14c2a">opt_rroute</a></td></tr>
+<tr class="separator:a6a205ebd500802c77d1d9ea715a14c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb22ae25d4a395c6e0b540cc37a63b13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#abb22ae25d4a395c6e0b540cc37a63b13">opt_tcpexitcode</a></td></tr>
+<tr class="separator:abb22ae25d4a395c6e0b540cc37a63b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab43aa22aa083fb340c5db339cef397bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab43aa22aa083fb340c5db339cef397bf">opt_badcksum</a></td></tr>
+<tr class="separator:ab43aa22aa083fb340c5db339cef397bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8eb20ec721c88a6f63a3e6ef066624f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af8eb20ec721c88a6f63a3e6ef066624f">opt_tr_keep_ttl</a></td></tr>
+<tr class="separator:af8eb20ec721c88a6f63a3e6ef066624f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e7218629149e8cd4da188fdb486deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab5e7218629149e8cd4da188fdb486deb">opt_tcp_timestamp</a></td></tr>
+<tr class="separator:ab5e7218629149e8cd4da188fdb486deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedbb2664d988fa3a6c271de585fa4260"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aedbb2664d988fa3a6c271de585fa4260">opt_tr_stop</a></td></tr>
+<tr class="separator:aedbb2664d988fa3a6c271de585fa4260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95b4bbd88b261fa4da77a505e0c3353"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa95b4bbd88b261fa4da77a505e0c3353">opt_tr_no_rtt</a></td></tr>
+<tr class="separator:aa95b4bbd88b261fa4da77a505e0c3353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38f32bb8dd18bca53ddb3db3d853952"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab38f32bb8dd18bca53ddb3db3d853952">opt_rand_dest</a></td></tr>
+<tr class="separator:ab38f32bb8dd18bca53ddb3db3d853952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad551c4bf388639cfdeb5ff979f18675"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aad551c4bf388639cfdeb5ff979f18675">opt_rand_source</a></td></tr>
+<tr class="separator:aad551c4bf388639cfdeb5ff979f18675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436df7a5561f1284493767fa1d8df580"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a436df7a5561f1284493767fa1d8df580">opt_lsrr</a></td></tr>
+<tr class="separator:a436df7a5561f1284493767fa1d8df580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19fe47b7cf5b13da371fb9468c26d93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab19fe47b7cf5b13da371fb9468c26d93">opt_ssrr</a></td></tr>
+<tr class="separator:ab19fe47b7cf5b13da371fb9468c26d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6971e872b4543ebfa54558f36d51d8b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a6971e872b4543ebfa54558f36d51d8b9">opt_beep</a></td></tr>
+<tr class="separator:a6971e872b4543ebfa54558f36d51d8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5e857463e118c76b784099d2b04b37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aab5e857463e118c76b784099d2b04b37">opt_flood</a></td></tr>
+<tr class="separator:aab5e857463e118c76b784099d2b04b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073736dd0b8962be665c187c3e5d1fd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a073736dd0b8962be665c187c3e5d1fd3">tcp_exitcode</a></td></tr>
+<tr class="separator:a073736dd0b8962be665c187c3e5d1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ced2f3734fd89fe4b315d78bf91754c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a6ced2f3734fd89fe4b315d78bf91754c">src_ttl</a></td></tr>
+<tr class="separator:a6ced2f3734fd89fe4b315d78bf91754c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ed860f996b7f424f202a690aa2fb69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab6ed860f996b7f424f202a690aa2fb69">src_id</a></td></tr>
+<tr class="separator:ab6ed860f996b7f424f202a690aa2fb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fa50515de3127fe1150148fb9ee30f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa1fa50515de3127fe1150148fb9ee30f">base_dst_port</a></td></tr>
+<tr class="separator:aa1fa50515de3127fe1150148fb9ee30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc30891256dc40c2b01f687b30dceff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#adc30891256dc40c2b01f687b30dceff3">dst_port</a></td></tr>
+<tr class="separator:adc30891256dc40c2b01f687b30dceff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d47efc2f2609185cf802853871de027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a2d47efc2f2609185cf802853871de027">src_port</a></td></tr>
+<tr class="separator:a2d47efc2f2609185cf802853871de027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a304ffcaa9eb08837cfcf2bf38277f271"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a304ffcaa9eb08837cfcf2bf38277f271">initsport</a></td></tr>
+<tr class="separator:a304ffcaa9eb08837cfcf2bf38277f271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc80722d9dd9349cbba06c72d6fb5972"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#acc80722d9dd9349cbba06c72d6fb5972">sequence</a></td></tr>
+<tr class="separator:acc80722d9dd9349cbba06c72d6fb5972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e178c9fe8deae0a3fc655676877eaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa9e178c9fe8deae0a3fc655676877eaf">src_winsize</a></td></tr>
+<tr class="separator:aa9e178c9fe8deae0a3fc655676877eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2140fcc67ba0c2730a476f85bf75c99e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a2140fcc67ba0c2730a476f85bf75c99e">src_thoff</a></td></tr>
+<tr class="separator:a2140fcc67ba0c2730a476f85bf75c99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad43c3812e6d13e0518d9f8b8f463ffcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></td></tr>
+<tr class="separator:ad43c3812e6d13e0518d9f8b8f463ffcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d9689c7ae8792762932bc040a73af3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae9d9689c7ae8792762932bc040a73af3">ctrlzbind</a></td></tr>
+<tr class="separator:ae9d9689c7ae8792762932bc040a73af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab66b842bb060b363101cd400b9e5fc2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab66b842bb060b363101cd400b9e5fc2b">delaytable_index</a></td></tr>
+<tr class="separator:ab66b842bb060b363101cd400b9e5fc2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d20156c4029b3451c259836983dbc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a82d20156c4029b3451c259836983dbc7">eof_reached</a></td></tr>
+<tr class="separator:a82d20156c4029b3451c259836983dbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6bf383cf9a4c3462093c8aa64af169"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#abb6bf383cf9a4c3462093c8aa64af169">icmp_ip_version</a></td></tr>
+<tr class="separator:abb6bf383cf9a4c3462093c8aa64af169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb5a6837ed6fa92ae2df8861ae07ceb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a5fb5a6837ed6fa92ae2df8861ae07ceb">icmp_ip_ihl</a></td></tr>
+<tr class="separator:a5fb5a6837ed6fa92ae2df8861ae07ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6996b161ce4e125e530ad8ad1eec1eaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a6996b161ce4e125e530ad8ad1eec1eaa">icmp_ip_tos</a></td></tr>
+<tr class="separator:a6996b161ce4e125e530ad8ad1eec1eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc49eb498bff60c825b1922ecf852987"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#afc49eb498bff60c825b1922ecf852987">icmp_ip_tot_len</a></td></tr>
+<tr class="separator:afc49eb498bff60c825b1922ecf852987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff67e2007a2d820c01058fb2620cf9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aeff67e2007a2d820c01058fb2620cf9f">icmp_ip_id</a></td></tr>
+<tr class="separator:aeff67e2007a2d820c01058fb2620cf9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71850cea8b78a2d969b8dcff94c777e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aa71850cea8b78a2d969b8dcff94c777e">icmp_ip_srcport</a></td></tr>
+<tr class="separator:aa71850cea8b78a2d969b8dcff94c777e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c1330d4a92778b0e6536529ce0f110f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a9c1330d4a92778b0e6536529ce0f110f">icmp_ip_dstport</a></td></tr>
+<tr class="separator:a9c1330d4a92778b0e6536529ce0f110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fa17a1ab6a9c0100215866f4773e4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a67fa17a1ab6a9c0100215866f4773e4a">opt_force_icmp</a></td></tr>
+<tr class="separator:a67fa17a1ab6a9c0100215866f4773e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7945d87e890d2d448e047079e9b43e03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7945d87e890d2d448e047079e9b43e03">icmp_ip_protocol</a></td></tr>
+<tr class="separator:a7945d87e890d2d448e047079e9b43e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1347ed1eebf1a23857cf507f759d64c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a1347ed1eebf1a23857cf507f759d64c7">icmp_cksum</a></td></tr>
+<tr class="separator:a1347ed1eebf1a23857cf507f759d64c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed247f7066a0dbafc5e3b952f1aa7b49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aed247f7066a0dbafc5e3b952f1aa7b49">raw_ip_protocol</a></td></tr>
+<tr class="separator:aed247f7066a0dbafc5e3b952f1aa7b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c546c2fe27878b8ec8aadada8edf643"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a1c546c2fe27878b8ec8aadada8edf643">lsr</a> [255]</td></tr>
+<tr class="separator:a1c546c2fe27878b8ec8aadada8edf643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c9c739f8998bca2f2dc9a21e3a0d8a"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a07c9c739f8998bca2f2dc9a21e3a0d8a">ssr</a> [255]</td></tr>
+<tr class="separator:a07c9c739f8998bca2f2dc9a21e3a0d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3036385b4f08b83f3ea8211dfd6cf737"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a3036385b4f08b83f3ea8211dfd6cf737">ifname</a> [1024]</td></tr>
+<tr class="separator:a3036385b4f08b83f3ea8211dfd6cf737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3ac7e341ecfdd7a4d27212616a39c7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7a3ac7e341ecfdd7a4d27212616a39c7">ifstraddr</a> [1024]</td></tr>
+<tr class="separator:a7a3ac7e341ecfdd7a4d27212616a39c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26b30bfc9fe22970c9598844def20c5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ad26b30bfc9fe22970c9598844def20c5">datafilename</a> [1024]</td></tr>
+<tr class="separator:ad26b30bfc9fe22970c9598844def20c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9abba9190a6034a481b0d9321642e18"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ae9abba9190a6034a481b0d9321642e18">targetname</a> [1024]</td></tr>
+<tr class="separator:ae9abba9190a6034a481b0d9321642e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a400b80d0b852148529200e39e6196d59"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a400b80d0b852148529200e39e6196d59">targetstraddr</a> [1024]</td></tr>
+<tr class="separator:a400b80d0b852148529200e39e6196d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8306fb85ce5170e6f98322734373f70"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#af8306fb85ce5170e6f98322734373f70">spoofaddr</a> [1024]</td></tr>
+<tr class="separator:af8306fb85ce5170e6f98322734373f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50458b993e8c44e3b9469504e040868"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ac50458b993e8c44e3b9469504e040868">icmp_ip_srcip</a> [1024]</td></tr>
+<tr class="separator:ac50458b993e8c44e3b9469504e040868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41d84b68d9786cccfe9bc53e809580b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab41d84b68d9786cccfe9bc53e809580b">icmp_ip_dstip</a> [1024]</td></tr>
+<tr class="separator:ab41d84b68d9786cccfe9bc53e809580b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d24027e37afba9f659a8cd535860f8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a50d24027e37afba9f659a8cd535860f8">icmp_gwip</a> [1024]</td></tr>
+<tr class="separator:a50d24027e37afba9f659a8cd535860f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab810ad4f7c0efd73662227c61460490b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#ab810ad4f7c0efd73662227c61460490b">sign</a> [1024]</td></tr>
+<tr class="separator:ab810ad4f7c0efd73662227c61460490b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9a5333954faea0495f8fa8e6167dd9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#afd9a5333954faea0495f8fa8e6167dd9">rsign</a> [1024]</td></tr>
+<tr class="separator:afd9a5333954faea0495f8fa8e6167dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba769525033ef5dc1c5309edd3de4de"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a7ba769525033ef5dc1c5309edd3de4de">ip_opt</a> [40]</td></tr>
+<tr class="separator:a7ba769525033ef5dc1c5309edd3de4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f961ee0cd5d9017e8937f68ea1c9c6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a18f961ee0cd5d9017e8937f68ea1c9c6">ip_optlen</a></td></tr>
+<tr class="separator:a18f961ee0cd5d9017e8937f68ea1c9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676c85860f4b74ffbf17f5b6a14332ab"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a676c85860f4b74ffbf17f5b6a14332ab">opt_scanports</a></td></tr>
+<tr class="separator:a676c85860f4b74ffbf17f5b6a14332ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8b4d4444bcb6dbf710d27cc3554665"><td class="memItemLeft" align="right" valign="top">struct sockaddr_in icmp_ip_src icmp_ip_dst icmp_gw local&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#aec8b4d4444bcb6dbf710d27cc3554665">remote</a></td></tr>
+<tr class="separator:aec8b4d4444bcb6dbf710d27cc3554665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179df26f82a603e41f4c556e7a206dcf"><td class="memItemLeft" align="right" valign="top">struct itimerval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a179df26f82a603e41f4c556e7a206dcf">usec_delay</a></td></tr>
+<tr class="separator:a179df26f82a603e41f4c556e7a206dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9805834b51a8828f55fdc616a8221317"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="structdelaytable__element.html">delaytable_element</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a9805834b51a8828f55fdc616a8221317">delaytable</a> [<a class="el" href="hping2_8h.html#a1baf7829bbaab1395a13dc5ff8d1b1c3">TABLESIZE</a>]</td></tr>
+<tr class="separator:a9805834b51a8828f55fdc616a8221317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71cd926ca6334092b988bdd35cecad99"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structhcmphdr.html">hcmphdr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a71cd926ca6334092b988bdd35cecad99">hcmphdr_p</a></td></tr>
+<tr class="separator:a71cd926ca6334092b988bdd35cecad99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9bb241b38decf7a4f029f07b4e23f6"><td class="memItemLeft" align="right" valign="top">pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a2b9bb241b38decf7a4f029f07b4e23f6">pcapfp</a></td></tr>
+<tr class="separator:a2b9bb241b38decf7a4f029f07b4e23f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41891cad090df07cd9360f1d8a9f1396"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a> [<a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>]</td></tr>
+<tr class="separator:a41891cad090df07cd9360f1d8a9f1396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a24b5b22a130df12f883d1d910e490"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a></td></tr>
+<tr class="separator:a63a24b5b22a130df12f883d1d910e490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">变量说明</h2>
+<a id="aa1fa50515de3127fe1150148fb9ee30f" name="aa1fa50515de3127fe1150148fb9ee30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fa50515de3127fe1150148fb9ee30f">&#9670;&nbsp;</a></span>base_dst_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int base_dst_port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a> , 以及 <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a>.</p>
+
+</div>
+</div>
+<a id="ad43c3812e6d13e0518d9f8b8f463ffcf" name="ad43c3812e6d13e0518d9f8b8f463ffcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43c3812e6d13e0518d9f8b8f463ffcf">&#9670;&nbsp;</a></span>count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-sita_8c.html#a795be84d1e1aada2e1a056ff1e934ef7">acn_read_n_bytes_with_timeout()</a>, <a class="el" href="adbuf_8c.html#a6bb71faa3048386b70ca4c8c88c92c37">adbuf_cut()</a>, <a class="el" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6">adbuf_ltrim()</a>, <a class="el" href="adbuf_8c.html#ac3a4ff9ac84f22002a84a537d01601d0">adbuf_rtrim()</a>, <a class="el" href="waitpacket_8c.html#a20f566b998cc83ce3dba6c95968ae5b5">hex_dump()</a>, <a class="el" href="waitpacket_8c.html#a54057a0631275d3190715cabe7d92d11">human_dump()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="dlpisubs_8c.html#afd3f34fe24078cb7081ba9c8a1d8a321">pcap_process_pkts()</a>, <a class="el" href="pcap-libdlpi_8c.html#ac9412d85176f2735765953d2b20696e0">pcap_read_libdlpi()</a>, <a class="el" href="pcap-sita_8c.html#a3eb476bba79449960fa66095991b35df">pcap_setfilter_acn()</a>, <a class="el" href="pcap-sita_8c.html#a66548453e6802e4e8e99997070888878">read_client_nbytes()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="ae9d9689c7ae8792762932bc040a73af3" name="ae9d9689c7ae8792762932bc040a73af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d9689c7ae8792762932bc040a73af3">&#9670;&nbsp;</a></span>ctrlzbind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ctrlzbind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="binding_8c.html#ad28cda14450b7c602003b7621168c2f2">inc_destparm()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="acca4bef60e2a57436eb1413dcf482e5f" name="acca4bef60e2a57436eb1413dcf482e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca4bef60e2a57436eb1413dcf482e5f">&#9670;&nbsp;</a></span>data_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int data_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a>, <a class="el" href="datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4">datafiller()</a>, <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a4b16ad8c3bf62de65cd843c01dedbfad">send_hcmp()</a>, <a class="el" href="sendicmp_8c.html#ab7ee2606f9c854ef1d8e12daaa989d0a">send_icmp_echo()</a>, <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>, <a class="el" href="hping2_8h.html#a78a83d8c35164efd189a6d3584ba5537">send_rawip()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a>.</p>
+
+</div>
+</div>
+<a id="ad26b30bfc9fe22970c9598844def20c5" name="ad26b30bfc9fe22970c9598844def20c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26b30bfc9fe22970c9598844def20c5">&#9670;&nbsp;</a></span>datafilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char datafilename[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4">datafiller()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a9805834b51a8828f55fdc616a8221317" name="a9805834b51a8828f55fdc616a8221317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9805834b51a8828f55fdc616a8221317">&#9670;&nbsp;</a></span>delaytable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile struct <a class="el" href="structdelaytable__element.html">delaytable_element</a> delaytable[<a class="el" href="hping2_8h.html#a1baf7829bbaab1395a13dc5ff8d1b1c3">TABLESIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5c3d31936b1247d4c9ccd2aedd4bdeb8">delaytable_add()</a>, <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a> , 以及 <a class="el" href="hping2_8h.html#ae4b580ccace3b0d5f7421742a3937c8f">rtt()</a>.</p>
+
+</div>
+</div>
+<a id="ab66b842bb060b363101cd400b9e5fc2b" name="ab66b842bb060b363101cd400b9e5fc2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab66b842bb060b363101cd400b9e5fc2b">&#9670;&nbsp;</a></span>delaytable_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int delaytable_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5c3d31936b1247d4c9ccd2aedd4bdeb8">delaytable_add()</a>.</p>
+
+</div>
+</div>
+<a id="adc30891256dc40c2b01f687b30dceff3" name="adc30891256dc40c2b01f687b30dceff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc30891256dc40c2b01f687b30dceff3">&#9670;&nbsp;</a></span>dst_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dst_port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="binding_8c.html#ad28cda14450b7c602003b7621168c2f2">inc_destparm()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>, <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>, <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a> , 以及 <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a>.</p>
+
+</div>
+</div>
+<a id="a82d20156c4029b3451c259836983dbc7" name="a82d20156c4029b3451c259836983dbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d20156c4029b3451c259836983dbc7">&#9670;&nbsp;</a></span>eof_reached</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int eof_reached</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4">datafiller()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="a41891cad090df07cd9360f1d8a9f1396" name="a41891cad090df07cd9360f1d8a9f1396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41891cad090df07cd9360f1d8a9f1396">&#9670;&nbsp;</a></span>errbuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char errbuf[<a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="pcap-sita_8c.html#aa24730e685c231aeb5e4459524dab714">acn_findalldevs()</a>, <a class="el" href="pcap-sita_8c.html#a3ec30d81b86ee2c515d1c2cbf29754e1">acn_open_live()</a>, <a class="el" href="pcap-sita_8c.html#af35a2937a031c472e78fb5c0f94a4bd0">acn_parse_hosts_file()</a>, <a class="el" href="inet_8c.html#ab33d156eb14d2b242dc3cf9218a03c81">add_addr_to_iflist()</a>, <a class="el" href="fad-win32_8c.html#a9426bbce4d74e23e38d1add1ecbe92dd">add_addr_to_list()</a>, <a class="el" href="inet_8c.html#ad645673beca798d2ccd8218c8a7ca35a">add_or_find_if()</a>, <a class="el" href="pcap-dag_8c.html#a6d9e13e5daffb6ef73c72f8323c79921">dag_platform_finddevs()</a>, <a class="el" href="pcap-dag_8c.html#a86cf02a84036cac7f1d200e14f5e622a">dag_setnonblock()</a>, <a class="el" href="pcap-sita_8c.html#a3473ca0674a8f30b5ee171df472e0feb">get_error_response()</a>, <a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c">get_opthdr_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f">get_optvalue_from_block_data()</a>, <a class="el" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="hping2_8h.html#a90406c63de74e37976821bf4c5afbc9e">open_pcap()</a>, <a class="el" href="inet_8c.html#ae61261e756b0e199b9d361f500c49f17">pcap_add_if()</a>, <a class="el" href="fad-win32_8c.html#aebde42f1910515d28de023a28000917d">pcap_add_if_win32()</a>, <a class="el" href="sf-pcap_8c.html#a60648bfb78b9c29bfa80576e04733344">pcap_check_header()</a>, <a class="el" href="fad-getad_8c.html#a7b128eaeef627b408f6a6e2a2f5eb45d">pcap_findalldevs()</a>, <a class="el" href="pcap_2pcap_8h.html#a08df9283055c03dbd7b14cf14c0490f6">pcap_fopen_offline()</a>, <a class="el" href="pcap_8c.html#ab25dc0bfe06545b86be4103bf010708e">pcap_getnonblock()</a>, <a class="el" href="pcap-libdlpi_8c.html#ae173c1e07852a1fb1a7e5a757a384d10">pcap_libdlpi_err()</a>, <a class="el" href="inet_8c.html#ad83fbe09ddc9c7f354ab4f2b293f8191">pcap_lookupdev()</a>, <a class="el" href="inet_8c.html#aa35276d0fa530c51a455f298fa1ec453">pcap_lookupnet()</a>, <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a>, <a class="el" href="pcap_8c.html#a4ffc0d48c0a614df0980206517d48f8e">pcap_open_live()</a>, <a class="el" href="pcap_2pcap_8h.html#a0fed514fe3722f2aa5ef7e24aebcf1f3">pcap_open_offline()</a>, <a class="el" href="pcap-bpf_8c.html#a14b88a933c5761e5038182b4c30bf0c8">pcap_platform_finddevs()</a>, <a class="el" href="pcap_8c.html#a3f212141c80b59aad8ac535bb0178275">pcap_setnonblock()</a>, <a class="el" href="pcap-sita_8c.html#a096343734009d244a97b66ceb480476b">process_client_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options()</a>, <a class="el" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca">read_block()</a>, <a class="el" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666">read_bytes()</a>, <a class="el" href="pcap-linux_8c.html#afb293431bb9ec076f757d3444d875f0f">scan_proc_net_dev()</a>, <a class="el" href="pcap-linux_8c.html#a775e9e3fa61d2f1f0baffb4983bfecc7">scan_sys_class_net()</a> , 以及 <a class="el" href="pcap-septel_8c.html#acdc1e2f12d872a02062f3047e5375dd3">septel_platform_finddevs()</a>.</p>
+
+</div>
+</div>
+<a id="ac7ef580bdac2e4e8dc2f4fbe18862bff" name="ac7ef580bdac2e4e8dc2f4fbe18862bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ef580bdac2e4e8dc2f4fbe18862bff">&#9670;&nbsp;</a></span>h_if_mtu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int h_if_mtu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getifname_8c.html#a7cb4dc3e609a95a4ecbeedd455a0af78">get_if_name()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a71cd926ca6334092b988bdd35cecad99" name="a71cd926ca6334092b988bdd35cecad99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71cd926ca6334092b988bdd35cecad99">&#9670;&nbsp;</a></span>hcmphdr_p</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structhcmphdr.html">hcmphdr</a>* hcmphdr_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a> , 以及 <a class="el" href="hping2_8h.html#a4b16ad8c3bf62de65cd843c01dedbfad">send_hcmp()</a>.</p>
+
+</div>
+</div>
+<a id="a63a24b5b22a130df12f883d1d910e490" name="a63a24b5b22a130df12f883d1d910e490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63a24b5b22a130df12f883d1d910e490">&#9670;&nbsp;</a></span>hdr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a> hdr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f">gen_basepowtable()</a>, <a class="el" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712">gen_basetable()</a>, <a class="el" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630">gen_bitstable()</a>, <a class="el" href="gentables_8c.html#a6ce509e4c9c5c813f5578dc2165040ee">gen_cset()</a>, <a class="el" href="gentables_8c.html#afafe16e6ec688117742cb6c20b4ff75e">gen_rcset()</a>, <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="sf-pcap_8c.html#a60648bfb78b9c29bfa80576e04733344">pcap_check_header()</a>, <a class="el" href="sf-pcap_8c.html#accb06be00adc4ad8ff2a1661d5a7ea91">pcap_next_packet()</a>, <a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet()</a>, <a class="el" href="hping2_8h.html#a6a53f92871b68acc848b9a3f6011da4e">pcap_recv()</a>, <a class="el" href="pcap-enet_8c.html#a3fa1952f1268b3fe397e870471b88e75">readloop()</a>, <a class="el" href="sf-pcap_8c.html#a8c7be493dc73deb26fedf6bd91d88384">sf_write_header()</a>, <a class="el" href="pcap-snf_8c.html#a49686f4be3ff34a2cf9bf80a500365d2">snf_read()</a>, <a class="el" href="pcap-common_8c.html#afa059dda75b192db1391a32248ccdb65">swap_linux_usb_header()</a> , 以及 <a class="el" href="pcap-usb-linux_8c.html#a072b2bc4dfdb2cb86c2f9a246c04e8e4">usb_read_linux_mmap()</a>.</p>
+
+</div>
+</div>
+<a id="a1347ed1eebf1a23857cf507f759d64c7" name="a1347ed1eebf1a23857cf507f759d64c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1347ed1eebf1a23857cf507f759d64c7">&#9670;&nbsp;</a></span>icmp_cksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_cksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="sendicmp_8c.html#a1895ef47376ed349366a917e74bbab6a">send_icmp_address()</a>, <a class="el" href="sendicmp_8c.html#ab7ee2606f9c854ef1d8e12daaa989d0a">send_icmp_echo()</a>, <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a> , 以及 <a class="el" href="sendicmp_8c.html#a783066f0b12bfbc163d93ddc215cb1a2">send_icmp_timestamp()</a>.</p>
+
+</div>
+</div>
+<a id="a50d24027e37afba9f659a8cd535860f8" name="a50d24027e37afba9f659a8cd535860f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d24027e37afba9f659a8cd535860f8">&#9670;&nbsp;</a></span>icmp_gwip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char icmp_gwip[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="ab41d84b68d9786cccfe9bc53e809580b" name="ab41d84b68d9786cccfe9bc53e809580b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41d84b68d9786cccfe9bc53e809580b">&#9670;&nbsp;</a></span>icmp_ip_dstip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char icmp_ip_dstip[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a9c1330d4a92778b0e6536529ce0f110f" name="a9c1330d4a92778b0e6536529ce0f110f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1330d4a92778b0e6536529ce0f110f">&#9670;&nbsp;</a></span>icmp_ip_dstport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_dstport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="aeff67e2007a2d820c01058fb2620cf9f" name="aeff67e2007a2d820c01058fb2620cf9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff67e2007a2d820c01058fb2620cf9f">&#9670;&nbsp;</a></span>icmp_ip_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a5fb5a6837ed6fa92ae2df8861ae07ceb" name="a5fb5a6837ed6fa92ae2df8861ae07ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb5a6837ed6fa92ae2df8861ae07ceb">&#9670;&nbsp;</a></span>icmp_ip_ihl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_ihl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="a7945d87e890d2d448e047079e9b43e03" name="a7945d87e890d2d448e047079e9b43e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7945d87e890d2d448e047079e9b43e03">&#9670;&nbsp;</a></span>icmp_ip_protocol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_protocol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="ac50458b993e8c44e3b9469504e040868" name="ac50458b993e8c44e3b9469504e040868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50458b993e8c44e3b9469504e040868">&#9670;&nbsp;</a></span>icmp_ip_srcip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char icmp_ip_srcip[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="aa71850cea8b78a2d969b8dcff94c777e" name="aa71850cea8b78a2d969b8dcff94c777e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71850cea8b78a2d969b8dcff94c777e">&#9670;&nbsp;</a></span>icmp_ip_srcport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_srcport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="a6996b161ce4e125e530ad8ad1eec1eaa" name="a6996b161ce4e125e530ad8ad1eec1eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6996b161ce4e125e530ad8ad1eec1eaa">&#9670;&nbsp;</a></span>icmp_ip_tos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_tos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="afc49eb498bff60c825b1922ecf852987" name="afc49eb498bff60c825b1922ecf852987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc49eb498bff60c825b1922ecf852987">&#9670;&nbsp;</a></span>icmp_ip_tot_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_tot_len</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="abb6bf383cf9a4c3462093c8aa64af169" name="abb6bf383cf9a4c3462093c8aa64af169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb6bf383cf9a4c3462093c8aa64af169">&#9670;&nbsp;</a></span>icmp_ip_version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int icmp_ip_version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="a3036385b4f08b83f3ea8211dfd6cf737" name="a3036385b4f08b83f3ea8211dfd6cf737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3036385b4f08b83f3ea8211dfd6cf737">&#9670;&nbsp;</a></span>ifname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ifname[1024]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getifname_8c.html#a7cb4dc3e609a95a4ecbeedd455a0af78">get_if_name()</a>, <a class="el" href="hping2_8h.html#a4a10e3c2d78485a88a6846f317d196a0">if_promisc_off()</a>, <a class="el" href="hping2_8h.html#a298f69a0fbd93d7703e09283998083c6">if_promisc_on()</a>, <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="hping2_8h.html#a90406c63de74e37976821bf4c5afbc9e">open_pcap()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3ac7e341ecfdd7a4d27212616a39c7" name="a7a3ac7e341ecfdd7a4d27212616a39c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3ac7e341ecfdd7a4d27212616a39c7">&#9670;&nbsp;</a></span>ifstraddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ifstraddr[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getifname_8c.html#a7cb4dc3e609a95a4ecbeedd455a0af78">get_if_name()</a>.</p>
+
+</div>
+</div>
+<a id="a304ffcaa9eb08837cfcf2bf38277f271" name="a304ffcaa9eb08837cfcf2bf38277f271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304ffcaa9eb08837cfcf2bf38277f271">&#9670;&nbsp;</a></span>initsport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int initsport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="scan_8c.html#acb18701d79099260adfd7ca0945e5d22">receiver()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a>.</p>
+
+</div>
+</div>
+<a id="acd8c545f2e7670dc0608df5a9b6cb9c3" name="acd8c545f2e7670dc0608df5a9b6cb9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8c545f2e7670dc0608df5a9b6cb9c3">&#9670;&nbsp;</a></span>ip_frag_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ip_frag_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="aa9b1211faeb05d58fc7623ca073168d4" name="aa9b1211faeb05d58fc7623ca073168d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b1211faeb05d58fc7623ca073168d4">&#9670;&nbsp;</a></span>ip_header_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ip_header_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ba769525033ef5dc1c5309edd3de4de" name="a7ba769525033ef5dc1c5309edd3de4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba769525033ef5dc1c5309edd3de4de">&#9670;&nbsp;</a></span>ip_opt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ip_opt[40]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a18f961ee0cd5d9017e8937f68ea1c9c6" name="a18f961ee0cd5d9017e8937f68ea1c9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f961ee0cd5d9017e8937f68ea1c9c6">&#9670;&nbsp;</a></span>ip_optlen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ip_optlen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a06d158f399b84d0e5a06af1a1f175d2a" name="a06d158f399b84d0e5a06af1a1f175d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d158f399b84d0e5a06af1a1f175d2a">&#9670;&nbsp;</a></span>ip_tos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ip_tos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="ad062de78f81964cdcb6cce72bab12f45" name="ad062de78f81964cdcb6cce72bab12f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad062de78f81964cdcb6cce72bab12f45">&#9670;&nbsp;</a></span>linkhdr_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int linkhdr_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getlhs_8c.html#aaf84b07cf9b335dc1b5230148a3d28f2">get_linkhdr_size()</a>, <a class="el" href="hping2_8h.html#a401db5ab953431bdaad40714e1113192">listenmain()</a>, <a class="el" href="scan_8c.html#acb18701d79099260adfd7ca0945e5d22">receiver()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a1c546c2fe27878b8ec8aadada8edf643" name="a1c546c2fe27878b8ec8aadada8edf643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c546c2fe27878b8ec8aadada8edf643">&#9670;&nbsp;</a></span>lsr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char lsr[255]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a8f966a11150f357db42ad679f4657799" name="a8f966a11150f357db42ad679f4657799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f966a11150f357db42ad679f4657799">&#9670;&nbsp;</a></span>lsr_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int lsr_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="ab43aa22aa083fb340c5db339cef397bf" name="ab43aa22aa083fb340c5db339cef397bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab43aa22aa083fb340c5db339cef397bf">&#9670;&nbsp;</a></span>opt_badcksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_badcksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="cksum_8c.html#a6881dfd36fa09c766714436052439c67">cksum()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a6971e872b4543ebfa54558f36d51d8b9" name="a6971e872b4543ebfa54558f36d51d8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6971e872b4543ebfa54558f36d51d8b9">&#9670;&nbsp;</a></span>opt_beep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_beep</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="waitpacket_8c.html#a71fa9ecc574ab6b26f3a7c34ad48e179">recv_beep()</a>.</p>
+
+</div>
+</div>
+<a id="af6a24de9dab7bf14c58093a5b29c7c1d" name="af6a24de9dab7bf14c58093a5b29c7c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a24de9dab7bf14c58093a5b29c7c1d">&#9670;&nbsp;</a></span>opt_contdump</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_contdump</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a7d84cc1de1587151b8f4e5dbf6edef53" name="a7d84cc1de1587151b8f4e5dbf6edef53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d84cc1de1587151b8f4e5dbf6edef53">&#9670;&nbsp;</a></span>opt_datafromfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_datafromfile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="af1ab3d2fe7486d30b88de7261fff3130" name="af1ab3d2fe7486d30b88de7261fff3130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ab3d2fe7486d30b88de7261fff3130">&#9670;&nbsp;</a></span>opt_debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_debug</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getifname_8c.html#a7cb4dc3e609a95a4ecbeedd455a0af78">get_if_name()</a>, <a class="el" href="getlhs_8c.html#aaf84b07cf9b335dc1b5230148a3d28f2">get_linkhdr_size()</a>, <a class="el" href="getifname_8c.html#a6ffe51531e5f25f565cd086136d2ae60">get_output_if()</a>, <a class="el" href="waitpacket_8c.html#a05fdc831f79de0355dbf137f64d42b65">handle_hcmp()</a>, <a class="el" href="hping2_8h.html#a90406c63de74e37976821bf4c5afbc9e">open_pcap()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a6a53f92871b68acc848b9a3f6011da4e">pcap_recv()</a>, <a class="el" href="send_8c.html#ad855ce8b07912ad09a6f37d4d5adf41f">select_next_random_dest()</a>, <a class="el" href="send_8c.html#a8d06dc88b88fbf0c1f5f05b014a2f662">select_next_random_source()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>, <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>, <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="ad045ac0fa8dc2af7313302c1080c01e3" name="ad045ac0fa8dc2af7313302c1080c01e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad045ac0fa8dc2af7313302c1080c01e3">&#9670;&nbsp;</a></span>opt_df</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_df</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a924353adc62215ae2439e220925f4c72" name="a924353adc62215ae2439e220925f4c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924353adc62215ae2439e220925f4c72">&#9670;&nbsp;</a></span>opt_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4">datafiller()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="aab5e857463e118c76b784099d2b04b37" name="aab5e857463e118c76b784099d2b04b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5e857463e118c76b784099d2b04b37">&#9670;&nbsp;</a></span>opt_flood</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_flood</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a67fa17a1ab6a9c0100215866f4773e4a" name="a67fa17a1ab6a9c0100215866f4773e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fa17a1ab6a9c0100215866f4773e4a">&#9670;&nbsp;</a></span>opt_force_icmp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_force_icmp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a778018b290defb2ea52818225c3169f9">send_icmp()</a>.</p>
+
+</div>
+</div>
+<a id="a8a0925e905101ef98f39d269c4c5d490" name="a8a0925e905101ef98f39d269c4c5d490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0925e905101ef98f39d269c4c5d490">&#9670;&nbsp;</a></span>opt_force_incdport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_force_incdport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>, <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a>.</p>
+
+</div>
+</div>
+<a id="a7f4ea085bf2d0bc01b00966edb1c49fe" name="a7f4ea085bf2d0bc01b00966edb1c49fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f4ea085bf2d0bc01b00966edb1c49fe">&#9670;&nbsp;</a></span>opt_fragment</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_fragment</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a4c818a352be4462d0952223528ad60b9" name="a4c818a352be4462d0952223528ad60b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c818a352be4462d0952223528ad60b9">&#9670;&nbsp;</a></span>opt_gethost</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_gethost</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#abb5fe16cf551d7bc21e26e5b127a451f">log_icmp_timeexc()</a>, <a class="el" href="hping2_8h.html#aadd89ae73223c40a0ddaed181dee7db6">log_icmp_unreach()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a273a4d215c7333288b66782bfc34c262" name="a273a4d215c7333288b66782bfc34c262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273a4d215c7333288b66782bfc34c262">&#9670;&nbsp;</a></span>opt_hexdump</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_hexdump</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a4c1585931ddc259e896a3b10542a1e8e" name="a4c1585931ddc259e896a3b10542a1e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1585931ddc259e896a3b10542a1e8e">&#9670;&nbsp;</a></span>opt_icmpcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_icmpcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="sendicmp_8c.html#ab7ee2606f9c854ef1d8e12daaa989d0a">send_icmp_echo()</a> , 以及 <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a>.</p>
+
+</div>
+</div>
+<a id="a590a0ee97a08e5687390742d730a4695" name="a590a0ee97a08e5687390742d730a4695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590a0ee97a08e5687390742d730a4695">&#9670;&nbsp;</a></span>opt_icmpmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_icmpmode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a1c1681ef71240d47c5a5b46e45bbb9a3" name="a1c1681ef71240d47c5a5b46e45bbb9a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1681ef71240d47c5a5b46e45bbb9a3">&#9670;&nbsp;</a></span>opt_icmptype</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_icmptype</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a778018b290defb2ea52818225c3169f9">send_icmp()</a>, <a class="el" href="sendicmp_8c.html#a1895ef47376ed349366a917e74bbab6a">send_icmp_address()</a>, <a class="el" href="sendicmp_8c.html#ab7ee2606f9c854ef1d8e12daaa989d0a">send_icmp_echo()</a>, <a class="el" href="sendicmp_8c.html#a561d9b9c1ed04ca6674453535b7058f9">send_icmp_other()</a> , 以及 <a class="el" href="sendicmp_8c.html#a783066f0b12bfbc163d93ddc215cb1a2">send_icmp_timestamp()</a>.</p>
+
+</div>
+</div>
+<a id="a5d838f95efbd6f6d7d28cb66290f9937" name="a5d838f95efbd6f6d7d28cb66290f9937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d838f95efbd6f6d7d28cb66290f9937">&#9670;&nbsp;</a></span>opt_incdport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_incdport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a> , 以及 <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a>.</p>
+
+</div>
+</div>
+<a id="a52250405b6953484a30f1480670319b9" name="a52250405b6953484a30f1480670319b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52250405b6953484a30f1480670319b9">&#9670;&nbsp;</a></span>opt_keepstill</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_keepstill</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a>.</p>
+
+</div>
+</div>
+<a id="ae9439861ce4c9d4aac2eaa1ab5f709ee" name="ae9439861ce4c9d4aac2eaa1ab5f709ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9439861ce4c9d4aac2eaa1ab5f709ee">&#9670;&nbsp;</a></span>opt_listenmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_listenmode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a436df7a5561f1284493767fa1d8df580" name="a436df7a5561f1284493767fa1d8df580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436df7a5561f1284493767fa1d8df580">&#9670;&nbsp;</a></span>opt_lsrr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_lsrr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a201576c8c944ebbc9c6524e6808f3b2a" name="a201576c8c944ebbc9c6524e6808f3b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201576c8c944ebbc9c6524e6808f3b2a">&#9670;&nbsp;</a></span>opt_mf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_mf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="aa03fa3634c3a68cb821416acf01c30af" name="aa03fa3634c3a68cb821416acf01c30af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03fa3634c3a68cb821416acf01c30af">&#9670;&nbsp;</a></span>opt_numeric</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_numeric</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a7929d58cee8e286616c8f3c1f565cea3" name="a7929d58cee8e286616c8f3c1f565cea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7929d58cee8e286616c8f3c1f565cea3">&#9670;&nbsp;</a></span>opt_quiet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_quiet</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a">log_ip()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a10dea52f814d363f8fd045a18f6cd60f">recv_icmp()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>, <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="ab38f32bb8dd18bca53ddb3db3d853952" name="ab38f32bb8dd18bca53ddb3db3d853952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38f32bb8dd18bca53ddb3db3d853952">&#9670;&nbsp;</a></span>opt_rand_dest</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_rand_dest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="aad551c4bf388639cfdeb5ff979f18675" name="aad551c4bf388639cfdeb5ff979f18675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad551c4bf388639cfdeb5ff979f18675">&#9670;&nbsp;</a></span>opt_rand_source</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_rand_source</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="af96cc2ab9bdc36c4832e315e1fb0f27d" name="af96cc2ab9bdc36c4832e315e1fb0f27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96cc2ab9bdc36c4832e315e1fb0f27d">&#9670;&nbsp;</a></span>opt_rawipmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_rawipmode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="ae70d8695428cf9ef7d6cf16ca1c45eb6" name="ae70d8695428cf9ef7d6cf16ca1c45eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70d8695428cf9ef7d6cf16ca1c45eb6">&#9670;&nbsp;</a></span>opt_relid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_relid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a">log_ip()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a6a205ebd500802c77d1d9ea715a14c2a" name="a6a205ebd500802c77d1d9ea715a14c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a205ebd500802c77d1d9ea715a14c2a">&#9670;&nbsp;</a></span>opt_rroute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_rroute</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="af74e287fe1a3d45eeee223c1a9bf2ee1" name="af74e287fe1a3d45eeee223c1a9bf2ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af74e287fe1a3d45eeee223c1a9bf2ee1">&#9670;&nbsp;</a></span>opt_safe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_safe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a401db5ab953431bdaad40714e1113192">listenmain()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="ae3b996d1c2d960279b890682aa86f8f4" name="ae3b996d1c2d960279b890682aa86f8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b996d1c2d960279b890682aa86f8f4">&#9670;&nbsp;</a></span>opt_scanmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_scanmode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a676c85860f4b74ffbf17f5b6a14332ab" name="a676c85860f4b74ffbf17f5b6a14332ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676c85860f4b74ffbf17f5b6a14332ab">&#9670;&nbsp;</a></span>opt_scanports</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * opt_scanports</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a1d4dcf16f13fdddeff4f64344ea80466">scanmain()</a>.</p>
+
+</div>
+</div>
+<a id="a762fb7acc59299bae49670d52e1b8320" name="a762fb7acc59299bae49670d52e1b8320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762fb7acc59299bae49670d52e1b8320">&#9670;&nbsp;</a></span>opt_seqnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_seqnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a0b9fec9eed0aeb69739f27aa82017b9b" name="a0b9fec9eed0aeb69739f27aa82017b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9fec9eed0aeb69739f27aa82017b9b">&#9670;&nbsp;</a></span>opt_sign</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_sign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="ab19fe47b7cf5b13da371fb9468c26d93" name="ab19fe47b7cf5b13da371fb9468c26d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19fe47b7cf5b13da371fb9468c26d93">&#9670;&nbsp;</a></span>opt_ssrr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_ssrr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="ab5e7218629149e8cd4da188fdb486deb" name="ab5e7218629149e8cd4da188fdb486deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e7218629149e8cd4da188fdb486deb">&#9670;&nbsp;</a></span>opt_tcp_timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_tcp_timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="abb22ae25d4a395c6e0b540cc37a63b13" name="abb22ae25d4a395c6e0b540cc37a63b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb22ae25d4a395c6e0b540cc37a63b13">&#9670;&nbsp;</a></span>opt_tcpexitcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_tcpexitcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a>.</p>
+
+</div>
+</div>
+<a id="af8eb20ec721c88a6f63a3e6ef066624f" name="af8eb20ec721c88a6f63a3e6ef066624f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8eb20ec721c88a6f63a3e6ef066624f">&#9670;&nbsp;</a></span>opt_tr_keep_ttl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_tr_keep_ttl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#ae22d7ab3b3cb6d63746507d598e18222">log_traceroute()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="aa95b4bbd88b261fa4da77a505e0c3353" name="aa95b4bbd88b261fa4da77a505e0c3353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa95b4bbd88b261fa4da77a505e0c3353">&#9670;&nbsp;</a></span>opt_tr_no_rtt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_tr_no_rtt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a49eb359cdc82f7c10b7ef80bcd6598d6">icmp_unreach_rtt()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="aedbb2664d988fa3a6c271de585fa4260" name="aedbb2664d988fa3a6c271de585fa4260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedbb2664d988fa3a6c271de585fa4260">&#9670;&nbsp;</a></span>opt_tr_stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_tr_stop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a91c529fef1d3cd0002e3fe2ccabe2dd5" name="a91c529fef1d3cd0002e3fe2ccabe2dd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c529fef1d3cd0002e3fe2ccabe2dd5">&#9670;&nbsp;</a></span>opt_traceroute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_traceroute</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#a10dea52f814d363f8fd045a18f6cd60f">recv_icmp()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a829a520a76fb048736c250eff24e85e9" name="a829a520a76fb048736c250eff24e85e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829a520a76fb048736c250eff24e85e9">&#9670;&nbsp;</a></span>opt_udpmode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_udpmode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="a68c6795825554fff6f4b5ad6fbed441a" name="a68c6795825554fff6f4b5ad6fbed441a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c6795825554fff6f4b5ad6fbed441a">&#9670;&nbsp;</a></span>opt_verbose</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_verbose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a05fdc831f79de0355dbf137f64d42b65">handle_hcmp()</a>, <a class="el" href="hping2_8h.html#a401db5ab953431bdaad40714e1113192">listenmain()</a>, <a class="el" href="waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a">log_ip()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="scan_8c.html#acb18701d79099260adfd7ca0945e5d22">receiver()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+<a id="aa5ceab431a08f1b4eb39510becbf8d97" name="aa5ceab431a08f1b4eb39510becbf8d97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ceab431a08f1b4eb39510becbf8d97">&#9670;&nbsp;</a></span>opt_waitinusec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_waitinusec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#af149840075919b47789e4c7d95a411f2">print_tcp_timestamp()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a>.</p>
+
+</div>
+</div>
+<a id="ae4cc9bd75a7c87624a52f8b84ffa83d2" name="ae4cc9bd75a7c87624a52f8b84ffa83d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4cc9bd75a7c87624a52f8b84ffa83d2">&#9670;&nbsp;</a></span>opt_winid_order</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opt_winid_order</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a">log_ip()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a41d10d6d9dd09994f0772d3979b249c3" name="a41d10d6d9dd09994f0772d3979b249c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d10d6d9dd09994f0772d3979b249c3">&#9670;&nbsp;</a></span>out_of_sequence_pkt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int out_of_sequence_pkt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a> , 以及 <a class="el" href="hping2_8h.html#a22a9f04babf49e4b99ef17b0e7861d65">relativize_id()</a>.</p>
+
+</div>
+</div>
+<a id="a2b9bb241b38decf7a4f029f07b4e23f6" name="a2b9bb241b38decf7a4f029f07b4e23f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9bb241b38decf7a4f029f07b4e23f6">&#9670;&nbsp;</a></span>pcapfp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcap_t* pcapfp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#ace5f82c0c1d233937e68b94de191a5b5">close_pcap()</a>, <a class="el" href="getlhs_8c.html#aaf84b07cf9b335dc1b5230148a3d28f2">get_linkhdr_size()</a>, <a class="el" href="hping2_8h.html#a90406c63de74e37976821bf4c5afbc9e">open_pcap()</a> , 以及 <a class="el" href="hping2_8h.html#a6a53f92871b68acc848b9a3f6011da4e">pcap_recv()</a>.</p>
+
+</div>
+</div>
+<a id="aed247f7066a0dbafc5e3b952f1aa7b49" name="aed247f7066a0dbafc5e3b952f1aa7b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed247f7066a0dbafc5e3b952f1aa7b49">&#9670;&nbsp;</a></span>raw_ip_protocol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int raw_ip_protocol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="a935054c9eb5f6a70eb4c93981b7b8112" name="a935054c9eb5f6a70eb4c93981b7b8112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935054c9eb5f6a70eb4c93981b7b8112">&#9670;&nbsp;</a></span>recv_pkt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int recv_pkt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="aec8b4d4444bcb6dbf710d27cc3554665" name="aec8b4d4444bcb6dbf710d27cc3554665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8b4d4444bcb6dbf710d27cc3554665">&#9670;&nbsp;</a></span>remote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sockaddr_in icmp_ip_src icmp_ip_dst icmp_gw local remote</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="getifname_8c.html#a7cb4dc3e609a95a4ecbeedd455a0af78">get_if_name()</a>, <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="scan_8c.html#acb18701d79099260adfd7ca0945e5d22">receiver()</a>, <a class="el" href="waitpacket_8c.html#a10dea52f814d363f8fd045a18f6cd60f">recv_icmp()</a>, <a class="el" href="send_8c.html#ad855ce8b07912ad09a6f37d4d5adf41f">select_next_random_dest()</a>, <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>, <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>, <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+
+</div>
+</div>
+<a id="afd9a5333954faea0495f8fa8e6167dd9" name="afd9a5333954faea0495f8fa8e6167dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9a5333954faea0495f8fa8e6167dd9">&#9670;&nbsp;</a></span>rsign</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char rsign[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a> , 以及 <a class="el" href="waitpacket_8c.html#a05fdc831f79de0355dbf137f64d42b65">handle_hcmp()</a>.</p>
+
+</div>
+</div>
+<a id="a1521cc16e96b4a60e4c0f18d6f0a5261" name="a1521cc16e96b4a60e4c0f18d6f0a5261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1521cc16e96b4a60e4c0f18d6f0a5261">&#9670;&nbsp;</a></span>rtt_avg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float rtt_avg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="rtt_8c.html#ae548d949068a57833890ac1b3b31fbd1">minavgmax()</a> , 以及 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a>.</p>
+
+</div>
+</div>
+<a id="a500bb3dc86c57e2c20341e6b218004b0" name="a500bb3dc86c57e2c20341e6b218004b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500bb3dc86c57e2c20341e6b218004b0">&#9670;&nbsp;</a></span>rtt_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float rtt_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="rtt_8c.html#ae548d949068a57833890ac1b3b31fbd1">minavgmax()</a> , 以及 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a>.</p>
+
+</div>
+</div>
+<a id="a16c2da0f27de9c87f077d2b62b1c57db" name="a16c2da0f27de9c87f077d2b62b1c57db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c2da0f27de9c87f077d2b62b1c57db">&#9670;&nbsp;</a></span>rtt_min</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float rtt_min</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="rtt_8c.html#ae548d949068a57833890ac1b3b31fbd1">minavgmax()</a> , 以及 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a>.</p>
+
+</div>
+</div>
+<a id="a3a412ae544cb411a594a6439b0e9402f" name="a3a412ae544cb411a594a6439b0e9402f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a412ae544cb411a594a6439b0e9402f">&#9670;&nbsp;</a></span>sending_wait</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sending_wait</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="waitpacket_8c.html#af149840075919b47789e4c7d95a411f2">print_tcp_timestamp()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a>.</p>
+
+</div>
+</div>
+<a id="a09cb00fd8967ae97f149e1fa8efb664c" name="a09cb00fd8967ae97f149e1fa8efb664c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09cb00fd8967ae97f149e1fa8efb664c">&#9670;&nbsp;</a></span>sent_pkt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sent_pkt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a> , 以及 <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a>.</p>
+
+</div>
+</div>
+<a id="acc80722d9dd9349cbba06c72d6fb5972" name="acc80722d9dd9349cbba06c72d6fb5972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc80722d9dd9349cbba06c72d6fb5972">&#9670;&nbsp;</a></span>sequence</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sequence</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a49eb359cdc82f7c10b7ef80bcd6598d6">icmp_unreach_rtt()</a>, <a class="el" href="waitpacket_8c.html#a5e57a2a3af4ad93ff52af94390be964a">log_ip()</a>, <a class="el" href="waitpacket_8c.html#ae22d7ab3b3cb6d63746507d598e18222">log_traceroute()</a>, <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>, <a class="el" href="waitpacket_8c.html#a08c9ecdd9b7df2110373e9ee9edcc486">recv_udp()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>, <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a> , 以及 <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a>.</p>
+
+</div>
+</div>
+<a id="aee2bef02d678549b2cc5efaa467c69a3" name="aee2bef02d678549b2cc5efaa467c69a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2bef02d678549b2cc5efaa467c69a3">&#9670;&nbsp;</a></span>set_ack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int set_ack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a93d855b390b5233e065543bb6fd44882" name="a93d855b390b5233e065543bb6fd44882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d855b390b5233e065543bb6fd44882">&#9670;&nbsp;</a></span>set_seqnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int set_seqnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="ab810ad4f7c0efd73662227c61460490b" name="ab810ad4f7c0efd73662227c61460490b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab810ad4f7c0efd73662227c61460490b">&#9670;&nbsp;</a></span>sign</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char sign[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a>, <a class="el" href="hping2_8h.html#a401db5ab953431bdaad40714e1113192">listenmain()</a>, <a class="el" href="sbignum_8c.html#a32a4b79db24d21ef39d2b2ef92ad503f">mpz_random()</a>, <a class="el" href="sbignum_8c.html#ac291687865f843925f10c7e8045e4fca">mpz_set_si64()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a8bd6583d65e0d285b795ae6e710f3dd3" name="a8bd6583d65e0d285b795ae6e710f3dd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd6583d65e0d285b795ae6e710f3dd3">&#9670;&nbsp;</a></span>signlen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int signlen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="datahandler_8c.html#a56e016b2e2e54a2562e2aa0761ec3a37">data_handler()</a>, <a class="el" href="datafiller_8c.html#a454f2e8976f15ad6ecf4fa5d2aea8bf4">datafiller()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a4b16ad8c3bf62de65cd843c01dedbfad">send_hcmp()</a>.</p>
+
+</div>
+</div>
+<a id="a9ab640fbc677c01c857d7c98019846ca" name="a9ab640fbc677c01c857d7c98019846ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab640fbc677c01c857d7c98019846ca">&#9670;&nbsp;</a></span>sockpacket</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sockpacket</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8deaa534e5c3e5a3d687d1aaccf34c20" name="a8deaa534e5c3e5a3d687d1aaccf34c20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8deaa534e5c3e5a3d687d1aaccf34c20">&#9670;&nbsp;</a></span>sockraw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sockraw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="af8306fb85ce5170e6f98322734373f70" name="af8306fb85ce5170e6f98322734373f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8306fb85ce5170e6f98322734373f70">&#9670;&nbsp;</a></span>spoofaddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char spoofaddr[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="ab6ed860f996b7f424f202a690aa2fb69" name="ab6ed860f996b7f424f202a690aa2fb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6ed860f996b7f424f202a690aa2fb69">&#9670;&nbsp;</a></span>src_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a05fdc831f79de0355dbf137f64d42b65">handle_hcmp()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="a2d47efc2f2609185cf802853871de027" name="a2d47efc2f2609185cf802853871de027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d47efc2f2609185cf802853871de027">&#9670;&nbsp;</a></span>src_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src_port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="waitpacket_8c.html#a49eb359cdc82f7c10b7ef80bcd6598d6">icmp_unreach_rtt()</a>, <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a> , 以及 <a class="el" href="hping2_8h.html#a984febb545a5d04809ffde7c10a53df6">send_udp()</a>.</p>
+
+</div>
+</div>
+<a id="a2140fcc67ba0c2730a476f85bf75c99e" name="a2140fcc67ba0c2730a476f85bf75c99e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2140fcc67ba0c2730a476f85bf75c99e">&#9670;&nbsp;</a></span>src_thoff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src_thoff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a6ced2f3734fd89fe4b315d78bf91754c" name="a6ced2f3734fd89fe4b315d78bf91754c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ced2f3734fd89fe4b315d78bf91754c">&#9670;&nbsp;</a></span>src_ttl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src_ttl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="binding_8c.html#ad28cda14450b7c602003b7621168c2f2">inc_destparm()</a>, <a class="el" href="waitpacket_8c.html#ae22d7ab3b3cb6d63746507d598e18222">log_traceroute()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a0fe6f3c9981f5a68cc3c0e4ae48874ca">send_ip()</a>.</p>
+
+</div>
+</div>
+<a id="aa9e178c9fe8deae0a3fc655676877eaf" name="aa9e178c9fe8deae0a3fc655676877eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9e178c9fe8deae0a3fc655676877eaf">&#9670;&nbsp;</a></span>src_winsize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src_winsize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a07c9c739f8998bca2f2dc9a21e3a0d8a" name="a07c9c739f8998bca2f2dc9a21e3a0d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c9c739f8998bca2f2dc9a21e3a0d8a">&#9670;&nbsp;</a></span>ssr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char ssr[255]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="a13155c4475d7adc98be9c48c91ac7dbe" name="a13155c4475d7adc98be9c48c91ac7dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13155c4475d7adc98be9c48c91ac7dbe">&#9670;&nbsp;</a></span>ssr_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ssr_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a5b8464b2853447505dd03db6812c1e0d">ip_opt_build()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="ae9abba9190a6034a481b0d9321642e18" name="ae9abba9190a6034a481b0d9321642e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9abba9190a6034a481b0d9321642e18">&#9670;&nbsp;</a></span>targetname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char targetname[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a> , 以及 <a class="el" href="send_8c.html#ad855ce8b07912ad09a6f37d4d5adf41f">select_next_random_dest()</a>.</p>
+
+</div>
+</div>
+<a id="a400b80d0b852148529200e39e6196d59" name="a400b80d0b852148529200e39e6196d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400b80d0b852148529200e39e6196d59">&#9670;&nbsp;</a></span>targetstraddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char targetstraddr[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af01379907bb07fdd57dabeef377fd092" name="af01379907bb07fdd57dabeef377fd092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01379907bb07fdd57dabeef377fd092">&#9670;&nbsp;</a></span>tcp_ack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int tcp_ack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a073736dd0b8962be665c187c3e5d1fd3" name="a073736dd0b8962be665c187c3e5d1fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073736dd0b8962be665c187c3e5d1fd3">&#9670;&nbsp;</a></span>tcp_exitcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tcp_exitcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a6578ac428fac8022b788f3b58499ba81">print_statistics()</a> , 以及 <a class="el" href="waitpacket_8c.html#a7ffe144369534044a0367b0026746519">recv_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a8c149f286b6ea5d70093287263dc9ff9" name="a8c149f286b6ea5d70093287263dc9ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c149f286b6ea5d70093287263dc9ff9">&#9670;&nbsp;</a></span>tcp_seqnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int tcp_seqnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a18025c8e9ed6306d6aeae4bdd42ddad2" name="a18025c8e9ed6306d6aeae4bdd42ddad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18025c8e9ed6306d6aeae4bdd42ddad2">&#9670;&nbsp;</a></span>tcp_th_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int tcp_th_flags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#ac5a608ca63405ccbf5e7cf7dc51b9105">send_tcp()</a>.</p>
+
+</div>
+</div>
+<a id="a179df26f82a603e41f4c556e7a206dcf" name="a179df26f82a603e41f4c556e7a206dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179df26f82a603e41f4c556e7a206dcf">&#9670;&nbsp;</a></span>usec_delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct itimerval usec_delay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>, <a class="el" href="hping2_8h.html#ae4b580ccace3b0d5f7421742a3937c8f">rtt()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="scan_8c.html#a6dddfa3e97245047d31975baa6a9690e">sender()</a>.</p>
+
+</div>
+</div>
+<a id="a90ddecdfd283068214166bf9164830a0" name="a90ddecdfd283068214166bf9164830a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ddecdfd283068214166bf9164830a0">&#9670;&nbsp;</a></span>virtual_mtu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int virtual_mtu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a> , 以及 <a class="el" href="hping2_8h.html#a7f4517543aca90dd837d76227783ae78">send_ip_handler()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

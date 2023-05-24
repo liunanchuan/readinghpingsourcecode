@@ -1,0 +1,108 @@
+\hypertarget{pcap-common_8h}{}\doxysection{libpcap-\/1.1.1/pcap-\/common.h 文件参考}
+\label{pcap-common_8h}\index{libpcap-\/1.1.1/pcap-\/common.h@{libpcap-\/1.1.1/pcap-\/common.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-common_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8h_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}}(y)~((((y)\&0xff)$<$$<$24) $\vert$ (((y)\&0xff00)$<$$<$8) $\vert$ (((y)\&0xff0000)$>$$>$8) $\vert$ (((y)$>$$>$24)\&0xff))
+\item 
+\#define \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}}(y)~ ( (((y)\&0xff)$<$$<$8) $\vert$ ((u\+\_\+short)((y)\&0xff00)$>$$>$8) )
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pcap-common_8h_a78274013ccf81aa99a21ca38e83d7a1e}{dlt\+\_\+to\+\_\+linktype}} (int dlt)
+\item 
+int \mbox{\hyperlink{pcap-common_8h_a3a680628fc86f66b77445778bbe85884}{linktype\+\_\+to\+\_\+dlt}} (int \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}})
+\item 
+void \mbox{\hyperlink{pcap-common_8h_afa059dda75b192db1391a32248ccdb65}{swap\+\_\+linux\+\_\+usb\+\_\+header}} (const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$\mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}}, u\+\_\+char $\ast$buf, int header\+\_\+len\+\_\+64\+\_\+bytes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-common_8h_a4159b742abde2765279a9c440d3540e3}\label{pcap-common_8h_a4159b742abde2765279a9c440d3540e3}} 
+\index{pcap-\/common.h@{pcap-\/common.h}!SWAPLONG@{SWAPLONG}}
+\index{SWAPLONG@{SWAPLONG}!pcap-\/common.h@{pcap-\/common.h}}
+\doxysubsubsection{\texorpdfstring{SWAPLONG}{SWAPLONG}}
+{\footnotesize\ttfamily \#define SWAPLONG(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~((((y)\&0xff)$<$$<$24) $\vert$ (((y)\&0xff00)$<$$<$8) $\vert$ (((y)\&0xff0000)$>$$>$8) $\vert$ (((y)$>$$>$24)\&0xff))}
+
+\mbox{\Hypertarget{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}\label{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}} 
+\index{pcap-\/common.h@{pcap-\/common.h}!SWAPSHORT@{SWAPSHORT}}
+\index{SWAPSHORT@{SWAPSHORT}!pcap-\/common.h@{pcap-\/common.h}}
+\doxysubsubsection{\texorpdfstring{SWAPSHORT}{SWAPSHORT}}
+{\footnotesize\ttfamily \#define SWAPSHORT(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~ ( (((y)\&0xff)$<$$<$8) $\vert$ ((u\+\_\+short)((y)\&0xff00)$>$$>$8) )}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-common_8h_a78274013ccf81aa99a21ca38e83d7a1e}\label{pcap-common_8h_a78274013ccf81aa99a21ca38e83d7a1e}} 
+\index{pcap-\/common.h@{pcap-\/common.h}!dlt\_to\_linktype@{dlt\_to\_linktype}}
+\index{dlt\_to\_linktype@{dlt\_to\_linktype}!pcap-\/common.h@{pcap-\/common.h}}
+\doxysubsubsection{\texorpdfstring{dlt\_to\_linktype()}{dlt\_to\_linktype()}}
+{\footnotesize\ttfamily int dlt\+\_\+to\+\_\+linktype (\begin{DoxyParamCaption}\item[{int}]{dlt }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structlinktype__map_a67284ba359347afcd68cef085f1a8d5a}{linktype\+\_\+map\+::dlt}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}} , 以及 \mbox{\hyperlink{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}{map}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap_2pcap_8h_a0cfd9da60bc3e134823b306cb950d954}{pcap\+\_\+dump\+\_\+fopen()}} , 以及 \mbox{\hyperlink{pcap_2pcap_8h_a9108b21c484814a60e133a084baceb63}{pcap\+\_\+dump\+\_\+open()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{pcap-common_8h_a78274013ccf81aa99a21ca38e83d7a1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-common_8h_a3a680628fc86f66b77445778bbe85884}\label{pcap-common_8h_a3a680628fc86f66b77445778bbe85884}} 
+\index{pcap-\/common.h@{pcap-\/common.h}!linktype\_to\_dlt@{linktype\_to\_dlt}}
+\index{linktype\_to\_dlt@{linktype\_to\_dlt}!pcap-\/common.h@{pcap-\/common.h}}
+\doxysubsubsection{\texorpdfstring{linktype\_to\_dlt()}{linktype\_to\_dlt()}}
+{\footnotesize\ttfamily int linktype\+\_\+to\+\_\+dlt (\begin{DoxyParamCaption}\item[{int}]{linktype }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{structlinktype__map_a34f63781fb4328501b07c3ccf6e16b19}{linktype\+\_\+map\+::linktype}} , 以及 \mbox{\hyperlink{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}{map}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap_8c_a60648bfb78b9c29bfa80576e04733344}{pcap\+\_\+check\+\_\+header()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{pcap-common_8h_a3a680628fc86f66b77445778bbe85884_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-common_8h_afa059dda75b192db1391a32248ccdb65}\label{pcap-common_8h_afa059dda75b192db1391a32248ccdb65}} 
+\index{pcap-\/common.h@{pcap-\/common.h}!swap\_linux\_usb\_header@{swap\_linux\_usb\_header}}
+\index{swap\_linux\_usb\_header@{swap\_linux\_usb\_header}!pcap-\/common.h@{pcap-\/common.h}}
+\doxysubsubsection{\texorpdfstring{swap\_linux\_usb\_header()}{swap\_linux\_usb\_header()}}
+{\footnotesize\ttfamily void swap\+\_\+linux\+\_\+usb\+\_\+header (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$}]{hdr,  }\item[{u\+\_\+char $\ast$}]{buf,  }\item[{int}]{header\+\_\+len\+\_\+64\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__usb__header__mmapped_ae1ad9de945cf649cb34fd60d22089ee2}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::bus\+\_\+id}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a66f59afaeff1fcdb59b5a22e4147f1c0}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::data\+\_\+len}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a376ab64711449ff4ffda74bb35bb2076}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::id}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a68471e972011140d250b479b0aa4ff80}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::interval}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_ac1bc82d1825a616e2081e29de04bf0b5}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ndesc}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a9705add93743348a0b691b82065338dd}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::start\+\_\+frame}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a369536ebfe385731562c0b55dd6f3a7c}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::status}}, \mbox{\hyperlink{pcap-int_8h_a4f25e9658eb0b686983866b37837a31e}{SWAPLL}}, \mbox{\hyperlink{gencode_8c_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}}, \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a1c02a0d13529fc8a9e93e467f98aff42}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ts\+\_\+sec}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a1fb9efd05b607a72b47aba1206002436}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ts\+\_\+usec}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a5fea650a194bc21fb2f9484b0bba0194}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::urb\+\_\+len}} , 以及 \mbox{\hyperlink{structpcap__usb__header__mmapped_a4e7a8eeca52c104a50c0ce791230e2db}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::xfer\+\_\+flags}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap_8c_accb06be00adc4ad8ff2a1661d5a7ea91}{pcap\+\_\+next\+\_\+packet()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-common_8h_afa059dda75b192db1391a32248ccdb65_icgraph}
+\end{center}
+\end{figure}

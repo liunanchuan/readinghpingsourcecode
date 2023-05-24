@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: sbignum.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sbignum.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sbignum_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Sbignum.h -- antirez&#39;s arbitrary precision integer math library header file.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright(C) 2002-2003 Salvatore Sanfilippo.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * $Id: sbignum.h,v 1.4 2004/06/04 07:22:38 antirez Exp $</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef _SBIGNUM_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define _SBIGNUM_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="fixtypes_8h.html">fixtypes.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a67a919e983e8376aa7709399d4ec3977">   14</a></span><span class="preprocessor">#define ATOMBYTES 4</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/* The number internal rappresentation is an array of mpz_atom_t WORDS.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * Every byte is a digit in base MPZ_AND+1, the first word is the least</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * significant word and so on */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#if ATOMBYTES == 4</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">   20</a></span><span class="keyword">typedef</span> u_int32_t <a class="code hl_typedef" href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">mpz_atom_t</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a125a18703958b148abc2d58a9889492a">   21</a></span><span class="keyword">typedef</span> u_int64_t <a class="code hl_typedef" href="sbignum_8h.html#a125a18703958b148abc2d58a9889492a">mpz_carry_t</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a7c80a1accd38e51890868c842ec458f7">   22</a></span><span class="keyword">typedef</span> int64_t <a class="code hl_typedef" href="sbignum_8h.html#a7c80a1accd38e51890868c842ec458f7">mpz_scarry_t</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#elif ATOMBYTES == 2</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">typedef</span> u_int16_t <a class="code hl_typedef" href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">mpz_atom_t</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">typedef</span> u_int32_t <a class="code hl_typedef" href="sbignum_8h.html#a125a18703958b148abc2d58a9889492a">mpz_carry_t</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">typedef</span> int32_t <a class="code hl_typedef" href="sbignum_8h.html#a7c80a1accd38e51890868c842ec458f7">mpz_scarry_t</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#elif ATOMBYTES == 1</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">typedef</span> u_int8_t <a class="code hl_typedef" href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">mpz_atom_t</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">typedef</span> u_int32_t <a class="code hl_typedef" href="sbignum_8h.html#a125a18703958b148abc2d58a9889492a">mpz_carry_t</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">typedef</span> int32_t <a class="code hl_typedef" href="sbignum_8h.html#a7c80a1accd38e51890868c842ec458f7">mpz_scarry_t</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#error &quot;Please define ATOMBYTES&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a24ea5828f786c3bc0615f44a0f891142">   35</a></span><span class="preprocessor">#define ATOMBITS (ATOMBYTES*8)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a59b16bb08e36481575ea03a1bf9afdb2">   37</a></span><span class="preprocessor">#define MPZ_ATOMSZ (sizeof(mpz_atom_t))</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ab6a1a141a1564a16ecf325167b5b76d9">   38</a></span><span class="preprocessor">#define MPZ_MASK   ((mpz_atom_t)(~0))</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a0f686bcd18cb9383ca1cf3096fe11262">   39</a></span><span class="preprocessor">#define MPZ_SHIFT  (MPZ_ATOMSZ*8)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a5298c0d291726d11eaa81c262f50d4f8">   40</a></span><span class="preprocessor">#define MPZ_BASE   ((mpz_carry_t)MPZ_MASK+1)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structstruct__sbnz.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structstruct__sbnz.html">struct_sbnz</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">   43</a></span>    <a class="code hl_typedef" href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">mpz_atom_t</a> *<a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>;  <span class="comment">/* data the least significant word is d[0] */</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">   44</a></span>    u_int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>;    <span class="comment">/* allocated bytes */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structstruct__sbnz.html#a6961330c569716addd6806f400ed0ec7">   45</a></span>    u_int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a6961330c569716addd6806f400ed0ec7">l</a>;    <span class="comment">/* number of used bytes */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">   46</a></span>    u_int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>;    <span class="comment">/* sign. non-zero if negative */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/* define the sbnz type */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structstruct__sbnz.html">struct_sbnz</a> *mpz_ptr;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structstruct__sbnz.html">struct_sbnz</a> mpz_t[1];</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/* Error codes */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345d">   53</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345d">sbn_err</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8">   54</a></span>    <a class="code hl_enumvalue" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8">SBN_OK</a> = 0,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281">   55</a></span>    <a class="code hl_enumvalue" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281">SBN_MEM</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_enumvalue" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad">SBN_INVAL</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad">   57</a></span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a8cf543c0e785d704ad2186269ab3549e">   59</a></span><span class="preprocessor">#define SBN_MINBASE 2</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a0eafeac4b3d0388455b24603ed99a952">   60</a></span><span class="preprocessor">#define SBN_MAXBASE 36</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/* Exported macros */</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/* this macro is true if z == 0 */</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a144823437c7ba6ee754fbb469618ef78">   65</a></span><span class="preprocessor">#define _mpz_iszero(z) ((z)-&gt;l == 0)</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/* this is just the reverse. Equivalent to !_mpz_iszero */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a63dd49243919c3499f262f24b166ec66">   68</a></span><span class="preprocessor">#define _mpz_nonzero(z) ((z)-&gt;l != 0)</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a818eae0b42045decc82d32a7521b4b8a">   70</a></span><span class="preprocessor">#define mpz_inc(z)  mpz_add_ui(z, z, 1)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a06306d48f6e805a3e717ae534bfcf809">   71</a></span><span class="preprocessor">#define mpz_dec(z)  mpz_sub_ui(z, z, 1)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/* ----------------------- Functions prototypes ----------------------------- */</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/* inititialization/allocation */</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keywordtype">void</span>    <a class="code hl_function" href="sbignum_8h.html#a155f4decbf38d2a77651223a7af49160">mpz_init</a>(mpz_ptr z);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span>    <a class="code hl_function" href="sbignum_8h.html#a19188aa5fd692f2035196a15e3780d3d">mpz_clear</a>(mpz_ptr z);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a8551e1cd7e244c0cf2802e4b9f99272a">mpz_realloc</a>(mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">/* shifting */</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a5b96ccdb71ddff491e70fef8a467adcc">mpz_lshift</a>(mpz_ptr r, mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a15f2b3ae8a1d86b3f37d3405d7376bae">mpz_rshift</a>(mpz_ptr r, mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/* comparision */</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a5e8935b68c2a7ecf025b0b35fdcae0d8">   83</a></span>int32_t <a class="code hl_function" href="sbignum_8h.html#a5e8935b68c2a7ecf025b0b35fdcae0d8">mpz_abscmp</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, mpz_ptr b);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="sbignum_8h.html#aeb24ce98c0235b745608ca6d2b1569c7">   84</a></span>int32_t <a class="code hl_function" href="sbignum_8h.html#aeb24ce98c0235b745608ca6d2b1569c7">mpz_abscmp_ui</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, u_int32_t u);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>int32_t <a class="code hl_function" href="sbignum_8h.html#a98596f49f450c942072f25b509d8e360">mpz_cmp</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, mpz_ptr b);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="sbignum_8h.html#ae90dd2bf2093b2458141929a0f0b7d58">   86</a></span><span class="preprocessor">#define mpz_eq(a,b) (mpz_cmp(a,b) == 0)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="sbignum_8h.html#afb6da5734cb32f85e6e1bd78d38964a3">   87</a></span><span class="preprocessor">#define mpz_noteq(a,b) (mpz_cmp(a,b) != 0)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="sbignum_8h.html#acb5e6dd888a4d3fe0ed58be45042e9e6">   88</a></span><span class="preprocessor">#define mpz_lt(a,b) (mpz_cmp(a,b) &lt; 0)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a09c0fe7ea1bac2495a184e6cd4ded43b">   89</a></span><span class="preprocessor">#define mpz_le(a,b) (mpz_cmp(a,b) &lt;= 0)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a690e927f451fe3e9b1e7e116f289221c">   90</a></span><span class="preprocessor">#define mpz_gt(a,b) (mpz_cmp(a,b) &gt; 0)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="sbignum_8h.html#abd323fb2756f673db7427f8a45c2a872">   91</a></span><span class="preprocessor">#define mpz_ge(a,b) (mpz_cmp(a,b) &gt;= 0)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>int32_t <a class="code hl_function" href="sbignum_8h.html#a501923fd6990e612a58a7d4d57ce5268">mpz_cmp_ui</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, u_int32_t u);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>int32_t <a class="code hl_function" href="sbignum_8h.html#ad8f385080bb3b1cf2d47d34610e809f1">mpz_cmp_si</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="sbignum_8h.html#aa4a71373383d5a7168b0c13069ef4cc9">   94</a></span><span class="preprocessor">#define mpz_eq_si(a,s) (mpz_cmp_si(a,s) == 0)</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a38e3bae3937ab2e789fc912171130b46">   95</a></span><span class="preprocessor">#define mpz_noteq_si(a,s) (mpz_cmp_si(a,s) != 0)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a04fdb9004b099cc9139238f216188fd6">   96</a></span><span class="preprocessor">#define mpz_lt_si(a,s) (mpz_cmp_si(a,s) &lt; 0)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a041ab1cad8fa89129258fde609b2520e">   97</a></span><span class="preprocessor">#define mpz_le_si(a,s) (mpz_cmp_si(a,s) &lt;= 0)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="sbignum_8h.html#af3b2a92601194f62397c79be1240f7ba">   98</a></span><span class="preprocessor">#define mpz_gt_si(a,s) (mpz_cmp_si(a,s) &gt; 0)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="sbignum_8h.html#a5c0343f276e442b195fc48f8c3c36fb0">   99</a></span><span class="preprocessor">#define mpz_ge_si(a,s) (mpz_cmp_si(a,s) &gt;= 0)</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">/* addition */</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ac65c3d09dabbbef570e15bb887dcedb1">mpz_add_ui</a>(mpz_ptr r, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a53ae0c22ae07adb510731d5ac2b62dce">mpz_add_si</a>(mpz_ptr r, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a058f5485fbbf522dc2dd597c475aed77">mpz_add</a>(mpz_ptr r, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, mpz_ptr b);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">/* subtraction */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a6adfc2d8ede735ca4bd0ffcfc36ef07a">mpz_sub_ui</a>(mpz_ptr r, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#af79cc0eab3db5e37cce8398f904c9401">mpz_sub_si</a>(mpz_ptr r, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a1489b364ff6b84146063dda27abbbaa8">mpz_sub</a>(mpz_ptr r, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, mpz_ptr b);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">/* multiplication */</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a568713e406452d41f0879510b10d7718">mpz_mul</a>(mpz_ptr r, mpz_ptr z, mpz_ptr f);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#af94c24ad93bddcd093ce056c9b8f9cbc">mpz_mul_ui</a>(mpz_ptr r, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a851bb2a7b69e12413baaa55168eb0519">mpz_mul_si</a>(mpz_ptr r, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a9805b5951dd9e2e296a5c426fa89466e">mpz_fac_ui</a>(mpz_ptr r, u_int32_t i);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">/* exponentialization */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#aea50f2185cf7b1db77ea90580e742768">mpz_powm</a>(mpz_ptr r, mpz_ptr b, mpz_ptr e, mpz_ptr m);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a3576ae57e37f2e32af3db314eb80f3f2">mpz_pow</a>(mpz_ptr r, mpz_ptr b, mpz_ptr e);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/* division */</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a5973c800cce3116b92f54b23c41d3951">mpz_tdiv_qr</a>(mpz_ptr q, mpz_ptr r, mpz_ptr z, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a1ea4a70f4039bf4ee745e01865b2c3cf">mpz_tdiv_qr_ui</a>(mpz_ptr q, mpz_ptr r, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a693b4f9a52854ed3637310b2f86f87b5">mpz_tdiv_qr_si</a>(mpz_ptr q, mpz_ptr r, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ab4821ac288ac7c085f017d7418cca46d">mpz_tdiv_q</a>(mpz_ptr q, mpz_ptr z, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a4c9068aea61f61056aebea9e9c827595">mpz_tdiv_q_ui</a>(mpz_ptr q, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#af28b1dc2f9c81a099277f0ef38bf9b7b">mpz_tdiv_q_si</a>(mpz_ptr q, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a77779785febd13b3dbdf74ef02958c38">mpz_tdiv_r</a>(mpz_ptr r, mpz_ptr z, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a6c71d6549f2940d3fd70c075cc6377bd">mpz_tdiv_r_ui</a>(mpz_ptr r, mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a96611e0363845c0b9bb3bf2d0b2afccd">mpz_tdiv_r_si</a>(mpz_ptr r, mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ad14f285fb838becce984b5878188f614">mpz_mod</a>(mpz_ptr r, mpz_ptr z, mpz_ptr m);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">/* root extraction */</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a9002b8a2e6e3f8403c36713110643d3a">mpz_sqrt</a>(mpz_ptr r, mpz_ptr z);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/* assignment */</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ae8dc70e0a181360dbd7c73b34204ab4c">mpz_setzero</a>(mpz_ptr z);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a8e08dfe16c7ac957f9784383da1312c6">mpz_set</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a46b3ca345c22261c031aa8888cc02b14">mpz_set_ui</a>(mpz_ptr z, u_int32_t u);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a4e40ea687d4fc2d16bf6d412b7c05638">mpz_set_si</a>(mpz_ptr z, int32_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a2c63fe7d6872f76ed0360ead99a3489f">mpz_abs</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a4f77b6a070346e0e4f9415357d3671f8">mpz_neg</a>(mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">/* bit operations */</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>u_int32_t <a class="code hl_function" href="sbignum_8h.html#a8e2d434e89ad24d3c664278c2411bd5a">mpz_bits</a>(mpz_ptr z);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#aa90d09b20f17c30b0d5572281efbc5da">mpz_setbit</a>(mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ae05d28b5a9a64ca99d412525ad04fc2d">mpz_clrbit</a>(mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a8f2f5d1cba2f7422b49c7d122dc18ecc">mpz_testbit</a>(mpz_ptr z, u_int32_t i);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">/* number theoretic functions */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#af8584e7d2907ebd5db25596705021972">mpz_gcd</a>(mpz_ptr g, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, mpz_ptr b);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>u_int32_t <a class="code hl_function" href="sbignum_8h.html#a1e3e9866f1bc916f512734dc8a2c2167">mpz_gcd_ui</a>(mpz_ptr g, mpz_ptr <a class="code hl_variable" href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">a</a>, u_int32_t b);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">/* to/from mpz conversions */</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="sbignum_8h.html#a009aaaaec7bcc82c7df61659a03461ee">mpz_sizeinbase</a>(mpz_ptr z, u_int32_t b);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keywordtype">char</span>    *<a class="code hl_function" href="sbignum_8h.html#aac739e27126529ad246f59831461caf9">mpz_get_str</a>(<span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> b, mpz_ptr z);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a5b5f39959d23202fe9db7a975705cf03">mpz_set_str</a>(mpz_ptr z, <span class="keywordtype">char</span> *<a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keywordtype">double</span>  <a class="code hl_function" href="sbignum_8h.html#a48969a7a48d7ee8a24eb050e579a91ff">mpz_get_d</a>(mpz_ptr z);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a00602345aa51818b9cbd4cb68724facc">mpz_set_d</a>(mpz_ptr z, <span class="keywordtype">double</span> <a class="code hl_variable" href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">d</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#ac291687865f843925f10c7e8045e4fca">mpz_set_si64</a>(mpz_ptr z, int64_t <a class="code hl_variable" href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">s</a>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a2336671b5abff7620f928f60e869704d">mpz_set_ui64</a>(mpz_ptr z, u_int64_t u);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">/* random numbers */</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>u_int32_t <a class="code hl_function" href="sbignum_8h.html#a162c378d1c9ff49927d12be161b02be4">sbn_rand</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keywordtype">void</span>    <a class="code hl_function" href="sbignum_8h.html#ae24357f20cab2a414405b5534655cad7">sbn_seed</a>(<span class="keywordtype">void</span> *seed, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keywordtype">int</span> <a class="code hl_function" href="sbignum_8h.html#a32a4b79db24d21ef39d2b2ef92ad503f">mpz_random</a>(mpz_ptr z, int32_t len);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#endif </span><span class="comment">/* _SBIGNUM_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="afixtypes_8h_html"><div class="ttname"><a href="fixtypes_8h.html">fixtypes.h</a></div></div>
+<div class="ttc" id="asbignum_8h_html_a00602345aa51818b9cbd4cb68724facc"><div class="ttname"><a href="sbignum_8h.html#a00602345aa51818b9cbd4cb68724facc">mpz_set_d</a></div><div class="ttdeci">int mpz_set_d(mpz_ptr z, double d)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1459</div></div>
+<div class="ttc" id="asbignum_8h_html_a009aaaaec7bcc82c7df61659a03461ee"><div class="ttname"><a href="sbignum_8h.html#a009aaaaec7bcc82c7df61659a03461ee">mpz_sizeinbase</a></div><div class="ttdeci">size_t mpz_sizeinbase(mpz_ptr z, u_int32_t b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1655</div></div>
+<div class="ttc" id="asbignum_8h_html_a058f5485fbbf522dc2dd597c475aed77"><div class="ttname"><a href="sbignum_8h.html#a058f5485fbbf522dc2dd597c475aed77">mpz_add</a></div><div class="ttdeci">int mpz_add(mpz_ptr r, mpz_ptr a, mpz_ptr b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:740</div></div>
+<div class="ttc" id="asbignum_8h_html_a125a18703958b148abc2d58a9889492a"><div class="ttname"><a href="sbignum_8h.html#a125a18703958b148abc2d58a9889492a">mpz_carry_t</a></div><div class="ttdeci">u_int64_t mpz_carry_t</div><div class="ttdef"><b>Definition:</b> sbignum.h:21</div></div>
+<div class="ttc" id="asbignum_8h_html_a1489b364ff6b84146063dda27abbbaa8"><div class="ttname"><a href="sbignum_8h.html#a1489b364ff6b84146063dda27abbbaa8">mpz_sub</a></div><div class="ttdeci">int mpz_sub(mpz_ptr r, mpz_ptr a, mpz_ptr b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:822</div></div>
+<div class="ttc" id="asbignum_8h_html_a155f4decbf38d2a77651223a7af49160"><div class="ttname"><a href="sbignum_8h.html#a155f4decbf38d2a77651223a7af49160">mpz_init</a></div><div class="ttdeci">void mpz_init(mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:179</div></div>
+<div class="ttc" id="asbignum_8h_html_a15f2b3ae8a1d86b3f37d3405d7376bae"><div class="ttname"><a href="sbignum_8h.html#a15f2b3ae8a1d86b3f37d3405d7376bae">mpz_rshift</a></div><div class="ttdeci">int mpz_rshift(mpz_ptr r, mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:517</div></div>
+<div class="ttc" id="asbignum_8h_html_a162c378d1c9ff49927d12be161b02be4"><div class="ttname"><a href="sbignum_8h.html#a162c378d1c9ff49927d12be161b02be4">sbn_rand</a></div><div class="ttdeci">u_int32_t sbn_rand(void)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1866</div></div>
+<div class="ttc" id="asbignum_8h_html_a19188aa5fd692f2035196a15e3780d3d"><div class="ttname"><a href="sbignum_8h.html#a19188aa5fd692f2035196a15e3780d3d">mpz_clear</a></div><div class="ttdeci">void mpz_clear(mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:257</div></div>
+<div class="ttc" id="asbignum_8h_html_a1e3e9866f1bc916f512734dc8a2c2167"><div class="ttname"><a href="sbignum_8h.html#a1e3e9866f1bc916f512734dc8a2c2167">mpz_gcd_ui</a></div><div class="ttdeci">u_int32_t mpz_gcd_ui(mpz_ptr g, mpz_ptr a, u_int32_t b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1638</div></div>
+<div class="ttc" id="asbignum_8h_html_a1ea4a70f4039bf4ee745e01865b2c3cf"><div class="ttname"><a href="sbignum_8h.html#a1ea4a70f4039bf4ee745e01865b2c3cf">mpz_tdiv_qr_ui</a></div><div class="ttdeci">int mpz_tdiv_qr_ui(mpz_ptr q, mpz_ptr r, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1262</div></div>
+<div class="ttc" id="asbignum_8h_html_a2336671b5abff7620f928f60e869704d"><div class="ttname"><a href="sbignum_8h.html#a2336671b5abff7620f928f60e869704d">mpz_set_ui64</a></div><div class="ttdeci">int mpz_set_ui64(mpz_ptr z, u_int64_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1480</div></div>
+<div class="ttc" id="asbignum_8h_html_a2c63fe7d6872f76ed0360ead99a3489f"><div class="ttname"><a href="sbignum_8h.html#a2c63fe7d6872f76ed0360ead99a3489f">mpz_abs</a></div><div class="ttdeci">int mpz_abs(mpz_ptr d, mpz_ptr s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1527</div></div>
+<div class="ttc" id="asbignum_8h_html_a32a4b79db24d21ef39d2b2ef92ad503f"><div class="ttname"><a href="sbignum_8h.html#a32a4b79db24d21ef39d2b2ef92ad503f">mpz_random</a></div><div class="ttdeci">int mpz_random(mpz_ptr z, int32_t len)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1891</div></div>
+<div class="ttc" id="asbignum_8h_html_a3576ae57e37f2e32af3db314eb80f3f2"><div class="ttname"><a href="sbignum_8h.html#a3576ae57e37f2e32af3db314eb80f3f2">mpz_pow</a></div><div class="ttdeci">int mpz_pow(mpz_ptr r, mpz_ptr b, mpz_ptr e)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1047</div></div>
+<div class="ttc" id="asbignum_8h_html_a39aec9d1dc1d2044e035e92972ce956a"><div class="ttname"><a href="sbignum_8h.html#a39aec9d1dc1d2044e035e92972ce956a">mpz_atom_t</a></div><div class="ttdeci">u_int32_t mpz_atom_t</div><div class="ttdef"><b>Definition:</b> sbignum.h:20</div></div>
+<div class="ttc" id="asbignum_8h_html_a46b3ca345c22261c031aa8888cc02b14"><div class="ttname"><a href="sbignum_8h.html#a46b3ca345c22261c031aa8888cc02b14">mpz_set_ui</a></div><div class="ttdeci">int mpz_set_ui(mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1449</div></div>
+<div class="ttc" id="asbignum_8h_html_a48969a7a48d7ee8a24eb050e579a91ff"><div class="ttname"><a href="sbignum_8h.html#a48969a7a48d7ee8a24eb050e579a91ff">mpz_get_d</a></div><div class="ttdeci">double mpz_get_d(mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1911</div></div>
+<div class="ttc" id="asbignum_8h_html_a4c9068aea61f61056aebea9e9c827595"><div class="ttname"><a href="sbignum_8h.html#a4c9068aea61f61056aebea9e9c827595">mpz_tdiv_q_ui</a></div><div class="ttdeci">int mpz_tdiv_q_ui(mpz_ptr q, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1350</div></div>
+<div class="ttc" id="asbignum_8h_html_a4e40ea687d4fc2d16bf6d412b7c05638"><div class="ttname"><a href="sbignum_8h.html#a4e40ea687d4fc2d16bf6d412b7c05638">mpz_set_si</a></div><div class="ttdeci">int mpz_set_si(mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1510</div></div>
+<div class="ttc" id="asbignum_8h_html_a4f77b6a070346e0e4f9415357d3671f8"><div class="ttname"><a href="sbignum_8h.html#a4f77b6a070346e0e4f9415357d3671f8">mpz_neg</a></div><div class="ttdeci">int mpz_neg(mpz_ptr d, mpz_ptr s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1538</div></div>
+<div class="ttc" id="asbignum_8h_html_a501923fd6990e612a58a7d4d57ce5268"><div class="ttname"><a href="sbignum_8h.html#a501923fd6990e612a58a7d4d57ce5268">mpz_cmp_ui</a></div><div class="ttdeci">int32_t mpz_cmp_ui(mpz_ptr a, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:647</div></div>
+<div class="ttc" id="asbignum_8h_html_a53ae0c22ae07adb510731d5ac2b62dce"><div class="ttname"><a href="sbignum_8h.html#a53ae0c22ae07adb510731d5ac2b62dce">mpz_add_si</a></div><div class="ttdeci">int mpz_add_si(mpz_ptr r, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:727</div></div>
+<div class="ttc" id="asbignum_8h_html_a568713e406452d41f0879510b10d7718"><div class="ttname"><a href="sbignum_8h.html#a568713e406452d41f0879510b10d7718">mpz_mul</a></div><div class="ttdeci">int mpz_mul(mpz_ptr r, mpz_ptr z, mpz_ptr f)</div><div class="ttdef"><b>Definition:</b> sbignum.c:951</div></div>
+<div class="ttc" id="asbignum_8h_html_a5973c800cce3116b92f54b23c41d3951"><div class="ttname"><a href="sbignum_8h.html#a5973c800cce3116b92f54b23c41d3951">mpz_tdiv_qr</a></div><div class="ttdeci">int mpz_tdiv_qr(mpz_ptr q, mpz_ptr r, mpz_ptr z, mpz_ptr d)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1221</div></div>
+<div class="ttc" id="asbignum_8h_html_a5b5f39959d23202fe9db7a975705cf03"><div class="ttname"><a href="sbignum_8h.html#a5b5f39959d23202fe9db7a975705cf03">mpz_set_str</a></div><div class="ttdeci">int mpz_set_str(mpz_ptr z, char *s, int b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1758</div></div>
+<div class="ttc" id="asbignum_8h_html_a5b96ccdb71ddff491e70fef8a467adcc"><div class="ttname"><a href="sbignum_8h.html#a5b96ccdb71ddff491e70fef8a467adcc">mpz_lshift</a></div><div class="ttdeci">int mpz_lshift(mpz_ptr r, mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:458</div></div>
+<div class="ttc" id="asbignum_8h_html_a5e8935b68c2a7ecf025b0b35fdcae0d8"><div class="ttname"><a href="sbignum_8h.html#a5e8935b68c2a7ecf025b0b35fdcae0d8">mpz_abscmp</a></div><div class="ttdeci">int32_t mpz_abscmp(mpz_ptr a, mpz_ptr b)</div></div>
+<div class="ttc" id="asbignum_8h_html_a693b4f9a52854ed3637310b2f86f87b5"><div class="ttname"><a href="sbignum_8h.html#a693b4f9a52854ed3637310b2f86f87b5">mpz_tdiv_qr_si</a></div><div class="ttdeci">int mpz_tdiv_qr_si(mpz_ptr q, mpz_ptr r, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1272</div></div>
+<div class="ttc" id="asbignum_8h_html_a6adfc2d8ede735ca4bd0ffcfc36ef07a"><div class="ttname"><a href="sbignum_8h.html#a6adfc2d8ede735ca4bd0ffcfc36ef07a">mpz_sub_ui</a></div><div class="ttdeci">int mpz_sub_ui(mpz_ptr r, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:861</div></div>
+<div class="ttc" id="asbignum_8h_html_a6c71d6549f2940d3fd70c075cc6377bd"><div class="ttname"><a href="sbignum_8h.html#a6c71d6549f2940d3fd70c075cc6377bd">mpz_tdiv_r_ui</a></div><div class="ttdeci">int mpz_tdiv_r_ui(mpz_ptr r, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1315</div></div>
+<div class="ttc" id="asbignum_8h_html_a77779785febd13b3dbdf74ef02958c38"><div class="ttname"><a href="sbignum_8h.html#a77779785febd13b3dbdf74ef02958c38">mpz_tdiv_r</a></div><div class="ttdeci">int mpz_tdiv_r(mpz_ptr r, mpz_ptr z, mpz_ptr d)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1284</div></div>
+<div class="ttc" id="asbignum_8h_html_a7c80a1accd38e51890868c842ec458f7"><div class="ttname"><a href="sbignum_8h.html#a7c80a1accd38e51890868c842ec458f7">mpz_scarry_t</a></div><div class="ttdeci">int64_t mpz_scarry_t</div><div class="ttdef"><b>Definition:</b> sbignum.h:22</div></div>
+<div class="ttc" id="asbignum_8h_html_a851bb2a7b69e12413baaa55168eb0519"><div class="ttname"><a href="sbignum_8h.html#a851bb2a7b69e12413baaa55168eb0519">mpz_mul_si</a></div><div class="ttdeci">int mpz_mul_si(mpz_ptr r, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:967</div></div>
+<div class="ttc" id="asbignum_8h_html_a8551e1cd7e244c0cf2802e4b9f99272a"><div class="ttname"><a href="sbignum_8h.html#a8551e1cd7e244c0cf2802e4b9f99272a">mpz_realloc</a></div><div class="ttdeci">int mpz_realloc(mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:202</div></div>
+<div class="ttc" id="asbignum_8h_html_a8e08dfe16c7ac957f9784383da1312c6"><div class="ttname"><a href="sbignum_8h.html#a8e08dfe16c7ac957f9784383da1312c6">mpz_set</a></div><div class="ttdeci">int mpz_set(mpz_ptr d, mpz_ptr s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1427</div></div>
+<div class="ttc" id="asbignum_8h_html_a8e2d434e89ad24d3c664278c2411bd5a"><div class="ttname"><a href="sbignum_8h.html#a8e2d434e89ad24d3c664278c2411bd5a">mpz_bits</a></div><div class="ttdeci">u_int32_t mpz_bits(mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:328</div></div>
+<div class="ttc" id="asbignum_8h_html_a8f2f5d1cba2f7422b49c7d122dc18ecc"><div class="ttname"><a href="sbignum_8h.html#a8f2f5d1cba2f7422b49c7d122dc18ecc">mpz_testbit</a></div><div class="ttdeci">int mpz_testbit(mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:403</div></div>
+<div class="ttc" id="asbignum_8h_html_a9002b8a2e6e3f8403c36713110643d3a"><div class="ttname"><a href="sbignum_8h.html#a9002b8a2e6e3f8403c36713110643d3a">mpz_sqrt</a></div><div class="ttdeci">int mpz_sqrt(mpz_ptr r, mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1094</div></div>
+<div class="ttc" id="asbignum_8h_html_a96611e0363845c0b9bb3bf2d0b2afccd"><div class="ttname"><a href="sbignum_8h.html#a96611e0363845c0b9bb3bf2d0b2afccd">mpz_tdiv_r_si</a></div><div class="ttdeci">int mpz_tdiv_r_si(mpz_ptr r, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1325</div></div>
+<div class="ttc" id="asbignum_8h_html_a9805b5951dd9e2e296a5c426fa89466e"><div class="ttname"><a href="sbignum_8h.html#a9805b5951dd9e2e296a5c426fa89466e">mpz_fac_ui</a></div><div class="ttdeci">int mpz_fac_ui(mpz_ptr r, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:976</div></div>
+<div class="ttc" id="asbignum_8h_html_a98596f49f450c942072f25b509d8e360"><div class="ttname"><a href="sbignum_8h.html#a98596f49f450c942072f25b509d8e360">mpz_cmp</a></div><div class="ttdeci">int32_t mpz_cmp(mpz_ptr a, mpz_ptr b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:632</div></div>
+<div class="ttc" id="asbignum_8h_html_aa90d09b20f17c30b0d5572281efbc5da"><div class="ttname"><a href="sbignum_8h.html#aa90d09b20f17c30b0d5572281efbc5da">mpz_setbit</a></div><div class="ttdeci">int mpz_setbit(mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:340</div></div>
+<div class="ttc" id="asbignum_8h_html_aac739e27126529ad246f59831461caf9"><div class="ttname"><a href="sbignum_8h.html#aac739e27126529ad246f59831461caf9">mpz_get_str</a></div><div class="ttdeci">char * mpz_get_str(char *str, int b, mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1736</div></div>
+<div class="ttc" id="asbignum_8h_html_ab4821ac288ac7c085f017d7418cca46d"><div class="ttname"><a href="sbignum_8h.html#ab4821ac288ac7c085f017d7418cca46d">mpz_tdiv_q</a></div><div class="ttdeci">int mpz_tdiv_q(mpz_ptr q, mpz_ptr z, mpz_ptr d)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1338</div></div>
+<div class="ttc" id="asbignum_8h_html_ac291687865f843925f10c7e8045e4fca"><div class="ttname"><a href="sbignum_8h.html#ac291687865f843925f10c7e8045e4fca">mpz_set_si64</a></div><div class="ttdeci">int mpz_set_si64(mpz_ptr z, int64_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1497</div></div>
+<div class="ttc" id="asbignum_8h_html_ac5a955bdbbd2c489865072c00c8d345d"><div class="ttname"><a href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345d">sbn_err</a></div><div class="ttdeci">sbn_err</div><div class="ttdef"><b>Definition:</b> sbignum.h:53</div></div>
+<div class="ttc" id="asbignum_8h_html_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad"><div class="ttname"><a href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad">SBN_INVAL</a></div><div class="ttdeci">@ SBN_INVAL</div><div class="ttdef"><b>Definition:</b> sbignum.h:56</div></div>
+<div class="ttc" id="asbignum_8h_html_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8"><div class="ttname"><a href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8">SBN_OK</a></div><div class="ttdeci">@ SBN_OK</div><div class="ttdef"><b>Definition:</b> sbignum.h:54</div></div>
+<div class="ttc" id="asbignum_8h_html_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281"><div class="ttname"><a href="sbignum_8h.html#ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281">SBN_MEM</a></div><div class="ttdeci">@ SBN_MEM</div><div class="ttdef"><b>Definition:</b> sbignum.h:55</div></div>
+<div class="ttc" id="asbignum_8h_html_ac65c3d09dabbbef570e15bb887dcedb1"><div class="ttname"><a href="sbignum_8h.html#ac65c3d09dabbbef570e15bb887dcedb1">mpz_add_ui</a></div><div class="ttdeci">int mpz_add_ui(mpz_ptr r, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:717</div></div>
+<div class="ttc" id="asbignum_8h_html_ad14f285fb838becce984b5878188f614"><div class="ttname"><a href="sbignum_8h.html#ad14f285fb838becce984b5878188f614">mpz_mod</a></div><div class="ttdeci">int mpz_mod(mpz_ptr r, mpz_ptr z, mpz_ptr m)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1395</div></div>
+<div class="ttc" id="asbignum_8h_html_ad8f385080bb3b1cf2d47d34610e809f1"><div class="ttname"><a href="sbignum_8h.html#ad8f385080bb3b1cf2d47d34610e809f1">mpz_cmp_si</a></div><div class="ttdeci">int32_t mpz_cmp_si(mpz_ptr a, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:657</div></div>
+<div class="ttc" id="asbignum_8h_html_ae05d28b5a9a64ca99d412525ad04fc2d"><div class="ttname"><a href="sbignum_8h.html#ae05d28b5a9a64ca99d412525ad04fc2d">mpz_clrbit</a></div><div class="ttdeci">int mpz_clrbit(mpz_ptr z, u_int32_t i)</div><div class="ttdef"><b>Definition:</b> sbignum.c:371</div></div>
+<div class="ttc" id="asbignum_8h_html_ae24357f20cab2a414405b5534655cad7"><div class="ttname"><a href="sbignum_8h.html#ae24357f20cab2a414405b5534655cad7">sbn_seed</a></div><div class="ttdeci">void sbn_seed(void *seed, size_t len)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1853</div></div>
+<div class="ttc" id="asbignum_8h_html_ae8dc70e0a181360dbd7c73b34204ab4c"><div class="ttname"><a href="sbignum_8h.html#ae8dc70e0a181360dbd7c73b34204ab4c">mpz_setzero</a></div><div class="ttdeci">int mpz_setzero(mpz_ptr z)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1419</div></div>
+<div class="ttc" id="asbignum_8h_html_aea50f2185cf7b1db77ea90580e742768"><div class="ttname"><a href="sbignum_8h.html#aea50f2185cf7b1db77ea90580e742768">mpz_powm</a></div><div class="ttdeci">int mpz_powm(mpz_ptr r, mpz_ptr b, mpz_ptr e, mpz_ptr m)</div><div class="ttdef"><b>Definition:</b> sbignum.c:998</div></div>
+<div class="ttc" id="asbignum_8h_html_aeb24ce98c0235b745608ca6d2b1569c7"><div class="ttname"><a href="sbignum_8h.html#aeb24ce98c0235b745608ca6d2b1569c7">mpz_abscmp_ui</a></div><div class="ttdeci">int32_t mpz_abscmp_ui(mpz_ptr a, u_int32_t u)</div></div>
+<div class="ttc" id="asbignum_8h_html_af28b1dc2f9c81a099277f0ef38bf9b7b"><div class="ttname"><a href="sbignum_8h.html#af28b1dc2f9c81a099277f0ef38bf9b7b">mpz_tdiv_q_si</a></div><div class="ttdeci">int mpz_tdiv_q_si(mpz_ptr q, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1360</div></div>
+<div class="ttc" id="asbignum_8h_html_af79cc0eab3db5e37cce8398f904c9401"><div class="ttname"><a href="sbignum_8h.html#af79cc0eab3db5e37cce8398f904c9401">mpz_sub_si</a></div><div class="ttdeci">int mpz_sub_si(mpz_ptr r, mpz_ptr z, int32_t s)</div><div class="ttdef"><b>Definition:</b> sbignum.c:871</div></div>
+<div class="ttc" id="asbignum_8h_html_af8584e7d2907ebd5db25596705021972"><div class="ttname"><a href="sbignum_8h.html#af8584e7d2907ebd5db25596705021972">mpz_gcd</a></div><div class="ttdeci">int mpz_gcd(mpz_ptr g, mpz_ptr a, mpz_ptr b)</div><div class="ttdef"><b>Definition:</b> sbignum.c:1614</div></div>
+<div class="ttc" id="asbignum_8h_html_af94c24ad93bddcd093ce056c9b8f9cbc"><div class="ttname"><a href="sbignum_8h.html#af94c24ad93bddcd093ce056c9b8f9cbc">mpz_mul_ui</a></div><div class="ttdeci">int mpz_mul_ui(mpz_ptr r, mpz_ptr z, u_int32_t u)</div><div class="ttdef"><b>Definition:</b> sbignum.c:959</div></div>
+<div class="ttc" id="astructstruct__sbnz_html"><div class="ttname"><a href="structstruct__sbnz.html">struct_sbnz</a></div><div class="ttdef"><b>Definition:</b> sbignum.h:42</div></div>
+<div class="ttc" id="astructstruct__sbnz_html_a033eff0d60c4be7c51f8bba0f84a1f69"><div class="ttname"><a href="structstruct__sbnz.html#a033eff0d60c4be7c51f8bba0f84a1f69">struct_sbnz::s</a></div><div class="ttdeci">u_int32_t s</div><div class="ttdef"><b>Definition:</b> sbignum.h:46</div></div>
+<div class="ttc" id="astructstruct__sbnz_html_a2b2bb97a3d3fbba79062186cb1c9c9c8"><div class="ttname"><a href="structstruct__sbnz.html#a2b2bb97a3d3fbba79062186cb1c9c9c8">struct_sbnz::a</a></div><div class="ttdeci">u_int32_t a</div><div class="ttdef"><b>Definition:</b> sbignum.h:44</div></div>
+<div class="ttc" id="astructstruct__sbnz_html_a412a79dbb33ad602b16d78f1ae189167"><div class="ttname"><a href="structstruct__sbnz.html#a412a79dbb33ad602b16d78f1ae189167">struct_sbnz::d</a></div><div class="ttdeci">mpz_atom_t * d</div><div class="ttdef"><b>Definition:</b> sbignum.h:43</div></div>
+<div class="ttc" id="astructstruct__sbnz_html_a6961330c569716addd6806f400ed0ec7"><div class="ttname"><a href="structstruct__sbnz.html#a6961330c569716addd6806f400ed0ec7">struct_sbnz::l</a></div><div class="ttdeci">u_int32_t l</div><div class="ttdef"><b>Definition:</b> sbignum.h:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

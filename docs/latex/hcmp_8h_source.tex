@@ -1,0 +1,31 @@
+\hypertarget{hcmp_8h_source}{}\doxysection{hcmp.\+h}
+\mbox{\hyperlink{hcmp_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$smu-\/mark\$ }}
+\DoxyCodeLine{3 \textcolor{comment}{ * \$name: hcmp.h\$ }}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$author: Salvatore Sanfilippo <antirez@invece.org>\$ }}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$copyright: Copyright (C) 1999 by Salvatore Sanfilippo\$ }}
+\DoxyCodeLine{6 \textcolor{comment}{ * \$license: This software is under GPL version 2 of license\$ }}
+\DoxyCodeLine{7 \textcolor{comment}{ * \$date: Fri Nov  5 11:55:47 MET 1999\$ }}
+\DoxyCodeLine{8 \textcolor{comment}{ * \$rev: 9\$ }}
+\DoxyCodeLine{9 \textcolor{comment}{ */} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* Hping Control Message Protocol */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define HCMP\_RESTART        1}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define HCMP\_SOURCE\_QUENCH  2}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define HCMP\_SOURCE\_STIRUP  3}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define HCMP\_CHPROTO        4 }\textcolor{comment}{/* still unused */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{structhcmphdr}{hcmphdr}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structhcmphdr_aa05eefca31ad6bd4617aac0176b8366e}{type}};}
+\DoxyCodeLine{21     \textcolor{keyword}{union}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structhcmphdr_acb9b84094e40255089b168fd33c08790}{seqnum}};}
+\DoxyCodeLine{24         \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}} \mbox{\hyperlink{structhcmphdr_adf4c78d1836cda470179ad088c205a25}{usec}};}
+\DoxyCodeLine{25     \} \mbox{\hyperlink{structhcmphdr_a1076576b572e6e8fee937730028b19a5}{typedep}};}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

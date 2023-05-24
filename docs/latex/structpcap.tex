@@ -1,0 +1,370 @@
+\hypertarget{structpcap}{}\doxysection{pcap\+\_\+t结构体 参考}
+\label{structpcap}\index{pcap\_t@{pcap\_t}}
+
+
+{\ttfamily \#include $<$pcap-\/int.\+h$>$}
+
+
+
+pcap\+\_\+t 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structpcap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structpcap_a6f8059414f0228f0256115e024eeed4b}{fd}}
+\item 
+int \mbox{\hyperlink{structpcap_a2dc6f4ab17b75045008c7312e8113628}{selectable\+\_\+fd}}
+\item 
+int \mbox{\hyperlink{structpcap_a4ccd8921f38d8d73068731023f739eac}{send\+\_\+fd}}
+\item 
+int \mbox{\hyperlink{structpcap_a8ee1d8beef8b5b64ccb0c5b61c5beea8}{snapshot}}
+\item 
+int \mbox{\hyperlink{structpcap_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}
+\item 
+int \mbox{\hyperlink{structpcap_affccd57aca6e350473a1715a396bde4d}{linktype\+\_\+ext}}
+\item 
+int \mbox{\hyperlink{structpcap_ada90f5f80c98d158e9bf8046916ff13a}{tzoff}}
+\item 
+int \mbox{\hyperlink{structpcap_aed7ea92f45bd273dde380a45ddced592}{offset}}
+\item 
+int \mbox{\hyperlink{structpcap_aa66e4426e5dabb26bd0b5be1af1bfa0c}{activated}}
+\item 
+int \mbox{\hyperlink{structpcap_acef31045f451a95207379af67cf1fd49}{oldstyle}}
+\item 
+int \mbox{\hyperlink{structpcap_a2b93aab20ee01061537788f55e7ce3d9}{break\+\_\+loop}}
+\item 
+struct \mbox{\hyperlink{structpcap__sf}{pcap\+\_\+sf}} \mbox{\hyperlink{structpcap_a5b4bcdb974c6aebf14fb88806257628e}{sf}}
+\item 
+struct \mbox{\hyperlink{structpcap__md}{pcap\+\_\+md}} \mbox{\hyperlink{structpcap_a9c49da7bca1ba9d181cc95f7f7fdc583}{md}}
+\item 
+struct \mbox{\hyperlink{structpcap__opt}{pcap\+\_\+opt}} \mbox{\hyperlink{structpcap_a15e07be4a78785365726eec63a6700cf}{opt}}
+\item 
+int \mbox{\hyperlink{structpcap_a199ab88d4ca8eab30e1cb7d35edacca5}{bufsize}}
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{structpcap_a080ee3ec73066011e25185da0dcea995}{buffer}}
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{structpcap_a14b29eff86c3fe30e608f70fbe91d30f}{bp}}
+\item 
+int \mbox{\hyperlink{structpcap_a21aaf27a7ac21de349cae5888fb050a3}{cc}}
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{structpcap_a02cb66a71251b07f20a8abe45632b596}{pkt}}
+\item 
+\mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}} \mbox{\hyperlink{structpcap_a1b4a9ed378f9e1024e2f281e8b17d141}{direction}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_afd90f637d8652d1b5be529a50dff3c05}{activate\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_acebf996670fc811f811f41ad5bb3670d}{activate\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a752a409eadb310e1e5d442c084c95069}{can\+\_\+set\+\_\+rfmon\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a30402d3dca197741f6f3534eab269505}{can\+\_\+set\+\_\+rfmon\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a890c5b154b2f48695b55e237bfa8e83b}{read\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a09f73eef5dd000c73732bac11107824b}{read\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a469c0762d71ed3ba5cb0d4798d36ba27}{inject\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_adfe79e0d95c45805a83f165365c8b3cc}{inject\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a74a3d4ce9710a5e8c12a39052366898b}{setfilter\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a7e1fcf597cf77b72b2994d5d19105fd3}{setfilter\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_ad09f5b25f0ad1e21b1397ec8c3d74481}{setdirection\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a697ec75c687aa086d0359d7300d60510}{setdirection\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a7d23c1590f19ef96f50885a02671187b}{set\+\_\+datalink\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a2b9486030287100e42d5589bc6ff69cb}{set\+\_\+datalink\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a6592cbb3abc428c87de0f18705cfed7f}{getnonblock\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_a68ccacd25d57b020647cc5ab074db607}{getnonblock\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a7bd091f3d0e1735965e76b9dcf1e9b37}{setnonblock\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_abf02ce89f232158830658f74e5e04fbd}{setnonblock\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_ab545f97260e02f6a2bdaf97da9463561}{stats\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_ae8683ea2736b66f8caf717161e704738}{stats\+\_\+op}}
+\item 
+\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} \mbox{\hyperlink{structpcap_a59368c251d083e891b48f20bd0e29521}{oneshot\+\_\+callback}}
+\item 
+\mbox{\hyperlink{pcap-int_8h_a8ece48e5f0e776a248a855821c657c2a}{cleanup\+\_\+op\+\_\+t}} \mbox{\hyperlink{structpcap_ace0944224cb1a189980594c43a12817a}{cleanup\+\_\+op}}
+\item 
+struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} \mbox{\hyperlink{structpcap_ab5df78b3a2824a36a9a82c2c029e6c7c}{fcode}}
+\item 
+char \mbox{\hyperlink{structpcap_a065540d2a2fa4c8bd32bdc93a1b0917f}{errbuf}} \mbox{[}\mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}+1\mbox{]}
+\item 
+int \mbox{\hyperlink{structpcap_a5f5bf969a057eef06e9bf4d661105964}{dlt\+\_\+count}}
+\item 
+u\+\_\+int $\ast$ \mbox{\hyperlink{structpcap_ab766b1ece5224aa10a04302ea4ff1277}{dlt\+\_\+list}}
+\item 
+struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} \mbox{\hyperlink{structpcap_a6146626d8ba975affd0758624debc0fa}{pcap\+\_\+header}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structpcap_acebf996670fc811f811f41ad5bb3670d}\label{structpcap_acebf996670fc811f811f41ad5bb3670d}} 
+\index{pcap\_t@{pcap\_t}!activate\_op@{activate\_op}}
+\index{activate\_op@{activate\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{activate\_op}{activate\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_afd90f637d8652d1b5be529a50dff3c05}{activate\+\_\+op\+\_\+t}} activate\+\_\+op}
+
+\mbox{\Hypertarget{structpcap_aa66e4426e5dabb26bd0b5be1af1bfa0c}\label{structpcap_aa66e4426e5dabb26bd0b5be1af1bfa0c}} 
+\index{pcap\_t@{pcap\_t}!activated@{activated}}
+\index{activated@{activated}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{activated}{activated}}
+{\footnotesize\ttfamily int activated}
+
+\mbox{\Hypertarget{structpcap_a14b29eff86c3fe30e608f70fbe91d30f}\label{structpcap_a14b29eff86c3fe30e608f70fbe91d30f}} 
+\index{pcap\_t@{pcap\_t}!bp@{bp}}
+\index{bp@{bp}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{bp}{bp}}
+{\footnotesize\ttfamily u\+\_\+char$\ast$ bp}
+
+\mbox{\Hypertarget{structpcap_a2b93aab20ee01061537788f55e7ce3d9}\label{structpcap_a2b93aab20ee01061537788f55e7ce3d9}} 
+\index{pcap\_t@{pcap\_t}!break\_loop@{break\_loop}}
+\index{break\_loop@{break\_loop}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{break\_loop}{break\_loop}}
+{\footnotesize\ttfamily int break\+\_\+loop}
+
+\mbox{\Hypertarget{structpcap_a080ee3ec73066011e25185da0dcea995}\label{structpcap_a080ee3ec73066011e25185da0dcea995}} 
+\index{pcap\_t@{pcap\_t}!buffer@{buffer}}
+\index{buffer@{buffer}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily u\+\_\+char$\ast$ buffer}
+
+\mbox{\Hypertarget{structpcap_a199ab88d4ca8eab30e1cb7d35edacca5}\label{structpcap_a199ab88d4ca8eab30e1cb7d35edacca5}} 
+\index{pcap\_t@{pcap\_t}!bufsize@{bufsize}}
+\index{bufsize@{bufsize}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{bufsize}{bufsize}}
+{\footnotesize\ttfamily int bufsize}
+
+\mbox{\Hypertarget{structpcap_a30402d3dca197741f6f3534eab269505}\label{structpcap_a30402d3dca197741f6f3534eab269505}} 
+\index{pcap\_t@{pcap\_t}!can\_set\_rfmon\_op@{can\_set\_rfmon\_op}}
+\index{can\_set\_rfmon\_op@{can\_set\_rfmon\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{can\_set\_rfmon\_op}{can\_set\_rfmon\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a752a409eadb310e1e5d442c084c95069}{can\+\_\+set\+\_\+rfmon\+\_\+op\+\_\+t}} can\+\_\+set\+\_\+rfmon\+\_\+op}
+
+\mbox{\Hypertarget{structpcap_a21aaf27a7ac21de349cae5888fb050a3}\label{structpcap_a21aaf27a7ac21de349cae5888fb050a3}} 
+\index{pcap\_t@{pcap\_t}!cc@{cc}}
+\index{cc@{cc}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{cc}{cc}}
+{\footnotesize\ttfamily int cc}
+
+\mbox{\Hypertarget{structpcap_ace0944224cb1a189980594c43a12817a}\label{structpcap_ace0944224cb1a189980594c43a12817a}} 
+\index{pcap\_t@{pcap\_t}!cleanup\_op@{cleanup\_op}}
+\index{cleanup\_op@{cleanup\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{cleanup\_op}{cleanup\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a8ece48e5f0e776a248a855821c657c2a}{cleanup\+\_\+op\+\_\+t}} cleanup\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a1b4a9ed378f9e1024e2f281e8b17d141}\label{structpcap_a1b4a9ed378f9e1024e2f281e8b17d141}} 
+\index{pcap\_t@{pcap\_t}!direction@{direction}}
+\index{direction@{direction}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}} direction}
+
+\mbox{\Hypertarget{structpcap_a5f5bf969a057eef06e9bf4d661105964}\label{structpcap_a5f5bf969a057eef06e9bf4d661105964}} 
+\index{pcap\_t@{pcap\_t}!dlt\_count@{dlt\_count}}
+\index{dlt\_count@{dlt\_count}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{dlt\_count}{dlt\_count}}
+{\footnotesize\ttfamily int dlt\+\_\+count}
+
+\mbox{\Hypertarget{structpcap_ab766b1ece5224aa10a04302ea4ff1277}\label{structpcap_ab766b1ece5224aa10a04302ea4ff1277}} 
+\index{pcap\_t@{pcap\_t}!dlt\_list@{dlt\_list}}
+\index{dlt\_list@{dlt\_list}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{dlt\_list}{dlt\_list}}
+{\footnotesize\ttfamily u\+\_\+int$\ast$ dlt\+\_\+list}
+
+\mbox{\Hypertarget{structpcap_a065540d2a2fa4c8bd32bdc93a1b0917f}\label{structpcap_a065540d2a2fa4c8bd32bdc93a1b0917f}} 
+\index{pcap\_t@{pcap\_t}!errbuf@{errbuf}}
+\index{errbuf@{errbuf}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{errbuf}{errbuf}}
+{\footnotesize\ttfamily char errbuf\mbox{[}\mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}+1\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_ab5df78b3a2824a36a9a82c2c029e6c7c}\label{structpcap_ab5df78b3a2824a36a9a82c2c029e6c7c}} 
+\index{pcap\_t@{pcap\_t}!fcode@{fcode}}
+\index{fcode@{fcode}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{fcode}{fcode}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} fcode}
+
+\mbox{\Hypertarget{structpcap_a6f8059414f0228f0256115e024eeed4b}\label{structpcap_a6f8059414f0228f0256115e024eeed4b}} 
+\index{pcap\_t@{pcap\_t}!fd@{fd}}
+\index{fd@{fd}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily int fd}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a68ccacd25d57b020647cc5ab074db607}\label{structpcap_a68ccacd25d57b020647cc5ab074db607}} 
+\index{pcap\_t@{pcap\_t}!getnonblock\_op@{getnonblock\_op}}
+\index{getnonblock\_op@{getnonblock\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{getnonblock\_op}{getnonblock\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a6592cbb3abc428c87de0f18705cfed7f}{getnonblock\+\_\+op\+\_\+t}} getnonblock\+\_\+op}
+
+\mbox{\Hypertarget{structpcap_adfe79e0d95c45805a83f165365c8b3cc}\label{structpcap_adfe79e0d95c45805a83f165365c8b3cc}} 
+\index{pcap\_t@{pcap\_t}!inject\_op@{inject\_op}}
+\index{inject\_op@{inject\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{inject\_op}{inject\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a469c0762d71ed3ba5cb0d4798d36ba27}{inject\+\_\+op\+\_\+t}} inject\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a34f63781fb4328501b07c3ccf6e16b19}\label{structpcap_a34f63781fb4328501b07c3ccf6e16b19}} 
+\index{pcap\_t@{pcap\_t}!linktype@{linktype}}
+\index{linktype@{linktype}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{linktype}{linktype}}
+{\footnotesize\ttfamily int linktype}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_affccd57aca6e350473a1715a396bde4d}\label{structpcap_affccd57aca6e350473a1715a396bde4d}} 
+\index{pcap\_t@{pcap\_t}!linktype\_ext@{linktype\_ext}}
+\index{linktype\_ext@{linktype\_ext}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{linktype\_ext}{linktype\_ext}}
+{\footnotesize\ttfamily int linktype\+\_\+ext}
+
+\mbox{\Hypertarget{structpcap_a9c49da7bca1ba9d181cc95f7f7fdc583}\label{structpcap_a9c49da7bca1ba9d181cc95f7f7fdc583}} 
+\index{pcap\_t@{pcap\_t}!md@{md}}
+\index{md@{md}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{md}{md}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__md}{pcap\+\_\+md}} md}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-int_8h_a95f720506e53a906175ab22a65b8f34e}{pcap\+\_\+remove\+\_\+from\+\_\+pcaps\+\_\+to\+\_\+close()}}.
+
+\mbox{\Hypertarget{structpcap_aed7ea92f45bd273dde380a45ddced592}\label{structpcap_aed7ea92f45bd273dde380a45ddced592}} 
+\index{pcap\_t@{pcap\_t}!offset@{offset}}
+\index{offset@{offset}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily int offset}
+
+\mbox{\Hypertarget{structpcap_acef31045f451a95207379af67cf1fd49}\label{structpcap_acef31045f451a95207379af67cf1fd49}} 
+\index{pcap\_t@{pcap\_t}!oldstyle@{oldstyle}}
+\index{oldstyle@{oldstyle}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{oldstyle}{oldstyle}}
+{\footnotesize\ttfamily int oldstyle}
+
+\mbox{\Hypertarget{structpcap_a59368c251d083e891b48f20bd0e29521}\label{structpcap_a59368c251d083e891b48f20bd0e29521}} 
+\index{pcap\_t@{pcap\_t}!oneshot\_callback@{oneshot\_callback}}
+\index{oneshot\_callback@{oneshot\_callback}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{oneshot\_callback}{oneshot\_callback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} oneshot\+\_\+callback}
+
+\mbox{\Hypertarget{structpcap_a15e07be4a78785365726eec63a6700cf}\label{structpcap_a15e07be4a78785365726eec63a6700cf}} 
+\index{pcap\_t@{pcap\_t}!opt@{opt}}
+\index{opt@{opt}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{opt}{opt}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__opt}{pcap\+\_\+opt}} opt}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a6146626d8ba975affd0758624debc0fa}\label{structpcap_a6146626d8ba975affd0758624debc0fa}} 
+\index{pcap\_t@{pcap\_t}!pcap\_header@{pcap\_header}}
+\index{pcap\_header@{pcap\_header}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{pcap\_header}{pcap\_header}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} pcap\+\_\+header}
+
+\mbox{\Hypertarget{structpcap_a02cb66a71251b07f20a8abe45632b596}\label{structpcap_a02cb66a71251b07f20a8abe45632b596}} 
+\index{pcap\_t@{pcap\_t}!pkt@{pkt}}
+\index{pkt@{pkt}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{pkt}{pkt}}
+{\footnotesize\ttfamily u\+\_\+char$\ast$ pkt}
+
+\mbox{\Hypertarget{structpcap_a09f73eef5dd000c73732bac11107824b}\label{structpcap_a09f73eef5dd000c73732bac11107824b}} 
+\index{pcap\_t@{pcap\_t}!read\_op@{read\_op}}
+\index{read\_op@{read\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{read\_op}{read\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a890c5b154b2f48695b55e237bfa8e83b}{read\+\_\+op\+\_\+t}} read\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a2dc6f4ab17b75045008c7312e8113628}\label{structpcap_a2dc6f4ab17b75045008c7312e8113628}} 
+\index{pcap\_t@{pcap\_t}!selectable\_fd@{selectable\_fd}}
+\index{selectable\_fd@{selectable\_fd}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{selectable\_fd}{selectable\_fd}}
+{\footnotesize\ttfamily int selectable\+\_\+fd}
+
+\mbox{\Hypertarget{structpcap_a4ccd8921f38d8d73068731023f739eac}\label{structpcap_a4ccd8921f38d8d73068731023f739eac}} 
+\index{pcap\_t@{pcap\_t}!send\_fd@{send\_fd}}
+\index{send\_fd@{send\_fd}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{send\_fd}{send\_fd}}
+{\footnotesize\ttfamily int send\+\_\+fd}
+
+\mbox{\Hypertarget{structpcap_a2b9486030287100e42d5589bc6ff69cb}\label{structpcap_a2b9486030287100e42d5589bc6ff69cb}} 
+\index{pcap\_t@{pcap\_t}!set\_datalink\_op@{set\_datalink\_op}}
+\index{set\_datalink\_op@{set\_datalink\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{set\_datalink\_op}{set\_datalink\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a7d23c1590f19ef96f50885a02671187b}{set\+\_\+datalink\+\_\+op\+\_\+t}} set\+\_\+datalink\+\_\+op}
+
+\mbox{\Hypertarget{structpcap_a697ec75c687aa086d0359d7300d60510}\label{structpcap_a697ec75c687aa086d0359d7300d60510}} 
+\index{pcap\_t@{pcap\_t}!setdirection\_op@{setdirection\_op}}
+\index{setdirection\_op@{setdirection\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{setdirection\_op}{setdirection\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_ad09f5b25f0ad1e21b1397ec8c3d74481}{setdirection\+\_\+op\+\_\+t}} setdirection\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_a7e1fcf597cf77b72b2994d5d19105fd3}\label{structpcap_a7e1fcf597cf77b72b2994d5d19105fd3}} 
+\index{pcap\_t@{pcap\_t}!setfilter\_op@{setfilter\_op}}
+\index{setfilter\_op@{setfilter\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{setfilter\_op}{setfilter\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a74a3d4ce9710a5e8c12a39052366898b}{setfilter\+\_\+op\+\_\+t}} setfilter\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_abf02ce89f232158830658f74e5e04fbd}\label{structpcap_abf02ce89f232158830658f74e5e04fbd}} 
+\index{pcap\_t@{pcap\_t}!setnonblock\_op@{setnonblock\_op}}
+\index{setnonblock\_op@{setnonblock\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{setnonblock\_op}{setnonblock\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_a7bd091f3d0e1735965e76b9dcf1e9b37}{setnonblock\+\_\+op\+\_\+t}} setnonblock\+\_\+op}
+
+\mbox{\Hypertarget{structpcap_a5b4bcdb974c6aebf14fb88806257628e}\label{structpcap_a5b4bcdb974c6aebf14fb88806257628e}} 
+\index{pcap\_t@{pcap\_t}!sf@{sf}}
+\index{sf@{sf}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{sf}{sf}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__sf}{pcap\+\_\+sf}} sf}
+
+\mbox{\Hypertarget{structpcap_a8ee1d8beef8b5b64ccb0c5b61c5beea8}\label{structpcap_a8ee1d8beef8b5b64ccb0c5b61c5beea8}} 
+\index{pcap\_t@{pcap\_t}!snapshot@{snapshot}}
+\index{snapshot@{snapshot}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{snapshot}{snapshot}}
+{\footnotesize\ttfamily int snapshot}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_ae8683ea2736b66f8caf717161e704738}\label{structpcap_ae8683ea2736b66f8caf717161e704738}} 
+\index{pcap\_t@{pcap\_t}!stats\_op@{stats\_op}}
+\index{stats\_op@{stats\_op}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{stats\_op}{stats\_op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-int_8h_ab545f97260e02f6a2bdaf97da9463561}{stats\+\_\+op\+\_\+t}} stats\+\_\+op}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}.
+
+\mbox{\Hypertarget{structpcap_ada90f5f80c98d158e9bf8046916ff13a}\label{structpcap_ada90f5f80c98d158e9bf8046916ff13a}} 
+\index{pcap\_t@{pcap\_t}!tzoff@{tzoff}}
+\index{tzoff@{tzoff}!pcap\_t@{pcap\_t}}
+\doxysubsubsection{\texorpdfstring{tzoff}{tzoff}}
+{\footnotesize\ttfamily int tzoff}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\mbox{\hyperlink{pcap-int_8h}{pcap-\/int.\+h}}\end{DoxyCompactItemize}

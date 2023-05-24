@@ -1,0 +1,461 @@
+\hypertarget{pcap-win32_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/win32.c 文件参考}
+\label{pcap-win32_8c}\index{libpcap-\/1.1.1/pcap-\/win32.c@{libpcap-\/1.1.1/pcap-\/win32.c}}
+{\ttfamily \#include $<$pcap-\/int.\+h$>$}\newline
+{\ttfamily \#include $<$Packet32.\+h$>$}\newline
+{\ttfamily \#include $<$ntddndis.\+h$>$}\newline
+pcap-\/win32.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbpf__hdr}{bpf\+\_\+hdr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-win32_8c_a118edb457faff301f3c6f2f90318a667}{WIN32\+\_\+\+DEFAULT\+\_\+\+USER\+\_\+\+BUFFER\+\_\+\+SIZE}}~256000
+\item 
+\#define \mbox{\hyperlink{pcap-win32_8c_a1ef579183dce3797bd6f2d1b5e7a2e06}{WIN32\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+BUFFER\+\_\+\+SIZE}}~1000000
+\item 
+\#define \mbox{\hyperlink{pcap-win32_8c_acc897c1250de1a2ad58443fea45ea522}{SWAPS}}(\+\_\+X)~((\+\_\+X \& 0xff) $<$$<$ 8) $\vert$ (\+\_\+X $>$$>$ 8)
+\item 
+\#define \mbox{\hyperlink{pcap-win32_8c_a161f23676cb7fa3822ba01681507fb8e}{bhp}}~((struct \mbox{\hyperlink{structbpf__hdr}{bpf\+\_\+hdr}} $\ast$)bp)
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_add4b2f48894f31d7527e3b0526f60c45}{pcap\+\_\+setfilter\+\_\+win32\+\_\+npf}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2}{pcap\+\_\+setfilter\+\_\+win32\+\_\+dag}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_a405b46632dd94fdc39a7d02b6cbaa8a8}{pcap\+\_\+getnonblock\+\_\+win32}} (pcap\+\_\+t $\ast$, char $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ae919f33b37351c6d21625135b4d6dc80}{pcap\+\_\+setnonblock\+\_\+win32}} (pcap\+\_\+t $\ast$, int, char $\ast$)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} WINAPI \mbox{\hyperlink{pcap-win32_8c_a07740f49cfeba65879cb0fb0017ea7b6}{Dll\+Main}} (HANDLE hinst\+DLL, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} dw\+Reason, LPVOID lpv\+Reserved)
+\item 
+int \mbox{\hyperlink{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336}{wsockinit}} ()
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ab90afb51de998103419a432627e97cac}{pcap\+\_\+stats\+\_\+win32}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$ps)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_a68c4d9e7aec3c1069561197a4b83491f}{pcap\+\_\+setbuff\+\_\+win32}} (pcap\+\_\+t $\ast$p, int dim)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ad2b004dfc577aa81d029536f0f5be037}{pcap\+\_\+setmode\+\_\+win32}} (pcap\+\_\+t $\ast$p, int mode)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ac079dbf25ec73c8cbcde587cbe4952aa}{pcap\+\_\+setmintocopy\+\_\+win32}} (pcap\+\_\+t $\ast$p, int size)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ad9fff0cbb9d65018bd291718bd7a4102}{pcap\+\_\+read\+\_\+win32\+\_\+npf}} (pcap\+\_\+t $\ast$p, int cnt, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} callback, u\+\_\+char $\ast$user)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_a569d24f0cb8f5abee4167f97cda501a6}{pcap\+\_\+inject\+\_\+win32}} (pcap\+\_\+t $\ast$p, const void $\ast$buf, size\+\_\+t size)
+\item 
+static void \mbox{\hyperlink{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3}{pcap\+\_\+cleanup\+\_\+win32}} (pcap\+\_\+t $\ast$p)
+\item 
+static int \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32}} (pcap\+\_\+t $\ast$p)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-win32_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\item 
+int \mbox{\hyperlink{pcap-win32_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+CRITICAL\+\_\+\+SECTION \mbox{\hyperlink{pcap-win32_8c_a6905be171b814c5896fb7f52c51b9fad}{g\+\_\+\+Pcap\+Compile\+Critical\+Section}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-win32_8c_a161f23676cb7fa3822ba01681507fb8e}\label{pcap-win32_8c_a161f23676cb7fa3822ba01681507fb8e}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!bhp@{bhp}}
+\index{bhp@{bhp}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{bhp}{bhp}}
+{\footnotesize\ttfamily \#define bhp~((struct \mbox{\hyperlink{structbpf__hdr}{bpf\+\_\+hdr}} $\ast$)bp)}
+
+\mbox{\Hypertarget{pcap-win32_8c_acc897c1250de1a2ad58443fea45ea522}\label{pcap-win32_8c_acc897c1250de1a2ad58443fea45ea522}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!SWAPS@{SWAPS}}
+\index{SWAPS@{SWAPS}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{SWAPS}{SWAPS}}
+{\footnotesize\ttfamily \#define SWAPS(\begin{DoxyParamCaption}\item[{}]{\+\_\+X }\end{DoxyParamCaption})~((\+\_\+X \& 0xff) $<$$<$ 8) $\vert$ (\+\_\+X $>$$>$ 8)}
+
+\mbox{\Hypertarget{pcap-win32_8c_a1ef579183dce3797bd6f2d1b5e7a2e06}\label{pcap-win32_8c_a1ef579183dce3797bd6f2d1b5e7a2e06}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE@{WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE}}
+\index{WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE@{WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE}{WIN32\_DEFAULT\_KERNEL\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+BUFFER\+\_\+\+SIZE~1000000}
+
+\mbox{\Hypertarget{pcap-win32_8c_a118edb457faff301f3c6f2f90318a667}\label{pcap-win32_8c_a118edb457faff301f3c6f2f90318a667}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!WIN32\_DEFAULT\_USER\_BUFFER\_SIZE@{WIN32\_DEFAULT\_USER\_BUFFER\_SIZE}}
+\index{WIN32\_DEFAULT\_USER\_BUFFER\_SIZE@{WIN32\_DEFAULT\_USER\_BUFFER\_SIZE}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{WIN32\_DEFAULT\_USER\_BUFFER\_SIZE}{WIN32\_DEFAULT\_USER\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+DEFAULT\+\_\+\+USER\+\_\+\+BUFFER\+\_\+\+SIZE~256000}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-win32_8c_a07740f49cfeba65879cb0fb0017ea7b6}\label{pcap-win32_8c_a07740f49cfeba65879cb0fb0017ea7b6}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!DllMain@{DllMain}}
+\index{DllMain@{DllMain}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{DllMain()}{DllMain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} WINAPI Dll\+Main (\begin{DoxyParamCaption}\item[{HANDLE}]{hinst\+DLL,  }\item[{\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}}]{dw\+Reason,  }\item[{LPVOID}]{lpv\+Reserved }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-win32_8c_a6905be171b814c5896fb7f52c51b9fad}{g\+\_\+\+Pcap\+Compile\+Critical\+Section}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+\mbox{\Hypertarget{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}\label{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_activate\_win32@{pcap\_activate\_win32}}
+\index{pcap\_activate\_win32@{pcap\_activate\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_activate\_win32()}{pcap\_activate\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+activate\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_a3f09da5a46633b5f3018524ba609db91}{DLT\+\_\+\+ARCNET}}, \mbox{\hyperlink{bpf_8h_a576b48895f2613b8a5a738beab37bd04}{DLT\+\_\+\+ATM\+\_\+\+RFC1483}}, \mbox{\hyperlink{bpf_8h_acc81c46368ad3b17b8186b583fe7dfe9}{DLT\+\_\+\+CHDLC}}, \mbox{\hyperlink{pcap-bpf_8c_a70117bf82609f7d0d37e58efc55eb077}{DLT\+\_\+\+DOCSIS}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}, \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}}, \mbox{\hyperlink{bpf_8h_ac92b6c71dbcc3de9f19a235660422ef4}{DLT\+\_\+\+IEEE802\+\_\+11}}, \mbox{\hyperlink{pcap-bpf_8c_a04bcbf4bcef89eb8e13884d7fca257bc}{DLT\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}, \mbox{\hyperlink{bpf_8h_a629ed89c8b4b7537bfac2491ccff56b8}{DLT\+\_\+\+NULL}}, \mbox{\hyperlink{bpf_8h_ab14d6d53c433663ac546ef32b83bd7ee}{DLT\+\_\+\+PPI}}, \mbox{\hyperlink{bpf_8h_a28554fc247e620892598904216c7f5ee}{DLT\+\_\+\+PPP\+\_\+\+SERIAL}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3}{pcap\+\_\+cleanup\+\_\+win32()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_af113fa82244cf1246dc09d9399049000}{PCAP\+\_\+\+ERROR}}, \mbox{\hyperlink{pcap_2pcap_8h_a2bdaca673eb2ddf3e63f4cc68342cf56}{PCAP\+\_\+\+ERROR\+\_\+\+RFMON\+\_\+\+NOTSUP}}, \mbox{\hyperlink{pcap-win32_8c_a405b46632dd94fdc39a7d02b6cbaa8a8}{pcap\+\_\+getnonblock\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_a569d24f0cb8f5abee4167f97cda501a6}{pcap\+\_\+inject\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_ad9fff0cbb9d65018bd291718bd7a4102}{pcap\+\_\+read\+\_\+win32\+\_\+npf()}}, \mbox{\hyperlink{pcap-win32_8c_a68c4d9e7aec3c1069561197a4b83491f}{pcap\+\_\+setbuff\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2}{pcap\+\_\+setfilter\+\_\+win32\+\_\+dag()}}, \mbox{\hyperlink{pcap-win32_8c_add4b2f48894f31d7527e3b0526f60c45}{pcap\+\_\+setfilter\+\_\+win32\+\_\+npf()}}, \mbox{\hyperlink{pcap-win32_8c_ac079dbf25ec73c8cbcde587cbe4952aa}{pcap\+\_\+setmintocopy\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_ad2b004dfc577aa81d029536f0f5be037}{pcap\+\_\+setmode\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_ae919f33b37351c6d21625135b4d6dc80}{pcap\+\_\+setnonblock\+\_\+win32()}}, \mbox{\hyperlink{pcap-win32_8c_ab90afb51de998103419a432627e97cac}{pcap\+\_\+stats\+\_\+win32()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{gencode_8c_a50cfacfae55017276b69cd587333b70b}{snaplen}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{pcap-win32_8c_a1ef579183dce3797bd6f2d1b5e7a2e06}{WIN32\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+BUFFER\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-win32_8c_a118edb457faff301f3c6f2f90318a667}{WIN32\+\_\+\+DEFAULT\+\_\+\+USER\+\_\+\+BUFFER\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336}{wsockinit()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3}\label{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_cleanup\_win32@{pcap\_cleanup\_win32}}
+\index{pcap\_cleanup\_win32@{pcap\_cleanup\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_cleanup\_win32()}{pcap\_cleanup\_win32()}}
+{\footnotesize\ttfamily static void pcap\+\_\+cleanup\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_adca0259972b84620f74d4bdf0994b3a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a79459f4198464b94a23dbc29b5f26faa}\label{pcap-win32_8c_a79459f4198464b94a23dbc29b5f26faa}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_create@{pcap\_create}}
+\index{pcap\_create@{pcap\_create}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_create()}{pcap\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ pcap\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}, \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a405b46632dd94fdc39a7d02b6cbaa8a8}\label{pcap-win32_8c_a405b46632dd94fdc39a7d02b6cbaa8a8}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_getnonblock\_win32@{pcap\_getnonblock\_win32}}
+\index{pcap\_getnonblock\_win32@{pcap\_getnonblock\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_getnonblock\_win32()}{pcap\_getnonblock\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+getnonblock\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a405b46632dd94fdc39a7d02b6cbaa8a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a569d24f0cb8f5abee4167f97cda501a6}\label{pcap-win32_8c_a569d24f0cb8f5abee4167f97cda501a6}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_inject\_win32@{pcap\_inject\_win32}}
+\index{pcap\_inject\_win32@{pcap\_inject\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_inject\_win32()}{pcap\_inject\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+inject\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a569d24f0cb8f5abee4167f97cda501a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a14b88a933c5761e5038182b4c30bf0c8}\label{pcap-win32_8c_a14b88a933c5761e5038182b4c30bf0c8}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_platform\_finddevs@{pcap\_platform\_finddevs}}
+\index{pcap\_platform\_finddevs@{pcap\_platform\_finddevs}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_platform\_finddevs()}{pcap\_platform\_finddevs()}}
+{\footnotesize\ttfamily int pcap\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcap-win32_8c_ad9fff0cbb9d65018bd291718bd7a4102}\label{pcap-win32_8c_ad9fff0cbb9d65018bd291718bd7a4102}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_read\_win32\_npf@{pcap\_read\_win32\_npf}}
+\index{pcap\_read\_win32\_npf@{pcap\_read\_win32\_npf}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_read\_win32\_npf()}{pcap\_read\_win32\_npf()}}
+{\footnotesize\ttfamily static int pcap\+\_\+read\+\_\+win32\+\_\+npf (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{cnt,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-win32_8c_a161f23676cb7fa3822ba01681507fb8e}{bhp}}, \mbox{\hyperlink{bpf_8h_a0be91da731762a443506b1a287d12f8f}{BPF\+\_\+\+WORDALIGN}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ad9fff0cbb9d65018bd291718bd7a4102_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a68c4d9e7aec3c1069561197a4b83491f}\label{pcap-win32_8c_a68c4d9e7aec3c1069561197a4b83491f}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setbuff\_win32@{pcap\_setbuff\_win32}}
+\index{pcap\_setbuff\_win32@{pcap\_setbuff\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setbuff\_win32()}{pcap\_setbuff\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setbuff\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a68c4d9e7aec3c1069561197a4b83491f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2}\label{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setfilter\_win32\_dag@{pcap\_setfilter\_win32\_dag}}
+\index{pcap\_setfilter\_win32\_dag@{pcap\_setfilter\_win32\_dag}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setfilter\_win32\_dag()}{pcap\_setfilter\_win32\_dag()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setfilter\+\_\+win32\+\_\+dag (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{optimize_8c_ad016c0b6c48c3af42f162f11c3b4f241}{install\+\_\+bpf\+\_\+program()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a010d1537b09bd8292b02f9e3b8fcbdb2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_add4b2f48894f31d7527e3b0526f60c45}\label{pcap-win32_8c_add4b2f48894f31d7527e3b0526f60c45}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setfilter\_win32\_npf@{pcap\_setfilter\_win32\_npf}}
+\index{pcap\_setfilter\_win32\_npf@{pcap\_setfilter\_win32\_npf}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setfilter\_win32\_npf()}{pcap\_setfilter\_win32\_npf()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setfilter\+\_\+win32\+\_\+npf (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_add4b2f48894f31d7527e3b0526f60c45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_ac079dbf25ec73c8cbcde587cbe4952aa}\label{pcap-win32_8c_ac079dbf25ec73c8cbcde587cbe4952aa}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setmintocopy\_win32@{pcap\_setmintocopy\_win32}}
+\index{pcap\_setmintocopy\_win32@{pcap\_setmintocopy\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setmintocopy\_win32()}{pcap\_setmintocopy\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setmintocopy\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ac079dbf25ec73c8cbcde587cbe4952aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_ad2b004dfc577aa81d029536f0f5be037}\label{pcap-win32_8c_ad2b004dfc577aa81d029536f0f5be037}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setmode\_win32@{pcap\_setmode\_win32}}
+\index{pcap\_setmode\_win32@{pcap\_setmode\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setmode\_win32()}{pcap\_setmode\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setmode\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ad2b004dfc577aa81d029536f0f5be037_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_ae919f33b37351c6d21625135b4d6dc80}\label{pcap-win32_8c_ae919f33b37351c6d21625135b4d6dc80}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_setnonblock\_win32@{pcap\_setnonblock\_win32}}
+\index{pcap\_setnonblock\_win32@{pcap\_setnonblock\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setnonblock\_win32()}{pcap\_setnonblock\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setnonblock\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{nonblock,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ae919f33b37351c6d21625135b4d6dc80_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_ab90afb51de998103419a432627e97cac}\label{pcap-win32_8c_ab90afb51de998103419a432627e97cac}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!pcap\_stats\_win32@{pcap\_stats\_win32}}
+\index{pcap\_stats\_win32@{pcap\_stats\_win32}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_stats\_win32()}{pcap\_stats\_win32()}}
+{\footnotesize\ttfamily static int pcap\+\_\+stats\+\_\+win32 (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{ps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_ab90afb51de998103419a432627e97cac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336}\label{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!wsockinit@{wsockinit}}
+\index{wsockinit@{wsockinit}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{wsockinit()}{wsockinit()}}
+{\footnotesize\ttfamily int wsockinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} , 以及 \mbox{\hyperlink{pcap-win32_8c_ac756b47f6915ff6514d3ef58791e41f2}{pcap\+\_\+activate\+\_\+win32()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-win32_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/win32.c,v 1.42 2008-\/05-\/21 22:15:25 gianluca Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pcap-win32_8c_a6905be171b814c5896fb7f52c51b9fad}\label{pcap-win32_8c_a6905be171b814c5896fb7f52c51b9fad}} 
+\index{pcap-\/win32.c@{pcap-\/win32.c}!g\_PcapCompileCriticalSection@{g\_PcapCompileCriticalSection}}
+\index{g\_PcapCompileCriticalSection@{g\_PcapCompileCriticalSection}!pcap-\/win32.c@{pcap-\/win32.c}}
+\doxysubsubsection{\texorpdfstring{g\_PcapCompileCriticalSection}{g\_PcapCompileCriticalSection}}
+{\footnotesize\ttfamily CRITICAL\+\_\+\+SECTION g\+\_\+\+Pcap\+Compile\+Critical\+Section}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-win32_8c_a07740f49cfeba65879cb0fb0017ea7b6}{Dll\+Main()}}.
+

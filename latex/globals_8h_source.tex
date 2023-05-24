@@ -1,0 +1,148 @@
+\hypertarget{globals_8h_source}{}\doxysection{globals.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$smu-\/mark\$ }}
+\DoxyCodeLine{3 \textcolor{comment}{ * \$name: globals.h\$ }}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$author: Salvatore Sanfilippo <antirez@invece.org>\$ }}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$copyright: Copyright (C) 1999 by Salvatore Sanfilippo\$ }}
+\DoxyCodeLine{6 \textcolor{comment}{ * \$license: This software is under GPL version 2 of license\$ }}
+\DoxyCodeLine{7 \textcolor{comment}{ * \$date: Fri Nov  5 11:55:47 MET 1999\$ }}
+\DoxyCodeLine{8 \textcolor{comment}{ * \$rev: 9\$ }}
+\DoxyCodeLine{9 \textcolor{comment}{ */} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* \$Id: globals.h,v 1.3 2004/06/18 09:53:11 antirez Exp \$ */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef \_GLOBALS\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define \_GLOBALS\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{extern} \textcolor{keywordtype}{float}}
+\DoxyCodeLine{17         rtt\_min,}
+\DoxyCodeLine{18         rtt\_max,}
+\DoxyCodeLine{19         rtt\_avg;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{22         tcp\_th\_flags,}
+\DoxyCodeLine{23         linkhdr\_size,}
+\DoxyCodeLine{24         h\_if\_mtu,}
+\DoxyCodeLine{25         virtual\_mtu,}
+\DoxyCodeLine{26         ip\_frag\_offset,}
+\DoxyCodeLine{27         signlen,}
+\DoxyCodeLine{28         lsr\_length,}
+\DoxyCodeLine{29         ssr\_length,}
+\DoxyCodeLine{30         ip\_tos,}
+\DoxyCodeLine{31         set\_seqnum,}
+\DoxyCodeLine{32         tcp\_seqnum,}
+\DoxyCodeLine{33         set\_ack,}
+\DoxyCodeLine{34         ip\_header\_length,}
+\DoxyCodeLine{35         tcp\_ack;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{38         data\_size;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}  opt\_debug,}
+\DoxyCodeLine{41         sockpacket,}
+\DoxyCodeLine{42         sockraw,}
+\DoxyCodeLine{43         sent\_pkt,}
+\DoxyCodeLine{44         recv\_pkt,}
+\DoxyCodeLine{45         out\_of\_sequence\_pkt,}
+\DoxyCodeLine{46         sending\_wait,}
+\DoxyCodeLine{47         opt\_rawipmode,}
+\DoxyCodeLine{48         opt\_icmpmode,}
+\DoxyCodeLine{49         opt\_udpmode,}
+\DoxyCodeLine{50         opt\_scanmode,}
+\DoxyCodeLine{51         opt\_listenmode,}
+\DoxyCodeLine{52         opt\_waitinusec,}
+\DoxyCodeLine{53         opt\_numeric,}
+\DoxyCodeLine{54         opt\_gethost,}
+\DoxyCodeLine{55         opt\_quiet,}
+\DoxyCodeLine{56         opt\_relid,}
+\DoxyCodeLine{57         opt\_fragment,}
+\DoxyCodeLine{58         opt\_df,}
+\DoxyCodeLine{59         opt\_mf,}
+\DoxyCodeLine{60         opt\_debug,}
+\DoxyCodeLine{61         opt\_verbose,}
+\DoxyCodeLine{62         opt\_winid\_order,}
+\DoxyCodeLine{63         opt\_keepstill,}
+\DoxyCodeLine{64         opt\_datafromfile,}
+\DoxyCodeLine{65         opt\_hexdump,}
+\DoxyCodeLine{66         opt\_contdump,}
+\DoxyCodeLine{67         opt\_sign,}
+\DoxyCodeLine{68         opt\_safe,}
+\DoxyCodeLine{69         opt\_end,}
+\DoxyCodeLine{70         opt\_traceroute,}
+\DoxyCodeLine{71         opt\_seqnum,}
+\DoxyCodeLine{72         opt\_incdport,}
+\DoxyCodeLine{73         opt\_force\_incdport,}
+\DoxyCodeLine{74         opt\_icmptype,}
+\DoxyCodeLine{75         opt\_icmpcode,}
+\DoxyCodeLine{76         opt\_rroute,}
+\DoxyCodeLine{77         opt\_tcpexitcode,}
+\DoxyCodeLine{78         opt\_badcksum,}
+\DoxyCodeLine{79         opt\_tr\_keep\_ttl,}
+\DoxyCodeLine{80         opt\_tcp\_timestamp,}
+\DoxyCodeLine{81         opt\_tr\_stop,}
+\DoxyCodeLine{82         opt\_tr\_no\_rtt,}
+\DoxyCodeLine{83         opt\_rand\_dest,}
+\DoxyCodeLine{84         opt\_rand\_source,}
+\DoxyCodeLine{85         opt\_lsrr,}
+\DoxyCodeLine{86         opt\_ssrr,}
+\DoxyCodeLine{87         opt\_beep,}
+\DoxyCodeLine{88         opt\_flood,}
+\DoxyCodeLine{89         tcp\_exitcode,}
+\DoxyCodeLine{90         src\_ttl,}
+\DoxyCodeLine{91         src\_id,}
+\DoxyCodeLine{92         base\_dst\_port,}
+\DoxyCodeLine{93         dst\_port,}
+\DoxyCodeLine{94         src\_port,}
+\DoxyCodeLine{95         initsport,}
+\DoxyCodeLine{96         sequence,}
+\DoxyCodeLine{97         src\_winsize,}
+\DoxyCodeLine{98         src\_thoff,}
+\DoxyCodeLine{99         count,}
+\DoxyCodeLine{100         ctrlzbind,}
+\DoxyCodeLine{101         delaytable\_index,}
+\DoxyCodeLine{102         eof\_reached,}
+\DoxyCodeLine{103         icmp\_ip\_version,}
+\DoxyCodeLine{104         icmp\_ip\_ihl,}
+\DoxyCodeLine{105         icmp\_ip\_tos,}
+\DoxyCodeLine{106         icmp\_ip\_tot\_len,}
+\DoxyCodeLine{107         icmp\_ip\_id,}
+\DoxyCodeLine{108         icmp\_ip\_srcport,}
+\DoxyCodeLine{109         icmp\_ip\_dstport,}
+\DoxyCodeLine{110         opt\_force\_icmp,}
+\DoxyCodeLine{111         icmp\_ip\_protocol,}
+\DoxyCodeLine{112         icmp\_cksum,}
+\DoxyCodeLine{113         raw\_ip\_protocol;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}    lsr[255],}
+\DoxyCodeLine{116             ssr[255];}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} ifname[1024],}
+\DoxyCodeLine{119         ifstraddr[1024],}
+\DoxyCodeLine{120         datafilename[1024],}
+\DoxyCodeLine{121         targetname[1024],}
+\DoxyCodeLine{122         targetstraddr[1024],}
+\DoxyCodeLine{123         spoofaddr[1024],}
+\DoxyCodeLine{124         icmp\_ip\_srcip[1024],}
+\DoxyCodeLine{125         icmp\_ip\_dstip[1024],}
+\DoxyCodeLine{126         icmp\_gwip[1024],}
+\DoxyCodeLine{127         sign[1024],}
+\DoxyCodeLine{128         rsign[1024],}
+\DoxyCodeLine{129         ip\_opt[40],}
+\DoxyCodeLine{130         ip\_optlen,}
+\DoxyCodeLine{131         *opt\_scanports;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \textcolor{keyword}{struct }sockaddr\_in icmp\_ip\_src, icmp\_ip\_dst, icmp\_gw, local, remote;}
+\DoxyCodeLine{134 \textcolor{keyword}{extern} \textcolor{keyword}{struct }itimerval usec\_delay;}
+\DoxyCodeLine{135 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keyword}{struct }\mbox{\hyperlink{structdelaytable__element}{delaytable\_element}} delaytable[TABLESIZE];}
+\DoxyCodeLine{136 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structhcmphdr}{hcmphdr}} *hcmphdr\_p;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#include <pcap.h>}}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} pcap\_t *pcapfp;}
+\DoxyCodeLine{140 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} errbuf[PCAP\_ERRBUF\_SIZE];}
+\DoxyCodeLine{141 \textcolor{keyword}{extern} \textcolor{keyword}{struct }pcap\_pkthdr hdr;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_GLOBALS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

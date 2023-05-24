@@ -1,0 +1,379 @@
+\hypertarget{gentables_8c}{}\doxysection{gentables.\+c 文件参考}
+\label{gentables_8c}\index{gentables.c@{gentables.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sbignum.\+h\char`\"{}}\newline
+gentables.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gentables_8c_a58fd0a150970f39c6ce5877a2c6e453e}{EFL}}~16 /$\ast$ elements for \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{gentables_8c_a10b9f1b2c515c3b7005117d0a6759877}{BT\+\_\+8\+BITBASE}}~256U
+\item 
+\#define \mbox{\hyperlink{gentables_8c_a0dea40655d51d7507304bb55791351df}{BT\+\_\+16\+BITBASE}}~65536U
+\item 
+\#define \mbox{\hyperlink{gentables_8c_a01d1d3502b54fe01b9baea8a19501388}{BT\+\_\+32\+BITBASE}}~4294967296U
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}{gen\+\_\+cset}} (int \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}})
+\item 
+static void \mbox{\hyperlink{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}{gen\+\_\+rcset}} (int \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}})
+\item 
+static void \mbox{\hyperlink{gentables_8c_a477f4d5497ac89307a6cdc068718e630}{gen\+\_\+bitstable}} (int \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}})
+\item 
+static void \mbox{\hyperlink{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}{gen\+\_\+basetable}} (int \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}})
+\item 
+static void \mbox{\hyperlink{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}{\+\_\+gen\+\_\+basetable}} (int bytes, double base)
+\item 
+static void \mbox{\hyperlink{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}{gen\+\_\+basepowtable}} (int \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}})
+\item 
+static void \mbox{\hyperlink{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}{\+\_\+gen\+\_\+basepowtable}} (int bytes, double base)
+\item 
+static unsigned long \mbox{\hyperlink{gentables_8c_a4eb757d3cab912b6e98790478448b324}{lexp}} (unsigned long b, int e)
+\item 
+static int \mbox{\hyperlink{gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8}{nbits}} (unsigned char x)
+\item 
+static double \mbox{\hyperlink{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb}{logbn}} (double base, double n)
+\item 
+int \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \mbox{\hyperlink{gentables_8c_ac17ddd6d46f440054b900a082f40929d}{cset}} = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{gentables_8c_a0dea40655d51d7507304bb55791351df}\label{gentables_8c_a0dea40655d51d7507304bb55791351df}} 
+\index{gentables.c@{gentables.c}!BT\_16BITBASE@{BT\_16BITBASE}}
+\index{BT\_16BITBASE@{BT\_16BITBASE}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{BT\_16BITBASE}{BT\_16BITBASE}}
+{\footnotesize\ttfamily \#define BT\+\_\+16\+BITBASE~65536U}
+
+\mbox{\Hypertarget{gentables_8c_a01d1d3502b54fe01b9baea8a19501388}\label{gentables_8c_a01d1d3502b54fe01b9baea8a19501388}} 
+\index{gentables.c@{gentables.c}!BT\_32BITBASE@{BT\_32BITBASE}}
+\index{BT\_32BITBASE@{BT\_32BITBASE}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{BT\_32BITBASE}{BT\_32BITBASE}}
+{\footnotesize\ttfamily \#define BT\+\_\+32\+BITBASE~4294967296U}
+
+\mbox{\Hypertarget{gentables_8c_a10b9f1b2c515c3b7005117d0a6759877}\label{gentables_8c_a10b9f1b2c515c3b7005117d0a6759877}} 
+\index{gentables.c@{gentables.c}!BT\_8BITBASE@{BT\_8BITBASE}}
+\index{BT\_8BITBASE@{BT\_8BITBASE}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{BT\_8BITBASE}{BT\_8BITBASE}}
+{\footnotesize\ttfamily \#define BT\+\_\+8\+BITBASE~256U}
+
+\mbox{\Hypertarget{gentables_8c_a58fd0a150970f39c6ce5877a2c6e453e}\label{gentables_8c_a58fd0a150970f39c6ce5877a2c6e453e}} 
+\index{gentables.c@{gentables.c}!EFL@{EFL}}
+\index{EFL@{EFL}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{EFL}{EFL}}
+{\footnotesize\ttfamily \#define EFL~16 /$\ast$ elements for \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} $\ast$/}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}\label{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}} 
+\index{gentables.c@{gentables.c}!\_gen\_basepowtable@{\_gen\_basepowtable}}
+\index{\_gen\_basepowtable@{\_gen\_basepowtable}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{\_gen\_basepowtable()}{\_gen\_basepowtable()}}
+{\footnotesize\ttfamily void \+\_\+gen\+\_\+basepowtable (\begin{DoxyParamCaption}\item[{int}]{bytes,  }\item[{double}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_a4eb757d3cab912b6e98790478448b324}{lexp()}}, \mbox{\hyperlink{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb}{logbn()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}{gen\+\_\+basepowtable()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}\label{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}} 
+\index{gentables.c@{gentables.c}!\_gen\_basetable@{\_gen\_basetable}}
+\index{\_gen\_basetable@{\_gen\_basetable}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{\_gen\_basetable()}{\_gen\_basetable()}}
+{\footnotesize\ttfamily void \+\_\+gen\+\_\+basetable (\begin{DoxyParamCaption}\item[{int}]{bytes,  }\item[{double}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb}{logbn()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}{gen\+\_\+basetable()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}\label{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}} 
+\index{gentables.c@{gentables.c}!gen\_basepowtable@{gen\_basepowtable}}
+\index{gen\_basepowtable@{gen\_basepowtable}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_basepowtable()}{gen\_basepowtable()}}
+{\footnotesize\ttfamily void gen\+\_\+basepowtable (\begin{DoxyParamCaption}\item[{int}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}{\+\_\+gen\+\_\+basepowtable()}}, \mbox{\hyperlink{gentables_8c_a0dea40655d51d7507304bb55791351df}{BT\+\_\+16\+BITBASE}}, \mbox{\hyperlink{gentables_8c_a01d1d3502b54fe01b9baea8a19501388}{BT\+\_\+32\+BITBASE}}, \mbox{\hyperlink{gentables_8c_a10b9f1b2c515c3b7005117d0a6759877}{BT\+\_\+8\+BITBASE}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}\label{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}} 
+\index{gentables.c@{gentables.c}!gen\_basetable@{gen\_basetable}}
+\index{gen\_basetable@{gen\_basetable}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_basetable()}{gen\_basetable()}}
+{\footnotesize\ttfamily void gen\+\_\+basetable (\begin{DoxyParamCaption}\item[{int}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}{\+\_\+gen\+\_\+basetable()}}, \mbox{\hyperlink{gentables_8c_a0dea40655d51d7507304bb55791351df}{BT\+\_\+16\+BITBASE}}, \mbox{\hyperlink{gentables_8c_a01d1d3502b54fe01b9baea8a19501388}{BT\+\_\+32\+BITBASE}}, \mbox{\hyperlink{gentables_8c_a10b9f1b2c515c3b7005117d0a6759877}{BT\+\_\+8\+BITBASE}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_a477f4d5497ac89307a6cdc068718e630}\label{gentables_8c_a477f4d5497ac89307a6cdc068718e630}} 
+\index{gentables.c@{gentables.c}!gen\_bitstable@{gen\_bitstable}}
+\index{gen\_bitstable@{gen\_bitstable}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_bitstable()}{gen\_bitstable()}}
+{\footnotesize\ttfamily void gen\+\_\+bitstable (\begin{DoxyParamCaption}\item[{int}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_a58fd0a150970f39c6ce5877a2c6e453e}{EFL}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8}{nbits()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{gentables_8c_a477f4d5497ac89307a6cdc068718e630_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{gentables_8c_a477f4d5497ac89307a6cdc068718e630_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}\label{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}} 
+\index{gentables.c@{gentables.c}!gen\_cset@{gen\_cset}}
+\index{gen\_cset@{gen\_cset}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_cset()}{gen\_cset()}}
+{\footnotesize\ttfamily void gen\+\_\+cset (\begin{DoxyParamCaption}\item[{int}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_ac17ddd6d46f440054b900a082f40929d}{cset}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}\label{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}} 
+\index{gentables.c@{gentables.c}!gen\_rcset@{gen\_rcset}}
+\index{gen\_rcset@{gen\_rcset}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_rcset()}{gen\_rcset()}}
+{\footnotesize\ttfamily void gen\+\_\+rcset (\begin{DoxyParamCaption}\item[{int}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_ac17ddd6d46f440054b900a082f40929d}{cset}}, \mbox{\hyperlink{gentables_8c_a58fd0a150970f39c6ce5877a2c6e453e}{EFL}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_a4eb757d3cab912b6e98790478448b324}\label{gentables_8c_a4eb757d3cab912b6e98790478448b324}} 
+\index{gentables.c@{gentables.c}!lexp@{lexp}}
+\index{lexp@{lexp}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{lexp()}{lexp()}}
+{\footnotesize\ttfamily unsigned long lexp (\begin{DoxyParamCaption}\item[{unsigned long}]{b,  }\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}{\+\_\+gen\+\_\+basepowtable()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_a4eb757d3cab912b6e98790478448b324_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb}\label{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb}} 
+\index{gentables.c@{gentables.c}!logbn@{logbn}}
+\index{logbn@{logbn}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{logbn()}{logbn()}}
+{\footnotesize\ttfamily double logbn (\begin{DoxyParamCaption}\item[{double}]{base,  }\item[{double}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}{\+\_\+gen\+\_\+basepowtable()}} , 以及 \mbox{\hyperlink{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}{\+\_\+gen\+\_\+basetable()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{gentables.c@{gentables.c}!main@{main}}
+\index{main@{main}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}{gen\+\_\+basepowtable()}}, \mbox{\hyperlink{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}{gen\+\_\+basetable()}}, \mbox{\hyperlink{gentables_8c_a477f4d5497ac89307a6cdc068718e630}{gen\+\_\+bitstable()}}, \mbox{\hyperlink{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}{gen\+\_\+cset()}}, \mbox{\hyperlink{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}{gen\+\_\+rcset()}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8}\label{gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8}} 
+\index{gentables.c@{gentables.c}!nbits@{nbits}}
+\index{nbits@{nbits}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{nbits()}{nbits()}}
+{\footnotesize\ttfamily int nbits (\begin{DoxyParamCaption}\item[{unsigned char}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a477f4d5497ac89307a6cdc068718e630}{gen\+\_\+bitstable()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{gentables_8c_ac17ddd6d46f440054b900a082f40929d}\label{gentables_8c_ac17ddd6d46f440054b900a082f40929d}} 
+\index{gentables.c@{gentables.c}!cset@{cset}}
+\index{cset@{cset}!gentables.c@{gentables.c}}
+\doxysubsubsection{\texorpdfstring{cset}{cset}}
+{\footnotesize\ttfamily char$\ast$ cset = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}{gen\+\_\+cset()}} , 以及 \mbox{\hyperlink{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}{gen\+\_\+rcset()}}.
+

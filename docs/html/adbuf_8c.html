@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: adbuf.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">adbuf.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="adbuf_8h_source.html">adbuf.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+adbuf.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c__incl.png" border="0" usemap="#aadbuf_8c" alt=""/></div>
+<map name="aadbuf_8c" id="aadbuf_8c">
+<area shape="rect" title=" " alt="" coords="186,5,251,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,67,107"/>
+<area shape="rect" title=" " alt="" coords="229,155,320,181"/>
+<area shape="rect" title=" " alt="" coords="142,80,207,107"/>
+<area shape="rect" title=" " alt="" coords="232,80,296,107"/>
+<area shape="rect" title=" " alt="" coords="320,80,389,107"/>
+<area shape="rect" href="adbuf_8h.html" title=" " alt="" coords="414,80,479,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a3cec3aa21a2172dee79fa698065036f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a3cec3aa21a2172dee79fa698065036f1">ADBUF_ITOABUFSZ</a>&#160;&#160;&#160;32 /* ok for 64bit integers and more */</td></tr>
+<tr class="separator:a3cec3aa21a2172dee79fa698065036f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba019fc5fd858d4d04ba0169ff7ad9b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#aba019fc5fd858d4d04ba0169ff7ad9b0">ADBUF_PRINTF_BUFSZ</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:aba019fc5fd858d4d04ba0169ff7ad9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a4dc971542b7ecf05b4bb6aa9ce4730a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6">adbuf_init</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b)</td></tr>
+<tr class="separator:a4dc971542b7ecf05b4bb6aa9ce4730a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19302597670685055c4d1d27a427a713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a19302597670685055c4d1d27a427a713">adbuf_free</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b)</td></tr>
+<tr class="separator:a19302597670685055c4d1d27a427a713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959344d986042c77accfa5d31a6b85bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b)</td></tr>
+<tr class="separator:a959344d986042c77accfa5d31a6b85bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b3dab2f05bd8d830fed69810bd8dc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, void *data, size_t len)</td></tr>
+<tr class="separator:a61b3dab2f05bd8d830fed69810bd8dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fb35a5091978805949a39509e1b5bba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a7fb35a5091978805949a39509e1b5bba">adbuf_addchar</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, int c)</td></tr>
+<tr class="separator:a7fb35a5091978805949a39509e1b5bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4cbc487a1a0a1c7b937ed6e9a395c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, char *string)</td></tr>
+<tr class="separator:a6e4cbc487a1a0a1c7b937ed6e9a395c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c741bd520f800beb2375f5527e6d1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a45c741bd520f800beb2375f5527e6d1f">adbuf_cat</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *a, struct <a class="el" href="structadbuf.html">adbuf</a> *b)</td></tr>
+<tr class="separator:a45c741bd520f800beb2375f5527e6d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb71faa3048386b70ca4c8c88c92c37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a6bb71faa3048386b70ca4c8c88c92c37">adbuf_cut</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, size_t <a class="el" href="main_8c.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>)</td></tr>
+<tr class="separator:a6bb71faa3048386b70ca4c8c88c92c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71253da01bd44b96cfedd12c4dbf20f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6">adbuf_ltrim</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, size_t <a class="el" href="main_8c.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>)</td></tr>
+<tr class="separator:a71253da01bd44b96cfedd12c4dbf20f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a4ff9ac84f22002a84a537d01601d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#ac3a4ff9ac84f22002a84a537d01601d0">adbuf_rtrim</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, size_t <a class="el" href="main_8c.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>)</td></tr>
+<tr class="separator:ac3a4ff9ac84f22002a84a537d01601d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307f51a6ab10313ca2c545802bede9df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a307f51a6ab10313ca2c545802bede9df">adbuf_add_long</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, long l)</td></tr>
+<tr class="separator:a307f51a6ab10313ca2c545802bede9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c1eee265cd01fbbe44852ba0281934"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a73c1eee265cd01fbbe44852ba0281934">adbuf_add_ulong</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *b, unsigned long l)</td></tr>
+<tr class="separator:a73c1eee265cd01fbbe44852ba0281934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43997359e0663c857fcaa7b5972f4c6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a43997359e0663c857fcaa7b5972f4c6c">adbuf_clone</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *src, struct <a class="el" href="structadbuf.html">adbuf</a> *<a class="el" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a>)</td></tr>
+<tr class="separator:a43997359e0663c857fcaa7b5972f4c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d6dfb73888a1aff2f0992f43fe36bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adbuf_8c.html#a08d6dfb73888a1aff2f0992f43fe36bf">adbuf_printf</a> (struct <a class="el" href="structadbuf.html">adbuf</a> *<a class="el" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a>, const char *fmt,...)</td></tr>
+<tr class="separator:a08d6dfb73888a1aff2f0992f43fe36bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a3cec3aa21a2172dee79fa698065036f1" name="a3cec3aa21a2172dee79fa698065036f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cec3aa21a2172dee79fa698065036f1">&#9670;&nbsp;</a></span>ADBUF_ITOABUFSZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADBUF_ITOABUFSZ&#160;&#160;&#160;32 /* ok for 64bit integers and more */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba019fc5fd858d4d04ba0169ff7ad9b0" name="aba019fc5fd858d4d04ba0169ff7ad9b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba019fc5fd858d4d04ba0169ff7ad9b0">&#9670;&nbsp;</a></span>ADBUF_PRINTF_BUFSZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADBUF_PRINTF_BUFSZ&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a61b3dab2f05bd8d830fed69810bd8dc7" name="a61b3dab2f05bd8d830fed69810bd8dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b3dab2f05bd8d830fed69810bd8dc7">&#9670;&nbsp;</a></span>adbuf_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_add </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8h.html#adfba5d692940d98fd97ab6ba91f7144f">ADBUF_INCR</a>, <a class="el" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">adbuf_ptr</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a>, <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>, <a class="el" href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a> , 以及 <a class="el" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">adbuf::size</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#a7fb35a5091978805949a39509e1b5bba">adbuf_addchar()</a>, <a class="el" href="adbuf_8c.html#a45c741bd520f800beb2375f5527e6d1f">adbuf_cat()</a>, <a class="el" href="adbuf_8c.html#a43997359e0663c857fcaa7b5972f4c6c">adbuf_clone()</a>, <a class="el" href="adbuf_8c.html#a08d6dfb73888a1aff2f0992f43fe36bf">adbuf_printf()</a> , 以及 <a class="el" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7_icgraph.png" border="0" usemap="#aadbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7_icgraph" id="aadbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7_icgraph">
+<area shape="rect" title=" " alt="" coords="337,157,420,184"/>
+<area shape="rect" href="adbuf_8c.html#a7fb35a5091978805949a39509e1b5bba" title=" " alt="" coords="183,31,289,57"/>
+<area shape="rect" href="adbuf_8c.html#a45c741bd520f800beb2375f5527e6d1f" title=" " alt="" coords="197,107,275,133"/>
+<area shape="rect" href="adbuf_8c.html#a43997359e0663c857fcaa7b5972f4c6c" title=" " alt="" coords="190,157,282,184"/>
+<area shape="rect" href="adbuf_8c.html#a08d6dfb73888a1aff2f0992f43fe36bf" title=" " alt="" coords="191,208,281,235"/>
+<area shape="rect" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6" title=" " alt="" coords="189,461,283,488"/>
+<area shape="rect" href="rapd_8c.html#afa4953932c173f84864169674dc1c298" title=" " alt="" coords="13,5,127,32"/>
+<area shape="rect" href="rapd_8c.html#a5e5001c9bb1e92b7ebc6d5fd2fc5cc07" title=" " alt="" coords="18,56,122,83"/>
+<area shape="rect" href="rapd_8c.html#a56b59ff18e1d699e8740e43477bda583" title=" " alt="" coords="17,107,123,133"/>
+<area shape="rect" href="rapd_8c.html#aedfd78f246469ae0d54dc40444be01b0" title=" " alt="" coords="20,157,120,184"/>
+<area shape="rect" href="rapd_8c.html#a45d10527dac7e1230157c084bac3fe36" title=" " alt="" coords="5,208,135,235"/>
+<area shape="rect" href="rapd_8c.html#a9fa4f68a58bf672f7bde52b586dd5b0f" title=" " alt="" coords="25,259,115,285"/>
+<area shape="rect" href="rapd_8c.html#ad69959640d8fae0edf5c45d11a791af3" title=" " alt="" coords="17,309,123,336"/>
+<area shape="rect" href="rapd_8c.html#aa14e6020b5e018413374191971aa4dec" title=" " alt="" coords="21,360,119,387"/>
+<area shape="rect" href="rapd_8c.html#a78cd12df0ebfe55f254af36348207b65" title=" " alt="" coords="20,411,120,437"/>
+<area shape="rect" href="adbuf_8c.html#a307f51a6ab10313ca2c545802bede9df" title=" " alt="" coords="13,461,127,488"/>
+<area shape="rect" href="adbuf_8c.html#a73c1eee265cd01fbbe44852ba0281934" title=" " alt="" coords="10,512,130,539"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a307f51a6ab10313ca2c545802bede9df" name="a307f51a6ab10313ca2c545802bede9df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307f51a6ab10313ca2c545802bede9df">&#9670;&nbsp;</a></span>adbuf_add_long()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_add_long </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a3cec3aa21a2172dee79fa698065036f1">ADBUF_ITOABUFSZ</a> , 以及 <a class="el" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a307f51a6ab10313ca2c545802bede9df_cgraph.png" border="0" usemap="#aadbuf_8c_a307f51a6ab10313ca2c545802bede9df_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a307f51a6ab10313ca2c545802bede9df_cgraph" id="aadbuf_8c_a307f51a6ab10313ca2c545802bede9df_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6" title=" " alt="" coords="167,5,261,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="309,5,392,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a73c1eee265cd01fbbe44852ba0281934" name="a73c1eee265cd01fbbe44852ba0281934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c1eee265cd01fbbe44852ba0281934">&#9670;&nbsp;</a></span>adbuf_add_ulong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_add_ulong </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a3cec3aa21a2172dee79fa698065036f1">ADBUF_ITOABUFSZ</a> , 以及 <a class="el" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a73c1eee265cd01fbbe44852ba0281934_cgraph.png" border="0" usemap="#aadbuf_8c_a73c1eee265cd01fbbe44852ba0281934_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a73c1eee265cd01fbbe44852ba0281934_cgraph" id="aadbuf_8c_a73c1eee265cd01fbbe44852ba0281934_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" href="adbuf_8c.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6" title=" " alt="" coords="173,5,268,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="316,5,399,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7fb35a5091978805949a39509e1b5bba" name="a7fb35a5091978805949a39509e1b5bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb35a5091978805949a39509e1b5bba">&#9670;&nbsp;</a></span>adbuf_addchar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_addchar </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add()</a>, <a class="el" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">adbuf_ptr</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a>, <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a> , 以及 <a class="el" href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a7fb35a5091978805949a39509e1b5bba_cgraph.png" border="0" usemap="#aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_cgraph" id="aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="160,5,243,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a7fb35a5091978805949a39509e1b5bba_icgraph.png" border="0" usemap="#aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_icgraph" id="aadbuf_8c_a7fb35a5091978805949a39509e1b5bba_icgraph">
+<area shape="rect" title=" " alt="" coords="168,5,275,32"/>
+<area shape="rect" href="rapd_8c.html#afa4953932c173f84864169674dc1c298" title=" " alt="" coords="5,5,120,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45c741bd520f800beb2375f5527e6d1f" name="a45c741bd520f800beb2375f5527e6d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c741bd520f800beb2375f5527e6d1f">&#9670;&nbsp;</a></span>adbuf_cat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_cat </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add()</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a> , 以及 <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a45c741bd520f800beb2375f5527e6d1f_cgraph.png" border="0" usemap="#aadbuf_8c_a45c741bd520f800beb2375f5527e6d1f_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a45c741bd520f800beb2375f5527e6d1f_cgraph" id="aadbuf_8c_a45c741bd520f800beb2375f5527e6d1f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="132,5,215,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43997359e0663c857fcaa7b5972f4c6c" name="a43997359e0663c857fcaa7b5972f4c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43997359e0663c857fcaa7b5972f4c6c">&#9670;&nbsp;</a></span>adbuf_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_clone </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add()</a>, <a class="el" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6">adbuf_init()</a>, <a class="el" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">adbuf_ptr</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a> , 以及 <a class="el" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a43997359e0663c857fcaa7b5972f4c6c_cgraph.png" border="0" usemap="#aadbuf_8c_a43997359e0663c857fcaa7b5972f4c6c_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a43997359e0663c857fcaa7b5972f4c6c_cgraph" id="aadbuf_8c_a43997359e0663c857fcaa7b5972f4c6c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,97,57"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="145,5,228,32"/>
+<area shape="rect" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6" title=" " alt="" coords="147,56,226,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6bb71faa3048386b70ca4c8c88c92c37" name="a6bb71faa3048386b70ca4c8c88c92c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb71faa3048386b70ca4c8c88c92c37">&#9670;&nbsp;</a></span>adbuf_cut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_cut </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">adbuf_ptr</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a>, <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>, <a class="el" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>, <a class="el" href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a> , 以及 <a class="el" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">adbuf::size</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#ac3a4ff9ac84f22002a84a537d01601d0">adbuf_rtrim()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a6bb71faa3048386b70ca4c8c88c92c37_icgraph.png" border="0" usemap="#aadbuf_8c_a6bb71faa3048386b70ca4c8c88c92c37_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a6bb71faa3048386b70ca4c8c88c92c37_icgraph" id="aadbuf_8c_a6bb71faa3048386b70ca4c8c88c92c37_icgraph">
+<area shape="rect" title=" " alt="" coords="300,81,379,108"/>
+<area shape="rect" href="adbuf_8c.html#ac3a4ff9ac84f22002a84a537d01601d0" title=" " alt="" coords="165,81,252,108"/>
+<area shape="rect" href="rapd_8c.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" href="rapd_8c.html#a56b59ff18e1d699e8740e43477bda583" title=" " alt="" coords="8,56,115,83"/>
+<area shape="rect" href="rapd_8c.html#ad69959640d8fae0edf5c45d11a791af3" title=" " alt="" coords="8,107,115,133"/>
+<area shape="rect" href="rapd_8c.html#aa14e6020b5e018413374191971aa4dec" title=" " alt="" coords="13,157,110,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19302597670685055c4d1d27a427a713" name="a19302597670685055c4d1d27a427a713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19302597670685055c4d1d27a427a713">&#9670;&nbsp;</a></span>adbuf_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adbuf_free </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset()</a> , 以及 <a class="el" href="ars_8h.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f">ars_d_from_ars()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a19302597670685055c4d1d27a427a713_icgraph.png" border="0" usemap="#aadbuf_8c_a19302597670685055c4d1d27a427a713_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a19302597670685055c4d1d27a427a713_icgraph" id="aadbuf_8c_a19302597670685055c4d1d27a427a713_icgraph">
+<area shape="rect" title=" " alt="" coords="300,31,383,57"/>
+<area shape="rect" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc" title=" " alt="" coords="151,5,241,32"/>
+<area shape="rect" href="rapd_8c.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f" title=" " alt="" coords="140,56,252,83"/>
+<area shape="rect" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6" title=" " alt="" coords="5,5,92,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4dc971542b7ecf05b4bb6aa9ce4730a6" name="a4dc971542b7ecf05b4bb6aa9ce4730a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc971542b7ecf05b4bb6aa9ce4730a6">&#9670;&nbsp;</a></span>adbuf_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>, <a class="el" href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a> , 以及 <a class="el" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">adbuf::size</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#a43997359e0663c857fcaa7b5972f4c6c">adbuf_clone()</a>, <a class="el" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset()</a> , 以及 <a class="el" href="ars_8h.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f">ars_d_from_ars()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6_icgraph.png" border="0" usemap="#aadbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6_icgraph" id="aadbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6_icgraph">
+<area shape="rect" title=" " alt="" coords="300,56,379,83"/>
+<area shape="rect" href="adbuf_8c.html#a43997359e0663c857fcaa7b5972f4c6c" title=" " alt="" coords="150,5,242,32"/>
+<area shape="rect" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc" title=" " alt="" coords="151,56,241,83"/>
+<area shape="rect" href="rapd_8c.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f" title=" " alt="" coords="140,107,252,133"/>
+<area shape="rect" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6" title=" " alt="" coords="5,56,92,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a71253da01bd44b96cfedd12c4dbf20f6" name="a71253da01bd44b96cfedd12c4dbf20f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71253da01bd44b96cfedd12c4dbf20f6">&#9670;&nbsp;</a></span>adbuf_ltrim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_ltrim </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">adbuf_ptr</a>, <a class="el" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset()</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a>, <a class="el" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a>, <a class="el" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>, <a class="el" href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a> , 以及 <a class="el" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">adbuf::size</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a71253da01bd44b96cfedd12c4dbf20f6_cgraph.png" border="0" usemap="#aadbuf_8c_a71253da01bd44b96cfedd12c4dbf20f6_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a71253da01bd44b96cfedd12c4dbf20f6_cgraph" id="aadbuf_8c_a71253da01bd44b96cfedd12c4dbf20f6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,92,57"/>
+<area shape="rect" href="adbuf_8c.html#a959344d986042c77accfa5d31a6b85bc" title=" " alt="" coords="140,31,231,57"/>
+<area shape="rect" href="adbuf_8c.html#a19302597670685055c4d1d27a427a713" title=" " alt="" coords="279,5,361,32"/>
+<area shape="rect" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6" title=" " alt="" coords="281,56,359,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08d6dfb73888a1aff2f0992f43fe36bf" name="a08d6dfb73888a1aff2f0992f43fe36bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d6dfb73888a1aff2f0992f43fe36bf">&#9670;&nbsp;</a></span>adbuf_printf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_printf </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add()</a>, <a class="el" href="adbuf_8c.html#aba019fc5fd858d4d04ba0169ff7ad9b0">ADBUF_PRINTF_BUFSZ</a>, <a class="el" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a> , 以及 <a class="el" href="pcap-int_8h.html#a00ba2ca988495904efc418acbf0627d7">vsnprintf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8h.html#a5e5001c9bb1e92b7ebc6d5fd2fc5cc07">ars_rapd_data()</a>, <a class="el" href="ars_8h.html#a56b59ff18e1d699e8740e43477bda583">ars_rapd_icmp()</a>, <a class="el" href="ars_8h.html#aedfd78f246469ae0d54dc40444be01b0">ars_rapd_igrp()</a>, <a class="el" href="ars_8h.html#a45d10527dac7e1230157c084bac3fe36">ars_rapd_igrpentry()</a>, <a class="el" href="ars_8h.html#a9fa4f68a58bf672f7bde52b586dd5b0f">ars_rapd_ip()</a>, <a class="el" href="ars_8h.html#ad69959640d8fae0edf5c45d11a791af3">ars_rapd_ipopt()</a>, <a class="el" href="ars_8h.html#aa14e6020b5e018413374191971aa4dec">ars_rapd_tcp()</a>, <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a> , 以及 <a class="el" href="ars_8h.html#a78cd12df0ebfe55f254af36348207b65">ars_rapd_udp()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_cgraph.png" border="0" usemap="#aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_cgraph" id="aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,96,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="144,5,227,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_icgraph.png" border="0" usemap="#aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_icgraph" id="aadbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf_icgraph">
+<area shape="rect" title=" " alt="" coords="183,208,273,235"/>
+<area shape="rect" href="rapd_8c.html#a5e5001c9bb1e92b7ebc6d5fd2fc5cc07" title=" " alt="" coords="18,5,122,32"/>
+<area shape="rect" href="rapd_8c.html#a56b59ff18e1d699e8740e43477bda583" title=" " alt="" coords="17,56,123,83"/>
+<area shape="rect" href="rapd_8c.html#aedfd78f246469ae0d54dc40444be01b0" title=" " alt="" coords="20,107,120,133"/>
+<area shape="rect" href="rapd_8c.html#a45d10527dac7e1230157c084bac3fe36" title=" " alt="" coords="5,157,135,184"/>
+<area shape="rect" href="rapd_8c.html#a9fa4f68a58bf672f7bde52b586dd5b0f" title=" " alt="" coords="25,208,115,235"/>
+<area shape="rect" href="rapd_8c.html#ad69959640d8fae0edf5c45d11a791af3" title=" " alt="" coords="17,259,123,285"/>
+<area shape="rect" href="rapd_8c.html#aa14e6020b5e018413374191971aa4dec" title=" " alt="" coords="21,309,119,336"/>
+<area shape="rect" href="rapd_8c.html#afa4953932c173f84864169674dc1c298" title=" " alt="" coords="13,360,127,387"/>
+<area shape="rect" href="rapd_8c.html#a78cd12df0ebfe55f254af36348207b65" title=" " alt="" coords="20,411,120,437"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a959344d986042c77accfa5d31a6b85bc" name="a959344d986042c77accfa5d31a6b85bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959344d986042c77accfa5d31a6b85bc">&#9670;&nbsp;</a></span>adbuf_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_reset </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a19302597670685055c4d1d27a427a713">adbuf_free()</a> , 以及 <a class="el" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6">adbuf_init()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6">adbuf_ltrim()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a959344d986042c77accfa5d31a6b85bc_cgraph.png" border="0" usemap="#aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_cgraph" id="aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,96,57"/>
+<area shape="rect" href="adbuf_8c.html#a19302597670685055c4d1d27a427a713" title=" " alt="" coords="144,5,227,32"/>
+<area shape="rect" href="adbuf_8c.html#a4dc971542b7ecf05b4bb6aa9ce4730a6" title=" " alt="" coords="146,56,225,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a959344d986042c77accfa5d31a6b85bc_icgraph.png" border="0" usemap="#aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_icgraph" id="aadbuf_8c_a959344d986042c77accfa5d31a6b85bc_icgraph">
+<area shape="rect" title=" " alt="" coords="140,5,231,32"/>
+<area shape="rect" href="adbuf_8c.html#a71253da01bd44b96cfedd12c4dbf20f6" title=" " alt="" coords="5,5,92,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac3a4ff9ac84f22002a84a537d01601d0" name="ac3a4ff9ac84f22002a84a537d01601d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a4ff9ac84f22002a84a537d01601d0">&#9670;&nbsp;</a></span>adbuf_rtrim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_rtrim </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a6bb71faa3048386b70ca4c8c88c92c37">adbuf_cut()</a>, <a class="el" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">adbuf_used</a> , 以及 <a class="el" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8h.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f">ars_d_from_ars()</a>, <a class="el" href="ars_8h.html#a56b59ff18e1d699e8740e43477bda583">ars_rapd_icmp()</a>, <a class="el" href="ars_8h.html#ad69959640d8fae0edf5c45d11a791af3">ars_rapd_ipopt()</a> , 以及 <a class="el" href="ars_8h.html#aa14e6020b5e018413374191971aa4dec">ars_rapd_tcp()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_cgraph.png" border="0" usemap="#aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_cgraph" alt=""/></div>
+<map name="aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_cgraph" id="aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" href="adbuf_8c.html#a6bb71faa3048386b70ca4c8c88c92c37" title=" " alt="" coords="140,5,219,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_icgraph.png" border="0" usemap="#aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_icgraph" alt=""/></div>
+<map name="aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_icgraph" id="aadbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0_icgraph">
+<area shape="rect" title=" " alt="" coords="165,81,252,108"/>
+<area shape="rect" href="rapd_8c.html#ad37d3d2b7c7c3f89c8b88e6a4d683d2f" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" href="rapd_8c.html#a56b59ff18e1d699e8740e43477bda583" title=" " alt="" coords="8,56,115,83"/>
+<area shape="rect" href="rapd_8c.html#ad69959640d8fae0edf5c45d11a791af3" title=" " alt="" coords="8,107,115,133"/>
+<area shape="rect" href="rapd_8c.html#aa14e6020b5e018413374191971aa4dec" title=" " alt="" coords="13,157,110,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e4cbc487a1a0a1c7b937ed6e9a395c6" name="a6e4cbc487a1a0a1c7b937ed6e9a395c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e4cbc487a1a0a1c7b937ed6e9a395c6">&#9670;&nbsp;</a></span>adbuf_strcat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int adbuf_strcat </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structadbuf.html">adbuf</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="adbuf_8c.html#a307f51a6ab10313ca2c545802bede9df">adbuf_add_long()</a> , 以及 <a class="el" href="adbuf_8c.html#a73c1eee265cd01fbbe44852ba0281934">adbuf_add_ulong()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_cgraph.png" border="0" usemap="#aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_cgraph" alt=""/></div>
+<map name="aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_cgraph" id="aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,100,32"/>
+<area shape="rect" href="adbuf_8c.html#a61b3dab2f05bd8d830fed69810bd8dc7" title=" " alt="" coords="148,5,231,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_icgraph.png" border="0" usemap="#aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_icgraph" alt=""/></div>
+<map name="aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_icgraph" id="aadbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6_icgraph">
+<area shape="rect" title=" " alt="" coords="173,31,268,57"/>
+<area shape="rect" href="adbuf_8c.html#a307f51a6ab10313ca2c545802bede9df" title=" " alt="" coords="9,5,122,32"/>
+<area shape="rect" href="adbuf_8c.html#a73c1eee265cd01fbbe44852ba0281934" title=" " alt="" coords="5,56,125,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,42 @@
+\hypertarget{sf-pcap_8h_source}{}\doxysection{sf-\/pcap.h}
+\label{sf-pcap_8h_source}\index{libpcap-\/1.1.1/sf-\/pcap.h@{libpcap-\/1.1.1/sf-\/pcap.h}}
+\mbox{\hyperlink{sf-pcap_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1993, 1994, 1995, 1996, 1997}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that: (1) source code distributions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * retain the above copyright notice and this paragraph in its entirety, (2)}}
+\DoxyCodeLine{8 \textcolor{comment}{ * distributions including binary code include the above copyright notice and}}
+\DoxyCodeLine{9 \textcolor{comment}{ * this paragraph in its entirety in the documentation or other materials}}
+\DoxyCodeLine{10 \textcolor{comment}{ * provided with the distribution, and (3) all advertising materials mentioning}}
+\DoxyCodeLine{11 \textcolor{comment}{ * features or use of this software display the following acknowledgement:}}
+\DoxyCodeLine{12 \textcolor{comment}{ * ``This product includes software developed by the University of California,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Lawrence Berkeley Laboratory and its contributors.'' Neither the name of}}
+\DoxyCodeLine{14 \textcolor{comment}{ * the University nor the names of its contributors may be used to endorse}}
+\DoxyCodeLine{15 \textcolor{comment}{ * or promote products derived from this software without specific prior}}
+\DoxyCodeLine{16 \textcolor{comment}{ * written permission.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED}}
+\DoxyCodeLine{18 \textcolor{comment}{ * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF}}
+\DoxyCodeLine{19 \textcolor{comment}{ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * sf-\/pcap.h -\/ libpcap-\/file-\/format-\/specific routines}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  Extraction/creation by Jeffrey Mogul, DECWRL}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  Modified by Steve McCanne, LBL.}}
+\DoxyCodeLine{24 \textcolor{comment}{ *}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Used to save the received packet headers, after filtering, to}}
+\DoxyCodeLine{26 \textcolor{comment}{ * a file, and then read them later.}}
+\DoxyCodeLine{27 \textcolor{comment}{ * The first record in the file contains saved values for the machine}}
+\DoxyCodeLine{28 \textcolor{comment}{ * dependent values so we can print the dump file on any architecture.}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef sf\_pcap\_h}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define sf\_pcap\_h}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{sf-pcap_8h_a23c06571a66dec01799f825954093c8c}{pcap\_check\_header}}(pcap\_t *, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}}, FILE *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

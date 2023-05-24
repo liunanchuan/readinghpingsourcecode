@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: gentables.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">gentables.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sbignum_8h_source.html">sbignum.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+gentables.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c__incl.png" border="0" usemap="#agentables_8c" alt=""/></div>
+<map name="agentables_8c" id="agentables_8c">
+<area shape="rect" title=" " alt="" coords="123,5,213,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,67,107"/>
+<area shape="rect" title=" " alt="" coords="91,80,157,107"/>
+<area shape="rect" title=" " alt="" coords="181,80,243,107"/>
+<area shape="rect" href="sbignum_8h.html" title=" " alt="" coords="268,80,351,107"/>
+<area shape="rect" title=" " alt="" coords="209,155,300,181"/>
+<area shape="rect" href="fixtypes_8h.html" title=" " alt="" coords="325,155,403,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a58fd0a150970f39c6ce5877a2c6e453e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a58fd0a150970f39c6ce5877a2c6e453e">EFL</a>&#160;&#160;&#160;16	/* elements for <a class="el" href="getservent_8c.html#a5b625afb8853050432e347f405fd6cc3">line</a> */</td></tr>
+<tr class="separator:a58fd0a150970f39c6ce5877a2c6e453e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b9f1b2c515c3b7005117d0a6759877"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a10b9f1b2c515c3b7005117d0a6759877">BT_8BITBASE</a>&#160;&#160;&#160;256U</td></tr>
+<tr class="separator:a10b9f1b2c515c3b7005117d0a6759877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dea40655d51d7507304bb55791351df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a0dea40655d51d7507304bb55791351df">BT_16BITBASE</a>&#160;&#160;&#160;65536U</td></tr>
+<tr class="separator:a0dea40655d51d7507304bb55791351df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d1d3502b54fe01b9baea8a19501388"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a01d1d3502b54fe01b9baea8a19501388">BT_32BITBASE</a>&#160;&#160;&#160;4294967296U</td></tr>
+<tr class="separator:a01d1d3502b54fe01b9baea8a19501388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a6ce509e4c9c5c813f5578dc2165040ee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a6ce509e4c9c5c813f5578dc2165040ee">gen_cset</a> (int <a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>)</td></tr>
+<tr class="separator:a6ce509e4c9c5c813f5578dc2165040ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafe16e6ec688117742cb6c20b4ff75e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#afafe16e6ec688117742cb6c20b4ff75e">gen_rcset</a> (int <a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>)</td></tr>
+<tr class="separator:afafe16e6ec688117742cb6c20b4ff75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477f4d5497ac89307a6cdc068718e630"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630">gen_bitstable</a> (int <a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>)</td></tr>
+<tr class="separator:a477f4d5497ac89307a6cdc068718e630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe4875a8d44d5181ef71d9ee1a8a3712"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712">gen_basetable</a> (int <a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>)</td></tr>
+<tr class="separator:afe4875a8d44d5181ef71d9ee1a8a3712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24a7f029e6cd75f45410045bd6248c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1">_gen_basetable</a> (int bytes, double base)</td></tr>
+<tr class="separator:ad24a7f029e6cd75f45410045bd6248c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc34adab61f7ad978ea4ff589ccc5e6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f">gen_basepowtable</a> (int <a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>)</td></tr>
+<tr class="separator:acc34adab61f7ad978ea4ff589ccc5e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f98bd5bf2f9caccac80d8c60f5b3ef2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2">_gen_basepowtable</a> (int bytes, double base)</td></tr>
+<tr class="separator:a7f98bd5bf2f9caccac80d8c60f5b3ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb757d3cab912b6e98790478448b324"><td class="memItemLeft" align="right" valign="top">static unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a4eb757d3cab912b6e98790478448b324">lexp</a> (unsigned long b, int e)</td></tr>
+<tr class="separator:a4eb757d3cab912b6e98790478448b324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439ce064c45f5b2fcb49bc1ea95247f8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a439ce064c45f5b2fcb49bc1ea95247f8">nbits</a> (unsigned char x)</td></tr>
+<tr class="separator:a439ce064c45f5b2fcb49bc1ea95247f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0f08517e0383b1b7e43c8cf4cfeacb"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb">logbn</a> (double base, double n)</td></tr>
+<tr class="separator:acd0f08517e0383b1b7e43c8cf4cfeacb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ac17ddd6d46f440054b900a082f40929d"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gentables_8c.html#ac17ddd6d46f440054b900a082f40929d">cset</a> = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</td></tr>
+<tr class="separator:ac17ddd6d46f440054b900a082f40929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a0dea40655d51d7507304bb55791351df" name="a0dea40655d51d7507304bb55791351df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dea40655d51d7507304bb55791351df">&#9670;&nbsp;</a></span>BT_16BITBASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_16BITBASE&#160;&#160;&#160;65536U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01d1d3502b54fe01b9baea8a19501388" name="a01d1d3502b54fe01b9baea8a19501388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d1d3502b54fe01b9baea8a19501388">&#9670;&nbsp;</a></span>BT_32BITBASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_32BITBASE&#160;&#160;&#160;4294967296U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10b9f1b2c515c3b7005117d0a6759877" name="a10b9f1b2c515c3b7005117d0a6759877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b9f1b2c515c3b7005117d0a6759877">&#9670;&nbsp;</a></span>BT_8BITBASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_8BITBASE&#160;&#160;&#160;256U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58fd0a150970f39c6ce5877a2c6e453e" name="a58fd0a150970f39c6ce5877a2c6e453e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58fd0a150970f39c6ce5877a2c6e453e">&#9670;&nbsp;</a></span>EFL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EFL&#160;&#160;&#160;16	/* elements for <a class="el" href="getservent_8c.html#a5b625afb8853050432e347f405fd6cc3">line</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a7f98bd5bf2f9caccac80d8c60f5b3ef2" name="a7f98bd5bf2f9caccac80d8c60f5b3ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f98bd5bf2f9caccac80d8c60f5b3ef2">&#9670;&nbsp;</a></span>_gen_basepowtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _gen_basepowtable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#a4eb757d3cab912b6e98790478448b324">lexp()</a>, <a class="el" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb">logbn()</a>, <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a> , 以及 <a class="el" href="sbignum_8h.html#a0eafeac4b3d0388455b24603ed99a952">SBN_MAXBASE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f">gen_basepowtable()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_cgraph.png" border="0" usemap="#agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_cgraph" alt=""/></div>
+<map name="agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_cgraph" id="agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,143,83"/>
+<area shape="rect" href="gentables_8c.html#a4eb757d3cab912b6e98790478448b324" title=" " alt="" coords="194,5,241,32"/>
+<area shape="rect" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb" title=" " alt="" coords="191,56,244,83"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="192,107,243,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_icgraph.png" border="0" usemap="#agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_icgraph" alt=""/></div>
+<map name="agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_icgraph" id="agentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2_icgraph">
+<area shape="rect" title=" " alt="" coords="283,5,420,32"/>
+<area shape="rect" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f" title=" " alt="" coords="104,5,235,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad24a7f029e6cd75f45410045bd6248c1" name="ad24a7f029e6cd75f45410045bd6248c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24a7f029e6cd75f45410045bd6248c1">&#9670;&nbsp;</a></span>_gen_basetable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _gen_basetable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb">logbn()</a>, <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a> , 以及 <a class="el" href="sbignum_8h.html#a0eafeac4b3d0388455b24603ed99a952">SBN_MAXBASE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712">gen_basetable()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_ad24a7f029e6cd75f45410045bd6248c1_cgraph.png" border="0" usemap="#agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_cgraph" alt=""/></div>
+<map name="agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_cgraph" id="agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,119,57"/>
+<area shape="rect" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb" title=" " alt="" coords="167,5,220,32"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="168,56,219,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_ad24a7f029e6cd75f45410045bd6248c1_icgraph.png" border="0" usemap="#agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_icgraph" alt=""/></div>
+<map name="agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_icgraph" id="agentables_8c_ad24a7f029e6cd75f45410045bd6248c1_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,372,32"/>
+<area shape="rect" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712" title=" " alt="" coords="104,5,211,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc34adab61f7ad978ea4ff589ccc5e6f" name="acc34adab61f7ad978ea4ff589ccc5e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc34adab61f7ad978ea4ff589ccc5e6f">&#9670;&nbsp;</a></span>gen_basepowtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gen_basepowtable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2">_gen_basepowtable()</a>, <a class="el" href="gentables_8c.html#a0dea40655d51d7507304bb55791351df">BT_16BITBASE</a>, <a class="el" href="gentables_8c.html#a01d1d3502b54fe01b9baea8a19501388">BT_32BITBASE</a>, <a class="el" href="gentables_8c.html#a10b9f1b2c515c3b7005117d0a6759877">BT_8BITBASE</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>, <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a> , 以及 <a class="el" href="sbignum_8h.html#a0eafeac4b3d0388455b24603ed99a952">SBN_MAXBASE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_cgraph.png" border="0" usemap="#agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_cgraph" alt=""/></div>
+<map name="agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_cgraph" id="agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,136,108"/>
+<area shape="rect" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2" title=" " alt="" coords="184,56,321,83"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="371,107,421,133"/>
+<area shape="rect" href="gentables_8c.html#a4eb757d3cab912b6e98790478448b324" title=" " alt="" coords="373,5,419,32"/>
+<area shape="rect" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb" title=" " alt="" coords="369,56,423,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_icgraph.png" border="0" usemap="#agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_icgraph" alt=""/></div>
+<map name="agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_icgraph" id="agentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,235,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe4875a8d44d5181ef71d9ee1a8a3712" name="afe4875a8d44d5181ef71d9ee1a8a3712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe4875a8d44d5181ef71d9ee1a8a3712">&#9670;&nbsp;</a></span>gen_basetable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gen_basetable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1">_gen_basetable()</a>, <a class="el" href="gentables_8c.html#a0dea40655d51d7507304bb55791351df">BT_16BITBASE</a>, <a class="el" href="gentables_8c.html#a01d1d3502b54fe01b9baea8a19501388">BT_32BITBASE</a>, <a class="el" href="gentables_8c.html#a10b9f1b2c515c3b7005117d0a6759877">BT_8BITBASE</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>, <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a> , 以及 <a class="el" href="sbignum_8h.html#a0eafeac4b3d0388455b24603ed99a952">SBN_MAXBASE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_cgraph.png" border="0" usemap="#agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_cgraph" alt=""/></div>
+<map name="agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_cgraph" id="agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,112,57"/>
+<area shape="rect" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1" title=" " alt="" coords="160,5,273,32"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="323,56,373,83"/>
+<area shape="rect" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb" title=" " alt="" coords="321,5,375,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_icgraph.png" border="0" usemap="#agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_icgraph" alt=""/></div>
+<map name="agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_icgraph" id="agentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,211,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a477f4d5497ac89307a6cdc068718e630" name="a477f4d5497ac89307a6cdc068718e630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477f4d5497ac89307a6cdc068718e630">&#9670;&nbsp;</a></span>gen_bitstable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gen_bitstable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#a58fd0a150970f39c6ce5877a2c6e453e">EFL</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>, <a class="el" href="gentables_8c.html#a439ce064c45f5b2fcb49bc1ea95247f8">nbits()</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a477f4d5497ac89307a6cdc068718e630_cgraph.png" border="0" usemap="#agentables_8c_a477f4d5497ac89307a6cdc068718e630_cgraph" alt=""/></div>
+<map name="agentables_8c_a477f4d5497ac89307a6cdc068718e630_cgraph" id="agentables_8c_a477f4d5497ac89307a6cdc068718e630_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,104,57"/>
+<area shape="rect" href="gentables_8c.html#a439ce064c45f5b2fcb49bc1ea95247f8" title=" " alt="" coords="152,5,203,32"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="152,56,203,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a477f4d5497ac89307a6cdc068718e630_icgraph.png" border="0" usemap="#agentables_8c_a477f4d5497ac89307a6cdc068718e630_icgraph" alt=""/></div>
+<map name="agentables_8c_a477f4d5497ac89307a6cdc068718e630_icgraph" id="agentables_8c_a477f4d5497ac89307a6cdc068718e630_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,203,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ce509e4c9c5c813f5578dc2165040ee" name="a6ce509e4c9c5c813f5578dc2165040ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce509e4c9c5c813f5578dc2165040ee">&#9670;&nbsp;</a></span>gen_cset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gen_cset </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#ac17ddd6d46f440054b900a082f40929d">cset</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_cgraph.png" border="0" usemap="#agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_cgraph" alt=""/></div>
+<map name="agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_cgraph" id="agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="128,5,179,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_icgraph.png" border="0" usemap="#agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_icgraph" alt=""/></div>
+<map name="agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_icgraph" id="agentables_8c_a6ce509e4c9c5c813f5578dc2165040ee_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,179,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afafe16e6ec688117742cb6c20b4ff75e" name="afafe16e6ec688117742cb6c20b4ff75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afafe16e6ec688117742cb6c20b4ff75e">&#9670;&nbsp;</a></span>gen_rcset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gen_rcset </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#ac17ddd6d46f440054b900a082f40929d">cset</a>, <a class="el" href="gentables_8c.html#a58fd0a150970f39c6ce5877a2c6e453e">EFL</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_afafe16e6ec688117742cb6c20b4ff75e_cgraph.png" border="0" usemap="#agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_cgraph" alt=""/></div>
+<map name="agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_cgraph" id="agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="132,5,183,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_afafe16e6ec688117742cb6c20b4ff75e_icgraph.png" border="0" usemap="#agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_icgraph" alt=""/></div>
+<map name="agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_icgraph" id="agentables_8c_afafe16e6ec688117742cb6c20b4ff75e_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,183,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4eb757d3cab912b6e98790478448b324" name="a4eb757d3cab912b6e98790478448b324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb757d3cab912b6e98790478448b324">&#9670;&nbsp;</a></span>lexp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lexp </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2">_gen_basepowtable()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a4eb757d3cab912b6e98790478448b324_icgraph.png" border="0" usemap="#agentables_8c_a4eb757d3cab912b6e98790478448b324_icgraph" alt=""/></div>
+<map name="agentables_8c_a4eb757d3cab912b6e98790478448b324_icgraph" id="agentables_8c_a4eb757d3cab912b6e98790478448b324_icgraph">
+<area shape="rect" title=" " alt="" coords="468,5,515,32"/>
+<area shape="rect" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2" title=" " alt="" coords="283,5,420,32"/>
+<area shape="rect" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f" title=" " alt="" coords="104,5,235,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd0f08517e0383b1b7e43c8cf4cfeacb" name="acd0f08517e0383b1b7e43c8cf4cfeacb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd0f08517e0383b1b7e43c8cf4cfeacb">&#9670;&nbsp;</a></span>logbn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double logbn </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2">_gen_basepowtable()</a> , 以及 <a class="el" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1">_gen_basetable()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb_icgraph.png" border="0" usemap="#agentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb_icgraph" alt=""/></div>
+<map name="agentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb_icgraph" id="agentables_8c_acd0f08517e0383b1b7e43c8cf4cfeacb_icgraph">
+<area shape="rect" title=" " alt="" coords="468,31,521,57"/>
+<area shape="rect" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2" title=" " alt="" coords="283,5,420,32"/>
+<area shape="rect" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1" title=" " alt="" coords="295,56,408,83"/>
+<area shape="rect" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f" title=" " alt="" coords="104,5,235,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,56,57"/>
+<area shape="rect" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712" title=" " alt="" coords="116,56,223,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f">gen_basepowtable()</a>, <a class="el" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712">gen_basetable()</a>, <a class="el" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630">gen_bitstable()</a>, <a class="el" href="gentables_8c.html#a6ce509e4c9c5c813f5578dc2165040ee">gen_cset()</a>, <a class="el" href="gentables_8c.html#afafe16e6ec688117742cb6c20b4ff75e">gen_rcset()</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a> , 以及 <a class="el" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6">printf()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#agentables_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="agentables_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="agentables_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" title=" " alt="" coords="5,233,56,260"/>
+<area shape="rect" href="gentables_8c.html#acc34adab61f7ad978ea4ff589ccc5e6f" title=" " alt="" coords="104,56,235,83"/>
+<area shape="rect" href="os-sunos4_8h.html#ad3275c2da349019932874fbf31fd91c6" title=" " alt="" coords="469,183,520,209"/>
+<area shape="rect" href="gentables_8c.html#afe4875a8d44d5181ef71d9ee1a8a3712" title=" " alt="" coords="116,157,223,184"/>
+<area shape="rect" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630" title=" " alt="" coords="120,259,219,285"/>
+<area shape="rect" href="gentables_8c.html#a6ce509e4c9c5c813f5578dc2165040ee" title=" " alt="" coords="314,360,389,387"/>
+<area shape="rect" href="gentables_8c.html#afafe16e6ec688117742cb6c20b4ff75e" title=" " alt="" coords="130,397,209,424"/>
+<area shape="rect" href="gentables_8c.html#a7f98bd5bf2f9caccac80d8c60f5b3ef2" title=" " alt="" coords="283,5,420,32"/>
+<area shape="rect" href="gentables_8c.html#a4eb757d3cab912b6e98790478448b324" title=" " alt="" coords="471,5,518,32"/>
+<area shape="rect" href="gentables_8c.html#acd0f08517e0383b1b7e43c8cf4cfeacb" title=" " alt="" coords="468,81,521,108"/>
+<area shape="rect" href="gentables_8c.html#ad24a7f029e6cd75f45410045bd6248c1" title=" " alt="" coords="295,107,408,133"/>
+<area shape="rect" href="gentables_8c.html#a439ce064c45f5b2fcb49bc1ea95247f8" title=" " alt="" coords="326,309,377,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a439ce064c45f5b2fcb49bc1ea95247f8" name="a439ce064c45f5b2fcb49bc1ea95247f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439ce064c45f5b2fcb49bc1ea95247f8">&#9670;&nbsp;</a></span>nbits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nbits </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630">gen_bitstable()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="gentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8_icgraph.png" border="0" usemap="#agentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8_icgraph" alt=""/></div>
+<map name="agentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8_icgraph" id="agentables_8c_a439ce064c45f5b2fcb49bc1ea95247f8_icgraph">
+<area shape="rect" title=" " alt="" coords="251,5,301,32"/>
+<area shape="rect" href="gentables_8c.html#a477f4d5497ac89307a6cdc068718e630" title=" " alt="" coords="104,5,203,32"/>
+<area shape="rect" href="gentables_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ac17ddd6d46f440054b900a082f40929d" name="ac17ddd6d46f440054b900a082f40929d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17ddd6d46f440054b900a082f40929d">&#9670;&nbsp;</a></span>cset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* cset = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="gentables_8c.html#a6ce509e4c9c5c813f5578dc2165040ee">gen_cset()</a> , 以及 <a class="el" href="gentables_8c.html#afafe16e6ec688117742cb6c20b4ff75e">gen_rcset()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

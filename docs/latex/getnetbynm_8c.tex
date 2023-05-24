@@ -1,0 +1,65 @@
+\hypertarget{getnetbynm_8c}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Src/getnetbynm.c 文件参考}
+\label{getnetbynm_8c}\index{libpcap-\/1.1.1/Win32/Src/getnetbynm.c@{libpcap-\/1.1.1/Win32/Src/getnetbynm.c}}
+{\ttfamily \#include \char`\"{}inetprivate.\+h\char`\"{}}\newline
+getnetbynm.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetbynm_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+struct netent $\ast$ \mbox{\hyperlink{getnetbynm_8c_a34ad0dc5368b67dbdb492cf09badc2f4}{getnetbyname}} (const char $\ast$name)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{getnetbynm_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{getnetbynm_8c_a34ad0dc5368b67dbdb492cf09badc2f4}\label{getnetbynm_8c_a34ad0dc5368b67dbdb492cf09badc2f4}} 
+\index{getnetbynm.c@{getnetbynm.c}!getnetbyname@{getnetbyname}}
+\index{getnetbyname@{getnetbyname}!getnetbynm.c@{getnetbynm.c}}
+\doxysubsubsection{\texorpdfstring{getnetbyname()}{getnetbyname()}}
+{\footnotesize\ttfamily struct netent $\ast$ getnetbyname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetbynm_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}, \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent()}}, \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708}{pcap\+\_\+nametonetaddr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetbynm_8c_a34ad0dc5368b67dbdb492cf09badc2f4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{getnetbynm_8c_a34ad0dc5368b67dbdb492cf09badc2f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{getnetbynm_8c_a3c34a2622df4d072db2c7a2bb24e1866}\label{getnetbynm_8c_a3c34a2622df4d072db2c7a2bb24e1866}} 
+\index{getnetbynm.c@{getnetbynm.c}!\_net\_stayopen@{\_net\_stayopen}}
+\index{\_net\_stayopen@{\_net\_stayopen}!getnetbynm.c@{getnetbynm.c}}
+\doxysubsubsection{\texorpdfstring{\_net\_stayopen}{\_net\_stayopen}}
+{\footnotesize\ttfamily int \+\_\+net\+\_\+stayopen\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent()}}, \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+

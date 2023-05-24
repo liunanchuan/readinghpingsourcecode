@@ -1,0 +1,406 @@
+\hypertarget{pcap_2pcap_8h_source}{}\doxysection{pcap.\+h}
+\label{pcap_2pcap_8h_source}\index{libpcap-\/1.1.1/pcap/pcap.h@{libpcap-\/1.1.1/pcap/pcap.h}}
+\mbox{\hyperlink{pcap_2pcap_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/*-\/ Mode: c; tab-\/width: 8; indent-\/tabs-\/mode: 1; c-\/basic-\/offset: 8; -\/*-\/ */}}
+\DoxyCodeLine{2 \textcolor{comment}{/*}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (c) 1993, 1994, 1995, 1996, 1997}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{7 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{8 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{9 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{10 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{11 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{13 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{14 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{15 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  This product includes software developed by the Computer Systems}}
+\DoxyCodeLine{17 \textcolor{comment}{ *  Engineering Group at Lawrence Berkeley Laboratory.}}
+\DoxyCodeLine{18 \textcolor{comment}{ * 4. Neither the name of the University nor of the Laboratory may be used}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    to endorse or promote products derived from this software without}}
+\DoxyCodeLine{20 \textcolor{comment}{ *    specific prior written permission.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{23 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{26 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{27 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{28 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{29 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{30 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{31 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{32 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/pcap.h,v 1.15 2008-\/10-\/06 15:27:32 gianluca Exp \$ (LBL)}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef lib\_pcap\_pcap\_h}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define lib\_pcap\_pcap\_h}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if defined(WIN32)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{  \#include <\mbox{\hyperlink{pcap-stdinc_8h}{pcap-\/stdinc.h}}>}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#elif defined(MSDOS)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{  \#include <sys/types.h>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  \#include <sys/socket.h>}  \textcolor{comment}{/* u\_int, u\_char etc. */}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* UN*X */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{  \#include <sys/types.h>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{  \#include <sys/time.h>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WIN32/MSDOS/UN*X */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifndef PCAP\_DONT\_INCLUDE\_PCAP\_BPF\_H}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{bpf_8h}{pcap/bpf.h}}>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{57 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{/*}}
+\DoxyCodeLine{61 \textcolor{comment}{ * Version number of the current version of the pcap file format.}}
+\DoxyCodeLine{62 \textcolor{comment}{ *}}
+\DoxyCodeLine{63 \textcolor{comment}{ * NOTE: this is *NOT* the version number of the libpcap library.}}
+\DoxyCodeLine{64 \textcolor{comment}{ * To fetch the version information for the version of libpcap}}
+\DoxyCodeLine{65 \textcolor{comment}{ * you're using, use pcap\_lib\_version().}}
+\DoxyCodeLine{66 \textcolor{comment}{ */}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define PCAP\_VERSION\_MAJOR 2}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define PCAP\_VERSION\_MINOR 4}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define PCAP\_ERRBUF\_SIZE 256}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{/*}}
+\DoxyCodeLine{73 \textcolor{comment}{ * Compatibility for systems that have a bpf.h that}}
+\DoxyCodeLine{74 \textcolor{comment}{ * predates the bpf typedefs for 64-\/bit support.}}
+\DoxyCodeLine{75 \textcolor{comment}{ */}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#if BPF\_RELEASE -\/ 0 < 199406}}
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\_int32}};}
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} u\_int \mbox{\hyperlink{pcap_2pcap_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}};}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap}{pcap}} pcap\_t;}
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }pcap\_dumper \mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}};}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__if}{pcap\_if}} pcap\_if\_t;}
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__addr}{pcap\_addr}} pcap\_addr\_t;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{/*}}
+\DoxyCodeLine{87 \textcolor{comment}{ * The first record in the file contains saved values for some}}
+\DoxyCodeLine{88 \textcolor{comment}{ * of the flags used in the printout phases of tcpdump.}}
+\DoxyCodeLine{89 \textcolor{comment}{ * Many fields here are 32 bit ints so compilers won't insert unwanted}}
+\DoxyCodeLine{90 \textcolor{comment}{ * padding; these files need to be interchangeable across architectures.}}
+\DoxyCodeLine{91 \textcolor{comment}{ *}}
+\DoxyCodeLine{92 \textcolor{comment}{ * Do not change the layout of this structure, in any way (this includes}}
+\DoxyCodeLine{93 \textcolor{comment}{ * changes that only affect the length of fields in this structure).}}
+\DoxyCodeLine{94 \textcolor{comment}{ *}}
+\DoxyCodeLine{95 \textcolor{comment}{ * Also, do not change the interpretation of any of the members of this}}
+\DoxyCodeLine{96 \textcolor{comment}{ * structure, in any way (this includes using values other than}}
+\DoxyCodeLine{97 \textcolor{comment}{ * LINKTYPE\_ values, as defined in "{}savefile.c"{}, in the "{}linktype"{}}}
+\DoxyCodeLine{98 \textcolor{comment}{ * field).}}
+\DoxyCodeLine{99 \textcolor{comment}{ *}}
+\DoxyCodeLine{100 \textcolor{comment}{ * Instead:}}
+\DoxyCodeLine{101 \textcolor{comment}{ *}}
+\DoxyCodeLine{102 \textcolor{comment}{ *  introduce a new structure for the new format, if the layout}}
+\DoxyCodeLine{103 \textcolor{comment}{ *  of the structure changed;}}
+\DoxyCodeLine{104 \textcolor{comment}{ *}}
+\DoxyCodeLine{105 \textcolor{comment}{ *  send mail to "{}tcpdump-\/workers@lists.tcpdump.org"{}, requesting}}
+\DoxyCodeLine{106 \textcolor{comment}{ *  a new magic number for your new capture file format, and, when}}
+\DoxyCodeLine{107 \textcolor{comment}{ *  you get the new magic number, put it in "{}savefile.c"{};}}
+\DoxyCodeLine{108 \textcolor{comment}{ *}}
+\DoxyCodeLine{109 \textcolor{comment}{ *  use that magic number for save files with the changed file}}
+\DoxyCodeLine{110 \textcolor{comment}{ *  header;}}
+\DoxyCodeLine{111 \textcolor{comment}{ *}}
+\DoxyCodeLine{112 \textcolor{comment}{ *  make the code in "{}savefile.c"{} capable of reading files with}}
+\DoxyCodeLine{113 \textcolor{comment}{ *  the old file header as well as files with the new file header}}
+\DoxyCodeLine{114 \textcolor{comment}{ *  (using the magic number to determine the header format).}}
+\DoxyCodeLine{115 \textcolor{comment}{ *}}
+\DoxyCodeLine{116 \textcolor{comment}{ * Then supply the changes as a patch at}}
+\DoxyCodeLine{117 \textcolor{comment}{ *}}
+\DoxyCodeLine{118 \textcolor{comment}{ *  http://sourceforge.net/projects/libpcap/}}
+\DoxyCodeLine{119 \textcolor{comment}{ *}}
+\DoxyCodeLine{120 \textcolor{comment}{ * so that future versions of libpcap and programs that use it (such as}}
+\DoxyCodeLine{121 \textcolor{comment}{ * tcpdump) will be able to read your new capture file format.}}
+\DoxyCodeLine{122 \textcolor{comment}{ */}}
+\DoxyCodeLine{123 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__file__header}{pcap\_file\_header}} \{}
+\DoxyCodeLine{124     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__file__header_a18b75bcc7dcee1412b74b57bb238cf3d}{magic}};}
+\DoxyCodeLine{125     u\_short \mbox{\hyperlink{structpcap__file__header_a571fada6e8ffbb02ad47e64f0f721d4a}{version\_major}};}
+\DoxyCodeLine{126     u\_short \mbox{\hyperlink{structpcap__file__header_a82971bc0da75fef683f826bd48050307}{version\_minor}};}
+\DoxyCodeLine{127     \mbox{\hyperlink{bpf_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\_int32}} \mbox{\hyperlink{structpcap__file__header_ae729a1ba12145c96acbe2bb6310bc7e1}{thiszone}};    \textcolor{comment}{/* gmt to local correction */}}
+\DoxyCodeLine{128     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__file__header_a209ec264363632ccd21b412c93d2881a}{sigfigs}};  \textcolor{comment}{/* accuracy of timestamps */}}
+\DoxyCodeLine{129     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__file__header_aa73496b51e5edb630420e4044792c897}{snaplen}};  \textcolor{comment}{/* max length saved portion of each pkt */}}
+\DoxyCodeLine{130     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__file__header_a1c54dd90a08b2c232f2f204bfaa54496}{linktype}};    \textcolor{comment}{/* data link type (LINKTYPE\_*) */}}
+\DoxyCodeLine{131 \};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{comment}{/*}}
+\DoxyCodeLine{134 \textcolor{comment}{ * Macros for the value returned by pcap\_datalink\_ext().}}
+\DoxyCodeLine{135 \textcolor{comment}{ * }}
+\DoxyCodeLine{136 \textcolor{comment}{ * If LT\_FCS\_LENGTH\_PRESENT(x) is true, the LT\_FCS\_LENGTH(x) macro}}
+\DoxyCodeLine{137 \textcolor{comment}{ * gives the FCS length of packets in the capture.}}
+\DoxyCodeLine{138 \textcolor{comment}{ */}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define LT\_FCS\_LENGTH\_PRESENT(x)    ((x) \& 0x04000000)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define LT\_FCS\_LENGTH(x)        (((x) \& 0xF0000000) >> 28)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define LT\_FCS\_DATALINK\_EXT(x)      ((((x) \& 0xF) << 28) | 0x04000000)}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{144        \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129a4d36c07e0efd243506643fd9f2b9c49b}{PCAP\_D\_INOUT}} = 0,}
+\DoxyCodeLine{145        \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129a1c28a2a1f3ae4fdb513a9366839aff55}{PCAP\_D\_IN}},}
+\DoxyCodeLine{146        \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129a8cc7b681aedeec49c201d03eee97a959}{PCAP\_D\_OUT}}}
+\DoxyCodeLine{147 \} \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\_direction\_t}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{comment}{/*}}
+\DoxyCodeLine{150 \textcolor{comment}{ * Generic per-\/packet information, as supplied by libpcap.}}
+\DoxyCodeLine{151 \textcolor{comment}{ *}}
+\DoxyCodeLine{152 \textcolor{comment}{ * The time stamp can and should be a "{}struct timeval"{}, regardless of}}
+\DoxyCodeLine{153 \textcolor{comment}{ * whether your system supports 32-\/bit tv\_sec in "{}struct timeval"{},}}
+\DoxyCodeLine{154 \textcolor{comment}{ * 64-\/bit tv\_sec in "{}struct timeval"{}, or both if it supports both 32-\/bit}}
+\DoxyCodeLine{155 \textcolor{comment}{ * and 64-\/bit applications.  The on-\/disk format of savefiles uses 32-\/bit}}
+\DoxyCodeLine{156 \textcolor{comment}{ * tv\_sec (and tv\_usec); this structure is irrelevant to that.  32-\/bit}}
+\DoxyCodeLine{157 \textcolor{comment}{ * and 64-\/bit versions of libpcap, even if they're on the same platform,}}
+\DoxyCodeLine{158 \textcolor{comment}{ * should supply the appropriate version of "{}struct timeval"{}, even if}}
+\DoxyCodeLine{159 \textcolor{comment}{ * that's not what the underlying packet capture mechanism supplies.}}
+\DoxyCodeLine{160 \textcolor{comment}{ */}}
+\DoxyCodeLine{161 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} \{}
+\DoxyCodeLine{162     \textcolor{keyword}{struct }timeval \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{ts}};    \textcolor{comment}{/* time stamp */}}
+\DoxyCodeLine{163     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{caplen}};    \textcolor{comment}{/* length of portion present */}}
+\DoxyCodeLine{164     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{len}};  \textcolor{comment}{/* length this packet (off wire) */}}
+\DoxyCodeLine{165 \};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{/*}}
+\DoxyCodeLine{168 \textcolor{comment}{ * As returned by the pcap\_stats()}}
+\DoxyCodeLine{169 \textcolor{comment}{ */}}
+\DoxyCodeLine{170 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__stat}{pcap\_stat}} \{}
+\DoxyCodeLine{171     u\_int \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{ps\_recv}};       \textcolor{comment}{/* number of packets received */}}
+\DoxyCodeLine{172     u\_int \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{ps\_drop}};       \textcolor{comment}{/* number of packets dropped */}}
+\DoxyCodeLine{173     u\_int \mbox{\hyperlink{structpcap__stat_abc51be1ec5423e462bde5eac5a9b7c56}{ps\_ifdrop}};   \textcolor{comment}{/* drops by interface -\/-\/ only supported on some platforms */}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#ifdef WIN32}}
+\DoxyCodeLine{175     u\_int bs\_capt;      \textcolor{comment}{/* number of packets that reach the application */}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WIN32 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{177 \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#ifdef MSDOS}}
+\DoxyCodeLine{180 \textcolor{comment}{/*}}
+\DoxyCodeLine{181 \textcolor{comment}{ * As returned by the pcap\_stats\_ex()}}
+\DoxyCodeLine{182 \textcolor{comment}{ */}}
+\DoxyCodeLine{183 \textcolor{keyword}{struct }pcap\_stat\_ex \{}
+\DoxyCodeLine{184        u\_long  rx\_packets;        \textcolor{comment}{/* total packets received       */}}
+\DoxyCodeLine{185        u\_long  tx\_packets;        \textcolor{comment}{/* total packets transmitted    */}}
+\DoxyCodeLine{186        u\_long  rx\_bytes;          \textcolor{comment}{/* total bytes received         */}}
+\DoxyCodeLine{187        u\_long  tx\_bytes;          \textcolor{comment}{/* total bytes transmitted      */}}
+\DoxyCodeLine{188        u\_long  rx\_errors;         \textcolor{comment}{/* bad packets received         */}}
+\DoxyCodeLine{189        u\_long  tx\_errors;         \textcolor{comment}{/* packet transmit problems     */}}
+\DoxyCodeLine{190        u\_long  rx\_dropped;        \textcolor{comment}{/* no space in Rx buffers       */}}
+\DoxyCodeLine{191        u\_long  tx\_dropped;        \textcolor{comment}{/* no space available for Tx    */}}
+\DoxyCodeLine{192        u\_long  multicast;         \textcolor{comment}{/* multicast packets received   */}}
+\DoxyCodeLine{193        u\_long  collisions;}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195        \textcolor{comment}{/* detailed rx\_errors: */}}
+\DoxyCodeLine{196        u\_long  rx\_length\_errors;}
+\DoxyCodeLine{197        u\_long  rx\_over\_errors;    \textcolor{comment}{/* receiver ring buff overflow  */}}
+\DoxyCodeLine{198        u\_long  rx\_crc\_errors;     \textcolor{comment}{/* recv'd pkt with crc error    */}}
+\DoxyCodeLine{199        u\_long  rx\_frame\_errors;   \textcolor{comment}{/* recv'd frame alignment error */}}
+\DoxyCodeLine{200        u\_long  rx\_fifo\_errors;    \textcolor{comment}{/* recv'r fifo overrun          */}}
+\DoxyCodeLine{201        u\_long  rx\_missed\_errors;  \textcolor{comment}{/* recv'r missed packet         */}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203        \textcolor{comment}{/* detailed tx\_errors */}}
+\DoxyCodeLine{204        u\_long  tx\_aborted\_errors;}
+\DoxyCodeLine{205        u\_long  tx\_carrier\_errors;}
+\DoxyCodeLine{206        u\_long  tx\_fifo\_errors;}
+\DoxyCodeLine{207        u\_long  tx\_heartbeat\_errors;}
+\DoxyCodeLine{208        u\_long  tx\_window\_errors;}
+\DoxyCodeLine{209      \};}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{comment}{/*}}
+\DoxyCodeLine{213 \textcolor{comment}{ * Item in a list of interfaces.}}
+\DoxyCodeLine{214 \textcolor{comment}{ */}}
+\DoxyCodeLine{215 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__if}{pcap\_if}} \{}
+\DoxyCodeLine{216     \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__if}{pcap\_if}} *\mbox{\hyperlink{structpcap__if_a81508e6e4e41ca4235c8d6b51913c536}{next}};}
+\DoxyCodeLine{217     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structpcap__if_a5ac083a645d964373f022d03df4849c8}{name}};     \textcolor{comment}{/* name to hand to "{}pcap\_open\_live()"{} */}}
+\DoxyCodeLine{218     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structpcap__if_a8444d6e0dfe2bbab0b5e7b24308f1559}{description}};   \textcolor{comment}{/* textual description of interface, or NULL */}}
+\DoxyCodeLine{219     \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__addr}{pcap\_addr}} *\mbox{\hyperlink{structpcap__if_a3910004677550db6d9b09792ba3e2cca}{addresses}};}
+\DoxyCodeLine{220     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structpcap__if_a6d3e759f20f2114eec6dd63d68351ac6}{flags}};  \textcolor{comment}{/* PCAP\_IF\_ interface flags */}}
+\DoxyCodeLine{221 \};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define PCAP\_IF\_LOOPBACK    0x00000001  }\textcolor{comment}{/* interface is loopback */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{/*}}
+\DoxyCodeLine{226 \textcolor{comment}{ * Representation of an interface address.}}
+\DoxyCodeLine{227 \textcolor{comment}{ */}}
+\DoxyCodeLine{228 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__addr}{pcap\_addr}} \{}
+\DoxyCodeLine{229     \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__addr}{pcap\_addr}} *\mbox{\hyperlink{structpcap__addr_ab151e8e96bdb23ae8dd8d644de561999}{next}};}
+\DoxyCodeLine{230     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structpcap__addr_a4863f5b8767cd19fe6ea4db75456e5df}{addr}};      \textcolor{comment}{/* address */}}
+\DoxyCodeLine{231     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structpcap__addr_ac43963e42e4d901e55e433ab9c3ea686}{netmask}};    \textcolor{comment}{/* netmask for that address */}}
+\DoxyCodeLine{232     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structpcap__addr_a0077647e1560caa72d457120b36c248c}{broadaddr}};    \textcolor{comment}{/* broadcast address for that address */}}
+\DoxyCodeLine{233     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structpcap__addr_a4a32e00e83d4b1b582ba9cef24a5d62a}{dstaddr}};    \textcolor{comment}{/* P2P destination address for that address */}}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\_handler}})(u\_char *, \textcolor{keyword}{const} \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} *,}
+\DoxyCodeLine{237                  \textcolor{keyword}{const} u\_char *);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{/*}}
+\DoxyCodeLine{240 \textcolor{comment}{ * Error codes for the pcap API.}}
+\DoxyCodeLine{241 \textcolor{comment}{ * These will all be negative, so you can check for the success or}}
+\DoxyCodeLine{242 \textcolor{comment}{ * failure of a call that returns these codes by checking for a}}
+\DoxyCodeLine{243 \textcolor{comment}{ * negative value.}}
+\DoxyCodeLine{244 \textcolor{comment}{ */}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define PCAP\_ERROR          -\/1  }\textcolor{comment}{/* generic error code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define PCAP\_ERROR\_BREAK        -\/2  }\textcolor{comment}{/* loop terminated by pcap\_breakloop */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define PCAP\_ERROR\_NOT\_ACTIVATED    -\/3  }\textcolor{comment}{/* the capture needs to be activated */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define PCAP\_ERROR\_ACTIVATED        -\/4  }\textcolor{comment}{/* the operation can't be performed on already activated captures */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define PCAP\_ERROR\_NO\_SUCH\_DEVICE   -\/5  }\textcolor{comment}{/* no such device exists */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define PCAP\_ERROR\_RFMON\_NOTSUP     -\/6  }\textcolor{comment}{/* this device doesn't support rfmon (monitor) mode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define PCAP\_ERROR\_NOT\_RFMON        -\/7  }\textcolor{comment}{/* operation supported only in monitor mode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define PCAP\_ERROR\_PERM\_DENIED      -\/8  }\textcolor{comment}{/* no permission to open the device */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define PCAP\_ERROR\_IFACE\_NOT\_UP     -\/9  }\textcolor{comment}{/* interface isn't up */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{comment}{/*}}
+\DoxyCodeLine{256 \textcolor{comment}{ * Warning codes for the pcap API.}}
+\DoxyCodeLine{257 \textcolor{comment}{ * These will all be positive and non-\/zero, so they won't look like}}
+\DoxyCodeLine{258 \textcolor{comment}{ * errors.}}
+\DoxyCodeLine{259 \textcolor{comment}{ */}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define PCAP\_WARNING            1   }\textcolor{comment}{/* generic warning code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define PCAP\_WARNING\_PROMISC\_NOTSUP 2   }\textcolor{comment}{/* this device doesn't support promiscuous mode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{comment}{/*}}
+\DoxyCodeLine{264 \textcolor{comment}{ * Value to pass to pcap\_compile() as the netmask if you don't know what}}
+\DoxyCodeLine{265 \textcolor{comment}{ * the netmask is.}}
+\DoxyCodeLine{266 \textcolor{comment}{ */}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define PCAP\_NETMASK\_UNKNOWN    0xffffffff}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{pcap_2pcap_8h_ae2b8d1ad2ea59edb42817002e214797e}{pcap\_lookupdev}}(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{270 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a85619b2913d2d8453eb7e1f023b3b4af}{pcap\_lookupnet}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} *, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 pcap\_t  *\mbox{\hyperlink{pcap_2pcap_8h_ac0ad17257d750168368501e8db3c33ae}{pcap\_create}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{273 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a5165d7d6645153a936f34445217c864d}{pcap\_set\_snaplen}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{274 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a2f570e261f9eb0b7f63e4f4705d61f0a}{pcap\_set\_promisc}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{275 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a13f5867f27922fe8e3b35f9e1a6a0bf6}{pcap\_can\_set\_rfmon}}(pcap\_t *);}
+\DoxyCodeLine{276 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a81a0d0529abbc062d89c0397318e8f74}{pcap\_set\_rfmon}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{277 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a86d139b1dc4a6f969bfc21638437817b}{pcap\_set\_timeout}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{278 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ad14704b9932d18b8757a25023311d1bd}{pcap\_set\_buffer\_size}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{279 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a28c2547266c11d523ae2b21c425bcb16}{pcap\_activate}}(pcap\_t *);}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 pcap\_t  *\mbox{\hyperlink{pcap_2pcap_8h_ab352cf6464928a692daff1e85720bf28}{pcap\_open\_live}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{282 pcap\_t  *\mbox{\hyperlink{pcap_2pcap_8h_a49dbbe3ab5247b2e9f99fc7269360121}{pcap\_open\_dead}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{283 pcap\_t  *\mbox{\hyperlink{pcap_2pcap_8h_a0fed514fe3722f2aa5ef7e24aebcf1f3}{pcap\_open\_offline}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#if defined(WIN32)}}
+\DoxyCodeLine{285 pcap\_t  *pcap\_hopen\_offline(\mbox{\hyperlink{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}{intptr\_t}}, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#if !defined(LIBPCAP\_EXPORTS)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define pcap\_fopen\_offline(f,b) \(\backslash\)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{    pcap\_hopen\_offline(\_get\_osfhandle(\_fileno(f)), b)}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#else }\textcolor{comment}{/*LIBPCAP\_EXPORTS*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{290 \textcolor{keyword}{static} pcap\_t *\mbox{\hyperlink{pcap_2pcap_8h_a08df9283055c03dbd7b14cf14c0490f6}{pcap\_fopen\_offline}}(FILE *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#else }\textcolor{comment}{/*WIN32*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{293 pcap\_t  *\mbox{\hyperlink{pcap_2pcap_8h_a08df9283055c03dbd7b14cf14c0490f6}{pcap\_fopen\_offline}}(FILE *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*WIN32*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_af69549b5d1380fffcec5f87061b594ca}{pcap\_close}}(pcap\_t *);}
+\DoxyCodeLine{297 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_afb9c958acfcd523b8124acef0fbe9851}{pcap\_loop}}(pcap\_t *, \textcolor{keywordtype}{int}, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\_handler}}, u\_char *);}
+\DoxyCodeLine{298 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_aca27cb3bc0615a77fd0d9457afa80498}{pcap\_dispatch}}(pcap\_t *, \textcolor{keywordtype}{int}, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\_handler}}, u\_char *);}
+\DoxyCodeLine{299 \textcolor{keyword}{const} u\_char*}
+\DoxyCodeLine{300     \mbox{\hyperlink{pcap_2pcap_8h_abd5c590823b78e21970527422b7a09a8}{pcap\_next}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} *);}
+\DoxyCodeLine{301 \textcolor{keywordtype}{int}     \mbox{\hyperlink{pcap_2pcap_8h_a6dc620c1ab7068fb3249fd77a5ec8cf0}{pcap\_next\_ex}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} **, \textcolor{keyword}{const} u\_char **);}
+\DoxyCodeLine{302 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_ae0dc50910fabbd375fab8a1352a6cf33}{pcap\_breakloop}}(pcap\_t *);}
+\DoxyCodeLine{303 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a3acd3ef23bb2d4f195a44dfeadb31ecd}{pcap\_stats}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__stat}{pcap\_stat}} *);}
+\DoxyCodeLine{304 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_af61f6297893ffd7d3ef0424e50dbe5f0}{pcap\_setfilter}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *);}
+\DoxyCodeLine{305 \textcolor{keywordtype}{int}     \mbox{\hyperlink{pcap_2pcap_8h_ac3c3e2f16580d88018ee896b0de484d4}{pcap\_setdirection}}(pcap\_t *, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\_direction\_t}});}
+\DoxyCodeLine{306 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a104adfa303971eaed661dc595bed7c7c}{pcap\_getnonblock}}(pcap\_t *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{307 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a88fac6e78537977b89fda57c974dae1b}{pcap\_setnonblock}}(pcap\_t *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{308 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a96b5da11759aa2211f28b1c364e65363}{pcap\_inject}}(pcap\_t *, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{309 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a7e27fa8e635cb9b8aa91c38dcc1be7a0}{pcap\_sendpacket}}(pcap\_t *, \textcolor{keyword}{const} u\_char *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{310 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pcap_2pcap_8h_a62ed09734492175e405379b37fd2be88}{pcap\_statustostr}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{311 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pcap_2pcap_8h_afe5eda8e3f1cd6f0a214d277e8591227}{pcap\_strerror}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{312 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{pcap_2pcap_8h_aba51ca8fd1519d37152c9d3a054bc907}{pcap\_geterr}}(pcap\_t *);}
+\DoxyCodeLine{313 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a21d0fea741817408dc81829a7d12bef4}{pcap\_perror}}(pcap\_t *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{314 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ac0e8ba968bfd1ac3357c3d5397d93e97}{pcap\_compile}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int},}
+\DoxyCodeLine{315         \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}});}
+\DoxyCodeLine{316 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_abb03865c87dd9641d81fd86457a69bb5}{pcap\_compile\_nopcap}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *,}
+\DoxyCodeLine{317         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}});}
+\DoxyCodeLine{318 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a55a9f245628d2aa18a9c1ada28960554}{pcap\_freecode}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *);}
+\DoxyCodeLine{319 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a0180d1461c86b032be52faa8dd9fd608}{pcap\_offline\_filter}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *, \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} *,}
+\DoxyCodeLine{320         \textcolor{keyword}{const} u\_char *);}
+\DoxyCodeLine{321 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a9b2c05a4467742a6f579838030f387d1}{pcap\_datalink}}(pcap\_t *);}
+\DoxyCodeLine{322 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a77ec59605f0444b60abedc93afacca84}{pcap\_datalink\_ext}}(pcap\_t *);}
+\DoxyCodeLine{323 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ad1a5dfd0b20283500c7ca7f13e4f2d78}{pcap\_list\_datalinks}}(pcap\_t *, \textcolor{keywordtype}{int} **);}
+\DoxyCodeLine{324 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ab17f9f80105fc16e8366c8f856842419}{pcap\_set\_datalink}}(pcap\_t *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{325 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a1c38c544ca84a9300ac27564ea9a02ab}{pcap\_free\_datalinks}}(\textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{326 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a16f172cd1723834d6ae91eb3ece4b8eb}{pcap\_datalink\_name\_to\_val}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{327 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pcap_2pcap_8h_aed0640830a687ee3c3568207444a70f4}{pcap\_datalink\_val\_to\_name}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{328 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pcap_2pcap_8h_ae852efc96a4615394d9d679a3d8a83fa}{pcap\_datalink\_val\_to\_description}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{329 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ab0f88e754df675a80411b3b996e637dc}{pcap\_snapshot}}(pcap\_t *);}
+\DoxyCodeLine{330 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a7572a2dd22f64ddfce9f509f31bcbd3f}{pcap\_is\_swapped}}(pcap\_t *);}
+\DoxyCodeLine{331 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ab8c18f82bc03aa20f7112cd9bd3eb984}{pcap\_major\_version}}(pcap\_t *);}
+\DoxyCodeLine{332 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_acc19dd824761972882e2122d877de3cc}{pcap\_minor\_version}}(pcap\_t *);}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 \textcolor{comment}{/* XXX */}}
+\DoxyCodeLine{335 FILE    *\mbox{\hyperlink{pcap_2pcap_8h_a529d9a39873750927f214ee195cb5a61}{pcap\_file}}(pcap\_t *);}
+\DoxyCodeLine{336 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a0619cf8ce151949a50d6c21c05d14998}{pcap\_fileno}}(pcap\_t *);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 \mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *\mbox{\hyperlink{pcap_2pcap_8h_a9108b21c484814a60e133a084baceb63}{pcap\_dump\_open}}(pcap\_t *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{339 \mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *\mbox{\hyperlink{pcap_2pcap_8h_a0cfd9da60bc3e134823b306cb950d954}{pcap\_dump\_fopen}}(pcap\_t *, FILE *fp);}
+\DoxyCodeLine{340 FILE    *\mbox{\hyperlink{pcap_2pcap_8h_a9d518efd89b3857104e36476bb6815c6}{pcap\_dump\_file}}(\mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *);}
+\DoxyCodeLine{341 \textcolor{keywordtype}{long}    \mbox{\hyperlink{pcap_2pcap_8h_a50de34b8b3298f76c66c82b7ca3f84de}{pcap\_dump\_ftell}}(\mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *);}
+\DoxyCodeLine{342 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_ac0b519f7ec70826554710a906a9fbc05}{pcap\_dump\_flush}}(\mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *);}
+\DoxyCodeLine{343 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_ade4503a8294892b8cdbaebd99b97f83e}{pcap\_dump\_close}}(\mbox{\hyperlink{pcap_2pcap_8h_ab8c7858aa3a7e3158d9d58cb113a2ae8}{pcap\_dumper\_t}} *);}
+\DoxyCodeLine{344 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a7bb303cff6ae9f7ad61c60537faf6a08}{pcap\_dump}}(u\_char *, \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} *, \textcolor{keyword}{const} u\_char *);}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a20fb15f6d353a1df1fc38295a4eb24ad}{pcap\_findalldevs}}(pcap\_if\_t **, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{347 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a48760b9dd7745f05e1a5ef2bb564e01c}{pcap\_freealldevs}}(pcap\_if\_t *);}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pcap_2pcap_8h_a85381b2fbe686f2410dd1e5395cac638}{pcap\_lib\_version}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{comment}{/* XXX this guy lives in the bpf tree */}}
+\DoxyCodeLine{352 u\_int   \mbox{\hyperlink{pcap_2pcap_8h_ae1e6476e5e0f5eebc9f2ec64d7c6aa54}{bpf\_filter}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *, \textcolor{keyword}{const} u\_char *, u\_int, u\_int);}
+\DoxyCodeLine{353 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_adc788f58f9548b74f2de9b95f8f11422}{bpf\_validate}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *f, \textcolor{keywordtype}{int} \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{len}});}
+\DoxyCodeLine{354 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{pcap_2pcap_8h_a33ebd679b556be093a44ab8b2ad74eb5}{bpf\_image}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{355 \textcolor{keywordtype}{void}    \mbox{\hyperlink{pcap_2pcap_8h_a98581c908cf7401ff8f03f4d1f39f88e}{bpf\_dump}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__program}{bpf\_program}} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#if defined(WIN32)}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{comment}{/*}}
+\DoxyCodeLine{360 \textcolor{comment}{ * Win32 definitions}}
+\DoxyCodeLine{361 \textcolor{comment}{ */}}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 \textcolor{keywordtype}{int} pcap\_setbuff(pcap\_t *p, \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{364 \textcolor{keywordtype}{int} pcap\_setmode(pcap\_t *p, \textcolor{keywordtype}{int} mode);}
+\DoxyCodeLine{365 \textcolor{keywordtype}{int} pcap\_setmintocopy(pcap\_t *p, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#ifdef WPCAP}}
+\DoxyCodeLine{368 \textcolor{comment}{/* Include file with the wpcap-\/specific extensions */}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#include <Win32-\/Extensions.h>}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WPCAP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define MODE\_CAPT 0}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define MODE\_STAT 1}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define MODE\_MON 2}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#elif defined(MSDOS)}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{comment}{/*}}
+\DoxyCodeLine{379 \textcolor{comment}{ * MS-\/DOS definitions}}
+\DoxyCodeLine{380 \textcolor{comment}{ */}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{keywordtype}{int}  \mbox{\hyperlink{pcap-dos_8c_a22886ae6ac68b6c519e155d1c5275ebb}{pcap\_stats\_ex}} (pcap\_t *, \textcolor{keyword}{struct} pcap\_stat\_ex *);}
+\DoxyCodeLine{383 \textcolor{keywordtype}{void} \mbox{\hyperlink{pcap-dos_8c_a64b8a4baa7c2b1982dfced7fee4b5700}{pcap\_set\_wait}} (pcap\_t *p, \textcolor{keywordtype}{void} (*yield)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{int} \mbox{\hyperlink{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9}{wait}});}
+\DoxyCodeLine{384 u\_long \mbox{\hyperlink{pcap-dos_8c_ad11cef70660e0346e878277540ba6097}{pcap\_mac\_packets}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* UN*X */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{comment}{/*}}
+\DoxyCodeLine{389 \textcolor{comment}{ * UN*X definitions}}
+\DoxyCodeLine{390 \textcolor{comment}{ */}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap_2pcap_8h_a1eecf60b0c4a1995d40d915deded4db4}{pcap\_get\_selectable\_fd}}(pcap\_t *);}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WIN32/MSDOS/UN*X */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{397 \}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

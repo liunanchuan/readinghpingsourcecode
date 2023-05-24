@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: hcmp.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hcmp.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="hcmp_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * $smu-mark$ </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * $name: hcmp.h$ </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * $author: Salvatore Sanfilippo &lt;antirez@invece.org&gt;$ </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * $copyright: Copyright (C) 1999 by Salvatore Sanfilippo$ </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * $license: This software is under GPL version 2 of license$ </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * $date: Fri Nov  5 11:55:47 MET 1999$ </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * $rev: 9$ </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* Hping Control Message Protocol */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="hcmp_8h.html#a83cd8ea1875aea99b115fd76db22164c">   13</a></span><span class="preprocessor">#define HCMP_RESTART        1</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="hcmp_8h.html#aee4e7add5a353c0359bc59e535674dbd">   14</a></span><span class="preprocessor">#define HCMP_SOURCE_QUENCH  2</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="hcmp_8h.html#a9fd378106d1914f09ff3d4f140cdab80">   15</a></span><span class="preprocessor">#define HCMP_SOURCE_STIRUP  3</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="hcmp_8h.html#aa549b4986f109168958bd4442d1a68f8">   16</a></span><span class="preprocessor">#define HCMP_CHPROTO        4 </span><span class="comment">/* still unused */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structhcmphdr.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structhcmphdr.html">hcmphdr</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structhcmphdr.html#aa05eefca31ad6bd4617aac0176b8366e">   20</a></span>    <a class="code hl_define" href="ars_8h.html#abb0f2ad1ab0fc28516dafcf956d11a6b">__u8</a>    <a class="code hl_variable" href="structhcmphdr.html#aa05eefca31ad6bd4617aac0176b8366e">type</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">union</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structhcmphdr.html#acb9b84094e40255089b168fd33c08790">   23</a></span>        <a class="code hl_define" href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a> <a class="code hl_variable" href="structhcmphdr.html#acb9b84094e40255089b168fd33c08790">seqnum</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structhcmphdr.html#adf4c78d1836cda470179ad088c205a25">   24</a></span>        <a class="code hl_define" href="ars_8h.html#a6328586d70f5190812c2957438e61b17">__u32</a> <a class="code hl_variable" href="structhcmphdr.html#adf4c78d1836cda470179ad088c205a25">usec</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structhcmphdr.html#a1076576b572e6e8fee937730028b19a5">   25</a></span>    } <a class="code hl_variable" href="structhcmphdr.html#a1076576b572e6e8fee937730028b19a5">typedep</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="ttc" id="aars_8h_html_a5ece5635db977edd094b1c365c0357a3"><div class="ttname"><a href="ars_8h.html#a5ece5635db977edd094b1c365c0357a3">__u16</a></div><div class="ttdeci">#define __u16</div><div class="ttdef"><b>Definition:</b> ars.h:46</div></div>
+<div class="ttc" id="aars_8h_html_a6328586d70f5190812c2957438e61b17"><div class="ttname"><a href="ars_8h.html#a6328586d70f5190812c2957438e61b17">__u32</a></div><div class="ttdeci">#define __u32</div><div class="ttdef"><b>Definition:</b> ars.h:47</div></div>
+<div class="ttc" id="aars_8h_html_abb0f2ad1ab0fc28516dafcf956d11a6b"><div class="ttname"><a href="ars_8h.html#abb0f2ad1ab0fc28516dafcf956d11a6b">__u8</a></div><div class="ttdeci">#define __u8</div><div class="ttdef"><b>Definition:</b> ars.h:45</div></div>
+<div class="ttc" id="astructhcmphdr_html"><div class="ttname"><a href="structhcmphdr.html">hcmphdr</a></div><div class="ttdef"><b>Definition:</b> hcmp.h:19</div></div>
+<div class="ttc" id="astructhcmphdr_html_a1076576b572e6e8fee937730028b19a5"><div class="ttname"><a href="structhcmphdr.html#a1076576b572e6e8fee937730028b19a5">hcmphdr::typedep</a></div><div class="ttdeci">union hcmphdr::@15 typedep</div></div>
+<div class="ttc" id="astructhcmphdr_html_aa05eefca31ad6bd4617aac0176b8366e"><div class="ttname"><a href="structhcmphdr.html#aa05eefca31ad6bd4617aac0176b8366e">hcmphdr::type</a></div><div class="ttdeci">__u8 type</div><div class="ttdef"><b>Definition:</b> hcmp.h:20</div></div>
+<div class="ttc" id="astructhcmphdr_html_acb9b84094e40255089b168fd33c08790"><div class="ttname"><a href="structhcmphdr.html#acb9b84094e40255089b168fd33c08790">hcmphdr::seqnum</a></div><div class="ttdeci">__u16 seqnum</div><div class="ttdef"><b>Definition:</b> hcmp.h:23</div></div>
+<div class="ttc" id="astructhcmphdr_html_adf4c78d1836cda470179ad088c205a25"><div class="ttname"><a href="structhcmphdr.html#adf4c78d1836cda470179ad088c205a25">hcmphdr::usec</a></div><div class="ttdeci">__u32 usec</div><div class="ttdef"><b>Definition:</b> hcmp.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

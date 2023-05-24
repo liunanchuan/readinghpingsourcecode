@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Src/getnetent.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_15938365a03fce7f68d2b279197f6a3c.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">getnetent.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="inetprivate_8h_source.html">inetprivate.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+getnetent.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c__incl.png" border="0" usemap="#alibpcap-1_81_81_2Win32_2Src_2getnetent_8c" alt=""/></div>
+<map name="alibpcap-1_81_81_2Win32_2Src_2getnetent_8c" id="alibpcap-1_81_81_2Win32_2Src_2getnetent_8c">
+<area shape="rect" title=" " alt="" coords="313,5,450,47"/>
+<area shape="rect" href="inetprivate_8h.html" title=" " alt="" coords="335,95,428,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,96,196"/>
+<area shape="rect" title=" " alt="" coords="121,169,186,196"/>
+<area shape="rect" title=" " alt="" coords="211,169,275,196"/>
+<area shape="rect" title=" " alt="" coords="299,169,365,196"/>
+<area shape="rect" href="netdb_8h.html" title=" " alt="" coords="389,169,475,196"/>
+<area shape="rect" title=" " alt="" coords="500,169,561,196"/>
+<area shape="rect" title=" " alt="" coords="586,169,649,196"/>
+<area shape="rect" href="nameser_8h.html" title=" " alt="" coords="673,169,785,196"/>
+<area shape="rect" title=" " alt="" coords="307,244,395,271"/>
+<area shape="rect" href="paths_8h.html" title=" " alt="" coords="419,244,506,271"/>
+<area shape="rect" title=" " alt="" coords="561,244,655,271"/>
+<area shape="rect" title=" " alt="" coords="679,244,779,271"/>
+<area shape="rect" title=" " alt="" coords="804,244,895,271"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ad37f747e9cb2fd51e289b9f5a8e31fa5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#ad37f747e9cb2fd51e289b9f5a8e31fa5">MAXALIASES</a>&#160;&#160;&#160;35</td></tr>
+<tr class="separator:ad37f747e9cb2fd51e289b9f5a8e31fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:adc27da37db2f90aec5484fc8f57f1202"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#adc27da37db2f90aec5484fc8f57f1202">any</a> (char *, char *)</td></tr>
+<tr class="separator:adc27da37db2f90aec5484fc8f57f1202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4f2b3d1d19b8d39ccb67b7408b467f"><td class="memItemLeft" align="right" valign="top">u_int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#a5f4f2b3d1d19b8d39ccb67b7408b467f">inet_network</a> (const char *cp)</td></tr>
+<tr class="separator:a5f4f2b3d1d19b8d39ccb67b7408b467f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e94619797c1c08e14b7cda0942cf40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#ac2e94619797c1c08e14b7cda0942cf40">setnetent</a> (int f)</td></tr>
+<tr class="separator:ac2e94619797c1c08e14b7cda0942cf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b181def9700aef075559a4630fdb8ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#a1b181def9700aef075559a4630fdb8ab">endnetent</a> ()</td></tr>
+<tr class="separator:a1b181def9700aef075559a4630fdb8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313d5be3d1f84e576e3d9ad98c2af463"><td class="memItemLeft" align="right" valign="top">struct netent *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#a313d5be3d1f84e576e3d9ad98c2af463">getnetent</a> ()</td></tr>
+<tr class="separator:a313d5be3d1f84e576e3d9ad98c2af463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:aa190c732ffff6b10b88fb9db92324fa3"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#aa190c732ffff6b10b88fb9db92324fa3">NETDB</a> [] = <a class="el" href="netdb_8h.html#a5cead70d4c9d69680e9bcf5e7dea14cf">_PATH_NETWORKS</a></td></tr>
+<tr class="separator:aa190c732ffff6b10b88fb9db92324fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14414047bd3d462d79fb1dfebd30ea5"><td class="memItemLeft" align="right" valign="top">static FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#ab14414047bd3d462d79fb1dfebd30ea5">netf</a> = NULL</td></tr>
+<tr class="separator:ab14414047bd3d462d79fb1dfebd30ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b625afb8853050432e347f405fd6cc3"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#a5b625afb8853050432e347f405fd6cc3">line</a> [BUFSIZ+1]</td></tr>
+<tr class="separator:a5b625afb8853050432e347f405fd6cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae974633668b9933ac480461fadb7d388"><td class="memItemLeft" align="right" valign="top">static struct netent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#ae974633668b9933ac480461fadb7d388">net</a></td></tr>
+<tr class="separator:ae974633668b9933ac480461fadb7d388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc83aa10a6a87d88f3d56ebf1403cd67"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#acc83aa10a6a87d88f3d56ebf1403cd67">net_aliases</a> [<a class="el" href="getservent_8c.html#ad37f747e9cb2fd51e289b9f5a8e31fa5">MAXALIASES</a>]</td></tr>
+<tr class="separator:acc83aa10a6a87d88f3d56ebf1403cd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c34a2622df4d072db2c7a2bb24e1866"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getnetent_8c.html#a3c34a2622df4d072db2c7a2bb24e1866">_net_stayopen</a></td></tr>
+<tr class="separator:a3c34a2622df4d072db2c7a2bb24e1866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ad37f747e9cb2fd51e289b9f5a8e31fa5" name="ad37f747e9cb2fd51e289b9f5a8e31fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37f747e9cb2fd51e289b9f5a8e31fa5">&#9670;&nbsp;</a></span>MAXALIASES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXALIASES&#160;&#160;&#160;35</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="adc27da37db2f90aec5484fc8f57f1202" name="adc27da37db2f90aec5484fc8f57f1202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc27da37db2f90aec5484fc8f57f1202">&#9670;&nbsp;</a></span>any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char * any </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>match</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_adc27da37db2f90aec5484fc8f57f1202_icgraph.png" border="0" usemap="#agetnetent_8c_adc27da37db2f90aec5484fc8f57f1202_icgraph" alt=""/></div>
+<map name="agetnetent_8c_adc27da37db2f90aec5484fc8f57f1202_icgraph" id="agetnetent_8c_adc27da37db2f90aec5484fc8f57f1202_icgraph">
+<area shape="rect" title=" " alt="" coords="472,5,515,32"/>
+<area shape="rect" href="getnetent_8c.html#a313d5be3d1f84e576e3d9ad98c2af463" title=" " alt="" coords="348,5,424,32"/>
+<area shape="rect" href="getnetbynm_8c.html#a34ad0dc5368b67dbdb492cf09badc2f4" title=" " alt="" coords="196,5,300,32"/>
+<area shape="rect" href="nametoaddr_8c.html#abd19e1e440174857e87058b8fabd5708" title=" " alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b181def9700aef075559a4630fdb8ab" name="a1b181def9700aef075559a4630fdb8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b181def9700aef075559a4630fdb8ab">&#9670;&nbsp;</a></span>endnetent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void endnetent </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="getnetent_8c.html#a3c34a2622df4d072db2c7a2bb24e1866">_net_stayopen</a> , 以及 <a class="el" href="getnetent_8c.html#ab14414047bd3d462d79fb1dfebd30ea5">netf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#ade8721a534c606e62c6bc06ad4e30db7">getnetbyname()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_a1b181def9700aef075559a4630fdb8ab_icgraph.png" border="0" usemap="#agetnetent_8c_a1b181def9700aef075559a4630fdb8ab_icgraph" alt=""/></div>
+<map name="agetnetent_8c_a1b181def9700aef075559a4630fdb8ab_icgraph" id="agetnetent_8c_a1b181def9700aef075559a4630fdb8ab_icgraph">
+<area shape="rect" title=" " alt="" coords="348,5,427,32"/>
+<area shape="rect" href="getnetbynm_8c.html#a34ad0dc5368b67dbdb492cf09badc2f4" title=" " alt="" coords="196,5,300,32"/>
+<area shape="rect" href="nametoaddr_8c.html#abd19e1e440174857e87058b8fabd5708" title=" " alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a313d5be3d1f84e576e3d9ad98c2af463" name="a313d5be3d1f84e576e3d9ad98c2af463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313d5be3d1f84e576e3d9ad98c2af463">&#9670;&nbsp;</a></span>getnetent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct netent * getnetent </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="getnetent_8c.html#adc27da37db2f90aec5484fc8f57f1202">any()</a>, <a class="el" href="getnetent_8c.html#a5f4f2b3d1d19b8d39ccb67b7408b467f">inet_network()</a>, <a class="el" href="getnetent_8c.html#a5b625afb8853050432e347f405fd6cc3">line</a>, <a class="el" href="getnetent_8c.html#ad37f747e9cb2fd51e289b9f5a8e31fa5">MAXALIASES</a>, <a class="el" href="getnetent_8c.html#ae974633668b9933ac480461fadb7d388">net</a>, <a class="el" href="getnetent_8c.html#acc83aa10a6a87d88f3d56ebf1403cd67">net_aliases</a>, <a class="el" href="getnetent_8c.html#aa190c732ffff6b10b88fb9db92324fa3">NETDB</a> , 以及 <a class="el" href="getnetent_8c.html#ab14414047bd3d462d79fb1dfebd30ea5">netf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#ade8721a534c606e62c6bc06ad4e30db7">getnetbyname()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_cgraph.png" border="0" usemap="#agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_cgraph" alt=""/></div>
+<map name="agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_cgraph" id="agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,81,57"/>
+<area shape="rect" href="getnetent_8c.html#adc27da37db2f90aec5484fc8f57f1202" title=" " alt="" coords="156,5,199,32"/>
+<area shape="rect" href="inet__net_8c.html#a5f4f2b3d1d19b8d39ccb67b7408b467f" title=" " alt="" coords="129,56,225,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_icgraph.png" border="0" usemap="#agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_icgraph" alt=""/></div>
+<map name="agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_icgraph" id="agetnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_icgraph">
+<area shape="rect" title=" " alt="" coords="348,5,424,32"/>
+<area shape="rect" href="getnetbynm_8c.html#a34ad0dc5368b67dbdb492cf09badc2f4" title=" " alt="" coords="196,5,300,32"/>
+<area shape="rect" href="nametoaddr_8c.html#abd19e1e440174857e87058b8fabd5708" title=" " alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f4f2b3d1d19b8d39ccb67b7408b467f" name="a5f4f2b3d1d19b8d39ccb67b7408b467f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4f2b3d1d19b8d39ccb67b7408b467f">&#9670;&nbsp;</a></span>inet_network()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int32_t inet_network </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>cp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="inet__aton_8c.html#a3d2472d6cf31b73eeb829110dd0fffea">INADDR_NONE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f_icgraph.png" border="0" usemap="#agetnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f_icgraph" alt=""/></div>
+<map name="agetnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f_icgraph" id="agetnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f_icgraph">
+<area shape="rect" title=" " alt="" coords="472,5,568,32"/>
+<area shape="rect" href="getnetent_8c.html#a313d5be3d1f84e576e3d9ad98c2af463" title=" " alt="" coords="348,5,424,32"/>
+<area shape="rect" href="getnetbynm_8c.html#a34ad0dc5368b67dbdb492cf09badc2f4" title=" " alt="" coords="196,5,300,32"/>
+<area shape="rect" href="nametoaddr_8c.html#abd19e1e440174857e87058b8fabd5708" title=" " alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2e94619797c1c08e14b7cda0942cf40" name="ac2e94619797c1c08e14b7cda0942cf40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e94619797c1c08e14b7cda0942cf40">&#9670;&nbsp;</a></span>setnetent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setnetent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="getnetent_8c.html#a3c34a2622df4d072db2c7a2bb24e1866">_net_stayopen</a>, <a class="el" href="getnetent_8c.html#aa190c732ffff6b10b88fb9db92324fa3">NETDB</a> , 以及 <a class="el" href="getnetent_8c.html#ab14414047bd3d462d79fb1dfebd30ea5">netf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#ade8721a534c606e62c6bc06ad4e30db7">getnetbyname()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getnetent_8c_ac2e94619797c1c08e14b7cda0942cf40_icgraph.png" border="0" usemap="#agetnetent_8c_ac2e94619797c1c08e14b7cda0942cf40_icgraph" alt=""/></div>
+<map name="agetnetent_8c_ac2e94619797c1c08e14b7cda0942cf40_icgraph" id="agetnetent_8c_ac2e94619797c1c08e14b7cda0942cf40_icgraph">
+<area shape="rect" title=" " alt="" coords="348,5,424,32"/>
+<area shape="rect" href="getnetbynm_8c.html#a34ad0dc5368b67dbdb492cf09badc2f4" title=" " alt="" coords="196,5,300,32"/>
+<area shape="rect" href="nametoaddr_8c.html#abd19e1e440174857e87058b8fabd5708" title=" " alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a3c34a2622df4d072db2c7a2bb24e1866" name="a3c34a2622df4d072db2c7a2bb24e1866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c34a2622df4d072db2c7a2bb24e1866">&#9670;&nbsp;</a></span>_net_stayopen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _net_stayopen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a9c23830b9c634ac761f3f2daa3e6b724">endnetent()</a>, <a class="el" href="netdb_8h.html#ade8721a534c606e62c6bc06ad4e30db7">getnetbyname()</a> , 以及 <a class="el" href="netdb_8h.html#a59a8ca67f71ca0bdcc45e34c1f163efa">setnetent()</a>.</p>
+
+</div>
+</div>
+<a id="a5b625afb8853050432e347f405fd6cc3" name="a5b625afb8853050432e347f405fd6cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b625afb8853050432e347f405fd6cc3">&#9670;&nbsp;</a></span>line</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char line[BUFSIZ+1]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a>, <a class="el" href="pcap-dos_8c.html#a456ba43432fb029cddfc893d7757d519">pcap_assert()</a> , 以及 <a class="el" href="pcap-usb-linux_8c.html#ae72f2ced4aa5a96fdcf4cb43ef31f613">usb_read_linux()</a>.</p>
+
+</div>
+</div>
+<a id="ae974633668b9933ac480461fadb7d388" name="ae974633668b9933ac480461fadb7d388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae974633668b9933ac480461fadb7d388">&#9670;&nbsp;</a></span>net</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct netent net</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a> , 以及 <a class="el" href="findalldevstest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="acc83aa10a6a87d88f3d56ebf1403cd67" name="acc83aa10a6a87d88f3d56ebf1403cd67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc83aa10a6a87d88f3d56ebf1403cd67">&#9670;&nbsp;</a></span>net_aliases</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* net_aliases[<a class="el" href="getservent_8c.html#ad37f747e9cb2fd51e289b9f5a8e31fa5">MAXALIASES</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a>.</p>
+
+</div>
+</div>
+<a id="aa190c732ffff6b10b88fb9db92324fa3" name="aa190c732ffff6b10b88fb9db92324fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa190c732ffff6b10b88fb9db92324fa3">&#9670;&nbsp;</a></span>NETDB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char NETDB[] = <a class="el" href="netdb_8h.html#a5cead70d4c9d69680e9bcf5e7dea14cf">_PATH_NETWORKS</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a> , 以及 <a class="el" href="netdb_8h.html#a59a8ca67f71ca0bdcc45e34c1f163efa">setnetent()</a>.</p>
+
+</div>
+</div>
+<a id="ab14414047bd3d462d79fb1dfebd30ea5" name="ab14414047bd3d462d79fb1dfebd30ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14414047bd3d462d79fb1dfebd30ea5">&#9670;&nbsp;</a></span>netf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* netf = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="netdb_8h.html#a9c23830b9c634ac761f3f2daa3e6b724">endnetent()</a>, <a class="el" href="netdb_8h.html#a199e7f8bde21efa3d6d44efd870a72a9">getnetent()</a> , 以及 <a class="el" href="netdb_8h.html#a59a8ca67f71ca0bdcc45e34c1f163efa">setnetent()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

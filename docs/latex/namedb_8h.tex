@@ -1,0 +1,320 @@
+\hypertarget{namedb_8h}{}\doxysection{libpcap-\/1.1.1/pcap/namedb.h 文件参考}
+\label{namedb_8h}\index{libpcap-\/1.1.1/pcap/namedb.h@{libpcap-\/1.1.1/pcap/namedb.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcap__etherent}{pcap\+\_\+etherent}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{namedb_8h_a37c01089dfa357121f2b8e16a6fc761e}{PCAP\+\_\+\+ETHERS\+\_\+\+FILE}}~\char`\"{}/etc/ethers\char`\"{}
+\item 
+\#define \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}}~-\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcap__etherent}{pcap\+\_\+etherent}} $\ast$ \mbox{\hyperlink{namedb_8h_abc0a2769dcd738dd12bd891768ff2750}{pcap\+\_\+next\+\_\+etherent}} (FILE $\ast$)
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{namedb_8h_acc1b9820ff8b2080b64f062dec26cbf3}{pcap\+\_\+ether\+\_\+hostton}} (const char $\ast$)
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{namedb_8h_adcaa9d6f44acc2a9fc6046a20c32e0af}{pcap\+\_\+ether\+\_\+aton}} (const char $\ast$)
+\item 
+\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$$\ast$ \mbox{\hyperlink{namedb_8h_a47c40c3a0f419bf07c0d91182d97a8d6}{pcap\+\_\+nametoaddr}} (const char $\ast$)
+\item 
+\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} \mbox{\hyperlink{namedb_8h_a3fbe8725539a8ef586d3628c2137bf09}{pcap\+\_\+nametonetaddr}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222}{pcap\+\_\+nametoport}} (const char $\ast$, int $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_af16cfc0f8dc101ce0c2aad5ca27a7428}{pcap\+\_\+nametoportrange}} (const char $\ast$, int $\ast$, int $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_a73be419386f9f1aa25b2cfcaede3c874}{pcap\+\_\+nametoproto}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_a78670dbea10f4a7a4df5c8781c288c39}{pcap\+\_\+nametoeproto}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_ad6c9bb176a95c343b7059ccd17b1d0e9}{pcap\+\_\+nametollc}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_a1ccd3bb8e0da9134c7531e8082a4bb9b}{\+\_\+\+\_\+pcap\+\_\+atodn}} (const char $\ast$, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$)
+\item 
+int \mbox{\hyperlink{namedb_8h_a17641612c37afc2707e07d306ebee9cb}{\+\_\+\+\_\+pcap\+\_\+atoin}} (const char $\ast$, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$)
+\item 
+u\+\_\+short \mbox{\hyperlink{namedb_8h_a499cc65e74da0ad66bc1e53f3f52ce60}{\+\_\+\+\_\+pcap\+\_\+nametodnaddr}} (const char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{namedb_8h_a37c01089dfa357121f2b8e16a6fc761e}\label{namedb_8h_a37c01089dfa357121f2b8e16a6fc761e}} 
+\index{namedb.h@{namedb.h}!PCAP\_ETHERS\_FILE@{PCAP\_ETHERS\_FILE}}
+\index{PCAP\_ETHERS\_FILE@{PCAP\_ETHERS\_FILE}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{PCAP\_ETHERS\_FILE}{PCAP\_ETHERS\_FILE}}
+{\footnotesize\ttfamily \#define PCAP\+\_\+\+ETHERS\+\_\+\+FILE~\char`\"{}/etc/ethers\char`\"{}}
+
+\mbox{\Hypertarget{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}\label{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}} 
+\index{namedb.h@{namedb.h}!PROTO\_UNDEF@{PROTO\_UNDEF}}
+\index{PROTO\_UNDEF@{PROTO\_UNDEF}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{PROTO\_UNDEF}{PROTO\_UNDEF}}
+{\footnotesize\ttfamily \#define PROTO\+\_\+\+UNDEF~-\/1}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{namedb_8h_a1ccd3bb8e0da9134c7531e8082a4bb9b}\label{namedb_8h_a1ccd3bb8e0da9134c7531e8082a4bb9b}} 
+\index{namedb.h@{namedb.h}!\_\_pcap\_atodn@{\_\_pcap\_atodn}}
+\index{\_\_pcap\_atodn@{\_\_pcap\_atodn}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_atodn()}{\_\_pcap\_atodn()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+pcap\+\_\+atodn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a0d96315d04d0206e71df3276c5aea24e}{AREAMASK}}, \mbox{\hyperlink{nametoaddr_8c_adb572398f8d04313a5abbcdf64eba0b9}{AREASHIFT}}, \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}, \mbox{\hyperlink{nametoaddr_8c_a752a978c3da6f3e25f46306dcbca0982}{NODEMASK}}, \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h_a1ccd3bb8e0da9134c7531e8082a4bb9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_a17641612c37afc2707e07d306ebee9cb}\label{namedb_8h_a17641612c37afc2707e07d306ebee9cb}} 
+\index{namedb.h@{namedb.h}!\_\_pcap\_atoin@{\_\_pcap\_atoin}}
+\index{\_\_pcap\_atoin@{\_\_pcap\_atoin}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_atoin()}{\_\_pcap\_atoin()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+pcap\+\_\+atoin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+\mbox{\Hypertarget{namedb_8h_a499cc65e74da0ad66bc1e53f3f52ce60}\label{namedb_8h_a499cc65e74da0ad66bc1e53f3f52ce60}} 
+\index{namedb.h@{namedb.h}!\_\_pcap\_nametodnaddr@{\_\_pcap\_nametodnaddr}}
+\index{\_\_pcap\_nametodnaddr@{\_\_pcap\_nametodnaddr}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{\_\_pcap\_nametodnaddr()}{\_\_pcap\_nametodnaddr()}}
+{\footnotesize\ttfamily u\+\_\+short \+\_\+\+\_\+pcap\+\_\+nametodnaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a78da3a9fcee491f2a01579692a5c313f}{bpf\+\_\+error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h_a499cc65e74da0ad66bc1e53f3f52ce60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_adcaa9d6f44acc2a9fc6046a20c32e0af}\label{namedb_8h_adcaa9d6f44acc2a9fc6046a20c32e0af}} 
+\index{namedb.h@{namedb.h}!pcap\_ether\_aton@{pcap\_ether\_aton}}
+\index{pcap\_ether\_aton@{pcap\_ether\_aton}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_ether\_aton()}{pcap\_ether\_aton()}}
+{\footnotesize\ttfamily u\+\_\+char $\ast$ pcap\+\_\+ether\+\_\+aton (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}} , 以及 \mbox{\hyperlink{nametoaddr_8c_ae82969d74fb12921128f373f1d557ec7}{xdtoi()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{namedb_8h_adcaa9d6f44acc2a9fc6046a20c32e0af_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_acc1b9820ff8b2080b64f062dec26cbf3}\label{namedb_8h_acc1b9820ff8b2080b64f062dec26cbf3}} 
+\index{namedb.h@{namedb.h}!pcap\_ether\_hostton@{pcap\_ether\_hostton}}
+\index{pcap\_ether\_hostton@{pcap\_ether\_hostton}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_ether\_hostton()}{pcap\_ether\_hostton()}}
+{\footnotesize\ttfamily u\+\_\+char $\ast$ pcap\+\_\+ether\+\_\+hostton (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__etherent_afc40b70652293465418325013ada9b78}{pcap\+\_\+etherent\+::addr}}, \mbox{\hyperlink{structpcap__etherent_a2fc24ecb842e2234c373008ca16ac1ba}{pcap\+\_\+etherent\+::name}}, \mbox{\hyperlink{namedb_8h_a37c01089dfa357121f2b8e16a6fc761e}{PCAP\+\_\+\+ETHERS\+\_\+\+FILE}} , 以及 \mbox{\hyperlink{etherent_8c_abd0743e779bf2299f27c34c3f7b0bc4d}{pcap\+\_\+next\+\_\+etherent()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h_acc1b9820ff8b2080b64f062dec26cbf3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_a47c40c3a0f419bf07c0d91182d97a8d6}\label{namedb_8h_a47c40c3a0f419bf07c0d91182d97a8d6}} 
+\index{namedb.h@{namedb.h}!pcap\_nametoaddr@{pcap\_nametoaddr}}
+\index{pcap\_nametoaddr@{pcap\_nametoaddr}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoaddr()}{pcap\_nametoaddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} $\ast$$\ast$ pcap\+\_\+nametoaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a80a2a5dc2f477a8e6a0827bb2a8ef0a4}{NTOHL}}.
+
+\mbox{\Hypertarget{namedb_8h_a78670dbea10f4a7a4df5c8781c288c39}\label{namedb_8h_a78670dbea10f4a7a4df5c8781c288c39}} 
+\index{namedb.h@{namedb.h}!pcap\_nametoeproto@{pcap\_nametoeproto}}
+\index{pcap\_nametoeproto@{pcap\_nametoeproto}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoeproto()}{pcap\_nametoeproto()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoeproto (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_ac6c11db75097d49acaa479066db63894}{eproto\+\_\+db}}, \mbox{\hyperlink{structeproto_a05102570069797c30662b9c93ca7f385}{eproto\+::p}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{namedb_8h_a78670dbea10f4a7a4df5c8781c288c39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_ad6c9bb176a95c343b7059ccd17b1d0e9}\label{namedb_8h_ad6c9bb176a95c343b7059ccd17b1d0e9}} 
+\index{namedb.h@{namedb.h}!pcap\_nametollc@{pcap\_nametollc}}
+\index{pcap\_nametollc@{pcap\_nametollc}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametollc()}{pcap\_nametollc()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametollc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_a2a5359fbb073c4acc5d5974b35e6a158}{llc\+\_\+db}}, \mbox{\hyperlink{structeproto_a05102570069797c30662b9c93ca7f385}{eproto\+::p}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{structeproto_ab87f55bd0280d90925050a4188c14ab5}{eproto\+::s}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{namedb_8h_ad6c9bb176a95c343b7059ccd17b1d0e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_a3fbe8725539a8ef586d3628c2137bf09}\label{namedb_8h_a3fbe8725539a8ef586d3628c2137bf09}} 
+\index{namedb.h@{namedb.h}!pcap\_nametonetaddr@{pcap\_nametonetaddr}}
+\index{pcap\_nametonetaddr@{pcap\_nametonetaddr}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametonetaddr()}{pcap\_nametonetaddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} pcap\+\_\+nametonetaddr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h_a3fbe8725539a8ef586d3628c2137bf09_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222}\label{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222}} 
+\index{namedb.h@{namedb.h}!pcap\_nametoport@{pcap\_nametoport}}
+\index{pcap\_nametoport@{pcap\_nametoport}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoport()}{pcap\_nametoport()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoport (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int $\ast$}]{port,  }\item[{int $\ast$}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}} , 以及 \mbox{\hyperlink{opentest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}{warning()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}{pcap\+\_\+nametoportrange()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_af16cfc0f8dc101ce0c2aad5ca27a7428}\label{namedb_8h_af16cfc0f8dc101ce0c2aad5ca27a7428}} 
+\index{namedb.h@{namedb.h}!pcap\_nametoportrange@{pcap\_nametoportrange}}
+\index{pcap\_nametoportrange@{pcap\_nametoportrange}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoportrange()}{pcap\_nametoportrange()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoportrange (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int $\ast$}]{port1,  }\item[{int $\ast$}]{port2,  }\item[{int $\ast$}]{proto }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{nametoaddr_8c_ae5d15223a218d51194bf8ddeb1e213b6}{pcap\+\_\+nametoport()}}, \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}} , 以及 \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namedb_8h_af16cfc0f8dc101ce0c2aad5ca27a7428_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_a73be419386f9f1aa25b2cfcaede3c874}\label{namedb_8h_a73be419386f9f1aa25b2cfcaede3c874}} 
+\index{namedb.h@{namedb.h}!pcap\_nametoproto@{pcap\_nametoproto}}
+\index{pcap\_nametoproto@{pcap\_nametoproto}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_nametoproto()}{pcap\_nametoproto()}}
+{\footnotesize\ttfamily int pcap\+\_\+nametoproto (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{namedb_8h_ad0a3ccd0934c8b1fe6287d2e3a68a3ac}{PROTO\+\_\+\+UNDEF}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{gencode_8c_a405d3c5b2a7122dd73640a6bb0b833d3}{lookup\+\_\+proto()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{namedb_8h_a73be419386f9f1aa25b2cfcaede3c874_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namedb_8h_abc0a2769dcd738dd12bd891768ff2750}\label{namedb_8h_abc0a2769dcd738dd12bd891768ff2750}} 
+\index{namedb.h@{namedb.h}!pcap\_next\_etherent@{pcap\_next\_etherent}}
+\index{pcap\_next\_etherent@{pcap\_next\_etherent}!namedb.h@{namedb.h}}
+\doxysubsubsection{\texorpdfstring{pcap\_next\_etherent()}{pcap\_next\_etherent()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__etherent}{pcap\+\_\+etherent}} $\ast$ pcap\+\_\+next\+\_\+etherent (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__etherent_afc40b70652293465418325013ada9b78}{pcap\+\_\+etherent\+::addr}}, \mbox{\hyperlink{structpcap__etherent_a2fc24ecb842e2234c373008ca16ac1ba}{pcap\+\_\+etherent\+::name}}, \mbox{\hyperlink{etherent_8c_ab7286873b6316b2c8859dbacbfd7962f}{skip\+\_\+line()}}, \mbox{\hyperlink{etherent_8c_aa56282d1233d089535eed02da9203349}{skip\+\_\+space()}} , 以及 \mbox{\hyperlink{etherent_8c_ae82969d74fb12921128f373f1d557ec7}{xdtoi()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_aa5594a23a6f9be6a48ea90029f6dc40b}{pcap\+\_\+ether\+\_\+hostton()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{namedb_8h_abc0a2769dcd738dd12bd891768ff2750_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{namedb_8h_abc0a2769dcd738dd12bd891768ff2750_icgraph}
+\end{center}
+\end{figure}

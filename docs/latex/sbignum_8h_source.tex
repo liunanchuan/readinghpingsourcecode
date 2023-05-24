@@ -1,0 +1,162 @@
+\hypertarget{sbignum_8h_source}{}\doxysection{sbignum.\+h}
+\mbox{\hyperlink{sbignum_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Sbignum.h -\/-\/ antirez's arbitrary precision integer math library header file.}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright(C) 2002-\/2003 Salvatore Sanfilippo.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$Id: sbignum.h,v 1.4 2004/06/04 07:22:38 antirez Exp \$}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_SBIGNUM\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_SBIGNUM\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fixtypes_8h}{fixtypes.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define ATOMBYTES 4}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* The number internal rappresentation is an array of mpz\_atom\_t WORDS.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * Every byte is a digit in base MPZ\_AND+1, the first word is the least}}
+\DoxyCodeLine{18 \textcolor{comment}{ * significant word and so on */}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#if ATOMBYTES == 4}}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} u\_int32\_t \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}};}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} u\_int64\_t \mbox{\hyperlink{sbignum_8h_a125a18703958b148abc2d58a9889492a}{mpz\_carry\_t}};}
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} int64\_t \mbox{\hyperlink{sbignum_8h_a7c80a1accd38e51890868c842ec458f7}{mpz\_scarry\_t}};}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#elif ATOMBYTES == 2}}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} u\_int16\_t \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}};}
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} u\_int32\_t \mbox{\hyperlink{sbignum_8h_a125a18703958b148abc2d58a9889492a}{mpz\_carry\_t}};}
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} int32\_t \mbox{\hyperlink{sbignum_8h_a7c80a1accd38e51890868c842ec458f7}{mpz\_scarry\_t}};}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#elif ATOMBYTES == 1}}
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} u\_int8\_t \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}};}
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} u\_int32\_t \mbox{\hyperlink{sbignum_8h_a125a18703958b148abc2d58a9889492a}{mpz\_carry\_t}};}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} int32\_t \mbox{\hyperlink{sbignum_8h_a7c80a1accd38e51890868c842ec458f7}{mpz\_scarry\_t}};}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#error "{}Please define ATOMBYTES"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define ATOMBITS (ATOMBYTES*8)}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define MPZ\_ATOMSZ (sizeof(mpz\_atom\_t))}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define MPZ\_MASK   ((mpz\_atom\_t)(\string~0))}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define MPZ\_SHIFT  (MPZ\_ATOMSZ*8)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define MPZ\_BASE   ((mpz\_carry\_t)MPZ\_MASK+1)}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} \{}
+\DoxyCodeLine{43     \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}} *\mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}};   \textcolor{comment}{/* data the least significant word is d[0] */}}
+\DoxyCodeLine{44     u\_int32\_t \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}};   \textcolor{comment}{/* allocated bytes */}}
+\DoxyCodeLine{45     u\_int32\_t \mbox{\hyperlink{structstruct__sbnz_a6961330c569716addd6806f400ed0ec7}{l}};   \textcolor{comment}{/* number of used bytes */}}
+\DoxyCodeLine{46     u\_int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}};   \textcolor{comment}{/* sign. non-\/zero if negative */}}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 \textcolor{comment}{/* define the sbnz type */}}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} *mpz\_ptr;}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} mpz\_t[1];}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{/* Error codes */}}
+\DoxyCodeLine{53 \textcolor{keyword}{enum} \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345d}{sbn\_err}} \{}
+\DoxyCodeLine{54     \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\_OK}} = 0,}
+\DoxyCodeLine{55     \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281}{SBN\_MEM}},}
+\DoxyCodeLine{56     \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\_INVAL}}}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define SBN\_MINBASE 2}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define SBN\_MAXBASE 36}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{/* Exported macros */}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* this macro is true if z == 0 */}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define \_mpz\_iszero(z) ((z)-\/>l == 0)}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* this is just the reverse. Equivalent to !\_mpz\_iszero */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_mpz\_nonzero(z) ((z)-\/>l != 0)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define mpz\_inc(z)  mpz\_add\_ui(z, z, 1)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define mpz\_dec(z)  mpz\_sub\_ui(z, z, 1)}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Functions prototypes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{/* inititialization/allocation */}}
+\DoxyCodeLine{76 \textcolor{keywordtype}{void}    \mbox{\hyperlink{sbignum_8h_a155f4decbf38d2a77651223a7af49160}{mpz\_init}}(mpz\_ptr z);}
+\DoxyCodeLine{77 \textcolor{keywordtype}{void}    \mbox{\hyperlink{sbignum_8h_a19188aa5fd692f2035196a15e3780d3d}{mpz\_clear}}(mpz\_ptr z);}
+\DoxyCodeLine{78 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\_realloc}}(mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{79 \textcolor{comment}{/* shifting */}}
+\DoxyCodeLine{80 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a5b96ccdb71ddff491e70fef8a467adcc}{mpz\_lshift}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{81 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a15f2b3ae8a1d86b3f37d3405d7376bae}{mpz\_rshift}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{82 \textcolor{comment}{/* comparision */}}
+\DoxyCodeLine{83 int32\_t \mbox{\hyperlink{sbignum_8h_a5e8935b68c2a7ecf025b0b35fdcae0d8}{mpz\_abscmp}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, mpz\_ptr b);}
+\DoxyCodeLine{84 int32\_t \mbox{\hyperlink{sbignum_8h_aeb24ce98c0235b745608ca6d2b1569c7}{mpz\_abscmp\_ui}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, u\_int32\_t u);}
+\DoxyCodeLine{85 int32\_t \mbox{\hyperlink{sbignum_8h_a98596f49f450c942072f25b509d8e360}{mpz\_cmp}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, mpz\_ptr b);}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define mpz\_eq(a,b) (mpz\_cmp(a,b) == 0)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define mpz\_noteq(a,b) (mpz\_cmp(a,b) != 0)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define mpz\_lt(a,b) (mpz\_cmp(a,b) < 0)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define mpz\_le(a,b) (mpz\_cmp(a,b) <= 0)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define mpz\_gt(a,b) (mpz\_cmp(a,b) > 0)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define mpz\_ge(a,b) (mpz\_cmp(a,b) >= 0)}}
+\DoxyCodeLine{92 int32\_t \mbox{\hyperlink{sbignum_8h_a501923fd6990e612a58a7d4d57ce5268}{mpz\_cmp\_ui}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, u\_int32\_t u);}
+\DoxyCodeLine{93 int32\_t \mbox{\hyperlink{sbignum_8h_ad8f385080bb3b1cf2d47d34610e809f1}{mpz\_cmp\_si}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define mpz\_eq\_si(a,s) (mpz\_cmp\_si(a,s) == 0)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define mpz\_noteq\_si(a,s) (mpz\_cmp\_si(a,s) != 0)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define mpz\_lt\_si(a,s) (mpz\_cmp\_si(a,s) < 0)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define mpz\_le\_si(a,s) (mpz\_cmp\_si(a,s) <= 0)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define mpz\_gt\_si(a,s) (mpz\_cmp\_si(a,s) > 0)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define mpz\_ge\_si(a,s) (mpz\_cmp\_si(a,s) >= 0)}}
+\DoxyCodeLine{100 \textcolor{comment}{/* addition */}}
+\DoxyCodeLine{101 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ac65c3d09dabbbef570e15bb887dcedb1}{mpz\_add\_ui}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{102 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a53ae0c22ae07adb510731d5ac2b62dce}{mpz\_add\_si}}(mpz\_ptr r, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{103 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a058f5485fbbf522dc2dd597c475aed77}{mpz\_add}}(mpz\_ptr r, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, mpz\_ptr b);}
+\DoxyCodeLine{104 \textcolor{comment}{/* subtraction */}}
+\DoxyCodeLine{105 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a6adfc2d8ede735ca4bd0ffcfc36ef07a}{mpz\_sub\_ui}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{106 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_af79cc0eab3db5e37cce8398f904c9401}{mpz\_sub\_si}}(mpz\_ptr r, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{107 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a1489b364ff6b84146063dda27abbbaa8}{mpz\_sub}}(mpz\_ptr r, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, mpz\_ptr b);}
+\DoxyCodeLine{108 \textcolor{comment}{/* multiplication */}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a568713e406452d41f0879510b10d7718}{mpz\_mul}}(mpz\_ptr r, mpz\_ptr z, mpz\_ptr f);}
+\DoxyCodeLine{110 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_af94c24ad93bddcd093ce056c9b8f9cbc}{mpz\_mul\_ui}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a851bb2a7b69e12413baaa55168eb0519}{mpz\_mul\_si}}(mpz\_ptr r, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{112 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a9805b5951dd9e2e296a5c426fa89466e}{mpz\_fac\_ui}}(mpz\_ptr r, u\_int32\_t i);}
+\DoxyCodeLine{113 \textcolor{comment}{/* exponentialization */}}
+\DoxyCodeLine{114 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_aea50f2185cf7b1db77ea90580e742768}{mpz\_powm}}(mpz\_ptr r, mpz\_ptr b, mpz\_ptr e, mpz\_ptr m);}
+\DoxyCodeLine{115 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\_pow}}(mpz\_ptr r, mpz\_ptr b, mpz\_ptr e);}
+\DoxyCodeLine{116 \textcolor{comment}{/* division */}}
+\DoxyCodeLine{117 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a5973c800cce3116b92f54b23c41d3951}{mpz\_tdiv\_qr}}(mpz\_ptr q, mpz\_ptr r, mpz\_ptr z, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}});}
+\DoxyCodeLine{118 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a1ea4a70f4039bf4ee745e01865b2c3cf}{mpz\_tdiv\_qr\_ui}}(mpz\_ptr q, mpz\_ptr r, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{119 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a693b4f9a52854ed3637310b2f86f87b5}{mpz\_tdiv\_qr\_si}}(mpz\_ptr q, mpz\_ptr r, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{120 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ab4821ac288ac7c085f017d7418cca46d}{mpz\_tdiv\_q}}(mpz\_ptr q, mpz\_ptr z, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}});}
+\DoxyCodeLine{121 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a4c9068aea61f61056aebea9e9c827595}{mpz\_tdiv\_q\_ui}}(mpz\_ptr q, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_af28b1dc2f9c81a099277f0ef38bf9b7b}{mpz\_tdiv\_q\_si}}(mpz\_ptr q, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{123 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a77779785febd13b3dbdf74ef02958c38}{mpz\_tdiv\_r}}(mpz\_ptr r, mpz\_ptr z, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}});}
+\DoxyCodeLine{124 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a6c71d6549f2940d3fd70c075cc6377bd}{mpz\_tdiv\_r\_ui}}(mpz\_ptr r, mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{125 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a96611e0363845c0b9bb3bf2d0b2afccd}{mpz\_tdiv\_r\_si}}(mpz\_ptr r, mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{126 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ad14f285fb838becce984b5878188f614}{mpz\_mod}}(mpz\_ptr r, mpz\_ptr z, mpz\_ptr m);}
+\DoxyCodeLine{127 \textcolor{comment}{/* root extraction */}}
+\DoxyCodeLine{128 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a9002b8a2e6e3f8403c36713110643d3a}{mpz\_sqrt}}(mpz\_ptr r, mpz\_ptr z);}
+\DoxyCodeLine{129 \textcolor{comment}{/* assignment */}}
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\_setzero}}(mpz\_ptr z);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a8e08dfe16c7ac957f9784383da1312c6}{mpz\_set}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}}, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a46b3ca345c22261c031aa8888cc02b14}{mpz\_set\_ui}}(mpz\_ptr z, u\_int32\_t u);}
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a4e40ea687d4fc2d16bf6d412b7c05638}{mpz\_set\_si}}(mpz\_ptr z, int32\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{134 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a2c63fe7d6872f76ed0360ead99a3489f}{mpz\_abs}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}}, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{135 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a4f77b6a070346e0e4f9415357d3671f8}{mpz\_neg}}(mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}}, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{136 \textcolor{comment}{/* bit operations */}}
+\DoxyCodeLine{137 u\_int32\_t \mbox{\hyperlink{sbignum_8h_a8e2d434e89ad24d3c664278c2411bd5a}{mpz\_bits}}(mpz\_ptr z);}
+\DoxyCodeLine{138 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_aa90d09b20f17c30b0d5572281efbc5da}{mpz\_setbit}}(mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{139 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ae05d28b5a9a64ca99d412525ad04fc2d}{mpz\_clrbit}}(mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{140 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a8f2f5d1cba2f7422b49c7d122dc18ecc}{mpz\_testbit}}(mpz\_ptr z, u\_int32\_t i);}
+\DoxyCodeLine{141 \textcolor{comment}{/* number theoretic functions */}}
+\DoxyCodeLine{142 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_af8584e7d2907ebd5db25596705021972}{mpz\_gcd}}(mpz\_ptr g, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, mpz\_ptr b);}
+\DoxyCodeLine{143 u\_int32\_t \mbox{\hyperlink{sbignum_8h_a1e3e9866f1bc916f512734dc8a2c2167}{mpz\_gcd\_ui}}(mpz\_ptr g, mpz\_ptr \mbox{\hyperlink{structstruct__sbnz_a2b2bb97a3d3fbba79062186cb1c9c9c8}{a}}, u\_int32\_t b);}
+\DoxyCodeLine{144 \textcolor{comment}{/* to/from mpz conversions */}}
+\DoxyCodeLine{145 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{sbignum_8h_a009aaaaec7bcc82c7df61659a03461ee}{mpz\_sizeinbase}}(mpz\_ptr z, u\_int32\_t b);}
+\DoxyCodeLine{146 \textcolor{keywordtype}{char}    *\mbox{\hyperlink{sbignum_8h_aac739e27126529ad246f59831461caf9}{mpz\_get\_str}}(\textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} b, mpz\_ptr z);}
+\DoxyCodeLine{147 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a5b5f39959d23202fe9db7a975705cf03}{mpz\_set\_str}}(mpz\_ptr z, \textcolor{keywordtype}{char} *\mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}}, \textcolor{keywordtype}{int} b);}
+\DoxyCodeLine{148 \textcolor{keywordtype}{double}  \mbox{\hyperlink{sbignum_8h_a48969a7a48d7ee8a24eb050e579a91ff}{mpz\_get\_d}}(mpz\_ptr z);}
+\DoxyCodeLine{149 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a00602345aa51818b9cbd4cb68724facc}{mpz\_set\_d}}(mpz\_ptr z, \textcolor{keywordtype}{double} \mbox{\hyperlink{structstruct__sbnz_a412a79dbb33ad602b16d78f1ae189167}{d}});}
+\DoxyCodeLine{150 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_ac291687865f843925f10c7e8045e4fca}{mpz\_set\_si64}}(mpz\_ptr z, int64\_t \mbox{\hyperlink{structstruct__sbnz_a033eff0d60c4be7c51f8bba0f84a1f69}{s}});}
+\DoxyCodeLine{151 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a2336671b5abff7620f928f60e869704d}{mpz\_set\_ui64}}(mpz\_ptr z, u\_int64\_t u);}
+\DoxyCodeLine{152 \textcolor{comment}{/* random numbers */}}
+\DoxyCodeLine{153 u\_int32\_t \mbox{\hyperlink{sbignum_8h_a162c378d1c9ff49927d12be161b02be4}{sbn\_rand}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{154 \textcolor{keywordtype}{void}    \mbox{\hyperlink{sbignum_8h_ae24357f20cab2a414405b5534655cad7}{sbn\_seed}}(\textcolor{keywordtype}{void} *seed, \textcolor{keywordtype}{size\_t} len);}
+\DoxyCodeLine{155 \textcolor{keywordtype}{int} \mbox{\hyperlink{sbignum_8h_a32a4b79db24d21ef39d2b2ef92ad503f}{mpz\_random}}(mpz\_ptr z, int32\_t len);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SBIGNUM\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

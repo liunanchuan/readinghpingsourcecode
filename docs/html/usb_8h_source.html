@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/pcap/usb.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_756a565e76771ae7bbef1d9fba70a453.html">pcap</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">usb.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="usb_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2006 Paolo Abeni (Italy)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * are met:</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * 1. Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * notice, this list of conditions and the following disclaimer in the</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * 3. The name of the author may not be used to endorse or promote </span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * products derived from this software without specific prior written </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * permission.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * Basic USB data struct</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * By Paolo Abeni &lt;paolo.abeni@email.it&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @(#) $Header: /tcpdump/master/libpcap/pcap/usb.h,v 1.9 2008-12-23 20:13:29 guy Exp $</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#ifndef _PCAP_USB_STRUCTS_H__</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define _PCAP_USB_STRUCTS_H__</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * possible transfer mode</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="usb_8h.html#a30004e5c520e90a6f962e17353d83bc3">   42</a></span><span class="preprocessor">#define URB_TRANSFER_IN   0x80</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="usb_8h.html#ae3dee18352adde4984d4997708d0ee30">   43</a></span><span class="preprocessor">#define URB_ISOCHRONOUS   0x0</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="usb_8h.html#a6b858224e002d1cff87e8e610970882d">   44</a></span><span class="preprocessor">#define URB_INTERRUPT     0x1</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="usb_8h.html#a47381194136626e2d2f4819aa98f5a99">   45</a></span><span class="preprocessor">#define URB_CONTROL       0x2</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="usb_8h.html#a2d8cc94e74099791ff5172de6a46d332">   46</a></span><span class="preprocessor">#define URB_BULK          0x3</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * possible event type</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="usb_8h.html#a8bf3878342e512de0e5e5b2d83885c90">   51</a></span><span class="preprocessor">#define URB_SUBMIT        &#39;S&#39;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="usb_8h.html#af653f72cd66937511923f38ef5db0734">   52</a></span><span class="preprocessor">#define URB_COMPLETE      &#39;C&#39;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="usb_8h.html#a0e4b5fa98656adf2ad45cbea0df87ec1">   53</a></span><span class="preprocessor">#define URB_ERROR         &#39;E&#39;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * USB setup header as defined in USB specification.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> * Appears at the front of each Control S-type packet in DLT_USB captures.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html">   59</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>_usb_setup {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html#a9ad2d72083368ca3df1acf1286c66469">   60</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__setup.html#a9ad2d72083368ca3df1acf1286c66469">bmRequestType</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html#ac489e65b4dc45f5f5a932f9588b7554a">   61</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__setup.html#ac489e65b4dc45f5f5a932f9588b7554a">bRequest</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html#a0d3f62ec4011c45f57093a3e607e954e">   62</a></span>    u_int16_t <a class="code hl_variable" href="structpcap__usb__setup.html#a0d3f62ec4011c45f57093a3e607e954e">wValue</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html#afce4bb1103321cc3d97a02cbd956d267">   63</a></span>    u_int16_t <a class="code hl_variable" href="structpcap__usb__setup.html#afce4bb1103321cc3d97a02cbd956d267">wIndex</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structpcap__usb__setup.html#a125f42e221491d5ecdbddc41c847c836">   64</a></span>    u_int16_t <a class="code hl_variable" href="structpcap__usb__setup.html#a125f42e221491d5ecdbddc41c847c836">wLength</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>} <a class="code hl_struct" href="structpcap__usb__setup.html">pcap_usb_setup</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"> * Information from the URB for Isochronous transfers.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structiso__rec.html">   70</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>_iso_rec {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structiso__rec.html#a15fed3d6fb51399a939b67458c0846b3">   71</a></span>    int32_t <a class="code hl_variable" href="structiso__rec.html#a15fed3d6fb51399a939b67458c0846b3">error_count</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structiso__rec.html#a320d983fae95632fd09c38ea1ebf7073">   72</a></span>    int32_t <a class="code hl_variable" href="structiso__rec.html#a320d983fae95632fd09c38ea1ebf7073">numdesc</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>} <a class="code hl_struct" href="structiso__rec.html">iso_rec</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> * Header prepended by linux kernel to each event.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"> * Appears at the front of each packet in DLT_USB_LINUX captures.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html">   79</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>_usb_header {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a376ab64711449ff4ffda74bb35bb2076">   80</a></span>    u_int64_t <a class="code hl_variable" href="structpcap__usb__header.html#a376ab64711449ff4ffda74bb35bb2076">id</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#aa4fa6626515b23686a07b969ad155153">   81</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header.html#aa4fa6626515b23686a07b969ad155153">event_type</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#aabb9084a9333141abf31db536bcc83d8">   82</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header.html#aabb9084a9333141abf31db536bcc83d8">transfer_type</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a223e1811570144bd344afa075513699d">   83</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header.html#a223e1811570144bd344afa075513699d">endpoint_number</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#ae1bf90e48b29d45bb41a3403e0465daa">   84</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header.html#ae1bf90e48b29d45bb41a3403e0465daa">device_address</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#ae1ad9de945cf649cb34fd60d22089ee2">   85</a></span>    u_int16_t <a class="code hl_variable" href="structpcap__usb__header.html#ae1ad9de945cf649cb34fd60d22089ee2">bus_id</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a189ca1eaafe22bfb35ba9afe41a98d4f">   86</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structpcap__usb__header.html#a189ca1eaafe22bfb35ba9afe41a98d4f">setup_flag</a>;<span class="comment">/*if !=0 the urb setup header is not present*/</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a5e872aafa74082801e295033e9d0a6a6">   87</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structpcap__usb__header.html#a5e872aafa74082801e295033e9d0a6a6">data_flag</a>; <span class="comment">/*if !=0 no urb data is present*/</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a1c02a0d13529fc8a9e93e467f98aff42">   88</a></span>    int64_t <a class="code hl_variable" href="structpcap__usb__header.html#a1c02a0d13529fc8a9e93e467f98aff42">ts_sec</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a1fb9efd05b607a72b47aba1206002436">   89</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header.html#a1fb9efd05b607a72b47aba1206002436">ts_usec</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a369536ebfe385731562c0b55dd6f3a7c">   90</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header.html#a369536ebfe385731562c0b55dd6f3a7c">status</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a5fea650a194bc21fb2f9484b0bba0194">   91</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header.html#a5fea650a194bc21fb2f9484b0bba0194">urb_len</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#a66f59afaeff1fcdb59b5a22e4147f1c0">   92</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header.html#a66f59afaeff1fcdb59b5a22e4147f1c0">data_len</a>; <span class="comment">/* amount of urb data really present in this event*/</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structpcap__usb__header.html#adacfe7c19b2f7423b2c4afafe2a725e6">   93</a></span>    <a class="code hl_struct" href="structpcap__usb__setup.html">pcap_usb_setup</a> <a class="code hl_variable" href="structpcap__usb__header.html#adacfe7c19b2f7423b2c4afafe2a725e6">setup</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>} <a class="code hl_struct" href="structpcap__usb__header.html">pcap_usb_header</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"> * Header prepended by linux kernel to each event for the 2.6.31</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"> * and later kernels; for the 2.6.21 through 2.6.30 kernels, the</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"> * &quot;iso_rec&quot; information, and the fields starting with &quot;interval&quot;</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"> * are zeroed-out padding fields.</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> * Appears at the front of each packet in DLT_USB_LINUX_MMAPPED captures.</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html">  104</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>_usb_header_mmapped {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a376ab64711449ff4ffda74bb35bb2076">  105</a></span>    u_int64_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a376ab64711449ff4ffda74bb35bb2076">id</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#aa4fa6626515b23686a07b969ad155153">  106</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#aa4fa6626515b23686a07b969ad155153">event_type</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#aabb9084a9333141abf31db536bcc83d8">  107</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#aabb9084a9333141abf31db536bcc83d8">transfer_type</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a223e1811570144bd344afa075513699d">  108</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a223e1811570144bd344afa075513699d">endpoint_number</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#ae1bf90e48b29d45bb41a3403e0465daa">  109</a></span>    u_int8_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#ae1bf90e48b29d45bb41a3403e0465daa">device_address</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#ae1ad9de945cf649cb34fd60d22089ee2">  110</a></span>    u_int16_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#ae1ad9de945cf649cb34fd60d22089ee2">bus_id</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a189ca1eaafe22bfb35ba9afe41a98d4f">  111</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a189ca1eaafe22bfb35ba9afe41a98d4f">setup_flag</a>;<span class="comment">/*if !=0 the urb setup header is not present*/</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a5e872aafa74082801e295033e9d0a6a6">  112</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a5e872aafa74082801e295033e9d0a6a6">data_flag</a>; <span class="comment">/*if !=0 no urb data is present*/</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a1c02a0d13529fc8a9e93e467f98aff42">  113</a></span>    int64_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a1c02a0d13529fc8a9e93e467f98aff42">ts_sec</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a1fb9efd05b607a72b47aba1206002436">  114</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a1fb9efd05b607a72b47aba1206002436">ts_usec</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a369536ebfe385731562c0b55dd6f3a7c">  115</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a369536ebfe385731562c0b55dd6f3a7c">status</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a5fea650a194bc21fb2f9484b0bba0194">  116</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a5fea650a194bc21fb2f9484b0bba0194">urb_len</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a66f59afaeff1fcdb59b5a22e4147f1c0">  117</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a66f59afaeff1fcdb59b5a22e4147f1c0">data_len</a>; <span class="comment">/* amount of urb data really present in this event*/</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#adacfe7c19b2f7423b2c4afafe2a725e6">  119</a></span>        <a class="code hl_struct" href="structpcap__usb__setup.html">pcap_usb_setup</a> <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#adacfe7c19b2f7423b2c4afafe2a725e6">setup</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a128d6cbc2b63ffb47ac1faf6650a11d4">  120</a></span>        <a class="code hl_struct" href="structiso__rec.html">iso_rec</a> <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a128d6cbc2b63ffb47ac1faf6650a11d4">iso</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a25740b54df3cf69bc33f57a5c9221d76">  121</a></span>    } s;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a68471e972011140d250b479b0aa4ff80">  122</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a68471e972011140d250b479b0aa4ff80">interval</a>;   <span class="comment">/* for Interrupt and Isochronous events */</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a9705add93743348a0b691b82065338dd">  123</a></span>    int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a9705add93743348a0b691b82065338dd">start_frame</a>;    <span class="comment">/* for Isochronous events */</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#a4e7a8eeca52c104a50c0ce791230e2db">  124</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#a4e7a8eeca52c104a50c0ce791230e2db">xfer_flags</a>;   <span class="comment">/* copy of URB&#39;s transfer flags */</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="structpcap__usb__header__mmapped.html#ac1bc82d1825a616e2081e29de04bf0b5">  125</a></span>    u_int32_t <a class="code hl_variable" href="structpcap__usb__header__mmapped.html#ac1bc82d1825a616e2081e29de04bf0b5">ndesc</a>;    <span class="comment">/* number of isochronous descriptors */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <a class="code hl_struct" href="structpcap__usb__header__mmapped.html">pcap_usb_header_mmapped</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment"> * Isochronous descriptors; for isochronous transfers there might be</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"> * one or more of these at the beginning of the packet data.  The</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"> * number of descriptors is given by the &quot;ndesc&quot; field in the header;</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"> * as indicated, in older kernels that don&#39;t put the descriptors at</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"> * the beginning of the packet, that field is zeroed out, so that field</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"> * can be trusted even in captures from older kernels.</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="structusb__isodesc.html">  136</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>_usb_isodesc {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="structusb__isodesc.html#a369536ebfe385731562c0b55dd6f3a7c">  137</a></span>    int32_t     <a class="code hl_variable" href="structusb__isodesc.html#a369536ebfe385731562c0b55dd6f3a7c">status</a>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="structusb__isodesc.html#a1fa6b5842f69b05c65db70b2ed22dc59">  138</a></span>    u_int32_t   <a class="code hl_variable" href="structusb__isodesc.html#a1fa6b5842f69b05c65db70b2ed22dc59">offset</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structusb__isodesc.html#a0c5f469bd681fb46e6f4203d5338e99f">  139</a></span>    u_int32_t   <a class="code hl_variable" href="structusb__isodesc.html#a0c5f469bd681fb46e6f4203d5338e99f">len</a>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="structusb__isodesc.html#ae8eeb15e1c9877910b8c392da619555a">  140</a></span>    u_int8_t    pad[4];</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>} <a class="code hl_struct" href="structusb__isodesc.html">usb_isodesc</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructiso__rec_html"><div class="ttname"><a href="structiso__rec.html">iso_rec</a></div><div class="ttdef"><b>Definition:</b> usb.h:70</div></div>
+<div class="ttc" id="astructiso__rec_html_a15fed3d6fb51399a939b67458c0846b3"><div class="ttname"><a href="structiso__rec.html#a15fed3d6fb51399a939b67458c0846b3">iso_rec::error_count</a></div><div class="ttdeci">int32_t error_count</div><div class="ttdef"><b>Definition:</b> usb.h:71</div></div>
+<div class="ttc" id="astructiso__rec_html_a320d983fae95632fd09c38ea1ebf7073"><div class="ttname"><a href="structiso__rec.html#a320d983fae95632fd09c38ea1ebf7073">iso_rec::numdesc</a></div><div class="ttdeci">int32_t numdesc</div><div class="ttdef"><b>Definition:</b> usb.h:72</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html"><div class="ttname"><a href="structpcap__usb__header__mmapped.html">pcap_usb_header_mmapped</a></div><div class="ttdef"><b>Definition:</b> usb.h:104</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a128d6cbc2b63ffb47ac1faf6650a11d4"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a128d6cbc2b63ffb47ac1faf6650a11d4">pcap_usb_header_mmapped::iso</a></div><div class="ttdeci">iso_rec iso</div><div class="ttdef"><b>Definition:</b> usb.h:120</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a189ca1eaafe22bfb35ba9afe41a98d4f"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a189ca1eaafe22bfb35ba9afe41a98d4f">pcap_usb_header_mmapped::setup_flag</a></div><div class="ttdeci">char setup_flag</div><div class="ttdef"><b>Definition:</b> usb.h:111</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a1c02a0d13529fc8a9e93e467f98aff42"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a1c02a0d13529fc8a9e93e467f98aff42">pcap_usb_header_mmapped::ts_sec</a></div><div class="ttdeci">int64_t ts_sec</div><div class="ttdef"><b>Definition:</b> usb.h:113</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a1fb9efd05b607a72b47aba1206002436"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a1fb9efd05b607a72b47aba1206002436">pcap_usb_header_mmapped::ts_usec</a></div><div class="ttdeci">int32_t ts_usec</div><div class="ttdef"><b>Definition:</b> usb.h:114</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a223e1811570144bd344afa075513699d"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a223e1811570144bd344afa075513699d">pcap_usb_header_mmapped::endpoint_number</a></div><div class="ttdeci">u_int8_t endpoint_number</div><div class="ttdef"><b>Definition:</b> usb.h:108</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a369536ebfe385731562c0b55dd6f3a7c"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a369536ebfe385731562c0b55dd6f3a7c">pcap_usb_header_mmapped::status</a></div><div class="ttdeci">int32_t status</div><div class="ttdef"><b>Definition:</b> usb.h:115</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a376ab64711449ff4ffda74bb35bb2076"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a376ab64711449ff4ffda74bb35bb2076">pcap_usb_header_mmapped::id</a></div><div class="ttdeci">u_int64_t id</div><div class="ttdef"><b>Definition:</b> usb.h:105</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a4e7a8eeca52c104a50c0ce791230e2db"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a4e7a8eeca52c104a50c0ce791230e2db">pcap_usb_header_mmapped::xfer_flags</a></div><div class="ttdeci">u_int32_t xfer_flags</div><div class="ttdef"><b>Definition:</b> usb.h:124</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a5e872aafa74082801e295033e9d0a6a6"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a5e872aafa74082801e295033e9d0a6a6">pcap_usb_header_mmapped::data_flag</a></div><div class="ttdeci">char data_flag</div><div class="ttdef"><b>Definition:</b> usb.h:112</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a5fea650a194bc21fb2f9484b0bba0194"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a5fea650a194bc21fb2f9484b0bba0194">pcap_usb_header_mmapped::urb_len</a></div><div class="ttdeci">u_int32_t urb_len</div><div class="ttdef"><b>Definition:</b> usb.h:116</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a66f59afaeff1fcdb59b5a22e4147f1c0"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a66f59afaeff1fcdb59b5a22e4147f1c0">pcap_usb_header_mmapped::data_len</a></div><div class="ttdeci">u_int32_t data_len</div><div class="ttdef"><b>Definition:</b> usb.h:117</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a68471e972011140d250b479b0aa4ff80"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a68471e972011140d250b479b0aa4ff80">pcap_usb_header_mmapped::interval</a></div><div class="ttdeci">int32_t interval</div><div class="ttdef"><b>Definition:</b> usb.h:122</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_a9705add93743348a0b691b82065338dd"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#a9705add93743348a0b691b82065338dd">pcap_usb_header_mmapped::start_frame</a></div><div class="ttdeci">int32_t start_frame</div><div class="ttdef"><b>Definition:</b> usb.h:123</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_aa4fa6626515b23686a07b969ad155153"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#aa4fa6626515b23686a07b969ad155153">pcap_usb_header_mmapped::event_type</a></div><div class="ttdeci">u_int8_t event_type</div><div class="ttdef"><b>Definition:</b> usb.h:106</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_aabb9084a9333141abf31db536bcc83d8"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#aabb9084a9333141abf31db536bcc83d8">pcap_usb_header_mmapped::transfer_type</a></div><div class="ttdeci">u_int8_t transfer_type</div><div class="ttdef"><b>Definition:</b> usb.h:107</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_ac1bc82d1825a616e2081e29de04bf0b5"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#ac1bc82d1825a616e2081e29de04bf0b5">pcap_usb_header_mmapped::ndesc</a></div><div class="ttdeci">u_int32_t ndesc</div><div class="ttdef"><b>Definition:</b> usb.h:125</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_adacfe7c19b2f7423b2c4afafe2a725e6"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#adacfe7c19b2f7423b2c4afafe2a725e6">pcap_usb_header_mmapped::setup</a></div><div class="ttdeci">pcap_usb_setup setup</div><div class="ttdef"><b>Definition:</b> usb.h:119</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_ae1ad9de945cf649cb34fd60d22089ee2"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#ae1ad9de945cf649cb34fd60d22089ee2">pcap_usb_header_mmapped::bus_id</a></div><div class="ttdeci">u_int16_t bus_id</div><div class="ttdef"><b>Definition:</b> usb.h:110</div></div>
+<div class="ttc" id="astructpcap__usb__header__mmapped_html_ae1bf90e48b29d45bb41a3403e0465daa"><div class="ttname"><a href="structpcap__usb__header__mmapped.html#ae1bf90e48b29d45bb41a3403e0465daa">pcap_usb_header_mmapped::device_address</a></div><div class="ttdeci">u_int8_t device_address</div><div class="ttdef"><b>Definition:</b> usb.h:109</div></div>
+<div class="ttc" id="astructpcap__usb__header_html"><div class="ttname"><a href="structpcap__usb__header.html">pcap_usb_header</a></div><div class="ttdef"><b>Definition:</b> usb.h:79</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a189ca1eaafe22bfb35ba9afe41a98d4f"><div class="ttname"><a href="structpcap__usb__header.html#a189ca1eaafe22bfb35ba9afe41a98d4f">pcap_usb_header::setup_flag</a></div><div class="ttdeci">char setup_flag</div><div class="ttdef"><b>Definition:</b> usb.h:86</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a1c02a0d13529fc8a9e93e467f98aff42"><div class="ttname"><a href="structpcap__usb__header.html#a1c02a0d13529fc8a9e93e467f98aff42">pcap_usb_header::ts_sec</a></div><div class="ttdeci">int64_t ts_sec</div><div class="ttdef"><b>Definition:</b> usb.h:88</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a1fb9efd05b607a72b47aba1206002436"><div class="ttname"><a href="structpcap__usb__header.html#a1fb9efd05b607a72b47aba1206002436">pcap_usb_header::ts_usec</a></div><div class="ttdeci">int32_t ts_usec</div><div class="ttdef"><b>Definition:</b> usb.h:89</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a223e1811570144bd344afa075513699d"><div class="ttname"><a href="structpcap__usb__header.html#a223e1811570144bd344afa075513699d">pcap_usb_header::endpoint_number</a></div><div class="ttdeci">u_int8_t endpoint_number</div><div class="ttdef"><b>Definition:</b> usb.h:83</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a369536ebfe385731562c0b55dd6f3a7c"><div class="ttname"><a href="structpcap__usb__header.html#a369536ebfe385731562c0b55dd6f3a7c">pcap_usb_header::status</a></div><div class="ttdeci">int32_t status</div><div class="ttdef"><b>Definition:</b> usb.h:90</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a376ab64711449ff4ffda74bb35bb2076"><div class="ttname"><a href="structpcap__usb__header.html#a376ab64711449ff4ffda74bb35bb2076">pcap_usb_header::id</a></div><div class="ttdeci">u_int64_t id</div><div class="ttdef"><b>Definition:</b> usb.h:80</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a5e872aafa74082801e295033e9d0a6a6"><div class="ttname"><a href="structpcap__usb__header.html#a5e872aafa74082801e295033e9d0a6a6">pcap_usb_header::data_flag</a></div><div class="ttdeci">char data_flag</div><div class="ttdef"><b>Definition:</b> usb.h:87</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a5fea650a194bc21fb2f9484b0bba0194"><div class="ttname"><a href="structpcap__usb__header.html#a5fea650a194bc21fb2f9484b0bba0194">pcap_usb_header::urb_len</a></div><div class="ttdeci">u_int32_t urb_len</div><div class="ttdef"><b>Definition:</b> usb.h:91</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_a66f59afaeff1fcdb59b5a22e4147f1c0"><div class="ttname"><a href="structpcap__usb__header.html#a66f59afaeff1fcdb59b5a22e4147f1c0">pcap_usb_header::data_len</a></div><div class="ttdeci">u_int32_t data_len</div><div class="ttdef"><b>Definition:</b> usb.h:92</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_aa4fa6626515b23686a07b969ad155153"><div class="ttname"><a href="structpcap__usb__header.html#aa4fa6626515b23686a07b969ad155153">pcap_usb_header::event_type</a></div><div class="ttdeci">u_int8_t event_type</div><div class="ttdef"><b>Definition:</b> usb.h:81</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_aabb9084a9333141abf31db536bcc83d8"><div class="ttname"><a href="structpcap__usb__header.html#aabb9084a9333141abf31db536bcc83d8">pcap_usb_header::transfer_type</a></div><div class="ttdeci">u_int8_t transfer_type</div><div class="ttdef"><b>Definition:</b> usb.h:82</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_adacfe7c19b2f7423b2c4afafe2a725e6"><div class="ttname"><a href="structpcap__usb__header.html#adacfe7c19b2f7423b2c4afafe2a725e6">pcap_usb_header::setup</a></div><div class="ttdeci">pcap_usb_setup setup</div><div class="ttdef"><b>Definition:</b> usb.h:93</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_ae1ad9de945cf649cb34fd60d22089ee2"><div class="ttname"><a href="structpcap__usb__header.html#ae1ad9de945cf649cb34fd60d22089ee2">pcap_usb_header::bus_id</a></div><div class="ttdeci">u_int16_t bus_id</div><div class="ttdef"><b>Definition:</b> usb.h:85</div></div>
+<div class="ttc" id="astructpcap__usb__header_html_ae1bf90e48b29d45bb41a3403e0465daa"><div class="ttname"><a href="structpcap__usb__header.html#ae1bf90e48b29d45bb41a3403e0465daa">pcap_usb_header::device_address</a></div><div class="ttdeci">u_int8_t device_address</div><div class="ttdef"><b>Definition:</b> usb.h:84</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html"><div class="ttname"><a href="structpcap__usb__setup.html">pcap_usb_setup</a></div><div class="ttdef"><b>Definition:</b> usb.h:59</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html_a0d3f62ec4011c45f57093a3e607e954e"><div class="ttname"><a href="structpcap__usb__setup.html#a0d3f62ec4011c45f57093a3e607e954e">pcap_usb_setup::wValue</a></div><div class="ttdeci">u_int16_t wValue</div><div class="ttdef"><b>Definition:</b> usb.h:62</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html_a125f42e221491d5ecdbddc41c847c836"><div class="ttname"><a href="structpcap__usb__setup.html#a125f42e221491d5ecdbddc41c847c836">pcap_usb_setup::wLength</a></div><div class="ttdeci">u_int16_t wLength</div><div class="ttdef"><b>Definition:</b> usb.h:64</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html_a9ad2d72083368ca3df1acf1286c66469"><div class="ttname"><a href="structpcap__usb__setup.html#a9ad2d72083368ca3df1acf1286c66469">pcap_usb_setup::bmRequestType</a></div><div class="ttdeci">u_int8_t bmRequestType</div><div class="ttdef"><b>Definition:</b> usb.h:60</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html_ac489e65b4dc45f5f5a932f9588b7554a"><div class="ttname"><a href="structpcap__usb__setup.html#ac489e65b4dc45f5f5a932f9588b7554a">pcap_usb_setup::bRequest</a></div><div class="ttdeci">u_int8_t bRequest</div><div class="ttdef"><b>Definition:</b> usb.h:61</div></div>
+<div class="ttc" id="astructpcap__usb__setup_html_afce4bb1103321cc3d97a02cbd956d267"><div class="ttname"><a href="structpcap__usb__setup.html#afce4bb1103321cc3d97a02cbd956d267">pcap_usb_setup::wIndex</a></div><div class="ttdeci">u_int16_t wIndex</div><div class="ttdef"><b>Definition:</b> usb.h:63</div></div>
+<div class="ttc" id="astructusb__isodesc_html"><div class="ttname"><a href="structusb__isodesc.html">usb_isodesc</a></div><div class="ttdef"><b>Definition:</b> usb.h:136</div></div>
+<div class="ttc" id="astructusb__isodesc_html_a0c5f469bd681fb46e6f4203d5338e99f"><div class="ttname"><a href="structusb__isodesc.html#a0c5f469bd681fb46e6f4203d5338e99f">usb_isodesc::len</a></div><div class="ttdeci">u_int32_t len</div><div class="ttdef"><b>Definition:</b> usb.h:139</div></div>
+<div class="ttc" id="astructusb__isodesc_html_a1fa6b5842f69b05c65db70b2ed22dc59"><div class="ttname"><a href="structusb__isodesc.html#a1fa6b5842f69b05c65db70b2ed22dc59">usb_isodesc::offset</a></div><div class="ttdeci">u_int32_t offset</div><div class="ttdef"><b>Definition:</b> usb.h:138</div></div>
+<div class="ttc" id="astructusb__isodesc_html_a369536ebfe385731562c0b55dd6f3a7c"><div class="ttname"><a href="structusb__isodesc.html#a369536ebfe385731562c0b55dd6f3a7c">usb_isodesc::status</a></div><div class="ttdeci">int32_t status</div><div class="ttdef"><b>Definition:</b> usb.h:137</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

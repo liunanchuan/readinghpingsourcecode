@@ -1,0 +1,1078 @@
+\hypertarget{bpf_8h_source}{}\doxysection{bpf.\+h}
+\label{bpf_8h_source}\index{libpcap-\/1.1.1/pcap/bpf.h@{libpcap-\/1.1.1/pcap/bpf.h}}
+\mbox{\hyperlink{bpf_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * This code is derived from the Stanford/CMU enet packet filter,}}
+\DoxyCodeLine{6 \textcolor{comment}{ * (net/enet.c) distributed as part of 4.3BSD, and code contributed}}
+\DoxyCodeLine{7 \textcolor{comment}{ * to Berkeley by Steven McCanne and Van Jacobson both of Lawrence }}
+\DoxyCodeLine{8 \textcolor{comment}{ * Berkeley Laboratory.}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{11 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{12 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{15 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{16 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{17 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{18 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{20 \textcolor{comment}{ *      This product includes software developed by the University of}}
+\DoxyCodeLine{21 \textcolor{comment}{ *      California, Berkeley and its contributors.}}
+\DoxyCodeLine{22 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{23 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{24 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{27 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{28 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{29 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{30 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{31 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{32 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{33 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{34 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{35 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{36 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *}}
+\DoxyCodeLine{38 \textcolor{comment}{ *      @(\#)bpf.h       7.1 (Berkeley) 5/7/91}}
+\DoxyCodeLine{39 \textcolor{comment}{ *}}
+\DoxyCodeLine{40 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/bpf.h,v 1.32 2008-\/12-\/23 20:13:29 guy Exp \$ (LBL)}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{ * This is libpcap's cut-\/down version of bpf.h; it includes only}}
+\DoxyCodeLine{45 \textcolor{comment}{ * the stuff needed for the code generator and the userland BPF}}
+\DoxyCodeLine{46 \textcolor{comment}{ * interpreter, and the libpcap APIs for setting filters, etc..}}
+\DoxyCodeLine{47 \textcolor{comment}{ *}}
+\DoxyCodeLine{48 \textcolor{comment}{ * "{}pcap-\/bpf.c"{} will include the native OS version, as it deals with}}
+\DoxyCodeLine{49 \textcolor{comment}{ * the OS's BPF implementation.}}
+\DoxyCodeLine{50 \textcolor{comment}{ *}}
+\DoxyCodeLine{51 \textcolor{comment}{ * XXX -\/ should this all just be moved to "{}pcap.h"{}?}}
+\DoxyCodeLine{52 \textcolor{comment}{ */}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifndef BPF\_MAJOR\_VERSION}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{57 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{/* BSD style release date */}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define BPF\_RELEASE 199606}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#ifdef MSDOS }\textcolor{comment}{/* must be 32-\/bit */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long}          \mbox{\hyperlink{bpf_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\_int32}};}
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}};}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{bpf_8h_a759c6336c1d9abb462d9248c5ca5c437}{bpf\_int32}};}
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} u\_int \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}};}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{/*}}
+\DoxyCodeLine{72 \textcolor{comment}{ * Alignment macros.  BPF\_WORDALIGN rounds up to the next }}
+\DoxyCodeLine{73 \textcolor{comment}{ * even multiple of BPF\_ALIGNMENT. }}
+\DoxyCodeLine{74 \textcolor{comment}{ */}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#ifndef \_\_NetBSD\_\_}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define BPF\_ALIGNMENT sizeof(bpf\_int32)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define BPF\_ALIGNMENT sizeof(long)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define BPF\_WORDALIGN(x) (((x)+(BPF\_ALIGNMENT-\/1))\&\string~(BPF\_ALIGNMENT-\/1))}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define BPF\_MAXBUFSIZE 0x8000}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define BPF\_MINBUFSIZE 32}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{/*}}
+\DoxyCodeLine{86 \textcolor{comment}{ * Structure for "{}pcap\_compile()"{}, "{}pcap\_setfilter()"{}, etc..}}
+\DoxyCodeLine{87 \textcolor{comment}{ */}}
+\DoxyCodeLine{88 \textcolor{keyword}{struct }\mbox{\hyperlink{structbpf__program}{bpf\_program}} \{}
+\DoxyCodeLine{89     u\_int \mbox{\hyperlink{structbpf__program_ab083593fb14595185d9503f0184804cd}{bf\_len}};}
+\DoxyCodeLine{90     \textcolor{keyword}{struct }\mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *\mbox{\hyperlink{structbpf__program_aed556880943c25c15e7ed3b1502603e9}{bf\_insns}};}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92  }
+\DoxyCodeLine{93 \textcolor{comment}{/*}}
+\DoxyCodeLine{94 \textcolor{comment}{ * Struct return by BIOCVERSION.  This represents the version number of }}
+\DoxyCodeLine{95 \textcolor{comment}{ * the filter language described by the instruction encodings below.}}
+\DoxyCodeLine{96 \textcolor{comment}{ * bpf understands a program iff kernel\_major == filter\_major \&\&}}
+\DoxyCodeLine{97 \textcolor{comment}{ * kernel\_minor >= filter\_minor, that is, if the value returned by the}}
+\DoxyCodeLine{98 \textcolor{comment}{ * running kernel has the same major number and a minor number equal}}
+\DoxyCodeLine{99 \textcolor{comment}{ * equal to or less than the filter being downloaded.  Otherwise, the}}
+\DoxyCodeLine{100 \textcolor{comment}{ * results are undefined, meaning an error may be returned or packets}}
+\DoxyCodeLine{101 \textcolor{comment}{ * may be accepted haphazardly.}}
+\DoxyCodeLine{102 \textcolor{comment}{ * It has nothing to do with the source code version.}}
+\DoxyCodeLine{103 \textcolor{comment}{ */}}
+\DoxyCodeLine{104 \textcolor{keyword}{struct }\mbox{\hyperlink{structbpf__version}{bpf\_version}} \{}
+\DoxyCodeLine{105     u\_short \mbox{\hyperlink{structbpf__version_a177e7610753444673be3a203ee830763}{bv\_major}};}
+\DoxyCodeLine{106     u\_short \mbox{\hyperlink{structbpf__version_ad586683d2c82d7880c7fb8222928f802}{bv\_minor}};}
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 \textcolor{comment}{/* Current version number of filter architecture. */}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define BPF\_MAJOR\_VERSION 1}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define BPF\_MINOR\_VERSION 1}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/*}}
+\DoxyCodeLine{113 \textcolor{comment}{ * Data-\/link level type codes.}}
+\DoxyCodeLine{114 \textcolor{comment}{ *}}
+\DoxyCodeLine{115 \textcolor{comment}{ * Do *NOT* add new values to this list without asking}}
+\DoxyCodeLine{116 \textcolor{comment}{ * "{}tcpdump-\/workers@lists.tcpdump.org"{} for a value.  Otherwise, you run}}
+\DoxyCodeLine{117 \textcolor{comment}{ * the risk of using a value that's already being used for some other}}
+\DoxyCodeLine{118 \textcolor{comment}{ * purpose, and of having tools that read libpcap-\/format captures not}}
+\DoxyCodeLine{119 \textcolor{comment}{ * being able to handle captures with your new DLT\_ value, with no hope}}
+\DoxyCodeLine{120 \textcolor{comment}{ * that they will ever be changed to do so (as that would destroy their}}
+\DoxyCodeLine{121 \textcolor{comment}{ * ability to read captures using that value for that other purpose).}}
+\DoxyCodeLine{122 \textcolor{comment}{ */}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{/*}}
+\DoxyCodeLine{125 \textcolor{comment}{ * These are the types that are the same on all platforms, and that}}
+\DoxyCodeLine{126 \textcolor{comment}{ * have been defined by <net/bpf.h> for ages.}}
+\DoxyCodeLine{127 \textcolor{comment}{ */}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define DLT\_NULL    0   }\textcolor{comment}{/* BSD loopback encapsulation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define DLT\_EN10MB  1   }\textcolor{comment}{/* Ethernet (10Mb) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define DLT\_EN3MB   2   }\textcolor{comment}{/* Experimental Ethernet (3Mb) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define DLT\_AX25    3   }\textcolor{comment}{/* Amateur Radio AX.25 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define DLT\_PRONET  4   }\textcolor{comment}{/* Proteon ProNET Token Ring */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define DLT\_CHAOS   5   }\textcolor{comment}{/* Chaos */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define DLT\_IEEE802 6   }\textcolor{comment}{/* 802.5 Token Ring */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define DLT\_ARCNET  7   }\textcolor{comment}{/* ARCNET, with BSD-\/style header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define DLT\_SLIP    8   }\textcolor{comment}{/* Serial Line IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define DLT\_PPP     9   }\textcolor{comment}{/* Point-\/to-\/point Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define DLT\_FDDI    10  }\textcolor{comment}{/* FDDI */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{/*}}
+\DoxyCodeLine{141 \textcolor{comment}{ * These are types that are different on some platforms, and that}}
+\DoxyCodeLine{142 \textcolor{comment}{ * have been defined by <net/bpf.h> for ages.  We use \#ifdefs to}}
+\DoxyCodeLine{143 \textcolor{comment}{ * detect the BSDs that define them differently from the traditional}}
+\DoxyCodeLine{144 \textcolor{comment}{ * libpcap <net/bpf.h>}}
+\DoxyCodeLine{145 \textcolor{comment}{ *}}
+\DoxyCodeLine{146 \textcolor{comment}{ * XXX -\/ DLT\_ATM\_RFC1483 is 13 in BSD/OS, and DLT\_RAW is 14 in BSD/OS,}}
+\DoxyCodeLine{147 \textcolor{comment}{ * but I don't know what the right \#define is for BSD/OS.}}
+\DoxyCodeLine{148 \textcolor{comment}{ */}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define DLT\_ATM\_RFC1483 11  }\textcolor{comment}{/* LLC-\/encapsulated ATM */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#ifdef \_\_OpenBSD\_\_}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define DLT\_RAW     14  }\textcolor{comment}{/* raw IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define DLT\_RAW     12  }\textcolor{comment}{/* raw IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{comment}{/*}}
+\DoxyCodeLine{158 \textcolor{comment}{ * Given that the only OS that currently generates BSD/OS SLIP or PPP}}
+\DoxyCodeLine{159 \textcolor{comment}{ * is, well, BSD/OS, arguably everybody should have chosen its values}}
+\DoxyCodeLine{160 \textcolor{comment}{ * for DLT\_SLIP\_BSDOS and DLT\_PPP\_BSDOS, which are 15 and 16, but they}}
+\DoxyCodeLine{161 \textcolor{comment}{ * didn't.  So it goes.}}
+\DoxyCodeLine{162 \textcolor{comment}{ */}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#if defined(\_\_NetBSD\_\_) || defined(\_\_FreeBSD\_\_)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#ifndef DLT\_SLIP\_BSDOS}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define DLT\_SLIP\_BSDOS  13  }\textcolor{comment}{/* BSD/OS Serial Line IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define DLT\_PPP\_BSDOS   14  }\textcolor{comment}{/* BSD/OS Point-\/to-\/point Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define DLT\_SLIP\_BSDOS  15  }\textcolor{comment}{/* BSD/OS Serial Line IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define DLT\_PPP\_BSDOS   16  }\textcolor{comment}{/* BSD/OS Point-\/to-\/point Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{/*}}
+\DoxyCodeLine{174 \textcolor{comment}{ * 17 is used for DLT\_OLD\_PFLOG in OpenBSD;}}
+\DoxyCodeLine{175 \textcolor{comment}{ *     OBSOLETE: DLT\_PFLOG is 117 in OpenBSD now as well. See below.}}
+\DoxyCodeLine{176 \textcolor{comment}{ * 18 is used for DLT\_PFSYNC in OpenBSD; don't use it for anything else.}}
+\DoxyCodeLine{177 \textcolor{comment}{ */}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define DLT\_ATM\_CLIP    19  }\textcolor{comment}{/* Linux Classical-\/IP over ATM */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{comment}{/*}}
+\DoxyCodeLine{182 \textcolor{comment}{ * Apparently Redback uses this for its SmartEdge 400/800.  I hope}}
+\DoxyCodeLine{183 \textcolor{comment}{ * nobody else decided to use it, too.}}
+\DoxyCodeLine{184 \textcolor{comment}{ */}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define DLT\_REDBACK\_SMARTEDGE   32}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{comment}{/*}}
+\DoxyCodeLine{188 \textcolor{comment}{ * These values are defined by NetBSD; other platforms should refrain from}}
+\DoxyCodeLine{189 \textcolor{comment}{ * using them for other purposes, so that NetBSD savefiles with link}}
+\DoxyCodeLine{190 \textcolor{comment}{ * types of 50 or 51 can be read as this type on all platforms.}}
+\DoxyCodeLine{191 \textcolor{comment}{ */}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define DLT\_PPP\_SERIAL  50  }\textcolor{comment}{/* PPP over serial with HDLC encapsulation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define DLT\_PPP\_ETHER   51  }\textcolor{comment}{/* PPP over Ethernet */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{/*}}
+\DoxyCodeLine{196 \textcolor{comment}{ * The Axent Raptor firewall -\/ now the Symantec Enterprise Firewall -\/ uses}}
+\DoxyCodeLine{197 \textcolor{comment}{ * a link-\/layer type of 99 for the tcpdump it supplies.  The link-\/layer}}
+\DoxyCodeLine{198 \textcolor{comment}{ * header has 6 bytes of unknown data, something that appears to be an}}
+\DoxyCodeLine{199 \textcolor{comment}{ * Ethernet type, and 36 bytes that appear to be 0 in at least one capture}}
+\DoxyCodeLine{200 \textcolor{comment}{ * I've seen.}}
+\DoxyCodeLine{201 \textcolor{comment}{ */}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define DLT\_SYMANTEC\_FIREWALL   99}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{comment}{/*}}
+\DoxyCodeLine{205 \textcolor{comment}{ * Values between 100 and 103 are used in capture file headers as}}
+\DoxyCodeLine{206 \textcolor{comment}{ * link-\/layer types corresponding to DLT\_ types that differ}}
+\DoxyCodeLine{207 \textcolor{comment}{ * between platforms; don't use those values for new DLT\_ new types.}}
+\DoxyCodeLine{208 \textcolor{comment}{ */}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \textcolor{comment}{/*}}
+\DoxyCodeLine{211 \textcolor{comment}{ * This value was defined by libpcap 0.5; platforms that have defined}}
+\DoxyCodeLine{212 \textcolor{comment}{ * it with a different value should define it here with that value -\/}}
+\DoxyCodeLine{213 \textcolor{comment}{ * a link type of 104 in a save file will be mapped to DLT\_C\_HDLC,}}
+\DoxyCodeLine{214 \textcolor{comment}{ * whatever value that happens to be, so programs will correctly}}
+\DoxyCodeLine{215 \textcolor{comment}{ * handle files with that link type regardless of the value of}}
+\DoxyCodeLine{216 \textcolor{comment}{ * DLT\_C\_HDLC.}}
+\DoxyCodeLine{217 \textcolor{comment}{ *}}
+\DoxyCodeLine{218 \textcolor{comment}{ * The name DLT\_C\_HDLC was used by BSD/OS; we use that name for source}}
+\DoxyCodeLine{219 \textcolor{comment}{ * compatibility with programs written for BSD/OS.}}
+\DoxyCodeLine{220 \textcolor{comment}{ *}}
+\DoxyCodeLine{221 \textcolor{comment}{ * libpcap 0.5 defined it as DLT\_CHDLC; we define DLT\_CHDLC as well,}}
+\DoxyCodeLine{222 \textcolor{comment}{ * for source compatibility with programs written for libpcap 0.5.}}
+\DoxyCodeLine{223 \textcolor{comment}{ */}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define DLT\_C\_HDLC  104 }\textcolor{comment}{/* Cisco HDLC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define DLT\_CHDLC   DLT\_C\_HDLC}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define DLT\_IEEE802\_11  105 }\textcolor{comment}{/* IEEE 802.11 wireless */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 \textcolor{comment}{/*}}
+\DoxyCodeLine{230 \textcolor{comment}{ * 106 is reserved for Linux Classical IP over ATM; it's like DLT\_RAW,}}
+\DoxyCodeLine{231 \textcolor{comment}{ * except when it isn't.  (I.e., sometimes it's just raw IP, and}}
+\DoxyCodeLine{232 \textcolor{comment}{ * sometimes it isn't.)  We currently handle it as DLT\_LINUX\_SLL,}}
+\DoxyCodeLine{233 \textcolor{comment}{ * so that we don't have to worry about the link-\/layer header.)}}
+\DoxyCodeLine{234 \textcolor{comment}{ */}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{comment}{/*}}
+\DoxyCodeLine{237 \textcolor{comment}{ * Frame Relay; BSD/OS has a DLT\_FR with a value of 11, but that collides}}
+\DoxyCodeLine{238 \textcolor{comment}{ * with other values.}}
+\DoxyCodeLine{239 \textcolor{comment}{ * DLT\_FR and DLT\_FRELAY packets start with the Q.922 Frame Relay header}}
+\DoxyCodeLine{240 \textcolor{comment}{ * (DLCI, etc.).}}
+\DoxyCodeLine{241 \textcolor{comment}{ */}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define DLT\_FRELAY  107}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{comment}{/*}}
+\DoxyCodeLine{245 \textcolor{comment}{ * OpenBSD DLT\_LOOP, for loopback devices; it's like DLT\_NULL, except}}
+\DoxyCodeLine{246 \textcolor{comment}{ * that the AF\_ type in the link-\/layer header is in network byte order.}}
+\DoxyCodeLine{247 \textcolor{comment}{ *}}
+\DoxyCodeLine{248 \textcolor{comment}{ * DLT\_LOOP is 12 in OpenBSD, but that's DLT\_RAW in other OSes, so}}
+\DoxyCodeLine{249 \textcolor{comment}{ * we don't use 12 for it in OSes other than OpenBSD.}}
+\DoxyCodeLine{250 \textcolor{comment}{ */}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#ifdef \_\_OpenBSD\_\_}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define DLT\_LOOP    12}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define DLT\_LOOP    108}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{comment}{/*}}
+\DoxyCodeLine{258 \textcolor{comment}{ * Encapsulated packets for IPsec; DLT\_ENC is 13 in OpenBSD, but that's}}
+\DoxyCodeLine{259 \textcolor{comment}{ * DLT\_SLIP\_BSDOS in NetBSD, so we don't use 13 for it in OSes other}}
+\DoxyCodeLine{260 \textcolor{comment}{ * than OpenBSD.}}
+\DoxyCodeLine{261 \textcolor{comment}{ */}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#ifdef \_\_OpenBSD\_\_}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define DLT\_ENC     13}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define DLT\_ENC     109}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{comment}{/*}}
+\DoxyCodeLine{269 \textcolor{comment}{ * Values between 110 and 112 are reserved for use in capture file headers}}
+\DoxyCodeLine{270 \textcolor{comment}{ * as link-\/layer types corresponding to DLT\_ types that might differ}}
+\DoxyCodeLine{271 \textcolor{comment}{ * between platforms; don't use those values for new DLT\_ types}}
+\DoxyCodeLine{272 \textcolor{comment}{ * other than the corresponding DLT\_ types.}}
+\DoxyCodeLine{273 \textcolor{comment}{ */}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{comment}{/*}}
+\DoxyCodeLine{276 \textcolor{comment}{ * This is for Linux cooked sockets.}}
+\DoxyCodeLine{277 \textcolor{comment}{ */}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define DLT\_LINUX\_SLL   113}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{comment}{/*}}
+\DoxyCodeLine{281 \textcolor{comment}{ * Apple LocalTalk hardware.}}
+\DoxyCodeLine{282 \textcolor{comment}{ */}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define DLT\_LTALK   114}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{comment}{/*}}
+\DoxyCodeLine{286 \textcolor{comment}{ * Acorn Econet.}}
+\DoxyCodeLine{287 \textcolor{comment}{ */}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define DLT\_ECONET  115}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{/*}}
+\DoxyCodeLine{291 \textcolor{comment}{ * Reserved for use with OpenBSD ipfilter.}}
+\DoxyCodeLine{292 \textcolor{comment}{ */}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define DLT\_IPFILTER    116}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{comment}{/*}}
+\DoxyCodeLine{296 \textcolor{comment}{ * OpenBSD DLT\_PFLOG; DLT\_PFLOG is 17 in OpenBSD, but that's DLT\_LANE8023}}
+\DoxyCodeLine{297 \textcolor{comment}{ * in SuSE 6.3, so we can't use 17 for it in capture-\/file headers.}}
+\DoxyCodeLine{298 \textcolor{comment}{ *}}
+\DoxyCodeLine{299 \textcolor{comment}{ * XXX: is there a conflict with DLT\_PFSYNC 18 as well?}}
+\DoxyCodeLine{300 \textcolor{comment}{ */}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#ifdef \_\_OpenBSD\_\_}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#define DLT\_OLD\_PFLOG   17}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define DLT\_PFSYNC  18}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define DLT\_PFLOG   117}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{comment}{/*}}
+\DoxyCodeLine{308 \textcolor{comment}{ * Registered for Cisco-\/internal use.}}
+\DoxyCodeLine{309 \textcolor{comment}{ */}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define DLT\_CISCO\_IOS   118}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 \textcolor{comment}{/*}}
+\DoxyCodeLine{313 \textcolor{comment}{ * For 802.11 cards using the Prism II chips, with a link-\/layer}}
+\DoxyCodeLine{314 \textcolor{comment}{ * header including Prism monitor mode information plus an 802.11}}
+\DoxyCodeLine{315 \textcolor{comment}{ * header.}}
+\DoxyCodeLine{316 \textcolor{comment}{ */}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define DLT\_PRISM\_HEADER    119}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{comment}{/*}}
+\DoxyCodeLine{320 \textcolor{comment}{ * Reserved for Aironet 802.11 cards, with an Aironet link-\/layer header}}
+\DoxyCodeLine{321 \textcolor{comment}{ * (see Doug Ambrisko's FreeBSD patches).}}
+\DoxyCodeLine{322 \textcolor{comment}{ */}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#define DLT\_AIRONET\_HEADER  120}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 \textcolor{comment}{/*}}
+\DoxyCodeLine{326 \textcolor{comment}{ * Reserved for Siemens HiPath HDLC.}}
+\DoxyCodeLine{327 \textcolor{comment}{ */}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define DLT\_HHDLC       121}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{comment}{/*}}
+\DoxyCodeLine{331 \textcolor{comment}{ * This is for RFC 2625 IP-\/over-\/Fibre Channel.}}
+\DoxyCodeLine{332 \textcolor{comment}{ *}}
+\DoxyCodeLine{333 \textcolor{comment}{ * This is not for use with raw Fibre Channel, where the link-\/layer}}
+\DoxyCodeLine{334 \textcolor{comment}{ * header starts with a Fibre Channel frame header; it's for IP-\/over-\/FC,}}
+\DoxyCodeLine{335 \textcolor{comment}{ * where the link-\/layer header starts with an RFC 2625 Network\_Header}}
+\DoxyCodeLine{336 \textcolor{comment}{ * field.}}
+\DoxyCodeLine{337 \textcolor{comment}{ */}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define DLT\_IP\_OVER\_FC      122}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{comment}{/*}}
+\DoxyCodeLine{341 \textcolor{comment}{ * This is for Full Frontal ATM on Solaris with SunATM, with a}}
+\DoxyCodeLine{342 \textcolor{comment}{ * pseudo-\/header followed by an AALn PDU.}}
+\DoxyCodeLine{343 \textcolor{comment}{ *}}
+\DoxyCodeLine{344 \textcolor{comment}{ * There may be other forms of Full Frontal ATM on other OSes,}}
+\DoxyCodeLine{345 \textcolor{comment}{ * with different pseudo-\/headers.}}
+\DoxyCodeLine{346 \textcolor{comment}{ *}}
+\DoxyCodeLine{347 \textcolor{comment}{ * If ATM software returns a pseudo-\/header with VPI/VCI information}}
+\DoxyCodeLine{348 \textcolor{comment}{ * (and, ideally, packet type information, e.g. signalling, ILMI,}}
+\DoxyCodeLine{349 \textcolor{comment}{ * LANE, LLC-\/multiplexed traffic, etc.), it should not use}}
+\DoxyCodeLine{350 \textcolor{comment}{ * DLT\_ATM\_RFC1483, but should get a new DLT\_ value, so tcpdump}}
+\DoxyCodeLine{351 \textcolor{comment}{ * and the like don't have to infer the presence or absence of a}}
+\DoxyCodeLine{352 \textcolor{comment}{ * pseudo-\/header and the form of the pseudo-\/header.}}
+\DoxyCodeLine{353 \textcolor{comment}{ */}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define DLT\_SUNATM      123 }\textcolor{comment}{/* Solaris+SunATM */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{comment}{/* }}
+\DoxyCodeLine{357 \textcolor{comment}{ * Reserved as per request from Kent Dahlgren <kent@praesum.com>}}
+\DoxyCodeLine{358 \textcolor{comment}{ * for private use.}}
+\DoxyCodeLine{359 \textcolor{comment}{ */}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define DLT\_RIO                 124     }\textcolor{comment}{/* RapidIO */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define DLT\_PCI\_EXP             125     }\textcolor{comment}{/* PCI Express */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define DLT\_AURORA              126     }\textcolor{comment}{/* Xilinx Aurora link layer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 \textcolor{comment}{/*}}
+\DoxyCodeLine{365 \textcolor{comment}{ * Header for 802.11 plus a number of bits of link-\/layer information}}
+\DoxyCodeLine{366 \textcolor{comment}{ * including radio information, used by some recent BSD drivers as}}
+\DoxyCodeLine{367 \textcolor{comment}{ * well as the madwifi Atheros driver for Linux.}}
+\DoxyCodeLine{368 \textcolor{comment}{ */}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define DLT\_IEEE802\_11\_RADIO    127 }\textcolor{comment}{/* 802.11 plus radiotap radio header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 \textcolor{comment}{/*}}
+\DoxyCodeLine{372 \textcolor{comment}{ * Reserved for the TZSP encapsulation, as per request from}}
+\DoxyCodeLine{373 \textcolor{comment}{ * Chris Waters <chris.waters@networkchemistry.com>}}
+\DoxyCodeLine{374 \textcolor{comment}{ * TZSP is a generic encapsulation for any other link type,}}
+\DoxyCodeLine{375 \textcolor{comment}{ * which includes a means to include meta-\/information}}
+\DoxyCodeLine{376 \textcolor{comment}{ * with the packet, e.g. signal strength and channel}}
+\DoxyCodeLine{377 \textcolor{comment}{ * for 802.11 packets.}}
+\DoxyCodeLine{378 \textcolor{comment}{ */}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define DLT\_TZSP                128     }\textcolor{comment}{/* Tazmen Sniffer Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 \textcolor{comment}{/*}}
+\DoxyCodeLine{382 \textcolor{comment}{ * BSD's ARCNET headers have the source host, destination host,}}
+\DoxyCodeLine{383 \textcolor{comment}{ * and type at the beginning of the packet; that's what's handed}}
+\DoxyCodeLine{384 \textcolor{comment}{ * up to userland via BPF.}}
+\DoxyCodeLine{385 \textcolor{comment}{ *}}
+\DoxyCodeLine{386 \textcolor{comment}{ * Linux's ARCNET headers, however, have a 2-\/byte offset field}}
+\DoxyCodeLine{387 \textcolor{comment}{ * between the host IDs and the type; that's what's handed up}}
+\DoxyCodeLine{388 \textcolor{comment}{ * to userland via PF\_PACKET sockets.}}
+\DoxyCodeLine{389 \textcolor{comment}{ *}}
+\DoxyCodeLine{390 \textcolor{comment}{ * We therefore have to have separate DLT\_ values for them.}}
+\DoxyCodeLine{391 \textcolor{comment}{ */}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define DLT\_ARCNET\_LINUX    129 }\textcolor{comment}{/* ARCNET */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 \textcolor{comment}{/*}}
+\DoxyCodeLine{395 \textcolor{comment}{ * Juniper-\/private data link types, as per request from}}
+\DoxyCodeLine{396 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>.  The DLT\_s are used}}
+\DoxyCodeLine{397 \textcolor{comment}{ * for passing on chassis-\/internal metainformation such as}}
+\DoxyCodeLine{398 \textcolor{comment}{ * QOS profiles, etc..}}
+\DoxyCodeLine{399 \textcolor{comment}{ */}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_MLPPP       130}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_MLFR        131}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ES          132}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_GGSN        133}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_MFR         134}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ATM2        135}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_SERVICES    136}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ATM1        137}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 \textcolor{comment}{/*}}
+\DoxyCodeLine{410 \textcolor{comment}{ * Apple IP-\/over-\/IEEE 1394, as per a request from Dieter Siegmund}}
+\DoxyCodeLine{411 \textcolor{comment}{ * <dieter@apple.com>.  The header that's presented is an Ethernet-\/like}}
+\DoxyCodeLine{412 \textcolor{comment}{ * header:}}
+\DoxyCodeLine{413 \textcolor{comment}{ *}}
+\DoxyCodeLine{414 \textcolor{comment}{ *  \#define FIREWIRE\_EUI64\_LEN  8}}
+\DoxyCodeLine{415 \textcolor{comment}{ *  struct firewire\_header \{}}
+\DoxyCodeLine{416 \textcolor{comment}{ *      u\_char  firewire\_dhost[FIREWIRE\_EUI64\_LEN];}}
+\DoxyCodeLine{417 \textcolor{comment}{ *      u\_char  firewire\_shost[FIREWIRE\_EUI64\_LEN];}}
+\DoxyCodeLine{418 \textcolor{comment}{ *      u\_short firewire\_type;}}
+\DoxyCodeLine{419 \textcolor{comment}{ *  \};}}
+\DoxyCodeLine{420 \textcolor{comment}{ *}}
+\DoxyCodeLine{421 \textcolor{comment}{ * with "{}firewire\_type"{} being an Ethernet type value, rather than,}}
+\DoxyCodeLine{422 \textcolor{comment}{ * for example, raw GASP frames being handed up.}}
+\DoxyCodeLine{423 \textcolor{comment}{ */}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define DLT\_APPLE\_IP\_OVER\_IEEE1394  138}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 \textcolor{comment}{/*}}
+\DoxyCodeLine{427 \textcolor{comment}{ * Various SS7 encapsulations, as per a request from Jeff Morriss}}
+\DoxyCodeLine{428 \textcolor{comment}{ * <jeff.morriss[AT]ulticom.com> and subsequent discussions.}}
+\DoxyCodeLine{429 \textcolor{comment}{ */}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define DLT\_MTP2\_WITH\_PHDR  139 }\textcolor{comment}{/* pseudo-\/header with various info, followed by MTP2 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define DLT\_MTP2        140 }\textcolor{comment}{/* MTP2, without pseudo-\/header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define DLT\_MTP3        141 }\textcolor{comment}{/* MTP3, without pseudo-\/header or MTP2 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define DLT\_SCCP        142 }\textcolor{comment}{/* SCCP, without pseudo-\/header or MTP2 or MTP3 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{comment}{/*}}
+\DoxyCodeLine{436 \textcolor{comment}{ * DOCSIS MAC frames.}}
+\DoxyCodeLine{437 \textcolor{comment}{ */}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define DLT\_DOCSIS      143}}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{comment}{/*}}
+\DoxyCodeLine{441 \textcolor{comment}{ * Linux-\/IrDA packets. Protocol defined at http://www.irda.org.}}
+\DoxyCodeLine{442 \textcolor{comment}{ * Those packets include IrLAP headers and above (IrLMP...), but}}
+\DoxyCodeLine{443 \textcolor{comment}{ * don't include Phy framing (SOF/EOF/CRC \& byte stuffing), because Phy}}
+\DoxyCodeLine{444 \textcolor{comment}{ * framing can be handled by the hardware and depend on the bitrate.}}
+\DoxyCodeLine{445 \textcolor{comment}{ * This is exactly the format you would get capturing on a Linux-\/IrDA}}
+\DoxyCodeLine{446 \textcolor{comment}{ * interface (irdaX), but not on a raw serial port.}}
+\DoxyCodeLine{447 \textcolor{comment}{ * Note the capture is done in "{}Linux-\/cooked"{} mode, so each packet include}}
+\DoxyCodeLine{448 \textcolor{comment}{ * a fake packet header (struct sll\_header). This is because IrDA packet}}
+\DoxyCodeLine{449 \textcolor{comment}{ * decoding is dependant on the direction of the packet (incomming or}}
+\DoxyCodeLine{450 \textcolor{comment}{ * outgoing).}}
+\DoxyCodeLine{451 \textcolor{comment}{ * When/if other platform implement IrDA capture, we may revisit the}}
+\DoxyCodeLine{452 \textcolor{comment}{ * issue and define a real DLT\_IRDA...}}
+\DoxyCodeLine{453 \textcolor{comment}{ * Jean II}}
+\DoxyCodeLine{454 \textcolor{comment}{ */}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define DLT\_LINUX\_IRDA      144}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 \textcolor{comment}{/*}}
+\DoxyCodeLine{458 \textcolor{comment}{ * Reserved for IBM SP switch and IBM Next Federation switch.}}
+\DoxyCodeLine{459 \textcolor{comment}{ */}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define DLT\_IBM\_SP      145}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define DLT\_IBM\_SN      146}}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{comment}{/*}}
+\DoxyCodeLine{464 \textcolor{comment}{ * Reserved for private use.  If you have some link-\/layer header type}}
+\DoxyCodeLine{465 \textcolor{comment}{ * that you want to use within your organization, with the capture files}}
+\DoxyCodeLine{466 \textcolor{comment}{ * using that link-\/layer header type not ever be sent outside your}}
+\DoxyCodeLine{467 \textcolor{comment}{ * organization, you can use these values.}}
+\DoxyCodeLine{468 \textcolor{comment}{ *}}
+\DoxyCodeLine{469 \textcolor{comment}{ * No libpcap release will use these for any purpose, nor will any}}
+\DoxyCodeLine{470 \textcolor{comment}{ * tcpdump release use them, either.}}
+\DoxyCodeLine{471 \textcolor{comment}{ *}}
+\DoxyCodeLine{472 \textcolor{comment}{ * Do *NOT* use these in capture files that you expect anybody not using}}
+\DoxyCodeLine{473 \textcolor{comment}{ * your private versions of capture-\/file-\/reading tools to read; in}}
+\DoxyCodeLine{474 \textcolor{comment}{ * particular, do *NOT* use them in products, otherwise you may find that}}
+\DoxyCodeLine{475 \textcolor{comment}{ * people won't be able to use tcpdump, or snort, or Ethereal, or... to}}
+\DoxyCodeLine{476 \textcolor{comment}{ * read capture files from your firewall/intrusion detection/traffic}}
+\DoxyCodeLine{477 \textcolor{comment}{ * monitoring/etc. appliance, or whatever product uses that DLT\_ value,}}
+\DoxyCodeLine{478 \textcolor{comment}{ * and you may also find that the developers of those applications will}}
+\DoxyCodeLine{479 \textcolor{comment}{ * not accept patches to let them read those files.}}
+\DoxyCodeLine{480 \textcolor{comment}{ *}}
+\DoxyCodeLine{481 \textcolor{comment}{ * Also, do not use them if somebody might send you a capture using them}}
+\DoxyCodeLine{482 \textcolor{comment}{ * for *their* private type and tools using them for *your* private type}}
+\DoxyCodeLine{483 \textcolor{comment}{ * would have to read them.}}
+\DoxyCodeLine{484 \textcolor{comment}{ *}}
+\DoxyCodeLine{485 \textcolor{comment}{ * Instead, ask "{}tcpdump-\/workers@lists.tcpdump.org"{} for a new DLT\_ value,}}
+\DoxyCodeLine{486 \textcolor{comment}{ * as per the comment above, and use the type you're given.}}
+\DoxyCodeLine{487 \textcolor{comment}{ */}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#define DLT\_USER0       147}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#define DLT\_USER1       148}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#define DLT\_USER2       149}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#define DLT\_USER3       150}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#define DLT\_USER4       151}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#define DLT\_USER5       152}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#define DLT\_USER6       153}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define DLT\_USER7       154}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define DLT\_USER8       155}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define DLT\_USER9       156}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define DLT\_USER10      157}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define DLT\_USER11      158}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define DLT\_USER12      159}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define DLT\_USER13      160}}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define DLT\_USER14      161}}
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#define DLT\_USER15      162}}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505 \textcolor{comment}{/*}}
+\DoxyCodeLine{506 \textcolor{comment}{ * For future use with 802.11 captures -\/ defined by AbsoluteValue}}
+\DoxyCodeLine{507 \textcolor{comment}{ * Systems to store a number of bits of link-\/layer information}}
+\DoxyCodeLine{508 \textcolor{comment}{ * including radio information:}}
+\DoxyCodeLine{509 \textcolor{comment}{ *}}
+\DoxyCodeLine{510 \textcolor{comment}{ *  http://www.shaftnet.org/\string~pizza/software/capturefrm.txt}}
+\DoxyCodeLine{511 \textcolor{comment}{ *}}
+\DoxyCodeLine{512 \textcolor{comment}{ * but it might be used by some non-\/AVS drivers now or in the}}
+\DoxyCodeLine{513 \textcolor{comment}{ * future.}}
+\DoxyCodeLine{514 \textcolor{comment}{ */}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#define DLT\_IEEE802\_11\_RADIO\_AVS 163    }\textcolor{comment}{/* 802.11 plus AVS radio header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517 \textcolor{comment}{/*}}
+\DoxyCodeLine{518 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{519 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>.  The DLT\_s are used}}
+\DoxyCodeLine{520 \textcolor{comment}{ * for passing on chassis-\/internal metainformation such as}}
+\DoxyCodeLine{521 \textcolor{comment}{ * QOS profiles, etc..}}
+\DoxyCodeLine{522 \textcolor{comment}{ */}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_MONITOR     164}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \textcolor{comment}{/*}}
+\DoxyCodeLine{526 \textcolor{comment}{ * Reserved for BACnet MS/TP.}}
+\DoxyCodeLine{527 \textcolor{comment}{ */}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define DLT\_BACNET\_MS\_TP    165}}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530 \textcolor{comment}{/*}}
+\DoxyCodeLine{531 \textcolor{comment}{ * Another PPP variant as per request from Karsten Keil <kkeil@suse.de>.}}
+\DoxyCodeLine{532 \textcolor{comment}{ *}}
+\DoxyCodeLine{533 \textcolor{comment}{ * This is used in some OSes to allow a kernel socket filter to distinguish}}
+\DoxyCodeLine{534 \textcolor{comment}{ * between incoming and outgoing packets, on a socket intended to}}
+\DoxyCodeLine{535 \textcolor{comment}{ * supply pppd with outgoing packets so it can do dial-\/on-\/demand and}}
+\DoxyCodeLine{536 \textcolor{comment}{ * hangup-\/on-\/lack-\/of-\/demand; incoming packets are filtered out so they}}
+\DoxyCodeLine{537 \textcolor{comment}{ * don't cause pppd to hold the connection up (you don't want random}}
+\DoxyCodeLine{538 \textcolor{comment}{ * input packets such as port scans, packets from old lost connections,}}
+\DoxyCodeLine{539 \textcolor{comment}{ * etc. to force the connection to stay up).}}
+\DoxyCodeLine{540 \textcolor{comment}{ *}}
+\DoxyCodeLine{541 \textcolor{comment}{ * The first byte of the PPP header (0xff03) is modified to accomodate}}
+\DoxyCodeLine{542 \textcolor{comment}{ * the direction -\/ 0x00 = IN, 0x01 = OUT.}}
+\DoxyCodeLine{543 \textcolor{comment}{ */}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#define DLT\_PPP\_PPPD        166}}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546 \textcolor{comment}{/*}}
+\DoxyCodeLine{547 \textcolor{comment}{ * Names for backwards compatibility with older versions of some PPP}}
+\DoxyCodeLine{548 \textcolor{comment}{ * software; new software should use DLT\_PPP\_PPPD.}}
+\DoxyCodeLine{549 \textcolor{comment}{ */}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define DLT\_PPP\_WITH\_DIRECTION  DLT\_PPP\_PPPD}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#define DLT\_LINUX\_PPP\_WITHDIRECTION DLT\_PPP\_PPPD}}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{comment}{/*}}
+\DoxyCodeLine{554 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{555 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>.  The DLT\_s are used}}
+\DoxyCodeLine{556 \textcolor{comment}{ * for passing on chassis-\/internal metainformation such as}}
+\DoxyCodeLine{557 \textcolor{comment}{ * QOS profiles, cookies, etc..}}
+\DoxyCodeLine{558 \textcolor{comment}{ */}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_PPPOE       167}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_PPPOE\_ATM   168}}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#define DLT\_GPRS\_LLC        169 }\textcolor{comment}{/* GPRS LLC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#define DLT\_GPF\_T       170 }\textcolor{comment}{/* GPF-\/T (ITU-\/T G.7041/Y.1303) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#define DLT\_GPF\_F       171 }\textcolor{comment}{/* GPF-\/F (ITU-\/T G.7041/Y.1303) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 \textcolor{comment}{/*}}
+\DoxyCodeLine{567 \textcolor{comment}{ * Requested by Oolan Zimmer <oz@gcom.com> for use in Gcom's T1/E1 line}}
+\DoxyCodeLine{568 \textcolor{comment}{ * monitoring equipment.}}
+\DoxyCodeLine{569 \textcolor{comment}{ */}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define DLT\_GCOM\_T1E1       172}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define DLT\_GCOM\_SERIAL     173}}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{comment}{/*}}
+\DoxyCodeLine{574 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{575 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>.  The DLT\_ is used}}
+\DoxyCodeLine{576 \textcolor{comment}{ * for internal communication to Physical Interface Cards (PIC)}}
+\DoxyCodeLine{577 \textcolor{comment}{ */}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_PIC\_PEER    174}}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580 \textcolor{comment}{/*}}
+\DoxyCodeLine{581 \textcolor{comment}{ * Link types requested by Gregor Maier <gregor@endace.com> of Endace}}
+\DoxyCodeLine{582 \textcolor{comment}{ * Measurement Systems.  They add an ERF header (see}}
+\DoxyCodeLine{583 \textcolor{comment}{ * http://www.endace.com/support/EndaceRecordFormat.pdf) in front of}}
+\DoxyCodeLine{584 \textcolor{comment}{ * the link-\/layer header.}}
+\DoxyCodeLine{585 \textcolor{comment}{ */}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define DLT\_ERF\_ETH     175 }\textcolor{comment}{/* Ethernet */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#define DLT\_ERF\_POS     176 }\textcolor{comment}{/* Packet-\/over-\/SONET */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 \textcolor{comment}{/*}}
+\DoxyCodeLine{590 \textcolor{comment}{ * Requested by Daniele Orlandi <daniele@orlandi.com> for raw LAPD}}
+\DoxyCodeLine{591 \textcolor{comment}{ * for vISDN (http://www.orlandi.com/visdn/).  Its link-\/layer header}}
+\DoxyCodeLine{592 \textcolor{comment}{ * includes additional information before the LAPD header, so it's}}
+\DoxyCodeLine{593 \textcolor{comment}{ * not necessarily a generic LAPD header.}}
+\DoxyCodeLine{594 \textcolor{comment}{ */}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define DLT\_LINUX\_LAPD      177}}
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{comment}{/*}}
+\DoxyCodeLine{598 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{599 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>. }}
+\DoxyCodeLine{600 \textcolor{comment}{ * The DLT\_ are used for prepending meta-\/information}}
+\DoxyCodeLine{601 \textcolor{comment}{ * like interface index, interface name}}
+\DoxyCodeLine{602 \textcolor{comment}{ * before standard Ethernet, PPP, Frelay \& C-\/HDLC Frames}}
+\DoxyCodeLine{603 \textcolor{comment}{ */}}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ETHER       178}}
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_PPP         179}}
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_FRELAY      180}}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_CHDLC       181}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 \textcolor{comment}{/*}}
+\DoxyCodeLine{610 \textcolor{comment}{ * Multi Link Frame Relay (FRF.16)}}
+\DoxyCodeLine{611 \textcolor{comment}{ */}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define DLT\_MFR                 182}}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 \textcolor{comment}{/*}}
+\DoxyCodeLine{615 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{616 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>. }}
+\DoxyCodeLine{617 \textcolor{comment}{ * The DLT\_ is used for internal communication with a}}
+\DoxyCodeLine{618 \textcolor{comment}{ * voice Adapter Card (PIC)}}
+\DoxyCodeLine{619 \textcolor{comment}{ */}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_VP          183}}
+\DoxyCodeLine{621 }
+\DoxyCodeLine{622 \textcolor{comment}{/*}}
+\DoxyCodeLine{623 \textcolor{comment}{ * Arinc 429 frames.}}
+\DoxyCodeLine{624 \textcolor{comment}{ * DLT\_ requested by Gianluca Varenni <gianluca.varenni@cacetech.com>.}}
+\DoxyCodeLine{625 \textcolor{comment}{ * Every frame contains a 32bit A429 label.}}
+\DoxyCodeLine{626 \textcolor{comment}{ * More documentation on Arinc 429 can be found at}}
+\DoxyCodeLine{627 \textcolor{comment}{ * http://www.condoreng.com/support/downloads/tutorials/ARINCTutorial.pdf}}
+\DoxyCodeLine{628 \textcolor{comment}{ */}}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#define DLT\_A429                184}}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631 \textcolor{comment}{/*}}
+\DoxyCodeLine{632 \textcolor{comment}{ * Arinc 653 Interpartition Communication messages.}}
+\DoxyCodeLine{633 \textcolor{comment}{ * DLT\_ requested by Gianluca Varenni <gianluca.varenni@cacetech.com>.}}
+\DoxyCodeLine{634 \textcolor{comment}{ * Please refer to the A653-\/1 standard for more information.}}
+\DoxyCodeLine{635 \textcolor{comment}{ */}}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#define DLT\_A653\_ICM            185}}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 \textcolor{comment}{/*}}
+\DoxyCodeLine{639 \textcolor{comment}{ * USB packets, beginning with a USB setup header; requested by}}
+\DoxyCodeLine{640 \textcolor{comment}{ * Paolo Abeni <paolo.abeni@email.it>.}}
+\DoxyCodeLine{641 \textcolor{comment}{ */}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define DLT\_USB         186}}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644 \textcolor{comment}{/*}}
+\DoxyCodeLine{645 \textcolor{comment}{ * Bluetooth HCI UART transport layer (part H:4); requested by}}
+\DoxyCodeLine{646 \textcolor{comment}{ * Paolo Abeni.}}
+\DoxyCodeLine{647 \textcolor{comment}{ */}}
+\DoxyCodeLine{648 \textcolor{preprocessor}{\#define DLT\_BLUETOOTH\_HCI\_H4    187}}
+\DoxyCodeLine{649 }
+\DoxyCodeLine{650 \textcolor{comment}{/*}}
+\DoxyCodeLine{651 \textcolor{comment}{ * IEEE 802.16 MAC Common Part Sublayer; requested by Maria Cruz}}
+\DoxyCodeLine{652 \textcolor{comment}{ * <cruz\_petagay@bah.com>.}}
+\DoxyCodeLine{653 \textcolor{comment}{ */}}
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#define DLT\_IEEE802\_16\_MAC\_CPS  188}}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656 \textcolor{comment}{/*}}
+\DoxyCodeLine{657 \textcolor{comment}{ * USB packets, beginning with a Linux USB header; requested by}}
+\DoxyCodeLine{658 \textcolor{comment}{ * Paolo Abeni <paolo.abeni@email.it>.}}
+\DoxyCodeLine{659 \textcolor{comment}{ */}}
+\DoxyCodeLine{660 \textcolor{preprocessor}{\#define DLT\_USB\_LINUX       189}}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662 \textcolor{comment}{/*}}
+\DoxyCodeLine{663 \textcolor{comment}{ * Controller Area Network (CAN) v. 2.0B packets.}}
+\DoxyCodeLine{664 \textcolor{comment}{ * DLT\_ requested by Gianluca Varenni <gianluca.varenni@cacetech.com>.}}
+\DoxyCodeLine{665 \textcolor{comment}{ * Used to dump CAN packets coming from a CAN Vector board.}}
+\DoxyCodeLine{666 \textcolor{comment}{ * More documentation on the CAN v2.0B frames can be found at}}
+\DoxyCodeLine{667 \textcolor{comment}{ * http://www.can-\/cia.org/downloads/?269}}
+\DoxyCodeLine{668 \textcolor{comment}{ */}}
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#define DLT\_CAN20B              190}}
+\DoxyCodeLine{670 }
+\DoxyCodeLine{671 \textcolor{comment}{/*}}
+\DoxyCodeLine{672 \textcolor{comment}{ * IEEE 802.15.4, with address fields padded, as is done by Linux}}
+\DoxyCodeLine{673 \textcolor{comment}{ * drivers; requested by Juergen Schimmer.}}
+\DoxyCodeLine{674 \textcolor{comment}{ */}}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#define DLT\_IEEE802\_15\_4\_LINUX  191}}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677 \textcolor{comment}{/*}}
+\DoxyCodeLine{678 \textcolor{comment}{ * Per Packet Information encapsulated packets.}}
+\DoxyCodeLine{679 \textcolor{comment}{ * DLT\_ requested by Gianluca Varenni <gianluca.varenni@cacetech.com>.}}
+\DoxyCodeLine{680 \textcolor{comment}{ */}}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#define DLT\_PPI         192}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 \textcolor{comment}{/*}}
+\DoxyCodeLine{684 \textcolor{comment}{ * Header for 802.16 MAC Common Part Sublayer plus a radiotap radio header;}}
+\DoxyCodeLine{685 \textcolor{comment}{ * requested by Charles Clancy.}}
+\DoxyCodeLine{686 \textcolor{comment}{ */}}
+\DoxyCodeLine{687 \textcolor{preprocessor}{\#define DLT\_IEEE802\_16\_MAC\_CPS\_RADIO    193}}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689 \textcolor{comment}{/*}}
+\DoxyCodeLine{690 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{691 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>. }}
+\DoxyCodeLine{692 \textcolor{comment}{ * The DLT\_ is used for internal communication with a}}
+\DoxyCodeLine{693 \textcolor{comment}{ * integrated service module (ISM).}}
+\DoxyCodeLine{694 \textcolor{comment}{ */}}
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ISM         194}}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697 \textcolor{comment}{/*}}
+\DoxyCodeLine{698 \textcolor{comment}{ * IEEE 802.15.4, exactly as it appears in the spec (no padding, no}}
+\DoxyCodeLine{699 \textcolor{comment}{ * nothing); requested by Mikko Saarnivala <mikko.saarnivala@sensinode.com>.}}
+\DoxyCodeLine{700 \textcolor{comment}{ */}}
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#define DLT\_IEEE802\_15\_4    195}}
+\DoxyCodeLine{702 }
+\DoxyCodeLine{703 \textcolor{comment}{/*}}
+\DoxyCodeLine{704 \textcolor{comment}{ * Various link-\/layer types, with a pseudo-\/header, for SITA}}
+\DoxyCodeLine{705 \textcolor{comment}{ * (http://www.sita.aero/); requested by Fulko Hew (fulko.hew@gmail.com).}}
+\DoxyCodeLine{706 \textcolor{comment}{ */}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define DLT\_SITA        196}}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{709 \textcolor{comment}{/*}}
+\DoxyCodeLine{710 \textcolor{comment}{ * Various link-\/layer types, with a pseudo-\/header, for Endace DAG cards;}}
+\DoxyCodeLine{711 \textcolor{comment}{ * encapsulates Endace ERF records.  Requested by Stephen Donnelly}}
+\DoxyCodeLine{712 \textcolor{comment}{ * <stephen@endace.com>.}}
+\DoxyCodeLine{713 \textcolor{comment}{ */}}
+\DoxyCodeLine{714 \textcolor{preprocessor}{\#define DLT\_ERF         197}}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716 \textcolor{comment}{/*}}
+\DoxyCodeLine{717 \textcolor{comment}{ * Special header prepended to Ethernet packets when capturing from a}}
+\DoxyCodeLine{718 \textcolor{comment}{ * u10 Networks board.  Requested by Phil Mulholland}}
+\DoxyCodeLine{719 \textcolor{comment}{ * <phil@u10networks.com>.}}
+\DoxyCodeLine{720 \textcolor{comment}{ */}}
+\DoxyCodeLine{721 \textcolor{preprocessor}{\#define DLT\_RAIF1       198}}
+\DoxyCodeLine{722 }
+\DoxyCodeLine{723 \textcolor{comment}{/*}}
+\DoxyCodeLine{724 \textcolor{comment}{ * IPMB packet for IPMI, beginning with the I2C slave address, followed}}
+\DoxyCodeLine{725 \textcolor{comment}{ * by the netFn and LUN, etc..  Requested by Chanthy Toeung}}
+\DoxyCodeLine{726 \textcolor{comment}{ * <chanthy.toeung@ca.kontron.com>.}}
+\DoxyCodeLine{727 \textcolor{comment}{ */}}
+\DoxyCodeLine{728 \textcolor{preprocessor}{\#define DLT\_IPMB        199}}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730 \textcolor{comment}{/*}}
+\DoxyCodeLine{731 \textcolor{comment}{ * Juniper-\/private data link type, as per request from}}
+\DoxyCodeLine{732 \textcolor{comment}{ * Hannes Gredler <hannes@juniper.net>. }}
+\DoxyCodeLine{733 \textcolor{comment}{ * The DLT\_ is used for capturing data on a secure tunnel interface.}}
+\DoxyCodeLine{734 \textcolor{comment}{ */}}
+\DoxyCodeLine{735 \textcolor{preprocessor}{\#define DLT\_JUNIPER\_ST          200}}
+\DoxyCodeLine{736 }
+\DoxyCodeLine{737 \textcolor{comment}{/*}}
+\DoxyCodeLine{738 \textcolor{comment}{ * Bluetooth HCI UART transport layer (part H:4), with pseudo-\/header}}
+\DoxyCodeLine{739 \textcolor{comment}{ * that includes direction information; requested by Paolo Abeni.}}
+\DoxyCodeLine{740 \textcolor{comment}{ */}}
+\DoxyCodeLine{741 \textcolor{preprocessor}{\#define DLT\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR  201}}
+\DoxyCodeLine{742 }
+\DoxyCodeLine{743 \textcolor{comment}{/*}}
+\DoxyCodeLine{744 \textcolor{comment}{ * AX.25 packet with a 1-\/byte KISS header; see}}
+\DoxyCodeLine{745 \textcolor{comment}{ *}}
+\DoxyCodeLine{746 \textcolor{comment}{ *  http://www.ax25.net/kiss.htm}}
+\DoxyCodeLine{747 \textcolor{comment}{ *}}
+\DoxyCodeLine{748 \textcolor{comment}{ * as per Richard Stearn <richard@rns-\/stearn.demon.co.uk>.}}
+\DoxyCodeLine{749 \textcolor{comment}{ */}}
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#define DLT\_AX25\_KISS       202}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752 \textcolor{comment}{/*}}
+\DoxyCodeLine{753 \textcolor{comment}{ * LAPD packets from an ISDN channel, starting with the address field,}}
+\DoxyCodeLine{754 \textcolor{comment}{ * with no pseudo-\/header.}}
+\DoxyCodeLine{755 \textcolor{comment}{ * Requested by Varuna De Silva <varunax@gmail.com>.}}
+\DoxyCodeLine{756 \textcolor{comment}{ */}}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define DLT\_LAPD        203}}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{759 \textcolor{comment}{/*}}
+\DoxyCodeLine{760 \textcolor{comment}{ * Variants of various link-\/layer headers, with a one-\/byte direction}}
+\DoxyCodeLine{761 \textcolor{comment}{ * pseudo-\/header prepended -\/ zero means "{}received by this host"{},}}
+\DoxyCodeLine{762 \textcolor{comment}{ * non-\/zero (any non-\/zero value) means "{}sent by this host"{} -\/ as per}}
+\DoxyCodeLine{763 \textcolor{comment}{ * Will Barker <w.barker@zen.co.uk>.}}
+\DoxyCodeLine{764 \textcolor{comment}{ */}}
+\DoxyCodeLine{765 \textcolor{preprocessor}{\#define DLT\_PPP\_WITH\_DIR    204 }\textcolor{comment}{/* PPP -\/ don't confuse with DLT\_PPP\_WITH\_DIRECTION */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#define DLT\_C\_HDLC\_WITH\_DIR 205 }\textcolor{comment}{/* Cisco HDLC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#define DLT\_FRELAY\_WITH\_DIR 206 }\textcolor{comment}{/* Frame Relay */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{768 \textcolor{preprocessor}{\#define DLT\_LAPB\_WITH\_DIR   207 }\textcolor{comment}{/* LAPB */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{770 \textcolor{comment}{/*}}
+\DoxyCodeLine{771 \textcolor{comment}{ * 208 is reserved for an as-\/yet-\/unspecified proprietary link-\/layer}}
+\DoxyCodeLine{772 \textcolor{comment}{ * type, as requested by Will Barker.}}
+\DoxyCodeLine{773 \textcolor{comment}{ */}}
+\DoxyCodeLine{774 }
+\DoxyCodeLine{775 \textcolor{comment}{/*}}
+\DoxyCodeLine{776 \textcolor{comment}{ * IPMB with a Linux-\/specific pseudo-\/header; as requested by Alexey Neyman}}
+\DoxyCodeLine{777 \textcolor{comment}{ * <avn@pigeonpoint.com>.}}
+\DoxyCodeLine{778 \textcolor{comment}{ */}}
+\DoxyCodeLine{779 \textcolor{preprocessor}{\#define DLT\_IPMB\_LINUX      209}}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 \textcolor{comment}{/*}}
+\DoxyCodeLine{782 \textcolor{comment}{ * FlexRay automotive bus -\/ http://www.flexray.com/ -\/ as requested}}
+\DoxyCodeLine{783 \textcolor{comment}{ * by Hannes Kaelber <hannes.kaelber@x2e.de>.}}
+\DoxyCodeLine{784 \textcolor{comment}{ */}}
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#define DLT\_FLEXRAY     210}}
+\DoxyCodeLine{786 }
+\DoxyCodeLine{787 \textcolor{comment}{/*}}
+\DoxyCodeLine{788 \textcolor{comment}{ * Media Oriented Systems Transport (MOST) bus for multimedia}}
+\DoxyCodeLine{789 \textcolor{comment}{ * transport -\/ http://www.mostcooperation.com/ -\/ as requested}}
+\DoxyCodeLine{790 \textcolor{comment}{ * by Hannes Kaelber <hannes.kaelber@x2e.de>.}}
+\DoxyCodeLine{791 \textcolor{comment}{ */}}
+\DoxyCodeLine{792 \textcolor{preprocessor}{\#define DLT\_MOST        211}}
+\DoxyCodeLine{793 }
+\DoxyCodeLine{794 \textcolor{comment}{/*}}
+\DoxyCodeLine{795 \textcolor{comment}{ * Local Interconnect Network (LIN) bus for vehicle networks -\/}}
+\DoxyCodeLine{796 \textcolor{comment}{ * http://www.lin-\/subbus.org/ -\/ as requested by Hannes Kaelber}}
+\DoxyCodeLine{797 \textcolor{comment}{ * <hannes.kaelber@x2e.de>.}}
+\DoxyCodeLine{798 \textcolor{comment}{ */}}
+\DoxyCodeLine{799 \textcolor{preprocessor}{\#define DLT\_LIN         212}}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{801 \textcolor{comment}{/*}}
+\DoxyCodeLine{802 \textcolor{comment}{ * X2E-\/private data link type used for serial line capture,}}
+\DoxyCodeLine{803 \textcolor{comment}{ * as requested by Hannes Kaelber <hannes.kaelber@x2e.de>.}}
+\DoxyCodeLine{804 \textcolor{comment}{ */}}
+\DoxyCodeLine{805 \textcolor{preprocessor}{\#define DLT\_X2E\_SERIAL      213}}
+\DoxyCodeLine{806 }
+\DoxyCodeLine{807 \textcolor{comment}{/*}}
+\DoxyCodeLine{808 \textcolor{comment}{ * X2E-\/private data link type used for the Xoraya data logger}}
+\DoxyCodeLine{809 \textcolor{comment}{ * family, as requested by Hannes Kaelber <hannes.kaelber@x2e.de>.}}
+\DoxyCodeLine{810 \textcolor{comment}{ */}}
+\DoxyCodeLine{811 \textcolor{preprocessor}{\#define DLT\_X2E\_XORAYA      214}}
+\DoxyCodeLine{812 }
+\DoxyCodeLine{813 \textcolor{comment}{/*}}
+\DoxyCodeLine{814 \textcolor{comment}{ * IEEE 802.15.4, exactly as it appears in the spec (no padding, no}}
+\DoxyCodeLine{815 \textcolor{comment}{ * nothing), but with the PHY-\/level data for non-\/ASK PHYs (4 octets}}
+\DoxyCodeLine{816 \textcolor{comment}{ * of 0 as preamble, one octet of SFD, one octet of frame length+}}
+\DoxyCodeLine{817 \textcolor{comment}{ * reserved bit, and then the MAC-\/layer data, starting with the}}
+\DoxyCodeLine{818 \textcolor{comment}{ * frame control field).}}
+\DoxyCodeLine{819 \textcolor{comment}{ *}}
+\DoxyCodeLine{820 \textcolor{comment}{ * Requested by Max Filippov <jcmvbkbc@gmail.com>.}}
+\DoxyCodeLine{821 \textcolor{comment}{ */}}
+\DoxyCodeLine{822 \textcolor{preprocessor}{\#define DLT\_IEEE802\_15\_4\_NONASK\_PHY 215}}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824 \textcolor{comment}{/* }}
+\DoxyCodeLine{825 \textcolor{comment}{ * David Gibson <david@gibson.dropbear.id.au> requested this for}}
+\DoxyCodeLine{826 \textcolor{comment}{ * captures from the Linux kernel /dev/input/eventN devices. This}}
+\DoxyCodeLine{827 \textcolor{comment}{ * is used to communicate keystrokes and mouse movements from the}}
+\DoxyCodeLine{828 \textcolor{comment}{ * Linux kernel to display systems, such as Xorg. }}
+\DoxyCodeLine{829 \textcolor{comment}{ */}}
+\DoxyCodeLine{830 \textcolor{preprocessor}{\#define DLT\_LINUX\_EVDEV     216}}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832 \textcolor{comment}{/*}}
+\DoxyCodeLine{833 \textcolor{comment}{ * GSM Um and Abis interfaces, preceded by a "{}gsmtap"{} header.}}
+\DoxyCodeLine{834 \textcolor{comment}{ *}}
+\DoxyCodeLine{835 \textcolor{comment}{ * Requested by Harald Welte <laforge@gnumonks.org>.}}
+\DoxyCodeLine{836 \textcolor{comment}{ */}}
+\DoxyCodeLine{837 \textcolor{preprocessor}{\#define DLT\_GSMTAP\_UM       217}}
+\DoxyCodeLine{838 \textcolor{preprocessor}{\#define DLT\_GSMTAP\_ABIS     218}}
+\DoxyCodeLine{839 }
+\DoxyCodeLine{840 \textcolor{comment}{/*}}
+\DoxyCodeLine{841 \textcolor{comment}{ * MPLS, with an MPLS label as the link-\/layer header.}}
+\DoxyCodeLine{842 \textcolor{comment}{ * Requested by Michele Marchetto <michele@openbsd.org> on behalf}}
+\DoxyCodeLine{843 \textcolor{comment}{ * of OpenBSD.}}
+\DoxyCodeLine{844 \textcolor{comment}{ */}}
+\DoxyCodeLine{845 \textcolor{preprocessor}{\#define DLT\_MPLS        219}}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 \textcolor{comment}{/*}}
+\DoxyCodeLine{848 \textcolor{comment}{ * USB packets, beginning with a Linux USB header, with the USB header}}
+\DoxyCodeLine{849 \textcolor{comment}{ * padded to 64 bytes; required for memory-\/mapped access.}}
+\DoxyCodeLine{850 \textcolor{comment}{ */}}
+\DoxyCodeLine{851 \textcolor{preprocessor}{\#define DLT\_USB\_LINUX\_MMAPPED   220}}
+\DoxyCodeLine{852 }
+\DoxyCodeLine{853 \textcolor{comment}{/*}}
+\DoxyCodeLine{854 \textcolor{comment}{ * DECT packets, with a pseudo-\/header; requested by}}
+\DoxyCodeLine{855 \textcolor{comment}{ * Matthias Wenzel <tcpdump@mazzoo.de>.}}
+\DoxyCodeLine{856 \textcolor{comment}{ */}}
+\DoxyCodeLine{857 \textcolor{preprocessor}{\#define DLT\_DECT        221}}
+\DoxyCodeLine{858 }
+\DoxyCodeLine{859 \textcolor{comment}{/*}}
+\DoxyCodeLine{860 \textcolor{comment}{ * From: "{}Lidwa, Eric (GSFC-\/582.0)[SGT INC]"{} <eric.lidwa-\/1@nasa.gov>}}
+\DoxyCodeLine{861 \textcolor{comment}{ * Date: Mon, 11 May 2009 11:18:30 -\/0500}}
+\DoxyCodeLine{862 \textcolor{comment}{ *}}
+\DoxyCodeLine{863 \textcolor{comment}{ * DLT\_AOS. We need it for AOS Space Data Link Protocol.}}
+\DoxyCodeLine{864 \textcolor{comment}{ *   I have already written dissectors for but need an OK from}}
+\DoxyCodeLine{865 \textcolor{comment}{ *   legal before I can submit a patch.}}
+\DoxyCodeLine{866 \textcolor{comment}{ *}}
+\DoxyCodeLine{867 \textcolor{comment}{ */}}
+\DoxyCodeLine{868 \textcolor{preprocessor}{\#define DLT\_AOS                 222}}
+\DoxyCodeLine{869 }
+\DoxyCodeLine{870 \textcolor{comment}{/*}}
+\DoxyCodeLine{871 \textcolor{comment}{ * Wireless HART (Highway Addressable Remote Transducer)}}
+\DoxyCodeLine{872 \textcolor{comment}{ * From the HART Communication Foundation}}
+\DoxyCodeLine{873 \textcolor{comment}{ * IES/PAS 62591}}
+\DoxyCodeLine{874 \textcolor{comment}{ *}}
+\DoxyCodeLine{875 \textcolor{comment}{ * Requested by Sam Roberts <vieuxtech@gmail.com>.}}
+\DoxyCodeLine{876 \textcolor{comment}{ */}}
+\DoxyCodeLine{877 \textcolor{preprocessor}{\#define DLT\_WIHART      223}}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{879 \textcolor{comment}{/*}}
+\DoxyCodeLine{880 \textcolor{comment}{ * Fibre Channel FC-\/2 frames, beginning with a Frame\_Header.}}
+\DoxyCodeLine{881 \textcolor{comment}{ * Requested by Kahou Lei <kahou82@gmail.com>.}}
+\DoxyCodeLine{882 \textcolor{comment}{ */}}
+\DoxyCodeLine{883 \textcolor{preprocessor}{\#define DLT\_FC\_2        224}}
+\DoxyCodeLine{884 }
+\DoxyCodeLine{885 \textcolor{comment}{/*}}
+\DoxyCodeLine{886 \textcolor{comment}{ * Fibre Channel FC-\/2 frames, beginning with an encoding of the}}
+\DoxyCodeLine{887 \textcolor{comment}{ * SOF, and ending with an encoding of the EOF.}}
+\DoxyCodeLine{888 \textcolor{comment}{ *}}
+\DoxyCodeLine{889 \textcolor{comment}{ * The encodings represent the frame delimiters as 4-\/byte sequences}}
+\DoxyCodeLine{890 \textcolor{comment}{ * representing the corresponding ordered sets, with K28.5}}
+\DoxyCodeLine{891 \textcolor{comment}{ * represented as 0xBC, and the D symbols as the corresponding}}
+\DoxyCodeLine{892 \textcolor{comment}{ * byte values; for example, SOFi2, which is K28.5 -\/ D21.5 -\/ D1.2 -\/ D21.2,}}
+\DoxyCodeLine{893 \textcolor{comment}{ * is represented as 0xBC 0xB5 0x55 0x55.}}
+\DoxyCodeLine{894 \textcolor{comment}{ *}}
+\DoxyCodeLine{895 \textcolor{comment}{ * Requested by Kahou Lei <kahou82@gmail.com>.}}
+\DoxyCodeLine{896 \textcolor{comment}{ */}}
+\DoxyCodeLine{897 \textcolor{preprocessor}{\#define DLT\_FC\_2\_WITH\_FRAME\_DELIMS  225}}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899 \textcolor{comment}{/*}}
+\DoxyCodeLine{900 \textcolor{comment}{ * Solaris ipnet pseudo-\/header; requested by Darren Reed <Darren.Reed@Sun.COM>.}}
+\DoxyCodeLine{901 \textcolor{comment}{ *}}
+\DoxyCodeLine{902 \textcolor{comment}{ * The pseudo-\/header starts with a one-\/byte version number; for version 2,}}
+\DoxyCodeLine{903 \textcolor{comment}{ * the pseudo-\/header is:}}
+\DoxyCodeLine{904 \textcolor{comment}{ *}}
+\DoxyCodeLine{905 \textcolor{comment}{ * struct dl\_ipnetinfo \{}}
+\DoxyCodeLine{906 \textcolor{comment}{ *     u\_int8\_t   dli\_version;}}
+\DoxyCodeLine{907 \textcolor{comment}{ *     u\_int8\_t   dli\_family;}}
+\DoxyCodeLine{908 \textcolor{comment}{ *     u\_int16\_t  dli\_htype;}}
+\DoxyCodeLine{909 \textcolor{comment}{ *     u\_int32\_t  dli\_pktlen;}}
+\DoxyCodeLine{910 \textcolor{comment}{ *     u\_int32\_t  dli\_ifindex;}}
+\DoxyCodeLine{911 \textcolor{comment}{ *     u\_int32\_t  dli\_grifindex;}}
+\DoxyCodeLine{912 \textcolor{comment}{ *     u\_int32\_t  dli\_zsrc;}}
+\DoxyCodeLine{913 \textcolor{comment}{ *     u\_int32\_t  dli\_zdst;}}
+\DoxyCodeLine{914 \textcolor{comment}{ * \};}}
+\DoxyCodeLine{915 \textcolor{comment}{ *}}
+\DoxyCodeLine{916 \textcolor{comment}{ * dli\_version is 2 for the current version of the pseudo-\/header.}}
+\DoxyCodeLine{917 \textcolor{comment}{ *}}
+\DoxyCodeLine{918 \textcolor{comment}{ * dli\_family is a Solaris address family value, so it's 2 for IPv4}}
+\DoxyCodeLine{919 \textcolor{comment}{ * and 26 for IPv6.}}
+\DoxyCodeLine{920 \textcolor{comment}{ *}}
+\DoxyCodeLine{921 \textcolor{comment}{ * dli\_htype is a "{}hook type"{} -\/ 0 for incoming packets, 1 for outgoing}}
+\DoxyCodeLine{922 \textcolor{comment}{ * packets, and 2 for packets arriving from another zone on the same}}
+\DoxyCodeLine{923 \textcolor{comment}{ * machine.}}
+\DoxyCodeLine{924 \textcolor{comment}{ *}}
+\DoxyCodeLine{925 \textcolor{comment}{ * dli\_pktlen is the length of the packet data following the pseudo-\/header}}
+\DoxyCodeLine{926 \textcolor{comment}{ * (so the captured length minus dli\_pktlen is the length of the}}
+\DoxyCodeLine{927 \textcolor{comment}{ * pseudo-\/header, assuming the entire pseudo-\/header was captured).}}
+\DoxyCodeLine{928 \textcolor{comment}{ *}}
+\DoxyCodeLine{929 \textcolor{comment}{ * dli\_ifindex is the interface index of the interface on which the}}
+\DoxyCodeLine{930 \textcolor{comment}{ * packet arrived.}}
+\DoxyCodeLine{931 \textcolor{comment}{ *}}
+\DoxyCodeLine{932 \textcolor{comment}{ * dli\_grifindex is the group interface index number (for IPMP interfaces).}}
+\DoxyCodeLine{933 \textcolor{comment}{ *}}
+\DoxyCodeLine{934 \textcolor{comment}{ * dli\_zsrc is the zone identifier for the source of the packet.}}
+\DoxyCodeLine{935 \textcolor{comment}{ *}}
+\DoxyCodeLine{936 \textcolor{comment}{ * dli\_zdst is the zone identifier for the destination of the packet.}}
+\DoxyCodeLine{937 \textcolor{comment}{ *}}
+\DoxyCodeLine{938 \textcolor{comment}{ * A zone number of 0 is the global zone; a zone number of 0xffffffff}}
+\DoxyCodeLine{939 \textcolor{comment}{ * means that the packet arrived from another host on the network, not}}
+\DoxyCodeLine{940 \textcolor{comment}{ * from another zone on the same machine.}}
+\DoxyCodeLine{941 \textcolor{comment}{ *}}
+\DoxyCodeLine{942 \textcolor{comment}{ * An IPv4 or IPv6 datagram follows the pseudo-\/header; dli\_family indicates}}
+\DoxyCodeLine{943 \textcolor{comment}{ * which of those it is.}}
+\DoxyCodeLine{944 \textcolor{comment}{ */}}
+\DoxyCodeLine{945 \textcolor{preprocessor}{\#define DLT\_IPNET           226}}
+\DoxyCodeLine{946 }
+\DoxyCodeLine{947 \textcolor{comment}{/*}}
+\DoxyCodeLine{948 \textcolor{comment}{ * CAN (Controller Area Network) frames, with a pseudo-\/header as supplied}}
+\DoxyCodeLine{949 \textcolor{comment}{ * by Linux SocketCAN.  See Documentation/networking/can.txt in the Linux}}
+\DoxyCodeLine{950 \textcolor{comment}{ * source.}}
+\DoxyCodeLine{951 \textcolor{comment}{ *}}
+\DoxyCodeLine{952 \textcolor{comment}{ * Requested by Felix Obenhuber <felix@obenhuber.de>.}}
+\DoxyCodeLine{953 \textcolor{comment}{ */}}
+\DoxyCodeLine{954 \textcolor{preprocessor}{\#define DLT\_CAN\_SOCKETCAN       227}}
+\DoxyCodeLine{955 }
+\DoxyCodeLine{956 \textcolor{comment}{/*}}
+\DoxyCodeLine{957 \textcolor{comment}{ * Raw IPv4/IPv6; different from DLT\_RAW in that the DLT\_ value specifies}}
+\DoxyCodeLine{958 \textcolor{comment}{ * whether it's v4 or v6.  Requested by Darren Reed <Darren.Reed@Sun.COM>.}}
+\DoxyCodeLine{959 \textcolor{comment}{ */}}
+\DoxyCodeLine{960 \textcolor{preprocessor}{\#define DLT\_IPV4            228}}
+\DoxyCodeLine{961 \textcolor{preprocessor}{\#define DLT\_IPV6            229}}
+\DoxyCodeLine{962 }
+\DoxyCodeLine{963 \textcolor{comment}{/*}}
+\DoxyCodeLine{964 \textcolor{comment}{ * DLT and savefile link type values are split into a class and}}
+\DoxyCodeLine{965 \textcolor{comment}{ * a member of that class.  A class value of 0 indicates a regular}}
+\DoxyCodeLine{966 \textcolor{comment}{ * DLT\_/LINKTYPE\_ value.}}
+\DoxyCodeLine{967 \textcolor{comment}{ */}}
+\DoxyCodeLine{968 \textcolor{preprocessor}{\#define DLT\_CLASS(x)        ((x) \& 0x03ff0000)}}
+\DoxyCodeLine{969 }
+\DoxyCodeLine{970 \textcolor{comment}{/*}}
+\DoxyCodeLine{971 \textcolor{comment}{ * NetBSD-\/specific generic "{}raw"{} link type.  The class value indicates}}
+\DoxyCodeLine{972 \textcolor{comment}{ * that this is the generic raw type, and the lower 16 bits are the}}
+\DoxyCodeLine{973 \textcolor{comment}{ * address family we're dealing with.  Those values are NetBSD-\/specific;}}
+\DoxyCodeLine{974 \textcolor{comment}{ * do not assume that they correspond to AF\_ values for your operating}}
+\DoxyCodeLine{975 \textcolor{comment}{ * system.}}
+\DoxyCodeLine{976 \textcolor{comment}{ */}}
+\DoxyCodeLine{977 \textcolor{preprocessor}{\#define DLT\_CLASS\_NETBSD\_RAWAF  0x02240000}}
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#define DLT\_NETBSD\_RAWAF(af)    (DLT\_CLASS\_NETBSD\_RAWAF | (af))}}
+\DoxyCodeLine{979 \textcolor{preprocessor}{\#define DLT\_NETBSD\_RAWAF\_AF(x)  ((x) \& 0x0000ffff)}}
+\DoxyCodeLine{980 \textcolor{preprocessor}{\#define DLT\_IS\_NETBSD\_RAWAF(x)  (DLT\_CLASS(x) == DLT\_CLASS\_NETBSD\_RAWAF)}}
+\DoxyCodeLine{981 }
+\DoxyCodeLine{982 }
+\DoxyCodeLine{983 \textcolor{comment}{/*}}
+\DoxyCodeLine{984 \textcolor{comment}{ * The instruction encodings.}}
+\DoxyCodeLine{985 \textcolor{comment}{ */}}
+\DoxyCodeLine{986 \textcolor{comment}{/* instruction classes */}}
+\DoxyCodeLine{987 \textcolor{preprocessor}{\#define BPF\_CLASS(code) ((code) \& 0x07)}}
+\DoxyCodeLine{988 \textcolor{preprocessor}{\#define     BPF\_LD      0x00}}
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#define     BPF\_LDX     0x01}}
+\DoxyCodeLine{990 \textcolor{preprocessor}{\#define     BPF\_ST      0x02}}
+\DoxyCodeLine{991 \textcolor{preprocessor}{\#define     BPF\_STX     0x03}}
+\DoxyCodeLine{992 \textcolor{preprocessor}{\#define     BPF\_ALU     0x04}}
+\DoxyCodeLine{993 \textcolor{preprocessor}{\#define     BPF\_JMP     0x05}}
+\DoxyCodeLine{994 \textcolor{preprocessor}{\#define     BPF\_RET     0x06}}
+\DoxyCodeLine{995 \textcolor{preprocessor}{\#define     BPF\_MISC    0x07}}
+\DoxyCodeLine{996 }
+\DoxyCodeLine{997 \textcolor{comment}{/* ld/ldx fields */}}
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#define BPF\_SIZE(code)  ((code) \& 0x18)}}
+\DoxyCodeLine{999 \textcolor{preprocessor}{\#define     BPF\_W       0x00}}
+\DoxyCodeLine{1000 \textcolor{preprocessor}{\#define     BPF\_H       0x08}}
+\DoxyCodeLine{1001 \textcolor{preprocessor}{\#define     BPF\_B       0x10}}
+\DoxyCodeLine{1002 \textcolor{preprocessor}{\#define BPF\_MODE(code)  ((code) \& 0xe0)}}
+\DoxyCodeLine{1003 \textcolor{preprocessor}{\#define     BPF\_IMM     0x00}}
+\DoxyCodeLine{1004 \textcolor{preprocessor}{\#define     BPF\_ABS     0x20}}
+\DoxyCodeLine{1005 \textcolor{preprocessor}{\#define     BPF\_IND     0x40}}
+\DoxyCodeLine{1006 \textcolor{preprocessor}{\#define     BPF\_MEM     0x60}}
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#define     BPF\_LEN     0x80}}
+\DoxyCodeLine{1008 \textcolor{preprocessor}{\#define     BPF\_MSH     0xa0}}
+\DoxyCodeLine{1009 }
+\DoxyCodeLine{1010 \textcolor{comment}{/* alu/jmp fields */}}
+\DoxyCodeLine{1011 \textcolor{preprocessor}{\#define BPF\_OP(code)    ((code) \& 0xf0)}}
+\DoxyCodeLine{1012 \textcolor{preprocessor}{\#define     BPF\_ADD     0x00}}
+\DoxyCodeLine{1013 \textcolor{preprocessor}{\#define     BPF\_SUB     0x10}}
+\DoxyCodeLine{1014 \textcolor{preprocessor}{\#define     BPF\_MUL     0x20}}
+\DoxyCodeLine{1015 \textcolor{preprocessor}{\#define     BPF\_DIV     0x30}}
+\DoxyCodeLine{1016 \textcolor{preprocessor}{\#define     BPF\_OR      0x40}}
+\DoxyCodeLine{1017 \textcolor{preprocessor}{\#define     BPF\_AND     0x50}}
+\DoxyCodeLine{1018 \textcolor{preprocessor}{\#define     BPF\_LSH     0x60}}
+\DoxyCodeLine{1019 \textcolor{preprocessor}{\#define     BPF\_RSH     0x70}}
+\DoxyCodeLine{1020 \textcolor{preprocessor}{\#define     BPF\_NEG     0x80}}
+\DoxyCodeLine{1021 \textcolor{preprocessor}{\#define     BPF\_JA      0x00}}
+\DoxyCodeLine{1022 \textcolor{preprocessor}{\#define     BPF\_JEQ     0x10}}
+\DoxyCodeLine{1023 \textcolor{preprocessor}{\#define     BPF\_JGT     0x20}}
+\DoxyCodeLine{1024 \textcolor{preprocessor}{\#define     BPF\_JGE     0x30}}
+\DoxyCodeLine{1025 \textcolor{preprocessor}{\#define     BPF\_JSET    0x40}}
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#define BPF\_SRC(code)   ((code) \& 0x08)}}
+\DoxyCodeLine{1027 \textcolor{preprocessor}{\#define     BPF\_K       0x00}}
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#define     BPF\_X       0x08}}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1030 \textcolor{comment}{/* ret -\/ BPF\_K and BPF\_X also apply */}}
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#define BPF\_RVAL(code)  ((code) \& 0x18)}}
+\DoxyCodeLine{1032 \textcolor{preprocessor}{\#define     BPF\_A       0x10}}
+\DoxyCodeLine{1033 }
+\DoxyCodeLine{1034 \textcolor{comment}{/* misc */}}
+\DoxyCodeLine{1035 \textcolor{preprocessor}{\#define BPF\_MISCOP(code) ((code) \& 0xf8)}}
+\DoxyCodeLine{1036 \textcolor{preprocessor}{\#define     BPF\_TAX     0x00}}
+\DoxyCodeLine{1037 \textcolor{preprocessor}{\#define     BPF\_TXA     0x80}}
+\DoxyCodeLine{1038 }
+\DoxyCodeLine{1039 \textcolor{comment}{/*}}
+\DoxyCodeLine{1040 \textcolor{comment}{ * The instruction data structure.}}
+\DoxyCodeLine{1041 \textcolor{comment}{ */}}
+\DoxyCodeLine{1042 \textcolor{keyword}{struct }\mbox{\hyperlink{structbpf__insn}{bpf\_insn}} \{}
+\DoxyCodeLine{1043     u\_short \mbox{\hyperlink{structbpf__insn_a31d2b9573d5369a1ec61c298c9b04c8b}{code}};}
+\DoxyCodeLine{1044     u\_char  \mbox{\hyperlink{structbpf__insn_a05f79dc12cd247354eea27e8df2d896c}{jt}};}
+\DoxyCodeLine{1045     u\_char  \mbox{\hyperlink{structbpf__insn_ac17ca94afd8698ccd3509f2a266d98d4}{jf}};}
+\DoxyCodeLine{1046     \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{structbpf__insn_a8f0e122f9da41d35d9b87ebfc599b5d8}{k}};}
+\DoxyCodeLine{1047 \};}
+\DoxyCodeLine{1048 }
+\DoxyCodeLine{1049 \textcolor{comment}{/*}}
+\DoxyCodeLine{1050 \textcolor{comment}{ * Macros for insn array initializers.}}
+\DoxyCodeLine{1051 \textcolor{comment}{ */}}
+\DoxyCodeLine{1052 \textcolor{preprocessor}{\#define BPF\_STMT(code, k) \{ (u\_short)(code), 0, 0, k \}}}
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#define BPF\_JUMP(code, k, jt, jf) \{ (u\_short)(code), jt, jf, k \}}}
+\DoxyCodeLine{1054 }
+\DoxyCodeLine{1055 \textcolor{preprocessor}{\#if \_\_STDC\_\_ || defined(\_\_cplusplus)}}
+\DoxyCodeLine{1056 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{bpf_8h_a57c861b0c22f5f1cb3d4815fa05f72fb}{bpf\_validate}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{1057 \textcolor{keyword}{extern} u\_int \mbox{\hyperlink{bpf_8h_aa4dc6706c3a3c66ffa7768dea4749639}{bpf\_filter}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structbpf__insn}{bpf\_insn}} *, \textcolor{keyword}{const} u\_char *, u\_int, u\_int);}
+\DoxyCodeLine{1058 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{1059 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{bpf_8h_a57c861b0c22f5f1cb3d4815fa05f72fb}{bpf\_validate}}();}
+\DoxyCodeLine{1060 \textcolor{keyword}{extern} u\_int \mbox{\hyperlink{bpf_8h_aa4dc6706c3a3c66ffa7768dea4749639}{bpf\_filter}}();}
+\DoxyCodeLine{1061 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1062 }
+\DoxyCodeLine{1063 \textcolor{comment}{/*}}
+\DoxyCodeLine{1064 \textcolor{comment}{ * Number of scratch memory words (for BPF\_LD|BPF\_MEM and BPF\_ST).}}
+\DoxyCodeLine{1065 \textcolor{comment}{ */}}
+\DoxyCodeLine{1066 \textcolor{preprocessor}{\#define BPF\_MEMWORDS 16}}
+\DoxyCodeLine{1067 }
+\DoxyCodeLine{1068 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1069 \}}
+\DoxyCodeLine{1070 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1071 }
+\DoxyCodeLine{1072 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

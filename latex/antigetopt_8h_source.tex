@@ -1,0 +1,40 @@
+\hypertarget{antigetopt_8h_source}{}\doxysection{antigetopt.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_ANTIGETOPT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_ANTIGETOPT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* special return codes */}}
+\DoxyCodeLine{5 \textcolor{keyword}{enum} \{ AGO\_EOF=4000, AGO\_ALONE, AGO\_UNKNOWN, AGO\_REQARG, AGO\_RESET, AGO\_AMBIG \};}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{/* option flags */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define AGO\_NOARG (1<<0)        }\textcolor{comment}{/* no argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define AGO\_NEEDARG (1<<1)      }\textcolor{comment}{/* required argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define AGO\_OPTARG (1<<2)       }\textcolor{comment}{/* optional argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define AGO\_EXCEPT0 (1<<3)      }\textcolor{comment}{/* exception \#0 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define AGO\_EXCEPT1 (1<<4)      }\textcolor{comment}{/* exception \#1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define AGO\_EXCEPT2 (1<<5)      }\textcolor{comment}{/* exception \#3 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define AGO\_ENDOFLIST (1<<15)       }\textcolor{comment}{/* end of argument list marker */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* option list null term */}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define AGO\_LIST\_TERM \{'\(\backslash\)0',NULL,0,AGO\_ENDOFLIST\}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/* The structure that defines an argument */}}
+\DoxyCodeLine{20 \textcolor{keyword}{struct }\mbox{\hyperlink{structago__optlist}{ago\_optlist}} \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{char} ao\_short;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{char} *ao\_long;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} ao\_id;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} ao\_flags;}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *ago\_optarg;}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *ago\_optname;}
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} ago\_optchar;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{int} antigetopt(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv, \textcolor{keyword}{struct} \mbox{\hyperlink{structago__optlist}{ago\_optlist}} *list);}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void}    ago\_gnu\_error(\textcolor{keywordtype}{char} *pname, \textcolor{keywordtype}{int} error);}
+\DoxyCodeLine{33 \textcolor{keywordtype}{int} ago\_set\_exception(\textcolor{keywordtype}{int} except\_nr, \textcolor{keywordtype}{int} (*tester)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{char} *msg);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_ANTIGETOPT\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

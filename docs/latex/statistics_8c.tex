@@ -1,0 +1,50 @@
+\hypertarget{statistics_8c}{}\doxysection{statistics.\+c 文件参考}
+\label{statistics_8c}\index{statistics.c@{statistics.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+statistics.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{statistics_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{statistics_8c_a9502a50722e34ad90ea6b673d9f4f373}{print\+\_\+statistics}} (int signal\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{statistics_8c_a9502a50722e34ad90ea6b673d9f4f373}\label{statistics_8c_a9502a50722e34ad90ea6b673d9f4f373}} 
+\index{statistics.c@{statistics.c}!print\_statistics@{print\_statistics}}
+\index{print\_statistics@{print\_statistics}!statistics.c@{statistics.c}}
+\doxysubsubsection{\texorpdfstring{print\_statistics()}{print\_statistics()}}
+{\footnotesize\ttfamily void print\+\_\+statistics (\begin{DoxyParamCaption}\item[{int}]{signal\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_ace5f82c0c1d233937e68b94de191a5b5}{close\+\_\+pcap()}}, \mbox{\hyperlink{globals_8h_abb22ae25d4a395c6e0b540cc37a63b13}{opt\+\_\+tcpexitcode}}, \mbox{\hyperlink{globals_8h_a41d10d6d9dd09994f0772d3979b249c3}{out\+\_\+of\+\_\+sequence\+\_\+pkt}}, \mbox{\hyperlink{globals_8h_a935054c9eb5f6a70eb4c93981b7b8112}{recv\+\_\+pkt}}, \mbox{\hyperlink{globals_8h_a1521cc16e96b4a60e4c0f18d6f0a5261}{rtt\+\_\+avg}}, \mbox{\hyperlink{globals_8h_a500bb3dc86c57e2c20341e6b218004b0}{rtt\+\_\+max}}, \mbox{\hyperlink{globals_8h_a16c2da0f27de9c87f077d2b62b1c57db}{rtt\+\_\+min}}, \mbox{\hyperlink{globals_8h_a09cb00fd8967ae97f149e1fa8efb664c}{sent\+\_\+pkt}}, \mbox{\hyperlink{globals_8h_ae9abba9190a6034a481b0d9321642e18}{targetname}} , 以及 \mbox{\hyperlink{globals_8h_a073736dd0b8962be665c187c3e5d1fd3}{tcp\+\_\+exitcode}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{statistics_8c_a9502a50722e34ad90ea6b673d9f4f373_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{statistics_8c_a9502a50722e34ad90ea6b673d9f4f373_icgraph}
+\end{center}
+\end{figure}

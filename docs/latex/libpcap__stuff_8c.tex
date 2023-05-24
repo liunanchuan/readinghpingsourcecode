@@ -1,0 +1,117 @@
+\hypertarget{libpcap__stuff_8c}{}\doxysection{libpcap\+\_\+stuff.\+c 文件参考}
+\label{libpcap__stuff_8c}\index{libpcap\_stuff.c@{libpcap\_stuff.c}}
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+{\ttfamily \#include $<$net/bpf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+libpcap\+\_\+stuff.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libpcap__stuff_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{libpcap__stuff_8c_a93910206ce0cb07efeb12f6567eb8fc9}{open\+\_\+pcap}} ()
+\item 
+int \mbox{\hyperlink{libpcap__stuff_8c_aef7635934d0a645b406df4b16566e315}{close\+\_\+pcap}} ()
+\item 
+int \mbox{\hyperlink{libpcap__stuff_8c_af124a32c3dc51b141516b388e2675e12}{pcap\+\_\+recv}} (char $\ast$packet, unsigned int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{libpcap__stuff_8c_aef7635934d0a645b406df4b16566e315}\label{libpcap__stuff_8c_aef7635934d0a645b406df4b16566e315}} 
+\index{libpcap\_stuff.c@{libpcap\_stuff.c}!close\_pcap@{close\_pcap}}
+\index{close\_pcap@{close\_pcap}!libpcap\_stuff.c@{libpcap\_stuff.c}}
+\doxysubsubsection{\texorpdfstring{close\_pcap()}{close\_pcap()}}
+{\footnotesize\ttfamily int close\+\_\+pcap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap_8c_aa45a5e1a4ba9925bb3586dcbeec78560}{pcap\+\_\+close()}} , 以及 \mbox{\hyperlink{globals_8h_a2b9bb241b38decf7a4f029f07b4e23f6}{pcapfp}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a6578ac428fac8022b788f3b58499ba81}{print\+\_\+statistics()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{libpcap__stuff_8c_aef7635934d0a645b406df4b16566e315_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libpcap__stuff_8c_aef7635934d0a645b406df4b16566e315_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libpcap__stuff_8c_a93910206ce0cb07efeb12f6567eb8fc9}\label{libpcap__stuff_8c_a93910206ce0cb07efeb12f6567eb8fc9}} 
+\index{libpcap\_stuff.c@{libpcap\_stuff.c}!open\_pcap@{open\_pcap}}
+\index{open\_pcap@{open\_pcap}!libpcap\_stuff.c@{libpcap\_stuff.c}}
+\doxysubsubsection{\texorpdfstring{open\_pcap()}{open\_pcap()}}
+{\footnotesize\ttfamily int open\+\_\+pcap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{globals_8h_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{pcap_8c_a1d541c46260826157cd6644fb4eb89bd}{pcap\+\_\+fileno()}}, \mbox{\hyperlink{pcap_8c_a4ffc0d48c0a614df0980206517d48f8e}{pcap\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{globals_8h_a2b9bb241b38decf7a4f029f07b4e23f6}{pcapfp}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libpcap__stuff_8c_a93910206ce0cb07efeb12f6567eb8fc9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{libpcap__stuff_8c_a93910206ce0cb07efeb12f6567eb8fc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libpcap__stuff_8c_af124a32c3dc51b141516b388e2675e12}\label{libpcap__stuff_8c_af124a32c3dc51b141516b388e2675e12}} 
+\index{libpcap\_stuff.c@{libpcap\_stuff.c}!pcap\_recv@{pcap\_recv}}
+\index{pcap\_recv@{pcap\_recv}!libpcap\_stuff.c@{libpcap\_stuff.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_recv()}{pcap\_recv()}}
+{\footnotesize\ttfamily int pcap\+\_\+recv (\begin{DoxyParamCaption}\item[{char $\ast$}]{packet,  }\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{pcap_8c_a4e9828471a6774070097ecb59c234fd9}{pcap\+\_\+next()}}, \mbox{\hyperlink{globals_8h_a2b9bb241b38decf7a4f029f07b4e23f6}{pcapfp}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_aa9a6df377e8120782df851e0b127f20f}{read\+\_\+packet()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libpcap__stuff_8c_af124a32c3dc51b141516b388e2675e12_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libpcap__stuff_8c_af124a32c3dc51b141516b388e2675e12_icgraph}
+\end{center}
+\end{figure}

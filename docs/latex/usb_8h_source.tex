@@ -1,0 +1,149 @@
+\hypertarget{usb_8h_source}{}\doxysection{usb.\+h}
+\label{usb_8h_source}\index{libpcap-\/1.1.1/pcap/usb.h@{libpcap-\/1.1.1/pcap/usb.h}}
+\mbox{\hyperlink{usb_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 2006 Paolo Abeni (Italy)}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{10 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{11 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{12 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{13 \textcolor{comment}{ * documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{14 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote }}
+\DoxyCodeLine{15 \textcolor{comment}{ * products derived from this software without specific prior written }}
+\DoxyCodeLine{16 \textcolor{comment}{ * permission.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{19 \textcolor{comment}{ * "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{20 \textcolor{comment}{ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{21 \textcolor{comment}{ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{22 \textcolor{comment}{ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{24 \textcolor{comment}{ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{25 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{26 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{27 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{28 \textcolor{comment}{ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{29 \textcolor{comment}{ *}}
+\DoxyCodeLine{30 \textcolor{comment}{ * Basic USB data struct}}
+\DoxyCodeLine{31 \textcolor{comment}{ * By Paolo Abeni <paolo.abeni@email.it>}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/usb.h,v 1.9 2008-\/12-\/23 20:13:29 guy Exp \$}}
+\DoxyCodeLine{34 \textcolor{comment}{ */}}
+\DoxyCodeLine{35  }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef \_PCAP\_USB\_STRUCTS\_H\_\_}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define \_PCAP\_USB\_STRUCTS\_H\_\_}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* }}
+\DoxyCodeLine{40 \textcolor{comment}{ * possible transfer mode}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define URB\_TRANSFER\_IN   0x80}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define URB\_ISOCHRONOUS   0x0}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define URB\_INTERRUPT     0x1}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define URB\_CONTROL       0x2}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define URB\_BULK          0x3}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/*}}
+\DoxyCodeLine{49 \textcolor{comment}{ * possible event type}}
+\DoxyCodeLine{50 \textcolor{comment}{ */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define URB\_SUBMIT        'S'}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define URB\_COMPLETE      'C'}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define URB\_ERROR         'E'}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/*}}
+\DoxyCodeLine{56 \textcolor{comment}{ * USB setup header as defined in USB specification.}}
+\DoxyCodeLine{57 \textcolor{comment}{ * Appears at the front of each Control S-\/type packet in DLT\_USB captures.}}
+\DoxyCodeLine{58 \textcolor{comment}{ */}}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_usb\_setup \{}
+\DoxyCodeLine{60     u\_int8\_t \mbox{\hyperlink{structpcap__usb__setup_a9ad2d72083368ca3df1acf1286c66469}{bmRequestType}};}
+\DoxyCodeLine{61     u\_int8\_t \mbox{\hyperlink{structpcap__usb__setup_ac489e65b4dc45f5f5a932f9588b7554a}{bRequest}};}
+\DoxyCodeLine{62     u\_int16\_t \mbox{\hyperlink{structpcap__usb__setup_a0d3f62ec4011c45f57093a3e607e954e}{wValue}};}
+\DoxyCodeLine{63     u\_int16\_t \mbox{\hyperlink{structpcap__usb__setup_afce4bb1103321cc3d97a02cbd956d267}{wIndex}};}
+\DoxyCodeLine{64     u\_int16\_t \mbox{\hyperlink{structpcap__usb__setup_a125f42e221491d5ecdbddc41c847c836}{wLength}};}
+\DoxyCodeLine{65 \} \mbox{\hyperlink{structpcap__usb__setup}{pcap\_usb\_setup}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/*}}
+\DoxyCodeLine{68 \textcolor{comment}{ * Information from the URB for Isochronous transfers.}}
+\DoxyCodeLine{69 \textcolor{comment}{ */}}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_iso\_rec \{}
+\DoxyCodeLine{71     int32\_t \mbox{\hyperlink{structiso__rec_a15fed3d6fb51399a939b67458c0846b3}{error\_count}};}
+\DoxyCodeLine{72     int32\_t \mbox{\hyperlink{structiso__rec_a320d983fae95632fd09c38ea1ebf7073}{numdesc}};}
+\DoxyCodeLine{73 \} \mbox{\hyperlink{structiso__rec}{iso\_rec}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{/*}}
+\DoxyCodeLine{76 \textcolor{comment}{ * Header prepended by linux kernel to each event.}}
+\DoxyCodeLine{77 \textcolor{comment}{ * Appears at the front of each packet in DLT\_USB\_LINUX captures.}}
+\DoxyCodeLine{78 \textcolor{comment}{ */}}
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_usb\_header \{}
+\DoxyCodeLine{80     u\_int64\_t \mbox{\hyperlink{structpcap__usb__header_a376ab64711449ff4ffda74bb35bb2076}{id}};}
+\DoxyCodeLine{81     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header_aa4fa6626515b23686a07b969ad155153}{event\_type}};}
+\DoxyCodeLine{82     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header_aabb9084a9333141abf31db536bcc83d8}{transfer\_type}};}
+\DoxyCodeLine{83     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header_a223e1811570144bd344afa075513699d}{endpoint\_number}};}
+\DoxyCodeLine{84     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header_ae1bf90e48b29d45bb41a3403e0465daa}{device\_address}};}
+\DoxyCodeLine{85     u\_int16\_t \mbox{\hyperlink{structpcap__usb__header_ae1ad9de945cf649cb34fd60d22089ee2}{bus\_id}};}
+\DoxyCodeLine{86     \textcolor{keywordtype}{char} \mbox{\hyperlink{structpcap__usb__header_a189ca1eaafe22bfb35ba9afe41a98d4f}{setup\_flag}};\textcolor{comment}{/*if !=0 the urb setup header is not present*/}}
+\DoxyCodeLine{87     \textcolor{keywordtype}{char} \mbox{\hyperlink{structpcap__usb__header_a5e872aafa74082801e295033e9d0a6a6}{data\_flag}}; \textcolor{comment}{/*if !=0 no urb data is present*/}}
+\DoxyCodeLine{88     int64\_t \mbox{\hyperlink{structpcap__usb__header_a1c02a0d13529fc8a9e93e467f98aff42}{ts\_sec}};}
+\DoxyCodeLine{89     int32\_t \mbox{\hyperlink{structpcap__usb__header_a1fb9efd05b607a72b47aba1206002436}{ts\_usec}};}
+\DoxyCodeLine{90     int32\_t \mbox{\hyperlink{structpcap__usb__header_a369536ebfe385731562c0b55dd6f3a7c}{status}};}
+\DoxyCodeLine{91     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header_a5fea650a194bc21fb2f9484b0bba0194}{urb\_len}};}
+\DoxyCodeLine{92     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header_a66f59afaeff1fcdb59b5a22e4147f1c0}{data\_len}}; \textcolor{comment}{/* amount of urb data really present in this event*/}}
+\DoxyCodeLine{93     \mbox{\hyperlink{structpcap__usb__setup}{pcap\_usb\_setup}} \mbox{\hyperlink{structpcap__usb__header_adacfe7c19b2f7423b2c4afafe2a725e6}{setup}};}
+\DoxyCodeLine{94 \} \mbox{\hyperlink{structpcap__usb__header}{pcap\_usb\_header}};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{/*}}
+\DoxyCodeLine{97 \textcolor{comment}{ * Header prepended by linux kernel to each event for the 2.6.31}}
+\DoxyCodeLine{98 \textcolor{comment}{ * and later kernels; for the 2.6.21 through 2.6.30 kernels, the}}
+\DoxyCodeLine{99 \textcolor{comment}{ * "{}iso\_rec"{} information, and the fields starting with "{}interval"{}}}
+\DoxyCodeLine{100 \textcolor{comment}{ * are zeroed-\/out padding fields.}}
+\DoxyCodeLine{101 \textcolor{comment}{ *}}
+\DoxyCodeLine{102 \textcolor{comment}{ * Appears at the front of each packet in DLT\_USB\_LINUX\_MMAPPED captures.}}
+\DoxyCodeLine{103 \textcolor{comment}{ */}}
+\DoxyCodeLine{104 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_usb\_header\_mmapped \{}
+\DoxyCodeLine{105     u\_int64\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a376ab64711449ff4ffda74bb35bb2076}{id}};}
+\DoxyCodeLine{106     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_aa4fa6626515b23686a07b969ad155153}{event\_type}};}
+\DoxyCodeLine{107     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_aabb9084a9333141abf31db536bcc83d8}{transfer\_type}};}
+\DoxyCodeLine{108     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a223e1811570144bd344afa075513699d}{endpoint\_number}};}
+\DoxyCodeLine{109     u\_int8\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_ae1bf90e48b29d45bb41a3403e0465daa}{device\_address}};}
+\DoxyCodeLine{110     u\_int16\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_ae1ad9de945cf649cb34fd60d22089ee2}{bus\_id}};}
+\DoxyCodeLine{111     \textcolor{keywordtype}{char} \mbox{\hyperlink{structpcap__usb__header__mmapped_a189ca1eaafe22bfb35ba9afe41a98d4f}{setup\_flag}};\textcolor{comment}{/*if !=0 the urb setup header is not present*/}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{char} \mbox{\hyperlink{structpcap__usb__header__mmapped_a5e872aafa74082801e295033e9d0a6a6}{data\_flag}}; \textcolor{comment}{/*if !=0 no urb data is present*/}}
+\DoxyCodeLine{113     int64\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a1c02a0d13529fc8a9e93e467f98aff42}{ts\_sec}};}
+\DoxyCodeLine{114     int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a1fb9efd05b607a72b47aba1206002436}{ts\_usec}};}
+\DoxyCodeLine{115     int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a369536ebfe385731562c0b55dd6f3a7c}{status}};}
+\DoxyCodeLine{116     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a5fea650a194bc21fb2f9484b0bba0194}{urb\_len}};}
+\DoxyCodeLine{117     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a66f59afaeff1fcdb59b5a22e4147f1c0}{data\_len}}; \textcolor{comment}{/* amount of urb data really present in this event*/}}
+\DoxyCodeLine{118     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{119         \mbox{\hyperlink{structpcap__usb__setup}{pcap\_usb\_setup}} \mbox{\hyperlink{structpcap__usb__header__mmapped_adacfe7c19b2f7423b2c4afafe2a725e6}{setup}};}
+\DoxyCodeLine{120         \mbox{\hyperlink{structiso__rec}{iso\_rec}} \mbox{\hyperlink{structpcap__usb__header__mmapped_a128d6cbc2b63ffb47ac1faf6650a11d4}{iso}};}
+\DoxyCodeLine{121     \} s;}
+\DoxyCodeLine{122     int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a68471e972011140d250b479b0aa4ff80}{interval}};   \textcolor{comment}{/* for Interrupt and Isochronous events */}}
+\DoxyCodeLine{123     int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a9705add93743348a0b691b82065338dd}{start\_frame}}; \textcolor{comment}{/* for Isochronous events */}}
+\DoxyCodeLine{124     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_a4e7a8eeca52c104a50c0ce791230e2db}{xfer\_flags}}; \textcolor{comment}{/* copy of URB's transfer flags */}}
+\DoxyCodeLine{125     u\_int32\_t \mbox{\hyperlink{structpcap__usb__header__mmapped_ac1bc82d1825a616e2081e29de04bf0b5}{ndesc}};   \textcolor{comment}{/* number of isochronous descriptors */}}
+\DoxyCodeLine{126 \} \mbox{\hyperlink{structpcap__usb__header__mmapped}{pcap\_usb\_header\_mmapped}};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{comment}{/*}}
+\DoxyCodeLine{129 \textcolor{comment}{ * Isochronous descriptors; for isochronous transfers there might be}}
+\DoxyCodeLine{130 \textcolor{comment}{ * one or more of these at the beginning of the packet data.  The}}
+\DoxyCodeLine{131 \textcolor{comment}{ * number of descriptors is given by the "{}ndesc"{} field in the header;}}
+\DoxyCodeLine{132 \textcolor{comment}{ * as indicated, in older kernels that don't put the descriptors at}}
+\DoxyCodeLine{133 \textcolor{comment}{ * the beginning of the packet, that field is zeroed out, so that field}}
+\DoxyCodeLine{134 \textcolor{comment}{ * can be trusted even in captures from older kernels.}}
+\DoxyCodeLine{135 \textcolor{comment}{ */}}
+\DoxyCodeLine{136 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_usb\_isodesc \{}
+\DoxyCodeLine{137     int32\_t     \mbox{\hyperlink{structusb__isodesc_a369536ebfe385731562c0b55dd6f3a7c}{status}};}
+\DoxyCodeLine{138     u\_int32\_t   \mbox{\hyperlink{structusb__isodesc_a1fa6b5842f69b05c65db70b2ed22dc59}{offset}};}
+\DoxyCodeLine{139     u\_int32\_t   \mbox{\hyperlink{structusb__isodesc_a0c5f469bd681fb46e6f4203d5338e99f}{len}};}
+\DoxyCodeLine{140     u\_int8\_t    pad[4];}
+\DoxyCodeLine{141 \} \mbox{\hyperlink{structusb__isodesc}{usb\_isodesc}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

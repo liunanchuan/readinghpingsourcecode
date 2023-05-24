@@ -1,0 +1,40 @@
+\hypertarget{antigetopt_8h_source}{}\doxysection{antigetopt.\+h}
+\mbox{\hyperlink{antigetopt_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_ANTIGETOPT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_ANTIGETOPT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* special return codes */}}
+\DoxyCodeLine{5 \textcolor{keyword}{enum} \{ \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba24df96646bf41cbd3c94a7bf751e7578}{AGO\_EOF}}=4000, \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359}{AGO\_ALONE}}, \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796}{AGO\_UNKNOWN}}, \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323}{AGO\_REQARG}}, \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba0fa81729045c95781b4938f98c381d98}{AGO\_RESET}}, \mbox{\hyperlink{antigetopt_8h_a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525}{AGO\_AMBIG}} \};}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{/* option flags */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define AGO\_NOARG (1<<0)        }\textcolor{comment}{/* no argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define AGO\_NEEDARG (1<<1)      }\textcolor{comment}{/* required argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define AGO\_OPTARG (1<<2)       }\textcolor{comment}{/* optional argument */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define AGO\_EXCEPT0 (1<<3)      }\textcolor{comment}{/* exception \#0 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define AGO\_EXCEPT1 (1<<4)      }\textcolor{comment}{/* exception \#1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define AGO\_EXCEPT2 (1<<5)      }\textcolor{comment}{/* exception \#3 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define AGO\_ENDOFLIST (1<<15)       }\textcolor{comment}{/* end of argument list marker */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* option list null term */}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define AGO\_LIST\_TERM \{'\(\backslash\)0',NULL,0,AGO\_ENDOFLIST\}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/* The structure that defines an argument */}}
+\DoxyCodeLine{20 \textcolor{keyword}{struct }\mbox{\hyperlink{structago__optlist}{ago\_optlist}} \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{char} \mbox{\hyperlink{structago__optlist_abacaf673fd7f1f52c471c60a69701999}{ao\_short}};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structago__optlist_aa57c44e3ccad5e136c3fc5c872895082}{ao\_long}};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{structago__optlist_a12d8c4d4749a787b1003289d52046219}{ao\_id}};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{structago__optlist_abcdc1fa8a161b227ac77c9b2a6884d34}{ao\_flags}};}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *\mbox{\hyperlink{antigetopt_8h_a1f1a4a2a7e05bfb9e7da55636fa1105b}{ago\_optarg}};}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *\mbox{\hyperlink{antigetopt_8h_a65ce569dd6e9e6939ac83d7ae7bfbe7a}{ago\_optname}};}
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} \mbox{\hyperlink{antigetopt_8h_adbecdf9d74b32e431fadbab57b196855}{ago\_optchar}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{int} \mbox{\hyperlink{antigetopt_8h_a69fd0c7bd1b8d1410d9d4dab0acb2776}{antigetopt}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv, \textcolor{keyword}{struct} \mbox{\hyperlink{structago__optlist}{ago\_optlist}} *list);}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void}    \mbox{\hyperlink{antigetopt_8h_abd0e29fcb17776e5fe3bdd928cdd6b8f}{ago\_gnu\_error}}(\textcolor{keywordtype}{char} *pname, \textcolor{keywordtype}{int} \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}});}
+\DoxyCodeLine{33 \textcolor{keywordtype}{int} \mbox{\hyperlink{antigetopt_8h_ac73967e5a19294409255f006750f8ccc}{ago\_set\_exception}}(\textcolor{keywordtype}{int} except\_nr, \textcolor{keywordtype}{int} (*tester)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{char} *msg);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_ANTIGETOPT\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

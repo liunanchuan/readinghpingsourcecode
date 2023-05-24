@@ -1,0 +1,56 @@
+\hypertarget{fad-sita_8c}{}\doxysection{libpcap-\/1.1.1/fad-\/sita.c 文件参考}
+\label{fad-sita_8c}\index{libpcap-\/1.1.1/fad-\/sita.c@{libpcap-\/1.1.1/fad-\/sita.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/sita.\+h\char`\"{}}\newline
+fad-\/sita.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-sita_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+pcap\+\_\+if\+\_\+t $\ast$ \mbox{\hyperlink{fad-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}\label{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}} 
+\index{fad-\/sita.c@{fad-\/sita.c}!pcap\_findalldevs@{pcap\_findalldevs}}
+\index{pcap\_findalldevs@{pcap\_findalldevs}!fad-\/sita.c@{fad-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_findalldevs()}{pcap\_findalldevs()}}
+{\footnotesize\ttfamily int pcap\+\_\+findalldevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{fad-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}, \mbox{\hyperlink{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}{acn\+\_\+parse\+\_\+hosts\+\_\+file()}} , 以及 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{fad-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}\label{fad-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}} 
+\index{fad-\/sita.c@{fad-\/sita.c}!acn\_if\_list@{acn\_if\_list}}
+\index{acn\_if\_list@{acn\_if\_list}!fad-\/sita.c@{fad-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_if\_list}{acn\_if\_list}}
+{\footnotesize\ttfamily pcap\+\_\+if\+\_\+t$\ast$ acn\+\_\+if\+\_\+list\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a1c270520ac4dcc38c6ce2653f557eb52}{acn\+\_\+freealldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}{dump\+\_\+interface\+\_\+list()}}, \mbox{\hyperlink{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}{dump\+\_\+interface\+\_\+list\+\_\+p()}}, \mbox{\hyperlink{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}{sort\+\_\+if\+\_\+table()}}.
+

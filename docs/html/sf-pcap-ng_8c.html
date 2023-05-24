@@ -1,0 +1,1096 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/sf-pcap-ng.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">sf-pcap-ng.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="pcap-int_8h_source.html">pcap-int.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pcap-common_8h_source.html">pcap-common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sf-pcap-ng_8h_source.html">sf-pcap-ng.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+sf-pcap-ng.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c__incl.png" border="0" usemap="#alibpcap-1_81_81_2sf-pcap-ng_8c" alt=""/></div>
+<map name="alibpcap-1_81_81_2sf-pcap-ng_8c" id="alibpcap-1_81_81_2sf-pcap-ng_8c">
+<area shape="rect" title=" " alt="" coords="430,5,602,32"/>
+<area shape="rect" title=" " alt="" coords="5,229,96,256"/>
+<area shape="rect" title=" " alt="" coords="390,80,453,107"/>
+<area shape="rect" title=" " alt="" coords="477,80,555,107"/>
+<area shape="rect" title=" " alt="" coords="333,229,395,256"/>
+<area shape="rect" title=" " alt="" coords="580,80,644,107"/>
+<area shape="rect" title=" " alt="" coords="669,80,734,107"/>
+<area shape="rect" href="pcap-int_8h.html" title=" " alt="" coords="235,80,314,107"/>
+<area shape="rect" href="pcap-common_8h.html" title=" " alt="" coords="759,80,873,107"/>
+<area shape="rect" href="sf-pcap-ng_8h.html" title=" " alt="" coords="898,80,993,107"/>
+<area shape="rect" href="pcap_2pcap_8h.html" title=" " alt="" coords="125,155,219,181"/>
+<area shape="rect" title=" " alt="" coords="243,155,312,181"/>
+<area shape="rect" title=" " alt="" coords="120,229,203,256"/>
+<area shape="rect" href="bpf_8h.html" title=" " alt="" coords="227,229,309,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structblock__header.html">block_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structblock__trailer.html">block_trailer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structoption__header.html">option_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsection__header__block.html">section_header_block</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinterface__description__block.html">interface_description_block</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structenhanced__packet__block.html">enhanced_packet_block</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimple__packet__block.html">simple_packet_block</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__block.html">packet_block</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structblock__cursor.html">block_cursor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:aa97734239bda6df8b9f4dd1c4a2d1538"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#aa97734239bda6df8b9f4dd1c4a2d1538">OPT_ENDOFOPT</a>&#160;&#160;&#160;0	/* end of options */</td></tr>
+<tr class="separator:aa97734239bda6df8b9f4dd1c4a2d1538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9e13f9d5763b8693b03044b1dd4144"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ada9e13f9d5763b8693b03044b1dd4144">OPT_COMMENT</a>&#160;&#160;&#160;1	/* comment string */</td></tr>
+<tr class="separator:ada9e13f9d5763b8693b03044b1dd4144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab062f9d901e144f27c90a70808a6fcdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ab062f9d901e144f27c90a70808a6fcdb">BT_SHB</a>&#160;&#160;&#160;0x0A0D0D0A</td></tr>
+<tr class="separator:ab062f9d901e144f27c90a70808a6fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08e1e4728563a03ff6c937bfa8fd845"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ac08e1e4728563a03ff6c937bfa8fd845">BYTE_ORDER_MAGIC</a>&#160;&#160;&#160;0x1A2B3C4D</td></tr>
+<tr class="separator:ac08e1e4728563a03ff6c937bfa8fd845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664974e15877bcb7edd434e91b2d6576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a664974e15877bcb7edd434e91b2d6576">PCAP_NG_VERSION_MAJOR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a664974e15877bcb7edd434e91b2d6576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d5aca5c486e6f714745f13f7662cac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a68d5aca5c486e6f714745f13f7662cac">BT_IDB</a>&#160;&#160;&#160;0x00000001</td></tr>
+<tr class="separator:a68d5aca5c486e6f714745f13f7662cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328f7838f9090f29e50b3eb219416780"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a328f7838f9090f29e50b3eb219416780">IF_NAME</a>&#160;&#160;&#160;2	/* interface name string */</td></tr>
+<tr class="separator:a328f7838f9090f29e50b3eb219416780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae816dec591c1f6c1d88520e7f2a325b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ae816dec591c1f6c1d88520e7f2a325b3">IF_DESCRIPTION</a>&#160;&#160;&#160;3	/* interface description string */</td></tr>
+<tr class="separator:ae816dec591c1f6c1d88520e7f2a325b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa33d0a1f8a7b1fac8cc6825a62abd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#aaaa33d0a1f8a7b1fac8cc6825a62abd7">IF_IPV4ADDR</a>&#160;&#160;&#160;4	/* interface's IPv4 address and <a class="el" href="gencode_8c.html#a98fbcc64be2e1b5ec40bde6104a21137">netmask</a> */</td></tr>
+<tr class="separator:aaaa33d0a1f8a7b1fac8cc6825a62abd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d08312224174d3fef789af8467b54d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a8d08312224174d3fef789af8467b54d2">IF_IPV6ADDR</a>&#160;&#160;&#160;5	/* interface's IPv6 address and prefix length */</td></tr>
+<tr class="separator:a8d08312224174d3fef789af8467b54d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664b8eb8a7ce394023e8f55476beb60a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a664b8eb8a7ce394023e8f55476beb60a">IF_MACADDR</a>&#160;&#160;&#160;6	/* interface's MAC address */</td></tr>
+<tr class="separator:a664b8eb8a7ce394023e8f55476beb60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955d237278572bba1701e87e724bc52d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a955d237278572bba1701e87e724bc52d">IF_EUIADDR</a>&#160;&#160;&#160;7	/* interface's EUI address */</td></tr>
+<tr class="separator:a955d237278572bba1701e87e724bc52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ffa7c535c13ef5379c39ceddcce472"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a68ffa7c535c13ef5379c39ceddcce472">IF_SPEED</a>&#160;&#160;&#160;8	/* interface's speed, in bits/s */</td></tr>
+<tr class="separator:a68ffa7c535c13ef5379c39ceddcce472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349ab84b7e2bcb71880072f8d490dd70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a349ab84b7e2bcb71880072f8d490dd70">IF_TSRESOL</a>&#160;&#160;&#160;9	/* interface's <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> stamp resolution */</td></tr>
+<tr class="separator:a349ab84b7e2bcb71880072f8d490dd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696153c4b20cd54fc31b38c9b0410452"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a696153c4b20cd54fc31b38c9b0410452">IF_TZONE</a>&#160;&#160;&#160;10	/* interface's <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> zone */</td></tr>
+<tr class="separator:a696153c4b20cd54fc31b38c9b0410452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633e27f423a2a7d03f32fc0d5df10720"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a633e27f423a2a7d03f32fc0d5df10720">IF_FILTER</a>&#160;&#160;&#160;11	/* filter used when capturing on interface */</td></tr>
+<tr class="separator:a633e27f423a2a7d03f32fc0d5df10720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353726194d2743261c5d14586d4b29b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a353726194d2743261c5d14586d4b29b8">IF_OS</a>&#160;&#160;&#160;12	/* string OS on which capture on this interface was <a class="el" href="optimize_8c.html#a5992b274cfdcacdbc1fa8347fd01ebde">done</a> */</td></tr>
+<tr class="separator:a353726194d2743261c5d14586d4b29b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea280ffb04ae5b4e926ea34b78b463d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a7ea280ffb04ae5b4e926ea34b78b463d">IF_FCSLEN</a>&#160;&#160;&#160;13	/* FCS length for this interface */</td></tr>
+<tr class="separator:a7ea280ffb04ae5b4e926ea34b78b463d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9ccd056c300d15928790e04cf7a6f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a2c9ccd056c300d15928790e04cf7a6f8">IF_TSOFFSET</a>&#160;&#160;&#160;14	/* <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> stamp offset for this interface */</td></tr>
+<tr class="separator:a2c9ccd056c300d15928790e04cf7a6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa600a02635a52015c756e172e29d8e2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#aa600a02635a52015c756e172e29d8e2b">BT_EPB</a>&#160;&#160;&#160;0x00000006</td></tr>
+<tr class="separator:aa600a02635a52015c756e172e29d8e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2fb6d296dd0a714a5c630ec54bd23f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#adb2fb6d296dd0a714a5c630ec54bd23f">BT_SPB</a>&#160;&#160;&#160;0x00000003</td></tr>
+<tr class="separator:adb2fb6d296dd0a714a5c630ec54bd23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd50e7368a09a7c2663f3bb86a5f625"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a0bd50e7368a09a7c2663f3bb86a5f625">BT_PB</a>&#160;&#160;&#160;0x00000002</td></tr>
+<tr class="separator:a0bd50e7368a09a7c2663f3bb86a5f625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a1cc2a2675546c9783703d6bc3d676599"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet</a> (pcap_t *p, struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a> *<a class="el" href="main_8c.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>, u_char **data)</td></tr>
+<tr class="separator:a1cc2a2675546c9783703d6bc3d676599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8faa826aa880980afe173de6feba666"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666">read_bytes</a> (FILE *fp, void *buf, size_t bytes_to_read, int fail_on_eof, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ad8faa826aa880980afe173de6feba666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d90586b8e5d67f7e6ec0af91f3b9ca"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca">read_block</a> (FILE *fp, pcap_t *p, struct <a class="el" href="structblock__cursor.html">block_cursor</a> *cursor, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:ac8d90586b8e5d67f7e6ec0af91f3b9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8fe9aba6dcd836bda52a57ebf47316"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data</a> (struct <a class="el" href="structblock__cursor.html">block_cursor</a> *cursor, size_t chunk_size, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:a8c8fe9aba6dcd836bda52a57ebf47316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fdcf0b7ca945f526976702001e577c"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structoption__header.html">option_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c">get_opthdr_from_block_data</a> (pcap_t *p, struct <a class="el" href="structblock__cursor.html">block_cursor</a> *cursor, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:a04fdcf0b7ca945f526976702001e577c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafb7dd1b78dceed9c147b7df6cf460f"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f">get_optvalue_from_block_data</a> (struct <a class="el" href="structblock__cursor.html">block_cursor</a> *cursor, struct <a class="el" href="structoption__header.html">option_header</a> *opthdr, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:adafb7dd1b78dceed9c147b7df6cf460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c58e37e72e30e3fa1cdf69458969d3b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options</a> (pcap_t *p, struct <a class="el" href="structblock__cursor.html">block_cursor</a> *cursor, u_int *tsresol, u_int64_t *tsoffset, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:a5c58e37e72e30e3fa1cdf69458969d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86463cfbb11271e3f3e296d042e67dbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header</a> (pcap_t *p, <a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a> magic, FILE *fp, char *<a class="el" href="main_8c.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>)</td></tr>
+<tr class="separator:a86463cfbb11271e3f3e296d042e67dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memItemLeft" align="right" valign="top">static const char rcsid[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sf-pcap-ng_8c.html#a5578b12d2cc7e3ee27ff908df9e14a21">_U_</a></td></tr>
+<tr class="separator:a5578b12d2cc7e3ee27ff908df9e14a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="aa600a02635a52015c756e172e29d8e2b" name="aa600a02635a52015c756e172e29d8e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa600a02635a52015c756e172e29d8e2b">&#9670;&nbsp;</a></span>BT_EPB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_EPB&#160;&#160;&#160;0x00000006</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68d5aca5c486e6f714745f13f7662cac" name="a68d5aca5c486e6f714745f13f7662cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d5aca5c486e6f714745f13f7662cac">&#9670;&nbsp;</a></span>BT_IDB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_IDB&#160;&#160;&#160;0x00000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0bd50e7368a09a7c2663f3bb86a5f625" name="a0bd50e7368a09a7c2663f3bb86a5f625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd50e7368a09a7c2663f3bb86a5f625">&#9670;&nbsp;</a></span>BT_PB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_PB&#160;&#160;&#160;0x00000002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab062f9d901e144f27c90a70808a6fcdb" name="ab062f9d901e144f27c90a70808a6fcdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab062f9d901e144f27c90a70808a6fcdb">&#9670;&nbsp;</a></span>BT_SHB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_SHB&#160;&#160;&#160;0x0A0D0D0A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb2fb6d296dd0a714a5c630ec54bd23f" name="adb2fb6d296dd0a714a5c630ec54bd23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2fb6d296dd0a714a5c630ec54bd23f">&#9670;&nbsp;</a></span>BT_SPB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BT_SPB&#160;&#160;&#160;0x00000003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac08e1e4728563a03ff6c937bfa8fd845" name="ac08e1e4728563a03ff6c937bfa8fd845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08e1e4728563a03ff6c937bfa8fd845">&#9670;&nbsp;</a></span>BYTE_ORDER_MAGIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BYTE_ORDER_MAGIC&#160;&#160;&#160;0x1A2B3C4D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae816dec591c1f6c1d88520e7f2a325b3" name="ae816dec591c1f6c1d88520e7f2a325b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae816dec591c1f6c1d88520e7f2a325b3">&#9670;&nbsp;</a></span>IF_DESCRIPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_DESCRIPTION&#160;&#160;&#160;3	/* interface description string */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a955d237278572bba1701e87e724bc52d" name="a955d237278572bba1701e87e724bc52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955d237278572bba1701e87e724bc52d">&#9670;&nbsp;</a></span>IF_EUIADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_EUIADDR&#160;&#160;&#160;7	/* interface's EUI address */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ea280ffb04ae5b4e926ea34b78b463d" name="a7ea280ffb04ae5b4e926ea34b78b463d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea280ffb04ae5b4e926ea34b78b463d">&#9670;&nbsp;</a></span>IF_FCSLEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_FCSLEN&#160;&#160;&#160;13	/* FCS length for this interface */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a633e27f423a2a7d03f32fc0d5df10720" name="a633e27f423a2a7d03f32fc0d5df10720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633e27f423a2a7d03f32fc0d5df10720">&#9670;&nbsp;</a></span>IF_FILTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_FILTER&#160;&#160;&#160;11	/* filter used when capturing on interface */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaaa33d0a1f8a7b1fac8cc6825a62abd7" name="aaaa33d0a1f8a7b1fac8cc6825a62abd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa33d0a1f8a7b1fac8cc6825a62abd7">&#9670;&nbsp;</a></span>IF_IPV4ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_IPV4ADDR&#160;&#160;&#160;4	/* interface's IPv4 address and <a class="el" href="gencode_8c.html#a98fbcc64be2e1b5ec40bde6104a21137">netmask</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d08312224174d3fef789af8467b54d2" name="a8d08312224174d3fef789af8467b54d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d08312224174d3fef789af8467b54d2">&#9670;&nbsp;</a></span>IF_IPV6ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_IPV6ADDR&#160;&#160;&#160;5	/* interface's IPv6 address and prefix length */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a664b8eb8a7ce394023e8f55476beb60a" name="a664b8eb8a7ce394023e8f55476beb60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664b8eb8a7ce394023e8f55476beb60a">&#9670;&nbsp;</a></span>IF_MACADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_MACADDR&#160;&#160;&#160;6	/* interface's MAC address */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a328f7838f9090f29e50b3eb219416780" name="a328f7838f9090f29e50b3eb219416780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328f7838f9090f29e50b3eb219416780">&#9670;&nbsp;</a></span>IF_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_NAME&#160;&#160;&#160;2	/* interface name string */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a353726194d2743261c5d14586d4b29b8" name="a353726194d2743261c5d14586d4b29b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353726194d2743261c5d14586d4b29b8">&#9670;&nbsp;</a></span>IF_OS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_OS&#160;&#160;&#160;12	/* string OS on which capture on this interface was <a class="el" href="optimize_8c.html#a5992b274cfdcacdbc1fa8347fd01ebde">done</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68ffa7c535c13ef5379c39ceddcce472" name="a68ffa7c535c13ef5379c39ceddcce472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ffa7c535c13ef5379c39ceddcce472">&#9670;&nbsp;</a></span>IF_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_SPEED&#160;&#160;&#160;8	/* interface's speed, in bits/s */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c9ccd056c300d15928790e04cf7a6f8" name="a2c9ccd056c300d15928790e04cf7a6f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c9ccd056c300d15928790e04cf7a6f8">&#9670;&nbsp;</a></span>IF_TSOFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_TSOFFSET&#160;&#160;&#160;14	/* <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> stamp offset for this interface */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a349ab84b7e2bcb71880072f8d490dd70" name="a349ab84b7e2bcb71880072f8d490dd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349ab84b7e2bcb71880072f8d490dd70">&#9670;&nbsp;</a></span>IF_TSRESOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_TSRESOL&#160;&#160;&#160;9	/* interface's <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> stamp resolution */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a696153c4b20cd54fc31b38c9b0410452" name="a696153c4b20cd54fc31b38c9b0410452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696153c4b20cd54fc31b38c9b0410452">&#9670;&nbsp;</a></span>IF_TZONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF_TZONE&#160;&#160;&#160;10	/* interface's <a class="el" href="os-sunos4_8h.html#aae026724f73c36340024c657f4f44dab">time</a> zone */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada9e13f9d5763b8693b03044b1dd4144" name="ada9e13f9d5763b8693b03044b1dd4144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9e13f9d5763b8693b03044b1dd4144">&#9670;&nbsp;</a></span>OPT_COMMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPT_COMMENT&#160;&#160;&#160;1	/* comment string */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa97734239bda6df8b9f4dd1c4a2d1538" name="aa97734239bda6df8b9f4dd1c4a2d1538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97734239bda6df8b9f4dd1c4a2d1538">&#9670;&nbsp;</a></span>OPT_ENDOFOPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPT_ENDOFOPT&#160;&#160;&#160;0	/* end of options */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a664974e15877bcb7edd434e91b2d6576" name="a664974e15877bcb7edd434e91b2d6576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664974e15877bcb7edd434e91b2d6576">&#9670;&nbsp;</a></span>PCAP_NG_VERSION_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCAP_NG_VERSION_MAJOR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a8c8fe9aba6dcd836bda52a57ebf47316" name="a8c8fe9aba6dcd836bda52a57ebf47316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8fe9aba6dcd836bda52a57ebf47316">&#9670;&nbsp;</a></span>get_from_block_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * get_from_block_data </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structblock__cursor.html">block_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>chunk_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structblock__cursor.html#ab050b99102834e378299aeaaac2b29ca">block_cursor::block_type</a>, <a class="el" href="structblock__cursor.html#a5e10c1bf4fdc40cfb55e8fb7afdcac53">block_cursor::data</a>, <a class="el" href="structblock__cursor.html#a0882eee630649866788177d930e67371">block_cursor::data_remaining</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a> , 以及 <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c">get_opthdr_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f">get_optvalue_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a> , 以及 <a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316_icgraph" id="asf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316_icgraph">
+<area shape="rect" title=" " alt="" coords="845,64,988,91"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c" title=" " alt="" coords="605,89,791,116"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,51,164,77"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,101,361,128"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f" title=" " alt="" coords="599,39,797,65"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b" title=" " alt="" coords="409,64,551,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a04fdcf0b7ca945f526976702001e577c" name="a04fdcf0b7ca945f526976702001e577c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04fdcf0b7ca945f526976702001e577c">&#9670;&nbsp;</a></span>get_opthdr_from_block_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static struct <a class="el" href="structoption__header.html">option_header</a> * get_opthdr_from_block_data </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structblock__cursor.html">block_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data()</a>, <a class="el" href="structoption__header.html#a665abfc9370ba1aa2dc67ce3db7e9cef">option_header::option_code</a>, <a class="el" href="structoption__header.html#af6a763c2de30a03a9aeccdf464e62b91">option_header::option_length</a> , 以及 <a class="el" href="pcap-common_8h.html#a4eee5ee9386719c9735b0a6f822f1edf">SWAPSHORT</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_cgraph" id="asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316" title=" " alt="" coords="240,5,383,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_icgraph" id="asf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c_icgraph">
+<area shape="rect" title=" " alt="" coords="599,5,785,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b" title=" " alt="" coords="409,5,551,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,31,361,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adafb7dd1b78dceed9c147b7df6cf460f" name="adafb7dd1b78dceed9c147b7df6cf460f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adafb7dd1b78dceed9c147b7df6cf460f">&#9670;&nbsp;</a></span>get_optvalue_from_block_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * get_optvalue_from_block_data </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structblock__cursor.html">block_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structoption__header.html">option_header</a> *&#160;</td>
+          <td class="paramname"><em>opthdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data()</a> , 以及 <a class="el" href="structoption__header.html#af6a763c2de30a03a9aeccdf464e62b91">option_header::option_length</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_cgraph" id="asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,204,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316" title=" " alt="" coords="252,5,395,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_icgraph" id="asf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f_icgraph">
+<area shape="rect" title=" " alt="" coords="599,5,797,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b" title=" " alt="" coords="409,5,551,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,31,361,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86463cfbb11271e3f3e296d042e67dbc" name="a86463cfbb11271e3f3e296d042e67dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86463cfbb11271e3f3e296d042e67dbc">&#9670;&nbsp;</a></span>pcap_ng_check_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pcap_ng_check_header </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="bpf_8h.html#a37fdbc8313e90fb2041203a2e40cd482">bpf_u_int32</a>&#160;</td>
+          <td class="paramname"><em>magic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structblock__header.html#ab050b99102834e378299aeaaac2b29ca">block_header::block_type</a>, <a class="el" href="structblock__cursor.html#ab050b99102834e378299aeaaac2b29ca">block_cursor::block_type</a>, <a class="el" href="sf-pcap-ng_8c.html#aa600a02635a52015c756e172e29d8e2b">BT_EPB</a>, <a class="el" href="sf-pcap-ng_8c.html#a68d5aca5c486e6f714745f13f7662cac">BT_IDB</a>, <a class="el" href="sf-pcap-ng_8c.html#a0bd50e7368a09a7c2663f3bb86a5f625">BT_PB</a>, <a class="el" href="sf-pcap-ng_8c.html#ab062f9d901e144f27c90a70808a6fcdb">BT_SHB</a>, <a class="el" href="sf-pcap-ng_8c.html#adb2fb6d296dd0a714a5c630ec54bd23f">BT_SPB</a>, <a class="el" href="structsection__header__block.html#a6655d22b5d078eb17133d7f836ee7f14">section_header_block::byte_order_magic</a>, <a class="el" href="sf-pcap-ng_8c.html#ac08e1e4728563a03ff6c937bfa8fd845">BYTE_ORDER_MAGIC</a>, <a class="el" href="optimize_8c.html#a5992b274cfdcacdbc1fa8347fd01ebde">done</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data()</a>, <a class="el" href="structinterface__description__block.html#a07ec934f7d3403862032b003f740523a">interface_description_block::linktype</a>, <a class="el" href="structsection__header__block.html#ab47a080167895f1534dcb26194df8edc">section_header_block::major_version</a>, <a class="el" href="structsection__header__block.html#af480e9eb460a3ee645280f8f7b069f8e">section_header_block::minor_version</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet()</a>, <a class="el" href="sf-pcap-ng_8c.html#a664974e15877bcb7edd434e91b2d6576">PCAP_NG_VERSION_MAJOR</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a>, <a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options()</a>, <a class="el" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca">read_block()</a>, <a class="el" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666">read_bytes()</a>, <a class="el" href="structinterface__description__block.html#aa73496b51e5edb630420e4044792c897">interface_description_block::snaplen</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>, <a class="el" href="gencode_8c.html#a4159b742abde2765279a9c440d3540e3">SWAPLONG</a>, <a class="el" href="pcap-common_8h.html#a4eee5ee9386719c9735b0a6f822f1edf">SWAPSHORT</a> , 以及 <a class="el" href="structblock__header.html#a69238681b7294b3ac0be47a7fa113c9e">block_header::total_length</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc_cgraph" id="asf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,206,164,232"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316" title=" " alt="" coords="865,54,1008,80"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,180,361,207"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b" title=" " alt="" coords="419,79,561,106"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca" title=" " alt="" coords="447,231,533,258"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666" title=" " alt="" coords="675,282,761,308"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="887,307,986,334"/>
+<area shape="rect" href="pcap-common_8c.html#afa059dda75b192db1391a32248ccdb65" title=" " alt="" coords="409,180,571,207"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c" title=" " alt="" coords="625,28,811,55"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f" title=" " alt="" coords="619,79,817,106"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="1056,307,1119,334"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cc2a2675546c9783703d6bc3d676599" name="a1cc2a2675546c9783703d6bc3d676599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc2a2675546c9783703d6bc3d676599">&#9670;&nbsp;</a></span>pcap_ng_next_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pcap_ng_next_packet </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structpcap__pkthdr.html">pcap_pkthdr</a> *&#160;</td>
+          <td class="paramname"><em>hdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_char **&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structblock__cursor.html#ab050b99102834e378299aeaaac2b29ca">block_cursor::block_type</a>, <a class="el" href="sf-pcap-ng_8c.html#aa600a02635a52015c756e172e29d8e2b">BT_EPB</a>, <a class="el" href="sf-pcap-ng_8c.html#a68d5aca5c486e6f714745f13f7662cac">BT_IDB</a>, <a class="el" href="sf-pcap-ng_8c.html#a0bd50e7368a09a7c2663f3bb86a5f625">BT_PB</a>, <a class="el" href="sf-pcap-ng_8c.html#ab062f9d901e144f27c90a70808a6fcdb">BT_SHB</a>, <a class="el" href="sf-pcap-ng_8c.html#adb2fb6d296dd0a714a5c630ec54bd23f">BT_SPB</a>, <a class="el" href="structsection__header__block.html#a6655d22b5d078eb17133d7f836ee7f14">section_header_block::byte_order_magic</a>, <a class="el" href="sf-pcap-ng_8c.html#ac08e1e4728563a03ff6c937bfa8fd845">BYTE_ORDER_MAGIC</a>, <a class="el" href="structpcap__pkthdr.html#aac5771ed2efd92508bb4fe650f2ce7d7">pcap_pkthdr::caplen</a>, <a class="el" href="structenhanced__packet__block.html#aac5771ed2efd92508bb4fe650f2ce7d7">enhanced_packet_block::caplen</a>, <a class="el" href="structpacket__block.html#aac5771ed2efd92508bb4fe650f2ce7d7">packet_block::caplen</a>, <a class="el" href="bpf_8h.html#a9e2d35fec485b47ff71e2d3de8572e98">DLT_USB_LINUX</a>, <a class="el" href="bpf_8h.html#ac6ebc3c746098b3169d54cf85996766a">DLT_USB_LINUX_MMAPPED</a>, <a class="el" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316">get_from_block_data()</a>, <a class="el" href="globals_8h.html#a63a24b5b22a130df12f883d1d910e490">hdr</a>, <a class="el" href="structenhanced__packet__block.html#a74a10e3b83878dbe48a03463ec554f52">enhanced_packet_block::interface_id</a>, <a class="el" href="structpacket__block.html#a34c374b007c03eb87302d9b456ac518d">packet_block::interface_id</a>, <a class="el" href="structpcap__pkthdr.html#a728f264db4f5cc304742565a2bcdbeea">pcap_pkthdr::len</a>, <a class="el" href="structenhanced__packet__block.html#a728f264db4f5cc304742565a2bcdbeea">enhanced_packet_block::len</a>, <a class="el" href="structsimple__packet__block.html#a728f264db4f5cc304742565a2bcdbeea">simple_packet_block::len</a>, <a class="el" href="structpacket__block.html#a728f264db4f5cc304742565a2bcdbeea">packet_block::len</a>, <a class="el" href="structinterface__description__block.html#a07ec934f7d3403862032b003f740523a">interface_description_block::linktype</a>, <a class="el" href="structsection__header__block.html#ab47a080167895f1534dcb26194df8edc">section_header_block::major_version</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="sf-pcap-ng_8c.html#a664974e15877bcb7edd434e91b2d6576">PCAP_NG_VERSION_MAJOR</a>, <a class="el" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b">process_idb_options()</a>, <a class="el" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca">read_block()</a>, <a class="el" href="structinterface__description__block.html#aa73496b51e5edb630420e4044792c897">interface_description_block::snaplen</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>, <a class="el" href="pcap-common_8c.html#afa059dda75b192db1391a32248ccdb65">swap_linux_usb_header()</a>, <a class="el" href="gencode_8c.html#a4159b742abde2765279a9c440d3540e3">SWAPLONG</a>, <a class="el" href="pcap-common_8h.html#a4eee5ee9386719c9735b0a6f822f1edf">SWAPSHORT</a>, <a class="el" href="structenhanced__packet__block.html#ac983a72d49e7d4f1d265f305895b7dbd">enhanced_packet_block::timestamp_high</a>, <a class="el" href="structpacket__block.html#ac983a72d49e7d4f1d265f305895b7dbd">packet_block::timestamp_high</a>, <a class="el" href="structenhanced__packet__block.html#a53c5dac6c5d75d6a934b23f0c47dbe3f">enhanced_packet_block::timestamp_low</a>, <a class="el" href="structpacket__block.html#a53c5dac6c5d75d6a934b23f0c47dbe3f">packet_block::timestamp_low</a> , 以及 <a class="el" href="structpcap__pkthdr.html#a21be78b2818c91cb205885b8a6f5aed8">pcap_pkthdr::ts</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_cgraph" id="asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,155,108"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316" title=" " alt="" coords="659,31,801,57"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a5c58e37e72e30e3fa1cdf69458969d3b" title=" " alt="" coords="213,56,354,83"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca" title=" " alt="" coords="241,107,326,133"/>
+<area shape="rect" href="pcap-common_8c.html#afa059dda75b192db1391a32248ccdb65" title=" " alt="" coords="203,157,364,184"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c" title=" " alt="" coords="418,31,605,57"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f" title=" " alt="" coords="412,81,611,108"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666" title=" " alt="" coords="468,132,555,159"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="681,132,779,159"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="849,132,912,159"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_icgraph" id="asf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,361,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,5,164,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c58e37e72e30e3fa1cdf69458969d3b" name="a5c58e37e72e30e3fa1cdf69458969d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c58e37e72e30e3fa1cdf69458969d3b">&#9670;&nbsp;</a></span>process_idb_options()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int process_idb_options </td>
+          <td>(</td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structblock__cursor.html">block_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_int *&#160;</td>
+          <td class="paramname"><em>tsresol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_int64_t *&#160;</td>
+          <td class="paramname"><em>tsoffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structblock__cursor.html#a0882eee630649866788177d930e67371">block_cursor::data_remaining</a>, <a class="el" href="optimize_8c.html#a5992b274cfdcacdbc1fa8347fd01ebde">done</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c">get_opthdr_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f">get_optvalue_from_block_data()</a>, <a class="el" href="sf-pcap-ng_8c.html#a2c9ccd056c300d15928790e04cf7a6f8">IF_TSOFFSET</a>, <a class="el" href="sf-pcap-ng_8c.html#a349ab84b7e2bcb71880072f8d490dd70">IF_TSRESOL</a>, <a class="el" href="sf-pcap-ng_8c.html#aa97734239bda6df8b9f4dd1c4a2d1538">OPT_ENDOFOPT</a>, <a class="el" href="structoption__header.html#a665abfc9370ba1aa2dc67ce3db7e9cef">option_header::option_code</a>, <a class="el" href="structoption__header.html#af6a763c2de30a03a9aeccdf464e62b91">option_header::option_length</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a> , 以及 <a class="el" href="pcap-int_8h.html#a4f25e9658eb0b686983866b37837a31e">SWAPLL</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a> , 以及 <a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_cgraph" id="asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,147,57"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a04fdcf0b7ca945f526976702001e577c" title=" " alt="" coords="201,5,387,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#adafb7dd1b78dceed9c147b7df6cf460f" title=" " alt="" coords="195,56,393,83"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a8c8fe9aba6dcd836bda52a57ebf47316" title=" " alt="" coords="441,31,584,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_icgraph" id="asf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b_icgraph">
+<area shape="rect" title=" " alt="" coords="409,5,551,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,31,361,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8d90586b8e5d67f7e6ec0af91f3b9ca" name="ac8d90586b8e5d67f7e6ec0af91f3b9ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d90586b8e5d67f7e6ec0af91f3b9ca">&#9670;&nbsp;</a></span>read_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int read_block </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structblock__cursor.html">block_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="structblock__header.html#ab050b99102834e378299aeaaac2b29ca">block_header::block_type</a>, <a class="el" href="structblock__cursor.html#ab050b99102834e378299aeaaac2b29ca">block_cursor::block_type</a>, <a class="el" href="structblock__cursor.html#a5e10c1bf4fdc40cfb55e8fb7afdcac53">block_cursor::data</a>, <a class="el" href="structblock__cursor.html#a0882eee630649866788177d930e67371">block_cursor::data_remaining</a>, <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666">read_bytes()</a>, <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>, <a class="el" href="gencode_8c.html#a4159b742abde2765279a9c440d3540e3">SWAPLONG</a> , 以及 <a class="el" href="structblock__header.html#a69238681b7294b3ac0be47a7fa113c9e">block_header::total_length</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a> , 以及 <a class="el" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599">pcap_ng_next_packet()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_cgraph" id="asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ad8faa826aa880980afe173de6feba666" title=" " alt="" coords="139,5,225,32"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="273,5,372,32"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="420,5,483,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_icgraph" id="asf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca_icgraph">
+<area shape="rect" title=" " alt="" coords="409,5,495,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,31,361,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad8faa826aa880980afe173de6feba666" name="ad8faa826aa880980afe173de6feba666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8faa826aa880980afe173de6feba666">&#9670;&nbsp;</a></span>read_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int read_bytes </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>bytes_to_read</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fail_on_eof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>errbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="globals_8h.html#a41891cad090df07cd9360f1d8a9f1396">errbuf</a>, <a class="el" href="pcap-enet_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>, <a class="el" href="pcap_2pcap_8h.html#acd448353957d92c98fccc29e1fc8d927">PCAP_ERRBUF_SIZE</a>, <a class="el" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e">pcap_strerror()</a> , 以及 <a class="el" href="pcap-int_8h.html#aa367b75c5aed883fef5befbdf04835a4">snprintf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc">pcap_ng_check_header()</a> , 以及 <a class="el" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca">read_block()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_cgraph.png" border="0" usemap="#asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_cgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_cgraph" id="asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" href="pcap_8c.html#a0844ee879af1601b13fa3b78733b7e7e" title=" " alt="" coords="140,5,239,32"/>
+<area shape="rect" href="os-solaris2_8h.html#a40e8f54ca9a5765257eebf9f08516dc4" title=" " alt="" coords="287,5,349,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_icgraph.png" border="0" usemap="#asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_icgraph" alt=""/></div>
+<map name="asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_icgraph" id="asf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666_icgraph">
+<area shape="rect" title=" " alt="" coords="543,5,629,32"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a86463cfbb11271e3f3e296d042e67dbc" title=" " alt="" coords="5,31,164,57"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#ac8d90586b8e5d67f7e6ec0af91f3b9ca" title=" " alt="" coords="409,31,495,57"/>
+<area shape="rect" href="sf-pcap-ng_8c.html#a1cc2a2675546c9783703d6bc3d676599" title=" " alt="" coords="212,81,361,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a5578b12d2cc7e3ee27ff908df9e14a21" name="a5578b12d2cc7e3ee27ff908df9e14a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5578b12d2cc7e3ee27ff908df9e14a21">&#9670;&nbsp;</a></span>_U_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char rcsid [] _U_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;@(#) $Header$ (LBL)&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

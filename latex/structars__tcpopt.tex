@@ -1,0 +1,40 @@
+\hypertarget{structars__tcpopt}{}\doxysection{ars\+\_\+tcpopt Struct Reference}
+\label{structars__tcpopt}\index{ars\_tcpopt@{ars\_tcpopt}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structars__tcpopt_a26e619f86c1da79c7606a93bdc97a616}\label{structars__tcpopt_a26e619f86c1da79c7606a93bdc97a616}} 
+u\+\_\+int8\+\_\+t {\bfseries kind}
+\item 
+\mbox{\Hypertarget{structars__tcpopt_a4e76fb617d96732841b9ffa9ed6de847}\label{structars__tcpopt_a4e76fb617d96732841b9ffa9ed6de847}} 
+u\+\_\+int8\+\_\+t {\bfseries len}
+\item 
+\mbox{\Hypertarget{structars__tcpopt_a56a935d62646ac9854e432ad6895ea4d}\label{structars__tcpopt_a56a935d62646ac9854e432ad6895ea4d}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>u\_int16\_t {\bfseries size}\\
+\>\} {\bfseries mss}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries shift}\\
+\>\} {\bfseries win}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries origin} \mbox{[}4\mbox{]}\\
+\>\>u\_int8\_t {\bfseries size} \mbox{[}4\mbox{]}\\
+\>\} {\bfseries sack} \mbox{[}4\mbox{]}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries info} \mbox{[}4\mbox{]}\\
+\>\} {\bfseries echo}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries tsval} \mbox{[}4\mbox{]}\\
+\>\>u\_int8\_t {\bfseries tsecr} \mbox{[}4\mbox{]}\\
+\>\} {\bfseries timestamp}\\
+\} {\bfseries un}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ars.\+h\end{DoxyCompactItemize}

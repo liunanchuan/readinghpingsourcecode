@@ -1,0 +1,1008 @@
+\hypertarget{ndis2_8h}{}\doxysection{libpcap-\/1.1.1/msdos/ndis2.h 文件参考}
+\label{ndis2_8h}\index{libpcap-\/1.1.1/msdos/ndis2.h@{libpcap-\/1.1.1/msdos/ndis2.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{ndis2_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCommonChars}{Common\+Chars}}
+\item 
+struct \mbox{\hyperlink{structMulticastList}{Multicast\+List}}
+\item 
+struct \mbox{\hyperlink{structMacChars}{Mac\+Chars}}
+\item 
+struct \mbox{\hyperlink{structProtocolChars}{Protocol\+Chars}}
+\item 
+struct \mbox{\hyperlink{structMacUpperDispatch}{Mac\+Upper\+Dispatch}}
+\item 
+struct \mbox{\hyperlink{structMacStatusTable}{Mac\+Status\+Table}}
+\item 
+struct \mbox{\hyperlink{structProtDispatch}{Prot\+Dispatch}}
+\item 
+struct \mbox{\hyperlink{structReqBlock}{Req\+Block}}
+\item 
+struct \mbox{\hyperlink{structTxBufDescrRec}{Tx\+Buf\+Descr\+Rec}}
+\item 
+struct \mbox{\hyperlink{structTxBufDescr}{Tx\+Buf\+Descr}}
+\item 
+struct \mbox{\hyperlink{structTDBufDescrRec}{TDBuf\+Descr\+Rec}}
+\item 
+struct \mbox{\hyperlink{structTDBufDescr}{TDBuf\+Descr}}
+\item 
+struct \mbox{\hyperlink{structRxBufDescrRec}{Rx\+Buf\+Descr\+Rec}}
+\item 
+struct \mbox{\hyperlink{structRxBufDescr}{Rx\+Buf\+Descr}}
+\item 
+struct \mbox{\hyperlink{structPktBuf}{Pkt\+Buf}}
+\item 
+struct \mbox{\hyperlink{structCardHandle}{Card\+Handle}}
+\item 
+struct \mbox{\hyperlink{structBindingsList}{Bindings\+List}}
+\item 
+struct \mbox{\hyperlink{structFailingModules}{Failing\+Modules}}
+\item 
+union \mbox{\hyperlink{unionHardwareAddress}{Hardware\+Address}}
+\item 
+struct \mbox{\hyperlink{structFddiHeader}{Fddi\+Header}}
+\item 
+struct \mbox{\hyperlink{structEthernetIIHeader}{Ethernet\+IIHeader}}
+\item 
+struct \mbox{\hyperlink{structIeee802Dot5Header}{Ieee802\+Dot5\+Header}}
+\item 
+struct \mbox{\hyperlink{structIeee802Dot2SnapHeader}{Ieee802\+Dot2\+Snap\+Header}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_ab0231fdb0aebc39738800b08f22eac75}{NDIS\+\_\+\+PARAM\+\_\+\+INTEGER}}~0
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_ad7262d0e0105eacc264342a799613292}{NDIS\+\_\+\+PARAM\+\_\+\+STRING}}~1
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_ac220cf8d5566383229489c715be7d49a}{NDIS\+\_\+\+TX\+\_\+\+BUF\+\_\+\+LENGTH}}~8
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_a2f3a6a15ce9db6b6ccf8bb7473730fdf}{NDIS\+\_\+\+TD\+\_\+\+BUF\+\_\+\+LENGTH}}~1
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_a00b98a95c560e0d0880fbf43b0ba9bf4}{NDIS\+\_\+\+RX\+\_\+\+BUF\+\_\+\+LENGTH}}~8
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_a6c59bfe750ef156b3150de5b893aeac3}{NDIS\+\_\+\+PTR\+\_\+\+PHYSICAL}}~0
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_ae2ecea474dcca35a5b29cf216b5fe27f}{NDIS\+\_\+\+PTR\+\_\+\+VIRTUAL}}~2
+\item 
+\#define \mbox{\hyperlink{ndis2_8h_a274ab8d4775811b3e909c40f83371b68}{NDIS\+\_\+\+PATH}}~\char`\"{}PROTMAN\$\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2}{Ndis\+Mac\+Status}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a7a19a39bb1cb17f46d5386b65917077e}{HARDWARE\+\_\+\+NOT\+\_\+\+INSTALLED}} = 0
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2af84f74efa69c7a423d29c83f1bf76b2a}{HARDWARE\+\_\+\+FAILED\+\_\+\+DIAG}} = 1
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a91ec424c12076712f6e13c38f0d7499f}{HARDWARE\+\_\+\+FAILED\+\_\+\+CONFIG}} = 2
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2affc5aa3f3cfc7e632d70ca7ceac225d9}{HARDWARE\+\_\+\+HARD\+\_\+\+FAULT}} = 3
+, \newline
+\mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a35baa0503254b13d64965862ef7b5c0c}{HARDWARE\+\_\+\+SOFT\+\_\+\+FAULT}} = 4
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aa28e74004891257567f57daebd15d023}{HARDWARE\+\_\+\+OK}} = 7
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a92f163360a74d677a698e1c0d24e3a21}{HARDWARE\+\_\+\+MASK}} = 0x0007
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aab9b71bf4be31f67c3542b26e37aac8f}{MAC\+\_\+\+BOUND}} = 0x0008
+, \newline
+\mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a419662cadd7d55e4de11a259527d6da9}{MAC\+\_\+\+OPEN}} = 0x0010
+, \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aed1a9f2e88de464a36ba0b3c93e795f0}{DIAG\+\_\+\+IN\+\_\+\+PROGRESS}} = 0x0020
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388}{Ndis\+Status}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a58faaf6a144a6218870dea1226d917b1}{STATUS\+\_\+\+RING\+\_\+\+STATUS}} = 1
+, \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a101ea09d55a9799081d951a243c30b31}{STATUS\+\_\+\+ADAPTER\+\_\+\+CHECK}} = 2
+, \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388abcae23810ebd4491a56f5fdfa6e28cae}{STATUS\+\_\+\+START\+\_\+\+RESET}} = 3
+, \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a80685092e34c70fc251680332218219d}{STATUS\+\_\+\+INTERRUPT}} = 4
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388af9ddf03663850f0ccfad43d2e84d3e9f}{STATUS\+\_\+\+END\+\_\+\+RESET}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6}{Ndis\+Packet\+Filter}} \{ \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a72c7dc13dab57e0bbbede647034c6945}{FILTER\+\_\+\+DIRECTED}} = 1
+, \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a588b9c7d9d1d1e9d92a76319377138fe}{FILTER\+\_\+\+BROADCAST}} = 2
+, \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a1ca2f0b2059042ba736f4c0d12efde87}{FILTER\+\_\+\+PROMISCUOUS}} = 4
+, \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6aa84062abc7cdc17af5ab47547113960f}{FILTER\+\_\+\+SOURCE\+\_\+\+ROUTE}} = 8
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cf}{Ndis\+General\+Request}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfabd624725b5a945a25d9e3e3ac7e6127e}{REQ\+\_\+\+INITIATE\+\_\+\+DIAGNOSTICS}} = 1
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadbf86439d679cbd463d48ee7c43a4155}{REQ\+\_\+\+READ\+\_\+\+ERROR\+\_\+\+LOG}} = 2
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa0eb2cb0dbe3201eb50636b0466bdf2bf}{REQ\+\_\+\+SET\+\_\+\+STATION\+\_\+\+ADDRESS}} = 3
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa41b32cbfeb549a0a556b06f266fc2cf9}{REQ\+\_\+\+OPEN\+\_\+\+ADAPTER}} = 4
+, \newline
+\mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfae032e429e20b01ca2e2398e974b01755}{REQ\+\_\+\+CLOSE\+\_\+\+ADAPTER}} = 5
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa87fcfaa86573eff6dd4b4c0723327635}{REQ\+\_\+\+RESET\+\_\+\+MAC}} = 6
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadeee397e6321c0555d77ea30e4b76e56}{REQ\+\_\+\+SET\+\_\+\+PACKET\+\_\+\+FILTER}} = 7
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfad5b8c6ffd4f78a99d3cfbad013d78f0f}{REQ\+\_\+\+ADD\+\_\+\+MULTICAST\+\_\+\+ADDRESS}} = 8
+, \newline
+\mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa76d42e9fabdfee9aa623b5ab4f415467}{REQ\+\_\+\+DELETE\+\_\+\+MULTICAST\+\_\+\+ADDRESS}} = 9
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfaea5d5b07e1b387dd60894f249fc40653}{REQ\+\_\+\+UPDATE\+\_\+\+STATISTICS}} = 10
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfacd173684841e33fcd48978f2ef8b3c57}{REQ\+\_\+\+CLEAR\+\_\+\+STATISTICS}} = 11
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfac469d69749fcc9a82c25dd6a29c919c4}{REQ\+\_\+\+INTERRUPT\+\_\+\+REQUEST}} = 12
+, \newline
+\mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa46269b571357e9fd3f59e6295158ebab}{REQ\+\_\+\+SET\+\_\+\+FUNCTIONAL\+\_\+\+ADDRESS}} = 13
+, \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa8f6b09bf30107cccecf26d981f7c9724}{REQ\+\_\+\+SET\+\_\+\+LOOKAHEAD}} = 14
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553}{Ndis\+Mac\+Service\+Flags}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a4856012aa91e02227b24112161bc8e16}{SF\+\_\+\+BROADCAST}} = 0x00000001L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a27fed37c640004bfd7813cfd40cd7b3b}{SF\+\_\+\+MULTICAST}} = 0x00000002L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aafccc97da7a8c2b7d19b8c5c6bacb815}{SF\+\_\+\+FUNCTIONAL}} = 0x00000004L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a1431e43ad01048f2ed7efbfc654f662c}{SF\+\_\+\+PROMISCUOUS}} = 0x00000008L
+, \newline
+\mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ac1c963ecd25016eea7c5d1d72ae4d9fb}{SF\+\_\+\+SOFT\+\_\+\+ADDRESS}} = 0x00000010L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a13733e5dd015751a66e1076da8bb03c2}{SF\+\_\+\+STATS\+\_\+\+CURRENT}} = 0x00000020L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aaf2cae7dcbcc685f2ec39943eb700152}{SF\+\_\+\+INITIATE\+\_\+\+DIAGS}} = 0x00000040L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ad0987352d155b1014da9d43ab1c05696}{SF\+\_\+\+LOOPBACK}} = 0x00000080L
+, \newline
+\mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a226ebb1b0a96546f700f38e63b9bfdd0}{SF\+\_\+\+RECEIVE\+\_\+\+CHAIN}} = 0x00000100L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3e326b9317819ca977846e33ba732f93}{SF\+\_\+\+SOURCE\+\_\+\+ROUTING}} = 0x00000200L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a23eab1d2c68459a14bdde525387337e9}{SF\+\_\+\+RESET\+\_\+\+MAC}} = 0x00000400L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a61582232db6aea051054454a644dfc15}{SF\+\_\+\+OPEN\+\_\+\+CLOSE}} = 0x00000800L
+, \newline
+\mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a35815d87fd830b28d36eaf568256fbbc}{SF\+\_\+\+INTERRUPT\+\_\+\+REQUEST}} = 0x00001000L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3b388e4b93c5b1e542cad272a14c6655}{SF\+\_\+\+SOURCE\+\_\+\+ROUTING\+\_\+\+BRIDGE}} = 0x00002000L
+, \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553acf01e14e80bc51986304fd0e45b564dc}{SF\+\_\+\+VIRTUAL\+\_\+\+ADDRESSES}} = 0x00004000L
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323f}{Ndis\+Sys\+Request}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323faa0a6a6a0ab0d59c54fd450eac2d6c0ab}{REQ\+\_\+\+INITIATE\+\_\+\+BIND}} = 1
+, \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323faee10b32f1f89ba05943bd4d862cad2b8}{REQ\+\_\+\+BIND}} = 2
+, \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323fa5fdd94f9971b0e09fbb4520934d785a3}{REQ\+\_\+\+INITIATE\+\_\+\+PREBIND}} = 3
+, \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323fabac60e75d42fe12d621c9b3132136ac6}{REQ\+\_\+\+INITIATE\+\_\+\+UNBIND}} = 4
+, \newline
+\mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323facbfdd8faf3ba37a2a566708a3a1d3486}{REQ\+\_\+\+UNBIND}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033b}{Ndis\+Prot\+Manager}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba3b77926e9ee837d5b50d65962521827a}{PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+INFO}} = 1
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab504793f2b5d537c6eace5cc56cb763b}{PM\+\_\+\+REGISTER\+\_\+\+MODULE}} = 2
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa904c133bdbc6408de29c3a31ace5efe}{PM\+\_\+\+BIND\+\_\+\+AND\+\_\+\+START}} = 3
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba773cc2eddc6bc5ba1384af232954813f}{PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+LINKAGE}} = 4
+, \newline
+\mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba8c88ea4553b6e9a5c4ebad50b38ea327}{PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+INI\+\_\+\+PATH}} = 5
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba1cc22736dddfea672f21de39ca7e4371}{PM\+\_\+\+REGISTER\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+INFO}} = 6
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa502eecee4b0304a3455365bcbd2b21a}{PM\+\_\+\+INIT\+\_\+\+AND\+\_\+\+REGISTER}} = 7
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab1f323e2a2e8d32ef41b070d10e1103d}{PM\+\_\+\+UNBIND\+\_\+\+AND\+\_\+\+STOP}} = 8
+, \newline
+\mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba0b1b5a3a4bac72a6a20f6eb17c396730}{PM\+\_\+\+BIND\+\_\+\+STATUS}} = 9
+, \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bad3aa38cd1f0df06769248d24da25d0cf}{PM\+\_\+\+REGISTER\+\_\+\+STATUS}} = 10
+ \}
+\item 
+enum \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dd}{Ndis\+Error}} \{ \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6d4f18a9728f434ff2d1a64043ebe6e8}{ERR\+\_\+\+SUCCESS}} = 0x00
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaab75e6b7c966a131e06d5206b18c4824}{ERR\+\_\+\+WAIT\+\_\+\+FOR\+\_\+\+RELEASE}} = 0x01
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda778ad4413217b37dbd4245f7044c51fd}{ERR\+\_\+\+REQUEST\+\_\+\+QUEUED}} = 0x02
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6ce68afd45f31a179592b0886e7a2e5e}{ERR\+\_\+\+FRAME\+\_\+\+NOT\+\_\+\+RECOGNIZED}} = 0x03
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8b9a12b75b45baa36bef572323d10eb2}{ERR\+\_\+\+FRAME\+\_\+\+REJECTED}} = 0x04
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda39924fed9f0b04abe7dcd83772e2d886}{ERR\+\_\+\+FORWARD\+\_\+\+FRAME}} = 0x05
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6721eac2f897be340a7e9e6cdd7dd4fb}{ERR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RESOURCE}} = 0x06
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab9a3824c476f6f195bbbeb82f346c302}{ERR\+\_\+\+INVALID\+\_\+\+PARAMETER}} = 0x07
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda7a0a8b9f32f24279f4ec43b5b6cc0a44}{ERR\+\_\+\+INVALID\+\_\+\+FUNCTION}} = 0x08
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda994a3ba85904a4ea1ee0b3330aa15609}{ERR\+\_\+\+NOT\+\_\+\+SUPPORTED}} = 0x09
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddafa2ef67f34e6cc90d4f92dba015f54c6}{ERR\+\_\+\+HARDWARE\+\_\+\+ERROR}} = 0x0A
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddad78712419772ac8e6d7d563f1d067366}{ERR\+\_\+\+TRANSMIT\+\_\+\+ERROR}} = 0x0B
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda3851654777b9b88b052f46059285a3dd}{ERR\+\_\+\+NO\+\_\+\+SUCH\+\_\+\+DESTINATION}} = 0x0C
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8c0b3dabc67850239a3ad9735f59474c}{ERR\+\_\+\+BUFFER\+\_\+\+TOO\+\_\+\+SMALL}} = 0x0D
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda72eec3ccdcfa2a26dce1d246a62ae87f}{ERR\+\_\+\+ALREADY\+\_\+\+STARTED}} = 0x20
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda886970abeba8627ab55c6f474fa0befd}{ERR\+\_\+\+INCOMPLETE\+\_\+\+BINDING}} = 0x21
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaca973572525b2eef7463d546b7841301}{ERR\+\_\+\+DRIVER\+\_\+\+NOT\+\_\+\+INITIALIZED}} = 0x22
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaa8ffd20260869a54e3c0903c4e36bfb6}{ERR\+\_\+\+HARDWARE\+\_\+\+NOT\+\_\+\+FOUND}} = 0x23
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6e22ce78f581c722f6f57fb62ccaaf92}{ERR\+\_\+\+HARDWARE\+\_\+\+FAILURE}} = 0x24
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda51a256dcfa80ec49c2408db903b40358}{ERR\+\_\+\+CONFIGURATION\+\_\+\+FAILURE}} = 0x25
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddac4c736c7ed46e1ed3dd26f4ac85dad56}{ERR\+\_\+\+INTERRUPT\+\_\+\+CONFLICT}} = 0x26
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda60503d5f1c024f4182d7bde3b96510e5}{ERR\+\_\+\+INCOMPATIBLE\+\_\+\+MAC}} = 0x27
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaaea89791c64b9f5c014c612046d3234b}{ERR\+\_\+\+INITIALIZATION\+\_\+\+FAILED}} = 0x28
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda516ee444e4a66a06a56c8e8c382d3c18}{ERR\+\_\+\+NO\+\_\+\+BINDING}} = 0x29
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab756d17e771420abca29dd5d4951dc17}{ERR\+\_\+\+NETWORK\+\_\+\+MAY\+\_\+\+NOT\+\_\+\+BE\+\_\+\+CONNECTED}} = 0x2A
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaea8003429837811615b699030fd410c9}{ERR\+\_\+\+INCOMPATIBLE\+\_\+\+OS\+\_\+\+VERSION}} = 0x2B
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8d587f794db36c765219d7d45db3fe9e}{ERR\+\_\+\+ALREADY\+\_\+\+REGISTERED}} = 0x2C
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda5fd0a801ac590acee796da2b6e17a2d1}{ERR\+\_\+\+PATH\+\_\+\+NOT\+\_\+\+FOUND}} = 0x2D
+, \newline
+\mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6aa49e61dcd617b5f3ef39ee54cb555b}{ERR\+\_\+\+INSUFFICIENT\+\_\+\+MEMORY}} = 0x2E
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaf56675c7d203f2b1d01d75f6c30e2199}{ERR\+\_\+\+INFO\+\_\+\+NOT\+\_\+\+FOUND}} = 0x2F
+, \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda49a69ae635a7b8fcc823a94202dbbb84}{ERR\+\_\+\+GENERAL\+\_\+\+FAILURE}} = 0x\+FF
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\+\_\+\+PTR}} (Prot\+Man,(struct \+\_\+\+Req\+Block FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a1b68ed30023fc96eee6678bb6befe811}{PAS\+\_\+\+PTR}} (System\+Request,(\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_aece1a735a44592a7b1ff3d5b5cc1b1ae}{PAS\+\_\+\+PTR}} (Transmit\+Chain,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+Tx\+Buf\+Descr FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a89add4379bc104c60819be248a81a6d8}{PAS\+\_\+\+PTR}} (Transfer\+Data,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+TDBuf\+Descr FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a679e489f46a12dfdbbfd4338ca961b24}{PAS\+\_\+\+PTR}} (Request,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a7916d3a8c322c8feb8a9aa72c05f701a}{PAS\+\_\+\+PTR}} (Receive\+Release,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_aa52fa5097fd1c98df559109e01985b40}{PAS\+\_\+\+PTR}} (Indication\+On,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a177f330a4875a6716c9e97c13570d599}{PAS\+\_\+\+PTR}} (Indication\+Off,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+char $\ast$ \mbox{\hyperlink{ndis2_8h_afa1dc5092907bc687a895ab37a905027}{Ndis\+Last\+Error}} (void)
+\item 
+int \mbox{\hyperlink{ndis2_8h_a5d50ee2f0577c4870c74931448291806}{Ndis\+Open}} (void)
+\item 
+int \mbox{\hyperlink{ndis2_8h_a24af7d410772c098970b25add87c9433}{Ndis\+Init}} (int promis)
+\item 
+int \mbox{\hyperlink{ndis2_8h_a5d4ac7ca880e893e16f8e3fa85e3cd1a}{Ndis\+Register\+And\+Bind}} (int promis)
+\item 
+void \mbox{\hyperlink{ndis2_8h_a410bec98e5a0ccbb730498d8f7e5a315}{Ndis\+Shutdown}} (void)
+\item 
+void \mbox{\hyperlink{ndis2_8h_aba692222a1a2a45691a5fbcec12c13cd}{Ndis\+Check\+Mac\+Features}} (struct \+\_\+\+Card\+Handle $\ast$card)
+\item 
+int \mbox{\hyperlink{ndis2_8h_a549acf75e9268475105ccfd5b51f63e0}{Ndis\+Send\+Packet}} (struct \+\_\+\+Pkt\+Buf $\ast$pkt\+Buf, int mac\+Id)
+\item 
+int \mbox{\hyperlink{ndis2_8h_adf60c29d87ed6b3adec2babd85da2549}{system\+Request\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_afdcb18c7566de0a0598722b53edcbf08}{request\+Confirm\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_a7eaeec985267fa1e6783066e3872f05d}{transmit\+Confirm\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_a56d51ab47ccccc025c5e7e09ad38e4d7}{receive\+Lookahead\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_a4cef1fc4d01bb9720b3d1c81a6b757cb}{indication\+Complete\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_ad6511574a9325f5d48abf067ba925696}{receive\+Chain\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_af4cff01b80e35df10ce0f6ce8d3b4d8f}{status\+Glue}} ()
+\item 
+int \mbox{\hyperlink{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}{Ndis\+Get\+Linkage}} (int handle, char $\ast$data, int size)
+\item 
+\mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (Ndis\+System\+Request(\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_afd621b0c3964702173c6b33e04c53c8e}{CALLBACK}} (Ndis\+Request\+Confirm(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a23d2b4636ad329c7c79ff4b299d6992a}{CALLBACK}} (Ndis\+Transmit\+Confirm(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_af1e05c55fe1ab9a77894ef10bf43277c}{CALLBACK}} (Ndis\+Receive\+Lookahead(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a1008e1c825a40127e84d9808a5d62c72}{CALLBACK}} (Ndis\+Receive\+Chain(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+Rx\+Buf\+Descr $\ast$, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a1b7e87c7817b1ea0ab85efe6d206a38f}{CALLBACK}} (Ndis\+Status\+Proc(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{ndis2_8h_a33fae584ce661ce4d6d9c1c26dd624b7}{CALLBACK}} (Ndis\+Indication\+Complete(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}))
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$ \mbox{\hyperlink{ndis2_8h_a1c4d61b0c4156f60ebba3ec08b0dad96}{Ndis\+Alloc\+Stack}} (void)
+\item 
+void \mbox{\hyperlink{ndis2_8h_a88265435f28f5a25e9f59f9e1ffb98d7}{Ndis\+Free\+Stack}} (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{ndis2_8h_ab0231fdb0aebc39738800b08f22eac75}\label{ndis2_8h_ab0231fdb0aebc39738800b08f22eac75}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_PARAM\_INTEGER@{NDIS\_PARAM\_INTEGER}}
+\index{NDIS\_PARAM\_INTEGER@{NDIS\_PARAM\_INTEGER}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_PARAM\_INTEGER}{NDIS\_PARAM\_INTEGER}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+PARAM\+\_\+\+INTEGER~0}
+
+\mbox{\Hypertarget{ndis2_8h_ad7262d0e0105eacc264342a799613292}\label{ndis2_8h_ad7262d0e0105eacc264342a799613292}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_PARAM\_STRING@{NDIS\_PARAM\_STRING}}
+\index{NDIS\_PARAM\_STRING@{NDIS\_PARAM\_STRING}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_PARAM\_STRING}{NDIS\_PARAM\_STRING}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+PARAM\+\_\+\+STRING~1}
+
+\mbox{\Hypertarget{ndis2_8h_a274ab8d4775811b3e909c40f83371b68}\label{ndis2_8h_a274ab8d4775811b3e909c40f83371b68}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_PATH@{NDIS\_PATH}}
+\index{NDIS\_PATH@{NDIS\_PATH}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_PATH}{NDIS\_PATH}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+PATH~\char`\"{}PROTMAN\$\char`\"{}}
+
+\mbox{\Hypertarget{ndis2_8h_a6c59bfe750ef156b3150de5b893aeac3}\label{ndis2_8h_a6c59bfe750ef156b3150de5b893aeac3}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_PTR\_PHYSICAL@{NDIS\_PTR\_PHYSICAL}}
+\index{NDIS\_PTR\_PHYSICAL@{NDIS\_PTR\_PHYSICAL}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_PTR\_PHYSICAL}{NDIS\_PTR\_PHYSICAL}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+PTR\+\_\+\+PHYSICAL~0}
+
+\mbox{\Hypertarget{ndis2_8h_ae2ecea474dcca35a5b29cf216b5fe27f}\label{ndis2_8h_ae2ecea474dcca35a5b29cf216b5fe27f}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_PTR\_VIRTUAL@{NDIS\_PTR\_VIRTUAL}}
+\index{NDIS\_PTR\_VIRTUAL@{NDIS\_PTR\_VIRTUAL}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_PTR\_VIRTUAL}{NDIS\_PTR\_VIRTUAL}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+PTR\+\_\+\+VIRTUAL~2}
+
+\mbox{\Hypertarget{ndis2_8h_a00b98a95c560e0d0880fbf43b0ba9bf4}\label{ndis2_8h_a00b98a95c560e0d0880fbf43b0ba9bf4}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_RX\_BUF\_LENGTH@{NDIS\_RX\_BUF\_LENGTH}}
+\index{NDIS\_RX\_BUF\_LENGTH@{NDIS\_RX\_BUF\_LENGTH}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_RX\_BUF\_LENGTH}{NDIS\_RX\_BUF\_LENGTH}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+RX\+\_\+\+BUF\+\_\+\+LENGTH~8}
+
+\mbox{\Hypertarget{ndis2_8h_a2f3a6a15ce9db6b6ccf8bb7473730fdf}\label{ndis2_8h_a2f3a6a15ce9db6b6ccf8bb7473730fdf}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_TD\_BUF\_LENGTH@{NDIS\_TD\_BUF\_LENGTH}}
+\index{NDIS\_TD\_BUF\_LENGTH@{NDIS\_TD\_BUF\_LENGTH}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_TD\_BUF\_LENGTH}{NDIS\_TD\_BUF\_LENGTH}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+TD\+\_\+\+BUF\+\_\+\+LENGTH~1}
+
+\mbox{\Hypertarget{ndis2_8h_ac220cf8d5566383229489c715be7d49a}\label{ndis2_8h_ac220cf8d5566383229489c715be7d49a}} 
+\index{ndis2.h@{ndis2.h}!NDIS\_TX\_BUF\_LENGTH@{NDIS\_TX\_BUF\_LENGTH}}
+\index{NDIS\_TX\_BUF\_LENGTH@{NDIS\_TX\_BUF\_LENGTH}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NDIS\_TX\_BUF\_LENGTH}{NDIS\_TX\_BUF\_LENGTH}}
+{\footnotesize\ttfamily \#define NDIS\+\_\+\+TX\+\_\+\+BUF\+\_\+\+LENGTH~8}
+
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dd}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dd}} 
+\index{ndis2.h@{ndis2.h}!NdisError@{NdisError}}
+\index{NdisError@{NdisError}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisError}{NdisError}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dd}{Ndis\+Error}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_SUCCESS@{ERR\_SUCCESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_SUCCESS@{ERR\_SUCCESS}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6d4f18a9728f434ff2d1a64043ebe6e8}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6d4f18a9728f434ff2d1a64043ebe6e8}} 
+ERR\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_WAIT\_FOR\_RELEASE@{ERR\_WAIT\_FOR\_RELEASE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_WAIT\_FOR\_RELEASE@{ERR\_WAIT\_FOR\_RELEASE}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaab75e6b7c966a131e06d5206b18c4824}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaab75e6b7c966a131e06d5206b18c4824}} 
+ERR\+\_\+\+WAIT\+\_\+\+FOR\+\_\+\+RELEASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_REQUEST\_QUEUED@{ERR\_REQUEST\_QUEUED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_REQUEST\_QUEUED@{ERR\_REQUEST\_QUEUED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda778ad4413217b37dbd4245f7044c51fd}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda778ad4413217b37dbd4245f7044c51fd}} 
+ERR\+\_\+\+REQUEST\+\_\+\+QUEUED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_FRAME\_NOT\_RECOGNIZED@{ERR\_FRAME\_NOT\_RECOGNIZED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_FRAME\_NOT\_RECOGNIZED@{ERR\_FRAME\_NOT\_RECOGNIZED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6ce68afd45f31a179592b0886e7a2e5e}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6ce68afd45f31a179592b0886e7a2e5e}} 
+ERR\+\_\+\+FRAME\+\_\+\+NOT\+\_\+\+RECOGNIZED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_FRAME\_REJECTED@{ERR\_FRAME\_REJECTED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_FRAME\_REJECTED@{ERR\_FRAME\_REJECTED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8b9a12b75b45baa36bef572323d10eb2}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8b9a12b75b45baa36bef572323d10eb2}} 
+ERR\+\_\+\+FRAME\+\_\+\+REJECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_FORWARD\_FRAME@{ERR\_FORWARD\_FRAME}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_FORWARD\_FRAME@{ERR\_FORWARD\_FRAME}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda39924fed9f0b04abe7dcd83772e2d886}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda39924fed9f0b04abe7dcd83772e2d886}} 
+ERR\+\_\+\+FORWARD\+\_\+\+FRAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_OUT\_OF\_RESOURCE@{ERR\_OUT\_OF\_RESOURCE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_OUT\_OF\_RESOURCE@{ERR\_OUT\_OF\_RESOURCE}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6721eac2f897be340a7e9e6cdd7dd4fb}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6721eac2f897be340a7e9e6cdd7dd4fb}} 
+ERR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RESOURCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INVALID\_PARAMETER@{ERR\_INVALID\_PARAMETER}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INVALID\_PARAMETER@{ERR\_INVALID\_PARAMETER}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab9a3824c476f6f195bbbeb82f346c302}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab9a3824c476f6f195bbbeb82f346c302}} 
+ERR\+\_\+\+INVALID\+\_\+\+PARAMETER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INVALID\_FUNCTION@{ERR\_INVALID\_FUNCTION}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INVALID\_FUNCTION@{ERR\_INVALID\_FUNCTION}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda7a0a8b9f32f24279f4ec43b5b6cc0a44}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda7a0a8b9f32f24279f4ec43b5b6cc0a44}} 
+ERR\+\_\+\+INVALID\+\_\+\+FUNCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NOT\_SUPPORTED@{ERR\_NOT\_SUPPORTED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_NOT\_SUPPORTED@{ERR\_NOT\_SUPPORTED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda994a3ba85904a4ea1ee0b3330aa15609}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda994a3ba85904a4ea1ee0b3330aa15609}} 
+ERR\+\_\+\+NOT\+\_\+\+SUPPORTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_HARDWARE\_ERROR@{ERR\_HARDWARE\_ERROR}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_HARDWARE\_ERROR@{ERR\_HARDWARE\_ERROR}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddafa2ef67f34e6cc90d4f92dba015f54c6}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddafa2ef67f34e6cc90d4f92dba015f54c6}} 
+ERR\+\_\+\+HARDWARE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_TRANSMIT\_ERROR@{ERR\_TRANSMIT\_ERROR}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_TRANSMIT\_ERROR@{ERR\_TRANSMIT\_ERROR}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddad78712419772ac8e6d7d563f1d067366}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddad78712419772ac8e6d7d563f1d067366}} 
+ERR\+\_\+\+TRANSMIT\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NO\_SUCH\_DESTINATION@{ERR\_NO\_SUCH\_DESTINATION}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_NO\_SUCH\_DESTINATION@{ERR\_NO\_SUCH\_DESTINATION}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda3851654777b9b88b052f46059285a3dd}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda3851654777b9b88b052f46059285a3dd}} 
+ERR\+\_\+\+NO\+\_\+\+SUCH\+\_\+\+DESTINATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_BUFFER\_TOO\_SMALL@{ERR\_BUFFER\_TOO\_SMALL}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_BUFFER\_TOO\_SMALL@{ERR\_BUFFER\_TOO\_SMALL}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8c0b3dabc67850239a3ad9735f59474c}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8c0b3dabc67850239a3ad9735f59474c}} 
+ERR\+\_\+\+BUFFER\+\_\+\+TOO\+\_\+\+SMALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_ALREADY\_STARTED@{ERR\_ALREADY\_STARTED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_ALREADY\_STARTED@{ERR\_ALREADY\_STARTED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda72eec3ccdcfa2a26dce1d246a62ae87f}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda72eec3ccdcfa2a26dce1d246a62ae87f}} 
+ERR\+\_\+\+ALREADY\+\_\+\+STARTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INCOMPLETE\_BINDING@{ERR\_INCOMPLETE\_BINDING}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INCOMPLETE\_BINDING@{ERR\_INCOMPLETE\_BINDING}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda886970abeba8627ab55c6f474fa0befd}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda886970abeba8627ab55c6f474fa0befd}} 
+ERR\+\_\+\+INCOMPLETE\+\_\+\+BINDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_DRIVER\_NOT\_INITIALIZED@{ERR\_DRIVER\_NOT\_INITIALIZED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_DRIVER\_NOT\_INITIALIZED@{ERR\_DRIVER\_NOT\_INITIALIZED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaca973572525b2eef7463d546b7841301}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaca973572525b2eef7463d546b7841301}} 
+ERR\+\_\+\+DRIVER\+\_\+\+NOT\+\_\+\+INITIALIZED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_HARDWARE\_NOT\_FOUND@{ERR\_HARDWARE\_NOT\_FOUND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_HARDWARE\_NOT\_FOUND@{ERR\_HARDWARE\_NOT\_FOUND}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaa8ffd20260869a54e3c0903c4e36bfb6}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaa8ffd20260869a54e3c0903c4e36bfb6}} 
+ERR\+\_\+\+HARDWARE\+\_\+\+NOT\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_HARDWARE\_FAILURE@{ERR\_HARDWARE\_FAILURE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_HARDWARE\_FAILURE@{ERR\_HARDWARE\_FAILURE}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6e22ce78f581c722f6f57fb62ccaaf92}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6e22ce78f581c722f6f57fb62ccaaf92}} 
+ERR\+\_\+\+HARDWARE\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_CONFIGURATION\_FAILURE@{ERR\_CONFIGURATION\_FAILURE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_CONFIGURATION\_FAILURE@{ERR\_CONFIGURATION\_FAILURE}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda51a256dcfa80ec49c2408db903b40358}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda51a256dcfa80ec49c2408db903b40358}} 
+ERR\+\_\+\+CONFIGURATION\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INTERRUPT\_CONFLICT@{ERR\_INTERRUPT\_CONFLICT}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INTERRUPT\_CONFLICT@{ERR\_INTERRUPT\_CONFLICT}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddac4c736c7ed46e1ed3dd26f4ac85dad56}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddac4c736c7ed46e1ed3dd26f4ac85dad56}} 
+ERR\+\_\+\+INTERRUPT\+\_\+\+CONFLICT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INCOMPATIBLE\_MAC@{ERR\_INCOMPATIBLE\_MAC}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INCOMPATIBLE\_MAC@{ERR\_INCOMPATIBLE\_MAC}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda60503d5f1c024f4182d7bde3b96510e5}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda60503d5f1c024f4182d7bde3b96510e5}} 
+ERR\+\_\+\+INCOMPATIBLE\+\_\+\+MAC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INITIALIZATION\_FAILED@{ERR\_INITIALIZATION\_FAILED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INITIALIZATION\_FAILED@{ERR\_INITIALIZATION\_FAILED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaaea89791c64b9f5c014c612046d3234b}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaaea89791c64b9f5c014c612046d3234b}} 
+ERR\+\_\+\+INITIALIZATION\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NO\_BINDING@{ERR\_NO\_BINDING}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_NO\_BINDING@{ERR\_NO\_BINDING}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda516ee444e4a66a06a56c8e8c382d3c18}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda516ee444e4a66a06a56c8e8c382d3c18}} 
+ERR\+\_\+\+NO\+\_\+\+BINDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_NETWORK\_MAY\_NOT\_BE\_CONNECTED@{ERR\_NETWORK\_MAY\_NOT\_BE\_CONNECTED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_NETWORK\_MAY\_NOT\_BE\_CONNECTED@{ERR\_NETWORK\_MAY\_NOT\_BE\_CONNECTED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab756d17e771420abca29dd5d4951dc17}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab756d17e771420abca29dd5d4951dc17}} 
+ERR\+\_\+\+NETWORK\+\_\+\+MAY\+\_\+\+NOT\+\_\+\+BE\+\_\+\+CONNECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INCOMPATIBLE\_OS\_VERSION@{ERR\_INCOMPATIBLE\_OS\_VERSION}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INCOMPATIBLE\_OS\_VERSION@{ERR\_INCOMPATIBLE\_OS\_VERSION}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaea8003429837811615b699030fd410c9}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaea8003429837811615b699030fd410c9}} 
+ERR\+\_\+\+INCOMPATIBLE\+\_\+\+OS\+\_\+\+VERSION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_ALREADY\_REGISTERED@{ERR\_ALREADY\_REGISTERED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_ALREADY\_REGISTERED@{ERR\_ALREADY\_REGISTERED}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8d587f794db36c765219d7d45db3fe9e}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8d587f794db36c765219d7d45db3fe9e}} 
+ERR\+\_\+\+ALREADY\+\_\+\+REGISTERED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_PATH\_NOT\_FOUND@{ERR\_PATH\_NOT\_FOUND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_PATH\_NOT\_FOUND@{ERR\_PATH\_NOT\_FOUND}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda5fd0a801ac590acee796da2b6e17a2d1}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda5fd0a801ac590acee796da2b6e17a2d1}} 
+ERR\+\_\+\+PATH\+\_\+\+NOT\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INSUFFICIENT\_MEMORY@{ERR\_INSUFFICIENT\_MEMORY}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INSUFFICIENT\_MEMORY@{ERR\_INSUFFICIENT\_MEMORY}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6aa49e61dcd617b5f3ef39ee54cb555b}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6aa49e61dcd617b5f3ef39ee54cb555b}} 
+ERR\+\_\+\+INSUFFICIENT\+\_\+\+MEMORY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INFO\_NOT\_FOUND@{ERR\_INFO\_NOT\_FOUND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_INFO\_NOT\_FOUND@{ERR\_INFO\_NOT\_FOUND}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaf56675c7d203f2b1d01d75f6c30e2199}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaf56675c7d203f2b1d01d75f6c30e2199}} 
+ERR\+\_\+\+INFO\+\_\+\+NOT\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_GENERAL\_FAILURE@{ERR\_GENERAL\_FAILURE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!ERR\_GENERAL\_FAILURE@{ERR\_GENERAL\_FAILURE}}}\mbox{\Hypertarget{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda49a69ae635a7b8fcc823a94202dbbb84}\label{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda49a69ae635a7b8fcc823a94202dbbb84}} 
+ERR\+\_\+\+GENERAL\+\_\+\+FAILURE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cf}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cf}} 
+\index{ndis2.h@{ndis2.h}!NdisGeneralRequest@{NdisGeneralRequest}}
+\index{NdisGeneralRequest@{NdisGeneralRequest}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisGeneralRequest}{NdisGeneralRequest}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cf}{Ndis\+General\+Request}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_INITIATE\_DIAGNOSTICS@{REQ\_INITIATE\_DIAGNOSTICS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_INITIATE\_DIAGNOSTICS@{REQ\_INITIATE\_DIAGNOSTICS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfabd624725b5a945a25d9e3e3ac7e6127e}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfabd624725b5a945a25d9e3e3ac7e6127e}} 
+REQ\+\_\+\+INITIATE\+\_\+\+DIAGNOSTICS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_READ\_ERROR\_LOG@{REQ\_READ\_ERROR\_LOG}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_READ\_ERROR\_LOG@{REQ\_READ\_ERROR\_LOG}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadbf86439d679cbd463d48ee7c43a4155}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadbf86439d679cbd463d48ee7c43a4155}} 
+REQ\+\_\+\+READ\+\_\+\+ERROR\+\_\+\+LOG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_SET\_STATION\_ADDRESS@{REQ\_SET\_STATION\_ADDRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_SET\_STATION\_ADDRESS@{REQ\_SET\_STATION\_ADDRESS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa0eb2cb0dbe3201eb50636b0466bdf2bf}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa0eb2cb0dbe3201eb50636b0466bdf2bf}} 
+REQ\+\_\+\+SET\+\_\+\+STATION\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_OPEN\_ADAPTER@{REQ\_OPEN\_ADAPTER}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_OPEN\_ADAPTER@{REQ\_OPEN\_ADAPTER}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa41b32cbfeb549a0a556b06f266fc2cf9}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa41b32cbfeb549a0a556b06f266fc2cf9}} 
+REQ\+\_\+\+OPEN\+\_\+\+ADAPTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_CLOSE\_ADAPTER@{REQ\_CLOSE\_ADAPTER}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_CLOSE\_ADAPTER@{REQ\_CLOSE\_ADAPTER}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfae032e429e20b01ca2e2398e974b01755}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfae032e429e20b01ca2e2398e974b01755}} 
+REQ\+\_\+\+CLOSE\+\_\+\+ADAPTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_RESET\_MAC@{REQ\_RESET\_MAC}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_RESET\_MAC@{REQ\_RESET\_MAC}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa87fcfaa86573eff6dd4b4c0723327635}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa87fcfaa86573eff6dd4b4c0723327635}} 
+REQ\+\_\+\+RESET\+\_\+\+MAC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_SET\_PACKET\_FILTER@{REQ\_SET\_PACKET\_FILTER}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_SET\_PACKET\_FILTER@{REQ\_SET\_PACKET\_FILTER}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadeee397e6321c0555d77ea30e4b76e56}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadeee397e6321c0555d77ea30e4b76e56}} 
+REQ\+\_\+\+SET\+\_\+\+PACKET\+\_\+\+FILTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_ADD\_MULTICAST\_ADDRESS@{REQ\_ADD\_MULTICAST\_ADDRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_ADD\_MULTICAST\_ADDRESS@{REQ\_ADD\_MULTICAST\_ADDRESS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfad5b8c6ffd4f78a99d3cfbad013d78f0f}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfad5b8c6ffd4f78a99d3cfbad013d78f0f}} 
+REQ\+\_\+\+ADD\+\_\+\+MULTICAST\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_DELETE\_MULTICAST\_ADDRESS@{REQ\_DELETE\_MULTICAST\_ADDRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_DELETE\_MULTICAST\_ADDRESS@{REQ\_DELETE\_MULTICAST\_ADDRESS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa76d42e9fabdfee9aa623b5ab4f415467}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa76d42e9fabdfee9aa623b5ab4f415467}} 
+REQ\+\_\+\+DELETE\+\_\+\+MULTICAST\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_UPDATE\_STATISTICS@{REQ\_UPDATE\_STATISTICS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_UPDATE\_STATISTICS@{REQ\_UPDATE\_STATISTICS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfaea5d5b07e1b387dd60894f249fc40653}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfaea5d5b07e1b387dd60894f249fc40653}} 
+REQ\+\_\+\+UPDATE\+\_\+\+STATISTICS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_CLEAR\_STATISTICS@{REQ\_CLEAR\_STATISTICS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_CLEAR\_STATISTICS@{REQ\_CLEAR\_STATISTICS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfacd173684841e33fcd48978f2ef8b3c57}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfacd173684841e33fcd48978f2ef8b3c57}} 
+REQ\+\_\+\+CLEAR\+\_\+\+STATISTICS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_INTERRUPT\_REQUEST@{REQ\_INTERRUPT\_REQUEST}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_INTERRUPT\_REQUEST@{REQ\_INTERRUPT\_REQUEST}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfac469d69749fcc9a82c25dd6a29c919c4}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfac469d69749fcc9a82c25dd6a29c919c4}} 
+REQ\+\_\+\+INTERRUPT\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_SET\_FUNCTIONAL\_ADDRESS@{REQ\_SET\_FUNCTIONAL\_ADDRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_SET\_FUNCTIONAL\_ADDRESS@{REQ\_SET\_FUNCTIONAL\_ADDRESS}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa46269b571357e9fd3f59e6295158ebab}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa46269b571357e9fd3f59e6295158ebab}} 
+REQ\+\_\+\+SET\+\_\+\+FUNCTIONAL\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_SET\_LOOKAHEAD@{REQ\_SET\_LOOKAHEAD}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_SET\_LOOKAHEAD@{REQ\_SET\_LOOKAHEAD}}}\mbox{\Hypertarget{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa8f6b09bf30107cccecf26d981f7c9724}\label{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa8f6b09bf30107cccecf26d981f7c9724}} 
+REQ\+\_\+\+SET\+\_\+\+LOOKAHEAD&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553}} 
+\index{ndis2.h@{ndis2.h}!NdisMacServiceFlags@{NdisMacServiceFlags}}
+\index{NdisMacServiceFlags@{NdisMacServiceFlags}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisMacServiceFlags}{NdisMacServiceFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553}{Ndis\+Mac\+Service\+Flags}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_BROADCAST@{SF\_BROADCAST}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_BROADCAST@{SF\_BROADCAST}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a4856012aa91e02227b24112161bc8e16}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a4856012aa91e02227b24112161bc8e16}} 
+SF\+\_\+\+BROADCAST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_MULTICAST@{SF\_MULTICAST}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_MULTICAST@{SF\_MULTICAST}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a27fed37c640004bfd7813cfd40cd7b3b}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a27fed37c640004bfd7813cfd40cd7b3b}} 
+SF\+\_\+\+MULTICAST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_FUNCTIONAL@{SF\_FUNCTIONAL}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_FUNCTIONAL@{SF\_FUNCTIONAL}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aafccc97da7a8c2b7d19b8c5c6bacb815}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aafccc97da7a8c2b7d19b8c5c6bacb815}} 
+SF\+\_\+\+FUNCTIONAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_PROMISCUOUS@{SF\_PROMISCUOUS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_PROMISCUOUS@{SF\_PROMISCUOUS}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a1431e43ad01048f2ed7efbfc654f662c}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a1431e43ad01048f2ed7efbfc654f662c}} 
+SF\+\_\+\+PROMISCUOUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_SOFT\_ADDRESS@{SF\_SOFT\_ADDRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_SOFT\_ADDRESS@{SF\_SOFT\_ADDRESS}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ac1c963ecd25016eea7c5d1d72ae4d9fb}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ac1c963ecd25016eea7c5d1d72ae4d9fb}} 
+SF\+\_\+\+SOFT\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_STATS\_CURRENT@{SF\_STATS\_CURRENT}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_STATS\_CURRENT@{SF\_STATS\_CURRENT}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a13733e5dd015751a66e1076da8bb03c2}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a13733e5dd015751a66e1076da8bb03c2}} 
+SF\+\_\+\+STATS\+\_\+\+CURRENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_INITIATE\_DIAGS@{SF\_INITIATE\_DIAGS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_INITIATE\_DIAGS@{SF\_INITIATE\_DIAGS}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aaf2cae7dcbcc685f2ec39943eb700152}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aaf2cae7dcbcc685f2ec39943eb700152}} 
+SF\+\_\+\+INITIATE\+\_\+\+DIAGS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_LOOPBACK@{SF\_LOOPBACK}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_LOOPBACK@{SF\_LOOPBACK}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ad0987352d155b1014da9d43ab1c05696}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ad0987352d155b1014da9d43ab1c05696}} 
+SF\+\_\+\+LOOPBACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_RECEIVE\_CHAIN@{SF\_RECEIVE\_CHAIN}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_RECEIVE\_CHAIN@{SF\_RECEIVE\_CHAIN}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a226ebb1b0a96546f700f38e63b9bfdd0}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a226ebb1b0a96546f700f38e63b9bfdd0}} 
+SF\+\_\+\+RECEIVE\+\_\+\+CHAIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_SOURCE\_ROUTING@{SF\_SOURCE\_ROUTING}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_SOURCE\_ROUTING@{SF\_SOURCE\_ROUTING}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3e326b9317819ca977846e33ba732f93}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3e326b9317819ca977846e33ba732f93}} 
+SF\+\_\+\+SOURCE\+\_\+\+ROUTING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_RESET\_MAC@{SF\_RESET\_MAC}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_RESET\_MAC@{SF\_RESET\_MAC}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a23eab1d2c68459a14bdde525387337e9}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a23eab1d2c68459a14bdde525387337e9}} 
+SF\+\_\+\+RESET\+\_\+\+MAC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_OPEN\_CLOSE@{SF\_OPEN\_CLOSE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_OPEN\_CLOSE@{SF\_OPEN\_CLOSE}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a61582232db6aea051054454a644dfc15}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a61582232db6aea051054454a644dfc15}} 
+SF\+\_\+\+OPEN\+\_\+\+CLOSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_INTERRUPT\_REQUEST@{SF\_INTERRUPT\_REQUEST}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_INTERRUPT\_REQUEST@{SF\_INTERRUPT\_REQUEST}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a35815d87fd830b28d36eaf568256fbbc}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a35815d87fd830b28d36eaf568256fbbc}} 
+SF\+\_\+\+INTERRUPT\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_SOURCE\_ROUTING\_BRIDGE@{SF\_SOURCE\_ROUTING\_BRIDGE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_SOURCE\_ROUTING\_BRIDGE@{SF\_SOURCE\_ROUTING\_BRIDGE}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3b388e4b93c5b1e542cad272a14c6655}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3b388e4b93c5b1e542cad272a14c6655}} 
+SF\+\_\+\+SOURCE\+\_\+\+ROUTING\+\_\+\+BRIDGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_VIRTUAL\_ADDRESSES@{SF\_VIRTUAL\_ADDRESSES}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!SF\_VIRTUAL\_ADDRESSES@{SF\_VIRTUAL\_ADDRESSES}}}\mbox{\Hypertarget{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553acf01e14e80bc51986304fd0e45b564dc}\label{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553acf01e14e80bc51986304fd0e45b564dc}} 
+SF\+\_\+\+VIRTUAL\+\_\+\+ADDRESSES&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2}} 
+\index{ndis2.h@{ndis2.h}!NdisMacStatus@{NdisMacStatus}}
+\index{NdisMacStatus@{NdisMacStatus}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisMacStatus}{NdisMacStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2}{Ndis\+Mac\+Status}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_NOT\_INSTALLED@{HARDWARE\_NOT\_INSTALLED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_NOT\_INSTALLED@{HARDWARE\_NOT\_INSTALLED}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a7a19a39bb1cb17f46d5386b65917077e}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a7a19a39bb1cb17f46d5386b65917077e}} 
+HARDWARE\+\_\+\+NOT\+\_\+\+INSTALLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_FAILED\_DIAG@{HARDWARE\_FAILED\_DIAG}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_FAILED\_DIAG@{HARDWARE\_FAILED\_DIAG}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2af84f74efa69c7a423d29c83f1bf76b2a}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2af84f74efa69c7a423d29c83f1bf76b2a}} 
+HARDWARE\+\_\+\+FAILED\+\_\+\+DIAG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_FAILED\_CONFIG@{HARDWARE\_FAILED\_CONFIG}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_FAILED\_CONFIG@{HARDWARE\_FAILED\_CONFIG}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a91ec424c12076712f6e13c38f0d7499f}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a91ec424c12076712f6e13c38f0d7499f}} 
+HARDWARE\+\_\+\+FAILED\+\_\+\+CONFIG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_HARD\_FAULT@{HARDWARE\_HARD\_FAULT}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_HARD\_FAULT@{HARDWARE\_HARD\_FAULT}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2affc5aa3f3cfc7e632d70ca7ceac225d9}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2affc5aa3f3cfc7e632d70ca7ceac225d9}} 
+HARDWARE\+\_\+\+HARD\+\_\+\+FAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_SOFT\_FAULT@{HARDWARE\_SOFT\_FAULT}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_SOFT\_FAULT@{HARDWARE\_SOFT\_FAULT}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a35baa0503254b13d64965862ef7b5c0c}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a35baa0503254b13d64965862ef7b5c0c}} 
+HARDWARE\+\_\+\+SOFT\+\_\+\+FAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_OK@{HARDWARE\_OK}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_OK@{HARDWARE\_OK}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aa28e74004891257567f57daebd15d023}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aa28e74004891257567f57daebd15d023}} 
+HARDWARE\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HARDWARE\_MASK@{HARDWARE\_MASK}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!HARDWARE\_MASK@{HARDWARE\_MASK}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a92f163360a74d677a698e1c0d24e3a21}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a92f163360a74d677a698e1c0d24e3a21}} 
+HARDWARE\+\_\+\+MASK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAC\_BOUND@{MAC\_BOUND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!MAC\_BOUND@{MAC\_BOUND}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aab9b71bf4be31f67c3542b26e37aac8f}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aab9b71bf4be31f67c3542b26e37aac8f}} 
+MAC\+\_\+\+BOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAC\_OPEN@{MAC\_OPEN}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!MAC\_OPEN@{MAC\_OPEN}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a419662cadd7d55e4de11a259527d6da9}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a419662cadd7d55e4de11a259527d6da9}} 
+MAC\+\_\+\+OPEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIAG\_IN\_PROGRESS@{DIAG\_IN\_PROGRESS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!DIAG\_IN\_PROGRESS@{DIAG\_IN\_PROGRESS}}}\mbox{\Hypertarget{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aed1a9f2e88de464a36ba0b3c93e795f0}\label{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aed1a9f2e88de464a36ba0b3c93e795f0}} 
+DIAG\+\_\+\+IN\+\_\+\+PROGRESS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_a507d0774734a985df75362a0145e89f6}\label{ndis2_8h_a507d0774734a985df75362a0145e89f6}} 
+\index{ndis2.h@{ndis2.h}!NdisPacketFilter@{NdisPacketFilter}}
+\index{NdisPacketFilter@{NdisPacketFilter}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisPacketFilter}{NdisPacketFilter}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6}{Ndis\+Packet\+Filter}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_DIRECTED@{FILTER\_DIRECTED}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!FILTER\_DIRECTED@{FILTER\_DIRECTED}}}\mbox{\Hypertarget{ndis2_8h_a507d0774734a985df75362a0145e89f6a72c7dc13dab57e0bbbede647034c6945}\label{ndis2_8h_a507d0774734a985df75362a0145e89f6a72c7dc13dab57e0bbbede647034c6945}} 
+FILTER\+\_\+\+DIRECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_BROADCAST@{FILTER\_BROADCAST}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!FILTER\_BROADCAST@{FILTER\_BROADCAST}}}\mbox{\Hypertarget{ndis2_8h_a507d0774734a985df75362a0145e89f6a588b9c7d9d1d1e9d92a76319377138fe}\label{ndis2_8h_a507d0774734a985df75362a0145e89f6a588b9c7d9d1d1e9d92a76319377138fe}} 
+FILTER\+\_\+\+BROADCAST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_PROMISCUOUS@{FILTER\_PROMISCUOUS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!FILTER\_PROMISCUOUS@{FILTER\_PROMISCUOUS}}}\mbox{\Hypertarget{ndis2_8h_a507d0774734a985df75362a0145e89f6a1ca2f0b2059042ba736f4c0d12efde87}\label{ndis2_8h_a507d0774734a985df75362a0145e89f6a1ca2f0b2059042ba736f4c0d12efde87}} 
+FILTER\+\_\+\+PROMISCUOUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_SOURCE\_ROUTE@{FILTER\_SOURCE\_ROUTE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!FILTER\_SOURCE\_ROUTE@{FILTER\_SOURCE\_ROUTE}}}\mbox{\Hypertarget{ndis2_8h_a507d0774734a985df75362a0145e89f6aa84062abc7cdc17af5ab47547113960f}\label{ndis2_8h_a507d0774734a985df75362a0145e89f6aa84062abc7cdc17af5ab47547113960f}} 
+FILTER\+\_\+\+SOURCE\+\_\+\+ROUTE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033b}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033b}} 
+\index{ndis2.h@{ndis2.h}!NdisProtManager@{NdisProtManager}}
+\index{NdisProtManager@{NdisProtManager}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisProtManager}{NdisProtManager}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033b}{Ndis\+Prot\+Manager}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_GET\_PROTOCOL\_MANAGER\_INFO@{PM\_GET\_PROTOCOL\_MANAGER\_INFO}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_GET\_PROTOCOL\_MANAGER\_INFO@{PM\_GET\_PROTOCOL\_MANAGER\_INFO}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba3b77926e9ee837d5b50d65962521827a}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba3b77926e9ee837d5b50d65962521827a}} 
+PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_REGISTER\_MODULE@{PM\_REGISTER\_MODULE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_REGISTER\_MODULE@{PM\_REGISTER\_MODULE}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab504793f2b5d537c6eace5cc56cb763b}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab504793f2b5d537c6eace5cc56cb763b}} 
+PM\+\_\+\+REGISTER\+\_\+\+MODULE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_BIND\_AND\_START@{PM\_BIND\_AND\_START}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_BIND\_AND\_START@{PM\_BIND\_AND\_START}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa904c133bdbc6408de29c3a31ace5efe}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa904c133bdbc6408de29c3a31ace5efe}} 
+PM\+\_\+\+BIND\+\_\+\+AND\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_GET\_PROTOCOL\_MANAGER\_LINKAGE@{PM\_GET\_PROTOCOL\_MANAGER\_LINKAGE}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_GET\_PROTOCOL\_MANAGER\_LINKAGE@{PM\_GET\_PROTOCOL\_MANAGER\_LINKAGE}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba773cc2eddc6bc5ba1384af232954813f}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba773cc2eddc6bc5ba1384af232954813f}} 
+PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+LINKAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_GET\_PROTOCOL\_INI\_PATH@{PM\_GET\_PROTOCOL\_INI\_PATH}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_GET\_PROTOCOL\_INI\_PATH@{PM\_GET\_PROTOCOL\_INI\_PATH}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba8c88ea4553b6e9a5c4ebad50b38ea327}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba8c88ea4553b6e9a5c4ebad50b38ea327}} 
+PM\+\_\+\+GET\+\_\+\+PROTOCOL\+\_\+\+INI\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_REGISTER\_PROTOCOL\_MANAGER\_INFO@{PM\_REGISTER\_PROTOCOL\_MANAGER\_INFO}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_REGISTER\_PROTOCOL\_MANAGER\_INFO@{PM\_REGISTER\_PROTOCOL\_MANAGER\_INFO}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba1cc22736dddfea672f21de39ca7e4371}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba1cc22736dddfea672f21de39ca7e4371}} 
+PM\+\_\+\+REGISTER\+\_\+\+PROTOCOL\+\_\+\+MANAGER\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_INIT\_AND\_REGISTER@{PM\_INIT\_AND\_REGISTER}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_INIT\_AND\_REGISTER@{PM\_INIT\_AND\_REGISTER}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa502eecee4b0304a3455365bcbd2b21a}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa502eecee4b0304a3455365bcbd2b21a}} 
+PM\+\_\+\+INIT\+\_\+\+AND\+\_\+\+REGISTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_UNBIND\_AND\_STOP@{PM\_UNBIND\_AND\_STOP}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_UNBIND\_AND\_STOP@{PM\_UNBIND\_AND\_STOP}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab1f323e2a2e8d32ef41b070d10e1103d}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab1f323e2a2e8d32ef41b070d10e1103d}} 
+PM\+\_\+\+UNBIND\+\_\+\+AND\+\_\+\+STOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_BIND\_STATUS@{PM\_BIND\_STATUS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_BIND\_STATUS@{PM\_BIND\_STATUS}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba0b1b5a3a4bac72a6a20f6eb17c396730}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba0b1b5a3a4bac72a6a20f6eb17c396730}} 
+PM\+\_\+\+BIND\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_REGISTER\_STATUS@{PM\_REGISTER\_STATUS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!PM\_REGISTER\_STATUS@{PM\_REGISTER\_STATUS}}}\mbox{\Hypertarget{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bad3aa38cd1f0df06769248d24da25d0cf}\label{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bad3aa38cd1f0df06769248d24da25d0cf}} 
+PM\+\_\+\+REGISTER\+\_\+\+STATUS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388}} 
+\index{ndis2.h@{ndis2.h}!NdisStatus@{NdisStatus}}
+\index{NdisStatus@{NdisStatus}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisStatus}{NdisStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388}{Ndis\+Status}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_RING\_STATUS@{STATUS\_RING\_STATUS}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!STATUS\_RING\_STATUS@{STATUS\_RING\_STATUS}}}\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a58faaf6a144a6218870dea1226d917b1}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a58faaf6a144a6218870dea1226d917b1}} 
+STATUS\+\_\+\+RING\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_ADAPTER\_CHECK@{STATUS\_ADAPTER\_CHECK}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!STATUS\_ADAPTER\_CHECK@{STATUS\_ADAPTER\_CHECK}}}\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a101ea09d55a9799081d951a243c30b31}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a101ea09d55a9799081d951a243c30b31}} 
+STATUS\+\_\+\+ADAPTER\+\_\+\+CHECK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_START\_RESET@{STATUS\_START\_RESET}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!STATUS\_START\_RESET@{STATUS\_START\_RESET}}}\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388abcae23810ebd4491a56f5fdfa6e28cae}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388abcae23810ebd4491a56f5fdfa6e28cae}} 
+STATUS\+\_\+\+START\+\_\+\+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_INTERRUPT@{STATUS\_INTERRUPT}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!STATUS\_INTERRUPT@{STATUS\_INTERRUPT}}}\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a80685092e34c70fc251680332218219d}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a80685092e34c70fc251680332218219d}} 
+STATUS\+\_\+\+INTERRUPT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_END\_RESET@{STATUS\_END\_RESET}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!STATUS\_END\_RESET@{STATUS\_END\_RESET}}}\mbox{\Hypertarget{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388af9ddf03663850f0ccfad43d2e84d3e9f}\label{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388af9ddf03663850f0ccfad43d2e84d3e9f}} 
+STATUS\+\_\+\+END\+\_\+\+RESET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323f}\label{ndis2_8h_a3110640ff46c94868fab407417d5323f}} 
+\index{ndis2.h@{ndis2.h}!NdisSysRequest@{NdisSysRequest}}
+\index{NdisSysRequest@{NdisSysRequest}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisSysRequest}{NdisSysRequest}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323f}{Ndis\+Sys\+Request}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_INITIATE\_BIND@{REQ\_INITIATE\_BIND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_INITIATE\_BIND@{REQ\_INITIATE\_BIND}}}\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323faa0a6a6a0ab0d59c54fd450eac2d6c0ab}\label{ndis2_8h_a3110640ff46c94868fab407417d5323faa0a6a6a0ab0d59c54fd450eac2d6c0ab}} 
+REQ\+\_\+\+INITIATE\+\_\+\+BIND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_BIND@{REQ\_BIND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_BIND@{REQ\_BIND}}}\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323faee10b32f1f89ba05943bd4d862cad2b8}\label{ndis2_8h_a3110640ff46c94868fab407417d5323faee10b32f1f89ba05943bd4d862cad2b8}} 
+REQ\+\_\+\+BIND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_INITIATE\_PREBIND@{REQ\_INITIATE\_PREBIND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_INITIATE\_PREBIND@{REQ\_INITIATE\_PREBIND}}}\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323fa5fdd94f9971b0e09fbb4520934d785a3}\label{ndis2_8h_a3110640ff46c94868fab407417d5323fa5fdd94f9971b0e09fbb4520934d785a3}} 
+REQ\+\_\+\+INITIATE\+\_\+\+PREBIND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_INITIATE\_UNBIND@{REQ\_INITIATE\_UNBIND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_INITIATE\_UNBIND@{REQ\_INITIATE\_UNBIND}}}\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323fabac60e75d42fe12d621c9b3132136ac6}\label{ndis2_8h_a3110640ff46c94868fab407417d5323fabac60e75d42fe12d621c9b3132136ac6}} 
+REQ\+\_\+\+INITIATE\+\_\+\+UNBIND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQ\_UNBIND@{REQ\_UNBIND}!ndis2.h@{ndis2.h}}\index{ndis2.h@{ndis2.h}!REQ\_UNBIND@{REQ\_UNBIND}}}\mbox{\Hypertarget{ndis2_8h_a3110640ff46c94868fab407417d5323facbfdd8faf3ba37a2a566708a3a1d3486}\label{ndis2_8h_a3110640ff46c94868fab407417d5323facbfdd8faf3ba37a2a566708a3a1d3486}} 
+REQ\+\_\+\+UNBIND&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{ndis2_8h_a33fae584ce661ce4d6d9c1c26dd624b7}\label{ndis2_8h_a33fae584ce661ce4d6d9c1c26dd624b7}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Indication\+Complete(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a1008e1c825a40127e84d9808a5d62c72}\label{ndis2_8h_a1008e1c825a40127e84d9808a5d62c72}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Receive\+Chain(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+Rx\+Buf\+Descr $\ast$, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_af1e05c55fe1ab9a77894ef10bf43277c}\label{ndis2_8h_af1e05c55fe1ab9a77894ef10bf43277c}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Receive\+Lookahead(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_afd621b0c3964702173c6b33e04c53c8e}\label{ndis2_8h_afd621b0c3964702173c6b33e04c53c8e}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Request\+Confirm(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a1b7e87c7817b1ea0ab85efe6d206a38f}\label{ndis2_8h_a1b7e87c7817b1ea0ab85efe6d206a38f}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Status\+Proc(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}\label{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+System\+Request(\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a23d2b4636ad329c7c79ff4b299d6992a}\label{ndis2_8h_a23d2b4636ad329c7c79ff4b299d6992a}} 
+\index{ndis2.h@{ndis2.h}!CALLBACK@{CALLBACK}}
+\index{CALLBACK@{CALLBACK}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{CALLBACK()}{CALLBACK()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily CALLBACK (\begin{DoxyParamCaption}\item[{Ndis\+Transmit\+Confirm(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a4cef1fc4d01bb9720b3d1c81a6b757cb}\label{ndis2_8h_a4cef1fc4d01bb9720b3d1c81a6b757cb}} 
+\index{ndis2.h@{ndis2.h}!indicationCompleteGlue@{indicationCompleteGlue}}
+\index{indicationCompleteGlue@{indicationCompleteGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{indicationCompleteGlue()}{indicationCompleteGlue()}}
+{\footnotesize\ttfamily int indication\+Complete\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a1c4d61b0c4156f60ebba3ec08b0dad96}\label{ndis2_8h_a1c4d61b0c4156f60ebba3ec08b0dad96}} 
+\index{ndis2.h@{ndis2.h}!NdisAllocStack@{NdisAllocStack}}
+\index{NdisAllocStack@{NdisAllocStack}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisAllocStack()}{NdisAllocStack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$ Ndis\+Alloc\+Stack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_aba692222a1a2a45691a5fbcec12c13cd}\label{ndis2_8h_aba692222a1a2a45691a5fbcec12c13cd}} 
+\index{ndis2.h@{ndis2.h}!NdisCheckMacFeatures@{NdisCheckMacFeatures}}
+\index{NdisCheckMacFeatures@{NdisCheckMacFeatures}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisCheckMacFeatures()}{NdisCheckMacFeatures()}}
+{\footnotesize\ttfamily void Ndis\+Check\+Mac\+Features (\begin{DoxyParamCaption}\item[{struct \+\_\+\+Card\+Handle $\ast$}]{card }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a88265435f28f5a25e9f59f9e1ffb98d7}\label{ndis2_8h_a88265435f28f5a25e9f59f9e1ffb98d7}} 
+\index{ndis2.h@{ndis2.h}!NdisFreeStack@{NdisFreeStack}}
+\index{NdisFreeStack@{NdisFreeStack}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisFreeStack()}{NdisFreeStack()}}
+{\footnotesize\ttfamily void Ndis\+Free\+Stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}\label{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}} 
+\index{ndis2.h@{ndis2.h}!NdisGetLinkage@{NdisGetLinkage}}
+\index{NdisGetLinkage@{NdisGetLinkage}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisGetLinkage()}{NdisGetLinkage()}}
+{\footnotesize\ttfamily int Ndis\+Get\+Linkage (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{char $\ast$}]{data,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a24af7d410772c098970b25add87c9433}\label{ndis2_8h_a24af7d410772c098970b25add87c9433}} 
+\index{ndis2.h@{ndis2.h}!NdisInit@{NdisInit}}
+\index{NdisInit@{NdisInit}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisInit()}{NdisInit()}}
+{\footnotesize\ttfamily int Ndis\+Init (\begin{DoxyParamCaption}\item[{int}]{promis }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_afc2364b62d73a8a88202f0f5d092eb89}{ndis\+\_\+open()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{ndis2_8h_a24af7d410772c098970b25add87c9433_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ndis2_8h_afa1dc5092907bc687a895ab37a905027}\label{ndis2_8h_afa1dc5092907bc687a895ab37a905027}} 
+\index{ndis2.h@{ndis2.h}!NdisLastError@{NdisLastError}}
+\index{NdisLastError@{NdisLastError}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisLastError()}{NdisLastError()}}
+{\footnotesize\ttfamily char $\ast$ Ndis\+Last\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a5d50ee2f0577c4870c74931448291806}\label{ndis2_8h_a5d50ee2f0577c4870c74931448291806}} 
+\index{ndis2.h@{ndis2.h}!NdisOpen@{NdisOpen}}
+\index{NdisOpen@{NdisOpen}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisOpen()}{NdisOpen()}}
+{\footnotesize\ttfamily int Ndis\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{ndis2_8h_a5d50ee2f0577c4870c74931448291806_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ndis2_8h_a5d4ac7ca880e893e16f8e3fa85e3cd1a}\label{ndis2_8h_a5d4ac7ca880e893e16f8e3fa85e3cd1a}} 
+\index{ndis2.h@{ndis2.h}!NdisRegisterAndBind@{NdisRegisterAndBind}}
+\index{NdisRegisterAndBind@{NdisRegisterAndBind}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisRegisterAndBind()}{NdisRegisterAndBind()}}
+{\footnotesize\ttfamily int Ndis\+Register\+And\+Bind (\begin{DoxyParamCaption}\item[{int}]{promis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a549acf75e9268475105ccfd5b51f63e0}\label{ndis2_8h_a549acf75e9268475105ccfd5b51f63e0}} 
+\index{ndis2.h@{ndis2.h}!NdisSendPacket@{NdisSendPacket}}
+\index{NdisSendPacket@{NdisSendPacket}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisSendPacket()}{NdisSendPacket()}}
+{\footnotesize\ttfamily int Ndis\+Send\+Packet (\begin{DoxyParamCaption}\item[{struct \+\_\+\+Pkt\+Buf $\ast$}]{pkt\+Buf,  }\item[{int}]{mac\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a410bec98e5a0ccbb730498d8f7e5a315}\label{ndis2_8h_a410bec98e5a0ccbb730498d8f7e5a315}} 
+\index{ndis2.h@{ndis2.h}!NdisShutdown@{NdisShutdown}}
+\index{NdisShutdown@{NdisShutdown}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{NdisShutdown()}{NdisShutdown()}}
+{\footnotesize\ttfamily void Ndis\+Shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a7b031f48db21e2690d57efd1f72fde85}{ndis\+\_\+close()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ndis2_8h_a410bec98e5a0ccbb730498d8f7e5a315_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ndis2_8h_a177f330a4875a6716c9e97c13570d599}\label{ndis2_8h_a177f330a4875a6716c9e97c13570d599}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Indication\+Off}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_aa52fa5097fd1c98df559109e01985b40}\label{ndis2_8h_aa52fa5097fd1c98df559109e01985b40}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Indication\+On}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}\label{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Prot\+Man}]{,  }\item[{(struct \+\_\+\+Req\+Block FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a7916d3a8c322c8feb8a9aa72c05f701a}\label{ndis2_8h_a7916d3a8c322c8feb8a9aa72c05f701a}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Receive\+Release}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a679e489f46a12dfdbbfd4338ca961b24}\label{ndis2_8h_a679e489f46a12dfdbbfd4338ca961b24}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Request}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a1b68ed30023fc96eee6678bb6befe811}\label{ndis2_8h_a1b68ed30023fc96eee6678bb6befe811}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{System\+Request}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a89add4379bc104c60819be248a81a6d8}\label{ndis2_8h_a89add4379bc104c60819be248a81a6d8}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Transfer\+Data}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+TDBuf\+Descr FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_aece1a735a44592a7b1ff3d5b5cc1b1ae}\label{ndis2_8h_aece1a735a44592a7b1ff3d5b5cc1b1ae}} 
+\index{ndis2.h@{ndis2.h}!PAS\_PTR@{PAS\_PTR}}
+\index{PAS\_PTR@{PAS\_PTR}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{PAS\_PTR()}{PAS\_PTR()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily PAS\+\_\+\+PTR (\begin{DoxyParamCaption}\item[{Transmit\+Chain}]{,  }\item[{(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, struct \+\_\+\+Tx\+Buf\+Descr FAR $\ast$, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_ad6511574a9325f5d48abf067ba925696}\label{ndis2_8h_ad6511574a9325f5d48abf067ba925696}} 
+\index{ndis2.h@{ndis2.h}!receiveChainGlue@{receiveChainGlue}}
+\index{receiveChainGlue@{receiveChainGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{receiveChainGlue()}{receiveChainGlue()}}
+{\footnotesize\ttfamily int receive\+Chain\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a56d51ab47ccccc025c5e7e09ad38e4d7}\label{ndis2_8h_a56d51ab47ccccc025c5e7e09ad38e4d7}} 
+\index{ndis2.h@{ndis2.h}!receiveLookaheadGlue@{receiveLookaheadGlue}}
+\index{receiveLookaheadGlue@{receiveLookaheadGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{receiveLookaheadGlue()}{receiveLookaheadGlue()}}
+{\footnotesize\ttfamily int receive\+Lookahead\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_afdcb18c7566de0a0598722b53edcbf08}\label{ndis2_8h_afdcb18c7566de0a0598722b53edcbf08}} 
+\index{ndis2.h@{ndis2.h}!requestConfirmGlue@{requestConfirmGlue}}
+\index{requestConfirmGlue@{requestConfirmGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{requestConfirmGlue()}{requestConfirmGlue()}}
+{\footnotesize\ttfamily int request\+Confirm\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_af4cff01b80e35df10ce0f6ce8d3b4d8f}\label{ndis2_8h_af4cff01b80e35df10ce0f6ce8d3b4d8f}} 
+\index{ndis2.h@{ndis2.h}!statusGlue@{statusGlue}}
+\index{statusGlue@{statusGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{statusGlue()}{statusGlue()}}
+{\footnotesize\ttfamily int status\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_adf60c29d87ed6b3adec2babd85da2549}\label{ndis2_8h_adf60c29d87ed6b3adec2babd85da2549}} 
+\index{ndis2.h@{ndis2.h}!systemRequestGlue@{systemRequestGlue}}
+\index{systemRequestGlue@{systemRequestGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{systemRequestGlue()}{systemRequestGlue()}}
+{\footnotesize\ttfamily int system\+Request\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ndis2_8h_a7eaeec985267fa1e6783066e3872f05d}\label{ndis2_8h_a7eaeec985267fa1e6783066e3872f05d}} 
+\index{ndis2.h@{ndis2.h}!transmitConfirmGlue@{transmitConfirmGlue}}
+\index{transmitConfirmGlue@{transmitConfirmGlue}!ndis2.h@{ndis2.h}}
+\doxysubsubsection{\texorpdfstring{transmitConfirmGlue()}{transmitConfirmGlue()}}
+{\footnotesize\ttfamily int transmit\+Confirm\+Glue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

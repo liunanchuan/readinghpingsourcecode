@@ -1,0 +1,148 @@
+\hypertarget{globals_8h_source}{}\doxysection{globals.\+h}
+\mbox{\hyperlink{globals_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$smu-\/mark\$ }}
+\DoxyCodeLine{3 \textcolor{comment}{ * \$name: globals.h\$ }}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$author: Salvatore Sanfilippo <antirez@invece.org>\$ }}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$copyright: Copyright (C) 1999 by Salvatore Sanfilippo\$ }}
+\DoxyCodeLine{6 \textcolor{comment}{ * \$license: This software is under GPL version 2 of license\$ }}
+\DoxyCodeLine{7 \textcolor{comment}{ * \$date: Fri Nov  5 11:55:47 MET 1999\$ }}
+\DoxyCodeLine{8 \textcolor{comment}{ * \$rev: 9\$ }}
+\DoxyCodeLine{9 \textcolor{comment}{ */} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* \$Id: globals.h,v 1.3 2004/06/18 09:53:11 antirez Exp \$ */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef \_GLOBALS\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define \_GLOBALS\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{extern} \textcolor{keywordtype}{float}}
+\DoxyCodeLine{17         \mbox{\hyperlink{globals_8h_a16c2da0f27de9c87f077d2b62b1c57db}{rtt\_min}},}
+\DoxyCodeLine{18         \mbox{\hyperlink{globals_8h_a500bb3dc86c57e2c20341e6b218004b0}{rtt\_max}},}
+\DoxyCodeLine{19         \mbox{\hyperlink{globals_8h_a1521cc16e96b4a60e4c0f18d6f0a5261}{rtt\_avg}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{22         \mbox{\hyperlink{globals_8h_a18025c8e9ed6306d6aeae4bdd42ddad2}{tcp\_th\_flags}},}
+\DoxyCodeLine{23         \mbox{\hyperlink{globals_8h_ad062de78f81964cdcb6cce72bab12f45}{linkhdr\_size}},}
+\DoxyCodeLine{24         \mbox{\hyperlink{globals_8h_ac7ef580bdac2e4e8dc2f4fbe18862bff}{h\_if\_mtu}},}
+\DoxyCodeLine{25         \mbox{\hyperlink{globals_8h_a90ddecdfd283068214166bf9164830a0}{virtual\_mtu}},}
+\DoxyCodeLine{26         \mbox{\hyperlink{globals_8h_acd8c545f2e7670dc0608df5a9b6cb9c3}{ip\_frag\_offset}},}
+\DoxyCodeLine{27         \mbox{\hyperlink{globals_8h_a8bd6583d65e0d285b795ae6e710f3dd3}{signlen}},}
+\DoxyCodeLine{28         \mbox{\hyperlink{globals_8h_a8f966a11150f357db42ad679f4657799}{lsr\_length}},}
+\DoxyCodeLine{29         \mbox{\hyperlink{globals_8h_a13155c4475d7adc98be9c48c91ac7dbe}{ssr\_length}},}
+\DoxyCodeLine{30         \mbox{\hyperlink{globals_8h_a06d158f399b84d0e5a06af1a1f175d2a}{ip\_tos}},}
+\DoxyCodeLine{31         \mbox{\hyperlink{globals_8h_a93d855b390b5233e065543bb6fd44882}{set\_seqnum}},}
+\DoxyCodeLine{32         \mbox{\hyperlink{globals_8h_a8c149f286b6ea5d70093287263dc9ff9}{tcp\_seqnum}},}
+\DoxyCodeLine{33         \mbox{\hyperlink{globals_8h_aee2bef02d678549b2cc5efaa467c69a3}{set\_ack}},}
+\DoxyCodeLine{34         \mbox{\hyperlink{globals_8h_aa9b1211faeb05d58fc7623ca073168d4}{ip\_header\_length}},}
+\DoxyCodeLine{35         \mbox{\hyperlink{globals_8h_af01379907bb07fdd57dabeef377fd092}{tcp\_ack}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{38         \mbox{\hyperlink{globals_8h_acca4bef60e2a57436eb1413dcf482e5f}{data\_size}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}  \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\_debug}},}
+\DoxyCodeLine{41         \mbox{\hyperlink{globals_8h_a9ab640fbc677c01c857d7c98019846ca}{sockpacket}},}
+\DoxyCodeLine{42         \mbox{\hyperlink{globals_8h_a8deaa534e5c3e5a3d687d1aaccf34c20}{sockraw}},}
+\DoxyCodeLine{43         \mbox{\hyperlink{globals_8h_a09cb00fd8967ae97f149e1fa8efb664c}{sent\_pkt}},}
+\DoxyCodeLine{44         \mbox{\hyperlink{globals_8h_a935054c9eb5f6a70eb4c93981b7b8112}{recv\_pkt}},}
+\DoxyCodeLine{45         \mbox{\hyperlink{globals_8h_a41d10d6d9dd09994f0772d3979b249c3}{out\_of\_sequence\_pkt}},}
+\DoxyCodeLine{46         \mbox{\hyperlink{globals_8h_a3a412ae544cb411a594a6439b0e9402f}{sending\_wait}},}
+\DoxyCodeLine{47         \mbox{\hyperlink{globals_8h_af96cc2ab9bdc36c4832e315e1fb0f27d}{opt\_rawipmode}},}
+\DoxyCodeLine{48         \mbox{\hyperlink{globals_8h_a590a0ee97a08e5687390742d730a4695}{opt\_icmpmode}},}
+\DoxyCodeLine{49         \mbox{\hyperlink{globals_8h_a829a520a76fb048736c250eff24e85e9}{opt\_udpmode}},}
+\DoxyCodeLine{50         \mbox{\hyperlink{globals_8h_ae3b996d1c2d960279b890682aa86f8f4}{opt\_scanmode}},}
+\DoxyCodeLine{51         \mbox{\hyperlink{globals_8h_ae9439861ce4c9d4aac2eaa1ab5f709ee}{opt\_listenmode}},}
+\DoxyCodeLine{52         \mbox{\hyperlink{globals_8h_aa5ceab431a08f1b4eb39510becbf8d97}{opt\_waitinusec}},}
+\DoxyCodeLine{53         \mbox{\hyperlink{globals_8h_aa03fa3634c3a68cb821416acf01c30af}{opt\_numeric}},}
+\DoxyCodeLine{54         \mbox{\hyperlink{globals_8h_a4c818a352be4462d0952223528ad60b9}{opt\_gethost}},}
+\DoxyCodeLine{55         \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\_quiet}},}
+\DoxyCodeLine{56         \mbox{\hyperlink{globals_8h_ae70d8695428cf9ef7d6cf16ca1c45eb6}{opt\_relid}},}
+\DoxyCodeLine{57         \mbox{\hyperlink{globals_8h_a7f4ea085bf2d0bc01b00966edb1c49fe}{opt\_fragment}},}
+\DoxyCodeLine{58         \mbox{\hyperlink{globals_8h_ad045ac0fa8dc2af7313302c1080c01e3}{opt\_df}},}
+\DoxyCodeLine{59         \mbox{\hyperlink{globals_8h_a201576c8c944ebbc9c6524e6808f3b2a}{opt\_mf}},}
+\DoxyCodeLine{60         \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\_debug}},}
+\DoxyCodeLine{61         \mbox{\hyperlink{globals_8h_a68c6795825554fff6f4b5ad6fbed441a}{opt\_verbose}},}
+\DoxyCodeLine{62         \mbox{\hyperlink{globals_8h_ae4cc9bd75a7c87624a52f8b84ffa83d2}{opt\_winid\_order}},}
+\DoxyCodeLine{63         \mbox{\hyperlink{globals_8h_a52250405b6953484a30f1480670319b9}{opt\_keepstill}},}
+\DoxyCodeLine{64         \mbox{\hyperlink{globals_8h_a7d84cc1de1587151b8f4e5dbf6edef53}{opt\_datafromfile}},}
+\DoxyCodeLine{65         \mbox{\hyperlink{globals_8h_a273a4d215c7333288b66782bfc34c262}{opt\_hexdump}},}
+\DoxyCodeLine{66         \mbox{\hyperlink{globals_8h_af6a24de9dab7bf14c58093a5b29c7c1d}{opt\_contdump}},}
+\DoxyCodeLine{67         \mbox{\hyperlink{globals_8h_a0b9fec9eed0aeb69739f27aa82017b9b}{opt\_sign}},}
+\DoxyCodeLine{68         \mbox{\hyperlink{globals_8h_af74e287fe1a3d45eeee223c1a9bf2ee1}{opt\_safe}},}
+\DoxyCodeLine{69         \mbox{\hyperlink{globals_8h_a924353adc62215ae2439e220925f4c72}{opt\_end}},}
+\DoxyCodeLine{70         \mbox{\hyperlink{globals_8h_a91c529fef1d3cd0002e3fe2ccabe2dd5}{opt\_traceroute}},}
+\DoxyCodeLine{71         \mbox{\hyperlink{globals_8h_a762fb7acc59299bae49670d52e1b8320}{opt\_seqnum}},}
+\DoxyCodeLine{72         \mbox{\hyperlink{globals_8h_a5d838f95efbd6f6d7d28cb66290f9937}{opt\_incdport}},}
+\DoxyCodeLine{73         \mbox{\hyperlink{globals_8h_a8a0925e905101ef98f39d269c4c5d490}{opt\_force\_incdport}},}
+\DoxyCodeLine{74         \mbox{\hyperlink{globals_8h_a1c1681ef71240d47c5a5b46e45bbb9a3}{opt\_icmptype}},}
+\DoxyCodeLine{75         \mbox{\hyperlink{globals_8h_a4c1585931ddc259e896a3b10542a1e8e}{opt\_icmpcode}},}
+\DoxyCodeLine{76         \mbox{\hyperlink{globals_8h_a6a205ebd500802c77d1d9ea715a14c2a}{opt\_rroute}},}
+\DoxyCodeLine{77         \mbox{\hyperlink{globals_8h_abb22ae25d4a395c6e0b540cc37a63b13}{opt\_tcpexitcode}},}
+\DoxyCodeLine{78         \mbox{\hyperlink{globals_8h_ab43aa22aa083fb340c5db339cef397bf}{opt\_badcksum}},}
+\DoxyCodeLine{79         \mbox{\hyperlink{globals_8h_af8eb20ec721c88a6f63a3e6ef066624f}{opt\_tr\_keep\_ttl}},}
+\DoxyCodeLine{80         \mbox{\hyperlink{globals_8h_ab5e7218629149e8cd4da188fdb486deb}{opt\_tcp\_timestamp}},}
+\DoxyCodeLine{81         \mbox{\hyperlink{globals_8h_aedbb2664d988fa3a6c271de585fa4260}{opt\_tr\_stop}},}
+\DoxyCodeLine{82         \mbox{\hyperlink{globals_8h_aa95b4bbd88b261fa4da77a505e0c3353}{opt\_tr\_no\_rtt}},}
+\DoxyCodeLine{83         \mbox{\hyperlink{globals_8h_ab38f32bb8dd18bca53ddb3db3d853952}{opt\_rand\_dest}},}
+\DoxyCodeLine{84         \mbox{\hyperlink{globals_8h_aad551c4bf388639cfdeb5ff979f18675}{opt\_rand\_source}},}
+\DoxyCodeLine{85         \mbox{\hyperlink{globals_8h_a436df7a5561f1284493767fa1d8df580}{opt\_lsrr}},}
+\DoxyCodeLine{86         \mbox{\hyperlink{globals_8h_ab19fe47b7cf5b13da371fb9468c26d93}{opt\_ssrr}},}
+\DoxyCodeLine{87         \mbox{\hyperlink{globals_8h_a6971e872b4543ebfa54558f36d51d8b9}{opt\_beep}},}
+\DoxyCodeLine{88         \mbox{\hyperlink{globals_8h_aab5e857463e118c76b784099d2b04b37}{opt\_flood}},}
+\DoxyCodeLine{89         \mbox{\hyperlink{globals_8h_a073736dd0b8962be665c187c3e5d1fd3}{tcp\_exitcode}},}
+\DoxyCodeLine{90         \mbox{\hyperlink{globals_8h_a6ced2f3734fd89fe4b315d78bf91754c}{src\_ttl}},}
+\DoxyCodeLine{91         \mbox{\hyperlink{globals_8h_ab6ed860f996b7f424f202a690aa2fb69}{src\_id}},}
+\DoxyCodeLine{92         \mbox{\hyperlink{globals_8h_aa1fa50515de3127fe1150148fb9ee30f}{base\_dst\_port}},}
+\DoxyCodeLine{93         \mbox{\hyperlink{globals_8h_adc30891256dc40c2b01f687b30dceff3}{dst\_port}},}
+\DoxyCodeLine{94         \mbox{\hyperlink{globals_8h_a2d47efc2f2609185cf802853871de027}{src\_port}},}
+\DoxyCodeLine{95         \mbox{\hyperlink{globals_8h_a304ffcaa9eb08837cfcf2bf38277f271}{initsport}},}
+\DoxyCodeLine{96         \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}},}
+\DoxyCodeLine{97         \mbox{\hyperlink{globals_8h_aa9e178c9fe8deae0a3fc655676877eaf}{src\_winsize}},}
+\DoxyCodeLine{98         \mbox{\hyperlink{globals_8h_a2140fcc67ba0c2730a476f85bf75c99e}{src\_thoff}},}
+\DoxyCodeLine{99         \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}},}
+\DoxyCodeLine{100         \mbox{\hyperlink{globals_8h_ae9d9689c7ae8792762932bc040a73af3}{ctrlzbind}},}
+\DoxyCodeLine{101         \mbox{\hyperlink{globals_8h_ab66b842bb060b363101cd400b9e5fc2b}{delaytable\_index}},}
+\DoxyCodeLine{102         \mbox{\hyperlink{globals_8h_a82d20156c4029b3451c259836983dbc7}{eof\_reached}},}
+\DoxyCodeLine{103         \mbox{\hyperlink{globals_8h_abb6bf383cf9a4c3462093c8aa64af169}{icmp\_ip\_version}},}
+\DoxyCodeLine{104         \mbox{\hyperlink{globals_8h_a5fb5a6837ed6fa92ae2df8861ae07ceb}{icmp\_ip\_ihl}},}
+\DoxyCodeLine{105         \mbox{\hyperlink{globals_8h_a6996b161ce4e125e530ad8ad1eec1eaa}{icmp\_ip\_tos}},}
+\DoxyCodeLine{106         \mbox{\hyperlink{globals_8h_afc49eb498bff60c825b1922ecf852987}{icmp\_ip\_tot\_len}},}
+\DoxyCodeLine{107         \mbox{\hyperlink{globals_8h_aeff67e2007a2d820c01058fb2620cf9f}{icmp\_ip\_id}},}
+\DoxyCodeLine{108         \mbox{\hyperlink{globals_8h_aa71850cea8b78a2d969b8dcff94c777e}{icmp\_ip\_srcport}},}
+\DoxyCodeLine{109         \mbox{\hyperlink{globals_8h_a9c1330d4a92778b0e6536529ce0f110f}{icmp\_ip\_dstport}},}
+\DoxyCodeLine{110         \mbox{\hyperlink{globals_8h_a67fa17a1ab6a9c0100215866f4773e4a}{opt\_force\_icmp}},}
+\DoxyCodeLine{111         \mbox{\hyperlink{globals_8h_a7945d87e890d2d448e047079e9b43e03}{icmp\_ip\_protocol}},}
+\DoxyCodeLine{112         \mbox{\hyperlink{globals_8h_a1347ed1eebf1a23857cf507f759d64c7}{icmp\_cksum}},}
+\DoxyCodeLine{113         \mbox{\hyperlink{globals_8h_aed247f7066a0dbafc5e3b952f1aa7b49}{raw\_ip\_protocol}};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}    \mbox{\hyperlink{globals_8h_a1c546c2fe27878b8ec8aadada8edf643}{lsr}}[255],}
+\DoxyCodeLine{116             \mbox{\hyperlink{globals_8h_a07c9c739f8998bca2f2dc9a21e3a0d8a}{ssr}}[255];}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} \mbox{\hyperlink{globals_8h_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}}[1024],}
+\DoxyCodeLine{119         \mbox{\hyperlink{globals_8h_a7a3ac7e341ecfdd7a4d27212616a39c7}{ifstraddr}}[1024],}
+\DoxyCodeLine{120         \mbox{\hyperlink{globals_8h_ad26b30bfc9fe22970c9598844def20c5}{datafilename}}[1024],}
+\DoxyCodeLine{121         \mbox{\hyperlink{globals_8h_ae9abba9190a6034a481b0d9321642e18}{targetname}}[1024],}
+\DoxyCodeLine{122         \mbox{\hyperlink{globals_8h_a400b80d0b852148529200e39e6196d59}{targetstraddr}}[1024],}
+\DoxyCodeLine{123         \mbox{\hyperlink{globals_8h_af8306fb85ce5170e6f98322734373f70}{spoofaddr}}[1024],}
+\DoxyCodeLine{124         \mbox{\hyperlink{globals_8h_ac50458b993e8c44e3b9469504e040868}{icmp\_ip\_srcip}}[1024],}
+\DoxyCodeLine{125         \mbox{\hyperlink{globals_8h_ab41d84b68d9786cccfe9bc53e809580b}{icmp\_ip\_dstip}}[1024],}
+\DoxyCodeLine{126         \mbox{\hyperlink{globals_8h_a50d24027e37afba9f659a8cd535860f8}{icmp\_gwip}}[1024],}
+\DoxyCodeLine{127         \mbox{\hyperlink{globals_8h_ab810ad4f7c0efd73662227c61460490b}{sign}}[1024],}
+\DoxyCodeLine{128         \mbox{\hyperlink{globals_8h_afd9a5333954faea0495f8fa8e6167dd9}{rsign}}[1024],}
+\DoxyCodeLine{129         \mbox{\hyperlink{globals_8h_a7ba769525033ef5dc1c5309edd3de4de}{ip\_opt}}[40],}
+\DoxyCodeLine{130         \mbox{\hyperlink{globals_8h_a18f961ee0cd5d9017e8937f68ea1c9c6}{ip\_optlen}},}
+\DoxyCodeLine{131         *\mbox{\hyperlink{globals_8h_a676c85860f4b74ffbf17f5b6a14332ab}{opt\_scanports}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \textcolor{keyword}{struct }sockaddr\_in icmp\_ip\_src, icmp\_ip\_dst, icmp\_gw, local, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}};}
+\DoxyCodeLine{134 \textcolor{keyword}{extern} \textcolor{keyword}{struct }itimerval \mbox{\hyperlink{globals_8h_a179df26f82a603e41f4c556e7a206dcf}{usec\_delay}};}
+\DoxyCodeLine{135 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keyword}{struct }\mbox{\hyperlink{structdelaytable__element}{delaytable\_element}} \mbox{\hyperlink{globals_8h_a9805834b51a8828f55fdc616a8221317}{delaytable}}[\mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}}];}
+\DoxyCodeLine{136 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structhcmphdr}{hcmphdr}} *\mbox{\hyperlink{globals_8h_a71cd926ca6334092b988bdd35cecad99}{hcmphdr\_p}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#include <pcap.h>}}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} pcap\_t *\mbox{\hyperlink{globals_8h_a2b9bb241b38decf7a4f029f07b4e23f6}{pcapfp}};}
+\DoxyCodeLine{140 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}[\mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\_ERRBUF\_SIZE}}];}
+\DoxyCodeLine{141 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_GLOBALS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

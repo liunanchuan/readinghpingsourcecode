@@ -1,0 +1,162 @@
+\hypertarget{sbignum_8h_source}{}\doxysection{sbignum.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Sbignum.h -\/-\/ antirez's arbitrary precision integer math library header file.}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright(C) 2002-\/2003 Salvatore Sanfilippo.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$Id: sbignum.h,v 1.4 2004/06/04 07:22:38 antirez Exp \$}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_SBIGNUM\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_SBIGNUM\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}fixtypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define ATOMBYTES 4}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* The number internal rappresentation is an array of mpz\_atom\_t WORDS.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * Every byte is a digit in base MPZ\_AND+1, the first word is the least}}
+\DoxyCodeLine{18 \textcolor{comment}{ * significant word and so on */}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#if ATOMBYTES == 4}}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} u\_int32\_t mpz\_atom\_t;}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} u\_int64\_t mpz\_carry\_t;}
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} int64\_t mpz\_scarry\_t;}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#elif ATOMBYTES == 2}}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} u\_int16\_t mpz\_atom\_t;}
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} u\_int32\_t mpz\_carry\_t;}
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} int32\_t mpz\_scarry\_t;}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#elif ATOMBYTES == 1}}
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} u\_int8\_t mpz\_atom\_t;}
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} u\_int32\_t mpz\_carry\_t;}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} int32\_t mpz\_scarry\_t;}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#error "{}Please define ATOMBYTES"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define ATOMBITS (ATOMBYTES*8)}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define MPZ\_ATOMSZ (sizeof(mpz\_atom\_t))}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define MPZ\_MASK   ((mpz\_atom\_t)(\string~0))}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define MPZ\_SHIFT  (MPZ\_ATOMSZ*8)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define MPZ\_BASE   ((mpz\_carry\_t)MPZ\_MASK+1)}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} \{}
+\DoxyCodeLine{43     mpz\_atom\_t *d;  \textcolor{comment}{/* data the least significant word is d[0] */}}
+\DoxyCodeLine{44     u\_int32\_t a;    \textcolor{comment}{/* allocated bytes */}}
+\DoxyCodeLine{45     u\_int32\_t l;    \textcolor{comment}{/* number of used bytes */}}
+\DoxyCodeLine{46     u\_int32\_t s;    \textcolor{comment}{/* sign. non-\/zero if negative */}}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 \textcolor{comment}{/* define the sbnz type */}}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} *\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}};}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstruct__sbnz}{struct\_sbnz}} mpz\_t[1];}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{/* Error codes */}}
+\DoxyCodeLine{53 \textcolor{keyword}{enum} sbn\_err \{}
+\DoxyCodeLine{54     SBN\_OK = 0,}
+\DoxyCodeLine{55     SBN\_MEM,}
+\DoxyCodeLine{56     SBN\_INVAL}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define SBN\_MINBASE 2}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define SBN\_MAXBASE 36}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{/* Exported macros */}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* this macro is true if z == 0 */}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define \_mpz\_iszero(z) ((z)-\/>l == 0)}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* this is just the reverse. Equivalent to !\_mpz\_iszero */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_mpz\_nonzero(z) ((z)-\/>l != 0)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define mpz\_inc(z)  mpz\_add\_ui(z, z, 1)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define mpz\_dec(z)  mpz\_sub\_ui(z, z, 1)}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Functions prototypes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{/* inititialization/allocation */}}
+\DoxyCodeLine{76 \textcolor{keywordtype}{void}    mpz\_init(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{77 \textcolor{keywordtype}{void}    mpz\_clear(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{78 \textcolor{keywordtype}{int} mpz\_realloc(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{79 \textcolor{comment}{/* shifting */}}
+\DoxyCodeLine{80 \textcolor{keywordtype}{int} mpz\_lshift(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{81 \textcolor{keywordtype}{int} mpz\_rshift(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{82 \textcolor{comment}{/* comparision */}}
+\DoxyCodeLine{83 int32\_t mpz\_abscmp(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b);}
+\DoxyCodeLine{84 int32\_t mpz\_abscmp\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, u\_int32\_t u);}
+\DoxyCodeLine{85 int32\_t mpz\_cmp(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b);}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define mpz\_eq(a,b) (mpz\_cmp(a,b) == 0)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define mpz\_noteq(a,b) (mpz\_cmp(a,b) != 0)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define mpz\_lt(a,b) (mpz\_cmp(a,b) < 0)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define mpz\_le(a,b) (mpz\_cmp(a,b) <= 0)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define mpz\_gt(a,b) (mpz\_cmp(a,b) > 0)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define mpz\_ge(a,b) (mpz\_cmp(a,b) >= 0)}}
+\DoxyCodeLine{92 int32\_t mpz\_cmp\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, u\_int32\_t u);}
+\DoxyCodeLine{93 int32\_t mpz\_cmp\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, int32\_t s);}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define mpz\_eq\_si(a,s) (mpz\_cmp\_si(a,s) == 0)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define mpz\_noteq\_si(a,s) (mpz\_cmp\_si(a,s) != 0)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define mpz\_lt\_si(a,s) (mpz\_cmp\_si(a,s) < 0)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define mpz\_le\_si(a,s) (mpz\_cmp\_si(a,s) <= 0)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define mpz\_gt\_si(a,s) (mpz\_cmp\_si(a,s) > 0)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define mpz\_ge\_si(a,s) (mpz\_cmp\_si(a,s) >= 0)}}
+\DoxyCodeLine{100 \textcolor{comment}{/* addition */}}
+\DoxyCodeLine{101 \textcolor{keywordtype}{int} mpz\_add\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{102 \textcolor{keywordtype}{int} mpz\_add\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{103 \textcolor{keywordtype}{int} mpz\_add(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b);}
+\DoxyCodeLine{104 \textcolor{comment}{/* subtraction */}}
+\DoxyCodeLine{105 \textcolor{keywordtype}{int} mpz\_sub\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{106 \textcolor{keywordtype}{int} mpz\_sub\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{107 \textcolor{keywordtype}{int} mpz\_sub(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b);}
+\DoxyCodeLine{108 \textcolor{comment}{/* multiplication */}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{int} mpz\_mul(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} f);}
+\DoxyCodeLine{110 \textcolor{keywordtype}{int} mpz\_mul\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{int} mpz\_mul\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{112 \textcolor{keywordtype}{int} mpz\_fac\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, u\_int32\_t i);}
+\DoxyCodeLine{113 \textcolor{comment}{/* exponentialization */}}
+\DoxyCodeLine{114 \textcolor{keywordtype}{int} mpz\_powm(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} e, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} m);}
+\DoxyCodeLine{115 \textcolor{keywordtype}{int} mpz\_pow(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} e);}
+\DoxyCodeLine{116 \textcolor{comment}{/* division */}}
+\DoxyCodeLine{117 \textcolor{keywordtype}{int} mpz\_tdiv\_qr(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{int} mpz\_tdiv\_qr\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{119 \textcolor{keywordtype}{int} mpz\_tdiv\_qr\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{120 \textcolor{keywordtype}{int} mpz\_tdiv\_q(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{int} mpz\_tdiv\_q\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{int} mpz\_tdiv\_q\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} q, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{123 \textcolor{keywordtype}{int} mpz\_tdiv\_r(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{int} mpz\_tdiv\_r\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{125 \textcolor{keywordtype}{int} mpz\_tdiv\_r\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{126 \textcolor{keywordtype}{int} mpz\_mod(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} m);}
+\DoxyCodeLine{127 \textcolor{comment}{/* root extraction */}}
+\DoxyCodeLine{128 \textcolor{keywordtype}{int} mpz\_sqrt(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} r, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{129 \textcolor{comment}{/* assignment */}}
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} mpz\_setzero(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} mpz\_set(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} s);}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} mpz\_set\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t u);}
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} mpz\_set\_si(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t s);}
+\DoxyCodeLine{134 \textcolor{keywordtype}{int} mpz\_abs(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} s);}
+\DoxyCodeLine{135 \textcolor{keywordtype}{int} mpz\_neg(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} d, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} s);}
+\DoxyCodeLine{136 \textcolor{comment}{/* bit operations */}}
+\DoxyCodeLine{137 u\_int32\_t mpz\_bits(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{138 \textcolor{keywordtype}{int} mpz\_setbit(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{139 \textcolor{keywordtype}{int} mpz\_clrbit(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{140 \textcolor{keywordtype}{int} mpz\_testbit(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t i);}
+\DoxyCodeLine{141 \textcolor{comment}{/* number theoretic functions */}}
+\DoxyCodeLine{142 \textcolor{keywordtype}{int} mpz\_gcd(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} g, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} b);}
+\DoxyCodeLine{143 u\_int32\_t mpz\_gcd\_ui(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} g, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} a, u\_int32\_t b);}
+\DoxyCodeLine{144 \textcolor{comment}{/* to/from mpz conversions */}}
+\DoxyCodeLine{145 \textcolor{keywordtype}{size\_t} mpz\_sizeinbase(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int32\_t b);}
+\DoxyCodeLine{146 \textcolor{keywordtype}{char}    *mpz\_get\_str(\textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} b, \mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{147 \textcolor{keywordtype}{int} mpz\_set\_str(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \textcolor{keywordtype}{char} *s, \textcolor{keywordtype}{int} b);}
+\DoxyCodeLine{148 \textcolor{keywordtype}{double}  mpz\_get\_d(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z);}
+\DoxyCodeLine{149 \textcolor{keywordtype}{int} mpz\_set\_d(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, \textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{150 \textcolor{keywordtype}{int} mpz\_set\_si64(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int64\_t s);}
+\DoxyCodeLine{151 \textcolor{keywordtype}{int} mpz\_set\_ui64(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, u\_int64\_t u);}
+\DoxyCodeLine{152 \textcolor{comment}{/* random numbers */}}
+\DoxyCodeLine{153 u\_int32\_t sbn\_rand(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{154 \textcolor{keywordtype}{void}    sbn\_seed(\textcolor{keywordtype}{void} *seed, \textcolor{keywordtype}{size\_t} len);}
+\DoxyCodeLine{155 \textcolor{keywordtype}{int} mpz\_random(\mbox{\hyperlink{structstruct__sbnz}{mpz\_ptr}} z, int32\_t len);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SBIGNUM\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,1277 @@
+\hypertarget{pcap-common_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/common.c 文件参考}
+\label{pcap-common_8c}\index{libpcap-\/1.1.1/pcap-\/common.c@{libpcap-\/1.1.1/pcap-\/common.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap/usb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/common.\+h\char`\"{}}\newline
+pcap-\/common.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-common_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlinktype__map}{linktype\+\_\+map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af076d46f1727422db8b8eef8dd9f1ef5}{LINKTYPE\+\_\+\+NULL}}~\mbox{\hyperlink{bpf_8h_a629ed89c8b4b7537bfac2491ccff56b8}{DLT\+\_\+\+NULL}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a250dfee636c0e82f51345d3321de4214}{LINKTYPE\+\_\+\+ETHERNET}}~\mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}} /$\ast$ also for 100\+Mb and up $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a91710d4b8f078a3755019cd33b7a7508}{LINKTYPE\+\_\+\+EXP\+\_\+\+ETHERNET}}~\mbox{\hyperlink{bpf_8h_ace57af98d9f50eee72c6b25e3ac0ccba}{DLT\+\_\+\+EN3\+MB}} /$\ast$ 3Mb experimental Ethernet $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1b77f2f57f3267655fc22205e5f0eda7}{LINKTYPE\+\_\+\+AX25}}~\mbox{\hyperlink{bpf_8h_a8ac118cb16308e899255288f17998ae0}{DLT\+\_\+\+AX25}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8522f87da01ef539a448ddeeab451d7c}{LINKTYPE\+\_\+\+PRONET}}~\mbox{\hyperlink{bpf_8h_a60891ec704a6d1c75adc88aa54d17bb1}{DLT\+\_\+\+PRONET}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a97a8d0087bf7732117da6efea4146c08}{LINKTYPE\+\_\+\+CHAOS}}~\mbox{\hyperlink{bpf_8h_a4f2da2a4662d8b9dbcc6982570658b35}{DLT\+\_\+\+CHAOS}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a086b31e2e6d851232aa801e8e3fa06cb}{LINKTYPE\+\_\+\+TOKEN\+\_\+\+RING}}~\mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}} /$\ast$ \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}} is used for Token Ring $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a3d45cc98e52423ead2143b3a322ac5e6}{LINKTYPE\+\_\+\+ARCNET}}~\mbox{\hyperlink{bpf_8h_a3f09da5a46633b5f3018524ba609db91}{DLT\+\_\+\+ARCNET}} /$\ast$ BSD-\/style headers $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad6c08b1750bf3b661b19ec8d7b6b7cd4}{LINKTYPE\+\_\+\+SLIP}}~\mbox{\hyperlink{bpf_8h_a56ceaa589567f2e3c6f1b42b650fae62}{DLT\+\_\+\+SLIP}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a93338430ac97f2278eb3efee03376ee1}{LINKTYPE\+\_\+\+PPP}}~\mbox{\hyperlink{bpf_8h_abd6a9c219e10570fdf4b02c351a5dffe}{DLT\+\_\+\+PPP}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a7559380713532377cf5db3b80c5f61cc}{LINKTYPE\+\_\+\+FDDI}}~\mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a9a66e45c0f7a19bf5e46f0cf6bb5fefa}{LINKTYPE\+\_\+\+PPP\+\_\+\+HDLC}}~50  /$\ast$ PPP in HDLC-\/like framing $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a22bdbc74ad4521c442173e53e8590a60}{LINKTYPE\+\_\+\+PPP\+\_\+\+ETHER}}~51  /$\ast$ Net\+BSD PPP-\/over-\/Ethernet $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad53b973618031753985842d898e5eea1}{LINKTYPE\+\_\+\+SYMANTEC\+\_\+\+FIREWALL}}~99  /$\ast$ Symantec Enterprise Firewall $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1906bcfccfe81e6e4e40f46f05764ffb}{LINKTYPE\+\_\+\+ATM\+\_\+\+RFC1483}}~100  /$\ast$ LLC/SNAP-\/encapsulated ATM $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a41e5687c54c0c1b69bce3b2fbb4374f9}{LINKTYPE\+\_\+\+RAW}}~101  /$\ast$ raw IP $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a0e3cbadbde14114bc7d842c6bd14974e}{LINKTYPE\+\_\+\+SLIP\+\_\+\+BSDOS}}~102  /$\ast$ BSD/OS SLIP BPF header $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ac4dd733a90284cc10b01c0ec4bdbc62c}{LINKTYPE\+\_\+\+PPP\+\_\+\+BSDOS}}~103  /$\ast$ BSD/OS PPP BPF header $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af0d5a446c804ccc195acf83acea21e14}{LINKTYPE\+\_\+\+C\+\_\+\+HDLC}}~104  /$\ast$ Cisco HDLC $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa50b6943acb510866668b4b420ceab1c}{LINKTYPE\+\_\+\+IEEE802\+\_\+11}}~105  /$\ast$ IEEE 802.\+11 (wireless) $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8ae6d035a679ca7e92c2302bd91b231b}{LINKTYPE\+\_\+\+ATM\+\_\+\+CLIP}}~106  /$\ast$ Linux Classical IP over ATM $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_afe9f81b204ce78b8e8b97735c6e118af}{LINKTYPE\+\_\+\+FRELAY}}~107  /$\ast$ Frame Relay $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad8849c2aff42a8b353bf9092814bf63f}{LINKTYPE\+\_\+\+LOOP}}~108  /$\ast$ Open\+BSD loopback $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1afba00a23ef1d1b773509e598f4978c}{LINKTYPE\+\_\+\+ENC}}~109  /$\ast$ Open\+BSD IPSEC enc $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_abb9ff76aae048dce4bb5377ff9aff923}{LINKTYPE\+\_\+\+LANE8023}}~110  /$\ast$ ATM LANE + 802.\+3 $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a970b3de7c0e66ececa21aab42f95cbb6}{LINKTYPE\+\_\+\+HIPPI}}~111  /$\ast$ Net\+BSD HIPPI $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a816b23e5f99194d0b2cc2880ba232965}{LINKTYPE\+\_\+\+HDLC}}~112  /$\ast$ Net\+BSD HDLC framing $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a963c6d7905a430e6c528dc5fdb514628}{LINKTYPE\+\_\+\+LINUX\+\_\+\+SLL}}~113  /$\ast$ Linux cooked \mbox{\hyperlink{os-ultrix4_8h_ad8757ba7b643ff8279abf9593f543494}{socket}} capture $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a81e81e6b6330ac9f31d35038d1e8dbf8}{LINKTYPE\+\_\+\+LTALK}}~114  /$\ast$ Apple Local\+Talk hardware $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af34cd424bbcd1f88cd8b3eacf19191aa}{LINKTYPE\+\_\+\+ECONET}}~115  /$\ast$ Acorn Econet $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a46bf63edb46b46c42e89b6ad23c59af2}{LINKTYPE\+\_\+\+IPFILTER}}~116
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a977c67d52a8f69631956cea8eadf09a1}{LINKTYPE\+\_\+\+PFLOG}}~117  /$\ast$ Open\+BSD \mbox{\hyperlink{bpf_8h_a2421055e8b85ad04c91f6da2428979b4}{DLT\+\_\+\+PFLOG}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a71ee2d960d2495410a862644c0893ebe}{LINKTYPE\+\_\+\+CISCO\+\_\+\+IOS}}~118  /$\ast$ For Cisco-\/internal use $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2a5c7e89495bc32492b6e859e82c3a79}{LINKTYPE\+\_\+\+PRISM\+\_\+\+HEADER}}~119  /$\ast$ 802.\+11+Prism II monitor mode $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a766ceb2694712b0c6d16a25578e64a25}{LINKTYPE\+\_\+\+AIRONET\+\_\+\+HEADER}}~120  /$\ast$ Free\+BSD Aironet driver stuff $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1c4ec4f7caf75db45c57f5e5a10f1767}{LINKTYPE\+\_\+\+HHDLC}}~121
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a0678e967930236e1802d8d6ecd88c88a}{LINKTYPE\+\_\+\+IP\+\_\+\+OVER\+\_\+\+FC}}~122  /$\ast$ RFC 2625 IP-\/over-\/Fibre Channel $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_abc3eb3776332416afcaad3426677f886}{LINKTYPE\+\_\+\+SUNATM}}~123  /$\ast$ Solaris+Sun\+ATM $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4065cdfcea0c4dfcb6ae17bb6aa8f0be}{LINKTYPE\+\_\+\+RIO}}~124  /$\ast$ Rapid\+IO $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a10ebace1e039f6acccca4107592185f9}{LINKTYPE\+\_\+\+PCI\+\_\+\+EXP}}~125  /$\ast$ PCI Express $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a6bca000141554840d8de23158bd4b515}{LINKTYPE\+\_\+\+AURORA}}~126  /$\ast$ Xilinx Aurora link layer $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aeeff22de8522dad3eb05df60a59e9420}{LINKTYPE\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO}}~127  /$\ast$ 802.\+11 plus BSD radio header $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a772ca9a732aa473ddebad641645a1934}{LINKTYPE\+\_\+\+TZSP}}~128  /$\ast$ Tazmen Sniffer Protocol $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1268a5051e369739232c651d5071e9d7}{LINKTYPE\+\_\+\+ARCNET\+\_\+\+LINUX}}~129  /$\ast$ Linux-\/style headers $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a971cc7a3eb59f434fc76c37b05ae021c}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MLPPP}}~130
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a9d30ca46e2b5cf23ab1fd9d4dd7237ff}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MLFR}}~131
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8839273ba60ecf8459f58024b521530e}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ES}}~132
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1959295d05a903a1e438b684549a04c2}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+GGSN}}~133
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ac5163257786e42b9fafaf743bcc4516f}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MFR}}~134
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a77adcd7e523af9a4b127dd7a8a81cdec}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ATM2}}~135
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a60ad5bb8df7b0cd7de8f99bfc9efb7e7}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+SERVICES}}~136
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a37574d7b1a3beaa52df335a57ebbb82a}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ATM1}}~137
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a740b876d0d3f8e8c0553e0caf9f60817}{LINKTYPE\+\_\+\+APPLE\+\_\+\+IP\+\_\+\+OVER\+\_\+\+IEEE1394}}~138 /$\ast$ Apple IP-\/over-\/IEEE 1394 cooked header $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ac0737afc048420b963258a28938aeae1}{LINKTYPE\+\_\+\+MTP2\+\_\+\+WITH\+\_\+\+PHDR}}~139
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ae42daf331c4400bf7e3b3155494dfbd1}{LINKTYPE\+\_\+\+MTP2}}~140
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a922d1cd3020d05bfe34a88a0d849ebdf}{LINKTYPE\+\_\+\+MTP3}}~141
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a0d3569747e24fdd5c1989d3ec88c7646}{LINKTYPE\+\_\+\+SCCP}}~142
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8cfa5636be1ca8e76a5f6b48722b6c7a}{LINKTYPE\+\_\+\+DOCSIS}}~143  /$\ast$ DOCSIS MAC frames $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2366b9340fc847c9cf067a2cb1112ed9}{LINKTYPE\+\_\+\+LINUX\+\_\+\+IRDA}}~144  /$\ast$ Linux-\/Ir\+DA $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aeb461d75ecd75cd0e44ab715f4f3877e}{LINKTYPE\+\_\+\+IBM\+\_\+\+SP}}~145
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a15cde69b2b5097d2e502e76cd084e922}{LINKTYPE\+\_\+\+IBM\+\_\+\+SN}}~146
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a51726c40c3c652c8bff37df6400a950b}{LINKTYPE\+\_\+\+USER0}}~147
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa0edce3c338de66bc34a344cef661134}{LINKTYPE\+\_\+\+USER1}}~148
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a0371a069c974c3a088c82085460a1c77}{LINKTYPE\+\_\+\+USER2}}~149
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a99ea4be394dddc71ffdd353770f90959}{LINKTYPE\+\_\+\+USER3}}~150
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a06f6de89b6dd813e723595a95ecccaee}{LINKTYPE\+\_\+\+USER4}}~151
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4475c3312a5af65ef140b7da4794a85b}{LINKTYPE\+\_\+\+USER5}}~152
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af6c9a9c85d62f1070d156b7bec157ba9}{LINKTYPE\+\_\+\+USER6}}~153
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ab3770c94a3d66531334ee1f1963b04a4}{LINKTYPE\+\_\+\+USER7}}~154
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a277cb5a52c4e01297a8906675a887ae3}{LINKTYPE\+\_\+\+USER8}}~155
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a87898f9bd0b8176e8fca8a70d0c216ca}{LINKTYPE\+\_\+\+USER9}}~156
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_acb825e528e39a68632a372f0a7d0ab2a}{LINKTYPE\+\_\+\+USER10}}~157
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a77cc22081426f635859d34e617fd943e}{LINKTYPE\+\_\+\+USER11}}~158
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ab91083afb40bc31a6e8b7feab979c525}{LINKTYPE\+\_\+\+USER12}}~159
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8dd5ad25dc208afbc28249d2937c005a}{LINKTYPE\+\_\+\+USER13}}~160
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aab8385b54ed35b4f349c8e5d9785eb96}{LINKTYPE\+\_\+\+USER14}}~161
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a6524276ca7b8bbc7fbf9441ad2223d4a}{LINKTYPE\+\_\+\+USER15}}~162
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a8b0e39cc2cbc7b0f9febb8dcdd21721b}{LINKTYPE\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS}}~163 /$\ast$ 802.\+11 plus AVS radio header $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad83617d98003e5e8d9af5023345e96aa}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MONITOR}}~164
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a6af9356afcca91f29e074b61db203753}{LINKTYPE\+\_\+\+BACNET\+\_\+\+MS\+\_\+\+TP}}~165
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2a9f363edb6744dd22a90362a713dba7}{LINKTYPE\+\_\+\+PPP\+\_\+\+PPPD}}~166
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a43d7d3212e65836d7406e5cee133e014}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPPOE}}~167
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a29f282df33a6481259b228b476e58ff9}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPPOE\+\_\+\+ATM}}~168
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2b14b6cdd9e2b65c7b535a14ac78c446}{LINKTYPE\+\_\+\+GPRS\+\_\+\+LLC}}~169  /$\ast$ GPRS LLC $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aab462aa9cfe7b37198a24cbb38345eb7}{LINKTYPE\+\_\+\+GPF\+\_\+T}}~170  /$\ast$ GPF-\/T (ITU-\/T G.\+7041/Y.\+1303) $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a5b9616c7f52ebb6101fb548f4893d6b2}{LINKTYPE\+\_\+\+GPF\+\_\+F}}~171  /$\ast$ GPF-\/T (ITU-\/T G.\+7041/Y.\+1303) $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1859f8b463df35852792d76fac43028e}{LINKTYPE\+\_\+\+GCOM\+\_\+\+T1\+E1}}~172
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a6d07b2891d49f0f1a20983f85d6b26cc}{LINKTYPE\+\_\+\+GCOM\+\_\+\+SERIAL}}~173
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a96f6d527f7798c90ee2da012f94fe5f5}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PIC\+\_\+\+PEER}}~174
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4458dd5ed634675bcf5241228ace06b6}{LINKTYPE\+\_\+\+ERF\+\_\+\+ETH}}~175 /$\ast$ Ethernet $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ae11324c653a9a534c7f902ee0c868bcc}{LINKTYPE\+\_\+\+ERF\+\_\+\+POS}}~176 /$\ast$ Packet-\/over-\/SONET $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a6c62cede66fd6a405ffab5209fcd8941}{LINKTYPE\+\_\+\+LINUX\+\_\+\+LAPD}}~177
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2c4c5bfcec54d5092a8cdc7f5f31be0d}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ETHER}}~178
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ab1a0427a831ce6b2345f483291b429b6}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPP}}~179
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a92f8cfa58950743feeeacccc34d31e7b}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+FRELAY}}~180
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a5fadd272339870096939ac995284be42}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+CHDLC}}~181
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aaf5587f14fe04c31aacbfa915f074fdf}{LINKTYPE\+\_\+\+MFR}}~182
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a84631b57495e421d1c6dd8cfd3585683}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+VP}}~183
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_acf6f3dd0a1186d1708af1d8bd888da8a}{LINKTYPE\+\_\+\+A429}}~184
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a5073757e3b4408787c22bb699c4d6f40}{LINKTYPE\+\_\+\+A653\+\_\+\+ICM}}~185
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a431c571b7463c502a5fb4ba703b5d687}{LINKTYPE\+\_\+\+USB}}~186
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a394b3c610480c4bd266d0b641e9d9a6b}{LINKTYPE\+\_\+\+BLUETOOTH\+\_\+\+HCI\+\_\+\+H4}}~187
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa618ae563b4bce786b3a62873d79fea6}{LINKTYPE\+\_\+\+IEEE802\+\_\+16\+\_\+\+MAC\+\_\+\+CPS}}~188
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ab6a4276859f4a4cb38edf3339119d4d2}{LINKTYPE\+\_\+\+USB\+\_\+\+LINUX}}~189
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af4c3959e8f942544de317b7e02abe9ab}{LINKTYPE\+\_\+\+CAN20B}}~190
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ac25218c8b1198279a50eba9ee6736805}{LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4\+\_\+\+LINUX}}~191
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa2d3da4c52c1c628ff08510a5b4c831d}{LINKTYPE\+\_\+\+PPI}}~192
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aff6eccd06e88b78f0c4fee128670dc3f}{LINKTYPE\+\_\+\+IEEE802\+\_\+16\+\_\+\+MAC\+\_\+\+CPS\+\_\+\+RADIO}}~193
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a99929d10ac000b9ac2920062a639b7f7}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ISM}}~194
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a7dcba19007fbe49431c024f1820193bc}{LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4}}~195
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aeb38a675e575aca249f2f7455ed5f6fa}{LINKTYPE\+\_\+\+SITA}}~196
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_abb95bbedb24fad52cd7a927e44240ebb}{LINKTYPE\+\_\+\+ERF}}~197
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4f045e168082f5cbecfb6677ebbc403b}{LINKTYPE\+\_\+\+RAIF1}}~198
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a862e4069e1dae6dd76402a75b9dc43cb}{LINKTYPE\+\_\+\+IPMB}}~199
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a1de163d3e437139194776dd5cfa25117}{LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ST}}~200
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a132357b2ef1207afc2396df2f5d07e92}{LINKTYPE\+\_\+\+BLUETOOTH\+\_\+\+HCI\+\_\+\+H4\+\_\+\+WITH\+\_\+\+PHDR}}~201
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad0e30010d4a441960c8442a3aea1aff0}{LINKTYPE\+\_\+\+AX25\+\_\+\+KISS}}~202
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a0c3a11b33818f5be347952b7ce5e87b8}{LINKTYPE\+\_\+\+LAPD}}~203
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a06e9754e66bdde13aa6b57740ab109e4}{LINKTYPE\+\_\+\+PPP\+\_\+\+WITH\+\_\+\+DIR}}~204 /$\ast$ PPP $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a74f5482e48788fa9b71eb1cfb9420068}{LINKTYPE\+\_\+\+C\+\_\+\+HDLC\+\_\+\+WITH\+\_\+\+DIR}}~205 /$\ast$ Cisco HDLC $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ab3ef71c1bb84924f0fb8b1fc7dd77a53}{LINKTYPE\+\_\+\+FRELAY\+\_\+\+WITH\+\_\+\+DIR}}~206 /$\ast$ Frame Relay $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a5072bf1f4dc675b85090da6a6bfecac5}{LINKTYPE\+\_\+\+LAPB\+\_\+\+WITH\+\_\+\+DIR}}~207 /$\ast$ LAPB $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a71b202188d264e38799b156da20a4fdd}{LINKTYPE\+\_\+\+IPMB\+\_\+\+LINUX}}~209
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa674bd72caccfbf35ca19d70e3b2e39d}{LINKTYPE\+\_\+\+FLEXRAY}}~210
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a3474949e0f2c69b37ce58df3b2542e4d}{LINKTYPE\+\_\+\+MOST}}~211
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a58659a94bfb815d013d9355391b3da05}{LINKTYPE\+\_\+\+LIN}}~212
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a93fde5895450b1a3aab548fec0d5ca40}{LINKTYPE\+\_\+\+X2\+E\+\_\+\+SERIAL}}~213
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_aa2f3a65aa8914b440ab9d89e0a9b4ba8}{LINKTYPE\+\_\+\+X2\+E\+\_\+\+XORAYA}}~214
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a056ba29a99178e1a93e509f9ec810293}{LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4\+\_\+\+NONASK\+\_\+\+PHY}}~215
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ae4fc033fc11f5e79b6e6b4903f6700ce}{LINKTYPE\+\_\+\+LINUX\+\_\+\+EVDEV}}~216
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a2c5ae8045de6c3de31c934519348625f}{LINKTYPE\+\_\+\+GSMTAP\+\_\+\+UM}}~217
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_abc1e08f914dc64500808f1debeaa97b6}{LINKTYPE\+\_\+\+GSMTAP\+\_\+\+ABIS}}~218
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ae94f8d2e14f0d2f2e66c36a1de90f94e}{LINKTYPE\+\_\+\+MPLS}}~219
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_af1b0913515a6d43f790815fa9c6a0b61}{LINKTYPE\+\_\+\+USB\+\_\+\+LINUX\+\_\+\+MMAPPED}}~220
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ac65196fbff62d8f53d008fa36c7d05d5}{LINKTYPE\+\_\+\+DECT}}~221
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a9f663c9306b6323b606ccedfd9ce221c}{LINKTYPE\+\_\+\+AOS}}~222
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_ad5d730357293390de0942c81fc38ec9e}{LINKTYPE\+\_\+\+WIHART}}~223
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4645cccca0513de39ec28ea99f828d85}{LINKTYPE\+\_\+\+FC\+\_\+2}}~224
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a48a0bb1482cf0089f525645f5c9dc8ba}{LINKTYPE\+\_\+\+FC\+\_\+2\+\_\+\+WITH\+\_\+\+FRAME\+\_\+\+DELIMS}}~225
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a781b37454d6316065e4c98ef522272a7}{LINKTYPE\+\_\+\+IPNET}}~226
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a068ac6f26c83bda7892512924bb19053}{LINKTYPE\+\_\+\+CAN\+\_\+\+SOCKETCAN}}~227
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a4c5a5c205addcccdeba3d6033350f754}{LINKTYPE\+\_\+\+IPV4}}~228
+\item 
+\#define \mbox{\hyperlink{pcap-common_8c_a30ccb0491de50165e0985a3cdb6f1c3d}{LINKTYPE\+\_\+\+IPV6}}~229
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pcap-common_8c_a78274013ccf81aa99a21ca38e83d7a1e}{dlt\+\_\+to\+\_\+linktype}} (int dlt)
+\item 
+int \mbox{\hyperlink{pcap-common_8c_a3a680628fc86f66b77445778bbe85884}{linktype\+\_\+to\+\_\+dlt}} (int \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}})
+\item 
+void \mbox{\hyperlink{pcap-common_8c_afa059dda75b192db1391a32248ccdb65}{swap\+\_\+linux\+\_\+usb\+\_\+header}} (const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$\mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}}, u\+\_\+char $\ast$buf, int header\+\_\+len\+\_\+64\+\_\+bytes)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-common_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+static struct \mbox{\hyperlink{structlinktype__map}{linktype\+\_\+map}} \mbox{\hyperlink{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}{map}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-common_8c_acf6f3dd0a1186d1708af1d8bd888da8a}\label{pcap-common_8c_acf6f3dd0a1186d1708af1d8bd888da8a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_A429@{LINKTYPE\_A429}}
+\index{LINKTYPE\_A429@{LINKTYPE\_A429}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_A429}{LINKTYPE\_A429}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+A429~184}
+
+\mbox{\Hypertarget{pcap-common_8c_a5073757e3b4408787c22bb699c4d6f40}\label{pcap-common_8c_a5073757e3b4408787c22bb699c4d6f40}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_A653\_ICM@{LINKTYPE\_A653\_ICM}}
+\index{LINKTYPE\_A653\_ICM@{LINKTYPE\_A653\_ICM}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_A653\_ICM}{LINKTYPE\_A653\_ICM}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+A653\+\_\+\+ICM~185}
+
+\mbox{\Hypertarget{pcap-common_8c_a766ceb2694712b0c6d16a25578e64a25}\label{pcap-common_8c_a766ceb2694712b0c6d16a25578e64a25}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_AIRONET\_HEADER@{LINKTYPE\_AIRONET\_HEADER}}
+\index{LINKTYPE\_AIRONET\_HEADER@{LINKTYPE\_AIRONET\_HEADER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_AIRONET\_HEADER}{LINKTYPE\_AIRONET\_HEADER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+AIRONET\+\_\+\+HEADER~120  /$\ast$ Free\+BSD Aironet driver stuff $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a9f663c9306b6323b606ccedfd9ce221c}\label{pcap-common_8c_a9f663c9306b6323b606ccedfd9ce221c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_AOS@{LINKTYPE\_AOS}}
+\index{LINKTYPE\_AOS@{LINKTYPE\_AOS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_AOS}{LINKTYPE\_AOS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+AOS~222}
+
+\mbox{\Hypertarget{pcap-common_8c_a740b876d0d3f8e8c0553e0caf9f60817}\label{pcap-common_8c_a740b876d0d3f8e8c0553e0caf9f60817}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394@{LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394}}
+\index{LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394@{LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394}{LINKTYPE\_APPLE\_IP\_OVER\_IEEE1394}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+APPLE\+\_\+\+IP\+\_\+\+OVER\+\_\+\+IEEE1394~138 /$\ast$ Apple IP-\/over-\/IEEE 1394 cooked header $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a3d45cc98e52423ead2143b3a322ac5e6}\label{pcap-common_8c_a3d45cc98e52423ead2143b3a322ac5e6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ARCNET@{LINKTYPE\_ARCNET}}
+\index{LINKTYPE\_ARCNET@{LINKTYPE\_ARCNET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ARCNET}{LINKTYPE\_ARCNET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ARCNET~\mbox{\hyperlink{bpf_8h_a3f09da5a46633b5f3018524ba609db91}{DLT\+\_\+\+ARCNET}} /$\ast$ BSD-\/style headers $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a1268a5051e369739232c651d5071e9d7}\label{pcap-common_8c_a1268a5051e369739232c651d5071e9d7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ARCNET\_LINUX@{LINKTYPE\_ARCNET\_LINUX}}
+\index{LINKTYPE\_ARCNET\_LINUX@{LINKTYPE\_ARCNET\_LINUX}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ARCNET\_LINUX}{LINKTYPE\_ARCNET\_LINUX}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ARCNET\+\_\+\+LINUX~129  /$\ast$ Linux-\/style headers $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a8ae6d035a679ca7e92c2302bd91b231b}\label{pcap-common_8c_a8ae6d035a679ca7e92c2302bd91b231b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ATM\_CLIP@{LINKTYPE\_ATM\_CLIP}}
+\index{LINKTYPE\_ATM\_CLIP@{LINKTYPE\_ATM\_CLIP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ATM\_CLIP}{LINKTYPE\_ATM\_CLIP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ATM\+\_\+\+CLIP~106  /$\ast$ Linux Classical IP over ATM $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a1906bcfccfe81e6e4e40f46f05764ffb}\label{pcap-common_8c_a1906bcfccfe81e6e4e40f46f05764ffb}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ATM\_RFC1483@{LINKTYPE\_ATM\_RFC1483}}
+\index{LINKTYPE\_ATM\_RFC1483@{LINKTYPE\_ATM\_RFC1483}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ATM\_RFC1483}{LINKTYPE\_ATM\_RFC1483}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ATM\+\_\+\+RFC1483~100  /$\ast$ LLC/SNAP-\/encapsulated ATM $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a6bca000141554840d8de23158bd4b515}\label{pcap-common_8c_a6bca000141554840d8de23158bd4b515}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_AURORA@{LINKTYPE\_AURORA}}
+\index{LINKTYPE\_AURORA@{LINKTYPE\_AURORA}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_AURORA}{LINKTYPE\_AURORA}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+AURORA~126  /$\ast$ Xilinx Aurora link layer $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a1b77f2f57f3267655fc22205e5f0eda7}\label{pcap-common_8c_a1b77f2f57f3267655fc22205e5f0eda7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_AX25@{LINKTYPE\_AX25}}
+\index{LINKTYPE\_AX25@{LINKTYPE\_AX25}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_AX25}{LINKTYPE\_AX25}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+AX25~\mbox{\hyperlink{bpf_8h_a8ac118cb16308e899255288f17998ae0}{DLT\+\_\+\+AX25}}}
+
+\mbox{\Hypertarget{pcap-common_8c_ad0e30010d4a441960c8442a3aea1aff0}\label{pcap-common_8c_ad0e30010d4a441960c8442a3aea1aff0}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_AX25\_KISS@{LINKTYPE\_AX25\_KISS}}
+\index{LINKTYPE\_AX25\_KISS@{LINKTYPE\_AX25\_KISS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_AX25\_KISS}{LINKTYPE\_AX25\_KISS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+AX25\+\_\+\+KISS~202}
+
+\mbox{\Hypertarget{pcap-common_8c_a6af9356afcca91f29e074b61db203753}\label{pcap-common_8c_a6af9356afcca91f29e074b61db203753}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_BACNET\_MS\_TP@{LINKTYPE\_BACNET\_MS\_TP}}
+\index{LINKTYPE\_BACNET\_MS\_TP@{LINKTYPE\_BACNET\_MS\_TP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_BACNET\_MS\_TP}{LINKTYPE\_BACNET\_MS\_TP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+BACNET\+\_\+\+MS\+\_\+\+TP~165}
+
+\mbox{\Hypertarget{pcap-common_8c_a394b3c610480c4bd266d0b641e9d9a6b}\label{pcap-common_8c_a394b3c610480c4bd266d0b641e9d9a6b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_BLUETOOTH\_HCI\_H4@{LINKTYPE\_BLUETOOTH\_HCI\_H4}}
+\index{LINKTYPE\_BLUETOOTH\_HCI\_H4@{LINKTYPE\_BLUETOOTH\_HCI\_H4}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_BLUETOOTH\_HCI\_H4}{LINKTYPE\_BLUETOOTH\_HCI\_H4}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+BLUETOOTH\+\_\+\+HCI\+\_\+\+H4~187}
+
+\mbox{\Hypertarget{pcap-common_8c_a132357b2ef1207afc2396df2f5d07e92}\label{pcap-common_8c_a132357b2ef1207afc2396df2f5d07e92}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR@{LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR}}
+\index{LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR@{LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR}{LINKTYPE\_BLUETOOTH\_HCI\_H4\_WITH\_PHDR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+BLUETOOTH\+\_\+\+HCI\+\_\+\+H4\+\_\+\+WITH\+\_\+\+PHDR~201}
+
+\mbox{\Hypertarget{pcap-common_8c_af0d5a446c804ccc195acf83acea21e14}\label{pcap-common_8c_af0d5a446c804ccc195acf83acea21e14}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_C\_HDLC@{LINKTYPE\_C\_HDLC}}
+\index{LINKTYPE\_C\_HDLC@{LINKTYPE\_C\_HDLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_C\_HDLC}{LINKTYPE\_C\_HDLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+C\+\_\+\+HDLC~104  /$\ast$ Cisco HDLC $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a74f5482e48788fa9b71eb1cfb9420068}\label{pcap-common_8c_a74f5482e48788fa9b71eb1cfb9420068}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_C\_HDLC\_WITH\_DIR@{LINKTYPE\_C\_HDLC\_WITH\_DIR}}
+\index{LINKTYPE\_C\_HDLC\_WITH\_DIR@{LINKTYPE\_C\_HDLC\_WITH\_DIR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_C\_HDLC\_WITH\_DIR}{LINKTYPE\_C\_HDLC\_WITH\_DIR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+C\+\_\+\+HDLC\+\_\+\+WITH\+\_\+\+DIR~205 /$\ast$ Cisco HDLC $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_af4c3959e8f942544de317b7e02abe9ab}\label{pcap-common_8c_af4c3959e8f942544de317b7e02abe9ab}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_CAN20B@{LINKTYPE\_CAN20B}}
+\index{LINKTYPE\_CAN20B@{LINKTYPE\_CAN20B}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_CAN20B}{LINKTYPE\_CAN20B}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+CAN20B~190}
+
+\mbox{\Hypertarget{pcap-common_8c_a068ac6f26c83bda7892512924bb19053}\label{pcap-common_8c_a068ac6f26c83bda7892512924bb19053}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_CAN\_SOCKETCAN@{LINKTYPE\_CAN\_SOCKETCAN}}
+\index{LINKTYPE\_CAN\_SOCKETCAN@{LINKTYPE\_CAN\_SOCKETCAN}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_CAN\_SOCKETCAN}{LINKTYPE\_CAN\_SOCKETCAN}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+CAN\+\_\+\+SOCKETCAN~227}
+
+\mbox{\Hypertarget{pcap-common_8c_a97a8d0087bf7732117da6efea4146c08}\label{pcap-common_8c_a97a8d0087bf7732117da6efea4146c08}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_CHAOS@{LINKTYPE\_CHAOS}}
+\index{LINKTYPE\_CHAOS@{LINKTYPE\_CHAOS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_CHAOS}{LINKTYPE\_CHAOS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+CHAOS~\mbox{\hyperlink{bpf_8h_a4f2da2a4662d8b9dbcc6982570658b35}{DLT\+\_\+\+CHAOS}}}
+
+\mbox{\Hypertarget{pcap-common_8c_a71ee2d960d2495410a862644c0893ebe}\label{pcap-common_8c_a71ee2d960d2495410a862644c0893ebe}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_CISCO\_IOS@{LINKTYPE\_CISCO\_IOS}}
+\index{LINKTYPE\_CISCO\_IOS@{LINKTYPE\_CISCO\_IOS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_CISCO\_IOS}{LINKTYPE\_CISCO\_IOS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+CISCO\+\_\+\+IOS~118  /$\ast$ For Cisco-\/internal use $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_ac65196fbff62d8f53d008fa36c7d05d5}\label{pcap-common_8c_ac65196fbff62d8f53d008fa36c7d05d5}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_DECT@{LINKTYPE\_DECT}}
+\index{LINKTYPE\_DECT@{LINKTYPE\_DECT}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_DECT}{LINKTYPE\_DECT}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+DECT~221}
+
+\mbox{\Hypertarget{pcap-common_8c_a8cfa5636be1ca8e76a5f6b48722b6c7a}\label{pcap-common_8c_a8cfa5636be1ca8e76a5f6b48722b6c7a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_DOCSIS@{LINKTYPE\_DOCSIS}}
+\index{LINKTYPE\_DOCSIS@{LINKTYPE\_DOCSIS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_DOCSIS}{LINKTYPE\_DOCSIS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+DOCSIS~143  /$\ast$ DOCSIS MAC frames $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_af34cd424bbcd1f88cd8b3eacf19191aa}\label{pcap-common_8c_af34cd424bbcd1f88cd8b3eacf19191aa}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ECONET@{LINKTYPE\_ECONET}}
+\index{LINKTYPE\_ECONET@{LINKTYPE\_ECONET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ECONET}{LINKTYPE\_ECONET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ECONET~115  /$\ast$ Acorn Econet $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a1afba00a23ef1d1b773509e598f4978c}\label{pcap-common_8c_a1afba00a23ef1d1b773509e598f4978c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ENC@{LINKTYPE\_ENC}}
+\index{LINKTYPE\_ENC@{LINKTYPE\_ENC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ENC}{LINKTYPE\_ENC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ENC~109  /$\ast$ Open\+BSD IPSEC enc $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_abb95bbedb24fad52cd7a927e44240ebb}\label{pcap-common_8c_abb95bbedb24fad52cd7a927e44240ebb}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ERF@{LINKTYPE\_ERF}}
+\index{LINKTYPE\_ERF@{LINKTYPE\_ERF}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ERF}{LINKTYPE\_ERF}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ERF~197}
+
+\mbox{\Hypertarget{pcap-common_8c_a4458dd5ed634675bcf5241228ace06b6}\label{pcap-common_8c_a4458dd5ed634675bcf5241228ace06b6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ERF\_ETH@{LINKTYPE\_ERF\_ETH}}
+\index{LINKTYPE\_ERF\_ETH@{LINKTYPE\_ERF\_ETH}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ERF\_ETH}{LINKTYPE\_ERF\_ETH}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ERF\+\_\+\+ETH~175 /$\ast$ Ethernet $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_ae11324c653a9a534c7f902ee0c868bcc}\label{pcap-common_8c_ae11324c653a9a534c7f902ee0c868bcc}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ERF\_POS@{LINKTYPE\_ERF\_POS}}
+\index{LINKTYPE\_ERF\_POS@{LINKTYPE\_ERF\_POS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ERF\_POS}{LINKTYPE\_ERF\_POS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ERF\+\_\+\+POS~176 /$\ast$ Packet-\/over-\/SONET $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a250dfee636c0e82f51345d3321de4214}\label{pcap-common_8c_a250dfee636c0e82f51345d3321de4214}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_ETHERNET@{LINKTYPE\_ETHERNET}}
+\index{LINKTYPE\_ETHERNET@{LINKTYPE\_ETHERNET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_ETHERNET}{LINKTYPE\_ETHERNET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+ETHERNET~\mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}} /$\ast$ also for 100\+Mb and up $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a91710d4b8f078a3755019cd33b7a7508}\label{pcap-common_8c_a91710d4b8f078a3755019cd33b7a7508}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_EXP\_ETHERNET@{LINKTYPE\_EXP\_ETHERNET}}
+\index{LINKTYPE\_EXP\_ETHERNET@{LINKTYPE\_EXP\_ETHERNET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_EXP\_ETHERNET}{LINKTYPE\_EXP\_ETHERNET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+EXP\+\_\+\+ETHERNET~\mbox{\hyperlink{bpf_8h_ace57af98d9f50eee72c6b25e3ac0ccba}{DLT\+\_\+\+EN3\+MB}} /$\ast$ 3Mb experimental Ethernet $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a4645cccca0513de39ec28ea99f828d85}\label{pcap-common_8c_a4645cccca0513de39ec28ea99f828d85}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FC\_2@{LINKTYPE\_FC\_2}}
+\index{LINKTYPE\_FC\_2@{LINKTYPE\_FC\_2}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FC\_2}{LINKTYPE\_FC\_2}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FC\+\_\+2~224}
+
+\mbox{\Hypertarget{pcap-common_8c_a48a0bb1482cf0089f525645f5c9dc8ba}\label{pcap-common_8c_a48a0bb1482cf0089f525645f5c9dc8ba}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS@{LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS}}
+\index{LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS@{LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS}{LINKTYPE\_FC\_2\_WITH\_FRAME\_DELIMS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FC\+\_\+2\+\_\+\+WITH\+\_\+\+FRAME\+\_\+\+DELIMS~225}
+
+\mbox{\Hypertarget{pcap-common_8c_a7559380713532377cf5db3b80c5f61cc}\label{pcap-common_8c_a7559380713532377cf5db3b80c5f61cc}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FDDI@{LINKTYPE\_FDDI}}
+\index{LINKTYPE\_FDDI@{LINKTYPE\_FDDI}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FDDI}{LINKTYPE\_FDDI}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FDDI~\mbox{\hyperlink{bpf_8h_ada695e43f9e5d43d4c8b7666dc6312c6}{DLT\+\_\+\+FDDI}}}
+
+\mbox{\Hypertarget{pcap-common_8c_aa674bd72caccfbf35ca19d70e3b2e39d}\label{pcap-common_8c_aa674bd72caccfbf35ca19d70e3b2e39d}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FLEXRAY@{LINKTYPE\_FLEXRAY}}
+\index{LINKTYPE\_FLEXRAY@{LINKTYPE\_FLEXRAY}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FLEXRAY}{LINKTYPE\_FLEXRAY}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FLEXRAY~210}
+
+\mbox{\Hypertarget{pcap-common_8c_afe9f81b204ce78b8e8b97735c6e118af}\label{pcap-common_8c_afe9f81b204ce78b8e8b97735c6e118af}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FRELAY@{LINKTYPE\_FRELAY}}
+\index{LINKTYPE\_FRELAY@{LINKTYPE\_FRELAY}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FRELAY}{LINKTYPE\_FRELAY}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FRELAY~107  /$\ast$ Frame Relay $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_ab3ef71c1bb84924f0fb8b1fc7dd77a53}\label{pcap-common_8c_ab3ef71c1bb84924f0fb8b1fc7dd77a53}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_FRELAY\_WITH\_DIR@{LINKTYPE\_FRELAY\_WITH\_DIR}}
+\index{LINKTYPE\_FRELAY\_WITH\_DIR@{LINKTYPE\_FRELAY\_WITH\_DIR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_FRELAY\_WITH\_DIR}{LINKTYPE\_FRELAY\_WITH\_DIR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+FRELAY\+\_\+\+WITH\+\_\+\+DIR~206 /$\ast$ Frame Relay $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a6d07b2891d49f0f1a20983f85d6b26cc}\label{pcap-common_8c_a6d07b2891d49f0f1a20983f85d6b26cc}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GCOM\_SERIAL@{LINKTYPE\_GCOM\_SERIAL}}
+\index{LINKTYPE\_GCOM\_SERIAL@{LINKTYPE\_GCOM\_SERIAL}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GCOM\_SERIAL}{LINKTYPE\_GCOM\_SERIAL}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GCOM\+\_\+\+SERIAL~173}
+
+\mbox{\Hypertarget{pcap-common_8c_a1859f8b463df35852792d76fac43028e}\label{pcap-common_8c_a1859f8b463df35852792d76fac43028e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GCOM\_T1E1@{LINKTYPE\_GCOM\_T1E1}}
+\index{LINKTYPE\_GCOM\_T1E1@{LINKTYPE\_GCOM\_T1E1}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GCOM\_T1E1}{LINKTYPE\_GCOM\_T1E1}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GCOM\+\_\+\+T1\+E1~172}
+
+\mbox{\Hypertarget{pcap-common_8c_a5b9616c7f52ebb6101fb548f4893d6b2}\label{pcap-common_8c_a5b9616c7f52ebb6101fb548f4893d6b2}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GPF\_F@{LINKTYPE\_GPF\_F}}
+\index{LINKTYPE\_GPF\_F@{LINKTYPE\_GPF\_F}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GPF\_F}{LINKTYPE\_GPF\_F}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GPF\+\_\+F~171  /$\ast$ GPF-\/T (ITU-\/T G.\+7041/Y.\+1303) $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_aab462aa9cfe7b37198a24cbb38345eb7}\label{pcap-common_8c_aab462aa9cfe7b37198a24cbb38345eb7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GPF\_T@{LINKTYPE\_GPF\_T}}
+\index{LINKTYPE\_GPF\_T@{LINKTYPE\_GPF\_T}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GPF\_T}{LINKTYPE\_GPF\_T}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GPF\+\_\+T~170  /$\ast$ GPF-\/T (ITU-\/T G.\+7041/Y.\+1303) $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a2b14b6cdd9e2b65c7b535a14ac78c446}\label{pcap-common_8c_a2b14b6cdd9e2b65c7b535a14ac78c446}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GPRS\_LLC@{LINKTYPE\_GPRS\_LLC}}
+\index{LINKTYPE\_GPRS\_LLC@{LINKTYPE\_GPRS\_LLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GPRS\_LLC}{LINKTYPE\_GPRS\_LLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GPRS\+\_\+\+LLC~169  /$\ast$ GPRS LLC $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_abc1e08f914dc64500808f1debeaa97b6}\label{pcap-common_8c_abc1e08f914dc64500808f1debeaa97b6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GSMTAP\_ABIS@{LINKTYPE\_GSMTAP\_ABIS}}
+\index{LINKTYPE\_GSMTAP\_ABIS@{LINKTYPE\_GSMTAP\_ABIS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GSMTAP\_ABIS}{LINKTYPE\_GSMTAP\_ABIS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GSMTAP\+\_\+\+ABIS~218}
+
+\mbox{\Hypertarget{pcap-common_8c_a2c5ae8045de6c3de31c934519348625f}\label{pcap-common_8c_a2c5ae8045de6c3de31c934519348625f}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_GSMTAP\_UM@{LINKTYPE\_GSMTAP\_UM}}
+\index{LINKTYPE\_GSMTAP\_UM@{LINKTYPE\_GSMTAP\_UM}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_GSMTAP\_UM}{LINKTYPE\_GSMTAP\_UM}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+GSMTAP\+\_\+\+UM~217}
+
+\mbox{\Hypertarget{pcap-common_8c_a816b23e5f99194d0b2cc2880ba232965}\label{pcap-common_8c_a816b23e5f99194d0b2cc2880ba232965}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_HDLC@{LINKTYPE\_HDLC}}
+\index{LINKTYPE\_HDLC@{LINKTYPE\_HDLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_HDLC}{LINKTYPE\_HDLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+HDLC~112  /$\ast$ Net\+BSD HDLC framing $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a1c4ec4f7caf75db45c57f5e5a10f1767}\label{pcap-common_8c_a1c4ec4f7caf75db45c57f5e5a10f1767}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_HHDLC@{LINKTYPE\_HHDLC}}
+\index{LINKTYPE\_HHDLC@{LINKTYPE\_HHDLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_HHDLC}{LINKTYPE\_HHDLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+HHDLC~121}
+
+\mbox{\Hypertarget{pcap-common_8c_a970b3de7c0e66ececa21aab42f95cbb6}\label{pcap-common_8c_a970b3de7c0e66ececa21aab42f95cbb6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_HIPPI@{LINKTYPE\_HIPPI}}
+\index{LINKTYPE\_HIPPI@{LINKTYPE\_HIPPI}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_HIPPI}{LINKTYPE\_HIPPI}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+HIPPI~111  /$\ast$ Net\+BSD HIPPI $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a15cde69b2b5097d2e502e76cd084e922}\label{pcap-common_8c_a15cde69b2b5097d2e502e76cd084e922}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IBM\_SN@{LINKTYPE\_IBM\_SN}}
+\index{LINKTYPE\_IBM\_SN@{LINKTYPE\_IBM\_SN}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IBM\_SN}{LINKTYPE\_IBM\_SN}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IBM\+\_\+\+SN~146}
+
+\mbox{\Hypertarget{pcap-common_8c_aeb461d75ecd75cd0e44ab715f4f3877e}\label{pcap-common_8c_aeb461d75ecd75cd0e44ab715f4f3877e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IBM\_SP@{LINKTYPE\_IBM\_SP}}
+\index{LINKTYPE\_IBM\_SP@{LINKTYPE\_IBM\_SP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IBM\_SP}{LINKTYPE\_IBM\_SP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IBM\+\_\+\+SP~145}
+
+\mbox{\Hypertarget{pcap-common_8c_aa50b6943acb510866668b4b420ceab1c}\label{pcap-common_8c_aa50b6943acb510866668b4b420ceab1c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_11@{LINKTYPE\_IEEE802\_11}}
+\index{LINKTYPE\_IEEE802\_11@{LINKTYPE\_IEEE802\_11}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_11}{LINKTYPE\_IEEE802\_11}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+11~105  /$\ast$ IEEE 802.\+11 (wireless) $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_aeeff22de8522dad3eb05df60a59e9420}\label{pcap-common_8c_aeeff22de8522dad3eb05df60a59e9420}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_11\_RADIO@{LINKTYPE\_IEEE802\_11\_RADIO}}
+\index{LINKTYPE\_IEEE802\_11\_RADIO@{LINKTYPE\_IEEE802\_11\_RADIO}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_11\_RADIO}{LINKTYPE\_IEEE802\_11\_RADIO}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO~127  /$\ast$ 802.\+11 plus BSD radio header $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a8b0e39cc2cbc7b0f9febb8dcdd21721b}\label{pcap-common_8c_a8b0e39cc2cbc7b0f9febb8dcdd21721b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_11\_RADIO\_AVS@{LINKTYPE\_IEEE802\_11\_RADIO\_AVS}}
+\index{LINKTYPE\_IEEE802\_11\_RADIO\_AVS@{LINKTYPE\_IEEE802\_11\_RADIO\_AVS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_11\_RADIO\_AVS}{LINKTYPE\_IEEE802\_11\_RADIO\_AVS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+11\+\_\+\+RADIO\+\_\+\+AVS~163 /$\ast$ 802.\+11 plus AVS radio header $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a7dcba19007fbe49431c024f1820193bc}\label{pcap-common_8c_a7dcba19007fbe49431c024f1820193bc}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_15\_4@{LINKTYPE\_IEEE802\_15\_4}}
+\index{LINKTYPE\_IEEE802\_15\_4@{LINKTYPE\_IEEE802\_15\_4}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_15\_4}{LINKTYPE\_IEEE802\_15\_4}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4~195}
+
+\mbox{\Hypertarget{pcap-common_8c_ac25218c8b1198279a50eba9ee6736805}\label{pcap-common_8c_ac25218c8b1198279a50eba9ee6736805}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_15\_4\_LINUX@{LINKTYPE\_IEEE802\_15\_4\_LINUX}}
+\index{LINKTYPE\_IEEE802\_15\_4\_LINUX@{LINKTYPE\_IEEE802\_15\_4\_LINUX}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_15\_4\_LINUX}{LINKTYPE\_IEEE802\_15\_4\_LINUX}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4\+\_\+\+LINUX~191}
+
+\mbox{\Hypertarget{pcap-common_8c_a056ba29a99178e1a93e509f9ec810293}\label{pcap-common_8c_a056ba29a99178e1a93e509f9ec810293}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY@{LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY}}
+\index{LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY@{LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY}{LINKTYPE\_IEEE802\_15\_4\_NONASK\_PHY}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+15\+\_\+4\+\_\+\+NONASK\+\_\+\+PHY~215}
+
+\mbox{\Hypertarget{pcap-common_8c_aa618ae563b4bce786b3a62873d79fea6}\label{pcap-common_8c_aa618ae563b4bce786b3a62873d79fea6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_16\_MAC\_CPS@{LINKTYPE\_IEEE802\_16\_MAC\_CPS}}
+\index{LINKTYPE\_IEEE802\_16\_MAC\_CPS@{LINKTYPE\_IEEE802\_16\_MAC\_CPS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_16\_MAC\_CPS}{LINKTYPE\_IEEE802\_16\_MAC\_CPS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+16\+\_\+\+MAC\+\_\+\+CPS~188}
+
+\mbox{\Hypertarget{pcap-common_8c_aff6eccd06e88b78f0c4fee128670dc3f}\label{pcap-common_8c_aff6eccd06e88b78f0c4fee128670dc3f}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO@{LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO}}
+\index{LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO@{LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO}{LINKTYPE\_IEEE802\_16\_MAC\_CPS\_RADIO}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IEEE802\+\_\+16\+\_\+\+MAC\+\_\+\+CPS\+\_\+\+RADIO~193}
+
+\mbox{\Hypertarget{pcap-common_8c_a0678e967930236e1802d8d6ecd88c88a}\label{pcap-common_8c_a0678e967930236e1802d8d6ecd88c88a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IP\_OVER\_FC@{LINKTYPE\_IP\_OVER\_FC}}
+\index{LINKTYPE\_IP\_OVER\_FC@{LINKTYPE\_IP\_OVER\_FC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IP\_OVER\_FC}{LINKTYPE\_IP\_OVER\_FC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IP\+\_\+\+OVER\+\_\+\+FC~122  /$\ast$ RFC 2625 IP-\/over-\/Fibre Channel $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a46bf63edb46b46c42e89b6ad23c59af2}\label{pcap-common_8c_a46bf63edb46b46c42e89b6ad23c59af2}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPFILTER@{LINKTYPE\_IPFILTER}}
+\index{LINKTYPE\_IPFILTER@{LINKTYPE\_IPFILTER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPFILTER}{LINKTYPE\_IPFILTER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPFILTER~116}
+
+\mbox{\Hypertarget{pcap-common_8c_a862e4069e1dae6dd76402a75b9dc43cb}\label{pcap-common_8c_a862e4069e1dae6dd76402a75b9dc43cb}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPMB@{LINKTYPE\_IPMB}}
+\index{LINKTYPE\_IPMB@{LINKTYPE\_IPMB}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPMB}{LINKTYPE\_IPMB}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPMB~199}
+
+\mbox{\Hypertarget{pcap-common_8c_a71b202188d264e38799b156da20a4fdd}\label{pcap-common_8c_a71b202188d264e38799b156da20a4fdd}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPMB\_LINUX@{LINKTYPE\_IPMB\_LINUX}}
+\index{LINKTYPE\_IPMB\_LINUX@{LINKTYPE\_IPMB\_LINUX}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPMB\_LINUX}{LINKTYPE\_IPMB\_LINUX}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPMB\+\_\+\+LINUX~209}
+
+\mbox{\Hypertarget{pcap-common_8c_a781b37454d6316065e4c98ef522272a7}\label{pcap-common_8c_a781b37454d6316065e4c98ef522272a7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPNET@{LINKTYPE\_IPNET}}
+\index{LINKTYPE\_IPNET@{LINKTYPE\_IPNET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPNET}{LINKTYPE\_IPNET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPNET~226}
+
+\mbox{\Hypertarget{pcap-common_8c_a4c5a5c205addcccdeba3d6033350f754}\label{pcap-common_8c_a4c5a5c205addcccdeba3d6033350f754}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPV4@{LINKTYPE\_IPV4}}
+\index{LINKTYPE\_IPV4@{LINKTYPE\_IPV4}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPV4}{LINKTYPE\_IPV4}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPV4~228}
+
+\mbox{\Hypertarget{pcap-common_8c_a30ccb0491de50165e0985a3cdb6f1c3d}\label{pcap-common_8c_a30ccb0491de50165e0985a3cdb6f1c3d}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_IPV6@{LINKTYPE\_IPV6}}
+\index{LINKTYPE\_IPV6@{LINKTYPE\_IPV6}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_IPV6}{LINKTYPE\_IPV6}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+IPV6~229}
+
+\mbox{\Hypertarget{pcap-common_8c_a37574d7b1a3beaa52df335a57ebbb82a}\label{pcap-common_8c_a37574d7b1a3beaa52df335a57ebbb82a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ATM1@{LINKTYPE\_JUNIPER\_ATM1}}
+\index{LINKTYPE\_JUNIPER\_ATM1@{LINKTYPE\_JUNIPER\_ATM1}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ATM1}{LINKTYPE\_JUNIPER\_ATM1}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ATM1~137}
+
+\mbox{\Hypertarget{pcap-common_8c_a77adcd7e523af9a4b127dd7a8a81cdec}\label{pcap-common_8c_a77adcd7e523af9a4b127dd7a8a81cdec}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ATM2@{LINKTYPE\_JUNIPER\_ATM2}}
+\index{LINKTYPE\_JUNIPER\_ATM2@{LINKTYPE\_JUNIPER\_ATM2}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ATM2}{LINKTYPE\_JUNIPER\_ATM2}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ATM2~135}
+
+\mbox{\Hypertarget{pcap-common_8c_a5fadd272339870096939ac995284be42}\label{pcap-common_8c_a5fadd272339870096939ac995284be42}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_CHDLC@{LINKTYPE\_JUNIPER\_CHDLC}}
+\index{LINKTYPE\_JUNIPER\_CHDLC@{LINKTYPE\_JUNIPER\_CHDLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_CHDLC}{LINKTYPE\_JUNIPER\_CHDLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+CHDLC~181}
+
+\mbox{\Hypertarget{pcap-common_8c_a8839273ba60ecf8459f58024b521530e}\label{pcap-common_8c_a8839273ba60ecf8459f58024b521530e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ES@{LINKTYPE\_JUNIPER\_ES}}
+\index{LINKTYPE\_JUNIPER\_ES@{LINKTYPE\_JUNIPER\_ES}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ES}{LINKTYPE\_JUNIPER\_ES}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ES~132}
+
+\mbox{\Hypertarget{pcap-common_8c_a2c4c5bfcec54d5092a8cdc7f5f31be0d}\label{pcap-common_8c_a2c4c5bfcec54d5092a8cdc7f5f31be0d}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ETHER@{LINKTYPE\_JUNIPER\_ETHER}}
+\index{LINKTYPE\_JUNIPER\_ETHER@{LINKTYPE\_JUNIPER\_ETHER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ETHER}{LINKTYPE\_JUNIPER\_ETHER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ETHER~178}
+
+\mbox{\Hypertarget{pcap-common_8c_a92f8cfa58950743feeeacccc34d31e7b}\label{pcap-common_8c_a92f8cfa58950743feeeacccc34d31e7b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_FRELAY@{LINKTYPE\_JUNIPER\_FRELAY}}
+\index{LINKTYPE\_JUNIPER\_FRELAY@{LINKTYPE\_JUNIPER\_FRELAY}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_FRELAY}{LINKTYPE\_JUNIPER\_FRELAY}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+FRELAY~180}
+
+\mbox{\Hypertarget{pcap-common_8c_a1959295d05a903a1e438b684549a04c2}\label{pcap-common_8c_a1959295d05a903a1e438b684549a04c2}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_GGSN@{LINKTYPE\_JUNIPER\_GGSN}}
+\index{LINKTYPE\_JUNIPER\_GGSN@{LINKTYPE\_JUNIPER\_GGSN}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_GGSN}{LINKTYPE\_JUNIPER\_GGSN}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+GGSN~133}
+
+\mbox{\Hypertarget{pcap-common_8c_a99929d10ac000b9ac2920062a639b7f7}\label{pcap-common_8c_a99929d10ac000b9ac2920062a639b7f7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ISM@{LINKTYPE\_JUNIPER\_ISM}}
+\index{LINKTYPE\_JUNIPER\_ISM@{LINKTYPE\_JUNIPER\_ISM}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ISM}{LINKTYPE\_JUNIPER\_ISM}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ISM~194}
+
+\mbox{\Hypertarget{pcap-common_8c_ac5163257786e42b9fafaf743bcc4516f}\label{pcap-common_8c_ac5163257786e42b9fafaf743bcc4516f}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_MFR@{LINKTYPE\_JUNIPER\_MFR}}
+\index{LINKTYPE\_JUNIPER\_MFR@{LINKTYPE\_JUNIPER\_MFR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_MFR}{LINKTYPE\_JUNIPER\_MFR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MFR~134}
+
+\mbox{\Hypertarget{pcap-common_8c_a9d30ca46e2b5cf23ab1fd9d4dd7237ff}\label{pcap-common_8c_a9d30ca46e2b5cf23ab1fd9d4dd7237ff}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_MLFR@{LINKTYPE\_JUNIPER\_MLFR}}
+\index{LINKTYPE\_JUNIPER\_MLFR@{LINKTYPE\_JUNIPER\_MLFR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_MLFR}{LINKTYPE\_JUNIPER\_MLFR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MLFR~131}
+
+\mbox{\Hypertarget{pcap-common_8c_a971cc7a3eb59f434fc76c37b05ae021c}\label{pcap-common_8c_a971cc7a3eb59f434fc76c37b05ae021c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_MLPPP@{LINKTYPE\_JUNIPER\_MLPPP}}
+\index{LINKTYPE\_JUNIPER\_MLPPP@{LINKTYPE\_JUNIPER\_MLPPP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_MLPPP}{LINKTYPE\_JUNIPER\_MLPPP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MLPPP~130}
+
+\mbox{\Hypertarget{pcap-common_8c_ad83617d98003e5e8d9af5023345e96aa}\label{pcap-common_8c_ad83617d98003e5e8d9af5023345e96aa}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_MONITOR@{LINKTYPE\_JUNIPER\_MONITOR}}
+\index{LINKTYPE\_JUNIPER\_MONITOR@{LINKTYPE\_JUNIPER\_MONITOR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_MONITOR}{LINKTYPE\_JUNIPER\_MONITOR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+MONITOR~164}
+
+\mbox{\Hypertarget{pcap-common_8c_a96f6d527f7798c90ee2da012f94fe5f5}\label{pcap-common_8c_a96f6d527f7798c90ee2da012f94fe5f5}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_PIC\_PEER@{LINKTYPE\_JUNIPER\_PIC\_PEER}}
+\index{LINKTYPE\_JUNIPER\_PIC\_PEER@{LINKTYPE\_JUNIPER\_PIC\_PEER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_PIC\_PEER}{LINKTYPE\_JUNIPER\_PIC\_PEER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PIC\+\_\+\+PEER~174}
+
+\mbox{\Hypertarget{pcap-common_8c_ab1a0427a831ce6b2345f483291b429b6}\label{pcap-common_8c_ab1a0427a831ce6b2345f483291b429b6}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_PPP@{LINKTYPE\_JUNIPER\_PPP}}
+\index{LINKTYPE\_JUNIPER\_PPP@{LINKTYPE\_JUNIPER\_PPP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_PPP}{LINKTYPE\_JUNIPER\_PPP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPP~179}
+
+\mbox{\Hypertarget{pcap-common_8c_a43d7d3212e65836d7406e5cee133e014}\label{pcap-common_8c_a43d7d3212e65836d7406e5cee133e014}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_PPPOE@{LINKTYPE\_JUNIPER\_PPPOE}}
+\index{LINKTYPE\_JUNIPER\_PPPOE@{LINKTYPE\_JUNIPER\_PPPOE}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_PPPOE}{LINKTYPE\_JUNIPER\_PPPOE}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPPOE~167}
+
+\mbox{\Hypertarget{pcap-common_8c_a29f282df33a6481259b228b476e58ff9}\label{pcap-common_8c_a29f282df33a6481259b228b476e58ff9}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_PPPOE\_ATM@{LINKTYPE\_JUNIPER\_PPPOE\_ATM}}
+\index{LINKTYPE\_JUNIPER\_PPPOE\_ATM@{LINKTYPE\_JUNIPER\_PPPOE\_ATM}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_PPPOE\_ATM}{LINKTYPE\_JUNIPER\_PPPOE\_ATM}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+PPPOE\+\_\+\+ATM~168}
+
+\mbox{\Hypertarget{pcap-common_8c_a60ad5bb8df7b0cd7de8f99bfc9efb7e7}\label{pcap-common_8c_a60ad5bb8df7b0cd7de8f99bfc9efb7e7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_SERVICES@{LINKTYPE\_JUNIPER\_SERVICES}}
+\index{LINKTYPE\_JUNIPER\_SERVICES@{LINKTYPE\_JUNIPER\_SERVICES}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_SERVICES}{LINKTYPE\_JUNIPER\_SERVICES}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+SERVICES~136}
+
+\mbox{\Hypertarget{pcap-common_8c_a1de163d3e437139194776dd5cfa25117}\label{pcap-common_8c_a1de163d3e437139194776dd5cfa25117}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_ST@{LINKTYPE\_JUNIPER\_ST}}
+\index{LINKTYPE\_JUNIPER\_ST@{LINKTYPE\_JUNIPER\_ST}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_ST}{LINKTYPE\_JUNIPER\_ST}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+ST~200}
+
+\mbox{\Hypertarget{pcap-common_8c_a84631b57495e421d1c6dd8cfd3585683}\label{pcap-common_8c_a84631b57495e421d1c6dd8cfd3585683}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_JUNIPER\_VP@{LINKTYPE\_JUNIPER\_VP}}
+\index{LINKTYPE\_JUNIPER\_VP@{LINKTYPE\_JUNIPER\_VP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_JUNIPER\_VP}{LINKTYPE\_JUNIPER\_VP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+JUNIPER\+\_\+\+VP~183}
+
+\mbox{\Hypertarget{pcap-common_8c_abb9ff76aae048dce4bb5377ff9aff923}\label{pcap-common_8c_abb9ff76aae048dce4bb5377ff9aff923}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LANE8023@{LINKTYPE\_LANE8023}}
+\index{LINKTYPE\_LANE8023@{LINKTYPE\_LANE8023}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LANE8023}{LINKTYPE\_LANE8023}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LANE8023~110  /$\ast$ ATM LANE + 802.\+3 $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a5072bf1f4dc675b85090da6a6bfecac5}\label{pcap-common_8c_a5072bf1f4dc675b85090da6a6bfecac5}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LAPB\_WITH\_DIR@{LINKTYPE\_LAPB\_WITH\_DIR}}
+\index{LINKTYPE\_LAPB\_WITH\_DIR@{LINKTYPE\_LAPB\_WITH\_DIR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LAPB\_WITH\_DIR}{LINKTYPE\_LAPB\_WITH\_DIR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LAPB\+\_\+\+WITH\+\_\+\+DIR~207 /$\ast$ LAPB $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a0c3a11b33818f5be347952b7ce5e87b8}\label{pcap-common_8c_a0c3a11b33818f5be347952b7ce5e87b8}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LAPD@{LINKTYPE\_LAPD}}
+\index{LINKTYPE\_LAPD@{LINKTYPE\_LAPD}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LAPD}{LINKTYPE\_LAPD}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LAPD~203}
+
+\mbox{\Hypertarget{pcap-common_8c_a58659a94bfb815d013d9355391b3da05}\label{pcap-common_8c_a58659a94bfb815d013d9355391b3da05}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LIN@{LINKTYPE\_LIN}}
+\index{LINKTYPE\_LIN@{LINKTYPE\_LIN}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LIN}{LINKTYPE\_LIN}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LIN~212}
+
+\mbox{\Hypertarget{pcap-common_8c_ae4fc033fc11f5e79b6e6b4903f6700ce}\label{pcap-common_8c_ae4fc033fc11f5e79b6e6b4903f6700ce}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LINUX\_EVDEV@{LINKTYPE\_LINUX\_EVDEV}}
+\index{LINKTYPE\_LINUX\_EVDEV@{LINKTYPE\_LINUX\_EVDEV}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LINUX\_EVDEV}{LINKTYPE\_LINUX\_EVDEV}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LINUX\+\_\+\+EVDEV~216}
+
+\mbox{\Hypertarget{pcap-common_8c_a2366b9340fc847c9cf067a2cb1112ed9}\label{pcap-common_8c_a2366b9340fc847c9cf067a2cb1112ed9}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LINUX\_IRDA@{LINKTYPE\_LINUX\_IRDA}}
+\index{LINKTYPE\_LINUX\_IRDA@{LINKTYPE\_LINUX\_IRDA}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LINUX\_IRDA}{LINKTYPE\_LINUX\_IRDA}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LINUX\+\_\+\+IRDA~144  /$\ast$ Linux-\/Ir\+DA $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a6c62cede66fd6a405ffab5209fcd8941}\label{pcap-common_8c_a6c62cede66fd6a405ffab5209fcd8941}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LINUX\_LAPD@{LINKTYPE\_LINUX\_LAPD}}
+\index{LINKTYPE\_LINUX\_LAPD@{LINKTYPE\_LINUX\_LAPD}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LINUX\_LAPD}{LINKTYPE\_LINUX\_LAPD}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LINUX\+\_\+\+LAPD~177}
+
+\mbox{\Hypertarget{pcap-common_8c_a963c6d7905a430e6c528dc5fdb514628}\label{pcap-common_8c_a963c6d7905a430e6c528dc5fdb514628}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LINUX\_SLL@{LINKTYPE\_LINUX\_SLL}}
+\index{LINKTYPE\_LINUX\_SLL@{LINKTYPE\_LINUX\_SLL}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LINUX\_SLL}{LINKTYPE\_LINUX\_SLL}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LINUX\+\_\+\+SLL~113  /$\ast$ Linux cooked \mbox{\hyperlink{os-ultrix4_8h_ad8757ba7b643ff8279abf9593f543494}{socket}} capture $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_ad8849c2aff42a8b353bf9092814bf63f}\label{pcap-common_8c_ad8849c2aff42a8b353bf9092814bf63f}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LOOP@{LINKTYPE\_LOOP}}
+\index{LINKTYPE\_LOOP@{LINKTYPE\_LOOP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LOOP}{LINKTYPE\_LOOP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LOOP~108  /$\ast$ Open\+BSD loopback $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a81e81e6b6330ac9f31d35038d1e8dbf8}\label{pcap-common_8c_a81e81e6b6330ac9f31d35038d1e8dbf8}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_LTALK@{LINKTYPE\_LTALK}}
+\index{LINKTYPE\_LTALK@{LINKTYPE\_LTALK}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_LTALK}{LINKTYPE\_LTALK}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+LTALK~114  /$\ast$ Apple Local\+Talk hardware $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_aaf5587f14fe04c31aacbfa915f074fdf}\label{pcap-common_8c_aaf5587f14fe04c31aacbfa915f074fdf}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MFR@{LINKTYPE\_MFR}}
+\index{LINKTYPE\_MFR@{LINKTYPE\_MFR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MFR}{LINKTYPE\_MFR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MFR~182}
+
+\mbox{\Hypertarget{pcap-common_8c_a3474949e0f2c69b37ce58df3b2542e4d}\label{pcap-common_8c_a3474949e0f2c69b37ce58df3b2542e4d}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MOST@{LINKTYPE\_MOST}}
+\index{LINKTYPE\_MOST@{LINKTYPE\_MOST}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MOST}{LINKTYPE\_MOST}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MOST~211}
+
+\mbox{\Hypertarget{pcap-common_8c_ae94f8d2e14f0d2f2e66c36a1de90f94e}\label{pcap-common_8c_ae94f8d2e14f0d2f2e66c36a1de90f94e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MPLS@{LINKTYPE\_MPLS}}
+\index{LINKTYPE\_MPLS@{LINKTYPE\_MPLS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MPLS}{LINKTYPE\_MPLS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MPLS~219}
+
+\mbox{\Hypertarget{pcap-common_8c_ae42daf331c4400bf7e3b3155494dfbd1}\label{pcap-common_8c_ae42daf331c4400bf7e3b3155494dfbd1}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MTP2@{LINKTYPE\_MTP2}}
+\index{LINKTYPE\_MTP2@{LINKTYPE\_MTP2}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MTP2}{LINKTYPE\_MTP2}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MTP2~140}
+
+\mbox{\Hypertarget{pcap-common_8c_ac0737afc048420b963258a28938aeae1}\label{pcap-common_8c_ac0737afc048420b963258a28938aeae1}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MTP2\_WITH\_PHDR@{LINKTYPE\_MTP2\_WITH\_PHDR}}
+\index{LINKTYPE\_MTP2\_WITH\_PHDR@{LINKTYPE\_MTP2\_WITH\_PHDR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MTP2\_WITH\_PHDR}{LINKTYPE\_MTP2\_WITH\_PHDR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MTP2\+\_\+\+WITH\+\_\+\+PHDR~139}
+
+\mbox{\Hypertarget{pcap-common_8c_a922d1cd3020d05bfe34a88a0d849ebdf}\label{pcap-common_8c_a922d1cd3020d05bfe34a88a0d849ebdf}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_MTP3@{LINKTYPE\_MTP3}}
+\index{LINKTYPE\_MTP3@{LINKTYPE\_MTP3}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_MTP3}{LINKTYPE\_MTP3}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+MTP3~141}
+
+\mbox{\Hypertarget{pcap-common_8c_af076d46f1727422db8b8eef8dd9f1ef5}\label{pcap-common_8c_af076d46f1727422db8b8eef8dd9f1ef5}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_NULL@{LINKTYPE\_NULL}}
+\index{LINKTYPE\_NULL@{LINKTYPE\_NULL}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_NULL}{LINKTYPE\_NULL}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+NULL~\mbox{\hyperlink{bpf_8h_a629ed89c8b4b7537bfac2491ccff56b8}{DLT\+\_\+\+NULL}}}
+
+\mbox{\Hypertarget{pcap-common_8c_a10ebace1e039f6acccca4107592185f9}\label{pcap-common_8c_a10ebace1e039f6acccca4107592185f9}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PCI\_EXP@{LINKTYPE\_PCI\_EXP}}
+\index{LINKTYPE\_PCI\_EXP@{LINKTYPE\_PCI\_EXP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PCI\_EXP}{LINKTYPE\_PCI\_EXP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PCI\+\_\+\+EXP~125  /$\ast$ PCI Express $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a977c67d52a8f69631956cea8eadf09a1}\label{pcap-common_8c_a977c67d52a8f69631956cea8eadf09a1}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PFLOG@{LINKTYPE\_PFLOG}}
+\index{LINKTYPE\_PFLOG@{LINKTYPE\_PFLOG}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PFLOG}{LINKTYPE\_PFLOG}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PFLOG~117  /$\ast$ Open\+BSD \mbox{\hyperlink{bpf_8h_a2421055e8b85ad04c91f6da2428979b4}{DLT\+\_\+\+PFLOG}} $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_aa2d3da4c52c1c628ff08510a5b4c831d}\label{pcap-common_8c_aa2d3da4c52c1c628ff08510a5b4c831d}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPI@{LINKTYPE\_PPI}}
+\index{LINKTYPE\_PPI@{LINKTYPE\_PPI}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPI}{LINKTYPE\_PPI}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPI~192}
+
+\mbox{\Hypertarget{pcap-common_8c_a93338430ac97f2278eb3efee03376ee1}\label{pcap-common_8c_a93338430ac97f2278eb3efee03376ee1}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP@{LINKTYPE\_PPP}}
+\index{LINKTYPE\_PPP@{LINKTYPE\_PPP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP}{LINKTYPE\_PPP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP~\mbox{\hyperlink{bpf_8h_abd6a9c219e10570fdf4b02c351a5dffe}{DLT\+\_\+\+PPP}}}
+
+\mbox{\Hypertarget{pcap-common_8c_ac4dd733a90284cc10b01c0ec4bdbc62c}\label{pcap-common_8c_ac4dd733a90284cc10b01c0ec4bdbc62c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP\_BSDOS@{LINKTYPE\_PPP\_BSDOS}}
+\index{LINKTYPE\_PPP\_BSDOS@{LINKTYPE\_PPP\_BSDOS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP\_BSDOS}{LINKTYPE\_PPP\_BSDOS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP\+\_\+\+BSDOS~103  /$\ast$ BSD/OS PPP BPF header $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a22bdbc74ad4521c442173e53e8590a60}\label{pcap-common_8c_a22bdbc74ad4521c442173e53e8590a60}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP\_ETHER@{LINKTYPE\_PPP\_ETHER}}
+\index{LINKTYPE\_PPP\_ETHER@{LINKTYPE\_PPP\_ETHER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP\_ETHER}{LINKTYPE\_PPP\_ETHER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP\+\_\+\+ETHER~51  /$\ast$ Net\+BSD PPP-\/over-\/Ethernet $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a9a66e45c0f7a19bf5e46f0cf6bb5fefa}\label{pcap-common_8c_a9a66e45c0f7a19bf5e46f0cf6bb5fefa}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP\_HDLC@{LINKTYPE\_PPP\_HDLC}}
+\index{LINKTYPE\_PPP\_HDLC@{LINKTYPE\_PPP\_HDLC}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP\_HDLC}{LINKTYPE\_PPP\_HDLC}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP\+\_\+\+HDLC~50  /$\ast$ PPP in HDLC-\/like framing $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a2a9f363edb6744dd22a90362a713dba7}\label{pcap-common_8c_a2a9f363edb6744dd22a90362a713dba7}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP\_PPPD@{LINKTYPE\_PPP\_PPPD}}
+\index{LINKTYPE\_PPP\_PPPD@{LINKTYPE\_PPP\_PPPD}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP\_PPPD}{LINKTYPE\_PPP\_PPPD}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP\+\_\+\+PPPD~166}
+
+\mbox{\Hypertarget{pcap-common_8c_a06e9754e66bdde13aa6b57740ab109e4}\label{pcap-common_8c_a06e9754e66bdde13aa6b57740ab109e4}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PPP\_WITH\_DIR@{LINKTYPE\_PPP\_WITH\_DIR}}
+\index{LINKTYPE\_PPP\_WITH\_DIR@{LINKTYPE\_PPP\_WITH\_DIR}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PPP\_WITH\_DIR}{LINKTYPE\_PPP\_WITH\_DIR}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PPP\+\_\+\+WITH\+\_\+\+DIR~204 /$\ast$ PPP $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a2a5c7e89495bc32492b6e859e82c3a79}\label{pcap-common_8c_a2a5c7e89495bc32492b6e859e82c3a79}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PRISM\_HEADER@{LINKTYPE\_PRISM\_HEADER}}
+\index{LINKTYPE\_PRISM\_HEADER@{LINKTYPE\_PRISM\_HEADER}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PRISM\_HEADER}{LINKTYPE\_PRISM\_HEADER}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PRISM\+\_\+\+HEADER~119  /$\ast$ 802.\+11+Prism II monitor mode $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a8522f87da01ef539a448ddeeab451d7c}\label{pcap-common_8c_a8522f87da01ef539a448ddeeab451d7c}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_PRONET@{LINKTYPE\_PRONET}}
+\index{LINKTYPE\_PRONET@{LINKTYPE\_PRONET}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_PRONET}{LINKTYPE\_PRONET}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+PRONET~\mbox{\hyperlink{bpf_8h_a60891ec704a6d1c75adc88aa54d17bb1}{DLT\+\_\+\+PRONET}}}
+
+\mbox{\Hypertarget{pcap-common_8c_a4f045e168082f5cbecfb6677ebbc403b}\label{pcap-common_8c_a4f045e168082f5cbecfb6677ebbc403b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_RAIF1@{LINKTYPE\_RAIF1}}
+\index{LINKTYPE\_RAIF1@{LINKTYPE\_RAIF1}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_RAIF1}{LINKTYPE\_RAIF1}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+RAIF1~198}
+
+\mbox{\Hypertarget{pcap-common_8c_a41e5687c54c0c1b69bce3b2fbb4374f9}\label{pcap-common_8c_a41e5687c54c0c1b69bce3b2fbb4374f9}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_RAW@{LINKTYPE\_RAW}}
+\index{LINKTYPE\_RAW@{LINKTYPE\_RAW}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_RAW}{LINKTYPE\_RAW}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+RAW~101  /$\ast$ raw IP $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a4065cdfcea0c4dfcb6ae17bb6aa8f0be}\label{pcap-common_8c_a4065cdfcea0c4dfcb6ae17bb6aa8f0be}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_RIO@{LINKTYPE\_RIO}}
+\index{LINKTYPE\_RIO@{LINKTYPE\_RIO}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_RIO}{LINKTYPE\_RIO}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+RIO~124  /$\ast$ Rapid\+IO $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a0d3569747e24fdd5c1989d3ec88c7646}\label{pcap-common_8c_a0d3569747e24fdd5c1989d3ec88c7646}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SCCP@{LINKTYPE\_SCCP}}
+\index{LINKTYPE\_SCCP@{LINKTYPE\_SCCP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SCCP}{LINKTYPE\_SCCP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SCCP~142}
+
+\mbox{\Hypertarget{pcap-common_8c_aeb38a675e575aca249f2f7455ed5f6fa}\label{pcap-common_8c_aeb38a675e575aca249f2f7455ed5f6fa}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SITA@{LINKTYPE\_SITA}}
+\index{LINKTYPE\_SITA@{LINKTYPE\_SITA}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SITA}{LINKTYPE\_SITA}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SITA~196}
+
+\mbox{\Hypertarget{pcap-common_8c_ad6c08b1750bf3b661b19ec8d7b6b7cd4}\label{pcap-common_8c_ad6c08b1750bf3b661b19ec8d7b6b7cd4}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SLIP@{LINKTYPE\_SLIP}}
+\index{LINKTYPE\_SLIP@{LINKTYPE\_SLIP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SLIP}{LINKTYPE\_SLIP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SLIP~\mbox{\hyperlink{bpf_8h_a56ceaa589567f2e3c6f1b42b650fae62}{DLT\+\_\+\+SLIP}}}
+
+\mbox{\Hypertarget{pcap-common_8c_a0e3cbadbde14114bc7d842c6bd14974e}\label{pcap-common_8c_a0e3cbadbde14114bc7d842c6bd14974e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SLIP\_BSDOS@{LINKTYPE\_SLIP\_BSDOS}}
+\index{LINKTYPE\_SLIP\_BSDOS@{LINKTYPE\_SLIP\_BSDOS}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SLIP\_BSDOS}{LINKTYPE\_SLIP\_BSDOS}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SLIP\+\_\+\+BSDOS~102  /$\ast$ BSD/OS SLIP BPF header $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_abc3eb3776332416afcaad3426677f886}\label{pcap-common_8c_abc3eb3776332416afcaad3426677f886}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SUNATM@{LINKTYPE\_SUNATM}}
+\index{LINKTYPE\_SUNATM@{LINKTYPE\_SUNATM}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SUNATM}{LINKTYPE\_SUNATM}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SUNATM~123  /$\ast$ Solaris+Sun\+ATM $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_ad53b973618031753985842d898e5eea1}\label{pcap-common_8c_ad53b973618031753985842d898e5eea1}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_SYMANTEC\_FIREWALL@{LINKTYPE\_SYMANTEC\_FIREWALL}}
+\index{LINKTYPE\_SYMANTEC\_FIREWALL@{LINKTYPE\_SYMANTEC\_FIREWALL}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_SYMANTEC\_FIREWALL}{LINKTYPE\_SYMANTEC\_FIREWALL}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+SYMANTEC\+\_\+\+FIREWALL~99  /$\ast$ Symantec Enterprise Firewall $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a086b31e2e6d851232aa801e8e3fa06cb}\label{pcap-common_8c_a086b31e2e6d851232aa801e8e3fa06cb}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_TOKEN\_RING@{LINKTYPE\_TOKEN\_RING}}
+\index{LINKTYPE\_TOKEN\_RING@{LINKTYPE\_TOKEN\_RING}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_TOKEN\_RING}{LINKTYPE\_TOKEN\_RING}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+TOKEN\+\_\+\+RING~\mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}} /$\ast$ \mbox{\hyperlink{bpf_8h_a29837e034199e4d598b38b03873503ba}{DLT\+\_\+\+IEEE802}} is used for Token Ring $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a772ca9a732aa473ddebad641645a1934}\label{pcap-common_8c_a772ca9a732aa473ddebad641645a1934}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_TZSP@{LINKTYPE\_TZSP}}
+\index{LINKTYPE\_TZSP@{LINKTYPE\_TZSP}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_TZSP}{LINKTYPE\_TZSP}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+TZSP~128  /$\ast$ Tazmen Sniffer Protocol $\ast$/}
+
+\mbox{\Hypertarget{pcap-common_8c_a431c571b7463c502a5fb4ba703b5d687}\label{pcap-common_8c_a431c571b7463c502a5fb4ba703b5d687}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USB@{LINKTYPE\_USB}}
+\index{LINKTYPE\_USB@{LINKTYPE\_USB}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USB}{LINKTYPE\_USB}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USB~186}
+
+\mbox{\Hypertarget{pcap-common_8c_ab6a4276859f4a4cb38edf3339119d4d2}\label{pcap-common_8c_ab6a4276859f4a4cb38edf3339119d4d2}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USB\_LINUX@{LINKTYPE\_USB\_LINUX}}
+\index{LINKTYPE\_USB\_LINUX@{LINKTYPE\_USB\_LINUX}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USB\_LINUX}{LINKTYPE\_USB\_LINUX}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USB\+\_\+\+LINUX~189}
+
+\mbox{\Hypertarget{pcap-common_8c_af1b0913515a6d43f790815fa9c6a0b61}\label{pcap-common_8c_af1b0913515a6d43f790815fa9c6a0b61}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USB\_LINUX\_MMAPPED@{LINKTYPE\_USB\_LINUX\_MMAPPED}}
+\index{LINKTYPE\_USB\_LINUX\_MMAPPED@{LINKTYPE\_USB\_LINUX\_MMAPPED}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USB\_LINUX\_MMAPPED}{LINKTYPE\_USB\_LINUX\_MMAPPED}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USB\+\_\+\+LINUX\+\_\+\+MMAPPED~220}
+
+\mbox{\Hypertarget{pcap-common_8c_a51726c40c3c652c8bff37df6400a950b}\label{pcap-common_8c_a51726c40c3c652c8bff37df6400a950b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER0@{LINKTYPE\_USER0}}
+\index{LINKTYPE\_USER0@{LINKTYPE\_USER0}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER0}{LINKTYPE\_USER0}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER0~147}
+
+\mbox{\Hypertarget{pcap-common_8c_aa0edce3c338de66bc34a344cef661134}\label{pcap-common_8c_aa0edce3c338de66bc34a344cef661134}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER1@{LINKTYPE\_USER1}}
+\index{LINKTYPE\_USER1@{LINKTYPE\_USER1}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER1}{LINKTYPE\_USER1}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER1~148}
+
+\mbox{\Hypertarget{pcap-common_8c_acb825e528e39a68632a372f0a7d0ab2a}\label{pcap-common_8c_acb825e528e39a68632a372f0a7d0ab2a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER10@{LINKTYPE\_USER10}}
+\index{LINKTYPE\_USER10@{LINKTYPE\_USER10}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER10}{LINKTYPE\_USER10}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER10~157}
+
+\mbox{\Hypertarget{pcap-common_8c_a77cc22081426f635859d34e617fd943e}\label{pcap-common_8c_a77cc22081426f635859d34e617fd943e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER11@{LINKTYPE\_USER11}}
+\index{LINKTYPE\_USER11@{LINKTYPE\_USER11}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER11}{LINKTYPE\_USER11}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER11~158}
+
+\mbox{\Hypertarget{pcap-common_8c_ab91083afb40bc31a6e8b7feab979c525}\label{pcap-common_8c_ab91083afb40bc31a6e8b7feab979c525}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER12@{LINKTYPE\_USER12}}
+\index{LINKTYPE\_USER12@{LINKTYPE\_USER12}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER12}{LINKTYPE\_USER12}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER12~159}
+
+\mbox{\Hypertarget{pcap-common_8c_a8dd5ad25dc208afbc28249d2937c005a}\label{pcap-common_8c_a8dd5ad25dc208afbc28249d2937c005a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER13@{LINKTYPE\_USER13}}
+\index{LINKTYPE\_USER13@{LINKTYPE\_USER13}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER13}{LINKTYPE\_USER13}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER13~160}
+
+\mbox{\Hypertarget{pcap-common_8c_aab8385b54ed35b4f349c8e5d9785eb96}\label{pcap-common_8c_aab8385b54ed35b4f349c8e5d9785eb96}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER14@{LINKTYPE\_USER14}}
+\index{LINKTYPE\_USER14@{LINKTYPE\_USER14}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER14}{LINKTYPE\_USER14}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER14~161}
+
+\mbox{\Hypertarget{pcap-common_8c_a6524276ca7b8bbc7fbf9441ad2223d4a}\label{pcap-common_8c_a6524276ca7b8bbc7fbf9441ad2223d4a}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER15@{LINKTYPE\_USER15}}
+\index{LINKTYPE\_USER15@{LINKTYPE\_USER15}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER15}{LINKTYPE\_USER15}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER15~162}
+
+\mbox{\Hypertarget{pcap-common_8c_a0371a069c974c3a088c82085460a1c77}\label{pcap-common_8c_a0371a069c974c3a088c82085460a1c77}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER2@{LINKTYPE\_USER2}}
+\index{LINKTYPE\_USER2@{LINKTYPE\_USER2}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER2}{LINKTYPE\_USER2}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER2~149}
+
+\mbox{\Hypertarget{pcap-common_8c_a99ea4be394dddc71ffdd353770f90959}\label{pcap-common_8c_a99ea4be394dddc71ffdd353770f90959}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER3@{LINKTYPE\_USER3}}
+\index{LINKTYPE\_USER3@{LINKTYPE\_USER3}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER3}{LINKTYPE\_USER3}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER3~150}
+
+\mbox{\Hypertarget{pcap-common_8c_a06f6de89b6dd813e723595a95ecccaee}\label{pcap-common_8c_a06f6de89b6dd813e723595a95ecccaee}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER4@{LINKTYPE\_USER4}}
+\index{LINKTYPE\_USER4@{LINKTYPE\_USER4}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER4}{LINKTYPE\_USER4}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER4~151}
+
+\mbox{\Hypertarget{pcap-common_8c_a4475c3312a5af65ef140b7da4794a85b}\label{pcap-common_8c_a4475c3312a5af65ef140b7da4794a85b}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER5@{LINKTYPE\_USER5}}
+\index{LINKTYPE\_USER5@{LINKTYPE\_USER5}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER5}{LINKTYPE\_USER5}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER5~152}
+
+\mbox{\Hypertarget{pcap-common_8c_af6c9a9c85d62f1070d156b7bec157ba9}\label{pcap-common_8c_af6c9a9c85d62f1070d156b7bec157ba9}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER6@{LINKTYPE\_USER6}}
+\index{LINKTYPE\_USER6@{LINKTYPE\_USER6}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER6}{LINKTYPE\_USER6}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER6~153}
+
+\mbox{\Hypertarget{pcap-common_8c_ab3770c94a3d66531334ee1f1963b04a4}\label{pcap-common_8c_ab3770c94a3d66531334ee1f1963b04a4}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER7@{LINKTYPE\_USER7}}
+\index{LINKTYPE\_USER7@{LINKTYPE\_USER7}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER7}{LINKTYPE\_USER7}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER7~154}
+
+\mbox{\Hypertarget{pcap-common_8c_a277cb5a52c4e01297a8906675a887ae3}\label{pcap-common_8c_a277cb5a52c4e01297a8906675a887ae3}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER8@{LINKTYPE\_USER8}}
+\index{LINKTYPE\_USER8@{LINKTYPE\_USER8}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER8}{LINKTYPE\_USER8}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER8~155}
+
+\mbox{\Hypertarget{pcap-common_8c_a87898f9bd0b8176e8fca8a70d0c216ca}\label{pcap-common_8c_a87898f9bd0b8176e8fca8a70d0c216ca}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_USER9@{LINKTYPE\_USER9}}
+\index{LINKTYPE\_USER9@{LINKTYPE\_USER9}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_USER9}{LINKTYPE\_USER9}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+USER9~156}
+
+\mbox{\Hypertarget{pcap-common_8c_ad5d730357293390de0942c81fc38ec9e}\label{pcap-common_8c_ad5d730357293390de0942c81fc38ec9e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_WIHART@{LINKTYPE\_WIHART}}
+\index{LINKTYPE\_WIHART@{LINKTYPE\_WIHART}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_WIHART}{LINKTYPE\_WIHART}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+WIHART~223}
+
+\mbox{\Hypertarget{pcap-common_8c_a93fde5895450b1a3aab548fec0d5ca40}\label{pcap-common_8c_a93fde5895450b1a3aab548fec0d5ca40}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_X2E\_SERIAL@{LINKTYPE\_X2E\_SERIAL}}
+\index{LINKTYPE\_X2E\_SERIAL@{LINKTYPE\_X2E\_SERIAL}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_X2E\_SERIAL}{LINKTYPE\_X2E\_SERIAL}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+X2\+E\+\_\+\+SERIAL~213}
+
+\mbox{\Hypertarget{pcap-common_8c_aa2f3a65aa8914b440ab9d89e0a9b4ba8}\label{pcap-common_8c_aa2f3a65aa8914b440ab9d89e0a9b4ba8}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!LINKTYPE\_X2E\_XORAYA@{LINKTYPE\_X2E\_XORAYA}}
+\index{LINKTYPE\_X2E\_XORAYA@{LINKTYPE\_X2E\_XORAYA}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{LINKTYPE\_X2E\_XORAYA}{LINKTYPE\_X2E\_XORAYA}}
+{\footnotesize\ttfamily \#define LINKTYPE\+\_\+\+X2\+E\+\_\+\+XORAYA~214}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-common_8c_a78274013ccf81aa99a21ca38e83d7a1e}\label{pcap-common_8c_a78274013ccf81aa99a21ca38e83d7a1e}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!dlt\_to\_linktype@{dlt\_to\_linktype}}
+\index{dlt\_to\_linktype@{dlt\_to\_linktype}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{dlt\_to\_linktype()}{dlt\_to\_linktype()}}
+{\footnotesize\ttfamily int dlt\+\_\+to\+\_\+linktype (\begin{DoxyParamCaption}\item[{int}]{dlt }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structlinktype__map_a67284ba359347afcd68cef085f1a8d5a}{linktype\+\_\+map\+::dlt}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}} , 以及 \mbox{\hyperlink{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}{map}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap_2pcap_8h_a0cfd9da60bc3e134823b306cb950d954}{pcap\+\_\+dump\+\_\+fopen()}} , 以及 \mbox{\hyperlink{pcap_2pcap_8h_a9108b21c484814a60e133a084baceb63}{pcap\+\_\+dump\+\_\+open()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{pcap-common_8c_a78274013ccf81aa99a21ca38e83d7a1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-common_8c_a3a680628fc86f66b77445778bbe85884}\label{pcap-common_8c_a3a680628fc86f66b77445778bbe85884}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!linktype\_to\_dlt@{linktype\_to\_dlt}}
+\index{linktype\_to\_dlt@{linktype\_to\_dlt}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{linktype\_to\_dlt()}{linktype\_to\_dlt()}}
+{\footnotesize\ttfamily int linktype\+\_\+to\+\_\+dlt (\begin{DoxyParamCaption}\item[{int}]{linktype }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{structlinktype__map_a34f63781fb4328501b07c3ccf6e16b19}{linktype\+\_\+map\+::linktype}} , 以及 \mbox{\hyperlink{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}{map}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap_8c_a60648bfb78b9c29bfa80576e04733344}{pcap\+\_\+check\+\_\+header()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{pcap-common_8c_a3a680628fc86f66b77445778bbe85884_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-common_8c_afa059dda75b192db1391a32248ccdb65}\label{pcap-common_8c_afa059dda75b192db1391a32248ccdb65}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!swap\_linux\_usb\_header@{swap\_linux\_usb\_header}}
+\index{swap\_linux\_usb\_header@{swap\_linux\_usb\_header}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{swap\_linux\_usb\_header()}{swap\_linux\_usb\_header()}}
+{\footnotesize\ttfamily void swap\+\_\+linux\+\_\+usb\+\_\+header (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$}]{hdr,  }\item[{u\+\_\+char $\ast$}]{buf,  }\item[{int}]{header\+\_\+len\+\_\+64\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__usb__header__mmapped_ae1ad9de945cf649cb34fd60d22089ee2}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::bus\+\_\+id}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a66f59afaeff1fcdb59b5a22e4147f1c0}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::data\+\_\+len}}, \mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a376ab64711449ff4ffda74bb35bb2076}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::id}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a68471e972011140d250b479b0aa4ff80}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::interval}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_ac1bc82d1825a616e2081e29de04bf0b5}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ndesc}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a9705add93743348a0b691b82065338dd}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::start\+\_\+frame}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a369536ebfe385731562c0b55dd6f3a7c}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::status}}, \mbox{\hyperlink{pcap-int_8h_a4f25e9658eb0b686983866b37837a31e}{SWAPLL}}, \mbox{\hyperlink{gencode_8c_a4159b742abde2765279a9c440d3540e3}{SWAPLONG}}, \mbox{\hyperlink{pcap-common_8h_a4eee5ee9386719c9735b0a6f822f1edf}{SWAPSHORT}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a1c02a0d13529fc8a9e93e467f98aff42}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ts\+\_\+sec}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a1fb9efd05b607a72b47aba1206002436}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::ts\+\_\+usec}}, \mbox{\hyperlink{structpcap__usb__header__mmapped_a5fea650a194bc21fb2f9484b0bba0194}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::urb\+\_\+len}} , 以及 \mbox{\hyperlink{structpcap__usb__header__mmapped_a4e7a8eeca52c104a50c0ce791230e2db}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped\+::xfer\+\_\+flags}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sf-pcap_8c_accb06be00adc4ad8ff2a1661d5a7ea91}{pcap\+\_\+next\+\_\+packet()}} , 以及 \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-common_8c_afa059dda75b192db1391a32248ccdb65_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-common_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-common_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/savefile.c,v 1.183 2008-\/12-\/23 20:13:29 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}\label{pcap-common_8c_a487ecc1f76b3c4e9d1d0fe5c2bc7f3aa}} 
+\index{pcap-\/common.c@{pcap-\/common.c}!map@{map}}
+\index{map@{map}!pcap-\/common.c@{pcap-\/common.c}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlinktype__map}{linktype\+\_\+map}} map\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-common_8c_a78274013ccf81aa99a21ca38e83d7a1e}{dlt\+\_\+to\+\_\+linktype()}} , 以及 \mbox{\hyperlink{pcap-common_8c_a3a680628fc86f66b77445778bbe85884}{linktype\+\_\+to\+\_\+dlt()}}.
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: adbuf.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adbuf.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adbuf_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* adbuf.h - header file for adbuf.c</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright(C) 2001-2002 Salvatore Sanfilippo &lt;antirez@invece.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * See the LICENSE file for COPYRIGHT and PERMISSION notice */</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/* $Id: adbuf.h,v 1.1.1.1 2003/08/31 17:24:00 antirez Exp $ */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _ADBUF_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _ADBUF_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structadbuf.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structadbuf.html">adbuf</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">   15</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">buf</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">   16</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structadbuf.html#a854352f53b148adc24983a58a1866d66">size</a>;    <span class="comment">/* total buffer size */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structadbuf.html#a951236a0702535ba18ba51db69428658">   17</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structadbuf.html#a951236a0702535ba18ba51db69428658">left</a>;    <span class="comment">/* unused buffer size */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">/* the size of data stored is just size-left */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="adbuf_8h.html#adfba5d692940d98fd97ab6ba91f7144f">   21</a></span><span class="preprocessor">#define ADBUF_INCR  256 </span><span class="comment">/* note that this MUST BE &gt;= 1 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="adbuf_8h.html#adacb4fb4f87563077a97e35e21f3e60d">   22</a></span><span class="preprocessor">#define adbuf_used(b)   ((b)-&gt;size - (b)-&gt;left)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="adbuf_8h.html#a6c7845a13405e64498e74538f3f35644">   23</a></span><span class="preprocessor">#define adbuf_ptr(b)    ((b)-&gt;buf)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/* Rawly create an adbuf object. &#39;s&#39; is supposed to be some heap</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * memory already allocated, with some nul-term string inside */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="adbuf_8h.html#a6fefda3cbb24995e657ccf75938c2f31">   27</a></span><span class="preprocessor">#define adbuf_from_heapstring(b,s) \</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">    do { b-&gt;buf = s; b-&gt;left = 0; b-&gt;size = strlen(s); } while(0)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a4dc971542b7ecf05b4bb6aa9ce4730a6">adbuf_init</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="adbuf_8h.html#a19302597670685055c4d1d27a427a713">adbuf_free</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a7fb35a5091978805949a39509e1b5bba">adbuf_addchar</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">int</span> c);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">char</span> *<span class="keywordtype">string</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a45c741bd520f800beb2375f5527e6d1f">adbuf_cat</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *a, <span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a6bb71faa3048386b70ca4c8c88c92c37">adbuf_cut</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">size_t</span> <a class="code hl_variable" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a71253da01bd44b96cfedd12c4dbf20f6">adbuf_ltrim</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">size_t</span> <a class="code hl_variable" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#ac3a4ff9ac84f22002a84a537d01601d0">adbuf_rtrim</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">size_t</span> <a class="code hl_variable" href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a307f51a6ab10313ca2c545802bede9df">adbuf_add_long</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">long</span> l);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a73c1eee265cd01fbbe44852ba0281934">adbuf_add_ulong</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *b, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> l);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a43997359e0663c857fcaa7b5972f4c6c">adbuf_clone</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *src, <span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *<a class="code hl_variable" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">int</span> <a class="code hl_function" href="adbuf_8h.html#a08d6dfb73888a1aff2f0992f43fe36bf">adbuf_printf</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structadbuf.html">adbuf</a> *<a class="code hl_variable" href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">/* _ADBUF_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadbuf_8h_html_a08d6dfb73888a1aff2f0992f43fe36bf"><div class="ttname"><a href="adbuf_8h.html#a08d6dfb73888a1aff2f0992f43fe36bf">adbuf_printf</a></div><div class="ttdeci">int adbuf_printf(struct adbuf *dst, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> adbuf.c:278</div></div>
+<div class="ttc" id="aadbuf_8h_html_a19302597670685055c4d1d27a427a713"><div class="ttname"><a href="adbuf_8h.html#a19302597670685055c4d1d27a427a713">adbuf_free</a></div><div class="ttdeci">void adbuf_free(struct adbuf *b)</div><div class="ttdef"><b>Definition:</b> adbuf.c:84</div></div>
+<div class="ttc" id="aadbuf_8h_html_a307f51a6ab10313ca2c545802bede9df"><div class="ttname"><a href="adbuf_8h.html#a307f51a6ab10313ca2c545802bede9df">adbuf_add_long</a></div><div class="ttdeci">int adbuf_add_long(struct adbuf *b, long l)</div><div class="ttdef"><b>Definition:</b> adbuf.c:216</div></div>
+<div class="ttc" id="aadbuf_8h_html_a43997359e0663c857fcaa7b5972f4c6c"><div class="ttname"><a href="adbuf_8h.html#a43997359e0663c857fcaa7b5972f4c6c">adbuf_clone</a></div><div class="ttdeci">int adbuf_clone(struct adbuf *src, struct adbuf *dst)</div><div class="ttdef"><b>Definition:</b> adbuf.c:257</div></div>
+<div class="ttc" id="aadbuf_8h_html_a45c741bd520f800beb2375f5527e6d1f"><div class="ttname"><a href="adbuf_8h.html#a45c741bd520f800beb2375f5527e6d1f">adbuf_cat</a></div><div class="ttdeci">int adbuf_cat(struct adbuf *a, struct adbuf *b)</div><div class="ttdef"><b>Definition:</b> adbuf.c:152</div></div>
+<div class="ttc" id="aadbuf_8h_html_a4dc971542b7ecf05b4bb6aa9ce4730a6"><div class="ttname"><a href="adbuf_8h.html#a4dc971542b7ecf05b4bb6aa9ce4730a6">adbuf_init</a></div><div class="ttdeci">int adbuf_init(struct adbuf *b)</div><div class="ttdef"><b>Definition:</b> adbuf.c:70</div></div>
+<div class="ttc" id="aadbuf_8h_html_a61b3dab2f05bd8d830fed69810bd8dc7"><div class="ttname"><a href="adbuf_8h.html#a61b3dab2f05bd8d830fed69810bd8dc7">adbuf_add</a></div><div class="ttdeci">int adbuf_add(struct adbuf *b, void *data, size_t len)</div><div class="ttdef"><b>Definition:</b> adbuf.c:101</div></div>
+<div class="ttc" id="aadbuf_8h_html_a6bb71faa3048386b70ca4c8c88c92c37"><div class="ttname"><a href="adbuf_8h.html#a6bb71faa3048386b70ca4c8c88c92c37">adbuf_cut</a></div><div class="ttdeci">int adbuf_cut(struct adbuf *b, size_t count)</div><div class="ttdef"><b>Definition:</b> adbuf.c:161</div></div>
+<div class="ttc" id="aadbuf_8h_html_a6e4cbc487a1a0a1c7b937ed6e9a395c6"><div class="ttname"><a href="adbuf_8h.html#a6e4cbc487a1a0a1c7b937ed6e9a395c6">adbuf_strcat</a></div><div class="ttdeci">int adbuf_strcat(struct adbuf *b, char *string)</div><div class="ttdef"><b>Definition:</b> adbuf.c:146</div></div>
+<div class="ttc" id="aadbuf_8h_html_a71253da01bd44b96cfedd12c4dbf20f6"><div class="ttname"><a href="adbuf_8h.html#a71253da01bd44b96cfedd12c4dbf20f6">adbuf_ltrim</a></div><div class="ttdeci">int adbuf_ltrim(struct adbuf *b, size_t count)</div><div class="ttdef"><b>Definition:</b> adbuf.c:181</div></div>
+<div class="ttc" id="aadbuf_8h_html_a73c1eee265cd01fbbe44852ba0281934"><div class="ttname"><a href="adbuf_8h.html#a73c1eee265cd01fbbe44852ba0281934">adbuf_add_ulong</a></div><div class="ttdeci">int adbuf_add_ulong(struct adbuf *b, unsigned long l)</div><div class="ttdef"><b>Definition:</b> adbuf.c:240</div></div>
+<div class="ttc" id="aadbuf_8h_html_a7fb35a5091978805949a39509e1b5bba"><div class="ttname"><a href="adbuf_8h.html#a7fb35a5091978805949a39509e1b5bba">adbuf_addchar</a></div><div class="ttdeci">int adbuf_addchar(struct adbuf *b, int c)</div><div class="ttdef"><b>Definition:</b> adbuf.c:125</div></div>
+<div class="ttc" id="aadbuf_8h_html_a959344d986042c77accfa5d31a6b85bc"><div class="ttname"><a href="adbuf_8h.html#a959344d986042c77accfa5d31a6b85bc">adbuf_reset</a></div><div class="ttdeci">int adbuf_reset(struct adbuf *b)</div><div class="ttdef"><b>Definition:</b> adbuf.c:93</div></div>
+<div class="ttc" id="aadbuf_8h_html_ac3a4ff9ac84f22002a84a537d01601d0"><div class="ttname"><a href="adbuf_8h.html#ac3a4ff9ac84f22002a84a537d01601d0">adbuf_rtrim</a></div><div class="ttdeci">int adbuf_rtrim(struct adbuf *b, size_t count)</div><div class="ttdef"><b>Definition:</b> adbuf.c:208</div></div>
+<div class="ttc" id="aglobals_8h_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="globals_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> globals.h:99</div></div>
+<div class="ttc" id="astructadbuf_html"><div class="ttname"><a href="structadbuf.html">adbuf</a></div><div class="ttdef"><b>Definition:</b> adbuf.h:14</div></div>
+<div class="ttc" id="astructadbuf_html_a1fe855c208bc17a51a4d34fefdb2d5b1"><div class="ttname"><a href="structadbuf.html#a1fe855c208bc17a51a4d34fefdb2d5b1">adbuf::buf</a></div><div class="ttdeci">char * buf</div><div class="ttdef"><b>Definition:</b> adbuf.h:15</div></div>
+<div class="ttc" id="astructadbuf_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structadbuf.html#a854352f53b148adc24983a58a1866d66">adbuf::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> adbuf.h:16</div></div>
+<div class="ttc" id="astructadbuf_html_a951236a0702535ba18ba51db69428658"><div class="ttname"><a href="structadbuf.html#a951236a0702535ba18ba51db69428658">adbuf::left</a></div><div class="ttdeci">size_t left</div><div class="ttdef"><b>Definition:</b> adbuf.h:17</div></div>
+<div class="ttc" id="awaitpacket_8c_html_a601fda698b6f9f2342b169c8e250d2d3"><div class="ttname"><a href="waitpacket_8c.html#a601fda698b6f9f2342b169c8e250d2d3">dst</a></div><div class="ttdeci">static struct in_addr src dst</div><div class="ttdef"><b>Definition:</b> waitpacket.c:35</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

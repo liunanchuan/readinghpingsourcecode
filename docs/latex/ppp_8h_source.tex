@@ -1,0 +1,64 @@
+\hypertarget{ppp_8h_source}{}\doxysection{ppp.\+h}
+\label{ppp_8h_source}\index{libpcap-\/1.1.1/ppp.h@{libpcap-\/1.1.1/ppp.h}}
+\mbox{\hyperlink{ppp_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#) \$Header: /tcpdump/master/libpcap/ppp.h,v 1.12 2005-\/02-\/08 19:52:19 guy Exp \$ (LBL) */}}
+\DoxyCodeLine{2 \textcolor{comment}{/*}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Point to Point Protocol (PPP) RFC1331}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright 1989 by Carnegie Mellon.}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Permission to use, copy, modify, and distribute this program for any}}
+\DoxyCodeLine{8 \textcolor{comment}{ * purpose and without fee is hereby granted, provided that this copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ * and permission notice appear on all copies and supporting documentation,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * the name of Carnegie Mellon not be used in advertising or publicity}}
+\DoxyCodeLine{11 \textcolor{comment}{ * pertaining to distribution of the program without specific prior}}
+\DoxyCodeLine{12 \textcolor{comment}{ * permission, and notice be given in supporting documentation that copying}}
+\DoxyCodeLine{13 \textcolor{comment}{ * and distribution is by permission of Carnegie Mellon and Stanford}}
+\DoxyCodeLine{14 \textcolor{comment}{ * University.  Carnegie Mellon makes no representations about the}}
+\DoxyCodeLine{15 \textcolor{comment}{ * suitability of this software for any purpose.  It is provided "{}as is"{}}}
+\DoxyCodeLine{16 \textcolor{comment}{ * without express or implied warranty.}}
+\DoxyCodeLine{17 \textcolor{comment}{ */}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define PPP\_ADDRESS 0xff    }\textcolor{comment}{/* The address byte value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define PPP\_CONTROL 0x03    }\textcolor{comment}{/* The control byte value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define PPP\_PPPD\_IN 0x00    }\textcolor{comment}{/* non-\/standard for DLT\_PPP\_PPPD */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define PPP\_PPPD\_OUT    0x01    }\textcolor{comment}{/* non-\/standard for DLT\_PPP\_PPPD */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* Protocol numbers */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define PPP\_IP      0x0021  }\textcolor{comment}{/* Raw IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define PPP\_OSI     0x0023  }\textcolor{comment}{/* OSI Network Layer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define PPP\_NS      0x0025  }\textcolor{comment}{/* Xerox NS IDP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define PPP\_DECNET  0x0027  }\textcolor{comment}{/* DECnet Phase IV */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define PPP\_APPLE   0x0029  }\textcolor{comment}{/* Appletalk */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define PPP\_IPX     0x002b  }\textcolor{comment}{/* Novell IPX */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define PPP\_VJC     0x002d  }\textcolor{comment}{/* Van Jacobson Compressed TCP/IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define PPP\_VJNC    0x002f  }\textcolor{comment}{/* Van Jacobson Uncompressed TCP/IP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define PPP\_BRPDU   0x0031  }\textcolor{comment}{/* Bridging PDU */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define PPP\_STII    0x0033  }\textcolor{comment}{/* Stream Protocol (ST-\/II) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define PPP\_VINES   0x0035  }\textcolor{comment}{/* Banyan Vines */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define PPP\_IPV6    0x0057  }\textcolor{comment}{/* Internet Protocol version 6 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define PPP\_HELLO   0x0201  }\textcolor{comment}{/* 802.1d Hello Packets */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define PPP\_LUXCOM  0x0231  }\textcolor{comment}{/* Luxcom */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define PPP\_SNS     0x0233  }\textcolor{comment}{/* Sigma Network Systems */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define PPP\_MPLS\_UCAST  0x0281  }\textcolor{comment}{/* rfc 3032 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define PPP\_MPLS\_MCAST  0x0283  }\textcolor{comment}{/* rfc 3022 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define PPP\_IPCP    0x8021  }\textcolor{comment}{/* IP Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define PPP\_OSICP   0x8023  }\textcolor{comment}{/* OSI Network Layer Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PPP\_NSCP    0x8025  }\textcolor{comment}{/* Xerox NS IDP Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define PPP\_DECNETCP    0x8027  }\textcolor{comment}{/* DECnet Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define PPP\_APPLECP 0x8029  }\textcolor{comment}{/* Appletalk Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define PPP\_IPXCP   0x802b  }\textcolor{comment}{/* Novell IPX Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define PPP\_STIICP  0x8033  }\textcolor{comment}{/* Strean Protocol Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define PPP\_VINESCP 0x8035  }\textcolor{comment}{/* Banyan Vines Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define PPP\_IPV6CP  0x8057  }\textcolor{comment}{/* IPv6 Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define PPP\_MPLSCP      0x8281  }\textcolor{comment}{/* rfc 3022 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define PPP\_LCP     0xc021  }\textcolor{comment}{/* Link Control Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define PPP\_PAP     0xc023  }\textcolor{comment}{/* Password Authentication Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define PPP\_LQM     0xc025  }\textcolor{comment}{/* Link Quality Monitoring */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define PPP\_CHAP    0xc223  }\textcolor{comment}{/* Challenge Handshake Authentication Protocol */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

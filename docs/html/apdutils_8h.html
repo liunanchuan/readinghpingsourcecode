@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: apdutils.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">apdutils.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="apdutils_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ad7b2fd02e7e738825d11acc17404f3a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apdutils_8h.html#ad7b2fd02e7e738825d11acc17404f3a0">ars_d_firstfield_off</a> (char *packet, char *layer, char *field, int *field_start, int *value_start, int *value_end)</td></tr>
+<tr class="separator:ad7b2fd02e7e738825d11acc17404f3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b4161ab38f7bcb9c75e008457f095c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apdutils_8h.html#ac8b4161ab38f7bcb9c75e008457f095c">ars_d_field_off</a> (char *packet, char *layer, char *field, int skip, int *field_start, int *value_start, int *value_end)</td></tr>
+<tr class="separator:ac8b4161ab38f7bcb9c75e008457f095c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd414693653f0f902a2afaeed6eb100"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apdutils_8h.html#a8bd414693653f0f902a2afaeed6eb100">ars_d_field_get</a> (char *packet, char *layer, char *field, int skip)</td></tr>
+<tr class="separator:a8bd414693653f0f902a2afaeed6eb100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a8bd414693653f0f902a2afaeed6eb100" name="a8bd414693653f0f902a2afaeed6eb100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd414693653f0f902a2afaeed6eb100">&#9670;&nbsp;</a></span>ars_d_field_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * ars_d_field_get </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>skip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="apdutils_8c.html#ac8b4161ab38f7bcb9c75e008457f095c">ars_d_field_off()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="apdutils_8h_a8bd414693653f0f902a2afaeed6eb100_cgraph.png" border="0" usemap="#aapdutils_8h_a8bd414693653f0f902a2afaeed6eb100_cgraph" alt=""/></div>
+<map name="aapdutils_8h_a8bd414693653f0f902a2afaeed6eb100_cgraph" id="aapdutils_8h_a8bd414693653f0f902a2afaeed6eb100_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="apdutils_8c.html#ac8b4161ab38f7bcb9c75e008457f095c" title=" " alt="" coords="164,5,271,32"/>
+<area shape="rect" href="apdutils_8c.html#ad7b2fd02e7e738825d11acc17404f3a0" title=" " alt="" coords="319,5,447,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8b4161ab38f7bcb9c75e008457f095c" name="ac8b4161ab38f7bcb9c75e008457f095c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b4161ab38f7bcb9c75e008457f095c">&#9670;&nbsp;</a></span>ars_d_field_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ars_d_field_off </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>skip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>field_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>value_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>value_end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="apdutils_8c.html#ad7b2fd02e7e738825d11acc17404f3a0">ars_d_firstfield_off()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="apdutils_8c.html#a8bd414693653f0f902a2afaeed6eb100">ars_d_field_get()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="apdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_cgraph.png" border="0" usemap="#aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_cgraph" alt=""/></div>
+<map name="aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_cgraph" id="aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" href="apdutils_8c.html#ad7b2fd02e7e738825d11acc17404f3a0" title=" " alt="" coords="160,5,288,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="apdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_icgraph.png" border="0" usemap="#aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_icgraph" alt=""/></div>
+<map name="aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_icgraph" id="aapdutils_8h_ac8b4161ab38f7bcb9c75e008457f095c_icgraph">
+<area shape="rect" title=" " alt="" coords="164,5,271,32"/>
+<area shape="rect" href="apdutils_8c.html#a8bd414693653f0f902a2afaeed6eb100" title=" " alt="" coords="5,5,116,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7b2fd02e7e738825d11acc17404f3a0" name="ad7b2fd02e7e738825d11acc17404f3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b2fd02e7e738825d11acc17404f3a0">&#9670;&nbsp;</a></span>ars_d_firstfield_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ars_d_firstfield_off </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>packet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>field_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>value_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>value_end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="apdutils_8c.html#ac8b4161ab38f7bcb9c75e008457f095c">ars_d_field_off()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="apdutils_8h_ad7b2fd02e7e738825d11acc17404f3a0_icgraph.png" border="0" usemap="#aapdutils_8h_ad7b2fd02e7e738825d11acc17404f3a0_icgraph" alt=""/></div>
+<map name="aapdutils_8h_ad7b2fd02e7e738825d11acc17404f3a0_icgraph" id="aapdutils_8h_ad7b2fd02e7e738825d11acc17404f3a0_icgraph">
+<area shape="rect" title=" " alt="" coords="319,5,447,32"/>
+<area shape="rect" href="apdutils_8c.html#ac8b4161ab38f7bcb9c75e008457f095c" title=" " alt="" coords="164,5,271,32"/>
+<area shape="rect" href="apdutils_8c.html#a8bd414693653f0f902a2afaeed6eb100" title=" " alt="" coords="5,5,116,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

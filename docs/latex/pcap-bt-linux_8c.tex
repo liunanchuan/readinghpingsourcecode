@@ -1,0 +1,293 @@
+\hypertarget{pcap-bt-linux_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/bt-\/linux.c 文件参考}
+\label{pcap-bt-linux_8c}\index{libpcap-\/1.1.1/pcap-\/bt-\/linux.c@{libpcap-\/1.1.1/pcap-\/bt-\/linux.c}}
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/bt-\/linux.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap/bluetooth.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$bluetooth/bluetooth.\+h$>$}\newline
+{\ttfamily \#include $<$bluetooth/hci.\+h$>$}\newline
+pcap-\/bt-\/linux.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-bt-linux_8c_ae2c64ce8603a2184107215594496725f}{BT\+\_\+\+IFACE}}~\char`\"{}bluetooth\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pcap-bt-linux_8c_ae28462e6441ac530c42db9d6f39695d7}{BT\+\_\+\+CTRL\+\_\+\+SIZE}}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate}} (pcap\+\_\+t $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817}{bt\+\_\+read\+\_\+linux}} (pcap\+\_\+t $\ast$, int, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}, u\+\_\+char $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_ad88273049dfac54da918337242c2b788}{bt\+\_\+inject\+\_\+linux}} (pcap\+\_\+t $\ast$, const void $\ast$, size\+\_\+t)
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_ae74daf108f5127a3e6713b0e1cd73024}{bt\+\_\+setfilter\+\_\+linux}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$)
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_ab0f24cdcbf7be61349a14bad46508874}{bt\+\_\+setdirection\+\_\+linux}} (pcap\+\_\+t $\ast$, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}})
+\item 
+static int \mbox{\hyperlink{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5}{bt\+\_\+stats\+\_\+linux}} (pcap\+\_\+t $\ast$, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$)
+\item 
+int \mbox{\hyperlink{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}{bt\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$err\+\_\+str)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959}{bt\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-bt-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-bt-linux_8c_ae28462e6441ac530c42db9d6f39695d7}\label{pcap-bt-linux_8c_ae28462e6441ac530c42db9d6f39695d7}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!BT\_CTRL\_SIZE@{BT\_CTRL\_SIZE}}
+\index{BT\_CTRL\_SIZE@{BT\_CTRL\_SIZE}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{BT\_CTRL\_SIZE}{BT\_CTRL\_SIZE}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+CTRL\+\_\+\+SIZE~128}
+
+\mbox{\Hypertarget{pcap-bt-linux_8c_ae2c64ce8603a2184107215594496725f}\label{pcap-bt-linux_8c_ae2c64ce8603a2184107215594496725f}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!BT\_IFACE@{BT\_IFACE}}
+\index{BT\_IFACE@{BT\_IFACE}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{BT\_IFACE}{BT\_IFACE}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+IFACE~\char`\"{}bluetooth\char`\"{}}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}\label{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_activate@{bt\_activate}}
+\index{bt\_activate@{bt\_activate}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_activate()}{bt\_activate()}}
+{\footnotesize\ttfamily static int bt\+\_\+activate (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind()}}, \mbox{\hyperlink{pcap-bt-linux_8c_ae28462e6441ac530c42db9d6f39695d7}{BT\+\_\+\+CTRL\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-bt-linux_8c_ae2c64ce8603a2184107215594496725f}{BT\+\_\+\+IFACE}}, \mbox{\hyperlink{pcap-bt-linux_8c_ad88273049dfac54da918337242c2b788}{bt\+\_\+inject\+\_\+linux()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817}{bt\+\_\+read\+\_\+linux()}}, \mbox{\hyperlink{pcap-bt-linux_8c_ab0f24cdcbf7be61349a14bad46508874}{bt\+\_\+setdirection\+\_\+linux()}}, \mbox{\hyperlink{pcap-bt-linux_8c_ae74daf108f5127a3e6713b0e1cd73024}{bt\+\_\+setfilter\+\_\+linux()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5}{bt\+\_\+stats\+\_\+linux()}}, \mbox{\hyperlink{bpf_8h_aac88aa847572bdb5d059f8aded4df216}{DLT\+\_\+\+BLUETOOTH\+\_\+\+HCI\+\_\+\+H4\+\_\+\+WITH\+\_\+\+PHDR}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_af113fa82244cf1246dc09d9399049000}{PCAP\+\_\+\+ERROR}}, \mbox{\hyperlink{pcap_2pcap_8h_a2bdaca673eb2ddf3e63f4cc68342cf56}{PCAP\+\_\+\+ERROR\+\_\+\+RFMON\+\_\+\+NOTSUP}}, \mbox{\hyperlink{pcap-int_8h_a6e157e229eceba8cccc16f0ff9d8e438}{pcap\+\_\+getnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-int_8h_a541d703f493e59bc6e2925ad3a9e913d}{pcap\+\_\+setnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}{setsockopt()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket()}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}} , 以及 \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959}{bt\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959}\label{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_create@{bt\_create}}
+\index{bt\_create@{bt\_create}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_create()}{bt\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ bt\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}} , 以及 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{pcap-bt-linux_8c_a3acfe105f35a3241698e5b3249204959_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_ad88273049dfac54da918337242c2b788}\label{pcap-bt-linux_8c_ad88273049dfac54da918337242c2b788}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_inject\_linux@{bt\_inject\_linux}}
+\index{bt\_inject\_linux@{bt\_inject\_linux}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_inject\_linux()}{bt\_inject\_linux()}}
+{\footnotesize\ttfamily static int bt\+\_\+inject\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_ad88273049dfac54da918337242c2b788_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}\label{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_platform\_finddevs@{bt\_platform\_finddevs}}
+\index{bt\_platform\_finddevs@{bt\_platform\_finddevs}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_platform\_finddevs()}{bt\_platform\_finddevs()}}
+{\footnotesize\ttfamily int bt\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{err\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-bt-linux_8c_ae2c64ce8603a2184107215594496725f}{BT\+\_\+\+IFACE}}, \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{inet_8c_ae61261e756b0e199b9d361f500c49f17}{pcap\+\_\+add\+\_\+if()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket()}} , 以及 \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817}\label{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_read\_linux@{bt\_read\_linux}}
+\index{bt\_read\_linux@{bt\_read\_linux}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_read\_linux()}{bt\_read\_linux()}}
+{\footnotesize\ttfamily static int bt\+\_\+read\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{max\+\_\+packets,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}}, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129a1c28a2a1f3ae4fdb513a9366839aff55}{PCAP\+\_\+\+D\+\_\+\+IN}}, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129a8cc7b681aedeec49c201d03eee97a959}{PCAP\+\_\+\+D\+\_\+\+OUT}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_a8c896c50a1fe9c1491adb882f1c04817_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_ab0f24cdcbf7be61349a14bad46508874}\label{pcap-bt-linux_8c_ab0f24cdcbf7be61349a14bad46508874}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_setdirection\_linux@{bt\_setdirection\_linux}}
+\index{bt\_setdirection\_linux@{bt\_setdirection\_linux}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_setdirection\_linux()}{bt\_setdirection\_linux()}}
+{\footnotesize\ttfamily static int bt\+\_\+setdirection\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}}}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_ab0f24cdcbf7be61349a14bad46508874_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_ae74daf108f5127a3e6713b0e1cd73024}\label{pcap-bt-linux_8c_ae74daf108f5127a3e6713b0e1cd73024}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_setfilter\_linux@{bt\_setfilter\_linux}}
+\index{bt\_setfilter\_linux@{bt\_setfilter\_linux}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_setfilter\_linux()}{bt\_setfilter\_linux()}}
+{\footnotesize\ttfamily static int bt\+\_\+setfilter\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_ae74daf108f5127a3e6713b0e1cd73024_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5}\label{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!bt\_stats\_linux@{bt\_stats\_linux}}
+\index{bt\_stats\_linux@{bt\_stats\_linux}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{bt\_stats\_linux()}{bt\_stats\_linux()}}
+{\footnotesize\ttfamily static int bt\+\_\+stats\+\_\+linux (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{stats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{pcap\+\_\+stat\+::ps\+\_\+drop}}, \mbox{\hyperlink{structpcap__stat_abc51be1ec5423e462bde5eac5a9b7c56}{pcap\+\_\+stat\+::ps\+\_\+ifdrop}}, \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{pcap\+\_\+stat\+::ps\+\_\+recv}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-bt-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-bt-linux_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/bt-\/linux.c@{pcap-\/bt-\/linux.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/bt-\/linux.c,v 1.15 2008-\/07-\/01 07:05:54 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}

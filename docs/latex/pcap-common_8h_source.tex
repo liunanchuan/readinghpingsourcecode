@@ -1,0 +1,31 @@
+\hypertarget{pcap-common_8h_source}{}\doxysection{pcap-\/common.h}
+\label{pcap-common_8h_source}\index{libpcap-\/1.1.1/pcap-\/common.h@{libpcap-\/1.1.1/pcap-\/common.h}}
+\mbox{\hyperlink{pcap-common_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{/*}}
+\DoxyCodeLine{3 \textcolor{comment}{ * We use the "{}receiver-\/makes-\/right"{} approach to byte order,}}
+\DoxyCodeLine{4 \textcolor{comment}{ * because time is at a premium when we are writing the file.}}
+\DoxyCodeLine{5 \textcolor{comment}{ * In other words, the pcap\_file\_header and pcap\_pkthdr,}}
+\DoxyCodeLine{6 \textcolor{comment}{ * records are written in host byte order.}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Note that the bytes of packet data are written out in the order in}}
+\DoxyCodeLine{8 \textcolor{comment}{ * which they were received, so multi-\/byte fields in packets are not}}
+\DoxyCodeLine{9 \textcolor{comment}{ * written in host byte order, they're written in whatever order the}}
+\DoxyCodeLine{10 \textcolor{comment}{ * sending machine put them in.}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * ntoh[ls] aren't sufficient because we might need to swap on a big-\/endian}}
+\DoxyCodeLine{13 \textcolor{comment}{ * machine (if the file was written in little-\/end order).}}
+\DoxyCodeLine{14 \textcolor{comment}{ */}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define SWAPLONG(y) \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{((((y)\&0xff)<<24) | (((y)\&0xff00)<<8) | (((y)\&0xff0000)>>8) | (((y)>>24)\&0xff))}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define SWAPSHORT(y) \(\backslash\)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    ( (((y)\&0xff)<<8) | ((u\_short)((y)\&0xff00)>>8) )}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-common_8h_a78274013ccf81aa99a21ca38e83d7a1e}{dlt\_to\_linktype}}(\textcolor{keywordtype}{int} dlt);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-common_8h_a3a680628fc86f66b77445778bbe85884}{linktype\_to\_dlt}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{pcap-common_8h_afa059dda75b192db1391a32248ccdb65}{swap\_linux\_usb\_header}}(\textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__pkthdr}{pcap\_pkthdr}} *\mbox{\hyperlink{globals_8h_a63a24b5b22a130df12f883d1d910e490}{hdr}}, u\_char *buf,}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} header\_len\_64\_bytes);}
+
+\end{DoxyCode}

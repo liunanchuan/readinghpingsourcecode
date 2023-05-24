@@ -1,0 +1,561 @@
+\hypertarget{ieee80211_8h}{}\doxysection{libpcap-\/1.1.1/ieee80211.h 文件参考}
+\label{ieee80211_8h}\index{libpcap-\/1.1.1/ieee80211.h@{libpcap-\/1.1.1/ieee80211.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{ieee80211_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a6bc9eac6082c6d030af2b73eb48eb1ea}{IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+\+MASK}}~0x03
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a93b6319b24c45010894df0e42ac738ce}{IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ab5ac1e7eacc5abae4cb6b7506d17bd45}{IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+0}}~0x00
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a25db43f225d4802140bdf903d3a9fb12}{IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+MASK}}~0x0c
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a6e3a9e54cd74332bc0fe6dae49694e07}{IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+SHIFT}}~2
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a7fb8a8d6c5db6500162f51327f036f40}{IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+MGT}}~0x00
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a1af5d6a0636cbfa7019ee5f5325f0ddc}{IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+CTL}}~0x04
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a84fadc719a3ea4f27a789aee52d19a95}{IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+DATA}}~0x08
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ae7203cff6b1b5405dd10e187928b44ca}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+MASK}}~0xf0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_adf85e6dcefd29338db68375a99f026de}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+SHIFT}}~4
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a06e49951f70b198bce43e8cc2c0e47bb}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ASSOC\+\_\+\+REQ}}~0x00
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a680bb07072e7bda5cb709b3b2ce24190}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ASSOC\+\_\+\+RESP}}~0x10
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a48b4a2b5eef11ce5a68762425bb39a97}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+REASSOC\+\_\+\+REQ}}~0x20
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ac218b7c2aff785cb8f24b063a835c95b}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+REASSOC\+\_\+\+RESP}}~0x30
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a51791ebe35da5e79a89df6782786fa91}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PROBE\+\_\+\+REQ}}~0x40
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a82766a47c3f0b6956ec4ecb5ac8fc509}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PROBE\+\_\+\+RESP}}~0x50
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aefaac0be730932e1085aee40abdb7bfb}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+BEACON}}~0x80
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a36480564bb2efdc08fc14f131da6bf99}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ATIM}}~0x90
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a9b0e856b2c53fdeddbbb847592e88870}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DISASSOC}}~0xa0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_af10cf0dfd70aef95fd185c979b7e375a}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+AUTH}}~0xb0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a6c0622234f2ebb2645aa47d02fe44ea2}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DEAUTH}}~0xc0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a6f45acb749f4a7d2171ee25475029e15}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PS\+\_\+\+POLL}}~0xa0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a268d3ca00182320288192b11543237cf}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+RTS}}~0xb0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a81ead362a2d632dccb2b04128813905f}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CTS}}~0xc0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a81a815009d5e62be5781c282291a8ceb}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ACK}}~0xd0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aa64f935e98d434a0b99418770f4327e6}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+END}}~0xe0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aaf5dcad1205d7e421a6b9591f2b9a4e7}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+END\+\_\+\+ACK}}~0xf0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a715a7f203bc33ed8adab2dbafbe60906}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DATA}}~0x00
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a62573e83ad71dbd32cd098056006029e}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+ACK}}~0x10
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_af533d23aabe3b82681d127678f10787a}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+POLL}}~0x20
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a46e852b5d453629d7b03f3856d04c8ee}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+ACPL}}~0x30
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_abcb0aeaf5e37c815858f913f34948a38}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA}}~0x40
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a025b6b0c94879af516237ed538554d6a}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+ACK}}~0x50
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a153ff64abea81aa471aab842993d8b55}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+POLL}}~0x60
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a63ee242f9d51fadba62011614ee42dc9}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+ACPL}}~0x70
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ac26139da93766957cd82ff793a7bf28b}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+QOS}}~0x80
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ad81cc3b9a4c651b737bd3d84a515e659}{IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+QOS\+\_\+\+NULL}}~0xc0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aaeeacbf8cb6fcb873f0f54e387cd34a1}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+MASK}}~0x03
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aae938ba74f00c978fa095e62d04ceeea}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+NODS}}~0x00 /$\ast$ STA-\/$>$STA $\ast$/
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_adab2bda5bb91a5738b3f209765f57be3}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+TODS}}~0x01 /$\ast$ STA-\/$>$AP  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aca10b612f9ceb5d2b81a035499fe833a}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+FROMDS}}~0x02 /$\ast$ AP -\/$>$STA $\ast$/
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a6f548c74a3fa1d3cf21c4e49ca2bc92b}{IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+DSTODS}}~0x03 /$\ast$ AP -\/$>$AP  $\ast$/
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a0dda1c6bf0782f3baa66f09436a06109}{IEEE80211\+\_\+\+FC1\+\_\+\+MORE\+\_\+\+FRAG}}~0x04
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a0f0f1204c653b01d6a91c329b584aa65}{IEEE80211\+\_\+\+FC1\+\_\+\+RETRY}}~0x08
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ac682f28d2819fda1f7dea7a5d77d4128}{IEEE80211\+\_\+\+FC1\+\_\+\+PWR\+\_\+\+MGT}}~0x10
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aef1337708bfdc89b3227a412007558e9}{IEEE80211\+\_\+\+FC1\+\_\+\+MORE\+\_\+\+DATA}}~0x20
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a98dfeddd3e803db7d00884ef06a5bdbe}{IEEE80211\+\_\+\+FC1\+\_\+\+WEP}}~0x40
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a29d918f347541545247271caf74a8df0}{IEEE80211\+\_\+\+FC1\+\_\+\+ORDER}}~0x80
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a7ac5595e0c14cb1aec5204176893be57}{IEEE80211\+\_\+\+SEQ\+\_\+\+FRAG\+\_\+\+MASK}}~0x000f
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a114ecd35b9210018509b5ce44104ec2b}{IEEE80211\+\_\+\+SEQ\+\_\+\+FRAG\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a29c80056d4543057c1cd156cc7d3e8b5}{IEEE80211\+\_\+\+SEQ\+\_\+\+SEQ\+\_\+\+MASK}}~0xfff0
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a1f06b355292378b98e37fbab2f9c18a5}{IEEE80211\+\_\+\+SEQ\+\_\+\+SEQ\+\_\+\+SHIFT}}~4
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_adc15f02fa363856549741ee2a63fee03}{IEEE80211\+\_\+\+NWID\+\_\+\+LEN}}~32
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a4531c3b49b6ca501f8f79f55841385bf}{IEEE80211\+\_\+\+QOS\+\_\+\+TXOP}}~0x00ff
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_af103bf19e74d2e5c917a8e4bd06a6f4d}{IEEE80211\+\_\+\+QOS\+\_\+\+ACKPOLICY}}~0x60
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_addef03703f37f5c0578a16f519735952}{IEEE80211\+\_\+\+QOS\+\_\+\+ACKPOLICY\+\_\+S}}~5
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a077048626a18f8c2dd5daa9644343007}{IEEE80211\+\_\+\+QOS\+\_\+\+ESOP}}~0x10
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aac930826d3df53e28cc92da5407d89be}{IEEE80211\+\_\+\+QOS\+\_\+\+ESOP\+\_\+S}}~4
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_aecc57c40bf5e758876088418d122cbff}{IEEE80211\+\_\+\+QOS\+\_\+\+TID}}~0x0f
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a53ae6e0b791550e9977bf7acb2ada70e}{IEEE80211\+\_\+\+MGT\+\_\+\+SUBTYPE\+\_\+\+NAMES}}
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_af2597e70dfd4cf9b05a5327e0f8e7ec7}{IEEE80211\+\_\+\+CTL\+\_\+\+SUBTYPE\+\_\+\+NAMES}}
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_a61967828637e77a05391b9a078c81eb0}{IEEE80211\+\_\+\+DATA\+\_\+\+SUBTYPE\+\_\+\+NAMES}}
+\item 
+\#define \mbox{\hyperlink{ieee80211_8h_ad3680cdde82227b5cc3ba747b325ef9b}{IEEE80211\+\_\+\+TYPE\+\_\+\+NAMES}}~\{ \char`\"{}mgt\char`\"{}, \char`\"{}\mbox{\hyperlink{pcap-dlpi_8c_a922aadca50c7c1cf1579943f9ce2ab28}{ctl}}\char`\"{}, \char`\"{}data\char`\"{}, \char`\"{}reserved\#4\char`\"{} \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{ieee80211_8h_af2597e70dfd4cf9b05a5327e0f8e7ec7}\label{ieee80211_8h_af2597e70dfd4cf9b05a5327e0f8e7ec7}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_CTL\_SUBTYPE\_NAMES@{IEEE80211\_CTL\_SUBTYPE\_NAMES}}
+\index{IEEE80211\_CTL\_SUBTYPE\_NAMES@{IEEE80211\_CTL\_SUBTYPE\_NAMES}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_CTL\_SUBTYPE\_NAMES}{IEEE80211\_CTL\_SUBTYPE\_NAMES}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+CTL\+\_\+\+SUBTYPE\+\_\+\+NAMES}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{           \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#0"{}},       \textcolor{stringliteral}{"{}reserved\#1"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#2"{}},       \textcolor{stringliteral}{"{}reserved\#3"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#3"{}},       \textcolor{stringliteral}{"{}reserved\#5"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#6"{}},       \textcolor{stringliteral}{"{}reserved\#7"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#8"{}},       \textcolor{stringliteral}{"{}reserved\#9"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}ps-\/poll"{}},      \textcolor{stringliteral}{"{}rts"{}},          \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}cts"{}},          \textcolor{stringliteral}{"{}ack"{}},          \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}cf-\/end"{}},       \textcolor{stringliteral}{"{}cf-\/end-\/ack"{}}        \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ieee80211_8h_a61967828637e77a05391b9a078c81eb0}\label{ieee80211_8h_a61967828637e77a05391b9a078c81eb0}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_DATA\_SUBTYPE\_NAMES@{IEEE80211\_DATA\_SUBTYPE\_NAMES}}
+\index{IEEE80211\_DATA\_SUBTYPE\_NAMES@{IEEE80211\_DATA\_SUBTYPE\_NAMES}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_DATA\_SUBTYPE\_NAMES}{IEEE80211\_DATA\_SUBTYPE\_NAMES}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+DATA\+\_\+\+SUBTYPE\+\_\+\+NAMES}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{           \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}data"{}},         \textcolor{stringliteral}{"{}data-\/cf-\/ack"{}},      \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}data-\/cf-\/poll"{}},     \textcolor{stringliteral}{"{}data-\/cf-\/ack-\/poll"{}}, \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}null"{}},         \textcolor{stringliteral}{"{}cf-\/ack"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}cf-\/poll"{}},      \textcolor{stringliteral}{"{}cf-\/ack-\/poll"{}},      \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}qos-\/data"{}},     \textcolor{stringliteral}{"{}qos-\/data-\/cf-\/ack"{}},  \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}qos-\/data-\/cf-\/poll"{}}, \textcolor{stringliteral}{"{}qos-\/data-\/cf-\/ack-\/poll"{}}, \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}qos"{}},          \textcolor{stringliteral}{"{}reserved\#13"{}},      \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}qos-\/cf-\/poll"{}},      \textcolor{stringliteral}{"{}qos-\/cf-\/ack-\/poll"{}}   \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ieee80211_8h_a81a815009d5e62be5781c282291a8ceb}\label{ieee80211_8h_a81a815009d5e62be5781c282291a8ceb}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_ACK@{IEEE80211\_FC0\_SUBTYPE\_ACK}}
+\index{IEEE80211\_FC0\_SUBTYPE\_ACK@{IEEE80211\_FC0\_SUBTYPE\_ACK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_ACK}{IEEE80211\_FC0\_SUBTYPE\_ACK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ACK~0xd0}
+
+\mbox{\Hypertarget{ieee80211_8h_a06e49951f70b198bce43e8cc2c0e47bb}\label{ieee80211_8h_a06e49951f70b198bce43e8cc2c0e47bb}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ@{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ}}
+\index{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ@{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ}{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_REQ}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ASSOC\+\_\+\+REQ~0x00}
+
+\mbox{\Hypertarget{ieee80211_8h_a680bb07072e7bda5cb709b3b2ce24190}\label{ieee80211_8h_a680bb07072e7bda5cb709b3b2ce24190}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP@{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP}}
+\index{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP@{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP}{IEEE80211\_FC0\_SUBTYPE\_ASSOC\_RESP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ASSOC\+\_\+\+RESP~0x10}
+
+\mbox{\Hypertarget{ieee80211_8h_a36480564bb2efdc08fc14f131da6bf99}\label{ieee80211_8h_a36480564bb2efdc08fc14f131da6bf99}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_ATIM@{IEEE80211\_FC0\_SUBTYPE\_ATIM}}
+\index{IEEE80211\_FC0\_SUBTYPE\_ATIM@{IEEE80211\_FC0\_SUBTYPE\_ATIM}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_ATIM}{IEEE80211\_FC0\_SUBTYPE\_ATIM}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+ATIM~0x90}
+
+\mbox{\Hypertarget{ieee80211_8h_af10cf0dfd70aef95fd185c979b7e375a}\label{ieee80211_8h_af10cf0dfd70aef95fd185c979b7e375a}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_AUTH@{IEEE80211\_FC0\_SUBTYPE\_AUTH}}
+\index{IEEE80211\_FC0\_SUBTYPE\_AUTH@{IEEE80211\_FC0\_SUBTYPE\_AUTH}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_AUTH}{IEEE80211\_FC0\_SUBTYPE\_AUTH}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+AUTH~0xb0}
+
+\mbox{\Hypertarget{ieee80211_8h_aefaac0be730932e1085aee40abdb7bfb}\label{ieee80211_8h_aefaac0be730932e1085aee40abdb7bfb}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_BEACON@{IEEE80211\_FC0\_SUBTYPE\_BEACON}}
+\index{IEEE80211\_FC0\_SUBTYPE\_BEACON@{IEEE80211\_FC0\_SUBTYPE\_BEACON}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_BEACON}{IEEE80211\_FC0\_SUBTYPE\_BEACON}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+BEACON~0x80}
+
+\mbox{\Hypertarget{ieee80211_8h_a62573e83ad71dbd32cd098056006029e}\label{ieee80211_8h_a62573e83ad71dbd32cd098056006029e}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CF\_ACK@{IEEE80211\_FC0\_SUBTYPE\_CF\_ACK}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CF\_ACK@{IEEE80211\_FC0\_SUBTYPE\_CF\_ACK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CF\_ACK}{IEEE80211\_FC0\_SUBTYPE\_CF\_ACK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+ACK~0x10}
+
+\mbox{\Hypertarget{ieee80211_8h_a46e852b5d453629d7b03f3856d04c8ee}\label{ieee80211_8h_a46e852b5d453629d7b03f3856d04c8ee}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL@{IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL@{IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL}{IEEE80211\_FC0\_SUBTYPE\_CF\_ACPL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+ACPL~0x30}
+
+\mbox{\Hypertarget{ieee80211_8h_aa64f935e98d434a0b99418770f4327e6}\label{ieee80211_8h_aa64f935e98d434a0b99418770f4327e6}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CF\_END@{IEEE80211\_FC0\_SUBTYPE\_CF\_END}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CF\_END@{IEEE80211\_FC0\_SUBTYPE\_CF\_END}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CF\_END}{IEEE80211\_FC0\_SUBTYPE\_CF\_END}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+END~0xe0}
+
+\mbox{\Hypertarget{ieee80211_8h_aaf5dcad1205d7e421a6b9591f2b9a4e7}\label{ieee80211_8h_aaf5dcad1205d7e421a6b9591f2b9a4e7}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK@{IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK@{IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK}{IEEE80211\_FC0\_SUBTYPE\_CF\_END\_ACK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+END\+\_\+\+ACK~0xf0}
+
+\mbox{\Hypertarget{ieee80211_8h_af533d23aabe3b82681d127678f10787a}\label{ieee80211_8h_af533d23aabe3b82681d127678f10787a}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CF\_POLL@{IEEE80211\_FC0\_SUBTYPE\_CF\_POLL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CF\_POLL@{IEEE80211\_FC0\_SUBTYPE\_CF\_POLL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CF\_POLL}{IEEE80211\_FC0\_SUBTYPE\_CF\_POLL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CF\+\_\+\+POLL~0x20}
+
+\mbox{\Hypertarget{ieee80211_8h_a81ead362a2d632dccb2b04128813905f}\label{ieee80211_8h_a81ead362a2d632dccb2b04128813905f}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_CTS@{IEEE80211\_FC0\_SUBTYPE\_CTS}}
+\index{IEEE80211\_FC0\_SUBTYPE\_CTS@{IEEE80211\_FC0\_SUBTYPE\_CTS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_CTS}{IEEE80211\_FC0\_SUBTYPE\_CTS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+CTS~0xc0}
+
+\mbox{\Hypertarget{ieee80211_8h_a715a7f203bc33ed8adab2dbafbe60906}\label{ieee80211_8h_a715a7f203bc33ed8adab2dbafbe60906}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_DATA@{IEEE80211\_FC0\_SUBTYPE\_DATA}}
+\index{IEEE80211\_FC0\_SUBTYPE\_DATA@{IEEE80211\_FC0\_SUBTYPE\_DATA}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_DATA}{IEEE80211\_FC0\_SUBTYPE\_DATA}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DATA~0x00}
+
+\mbox{\Hypertarget{ieee80211_8h_a6c0622234f2ebb2645aa47d02fe44ea2}\label{ieee80211_8h_a6c0622234f2ebb2645aa47d02fe44ea2}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_DEAUTH@{IEEE80211\_FC0\_SUBTYPE\_DEAUTH}}
+\index{IEEE80211\_FC0\_SUBTYPE\_DEAUTH@{IEEE80211\_FC0\_SUBTYPE\_DEAUTH}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_DEAUTH}{IEEE80211\_FC0\_SUBTYPE\_DEAUTH}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DEAUTH~0xc0}
+
+\mbox{\Hypertarget{ieee80211_8h_a9b0e856b2c53fdeddbbb847592e88870}\label{ieee80211_8h_a9b0e856b2c53fdeddbbb847592e88870}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_DISASSOC@{IEEE80211\_FC0\_SUBTYPE\_DISASSOC}}
+\index{IEEE80211\_FC0\_SUBTYPE\_DISASSOC@{IEEE80211\_FC0\_SUBTYPE\_DISASSOC}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_DISASSOC}{IEEE80211\_FC0\_SUBTYPE\_DISASSOC}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+DISASSOC~0xa0}
+
+\mbox{\Hypertarget{ieee80211_8h_ae7203cff6b1b5405dd10e187928b44ca}\label{ieee80211_8h_ae7203cff6b1b5405dd10e187928b44ca}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_MASK@{IEEE80211\_FC0\_SUBTYPE\_MASK}}
+\index{IEEE80211\_FC0\_SUBTYPE\_MASK@{IEEE80211\_FC0\_SUBTYPE\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_MASK}{IEEE80211\_FC0\_SUBTYPE\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+MASK~0xf0}
+
+\mbox{\Hypertarget{ieee80211_8h_abcb0aeaf5e37c815858f913f34948a38}\label{ieee80211_8h_abcb0aeaf5e37c815858f913f34948a38}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_NODATA@{IEEE80211\_FC0\_SUBTYPE\_NODATA}}
+\index{IEEE80211\_FC0\_SUBTYPE\_NODATA@{IEEE80211\_FC0\_SUBTYPE\_NODATA}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_NODATA}{IEEE80211\_FC0\_SUBTYPE\_NODATA}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA~0x40}
+
+\mbox{\Hypertarget{ieee80211_8h_a025b6b0c94879af516237ed538554d6a}\label{ieee80211_8h_a025b6b0c94879af516237ed538554d6a}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK}}
+\index{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK}{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+ACK~0x50}
+
+\mbox{\Hypertarget{ieee80211_8h_a63ee242f9d51fadba62011614ee42dc9}\label{ieee80211_8h_a63ee242f9d51fadba62011614ee42dc9}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL}{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_ACPL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+ACPL~0x70}
+
+\mbox{\Hypertarget{ieee80211_8h_a153ff64abea81aa471aab842993d8b55}\label{ieee80211_8h_a153ff64abea81aa471aab842993d8b55}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL@{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL}{IEEE80211\_FC0\_SUBTYPE\_NODATA\_CF\_POLL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+NODATA\+\_\+\+CF\+\_\+\+POLL~0x60}
+
+\mbox{\Hypertarget{ieee80211_8h_a51791ebe35da5e79a89df6782786fa91}\label{ieee80211_8h_a51791ebe35da5e79a89df6782786fa91}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ@{IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ}}
+\index{IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ@{IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ}{IEEE80211\_FC0\_SUBTYPE\_PROBE\_REQ}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PROBE\+\_\+\+REQ~0x40}
+
+\mbox{\Hypertarget{ieee80211_8h_a82766a47c3f0b6956ec4ecb5ac8fc509}\label{ieee80211_8h_a82766a47c3f0b6956ec4ecb5ac8fc509}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP@{IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP}}
+\index{IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP@{IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP}{IEEE80211\_FC0\_SUBTYPE\_PROBE\_RESP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PROBE\+\_\+\+RESP~0x50}
+
+\mbox{\Hypertarget{ieee80211_8h_a6f45acb749f4a7d2171ee25475029e15}\label{ieee80211_8h_a6f45acb749f4a7d2171ee25475029e15}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_PS\_POLL@{IEEE80211\_FC0\_SUBTYPE\_PS\_POLL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_PS\_POLL@{IEEE80211\_FC0\_SUBTYPE\_PS\_POLL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_PS\_POLL}{IEEE80211\_FC0\_SUBTYPE\_PS\_POLL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+PS\+\_\+\+POLL~0xa0}
+
+\mbox{\Hypertarget{ieee80211_8h_ac26139da93766957cd82ff793a7bf28b}\label{ieee80211_8h_ac26139da93766957cd82ff793a7bf28b}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_QOS@{IEEE80211\_FC0\_SUBTYPE\_QOS}}
+\index{IEEE80211\_FC0\_SUBTYPE\_QOS@{IEEE80211\_FC0\_SUBTYPE\_QOS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_QOS}{IEEE80211\_FC0\_SUBTYPE\_QOS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+QOS~0x80}
+
+\mbox{\Hypertarget{ieee80211_8h_ad81cc3b9a4c651b737bd3d84a515e659}\label{ieee80211_8h_ad81cc3b9a4c651b737bd3d84a515e659}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL@{IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL}}
+\index{IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL@{IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL}{IEEE80211\_FC0\_SUBTYPE\_QOS\_NULL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+QOS\+\_\+\+NULL~0xc0}
+
+\mbox{\Hypertarget{ieee80211_8h_a48b4a2b5eef11ce5a68762425bb39a97}\label{ieee80211_8h_a48b4a2b5eef11ce5a68762425bb39a97}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ@{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ}}
+\index{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ@{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ}{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_REQ}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+REASSOC\+\_\+\+REQ~0x20}
+
+\mbox{\Hypertarget{ieee80211_8h_ac218b7c2aff785cb8f24b063a835c95b}\label{ieee80211_8h_ac218b7c2aff785cb8f24b063a835c95b}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP@{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP}}
+\index{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP@{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP}{IEEE80211\_FC0\_SUBTYPE\_REASSOC\_RESP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+REASSOC\+\_\+\+RESP~0x30}
+
+\mbox{\Hypertarget{ieee80211_8h_a268d3ca00182320288192b11543237cf}\label{ieee80211_8h_a268d3ca00182320288192b11543237cf}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_RTS@{IEEE80211\_FC0\_SUBTYPE\_RTS}}
+\index{IEEE80211\_FC0\_SUBTYPE\_RTS@{IEEE80211\_FC0\_SUBTYPE\_RTS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_RTS}{IEEE80211\_FC0\_SUBTYPE\_RTS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+RTS~0xb0}
+
+\mbox{\Hypertarget{ieee80211_8h_adf85e6dcefd29338db68375a99f026de}\label{ieee80211_8h_adf85e6dcefd29338db68375a99f026de}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_SUBTYPE\_SHIFT@{IEEE80211\_FC0\_SUBTYPE\_SHIFT}}
+\index{IEEE80211\_FC0\_SUBTYPE\_SHIFT@{IEEE80211\_FC0\_SUBTYPE\_SHIFT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_SUBTYPE\_SHIFT}{IEEE80211\_FC0\_SUBTYPE\_SHIFT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+SUBTYPE\+\_\+\+SHIFT~4}
+
+\mbox{\Hypertarget{ieee80211_8h_a1af5d6a0636cbfa7019ee5f5325f0ddc}\label{ieee80211_8h_a1af5d6a0636cbfa7019ee5f5325f0ddc}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_TYPE\_CTL@{IEEE80211\_FC0\_TYPE\_CTL}}
+\index{IEEE80211\_FC0\_TYPE\_CTL@{IEEE80211\_FC0\_TYPE\_CTL}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_TYPE\_CTL}{IEEE80211\_FC0\_TYPE\_CTL}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+CTL~0x04}
+
+\mbox{\Hypertarget{ieee80211_8h_a84fadc719a3ea4f27a789aee52d19a95}\label{ieee80211_8h_a84fadc719a3ea4f27a789aee52d19a95}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_TYPE\_DATA@{IEEE80211\_FC0\_TYPE\_DATA}}
+\index{IEEE80211\_FC0\_TYPE\_DATA@{IEEE80211\_FC0\_TYPE\_DATA}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_TYPE\_DATA}{IEEE80211\_FC0\_TYPE\_DATA}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+DATA~0x08}
+
+\mbox{\Hypertarget{ieee80211_8h_a25db43f225d4802140bdf903d3a9fb12}\label{ieee80211_8h_a25db43f225d4802140bdf903d3a9fb12}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_TYPE\_MASK@{IEEE80211\_FC0\_TYPE\_MASK}}
+\index{IEEE80211\_FC0\_TYPE\_MASK@{IEEE80211\_FC0\_TYPE\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_TYPE\_MASK}{IEEE80211\_FC0\_TYPE\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+MASK~0x0c}
+
+\mbox{\Hypertarget{ieee80211_8h_a7fb8a8d6c5db6500162f51327f036f40}\label{ieee80211_8h_a7fb8a8d6c5db6500162f51327f036f40}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_TYPE\_MGT@{IEEE80211\_FC0\_TYPE\_MGT}}
+\index{IEEE80211\_FC0\_TYPE\_MGT@{IEEE80211\_FC0\_TYPE\_MGT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_TYPE\_MGT}{IEEE80211\_FC0\_TYPE\_MGT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+MGT~0x00}
+
+\mbox{\Hypertarget{ieee80211_8h_a6e3a9e54cd74332bc0fe6dae49694e07}\label{ieee80211_8h_a6e3a9e54cd74332bc0fe6dae49694e07}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_TYPE\_SHIFT@{IEEE80211\_FC0\_TYPE\_SHIFT}}
+\index{IEEE80211\_FC0\_TYPE\_SHIFT@{IEEE80211\_FC0\_TYPE\_SHIFT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_TYPE\_SHIFT}{IEEE80211\_FC0\_TYPE\_SHIFT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+TYPE\+\_\+\+SHIFT~2}
+
+\mbox{\Hypertarget{ieee80211_8h_ab5ac1e7eacc5abae4cb6b7506d17bd45}\label{ieee80211_8h_ab5ac1e7eacc5abae4cb6b7506d17bd45}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_VERSION\_0@{IEEE80211\_FC0\_VERSION\_0}}
+\index{IEEE80211\_FC0\_VERSION\_0@{IEEE80211\_FC0\_VERSION\_0}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_VERSION\_0}{IEEE80211\_FC0\_VERSION\_0}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+0~0x00}
+
+\mbox{\Hypertarget{ieee80211_8h_a6bc9eac6082c6d030af2b73eb48eb1ea}\label{ieee80211_8h_a6bc9eac6082c6d030af2b73eb48eb1ea}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_VERSION\_MASK@{IEEE80211\_FC0\_VERSION\_MASK}}
+\index{IEEE80211\_FC0\_VERSION\_MASK@{IEEE80211\_FC0\_VERSION\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_VERSION\_MASK}{IEEE80211\_FC0\_VERSION\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+\+MASK~0x03}
+
+\mbox{\Hypertarget{ieee80211_8h_a93b6319b24c45010894df0e42ac738ce}\label{ieee80211_8h_a93b6319b24c45010894df0e42ac738ce}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC0\_VERSION\_SHIFT@{IEEE80211\_FC0\_VERSION\_SHIFT}}
+\index{IEEE80211\_FC0\_VERSION\_SHIFT@{IEEE80211\_FC0\_VERSION\_SHIFT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC0\_VERSION\_SHIFT}{IEEE80211\_FC0\_VERSION\_SHIFT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC0\+\_\+\+VERSION\+\_\+\+SHIFT~0}
+
+\mbox{\Hypertarget{ieee80211_8h_a6f548c74a3fa1d3cf21c4e49ca2bc92b}\label{ieee80211_8h_a6f548c74a3fa1d3cf21c4e49ca2bc92b}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_DIR\_DSTODS@{IEEE80211\_FC1\_DIR\_DSTODS}}
+\index{IEEE80211\_FC1\_DIR\_DSTODS@{IEEE80211\_FC1\_DIR\_DSTODS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_DIR\_DSTODS}{IEEE80211\_FC1\_DIR\_DSTODS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+DSTODS~0x03 /$\ast$ AP -\/$>$AP  $\ast$/}
+
+\mbox{\Hypertarget{ieee80211_8h_aca10b612f9ceb5d2b81a035499fe833a}\label{ieee80211_8h_aca10b612f9ceb5d2b81a035499fe833a}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_DIR\_FROMDS@{IEEE80211\_FC1\_DIR\_FROMDS}}
+\index{IEEE80211\_FC1\_DIR\_FROMDS@{IEEE80211\_FC1\_DIR\_FROMDS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_DIR\_FROMDS}{IEEE80211\_FC1\_DIR\_FROMDS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+FROMDS~0x02 /$\ast$ AP -\/$>$STA $\ast$/}
+
+\mbox{\Hypertarget{ieee80211_8h_aaeeacbf8cb6fcb873f0f54e387cd34a1}\label{ieee80211_8h_aaeeacbf8cb6fcb873f0f54e387cd34a1}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_DIR\_MASK@{IEEE80211\_FC1\_DIR\_MASK}}
+\index{IEEE80211\_FC1\_DIR\_MASK@{IEEE80211\_FC1\_DIR\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_DIR\_MASK}{IEEE80211\_FC1\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+MASK~0x03}
+
+\mbox{\Hypertarget{ieee80211_8h_aae938ba74f00c978fa095e62d04ceeea}\label{ieee80211_8h_aae938ba74f00c978fa095e62d04ceeea}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_DIR\_NODS@{IEEE80211\_FC1\_DIR\_NODS}}
+\index{IEEE80211\_FC1\_DIR\_NODS@{IEEE80211\_FC1\_DIR\_NODS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_DIR\_NODS}{IEEE80211\_FC1\_DIR\_NODS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+NODS~0x00 /$\ast$ STA-\/$>$STA $\ast$/}
+
+\mbox{\Hypertarget{ieee80211_8h_adab2bda5bb91a5738b3f209765f57be3}\label{ieee80211_8h_adab2bda5bb91a5738b3f209765f57be3}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_DIR\_TODS@{IEEE80211\_FC1\_DIR\_TODS}}
+\index{IEEE80211\_FC1\_DIR\_TODS@{IEEE80211\_FC1\_DIR\_TODS}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_DIR\_TODS}{IEEE80211\_FC1\_DIR\_TODS}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+DIR\+\_\+\+TODS~0x01 /$\ast$ STA-\/$>$AP  $\ast$/}
+
+\mbox{\Hypertarget{ieee80211_8h_aef1337708bfdc89b3227a412007558e9}\label{ieee80211_8h_aef1337708bfdc89b3227a412007558e9}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_MORE\_DATA@{IEEE80211\_FC1\_MORE\_DATA}}
+\index{IEEE80211\_FC1\_MORE\_DATA@{IEEE80211\_FC1\_MORE\_DATA}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_MORE\_DATA}{IEEE80211\_FC1\_MORE\_DATA}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+MORE\+\_\+\+DATA~0x20}
+
+\mbox{\Hypertarget{ieee80211_8h_a0dda1c6bf0782f3baa66f09436a06109}\label{ieee80211_8h_a0dda1c6bf0782f3baa66f09436a06109}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_MORE\_FRAG@{IEEE80211\_FC1\_MORE\_FRAG}}
+\index{IEEE80211\_FC1\_MORE\_FRAG@{IEEE80211\_FC1\_MORE\_FRAG}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_MORE\_FRAG}{IEEE80211\_FC1\_MORE\_FRAG}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+MORE\+\_\+\+FRAG~0x04}
+
+\mbox{\Hypertarget{ieee80211_8h_a29d918f347541545247271caf74a8df0}\label{ieee80211_8h_a29d918f347541545247271caf74a8df0}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_ORDER@{IEEE80211\_FC1\_ORDER}}
+\index{IEEE80211\_FC1\_ORDER@{IEEE80211\_FC1\_ORDER}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_ORDER}{IEEE80211\_FC1\_ORDER}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+ORDER~0x80}
+
+\mbox{\Hypertarget{ieee80211_8h_ac682f28d2819fda1f7dea7a5d77d4128}\label{ieee80211_8h_ac682f28d2819fda1f7dea7a5d77d4128}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_PWR\_MGT@{IEEE80211\_FC1\_PWR\_MGT}}
+\index{IEEE80211\_FC1\_PWR\_MGT@{IEEE80211\_FC1\_PWR\_MGT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_PWR\_MGT}{IEEE80211\_FC1\_PWR\_MGT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+PWR\+\_\+\+MGT~0x10}
+
+\mbox{\Hypertarget{ieee80211_8h_a0f0f1204c653b01d6a91c329b584aa65}\label{ieee80211_8h_a0f0f1204c653b01d6a91c329b584aa65}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_RETRY@{IEEE80211\_FC1\_RETRY}}
+\index{IEEE80211\_FC1\_RETRY@{IEEE80211\_FC1\_RETRY}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_RETRY}{IEEE80211\_FC1\_RETRY}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+RETRY~0x08}
+
+\mbox{\Hypertarget{ieee80211_8h_a98dfeddd3e803db7d00884ef06a5bdbe}\label{ieee80211_8h_a98dfeddd3e803db7d00884ef06a5bdbe}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_FC1\_WEP@{IEEE80211\_FC1\_WEP}}
+\index{IEEE80211\_FC1\_WEP@{IEEE80211\_FC1\_WEP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_FC1\_WEP}{IEEE80211\_FC1\_WEP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+FC1\+\_\+\+WEP~0x40}
+
+\mbox{\Hypertarget{ieee80211_8h_a53ae6e0b791550e9977bf7acb2ada70e}\label{ieee80211_8h_a53ae6e0b791550e9977bf7acb2ada70e}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_MGT\_SUBTYPE\_NAMES@{IEEE80211\_MGT\_SUBTYPE\_NAMES}}
+\index{IEEE80211\_MGT\_SUBTYPE\_NAMES@{IEEE80211\_MGT\_SUBTYPE\_NAMES}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_MGT\_SUBTYPE\_NAMES}{IEEE80211\_MGT\_SUBTYPE\_NAMES}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+MGT\+\_\+\+SUBTYPE\+\_\+\+NAMES}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{           \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}assoc-\/req"{}},        \textcolor{stringliteral}{"{}assoc-\/resp"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reassoc-\/req"{}},      \textcolor{stringliteral}{"{}reassoc-\/resp"{}},     \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}probe-\/req"{}},        \textcolor{stringliteral}{"{}probe-\/resp"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#6"{}},       \textcolor{stringliteral}{"{}reserved\#7"{}},       \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}beacon"{}},       \textcolor{stringliteral}{"{}atim"{}},         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}disassoc"{}},     \textcolor{stringliteral}{"{}auth"{}},         \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}deauth"{}},       \textcolor{stringliteral}{"{}reserved\#13"{}},      \(\backslash\)}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}reserved\#14"{}},      \textcolor{stringliteral}{"{}reserved\#15"{}}       \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ieee80211_8h_adc15f02fa363856549741ee2a63fee03}\label{ieee80211_8h_adc15f02fa363856549741ee2a63fee03}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_NWID\_LEN@{IEEE80211\_NWID\_LEN}}
+\index{IEEE80211\_NWID\_LEN@{IEEE80211\_NWID\_LEN}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_NWID\_LEN}{IEEE80211\_NWID\_LEN}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+NWID\+\_\+\+LEN~32}
+
+\mbox{\Hypertarget{ieee80211_8h_af103bf19e74d2e5c917a8e4bd06a6f4d}\label{ieee80211_8h_af103bf19e74d2e5c917a8e4bd06a6f4d}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_ACKPOLICY@{IEEE80211\_QOS\_ACKPOLICY}}
+\index{IEEE80211\_QOS\_ACKPOLICY@{IEEE80211\_QOS\_ACKPOLICY}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_ACKPOLICY}{IEEE80211\_QOS\_ACKPOLICY}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+ACKPOLICY~0x60}
+
+\mbox{\Hypertarget{ieee80211_8h_addef03703f37f5c0578a16f519735952}\label{ieee80211_8h_addef03703f37f5c0578a16f519735952}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_ACKPOLICY\_S@{IEEE80211\_QOS\_ACKPOLICY\_S}}
+\index{IEEE80211\_QOS\_ACKPOLICY\_S@{IEEE80211\_QOS\_ACKPOLICY\_S}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_ACKPOLICY\_S}{IEEE80211\_QOS\_ACKPOLICY\_S}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+ACKPOLICY\+\_\+S~5}
+
+\mbox{\Hypertarget{ieee80211_8h_a077048626a18f8c2dd5daa9644343007}\label{ieee80211_8h_a077048626a18f8c2dd5daa9644343007}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_ESOP@{IEEE80211\_QOS\_ESOP}}
+\index{IEEE80211\_QOS\_ESOP@{IEEE80211\_QOS\_ESOP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_ESOP}{IEEE80211\_QOS\_ESOP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+ESOP~0x10}
+
+\mbox{\Hypertarget{ieee80211_8h_aac930826d3df53e28cc92da5407d89be}\label{ieee80211_8h_aac930826d3df53e28cc92da5407d89be}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_ESOP\_S@{IEEE80211\_QOS\_ESOP\_S}}
+\index{IEEE80211\_QOS\_ESOP\_S@{IEEE80211\_QOS\_ESOP\_S}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_ESOP\_S}{IEEE80211\_QOS\_ESOP\_S}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+ESOP\+\_\+S~4}
+
+\mbox{\Hypertarget{ieee80211_8h_aecc57c40bf5e758876088418d122cbff}\label{ieee80211_8h_aecc57c40bf5e758876088418d122cbff}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_TID@{IEEE80211\_QOS\_TID}}
+\index{IEEE80211\_QOS\_TID@{IEEE80211\_QOS\_TID}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_TID}{IEEE80211\_QOS\_TID}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+TID~0x0f}
+
+\mbox{\Hypertarget{ieee80211_8h_a4531c3b49b6ca501f8f79f55841385bf}\label{ieee80211_8h_a4531c3b49b6ca501f8f79f55841385bf}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_QOS\_TXOP@{IEEE80211\_QOS\_TXOP}}
+\index{IEEE80211\_QOS\_TXOP@{IEEE80211\_QOS\_TXOP}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_QOS\_TXOP}{IEEE80211\_QOS\_TXOP}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+QOS\+\_\+\+TXOP~0x00ff}
+
+\mbox{\Hypertarget{ieee80211_8h_a7ac5595e0c14cb1aec5204176893be57}\label{ieee80211_8h_a7ac5595e0c14cb1aec5204176893be57}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_SEQ\_FRAG\_MASK@{IEEE80211\_SEQ\_FRAG\_MASK}}
+\index{IEEE80211\_SEQ\_FRAG\_MASK@{IEEE80211\_SEQ\_FRAG\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_SEQ\_FRAG\_MASK}{IEEE80211\_SEQ\_FRAG\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+SEQ\+\_\+\+FRAG\+\_\+\+MASK~0x000f}
+
+\mbox{\Hypertarget{ieee80211_8h_a114ecd35b9210018509b5ce44104ec2b}\label{ieee80211_8h_a114ecd35b9210018509b5ce44104ec2b}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_SEQ\_FRAG\_SHIFT@{IEEE80211\_SEQ\_FRAG\_SHIFT}}
+\index{IEEE80211\_SEQ\_FRAG\_SHIFT@{IEEE80211\_SEQ\_FRAG\_SHIFT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_SEQ\_FRAG\_SHIFT}{IEEE80211\_SEQ\_FRAG\_SHIFT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+SEQ\+\_\+\+FRAG\+\_\+\+SHIFT~0}
+
+\mbox{\Hypertarget{ieee80211_8h_a29c80056d4543057c1cd156cc7d3e8b5}\label{ieee80211_8h_a29c80056d4543057c1cd156cc7d3e8b5}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_SEQ\_SEQ\_MASK@{IEEE80211\_SEQ\_SEQ\_MASK}}
+\index{IEEE80211\_SEQ\_SEQ\_MASK@{IEEE80211\_SEQ\_SEQ\_MASK}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_SEQ\_SEQ\_MASK}{IEEE80211\_SEQ\_SEQ\_MASK}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+SEQ\+\_\+\+SEQ\+\_\+\+MASK~0xfff0}
+
+\mbox{\Hypertarget{ieee80211_8h_a1f06b355292378b98e37fbab2f9c18a5}\label{ieee80211_8h_a1f06b355292378b98e37fbab2f9c18a5}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_SEQ\_SEQ\_SHIFT@{IEEE80211\_SEQ\_SEQ\_SHIFT}}
+\index{IEEE80211\_SEQ\_SEQ\_SHIFT@{IEEE80211\_SEQ\_SEQ\_SHIFT}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_SEQ\_SEQ\_SHIFT}{IEEE80211\_SEQ\_SEQ\_SHIFT}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+SEQ\+\_\+\+SEQ\+\_\+\+SHIFT~4}
+
+\mbox{\Hypertarget{ieee80211_8h_ad3680cdde82227b5cc3ba747b325ef9b}\label{ieee80211_8h_ad3680cdde82227b5cc3ba747b325ef9b}} 
+\index{ieee80211.h@{ieee80211.h}!IEEE80211\_TYPE\_NAMES@{IEEE80211\_TYPE\_NAMES}}
+\index{IEEE80211\_TYPE\_NAMES@{IEEE80211\_TYPE\_NAMES}!ieee80211.h@{ieee80211.h}}
+\doxysubsubsection{\texorpdfstring{IEEE80211\_TYPE\_NAMES}{IEEE80211\_TYPE\_NAMES}}
+{\footnotesize\ttfamily \#define IEEE80211\+\_\+\+TYPE\+\_\+\+NAMES~\{ \char`\"{}mgt\char`\"{}, \char`\"{}\mbox{\hyperlink{pcap-dlpi_8c_a922aadca50c7c1cf1579943f9ce2ab28}{ctl}}\char`\"{}, \char`\"{}data\char`\"{}, \char`\"{}reserved\#4\char`\"{} \}}
+

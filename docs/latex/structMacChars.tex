@@ -1,0 +1,186 @@
+\hypertarget{structMacChars}{}\doxysection{Mac\+Chars结构体 参考}
+\label{structMacChars}\index{MacChars@{MacChars}}
+
+
+{\ttfamily \#include $<$ndis2.\+h$>$}
+
+
+
+Mac\+Chars 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{structMacChars__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_a9eeef73a0d48552b88f2304a09eefa51}{table\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{structMacChars_a553111bfd8ba2a3143b062c1f968f5b3}{mac\+Name}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_ad925507e7119f66c1eb477b0f1576abf}{address\+Length}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{structMacChars_a57591a48f43d935a59eb266ca8661480}{permanent\+Address}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{structMacChars_a61f7b1624d0ff17381c9e211d4607919}{current\+Address}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structMacChars_aa39f18f826f563efd478f39eb3a96047}{current\+Functional\+Address}}
+\item 
+\mbox{\hyperlink{structMulticastList}{Multicast\+List}} $\ast$ \mbox{\hyperlink{structMacChars_a28e05cd9eca61f87afe8b7cd716455cd}{multicast\+List}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structMacChars_a877c966ff233789931cb921cd15b2399}{link\+Speed}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structMacChars_a1ed590b2aa3e026dea02ccce3023ea9b}{service\+Flags}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_a1fd321f4d43d8f3eb5c63b1f8b45d2cf}{max\+Frame\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structMacChars_a207ebe01652b4c63dce5a9c671cc543e}{tx\+Buffer\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_a338e9a640b147a6ece1f31728f43a2a4}{tx\+Buffer\+Alloc\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structMacChars_a439f0f13acfcbdc71e7ddaa970fe1625}{rx\+Buffer\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_a5bd864ab4a7904e596d467c97a4b76dd}{rx\+Buffer\+Alloc\+Size}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{structMacChars_a15d742d0f6b4159dd838078710d314a0}{ieee\+Vendor}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} \mbox{\hyperlink{structMacChars_a6298b3ff4e802c3a0367b9669e93ef32}{vendor\+Adapter}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$ \mbox{\hyperlink{structMacChars_a5fe74fc7097ae2f7f094bafb00c8997e}{vendor\+Adapter\+Description}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_aa74490f38744172e27b237b6e04e9609}{interrupt\+Level}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_a1b8c1b525166ffb392dbd38ec7f75235}{tx\+Queue\+Depth}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structMacChars_aafdb153615d922d0cd88d1eeefee3434}{max\+Data\+Blocks}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structMacChars_ad925507e7119f66c1eb477b0f1576abf}\label{structMacChars_ad925507e7119f66c1eb477b0f1576abf}} 
+\index{MacChars@{MacChars}!addressLength@{addressLength}}
+\index{addressLength@{addressLength}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{addressLength}{addressLength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} address\+Length}
+
+\mbox{\Hypertarget{structMacChars_a61f7b1624d0ff17381c9e211d4607919}\label{structMacChars_a61f7b1624d0ff17381c9e211d4607919}} 
+\index{MacChars@{MacChars}!currentAddress@{currentAddress}}
+\index{currentAddress@{currentAddress}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{currentAddress}{currentAddress}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} current\+Address\mbox{[}16\mbox{]}}
+
+\mbox{\Hypertarget{structMacChars_aa39f18f826f563efd478f39eb3a96047}\label{structMacChars_aa39f18f826f563efd478f39eb3a96047}} 
+\index{MacChars@{MacChars}!currentFunctionalAddress@{currentFunctionalAddress}}
+\index{currentFunctionalAddress@{currentFunctionalAddress}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{currentFunctionalAddress}{currentFunctionalAddress}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} current\+Functional\+Address}
+
+\mbox{\Hypertarget{structMacChars_a15d742d0f6b4159dd838078710d314a0}\label{structMacChars_a15d742d0f6b4159dd838078710d314a0}} 
+\index{MacChars@{MacChars}!ieeeVendor@{ieeeVendor}}
+\index{ieeeVendor@{ieeeVendor}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{ieeeVendor}{ieeeVendor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} ieee\+Vendor\mbox{[}3\mbox{]}}
+
+\mbox{\Hypertarget{structMacChars_aa74490f38744172e27b237b6e04e9609}\label{structMacChars_aa74490f38744172e27b237b6e04e9609}} 
+\index{MacChars@{MacChars}!interruptLevel@{interruptLevel}}
+\index{interruptLevel@{interruptLevel}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{interruptLevel}{interruptLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} interrupt\+Level}
+
+\mbox{\Hypertarget{structMacChars_a877c966ff233789931cb921cd15b2399}\label{structMacChars_a877c966ff233789931cb921cd15b2399}} 
+\index{MacChars@{MacChars}!linkSpeed@{linkSpeed}}
+\index{linkSpeed@{linkSpeed}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{linkSpeed}{linkSpeed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} link\+Speed}
+
+\mbox{\Hypertarget{structMacChars_a553111bfd8ba2a3143b062c1f968f5b3}\label{structMacChars_a553111bfd8ba2a3143b062c1f968f5b3}} 
+\index{MacChars@{MacChars}!macName@{macName}}
+\index{macName@{macName}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{macName}{macName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} mac\+Name\mbox{[}16\mbox{]}}
+
+\mbox{\Hypertarget{structMacChars_aafdb153615d922d0cd88d1eeefee3434}\label{structMacChars_aafdb153615d922d0cd88d1eeefee3434}} 
+\index{MacChars@{MacChars}!maxDataBlocks@{maxDataBlocks}}
+\index{maxDataBlocks@{maxDataBlocks}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{maxDataBlocks}{maxDataBlocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} max\+Data\+Blocks}
+
+\mbox{\Hypertarget{structMacChars_a1fd321f4d43d8f3eb5c63b1f8b45d2cf}\label{structMacChars_a1fd321f4d43d8f3eb5c63b1f8b45d2cf}} 
+\index{MacChars@{MacChars}!maxFrameSize@{maxFrameSize}}
+\index{maxFrameSize@{maxFrameSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{maxFrameSize}{maxFrameSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} max\+Frame\+Size}
+
+\mbox{\Hypertarget{structMacChars_a28e05cd9eca61f87afe8b7cd716455cd}\label{structMacChars_a28e05cd9eca61f87afe8b7cd716455cd}} 
+\index{MacChars@{MacChars}!multicastList@{multicastList}}
+\index{multicastList@{multicastList}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{multicastList}{multicastList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMulticastList}{Multicast\+List}}$\ast$ multicast\+List}
+
+\mbox{\Hypertarget{structMacChars_a57591a48f43d935a59eb266ca8661480}\label{structMacChars_a57591a48f43d935a59eb266ca8661480}} 
+\index{MacChars@{MacChars}!permanentAddress@{permanentAddress}}
+\index{permanentAddress@{permanentAddress}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{permanentAddress}{permanentAddress}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} permanent\+Address\mbox{[}16\mbox{]}}
+
+\mbox{\Hypertarget{structMacChars_a5bd864ab4a7904e596d467c97a4b76dd}\label{structMacChars_a5bd864ab4a7904e596d467c97a4b76dd}} 
+\index{MacChars@{MacChars}!rxBufferAllocSize@{rxBufferAllocSize}}
+\index{rxBufferAllocSize@{rxBufferAllocSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{rxBufferAllocSize}{rxBufferAllocSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} rx\+Buffer\+Alloc\+Size}
+
+\mbox{\Hypertarget{structMacChars_a439f0f13acfcbdc71e7ddaa970fe1625}\label{structMacChars_a439f0f13acfcbdc71e7ddaa970fe1625}} 
+\index{MacChars@{MacChars}!rxBufferSize@{rxBufferSize}}
+\index{rxBufferSize@{rxBufferSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{rxBufferSize}{rxBufferSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} rx\+Buffer\+Size}
+
+\mbox{\Hypertarget{structMacChars_a1ed590b2aa3e026dea02ccce3023ea9b}\label{structMacChars_a1ed590b2aa3e026dea02ccce3023ea9b}} 
+\index{MacChars@{MacChars}!serviceFlags@{serviceFlags}}
+\index{serviceFlags@{serviceFlags}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{serviceFlags}{serviceFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} service\+Flags}
+
+\mbox{\Hypertarget{structMacChars_a9eeef73a0d48552b88f2304a09eefa51}\label{structMacChars_a9eeef73a0d48552b88f2304a09eefa51}} 
+\index{MacChars@{MacChars}!tableSize@{tableSize}}
+\index{tableSize@{tableSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{tableSize}{tableSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} table\+Size}
+
+\mbox{\Hypertarget{structMacChars_a338e9a640b147a6ece1f31728f43a2a4}\label{structMacChars_a338e9a640b147a6ece1f31728f43a2a4}} 
+\index{MacChars@{MacChars}!txBufferAllocSize@{txBufferAllocSize}}
+\index{txBufferAllocSize@{txBufferAllocSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{txBufferAllocSize}{txBufferAllocSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} tx\+Buffer\+Alloc\+Size}
+
+\mbox{\Hypertarget{structMacChars_a207ebe01652b4c63dce5a9c671cc543e}\label{structMacChars_a207ebe01652b4c63dce5a9c671cc543e}} 
+\index{MacChars@{MacChars}!txBufferSize@{txBufferSize}}
+\index{txBufferSize@{txBufferSize}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{txBufferSize}{txBufferSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} tx\+Buffer\+Size}
+
+\mbox{\Hypertarget{structMacChars_a1b8c1b525166ffb392dbd38ec7f75235}\label{structMacChars_a1b8c1b525166ffb392dbd38ec7f75235}} 
+\index{MacChars@{MacChars}!txQueueDepth@{txQueueDepth}}
+\index{txQueueDepth@{txQueueDepth}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{txQueueDepth}{txQueueDepth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} tx\+Queue\+Depth}
+
+\mbox{\Hypertarget{structMacChars_a6298b3ff4e802c3a0367b9669e93ef32}\label{structMacChars_a6298b3ff4e802c3a0367b9669e93ef32}} 
+\index{MacChars@{MacChars}!vendorAdapter@{vendorAdapter}}
+\index{vendorAdapter@{vendorAdapter}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{vendorAdapter}{vendorAdapter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} vendor\+Adapter}
+
+\mbox{\Hypertarget{structMacChars_a5fe74fc7097ae2f7f094bafb00c8997e}\label{structMacChars_a5fe74fc7097ae2f7f094bafb00c8997e}} 
+\index{MacChars@{MacChars}!vendorAdapterDescription@{vendorAdapterDescription}}
+\index{vendorAdapterDescription@{vendorAdapterDescription}!MacChars@{MacChars}}
+\doxysubsubsection{\texorpdfstring{vendorAdapterDescription}{vendorAdapterDescription}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}$\ast$ vendor\+Adapter\+Description}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/msdos/\mbox{\hyperlink{ndis2_8h}{ndis2.\+h}}\end{DoxyCompactItemize}

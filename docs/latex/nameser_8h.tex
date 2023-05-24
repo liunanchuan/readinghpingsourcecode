@@ -1,0 +1,694 @@
+\hypertarget{nameser_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/arpa/nameser.h 文件参考}
+\label{nameser_8h}\index{libpcap-\/1.1.1/Win32/Include/arpa/nameser.h@{libpcap-\/1.1.1/Win32/Include/arpa/nameser.h}}
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$sys/bitypes.\+h$>$}\newline
+{\ttfamily \#include $<$sys/cdefs.\+h$>$}\newline
+nameser.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{nameser_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nameser_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHEADER}{HEADER}}
+\item 
+struct \mbox{\hyperlink{structrrec}{rrec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{nameser_8h_abe08985c8fa0285b6a66d19a89433e78}{\+\_\+\+\_\+\+BIND}}~19940417 /$\ast$ interface version stamp $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aec9c73a8c49efe97e0545187fa8b856d}{PACKETSZ}}~512  /$\ast$ maximum packet size $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a7e49780fcec2ca98abd7b5acb9c51991}{MAXDNAME}}~256  /$\ast$ maximum domain name $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a435ea8894e87701f66e9f36dbee3048e}{MAXCDNAME}}~255  /$\ast$ maximum compressed domain name $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a57ef44e89326a371a47cfd186bf1f6a8}{MAXLABEL}}~63  /$\ast$ maximum length of domain label $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ae4037ec89590e6cb22786be5319e7ad2}{HFIXEDSZ}}~12  /$\ast$ \#/bytes of fixed data in header $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a23b1a00ed028a175c227b33315cb696a}{QFIXEDSZ}}~4  /$\ast$ \#/bytes of fixed data in query $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_afa19d50689106533b5971913edcc34a3}{RRFIXEDSZ}}~10  /$\ast$ \#/bytes of fixed data in r record $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a9dff6e3ce489e09dee1e90f407367775}{INT32\+SZ}}~4  /$\ast$ for systems without 32-\/bit ints $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_af9f8961aa7a7fee1b23f4e8b16db2d22}{INT16\+SZ}}~2  /$\ast$ for systems without 16-\/bit ints $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a001221f197fa18c54d6fc0833afe43ce}{INADDRSZ}}~4  /$\ast$ for sizeof(struct inaddr) != 4 $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ab53a3cbe9cc44ecb87eb8e72ea7dc262}{NAMESERVER\+\_\+\+PORT}}~53
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ae5ff1f63e632fba61c45cfb0a2b19066}{QUERY}}~0x0  /$\ast$ standard query $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a019a06f90cd887d8022f3dcce1180b51}{IQUERY}}~0x1  /$\ast$ inverse query $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}{STATUS}}~0x2  /$\ast$ nameserver status query $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_abf3ed5d1601d6b8ac5d61bc4f37abefb}{NS\+\_\+\+NOTIFY\+\_\+\+OP}}~0x4  /$\ast$ notify secondary of SOA change $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ac80ccd3411b3398c6e8cd1a96627a4fa}{FORMERR}}~1  /$\ast$ \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}} \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ad2a930d5bda1668f19001886613edbaa}{SERVFAIL}}~2  /$\ast$ server failure $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ab710bad10a5e84f08cb36ed4950ff1b0}{NXDOMAIN}}~3  /$\ast$ non existent domain $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a78a3e1e631331ac035e38bea9196336b}{NOTIMP}}~4  /$\ast$ not implemented $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ac846cd5d68d1b8a88c2f77ddade87c6e}{REFUSED}}~5  /$\ast$ query refused $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a11241ed27971fdd50a08f46de115cc89}{T\+\_\+A}}~1  /$\ast$ host address $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a0a6ac5132f1f9199707b0b83d0c0ffbd}{T\+\_\+\+NS}}~2  /$\ast$ authoritative server $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_afbaecd243f545ada17ffab2da8f55296}{T\+\_\+\+MD}}~3  /$\ast$ mail destination $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a41b858a0bf5df3d62b590a1483255c9a}{T\+\_\+\+MF}}~4  /$\ast$ mail forwarder $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a3b1f450c75d14e4a17f4d157641999e5}{T\+\_\+\+CNAME}}~5  /$\ast$ canonical name $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a951721e7ce0e59fbcb618f0036ebb4cb}{T\+\_\+\+SOA}}~6  /$\ast$ start of authority zone $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ab96aaa2f27ec917f0fc981bb0977f0e9}{T\+\_\+\+MB}}~7  /$\ast$ mailbox domain name $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aeb7938e0a0cd295c7c4a5e1f67cdb8d4}{T\+\_\+\+MG}}~8  /$\ast$ mail group member $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a400000cc23c229264dfc40bea52614d2}{T\+\_\+\+MR}}~9  /$\ast$ mail \mbox{\hyperlink{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}{rename}} name $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_afb8e7ff3357caa8dd3252695cefece51}{T\+\_\+\+NULL}}~10  /$\ast$ null resource record $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a87ac06dc0d7c15d15cefeadc97b0ba7e}{T\+\_\+\+WKS}}~11  /$\ast$ well known service $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a26e251e7a38ee37f65a6895d49ccf17f}{T\+\_\+\+PTR}}~12  /$\ast$ domain name pointer $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a0f4d4d3a8e1e38927ea2f4d92d28afb2}{T\+\_\+\+HINFO}}~13  /$\ast$ host information $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a946bd2b3282942fed85f943bc124562d}{T\+\_\+\+MINFO}}~14  /$\ast$ mailbox information $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a379fb519f8a88b3f63f69e519d801cee}{T\+\_\+\+MX}}~15  /$\ast$ mail routing information $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a78854da665a47f26bc432d33a9e880ae}{T\+\_\+\+TXT}}~16  /$\ast$ text strings $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a7de5f753762756a9e198aa948e45e841}{T\+\_\+\+RP}}~17  /$\ast$ responsible person $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a32efcb6ef40fc2bc546ecd7bd457552e}{T\+\_\+\+AFSDB}}~18  /$\ast$ AFS cell database $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a0578e5bdd50d51105941a9c9bf980e37}{T\+\_\+\+X25}}~19  /$\ast$ X\+\_\+25 calling address $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ae451340e41889528075a785065c48e79}{T\+\_\+\+ISDN}}~20  /$\ast$ ISDN calling address $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ab9a76f27f872767d27c8a7ac6fde5c48}{T\+\_\+\+RT}}~21  /$\ast$ router $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a851cfabd3cce351da8a31eec1ef1bcf2}{T\+\_\+\+NSAP}}~22  /$\ast$ NSAP address $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a7d2b3a8cbc57464b4f5e8388e6f60098}{T\+\_\+\+NSAP\+\_\+\+PTR}}~23  /$\ast$ reverse NSAP lookup (deprecated) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a6e224ad0c2dba8c46b6be41640a23631}{T\+\_\+\+SIG}}~24  /$\ast$ security signature $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a77d5459649c5af68a94ef9f378f8eb63}{T\+\_\+\+KEY}}~25  /$\ast$ security key $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_acf1931b3fe446dfd0953183cf663e7b0}{T\+\_\+\+PX}}~26  /$\ast$ X.\+400 mail mapping $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_adcd39a2fdca0578361ecdd7775132311}{T\+\_\+\+GPOS}}~27  /$\ast$ geographical position (withdrawn) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a9988cc1cc24b640d7fc9d8f602104405}{T\+\_\+\+AAAA}}~28  /$\ast$ IP6 Address $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a44f0645b1fdbdea5a841e2c98486a686}{T\+\_\+\+LOC}}~29  /$\ast$ Location Information $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_afc0dbfbb74674695a09b1fe6059710ad}{T\+\_\+\+UINFO}}~100  /$\ast$ user (finger) information $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a966b7b0dbaf7b32df19a28c26e289a8c}{T\+\_\+\+UID}}~101  /$\ast$ user ID $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a328644041848577dd873d25afba92299}{T\+\_\+\+GID}}~102  /$\ast$ group ID $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ab614c1552f9933fee9584eec4d7e762e}{T\+\_\+\+UNSPEC}}~103  /$\ast$ Unspecified \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}} (binary data) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a5c138445dd7a660d2c574c094a8fedfa}{T\+\_\+\+AXFR}}~252  /$\ast$ transfer zone of authority $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aeb3f3b5b73465a6ed020f667dc5a9bd0}{T\+\_\+\+MAILB}}~253  /$\ast$ transfer mailbox records $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a178e0dc3f735cdb0a0041651f987a2dc}{T\+\_\+\+MAILA}}~254  /$\ast$ transfer mail agent records $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aaa8cccf76c5fbc1c7f8ece56a9226560}{T\+\_\+\+ANY}}~255  /$\ast$ wildcard match $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a35948d7e3f6c9b1e187879d6fb1db4d8}{C\+\_\+\+IN}}~1  /$\ast$ the arpa internet $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a1a4e22b4aae62b5054360e91b566624d}{C\+\_\+\+CHAOS}}~3  /$\ast$ for chaos \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}} (MIT) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a13269220f12c5460425330c607e1b592}{C\+\_\+\+HS}}~4  /$\ast$ for Hesiod name server (MIT) (XXX) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a06925467b895f4750a285abeef6120de}{C\+\_\+\+ANY}}~255  /$\ast$ wildcard match $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_ad8acb5c9f34280cdf4f476f577710abd}{CONV\+\_\+\+SUCCESS}}~0
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a6e0ead6aad465aeff9ae761653209329}{CONV\+\_\+\+OVERFLOW}}~(-\/1)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a6a0177d7fca38bbf39434c1eb9fc82bd}{CONV\+\_\+\+BADFMT}}~(-\/2)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_acd7ca28d0930a560fc3a9366ebb7717d}{CONV\+\_\+\+BADCKSUM}}~(-\/3)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a9a43963489e2e4e248bf5c8a9a74eab4}{CONV\+\_\+\+BADBUFLEN}}~(-\/4)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aeccf3e279c16687d91cd28d0463cbde6}{\+\_\+\+\_\+\+LITTLE\+\_\+\+ENDIAN}}~1234 /$\ast$ least-\/significant byte first (vax, pc) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_aa2c4bb6d7658760c2b3c668362e126ea}{\+\_\+\+\_\+\+BIG\+\_\+\+ENDIAN}}~4321 /$\ast$ most-\/significant byte first (IBM, \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}) $\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a64af42767719609f6990cc15fde055ca}{\+\_\+\+\_\+\+PDP\+\_\+\+ENDIAN}}~3412 /$\ast$ LSB first in word, MSW first in long (pdp)$\ast$/
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a1c6be50272fd222ea4341cf8d7161ddb}{INDIR\+\_\+\+MASK}}~0xc0
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a64d6bd96c7bd26d3aa87d168d990bc02}{GETSHORT}}(s,  cp)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a1ea21ad3910a34af9fabf1948c941c0e}{GETLONG}}(l,  cp)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a886d59a438b49ec9ad3895dbdb7a6140}{PUTSHORT}}(s,  cp)
+\item 
+\#define \mbox{\hyperlink{nameser_8h_a1e7b84ba4da72b43577117d32ea48f45}{PUTLONG}}(l,  cp)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} Undefined or invalid \mbox{\hyperlink{nameser_8h_aef0444027960cee1b5ac5bbe5dab7c04}{\+\_\+\+\_\+\+BYTE\+\_\+\+ORDER}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{nameser_8h_aa2c4bb6d7658760c2b3c668362e126ea}\label{nameser_8h_aa2c4bb6d7658760c2b3c668362e126ea}} 
+\index{nameser.h@{nameser.h}!\_\_BIG\_ENDIAN@{\_\_BIG\_ENDIAN}}
+\index{\_\_BIG\_ENDIAN@{\_\_BIG\_ENDIAN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{\_\_BIG\_ENDIAN}{\_\_BIG\_ENDIAN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BIG\+\_\+\+ENDIAN~4321 /$\ast$ most-\/significant byte first (IBM, \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_abe08985c8fa0285b6a66d19a89433e78}\label{nameser_8h_abe08985c8fa0285b6a66d19a89433e78}} 
+\index{nameser.h@{nameser.h}!\_\_BIND@{\_\_BIND}}
+\index{\_\_BIND@{\_\_BIND}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{\_\_BIND}{\_\_BIND}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BIND~19940417 /$\ast$ interface version stamp $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_aeccf3e279c16687d91cd28d0463cbde6}\label{nameser_8h_aeccf3e279c16687d91cd28d0463cbde6}} 
+\index{nameser.h@{nameser.h}!\_\_LITTLE\_ENDIAN@{\_\_LITTLE\_ENDIAN}}
+\index{\_\_LITTLE\_ENDIAN@{\_\_LITTLE\_ENDIAN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LITTLE\_ENDIAN}{\_\_LITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LITTLE\+\_\+\+ENDIAN~1234 /$\ast$ least-\/significant byte first (vax, pc) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a64af42767719609f6990cc15fde055ca}\label{nameser_8h_a64af42767719609f6990cc15fde055ca}} 
+\index{nameser.h@{nameser.h}!\_\_PDP\_ENDIAN@{\_\_PDP\_ENDIAN}}
+\index{\_\_PDP\_ENDIAN@{\_\_PDP\_ENDIAN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{\_\_PDP\_ENDIAN}{\_\_PDP\_ENDIAN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+PDP\+\_\+\+ENDIAN~3412 /$\ast$ LSB first in word, MSW first in long (pdp)$\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a06925467b895f4750a285abeef6120de}\label{nameser_8h_a06925467b895f4750a285abeef6120de}} 
+\index{nameser.h@{nameser.h}!C\_ANY@{C\_ANY}}
+\index{C\_ANY@{C\_ANY}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{C\_ANY}{C\_ANY}}
+{\footnotesize\ttfamily \#define C\+\_\+\+ANY~255  /$\ast$ wildcard match $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a1a4e22b4aae62b5054360e91b566624d}\label{nameser_8h_a1a4e22b4aae62b5054360e91b566624d}} 
+\index{nameser.h@{nameser.h}!C\_CHAOS@{C\_CHAOS}}
+\index{C\_CHAOS@{C\_CHAOS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{C\_CHAOS}{C\_CHAOS}}
+{\footnotesize\ttfamily \#define C\+\_\+\+CHAOS~3  /$\ast$ for chaos \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}} (MIT) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a13269220f12c5460425330c607e1b592}\label{nameser_8h_a13269220f12c5460425330c607e1b592}} 
+\index{nameser.h@{nameser.h}!C\_HS@{C\_HS}}
+\index{C\_HS@{C\_HS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{C\_HS}{C\_HS}}
+{\footnotesize\ttfamily \#define C\+\_\+\+HS~4  /$\ast$ for Hesiod name server (MIT) (XXX) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a35948d7e3f6c9b1e187879d6fb1db4d8}\label{nameser_8h_a35948d7e3f6c9b1e187879d6fb1db4d8}} 
+\index{nameser.h@{nameser.h}!C\_IN@{C\_IN}}
+\index{C\_IN@{C\_IN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{C\_IN}{C\_IN}}
+{\footnotesize\ttfamily \#define C\+\_\+\+IN~1  /$\ast$ the arpa internet $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a9a43963489e2e4e248bf5c8a9a74eab4}\label{nameser_8h_a9a43963489e2e4e248bf5c8a9a74eab4}} 
+\index{nameser.h@{nameser.h}!CONV\_BADBUFLEN@{CONV\_BADBUFLEN}}
+\index{CONV\_BADBUFLEN@{CONV\_BADBUFLEN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{CONV\_BADBUFLEN}{CONV\_BADBUFLEN}}
+{\footnotesize\ttfamily \#define CONV\+\_\+\+BADBUFLEN~(-\/4)}
+
+\mbox{\Hypertarget{nameser_8h_acd7ca28d0930a560fc3a9366ebb7717d}\label{nameser_8h_acd7ca28d0930a560fc3a9366ebb7717d}} 
+\index{nameser.h@{nameser.h}!CONV\_BADCKSUM@{CONV\_BADCKSUM}}
+\index{CONV\_BADCKSUM@{CONV\_BADCKSUM}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{CONV\_BADCKSUM}{CONV\_BADCKSUM}}
+{\footnotesize\ttfamily \#define CONV\+\_\+\+BADCKSUM~(-\/3)}
+
+\mbox{\Hypertarget{nameser_8h_a6a0177d7fca38bbf39434c1eb9fc82bd}\label{nameser_8h_a6a0177d7fca38bbf39434c1eb9fc82bd}} 
+\index{nameser.h@{nameser.h}!CONV\_BADFMT@{CONV\_BADFMT}}
+\index{CONV\_BADFMT@{CONV\_BADFMT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{CONV\_BADFMT}{CONV\_BADFMT}}
+{\footnotesize\ttfamily \#define CONV\+\_\+\+BADFMT~(-\/2)}
+
+\mbox{\Hypertarget{nameser_8h_a6e0ead6aad465aeff9ae761653209329}\label{nameser_8h_a6e0ead6aad465aeff9ae761653209329}} 
+\index{nameser.h@{nameser.h}!CONV\_OVERFLOW@{CONV\_OVERFLOW}}
+\index{CONV\_OVERFLOW@{CONV\_OVERFLOW}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{CONV\_OVERFLOW}{CONV\_OVERFLOW}}
+{\footnotesize\ttfamily \#define CONV\+\_\+\+OVERFLOW~(-\/1)}
+
+\mbox{\Hypertarget{nameser_8h_ad8acb5c9f34280cdf4f476f577710abd}\label{nameser_8h_ad8acb5c9f34280cdf4f476f577710abd}} 
+\index{nameser.h@{nameser.h}!CONV\_SUCCESS@{CONV\_SUCCESS}}
+\index{CONV\_SUCCESS@{CONV\_SUCCESS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{CONV\_SUCCESS}{CONV\_SUCCESS}}
+{\footnotesize\ttfamily \#define CONV\+\_\+\+SUCCESS~0}
+
+\mbox{\Hypertarget{nameser_8h_ac80ccd3411b3398c6e8cd1a96627a4fa}\label{nameser_8h_ac80ccd3411b3398c6e8cd1a96627a4fa}} 
+\index{nameser.h@{nameser.h}!FORMERR@{FORMERR}}
+\index{FORMERR@{FORMERR}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{FORMERR}{FORMERR}}
+{\footnotesize\ttfamily \#define FORMERR~1  /$\ast$ \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}} \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a1ea21ad3910a34af9fabf1948c941c0e}\label{nameser_8h_a1ea21ad3910a34af9fabf1948c941c0e}} 
+\index{nameser.h@{nameser.h}!GETLONG@{GETLONG}}
+\index{GETLONG@{GETLONG}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{GETLONG}{GETLONG}}
+{\footnotesize\ttfamily \#define GETLONG(\begin{DoxyParamCaption}\item[{}]{l,  }\item[{}]{cp }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}
+\DoxyCodeLine{    (l) = ((u\_int32\_t)t\_cp[0] << 24) \(\backslash\)}
+\DoxyCodeLine{        | ((u\_int32\_t)t\_cp[1] << 16) \(\backslash\)}
+\DoxyCodeLine{        | ((u\_int32\_t)t\_cp[2] << 8) \(\backslash\)}
+\DoxyCodeLine{        | ((u\_int32\_t)t\_cp[3]) \(\backslash\)}
+\DoxyCodeLine{        ; \(\backslash\)}
+\DoxyCodeLine{    (cp) += \mbox{\hyperlink{nameser_8h_a9dff6e3ce489e09dee1e90f407367775}{INT32SZ}}; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{nameser_8h_a64d6bd96c7bd26d3aa87d168d990bc02}\label{nameser_8h_a64d6bd96c7bd26d3aa87d168d990bc02}} 
+\index{nameser.h@{nameser.h}!GETSHORT@{GETSHORT}}
+\index{GETSHORT@{GETSHORT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{GETSHORT}{GETSHORT}}
+{\footnotesize\ttfamily \#define GETSHORT(\begin{DoxyParamCaption}\item[{}]{s,  }\item[{}]{cp }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}
+\DoxyCodeLine{    (s) = ((u\_int16\_t)t\_cp[0] << 8) \(\backslash\)}
+\DoxyCodeLine{        | ((u\_int16\_t)t\_cp[1]) \(\backslash\)}
+\DoxyCodeLine{        ; \(\backslash\)}
+\DoxyCodeLine{    (cp) += \mbox{\hyperlink{nameser_8h_af9f8961aa7a7fee1b23f4e8b16db2d22}{INT16SZ}}; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{nameser_8h_ae4037ec89590e6cb22786be5319e7ad2}\label{nameser_8h_ae4037ec89590e6cb22786be5319e7ad2}} 
+\index{nameser.h@{nameser.h}!HFIXEDSZ@{HFIXEDSZ}}
+\index{HFIXEDSZ@{HFIXEDSZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{HFIXEDSZ}{HFIXEDSZ}}
+{\footnotesize\ttfamily \#define HFIXEDSZ~12  /$\ast$ \#/bytes of fixed data in header $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a001221f197fa18c54d6fc0833afe43ce}\label{nameser_8h_a001221f197fa18c54d6fc0833afe43ce}} 
+\index{nameser.h@{nameser.h}!INADDRSZ@{INADDRSZ}}
+\index{INADDRSZ@{INADDRSZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{INADDRSZ}{INADDRSZ}}
+{\footnotesize\ttfamily \#define INADDRSZ~4  /$\ast$ for sizeof(struct inaddr) != 4 $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a1c6be50272fd222ea4341cf8d7161ddb}\label{nameser_8h_a1c6be50272fd222ea4341cf8d7161ddb}} 
+\index{nameser.h@{nameser.h}!INDIR\_MASK@{INDIR\_MASK}}
+\index{INDIR\_MASK@{INDIR\_MASK}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{INDIR\_MASK}{INDIR\_MASK}}
+{\footnotesize\ttfamily \#define INDIR\+\_\+\+MASK~0xc0}
+
+\mbox{\Hypertarget{nameser_8h_af9f8961aa7a7fee1b23f4e8b16db2d22}\label{nameser_8h_af9f8961aa7a7fee1b23f4e8b16db2d22}} 
+\index{nameser.h@{nameser.h}!INT16SZ@{INT16SZ}}
+\index{INT16SZ@{INT16SZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{INT16SZ}{INT16SZ}}
+{\footnotesize\ttfamily \#define INT16\+SZ~2  /$\ast$ for systems without 16-\/bit ints $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a9dff6e3ce489e09dee1e90f407367775}\label{nameser_8h_a9dff6e3ce489e09dee1e90f407367775}} 
+\index{nameser.h@{nameser.h}!INT32SZ@{INT32SZ}}
+\index{INT32SZ@{INT32SZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{INT32SZ}{INT32SZ}}
+{\footnotesize\ttfamily \#define INT32\+SZ~4  /$\ast$ for systems without 32-\/bit ints $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a019a06f90cd887d8022f3dcce1180b51}\label{nameser_8h_a019a06f90cd887d8022f3dcce1180b51}} 
+\index{nameser.h@{nameser.h}!IQUERY@{IQUERY}}
+\index{IQUERY@{IQUERY}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{IQUERY}{IQUERY}}
+{\footnotesize\ttfamily \#define IQUERY~0x1  /$\ast$ inverse query $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a435ea8894e87701f66e9f36dbee3048e}\label{nameser_8h_a435ea8894e87701f66e9f36dbee3048e}} 
+\index{nameser.h@{nameser.h}!MAXCDNAME@{MAXCDNAME}}
+\index{MAXCDNAME@{MAXCDNAME}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{MAXCDNAME}{MAXCDNAME}}
+{\footnotesize\ttfamily \#define MAXCDNAME~255  /$\ast$ maximum compressed domain name $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a7e49780fcec2ca98abd7b5acb9c51991}\label{nameser_8h_a7e49780fcec2ca98abd7b5acb9c51991}} 
+\index{nameser.h@{nameser.h}!MAXDNAME@{MAXDNAME}}
+\index{MAXDNAME@{MAXDNAME}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{MAXDNAME}{MAXDNAME}}
+{\footnotesize\ttfamily \#define MAXDNAME~256  /$\ast$ maximum domain name $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a57ef44e89326a371a47cfd186bf1f6a8}\label{nameser_8h_a57ef44e89326a371a47cfd186bf1f6a8}} 
+\index{nameser.h@{nameser.h}!MAXLABEL@{MAXLABEL}}
+\index{MAXLABEL@{MAXLABEL}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{MAXLABEL}{MAXLABEL}}
+{\footnotesize\ttfamily \#define MAXLABEL~63  /$\ast$ maximum length of domain label $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ab53a3cbe9cc44ecb87eb8e72ea7dc262}\label{nameser_8h_ab53a3cbe9cc44ecb87eb8e72ea7dc262}} 
+\index{nameser.h@{nameser.h}!NAMESERVER\_PORT@{NAMESERVER\_PORT}}
+\index{NAMESERVER\_PORT@{NAMESERVER\_PORT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{NAMESERVER\_PORT}{NAMESERVER\_PORT}}
+{\footnotesize\ttfamily \#define NAMESERVER\+\_\+\+PORT~53}
+
+\mbox{\Hypertarget{nameser_8h_a78a3e1e631331ac035e38bea9196336b}\label{nameser_8h_a78a3e1e631331ac035e38bea9196336b}} 
+\index{nameser.h@{nameser.h}!NOTIMP@{NOTIMP}}
+\index{NOTIMP@{NOTIMP}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{NOTIMP}{NOTIMP}}
+{\footnotesize\ttfamily \#define NOTIMP~4  /$\ast$ not implemented $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_abf3ed5d1601d6b8ac5d61bc4f37abefb}\label{nameser_8h_abf3ed5d1601d6b8ac5d61bc4f37abefb}} 
+\index{nameser.h@{nameser.h}!NS\_NOTIFY\_OP@{NS\_NOTIFY\_OP}}
+\index{NS\_NOTIFY\_OP@{NS\_NOTIFY\_OP}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{NS\_NOTIFY\_OP}{NS\_NOTIFY\_OP}}
+{\footnotesize\ttfamily \#define NS\+\_\+\+NOTIFY\+\_\+\+OP~0x4  /$\ast$ notify secondary of SOA change $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ab710bad10a5e84f08cb36ed4950ff1b0}\label{nameser_8h_ab710bad10a5e84f08cb36ed4950ff1b0}} 
+\index{nameser.h@{nameser.h}!NXDOMAIN@{NXDOMAIN}}
+\index{NXDOMAIN@{NXDOMAIN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{NXDOMAIN}{NXDOMAIN}}
+{\footnotesize\ttfamily \#define NXDOMAIN~3  /$\ast$ non existent domain $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_aec9c73a8c49efe97e0545187fa8b856d}\label{nameser_8h_aec9c73a8c49efe97e0545187fa8b856d}} 
+\index{nameser.h@{nameser.h}!PACKETSZ@{PACKETSZ}}
+\index{PACKETSZ@{PACKETSZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{PACKETSZ}{PACKETSZ}}
+{\footnotesize\ttfamily \#define PACKETSZ~512  /$\ast$ maximum packet size $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a1e7b84ba4da72b43577117d32ea48f45}\label{nameser_8h_a1e7b84ba4da72b43577117d32ea48f45}} 
+\index{nameser.h@{nameser.h}!PUTLONG@{PUTLONG}}
+\index{PUTLONG@{PUTLONG}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{PUTLONG}{PUTLONG}}
+{\footnotesize\ttfamily \#define PUTLONG(\begin{DoxyParamCaption}\item[{}]{l,  }\item[{}]{cp }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{    register u\_int32\_t t\_l = (u\_int32\_t)(l); \(\backslash\)}
+\DoxyCodeLine{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}
+\DoxyCodeLine{    *t\_cp++ = t\_l >> 24; \(\backslash\)}
+\DoxyCodeLine{    *t\_cp++ = t\_l >> 16; \(\backslash\)}
+\DoxyCodeLine{    *t\_cp++ = t\_l >> 8; \(\backslash\)}
+\DoxyCodeLine{    *t\_cp   = t\_l; \(\backslash\)}
+\DoxyCodeLine{    (cp) += \mbox{\hyperlink{nameser_8h_a9dff6e3ce489e09dee1e90f407367775}{INT32SZ}}; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{nameser_8h_a886d59a438b49ec9ad3895dbdb7a6140}\label{nameser_8h_a886d59a438b49ec9ad3895dbdb7a6140}} 
+\index{nameser.h@{nameser.h}!PUTSHORT@{PUTSHORT}}
+\index{PUTSHORT@{PUTSHORT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{PUTSHORT}{PUTSHORT}}
+{\footnotesize\ttfamily \#define PUTSHORT(\begin{DoxyParamCaption}\item[{}]{s,  }\item[{}]{cp }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{    register u\_int16\_t t\_s = (u\_int16\_t)(s); \(\backslash\)}
+\DoxyCodeLine{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}
+\DoxyCodeLine{    *t\_cp++ = t\_s >> 8; \(\backslash\)}
+\DoxyCodeLine{    *t\_cp   = t\_s; \(\backslash\)}
+\DoxyCodeLine{    (cp) += \mbox{\hyperlink{nameser_8h_af9f8961aa7a7fee1b23f4e8b16db2d22}{INT16SZ}}; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{nameser_8h_a23b1a00ed028a175c227b33315cb696a}\label{nameser_8h_a23b1a00ed028a175c227b33315cb696a}} 
+\index{nameser.h@{nameser.h}!QFIXEDSZ@{QFIXEDSZ}}
+\index{QFIXEDSZ@{QFIXEDSZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{QFIXEDSZ}{QFIXEDSZ}}
+{\footnotesize\ttfamily \#define QFIXEDSZ~4  /$\ast$ \#/bytes of fixed data in query $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ae5ff1f63e632fba61c45cfb0a2b19066}\label{nameser_8h_ae5ff1f63e632fba61c45cfb0a2b19066}} 
+\index{nameser.h@{nameser.h}!QUERY@{QUERY}}
+\index{QUERY@{QUERY}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{QUERY}{QUERY}}
+{\footnotesize\ttfamily \#define QUERY~0x0  /$\ast$ standard query $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ac846cd5d68d1b8a88c2f77ddade87c6e}\label{nameser_8h_ac846cd5d68d1b8a88c2f77ddade87c6e}} 
+\index{nameser.h@{nameser.h}!REFUSED@{REFUSED}}
+\index{REFUSED@{REFUSED}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{REFUSED}{REFUSED}}
+{\footnotesize\ttfamily \#define REFUSED~5  /$\ast$ query refused $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_afa19d50689106533b5971913edcc34a3}\label{nameser_8h_afa19d50689106533b5971913edcc34a3}} 
+\index{nameser.h@{nameser.h}!RRFIXEDSZ@{RRFIXEDSZ}}
+\index{RRFIXEDSZ@{RRFIXEDSZ}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{RRFIXEDSZ}{RRFIXEDSZ}}
+{\footnotesize\ttfamily \#define RRFIXEDSZ~10  /$\ast$ \#/bytes of fixed data in r record $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ad2a930d5bda1668f19001886613edbaa}\label{nameser_8h_ad2a930d5bda1668f19001886613edbaa}} 
+\index{nameser.h@{nameser.h}!SERVFAIL@{SERVFAIL}}
+\index{SERVFAIL@{SERVFAIL}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{SERVFAIL}{SERVFAIL}}
+{\footnotesize\ttfamily \#define SERVFAIL~2  /$\ast$ server failure $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}\label{nameser_8h_a59279bee44f34d08b3cbf3a89fb0d8d9}} 
+\index{nameser.h@{nameser.h}!STATUS@{STATUS}}
+\index{STATUS@{STATUS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{STATUS}{STATUS}}
+{\footnotesize\ttfamily \#define STATUS~0x2  /$\ast$ nameserver status query $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a11241ed27971fdd50a08f46de115cc89}\label{nameser_8h_a11241ed27971fdd50a08f46de115cc89}} 
+\index{nameser.h@{nameser.h}!T\_A@{T\_A}}
+\index{T\_A@{T\_A}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_A}{T\_A}}
+{\footnotesize\ttfamily \#define T\+\_\+A~1  /$\ast$ host address $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a9988cc1cc24b640d7fc9d8f602104405}\label{nameser_8h_a9988cc1cc24b640d7fc9d8f602104405}} 
+\index{nameser.h@{nameser.h}!T\_AAAA@{T\_AAAA}}
+\index{T\_AAAA@{T\_AAAA}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_AAAA}{T\_AAAA}}
+{\footnotesize\ttfamily \#define T\+\_\+\+AAAA~28  /$\ast$ IP6 Address $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a32efcb6ef40fc2bc546ecd7bd457552e}\label{nameser_8h_a32efcb6ef40fc2bc546ecd7bd457552e}} 
+\index{nameser.h@{nameser.h}!T\_AFSDB@{T\_AFSDB}}
+\index{T\_AFSDB@{T\_AFSDB}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_AFSDB}{T\_AFSDB}}
+{\footnotesize\ttfamily \#define T\+\_\+\+AFSDB~18  /$\ast$ AFS cell database $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_aaa8cccf76c5fbc1c7f8ece56a9226560}\label{nameser_8h_aaa8cccf76c5fbc1c7f8ece56a9226560}} 
+\index{nameser.h@{nameser.h}!T\_ANY@{T\_ANY}}
+\index{T\_ANY@{T\_ANY}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_ANY}{T\_ANY}}
+{\footnotesize\ttfamily \#define T\+\_\+\+ANY~255  /$\ast$ wildcard match $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a5c138445dd7a660d2c574c094a8fedfa}\label{nameser_8h_a5c138445dd7a660d2c574c094a8fedfa}} 
+\index{nameser.h@{nameser.h}!T\_AXFR@{T\_AXFR}}
+\index{T\_AXFR@{T\_AXFR}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_AXFR}{T\_AXFR}}
+{\footnotesize\ttfamily \#define T\+\_\+\+AXFR~252  /$\ast$ transfer zone of authority $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a3b1f450c75d14e4a17f4d157641999e5}\label{nameser_8h_a3b1f450c75d14e4a17f4d157641999e5}} 
+\index{nameser.h@{nameser.h}!T\_CNAME@{T\_CNAME}}
+\index{T\_CNAME@{T\_CNAME}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_CNAME}{T\_CNAME}}
+{\footnotesize\ttfamily \#define T\+\_\+\+CNAME~5  /$\ast$ canonical name $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a328644041848577dd873d25afba92299}\label{nameser_8h_a328644041848577dd873d25afba92299}} 
+\index{nameser.h@{nameser.h}!T\_GID@{T\_GID}}
+\index{T\_GID@{T\_GID}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_GID}{T\_GID}}
+{\footnotesize\ttfamily \#define T\+\_\+\+GID~102  /$\ast$ group ID $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_adcd39a2fdca0578361ecdd7775132311}\label{nameser_8h_adcd39a2fdca0578361ecdd7775132311}} 
+\index{nameser.h@{nameser.h}!T\_GPOS@{T\_GPOS}}
+\index{T\_GPOS@{T\_GPOS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_GPOS}{T\_GPOS}}
+{\footnotesize\ttfamily \#define T\+\_\+\+GPOS~27  /$\ast$ geographical position (withdrawn) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a0f4d4d3a8e1e38927ea2f4d92d28afb2}\label{nameser_8h_a0f4d4d3a8e1e38927ea2f4d92d28afb2}} 
+\index{nameser.h@{nameser.h}!T\_HINFO@{T\_HINFO}}
+\index{T\_HINFO@{T\_HINFO}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_HINFO}{T\_HINFO}}
+{\footnotesize\ttfamily \#define T\+\_\+\+HINFO~13  /$\ast$ host information $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ae451340e41889528075a785065c48e79}\label{nameser_8h_ae451340e41889528075a785065c48e79}} 
+\index{nameser.h@{nameser.h}!T\_ISDN@{T\_ISDN}}
+\index{T\_ISDN@{T\_ISDN}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_ISDN}{T\_ISDN}}
+{\footnotesize\ttfamily \#define T\+\_\+\+ISDN~20  /$\ast$ ISDN calling address $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a77d5459649c5af68a94ef9f378f8eb63}\label{nameser_8h_a77d5459649c5af68a94ef9f378f8eb63}} 
+\index{nameser.h@{nameser.h}!T\_KEY@{T\_KEY}}
+\index{T\_KEY@{T\_KEY}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_KEY}{T\_KEY}}
+{\footnotesize\ttfamily \#define T\+\_\+\+KEY~25  /$\ast$ security key $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a44f0645b1fdbdea5a841e2c98486a686}\label{nameser_8h_a44f0645b1fdbdea5a841e2c98486a686}} 
+\index{nameser.h@{nameser.h}!T\_LOC@{T\_LOC}}
+\index{T\_LOC@{T\_LOC}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_LOC}{T\_LOC}}
+{\footnotesize\ttfamily \#define T\+\_\+\+LOC~29  /$\ast$ Location Information $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a178e0dc3f735cdb0a0041651f987a2dc}\label{nameser_8h_a178e0dc3f735cdb0a0041651f987a2dc}} 
+\index{nameser.h@{nameser.h}!T\_MAILA@{T\_MAILA}}
+\index{T\_MAILA@{T\_MAILA}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MAILA}{T\_MAILA}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MAILA~254  /$\ast$ transfer mail agent records $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_aeb3f3b5b73465a6ed020f667dc5a9bd0}\label{nameser_8h_aeb3f3b5b73465a6ed020f667dc5a9bd0}} 
+\index{nameser.h@{nameser.h}!T\_MAILB@{T\_MAILB}}
+\index{T\_MAILB@{T\_MAILB}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MAILB}{T\_MAILB}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MAILB~253  /$\ast$ transfer mailbox records $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ab96aaa2f27ec917f0fc981bb0977f0e9}\label{nameser_8h_ab96aaa2f27ec917f0fc981bb0977f0e9}} 
+\index{nameser.h@{nameser.h}!T\_MB@{T\_MB}}
+\index{T\_MB@{T\_MB}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MB}{T\_MB}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MB~7  /$\ast$ mailbox domain name $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_afbaecd243f545ada17ffab2da8f55296}\label{nameser_8h_afbaecd243f545ada17ffab2da8f55296}} 
+\index{nameser.h@{nameser.h}!T\_MD@{T\_MD}}
+\index{T\_MD@{T\_MD}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MD}{T\_MD}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MD~3  /$\ast$ mail destination $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a41b858a0bf5df3d62b590a1483255c9a}\label{nameser_8h_a41b858a0bf5df3d62b590a1483255c9a}} 
+\index{nameser.h@{nameser.h}!T\_MF@{T\_MF}}
+\index{T\_MF@{T\_MF}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MF}{T\_MF}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MF~4  /$\ast$ mail forwarder $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_aeb7938e0a0cd295c7c4a5e1f67cdb8d4}\label{nameser_8h_aeb7938e0a0cd295c7c4a5e1f67cdb8d4}} 
+\index{nameser.h@{nameser.h}!T\_MG@{T\_MG}}
+\index{T\_MG@{T\_MG}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MG}{T\_MG}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MG~8  /$\ast$ mail group member $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a946bd2b3282942fed85f943bc124562d}\label{nameser_8h_a946bd2b3282942fed85f943bc124562d}} 
+\index{nameser.h@{nameser.h}!T\_MINFO@{T\_MINFO}}
+\index{T\_MINFO@{T\_MINFO}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MINFO}{T\_MINFO}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MINFO~14  /$\ast$ mailbox information $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a400000cc23c229264dfc40bea52614d2}\label{nameser_8h_a400000cc23c229264dfc40bea52614d2}} 
+\index{nameser.h@{nameser.h}!T\_MR@{T\_MR}}
+\index{T\_MR@{T\_MR}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MR}{T\_MR}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MR~9  /$\ast$ mail \mbox{\hyperlink{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}{rename}} name $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a379fb519f8a88b3f63f69e519d801cee}\label{nameser_8h_a379fb519f8a88b3f63f69e519d801cee}} 
+\index{nameser.h@{nameser.h}!T\_MX@{T\_MX}}
+\index{T\_MX@{T\_MX}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_MX}{T\_MX}}
+{\footnotesize\ttfamily \#define T\+\_\+\+MX~15  /$\ast$ mail routing information $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a0a6ac5132f1f9199707b0b83d0c0ffbd}\label{nameser_8h_a0a6ac5132f1f9199707b0b83d0c0ffbd}} 
+\index{nameser.h@{nameser.h}!T\_NS@{T\_NS}}
+\index{T\_NS@{T\_NS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_NS}{T\_NS}}
+{\footnotesize\ttfamily \#define T\+\_\+\+NS~2  /$\ast$ authoritative server $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a851cfabd3cce351da8a31eec1ef1bcf2}\label{nameser_8h_a851cfabd3cce351da8a31eec1ef1bcf2}} 
+\index{nameser.h@{nameser.h}!T\_NSAP@{T\_NSAP}}
+\index{T\_NSAP@{T\_NSAP}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_NSAP}{T\_NSAP}}
+{\footnotesize\ttfamily \#define T\+\_\+\+NSAP~22  /$\ast$ NSAP address $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a7d2b3a8cbc57464b4f5e8388e6f60098}\label{nameser_8h_a7d2b3a8cbc57464b4f5e8388e6f60098}} 
+\index{nameser.h@{nameser.h}!T\_NSAP\_PTR@{T\_NSAP\_PTR}}
+\index{T\_NSAP\_PTR@{T\_NSAP\_PTR}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_NSAP\_PTR}{T\_NSAP\_PTR}}
+{\footnotesize\ttfamily \#define T\+\_\+\+NSAP\+\_\+\+PTR~23  /$\ast$ reverse NSAP lookup (deprecated) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_afb8e7ff3357caa8dd3252695cefece51}\label{nameser_8h_afb8e7ff3357caa8dd3252695cefece51}} 
+\index{nameser.h@{nameser.h}!T\_NULL@{T\_NULL}}
+\index{T\_NULL@{T\_NULL}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_NULL}{T\_NULL}}
+{\footnotesize\ttfamily \#define T\+\_\+\+NULL~10  /$\ast$ null resource record $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a26e251e7a38ee37f65a6895d49ccf17f}\label{nameser_8h_a26e251e7a38ee37f65a6895d49ccf17f}} 
+\index{nameser.h@{nameser.h}!T\_PTR@{T\_PTR}}
+\index{T\_PTR@{T\_PTR}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_PTR}{T\_PTR}}
+{\footnotesize\ttfamily \#define T\+\_\+\+PTR~12  /$\ast$ domain name pointer $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_acf1931b3fe446dfd0953183cf663e7b0}\label{nameser_8h_acf1931b3fe446dfd0953183cf663e7b0}} 
+\index{nameser.h@{nameser.h}!T\_PX@{T\_PX}}
+\index{T\_PX@{T\_PX}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_PX}{T\_PX}}
+{\footnotesize\ttfamily \#define T\+\_\+\+PX~26  /$\ast$ X.\+400 mail mapping $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a7de5f753762756a9e198aa948e45e841}\label{nameser_8h_a7de5f753762756a9e198aa948e45e841}} 
+\index{nameser.h@{nameser.h}!T\_RP@{T\_RP}}
+\index{T\_RP@{T\_RP}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_RP}{T\_RP}}
+{\footnotesize\ttfamily \#define T\+\_\+\+RP~17  /$\ast$ responsible person $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ab9a76f27f872767d27c8a7ac6fde5c48}\label{nameser_8h_ab9a76f27f872767d27c8a7ac6fde5c48}} 
+\index{nameser.h@{nameser.h}!T\_RT@{T\_RT}}
+\index{T\_RT@{T\_RT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_RT}{T\_RT}}
+{\footnotesize\ttfamily \#define T\+\_\+\+RT~21  /$\ast$ router $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a6e224ad0c2dba8c46b6be41640a23631}\label{nameser_8h_a6e224ad0c2dba8c46b6be41640a23631}} 
+\index{nameser.h@{nameser.h}!T\_SIG@{T\_SIG}}
+\index{T\_SIG@{T\_SIG}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_SIG}{T\_SIG}}
+{\footnotesize\ttfamily \#define T\+\_\+\+SIG~24  /$\ast$ security signature $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a951721e7ce0e59fbcb618f0036ebb4cb}\label{nameser_8h_a951721e7ce0e59fbcb618f0036ebb4cb}} 
+\index{nameser.h@{nameser.h}!T\_SOA@{T\_SOA}}
+\index{T\_SOA@{T\_SOA}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_SOA}{T\_SOA}}
+{\footnotesize\ttfamily \#define T\+\_\+\+SOA~6  /$\ast$ start of authority zone $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a78854da665a47f26bc432d33a9e880ae}\label{nameser_8h_a78854da665a47f26bc432d33a9e880ae}} 
+\index{nameser.h@{nameser.h}!T\_TXT@{T\_TXT}}
+\index{T\_TXT@{T\_TXT}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_TXT}{T\_TXT}}
+{\footnotesize\ttfamily \#define T\+\_\+\+TXT~16  /$\ast$ text strings $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a966b7b0dbaf7b32df19a28c26e289a8c}\label{nameser_8h_a966b7b0dbaf7b32df19a28c26e289a8c}} 
+\index{nameser.h@{nameser.h}!T\_UID@{T\_UID}}
+\index{T\_UID@{T\_UID}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_UID}{T\_UID}}
+{\footnotesize\ttfamily \#define T\+\_\+\+UID~101  /$\ast$ user ID $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_afc0dbfbb74674695a09b1fe6059710ad}\label{nameser_8h_afc0dbfbb74674695a09b1fe6059710ad}} 
+\index{nameser.h@{nameser.h}!T\_UINFO@{T\_UINFO}}
+\index{T\_UINFO@{T\_UINFO}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_UINFO}{T\_UINFO}}
+{\footnotesize\ttfamily \#define T\+\_\+\+UINFO~100  /$\ast$ user (finger) information $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_ab614c1552f9933fee9584eec4d7e762e}\label{nameser_8h_ab614c1552f9933fee9584eec4d7e762e}} 
+\index{nameser.h@{nameser.h}!T\_UNSPEC@{T\_UNSPEC}}
+\index{T\_UNSPEC@{T\_UNSPEC}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_UNSPEC}{T\_UNSPEC}}
+{\footnotesize\ttfamily \#define T\+\_\+\+UNSPEC~103  /$\ast$ Unspecified \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}} (binary data) $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a87ac06dc0d7c15d15cefeadc97b0ba7e}\label{nameser_8h_a87ac06dc0d7c15d15cefeadc97b0ba7e}} 
+\index{nameser.h@{nameser.h}!T\_WKS@{T\_WKS}}
+\index{T\_WKS@{T\_WKS}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_WKS}{T\_WKS}}
+{\footnotesize\ttfamily \#define T\+\_\+\+WKS~11  /$\ast$ well known service $\ast$/}
+
+\mbox{\Hypertarget{nameser_8h_a0578e5bdd50d51105941a9c9bf980e37}\label{nameser_8h_a0578e5bdd50d51105941a9c9bf980e37}} 
+\index{nameser.h@{nameser.h}!T\_X25@{T\_X25}}
+\index{T\_X25@{T\_X25}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{T\_X25}{T\_X25}}
+{\footnotesize\ttfamily \#define T\+\_\+\+X25~19  /$\ast$ X\+\_\+25 calling address $\ast$/}
+
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{nameser_8h_aef0444027960cee1b5ac5bbe5dab7c04}\label{nameser_8h_aef0444027960cee1b5ac5bbe5dab7c04}} 
+\index{nameser.h@{nameser.h}!\_\_BYTE\_ORDER@{\_\_BYTE\_ORDER}}
+\index{\_\_BYTE\_ORDER@{\_\_BYTE\_ORDER}!nameser.h@{nameser.h}}
+\doxysubsubsection{\texorpdfstring{\_\_BYTE\_ORDER}{\_\_BYTE\_ORDER}}
+{\footnotesize\ttfamily \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} Undefined or invalid \+\_\+\+\_\+\+BYTE\+\_\+\+ORDER}
+

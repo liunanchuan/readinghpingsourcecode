@@ -1,0 +1,159 @@
+\hypertarget{pktdrvr_8h_source}{}\doxysection{pktdrvr.\+h}
+\label{pktdrvr_8h_source}\index{libpcap-\/1.1.1/msdos/pktdrvr.h@{libpcap-\/1.1.1/msdos/pktdrvr.h}}
+\mbox{\hyperlink{pktdrvr_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_PKTDRVR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_PKTDRVR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define PUBLIC}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define LOCAL        static}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define RX\_BUF\_SIZE  ETH\_MTU   }\textcolor{comment}{/* buffer size variables. NB !! */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define TX\_BUF\_SIZE  ETH\_MTU   }\textcolor{comment}{/* must be same as in pkt\_rx*.* */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef \_\_HIGHC\_\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#pragma Off(Align\_members)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma pack(1)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}  \{                \textcolor{comment}{/* Packet-\/driver classes */}}
+\DoxyCodeLine{17         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a1af1b15751d5dd853893f0edbdaeeae2}{PD\_ETHER}}      = 1,}
+\DoxyCodeLine{18         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a5212cac8a367033a901f4056b132cd73}{PD\_PRONET10}}   = 2,}
+\DoxyCodeLine{19         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a954a29974339d18fdcb54faee78391c5}{PD\_IEEE8025}}   = 3,}
+\DoxyCodeLine{20         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4dc0f6639caa61b4e7c69fc39ef9bdfa}{PD\_OMNINET}}    = 4,}
+\DoxyCodeLine{21         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aab0d255a6499ece8e75d39e195201187}{PD\_APPLETALK}}  = 5,}
+\DoxyCodeLine{22         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}{PD\_SLIP}}       = 6,}
+\DoxyCodeLine{23         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a333d73bb6629a621268d247978a802c2}{PD\_STARTLAN}}   = 7,}
+\DoxyCodeLine{24         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aad1699bfce3de71a164d564c47010cc0}{PD\_ARCNET}}     = 8,}
+\DoxyCodeLine{25         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a98bb209b6698027da53cb206bbbb9d73}{PD\_AX25}}       = 9,}
+\DoxyCodeLine{26         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4660b785d0522ed40ab6adb58ad505cb}{PD\_KISS}}       = 10,}
+\DoxyCodeLine{27         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aa5c1309d68f0ad55dd148234b281322e}{PD\_IEEE8023\_2}} = 11,}
+\DoxyCodeLine{28         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a7de80c0b0a45ce74e7309aabed94a470}{PD\_FDDI8022}}   = 12,}
+\DoxyCodeLine{29         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a75e34d3354155f7e92a8a13e1209acfc}{PD\_X25}}        = 13,}
+\DoxyCodeLine{30         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ace2997b442ce7c6b593e57fbb6608508}{PD\_LANstar}}    = 14,}
+\DoxyCodeLine{31         \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}{PD\_PPP}}        = 18}
+\DoxyCodeLine{32       \} \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24}{PKT\_CLASS}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}  \{             \textcolor{comment}{/* Packet-\/driver receive modes    */}}
+\DoxyCodeLine{35         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a38cd2c8639d62952b4f7dcf2695b2043}{PDRX\_OFF}}    = 1,    \textcolor{comment}{/* turn off receiver              */}}
+\DoxyCodeLine{36         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537ad9371bb08d9e2c0590f2abfd31940191}{PDRX\_DIRECT}},        \textcolor{comment}{/* receive only to this interface */}}
+\DoxyCodeLine{37         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afe3c7edd941d05601d83e9ad4bc13d39}{PDRX\_BROADCAST}},     \textcolor{comment}{/* DIRECT + broadcast packets     */}}
+\DoxyCodeLine{38         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afed5de6f64920369a95f63e0bb45f0f4}{PDRX\_MULTICAST1}},    \textcolor{comment}{/* BROADCAST + limited multicast  */}}
+\DoxyCodeLine{39         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a47a320e7654d9e97ceabcc0268523472}{PDRX\_MULTICAST2}},    \textcolor{comment}{/* BROADCAST + all multicast      */}}
+\DoxyCodeLine{40         \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a1efa56c39e589a89a260f7e2a2b8858e}{PDRX\_ALL\_PACKETS}},   \textcolor{comment}{/* receive all packets on network */}}
+\DoxyCodeLine{41       \} \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{44         \textcolor{keywordtype}{char} type[8];}
+\DoxyCodeLine{45         \textcolor{keywordtype}{char} \mbox{\hyperlink{structPKT__FRAME_af91696d822b18489bb5090a43e213907}{len}};}
+\DoxyCodeLine{46       \} \mbox{\hyperlink{structPKT__FRAME}{PKT\_FRAME}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{50         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \textcolor{keyword}{class};        \textcolor{comment}{/* = 1 for DEC/Interl/Xerox Ethernet */}}
+\DoxyCodeLine{51         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structPKT__INFO_aa64b930040e2fad2774601358d56f1c3}{number}};       \textcolor{comment}{/* = 0 for single LAN adapter        */}}
+\DoxyCodeLine{52         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a06986d26b692d487915ecf21630fa3e2}{type}};         \textcolor{comment}{/* = 13 for 3C523                    */}}
+\DoxyCodeLine{53         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structPKT__INFO_a7e343adb647f400f9fe1933eb752f307}{funcs}};        \textcolor{comment}{/* Basic/Extended/HiPerf functions   */}}
+\DoxyCodeLine{54         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a43492ef462ea92b74497d8d8d621f04a}{intr}};         \textcolor{comment}{/* user interrupt vector number      */}}
+\DoxyCodeLine{55         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{handle}};       \textcolor{comment}{/* Handle associated with session    */}}
+\DoxyCodeLine{56         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  name [15];    \textcolor{comment}{/* Name of adapter interface,ie.3C523*/}}
+\DoxyCodeLine{57         \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}  \mbox{\hyperlink{structPKT__INFO_a34e0e7602d9696c3f499540a59d06a36}{quiet}};        \textcolor{comment}{/* (don't) print errors to stdout    */}}
+\DoxyCodeLine{58         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{structPKT__INFO_a49f154ded02555c4d15e7861acf2e434}{error}};  \textcolor{comment}{/* address of error string           */}}
+\DoxyCodeLine{59         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structPKT__INFO_a61489439d3a1e7290ec83a8665d656b2}{majVer}};       \textcolor{comment}{/* Major driver implementation ver.  */}}
+\DoxyCodeLine{60         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structPKT__INFO_a11c0941f09abe35c42b73143347885ac}{minVer}};       \textcolor{comment}{/* Minor driver implementation ver.  */}}
+\DoxyCodeLine{61         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structPKT__INFO_a021e8551390f4cc658ef51100a2842dd}{dummyLen}};     \textcolor{comment}{/* length of following data          */}}
+\DoxyCodeLine{62         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a355293cf061ff5e67f0f3515b86ca8a6}{MAClength}};    \textcolor{comment}{/* HiPerformance data, N/A           */}}
+\DoxyCodeLine{63         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_ab4647f3f6634c038ad7f7c494964828d}{MTU}};          \textcolor{comment}{/* HiPerformance data, N/A           */}}
+\DoxyCodeLine{64         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_ac34645753ed15300c602b51421b4c4eb}{multicast}};    \textcolor{comment}{/* HiPerformance data, N/A           */}}
+\DoxyCodeLine{65         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a087c5a6c4b9941cbbef078cd418e97e6}{rcvrBuffers}};  \textcolor{comment}{/* valid for                         */}}
+\DoxyCodeLine{66         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_a3525e08ebba63301fbfa0b3868f12662}{UMTbufs}};      \textcolor{comment}{/*   High Performance drivers only   */}}
+\DoxyCodeLine{67         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structPKT__INFO_ab3af0af70a591178575c5394829b0e07}{postEOIintr}};  \textcolor{comment}{/*                  Usage ??         */}}
+\DoxyCodeLine{68       \} \mbox{\hyperlink{structPKT__INFO}{PKT\_INFO}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define PKT\_PARAM\_SIZE  14    }\textcolor{comment}{/* members majVer -\/ postEOIintr */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{74         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_ac56ccd167b4e43b3e5581327d8395f87}{inPackets}};          \textcolor{comment}{/* \# of packets received    */}}
+\DoxyCodeLine{75         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_ad7c8c4ae86706eaa1f5d39763a1d98a7}{outPackets}};         \textcolor{comment}{/* \# of packets transmitted */}}
+\DoxyCodeLine{76         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_ad74c81ff08e8b26e4470bf9bb2054777}{inBytes}};            \textcolor{comment}{/* \# of bytes received      */}}
+\DoxyCodeLine{77         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_a597428392075fd19400ac334232ceaba}{outBytes}};           \textcolor{comment}{/* \# of bytes transmitted   */}}
+\DoxyCodeLine{78         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_ab434de5a100ffe13f55807872529e28d}{inErrors}};           \textcolor{comment}{/* \# of reception errors    */}}
+\DoxyCodeLine{79         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_a08b1e7f3e452d6e1cef06dd1bf9945f6}{outErrors}};          \textcolor{comment}{/* \# of transmission errors */}}
+\DoxyCodeLine{80         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structPKT__STAT_aaf92cf3b118186f39793dd8b27da9831}{lost}};               \textcolor{comment}{/* \# of packets lost (RX)   */}}
+\DoxyCodeLine{81       \} \mbox{\hyperlink{structPKT__STAT}{PKT\_STAT}};}
+\DoxyCodeLine{82                    }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{85         \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{structTX__ELEMENT_a543d0cd8deffa1fe0572ff070a215deb}{destin}};}
+\DoxyCodeLine{86         \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{structTX__ELEMENT_af18520d14b0776fcc33e91907e7abd90}{source}};}
+\DoxyCodeLine{87         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structTX__ELEMENT_a115d94462af2ce321159f5e299b5121e}{proto}};}
+\DoxyCodeLine{88         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  data [\mbox{\hyperlink{pktdrvr_8h_a5d3fb1970e1e98050006978a14b3d95e}{TX\_BUF\_SIZE}}];}
+\DoxyCodeLine{89       \} \mbox{\hyperlink{structTX__ELEMENT}{TX\_ELEMENT}};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{92         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structRX__ELEMENT_a8413e2350e3195844a22203b18746093}{firstCount}};         \textcolor{comment}{/* \# of bytes on 1st         */}}
+\DoxyCodeLine{93         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structRX__ELEMENT_ac78e894d4ad48590b9aef44b33646d28}{secondCount}};        \textcolor{comment}{/* and 2nd upcall            */}}
+\DoxyCodeLine{94         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structRX__ELEMENT_a4d15a3a976f2f45426c424165c250f84}{handle}};             \textcolor{comment}{/* instance that upcalled    */}}
+\DoxyCodeLine{95         \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{structRX__ELEMENT_a543d0cd8deffa1fe0572ff070a215deb}{destin}};             \textcolor{comment}{/* E-\/net destination address */}}
+\DoxyCodeLine{96         \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{structRX__ELEMENT_af18520d14b0776fcc33e91907e7abd90}{source}};             \textcolor{comment}{/* E-\/net source address      */}}
+\DoxyCodeLine{97         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structRX__ELEMENT_a115d94462af2ce321159f5e299b5121e}{proto}};              \textcolor{comment}{/* protocol number           */}}
+\DoxyCodeLine{98         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  data [\mbox{\hyperlink{pktdrvr_8h_a690f985c933da2ce6fe62b6c61dfa662}{RX\_BUF\_SIZE}}];}
+\DoxyCodeLine{99       \} \mbox{\hyperlink{structRX__ELEMENT}{RX\_ELEMENT}};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#ifdef \_\_HIGHC\_\_}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#pragma pop(Align\_members)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#pragma pack()}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/*}}
+\DoxyCodeLine{110 \textcolor{comment}{ * Prototypes for publics}}
+\DoxyCodeLine{111 \textcolor{comment}{ */}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{114 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keyword}{extern} \mbox{\hyperlink{structPKT__STAT}{PKT\_STAT}}    \mbox{\hyperlink{pktdrvr_8h_a27a6fae156b7d87243508c54054ff632}{pktStat}};     \textcolor{comment}{/* statistics for packets */}}
+\DoxyCodeLine{118 \textcolor{keyword}{extern} \mbox{\hyperlink{structPKT__INFO}{PKT\_INFO}}    \mbox{\hyperlink{pktdrvr_8h_aa9f564b8b0a1ad8db3f11fefccfff3c0}{pktInfo}};     \textcolor{comment}{/* packet-\/driver information */}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keyword}{extern} \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}} \mbox{\hyperlink{pktdrvr_8h_a2698f6cb8f258ff6f5c2b11e5c4f2c20}{receiveMode}};}
+\DoxyCodeLine{121 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}}       \mbox{\hyperlink{pktdrvr_8h_a4a471cdb8d4f4d306f6236f2dfb26014}{myAddress}}, \mbox{\hyperlink{pktdrvr_8h_ad87661c6ed9e0dcfb3d4e0a54396043c}{ethBroadcast}};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}  \mbox{\hyperlink{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944}{PktInitDriver}} (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}} mode);}
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}  \mbox{\hyperlink{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b}{PktExitDriver}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pktdrvr_8h_aa4cdc7df0cd88f00b89975f3aac02cad}{PktGetErrorStr}}    (\textcolor{keywordtype}{int} errNum);}
+\DoxyCodeLine{127 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pktdrvr_8h_ae29b4b488b44ad6d8e09e1896cf24a56}{PktGetClassName}}   (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \textcolor{keyword}{class});}
+\DoxyCodeLine{128 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pktdrvr_8h_ab1decdf0e77ee7ac08c198f1f0c58c8f}{PktRXmodeStr}}      (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}} mode);}
+\DoxyCodeLine{129 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_acccb8f2e2678950cddda80a6d6a0ff4a}{PktSearchDriver}}   (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{130 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}         \mbox{\hyperlink{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984}{PktReceive}}        (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *buf, \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}});}
+\DoxyCodeLine{131 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006}{PktTransmit}}       (\textcolor{keyword}{const} \textcolor{keywordtype}{void} *eth, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{132 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}       \mbox{\hyperlink{pktdrvr_8h_ada56fc7ea09856fa7da5239d3077f015}{PktRxDropped}}      (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0}{PktReleaseHandle}}  (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{134 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_afbdb5352cf417bd220143e3f1ea7db08}{PktTerminHandle}}   (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{135 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_ac6413b01eae14fea74afe84b6540faa7}{PktResetInterface}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{136 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c}{PktSetReceiverMode}}(\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}}  mode);}
+\DoxyCodeLine{137 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a879a02642394e49ed609582cedab58e5}{PktGetReceiverMode}}(\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\_RX\_MODE}} *mode);}
+\DoxyCodeLine{138 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838}{PktGetStatistics}}  (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d}{PktSessStatistics}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{140 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15}{PktResetStatistics}}(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle);}
+\DoxyCodeLine{141 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0}{PktGetAddress}}     (\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} *addr);}
+\DoxyCodeLine{142 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a4977ccea84c7ce421fd54ca5aff8ed61}{PktSetAddress}}     (\textcolor{keyword}{const} \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} *addr);}
+\DoxyCodeLine{143 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2}{PktGetDriverInfo}}  (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{144 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}        \mbox{\hyperlink{pktdrvr_8h_a46cb814957ac54cbc23546ffd5c7ef89}{PktGetDriverParam}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{145 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}        \mbox{\hyperlink{pktdrvr_8h_a46c9391d7aeca7a3936277fd529be883}{PktQueueBusy}}      (\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} busy);}
+\DoxyCodeLine{146 \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}        \mbox{\hyperlink{pktdrvr_8h_a7a15db0515d59abe976d0c4b6ffffac6}{PktBuffersUsed}}    (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_PKTDRVR\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{153 }
+
+\end{DoxyCode}

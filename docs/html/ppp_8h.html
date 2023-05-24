@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/ppp.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">ppp.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="ppp_8h__dep__incl.png" border="0" usemap="#alibpcap-1_81_81_2ppp_8hdep" alt=""/></div>
+<map name="alibpcap-1_81_81_2ppp_8hdep" id="alibpcap-1_81_81_2ppp_8hdep">
+<area shape="rect" title=" " alt="" coords="19,5,151,32"/>
+<area shape="rect" href="gencode_8c.html" title=" " alt="" coords="5,80,165,107"/>
+</map>
+</div>
+</div>
+<p><a href="ppp_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ae8ca4c160b75942f5459e410a658cf79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ae8ca4c160b75942f5459e410a658cf79">PPP_ADDRESS</a>&#160;&#160;&#160;0xff	/* The address byte value */</td></tr>
+<tr class="separator:ae8ca4c160b75942f5459e410a658cf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9778867e75a74de0a21989c11b40df8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ac9778867e75a74de0a21989c11b40df8">PPP_CONTROL</a>&#160;&#160;&#160;0x03	/* The control byte value */</td></tr>
+<tr class="separator:ac9778867e75a74de0a21989c11b40df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58538c4cab14c67e195f80a1b04256c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ab58538c4cab14c67e195f80a1b04256c">PPP_PPPD_IN</a>&#160;&#160;&#160;0x00	/* non-standard for <a class="el" href="bpf_8h.html#a6a4853ced148388bf284a712e71ec3f5">DLT_PPP_PPPD</a> */</td></tr>
+<tr class="separator:ab58538c4cab14c67e195f80a1b04256c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f6256b337b8f01d388f3d45e51ffb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ae3f6256b337b8f01d388f3d45e51ffb2">PPP_PPPD_OUT</a>&#160;&#160;&#160;0x01	/* non-standard for <a class="el" href="bpf_8h.html#a6a4853ced148388bf284a712e71ec3f5">DLT_PPP_PPPD</a> */</td></tr>
+<tr class="separator:ae3f6256b337b8f01d388f3d45e51ffb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4feebc12f6bc0f2035315b1e6ef2e084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a4feebc12f6bc0f2035315b1e6ef2e084">PPP_IP</a>&#160;&#160;&#160;0x0021	/* Raw IP */</td></tr>
+<tr class="separator:a4feebc12f6bc0f2035315b1e6ef2e084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51efc859bbc88bc78ea0d9bcfba0abdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a51efc859bbc88bc78ea0d9bcfba0abdb">PPP_OSI</a>&#160;&#160;&#160;0x0023	/* OSI Network Layer */</td></tr>
+<tr class="separator:a51efc859bbc88bc78ea0d9bcfba0abdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce7ac3030c953d1bf565c88e79b581f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a9ce7ac3030c953d1bf565c88e79b581f">PPP_NS</a>&#160;&#160;&#160;0x0025	/* Xerox NS IDP */</td></tr>
+<tr class="separator:a9ce7ac3030c953d1bf565c88e79b581f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60755e73c1603f373acba5231d9cafe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a60755e73c1603f373acba5231d9cafe9">PPP_DECNET</a>&#160;&#160;&#160;0x0027	/* DECnet Phase IV */</td></tr>
+<tr class="separator:a60755e73c1603f373acba5231d9cafe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1baad72fc878832bf5f5fc9695c89c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#af1baad72fc878832bf5f5fc9695c89c8">PPP_APPLE</a>&#160;&#160;&#160;0x0029	/* Appletalk */</td></tr>
+<tr class="separator:af1baad72fc878832bf5f5fc9695c89c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52875f307f1bee68fec467d5527a8824"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a52875f307f1bee68fec467d5527a8824">PPP_IPX</a>&#160;&#160;&#160;0x002b	/* Novell IPX */</td></tr>
+<tr class="separator:a52875f307f1bee68fec467d5527a8824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7010ace00f20208c3455f7130c77c9e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a7010ace00f20208c3455f7130c77c9e1">PPP_VJC</a>&#160;&#160;&#160;0x002d	/* Van Jacobson Compressed TCP/IP */</td></tr>
+<tr class="separator:a7010ace00f20208c3455f7130c77c9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb79c7130a803b18b122de1f7da50768"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aeb79c7130a803b18b122de1f7da50768">PPP_VJNC</a>&#160;&#160;&#160;0x002f	/* Van Jacobson Uncompressed TCP/IP */</td></tr>
+<tr class="separator:aeb79c7130a803b18b122de1f7da50768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa494ff5644e4806345bc3343cd0004d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aa494ff5644e4806345bc3343cd0004d5">PPP_BRPDU</a>&#160;&#160;&#160;0x0031	/* Bridging PDU */</td></tr>
+<tr class="separator:aa494ff5644e4806345bc3343cd0004d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b08c32211fcbd7cc2ada5b5f13115a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a74b08c32211fcbd7cc2ada5b5f13115a">PPP_STII</a>&#160;&#160;&#160;0x0033	/* Stream Protocol (ST-II) */</td></tr>
+<tr class="separator:a74b08c32211fcbd7cc2ada5b5f13115a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e763bea5b0f66ee3735d3debf82cb76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a1e763bea5b0f66ee3735d3debf82cb76">PPP_VINES</a>&#160;&#160;&#160;0x0035	/* Banyan Vines */</td></tr>
+<tr class="separator:a1e763bea5b0f66ee3735d3debf82cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e04918ae90e53b5a28b94a1b1a0875"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a93e04918ae90e53b5a28b94a1b1a0875">PPP_IPV6</a>&#160;&#160;&#160;0x0057	/* Internet Protocol version 6 */</td></tr>
+<tr class="separator:a93e04918ae90e53b5a28b94a1b1a0875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3f5a741faf40f45513e22eb080e3e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#abe3f5a741faf40f45513e22eb080e3e7">PPP_HELLO</a>&#160;&#160;&#160;0x0201	/* 802.1d Hello Packets */</td></tr>
+<tr class="separator:abe3f5a741faf40f45513e22eb080e3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ddec7584dc8c4b6f4f64413bb9d4f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ac2ddec7584dc8c4b6f4f64413bb9d4f7">PPP_LUXCOM</a>&#160;&#160;&#160;0x0231	/* Luxcom */</td></tr>
+<tr class="separator:ac2ddec7584dc8c4b6f4f64413bb9d4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3e10c5075555ac0641084f7e5038f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a2e3e10c5075555ac0641084f7e5038f1">PPP_SNS</a>&#160;&#160;&#160;0x0233	/* Sigma Network Systems */</td></tr>
+<tr class="separator:a2e3e10c5075555ac0641084f7e5038f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54ba2b15ae6099532cb775a78965c8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ae54ba2b15ae6099532cb775a78965c8d">PPP_MPLS_UCAST</a>&#160;&#160;&#160;0x0281  /* rfc 3032 */</td></tr>
+<tr class="separator:ae54ba2b15ae6099532cb775a78965c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ceb51c1d7c0493303f2c23b5ddf0eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ac8ceb51c1d7c0493303f2c23b5ddf0eb">PPP_MPLS_MCAST</a>&#160;&#160;&#160;0x0283  /* rfc 3022 */</td></tr>
+<tr class="separator:ac8ceb51c1d7c0493303f2c23b5ddf0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb174dd1fa3f0779f98fe52771f9649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a6cb174dd1fa3f0779f98fe52771f9649">PPP_IPCP</a>&#160;&#160;&#160;0x8021	/* IP Control Protocol */</td></tr>
+<tr class="separator:a6cb174dd1fa3f0779f98fe52771f9649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca013b61cb8f9feecce3720578bb54a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aaca013b61cb8f9feecce3720578bb54a">PPP_OSICP</a>&#160;&#160;&#160;0x8023	/* OSI Network Layer Control Protocol */</td></tr>
+<tr class="separator:aaca013b61cb8f9feecce3720578bb54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b577a81e7311d3f138f9508ca7b8a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ae2b577a81e7311d3f138f9508ca7b8a4">PPP_NSCP</a>&#160;&#160;&#160;0x8025	/* Xerox NS IDP Control Protocol */</td></tr>
+<tr class="separator:ae2b577a81e7311d3f138f9508ca7b8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea7c8a32645e8c7226995103fcebe54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a9ea7c8a32645e8c7226995103fcebe54">PPP_DECNETCP</a>&#160;&#160;&#160;0x8027	/* DECnet Control Protocol */</td></tr>
+<tr class="separator:a9ea7c8a32645e8c7226995103fcebe54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9415dbc6efaefc6f63d07d2d13fbab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a4d9415dbc6efaefc6f63d07d2d13fbab">PPP_APPLECP</a>&#160;&#160;&#160;0x8029	/* Appletalk Control Protocol */</td></tr>
+<tr class="separator:a4d9415dbc6efaefc6f63d07d2d13fbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43af8c608b36f96c9ee44d6768cf2afa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a43af8c608b36f96c9ee44d6768cf2afa">PPP_IPXCP</a>&#160;&#160;&#160;0x802b	/* Novell IPX Control Protocol */</td></tr>
+<tr class="separator:a43af8c608b36f96c9ee44d6768cf2afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab383c1c8ea0ba29e1947dfe47f885bd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ab383c1c8ea0ba29e1947dfe47f885bd5">PPP_STIICP</a>&#160;&#160;&#160;0x8033	/* Strean Protocol Control Protocol */</td></tr>
+<tr class="separator:ab383c1c8ea0ba29e1947dfe47f885bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa9200043bc691343137cc827d6ce13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a0aa9200043bc691343137cc827d6ce13">PPP_VINESCP</a>&#160;&#160;&#160;0x8035	/* Banyan Vines Control Protocol */</td></tr>
+<tr class="separator:a0aa9200043bc691343137cc827d6ce13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38085ca2e1fa410eb6f47c93d2a9b902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#a38085ca2e1fa410eb6f47c93d2a9b902">PPP_IPV6CP</a>&#160;&#160;&#160;0x8057	/* IPv6 Control Protocol */</td></tr>
+<tr class="separator:a38085ca2e1fa410eb6f47c93d2a9b902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed95d358f4ab5dd4049545a20e96c867"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aed95d358f4ab5dd4049545a20e96c867">PPP_MPLSCP</a>&#160;&#160;&#160;0x8281  /* rfc 3022 */</td></tr>
+<tr class="separator:aed95d358f4ab5dd4049545a20e96c867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50cd30943f9cf472f5e708578fa264b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#ab50cd30943f9cf472f5e708578fa264b">PPP_LCP</a>&#160;&#160;&#160;0xc021	/* Link Control Protocol */</td></tr>
+<tr class="separator:ab50cd30943f9cf472f5e708578fa264b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fef05ef609f0a4d90fa05cf0c3ff01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aa6fef05ef609f0a4d90fa05cf0c3ff01">PPP_PAP</a>&#160;&#160;&#160;0xc023	/* Password Authentication Protocol */</td></tr>
+<tr class="separator:aa6fef05ef609f0a4d90fa05cf0c3ff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa603976808faf6f9e27289d2dddda8bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aa603976808faf6f9e27289d2dddda8bd">PPP_LQM</a>&#160;&#160;&#160;0xc025	/* Link Quality Monitoring */</td></tr>
+<tr class="separator:aa603976808faf6f9e27289d2dddda8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef60b6001f859647ffee52ff7064c4e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppp_8h.html#aef60b6001f859647ffee52ff7064c4e8">PPP_CHAP</a>&#160;&#160;&#160;0xc223	/* Challenge Handshake Authentication Protocol */</td></tr>
+<tr class="separator:aef60b6001f859647ffee52ff7064c4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ae8ca4c160b75942f5459e410a658cf79" name="ae8ca4c160b75942f5459e410a658cf79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca4c160b75942f5459e410a658cf79">&#9670;&nbsp;</a></span>PPP_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_ADDRESS&#160;&#160;&#160;0xff	/* The address byte value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1baad72fc878832bf5f5fc9695c89c8" name="af1baad72fc878832bf5f5fc9695c89c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1baad72fc878832bf5f5fc9695c89c8">&#9670;&nbsp;</a></span>PPP_APPLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_APPLE&#160;&#160;&#160;0x0029	/* Appletalk */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d9415dbc6efaefc6f63d07d2d13fbab" name="a4d9415dbc6efaefc6f63d07d2d13fbab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9415dbc6efaefc6f63d07d2d13fbab">&#9670;&nbsp;</a></span>PPP_APPLECP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_APPLECP&#160;&#160;&#160;0x8029	/* Appletalk Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa494ff5644e4806345bc3343cd0004d5" name="aa494ff5644e4806345bc3343cd0004d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa494ff5644e4806345bc3343cd0004d5">&#9670;&nbsp;</a></span>PPP_BRPDU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_BRPDU&#160;&#160;&#160;0x0031	/* Bridging PDU */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef60b6001f859647ffee52ff7064c4e8" name="aef60b6001f859647ffee52ff7064c4e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef60b6001f859647ffee52ff7064c4e8">&#9670;&nbsp;</a></span>PPP_CHAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_CHAP&#160;&#160;&#160;0xc223	/* Challenge Handshake Authentication Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9778867e75a74de0a21989c11b40df8" name="ac9778867e75a74de0a21989c11b40df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9778867e75a74de0a21989c11b40df8">&#9670;&nbsp;</a></span>PPP_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_CONTROL&#160;&#160;&#160;0x03	/* The control byte value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60755e73c1603f373acba5231d9cafe9" name="a60755e73c1603f373acba5231d9cafe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60755e73c1603f373acba5231d9cafe9">&#9670;&nbsp;</a></span>PPP_DECNET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_DECNET&#160;&#160;&#160;0x0027	/* DECnet Phase IV */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ea7c8a32645e8c7226995103fcebe54" name="a9ea7c8a32645e8c7226995103fcebe54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea7c8a32645e8c7226995103fcebe54">&#9670;&nbsp;</a></span>PPP_DECNETCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_DECNETCP&#160;&#160;&#160;0x8027	/* DECnet Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe3f5a741faf40f45513e22eb080e3e7" name="abe3f5a741faf40f45513e22eb080e3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3f5a741faf40f45513e22eb080e3e7">&#9670;&nbsp;</a></span>PPP_HELLO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_HELLO&#160;&#160;&#160;0x0201	/* 802.1d Hello Packets */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4feebc12f6bc0f2035315b1e6ef2e084" name="a4feebc12f6bc0f2035315b1e6ef2e084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4feebc12f6bc0f2035315b1e6ef2e084">&#9670;&nbsp;</a></span>PPP_IP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IP&#160;&#160;&#160;0x0021	/* Raw IP */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cb174dd1fa3f0779f98fe52771f9649" name="a6cb174dd1fa3f0779f98fe52771f9649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb174dd1fa3f0779f98fe52771f9649">&#9670;&nbsp;</a></span>PPP_IPCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IPCP&#160;&#160;&#160;0x8021	/* IP Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93e04918ae90e53b5a28b94a1b1a0875" name="a93e04918ae90e53b5a28b94a1b1a0875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e04918ae90e53b5a28b94a1b1a0875">&#9670;&nbsp;</a></span>PPP_IPV6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IPV6&#160;&#160;&#160;0x0057	/* Internet Protocol version 6 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38085ca2e1fa410eb6f47c93d2a9b902" name="a38085ca2e1fa410eb6f47c93d2a9b902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38085ca2e1fa410eb6f47c93d2a9b902">&#9670;&nbsp;</a></span>PPP_IPV6CP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IPV6CP&#160;&#160;&#160;0x8057	/* IPv6 Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52875f307f1bee68fec467d5527a8824" name="a52875f307f1bee68fec467d5527a8824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52875f307f1bee68fec467d5527a8824">&#9670;&nbsp;</a></span>PPP_IPX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IPX&#160;&#160;&#160;0x002b	/* Novell IPX */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43af8c608b36f96c9ee44d6768cf2afa" name="a43af8c608b36f96c9ee44d6768cf2afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43af8c608b36f96c9ee44d6768cf2afa">&#9670;&nbsp;</a></span>PPP_IPXCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_IPXCP&#160;&#160;&#160;0x802b	/* Novell IPX Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab50cd30943f9cf472f5e708578fa264b" name="ab50cd30943f9cf472f5e708578fa264b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50cd30943f9cf472f5e708578fa264b">&#9670;&nbsp;</a></span>PPP_LCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_LCP&#160;&#160;&#160;0xc021	/* Link Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa603976808faf6f9e27289d2dddda8bd" name="aa603976808faf6f9e27289d2dddda8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa603976808faf6f9e27289d2dddda8bd">&#9670;&nbsp;</a></span>PPP_LQM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_LQM&#160;&#160;&#160;0xc025	/* Link Quality Monitoring */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2ddec7584dc8c4b6f4f64413bb9d4f7" name="ac2ddec7584dc8c4b6f4f64413bb9d4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ddec7584dc8c4b6f4f64413bb9d4f7">&#9670;&nbsp;</a></span>PPP_LUXCOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_LUXCOM&#160;&#160;&#160;0x0231	/* Luxcom */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8ceb51c1d7c0493303f2c23b5ddf0eb" name="ac8ceb51c1d7c0493303f2c23b5ddf0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ceb51c1d7c0493303f2c23b5ddf0eb">&#9670;&nbsp;</a></span>PPP_MPLS_MCAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_MPLS_MCAST&#160;&#160;&#160;0x0283  /* rfc 3022 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae54ba2b15ae6099532cb775a78965c8d" name="ae54ba2b15ae6099532cb775a78965c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae54ba2b15ae6099532cb775a78965c8d">&#9670;&nbsp;</a></span>PPP_MPLS_UCAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_MPLS_UCAST&#160;&#160;&#160;0x0281  /* rfc 3032 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed95d358f4ab5dd4049545a20e96c867" name="aed95d358f4ab5dd4049545a20e96c867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed95d358f4ab5dd4049545a20e96c867">&#9670;&nbsp;</a></span>PPP_MPLSCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_MPLSCP&#160;&#160;&#160;0x8281  /* rfc 3022 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ce7ac3030c953d1bf565c88e79b581f" name="a9ce7ac3030c953d1bf565c88e79b581f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce7ac3030c953d1bf565c88e79b581f">&#9670;&nbsp;</a></span>PPP_NS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_NS&#160;&#160;&#160;0x0025	/* Xerox NS IDP */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2b577a81e7311d3f138f9508ca7b8a4" name="ae2b577a81e7311d3f138f9508ca7b8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b577a81e7311d3f138f9508ca7b8a4">&#9670;&nbsp;</a></span>PPP_NSCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_NSCP&#160;&#160;&#160;0x8025	/* Xerox NS IDP Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51efc859bbc88bc78ea0d9bcfba0abdb" name="a51efc859bbc88bc78ea0d9bcfba0abdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51efc859bbc88bc78ea0d9bcfba0abdb">&#9670;&nbsp;</a></span>PPP_OSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_OSI&#160;&#160;&#160;0x0023	/* OSI Network Layer */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaca013b61cb8f9feecce3720578bb54a" name="aaca013b61cb8f9feecce3720578bb54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca013b61cb8f9feecce3720578bb54a">&#9670;&nbsp;</a></span>PPP_OSICP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_OSICP&#160;&#160;&#160;0x8023	/* OSI Network Layer Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6fef05ef609f0a4d90fa05cf0c3ff01" name="aa6fef05ef609f0a4d90fa05cf0c3ff01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6fef05ef609f0a4d90fa05cf0c3ff01">&#9670;&nbsp;</a></span>PPP_PAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_PAP&#160;&#160;&#160;0xc023	/* Password Authentication Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab58538c4cab14c67e195f80a1b04256c" name="ab58538c4cab14c67e195f80a1b04256c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58538c4cab14c67e195f80a1b04256c">&#9670;&nbsp;</a></span>PPP_PPPD_IN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_PPPD_IN&#160;&#160;&#160;0x00	/* non-standard for <a class="el" href="bpf_8h.html#a6a4853ced148388bf284a712e71ec3f5">DLT_PPP_PPPD</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3f6256b337b8f01d388f3d45e51ffb2" name="ae3f6256b337b8f01d388f3d45e51ffb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f6256b337b8f01d388f3d45e51ffb2">&#9670;&nbsp;</a></span>PPP_PPPD_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_PPPD_OUT&#160;&#160;&#160;0x01	/* non-standard for <a class="el" href="bpf_8h.html#a6a4853ced148388bf284a712e71ec3f5">DLT_PPP_PPPD</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e3e10c5075555ac0641084f7e5038f1" name="a2e3e10c5075555ac0641084f7e5038f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3e10c5075555ac0641084f7e5038f1">&#9670;&nbsp;</a></span>PPP_SNS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_SNS&#160;&#160;&#160;0x0233	/* Sigma Network Systems */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74b08c32211fcbd7cc2ada5b5f13115a" name="a74b08c32211fcbd7cc2ada5b5f13115a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b08c32211fcbd7cc2ada5b5f13115a">&#9670;&nbsp;</a></span>PPP_STII</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_STII&#160;&#160;&#160;0x0033	/* Stream Protocol (ST-II) */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab383c1c8ea0ba29e1947dfe47f885bd5" name="ab383c1c8ea0ba29e1947dfe47f885bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab383c1c8ea0ba29e1947dfe47f885bd5">&#9670;&nbsp;</a></span>PPP_STIICP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_STIICP&#160;&#160;&#160;0x8033	/* Strean Protocol Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e763bea5b0f66ee3735d3debf82cb76" name="a1e763bea5b0f66ee3735d3debf82cb76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e763bea5b0f66ee3735d3debf82cb76">&#9670;&nbsp;</a></span>PPP_VINES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_VINES&#160;&#160;&#160;0x0035	/* Banyan Vines */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0aa9200043bc691343137cc827d6ce13" name="a0aa9200043bc691343137cc827d6ce13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa9200043bc691343137cc827d6ce13">&#9670;&nbsp;</a></span>PPP_VINESCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_VINESCP&#160;&#160;&#160;0x8035	/* Banyan Vines Control Protocol */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7010ace00f20208c3455f7130c77c9e1" name="a7010ace00f20208c3455f7130c77c9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7010ace00f20208c3455f7130c77c9e1">&#9670;&nbsp;</a></span>PPP_VJC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_VJC&#160;&#160;&#160;0x002d	/* Van Jacobson Compressed TCP/IP */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb79c7130a803b18b122de1f7da50768" name="aeb79c7130a803b18b122de1f7da50768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb79c7130a803b18b122de1f7da50768">&#9670;&nbsp;</a></span>PPP_VJNC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PPP_VJNC&#160;&#160;&#160;0x002f	/* Van Jacobson Uncompressed TCP/IP */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,175 @@
+\hypertarget{getservent_8c}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Src/getservent.c 文件参考}
+\label{getservent_8c}\index{libpcap-\/1.1.1/Win32/Src/getservent.c@{libpcap-\/1.1.1/Win32/Src/getservent.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$net/netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/nameser.\+h$>$}\newline
+getservent.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getservent_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}~35
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{getservent_8c_a0474c88942e3a59f20516b7b449eb231}{setservent}} (int f)
+\item 
+void \mbox{\hyperlink{getservent_8c_ab45b847174e25df650e5ce0aa8664896}{endservent}} ()
+\item 
+struct servent $\ast$ \mbox{\hyperlink{getservent_8c_afc5f96a2e8c0919963de4f906d4647eb}{getservent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}{SERVDB}} \mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{netdb_8h_a0dd470c1e7fa3618600e792bfaea217c}{\+\_\+\+PATH\+\_\+\+SERVICES}}
+\item 
+static FILE $\ast$ \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}} = NULL
+\item 
+static char \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} \mbox{[}BUFSIZ+1\mbox{]}
+\item 
+static struct servent \mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}}
+\item 
+static char $\ast$ \mbox{\hyperlink{getservent_8c_a2b24d478d7e4e967d13af5ced1c7f8e4}{serv\+\_\+aliases}} \mbox{[}\mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}\mbox{]}
+\item 
+int \mbox{\hyperlink{getservent_8c_aae749e080afa19f0f459fe71a3671383}{\+\_\+serv\+\_\+stayopen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}\label{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}} 
+\index{getservent.c@{getservent.c}!MAXALIASES@{MAXALIASES}}
+\index{MAXALIASES@{MAXALIASES}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{MAXALIASES}{MAXALIASES}}
+{\footnotesize\ttfamily \#define MAXALIASES~35}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{getservent_8c_ab45b847174e25df650e5ce0aa8664896}\label{getservent_8c_ab45b847174e25df650e5ce0aa8664896}} 
+\index{getservent.c@{getservent.c}!endservent@{endservent}}
+\index{endservent@{endservent}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{endservent()}{endservent()}}
+{\footnotesize\ttfamily void endservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_aae749e080afa19f0f459fe71a3671383}{\+\_\+serv\+\_\+stayopen}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+\mbox{\Hypertarget{getservent_8c_afc5f96a2e8c0919963de4f906d4647eb}\label{getservent_8c_afc5f96a2e8c0919963de4f906d4647eb}} 
+\index{getservent.c@{getservent.c}!getservent@{getservent}}
+\index{getservent@{getservent}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{getservent()}{getservent()}}
+{\footnotesize\ttfamily struct servent $\ast$ getservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}, \mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}, \mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}}, \mbox{\hyperlink{getservent_8c_a2b24d478d7e4e967d13af5ced1c7f8e4}{serv\+\_\+aliases}}, \mbox{\hyperlink{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}{SERVDB}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getservent_8c_afc5f96a2e8c0919963de4f906d4647eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getservent_8c_a0474c88942e3a59f20516b7b449eb231}\label{getservent_8c_a0474c88942e3a59f20516b7b449eb231}} 
+\index{getservent.c@{getservent.c}!setservent@{setservent}}
+\index{setservent@{setservent}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{setservent()}{setservent()}}
+{\footnotesize\ttfamily void setservent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_aae749e080afa19f0f459fe71a3671383}{\+\_\+serv\+\_\+stayopen}}, \mbox{\hyperlink{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}{SERVDB}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getservent_8c_a0474c88942e3a59f20516b7b449eb231_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{getservent_8c_aae749e080afa19f0f459fe71a3671383}\label{getservent_8c_aae749e080afa19f0f459fe71a3671383}} 
+\index{getservent.c@{getservent.c}!\_serv\_stayopen@{\_serv\_stayopen}}
+\index{\_serv\_stayopen@{\_serv\_stayopen}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{\_serv\_stayopen}{\_serv\_stayopen}}
+{\footnotesize\ttfamily int \+\_\+serv\+\_\+stayopen}
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent()}}.
+
+\mbox{\Hypertarget{getservent_8c_a5b625afb8853050432e347f405fd6cc3}\label{getservent_8c_a5b625afb8853050432e347f405fd6cc3}} 
+\index{getservent.c@{getservent.c}!line@{line}}
+\index{line@{line}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily char line\mbox{[}BUFSIZ+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}}.
+
+\mbox{\Hypertarget{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}\label{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}} 
+\index{getservent.c@{getservent.c}!serv@{serv}}
+\index{serv@{serv}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{serv}{serv}}
+{\footnotesize\ttfamily struct servent serv\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}}.
+
+\mbox{\Hypertarget{getservent_8c_a2b24d478d7e4e967d13af5ced1c7f8e4}\label{getservent_8c_a2b24d478d7e4e967d13af5ced1c7f8e4}} 
+\index{getservent.c@{getservent.c}!serv\_aliases@{serv\_aliases}}
+\index{serv\_aliases@{serv\_aliases}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{serv\_aliases}{serv\_aliases}}
+{\footnotesize\ttfamily char$\ast$ serv\+\_\+aliases\mbox{[}\mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}}.
+
+\mbox{\Hypertarget{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}\label{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}} 
+\index{getservent.c@{getservent.c}!SERVDB@{SERVDB}}
+\index{SERVDB@{SERVDB}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{SERVDB}{SERVDB}}
+{\footnotesize\ttfamily char SERVDB\mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{netdb_8h_a0dd470c1e7fa3618600e792bfaea217c}{\+\_\+\+PATH\+\_\+\+SERVICES}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent()}}.
+
+\mbox{\Hypertarget{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}\label{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}} 
+\index{getservent.c@{getservent.c}!servf@{servf}}
+\index{servf@{servf}!getservent.c@{getservent.c}}
+\doxysubsubsection{\texorpdfstring{servf}{servf}}
+{\footnotesize\ttfamily FILE$\ast$ servf = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent()}}, \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent()}}.
+

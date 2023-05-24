@@ -1,0 +1,73 @@
+\hypertarget{gethostname_8c}{}\doxysection{gethostname.\+c 文件参考}
+\label{gethostname_8c}\index{gethostname.c@{gethostname.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+gethostname.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gethostname_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{gethostname_8c_aeb79f86261de904967d433c1b5e9a1de}{strlcpy}} (char $\ast$\mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, const char $\ast$src, size\+\_\+t siz)
+\item 
+char $\ast$ \mbox{\hyperlink{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29}{get\+\_\+hostname}} (char $\ast$addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29}\label{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29}} 
+\index{gethostname.c@{gethostname.c}!get\_hostname@{get\_hostname}}
+\index{get\_hostname@{get\_hostname}!gethostname.c@{gethostname.c}}
+\doxysubsubsection{\texorpdfstring{get\_hostname()}{get\_hostname()}}
+{\footnotesize\ttfamily char $\ast$ get\+\_\+hostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{inet__aton_8c_a9611e4d2e430d90aaeaa1fa86652479f}{inet\+\_\+aton()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{gethostname_8c_aeb79f86261de904967d433c1b5e9a1de}{strlcpy()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_abb5fe16cf551d7bc21e26e5b127a451f}{log\+\_\+icmp\+\_\+timeexc()}} , 以及 \mbox{\hyperlink{hping2_8h_aadd89ae73223c40a0ddaed181dee7db6}{log\+\_\+icmp\+\_\+unreach()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gethostname_8c_aeb79f86261de904967d433c1b5e9a1de}\label{gethostname_8c_aeb79f86261de904967d433c1b5e9a1de}} 
+\index{gethostname.c@{gethostname.c}!strlcpy@{strlcpy}}
+\index{strlcpy@{strlcpy}!gethostname.c@{gethostname.c}}
+\doxysubsubsection{\texorpdfstring{strlcpy()}{strlcpy()}}
+{\footnotesize\ttfamily size\+\_\+t strlcpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{size\+\_\+t}]{siz }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29}{get\+\_\+hostname()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gethostname_8c_aeb79f86261de904967d433c1b5e9a1de_icgraph}
+\end{center}
+\end{figure}

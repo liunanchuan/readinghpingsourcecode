@@ -1,0 +1,546 @@
+\hypertarget{waitpacket_8c}{}\doxysection{waitpacket.\+c 文件参考}
+\label{waitpacket_8c}\index{waitpacket.c@{waitpacket.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+waitpacket.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}{icmp\+\_\+unreach\+\_\+rtt}} (void $\ast$quoted\+\_\+ip, int size, int $\ast$seqp, float $\ast$ms\+\_\+delay)
+\item 
+static void \mbox{\hyperlink{waitpacket_8c_af149840075919b47789e4c7d95a411f2}{print\+\_\+tcp\+\_\+timestamp}} (void $\ast$tcp, int tcpsize)
+\item 
+static int \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp}} (void $\ast$packet, size\+\_\+t size)
+\item 
+static int \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp}} (void $\ast$packet, size\+\_\+t size)
+\item 
+static int \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp}} (void $\ast$packet, size\+\_\+t size)
+\item 
+static void \mbox{\hyperlink{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5}{hex\+\_\+dump}} (void $\ast$packet, int size)
+\item 
+static void \mbox{\hyperlink{waitpacket_8c_a54057a0631275d3190715cabe7d92d11}{human\+\_\+dump}} (void $\ast$packet, int size)
+\item 
+static void \mbox{\hyperlink{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65}{handle\+\_\+hcmp}} (char $\ast$packet, int size)
+\item 
+void \mbox{\hyperlink{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}{recv\+\_\+beep}} (void)
+\item 
+void \mbox{\hyperlink{waitpacket_8c_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet}} (void)
+\item 
+void \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip}} (int status, int \mbox{\hyperlink{main_8c_acc80722d9dd9349cbba06c72d6fb5972}{sequence}})
+\item 
+void \mbox{\hyperlink{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f}{log\+\_\+icmp\+\_\+ts}} (void $\ast$ts)
+\item 
+void \mbox{\hyperlink{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1}{log\+\_\+icmp\+\_\+addr}} (void $\ast$addrptr)
+\item 
+void \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute}} (void $\ast$packet, int size, int icmp\+\_\+code)
+\item 
+int \mbox{\hyperlink{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f}{read\+\_\+packet}} (void $\ast$packet, int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static struct \mbox{\hyperlink{structmyiphdr}{myiphdr}} \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}
+\item 
+static int \mbox{\hyperlink{waitpacket_8c_af1c7185da1940e9a1b53e77fe49f259a}{ip\+\_\+size}}
+\item 
+static struct in\+\_\+addr src \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65}\label{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65}} 
+\index{waitpacket.c@{waitpacket.c}!handle\_hcmp@{handle\_hcmp}}
+\index{handle\_hcmp@{handle\_hcmp}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{handle\_hcmp()}{handle\_hcmp()}}
+{\footnotesize\ttfamily void handle\+\_\+hcmp (\begin{DoxyParamCaption}\item[{char $\ast$}]{packet,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{hcmp_8h_a83cd8ea1875aea99b115fd76db22164c}{HCMP\+\_\+\+RESTART}}, \mbox{\hyperlink{hcmp_8h_aee4e7add5a353c0359bc59e535674dbd}{HCMP\+\_\+\+SOURCE\+\_\+\+QUENCH}}, \mbox{\hyperlink{hcmp_8h_a9fd378106d1914f09ff3d4f140cdab80}{HCMP\+\_\+\+SOURCE\+\_\+\+STIRUP}}, \mbox{\hyperlink{hping2_8h_a233320a99fcad58a39af83d31f6e418b}{memstr()}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{globals_8h_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{globals_8h_afd9a5333954faea0495f8fa8e6167dd9}{rsign}}, \mbox{\hyperlink{structhcmphdr_acb9b84094e40255089b168fd33c08790}{hcmphdr\+::seqnum}}, \mbox{\hyperlink{globals_8h_ab6ed860f996b7f424f202a690aa2fb69}{src\+\_\+id}}, \mbox{\hyperlink{structhcmphdr_aa05eefca31ad6bd4617aac0176b8366e}{hcmphdr\+::type}} , 以及 \mbox{\hyperlink{structhcmphdr_a1076576b572e6e8fee937730028b19a5}{hcmphdr\+::typedep}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5}\label{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5}} 
+\index{waitpacket.c@{waitpacket.c}!hex\_dump@{hex\_dump}}
+\index{hex\_dump@{hex\_dump}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{hex\_dump()}{hex\_dump()}}
+{\footnotesize\ttfamily void hex\+\_\+dump (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a54057a0631275d3190715cabe7d92d11}\label{waitpacket_8c_a54057a0631275d3190715cabe7d92d11}} 
+\index{waitpacket.c@{waitpacket.c}!human\_dump@{human\_dump}}
+\index{human\_dump@{human\_dump}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{human\_dump()}{human\_dump()}}
+{\footnotesize\ttfamily void human\+\_\+dump (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{waitpacket_8c_a54057a0631275d3190715cabe7d92d11_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{waitpacket_8c_a54057a0631275d3190715cabe7d92d11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}\label{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}} 
+\index{waitpacket.c@{waitpacket.c}!icmp\_unreach\_rtt@{icmp\_unreach\_rtt}}
+\index{icmp\_unreach\_rtt@{icmp\_unreach\_rtt}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_unreach\_rtt()}{icmp\_unreach\_rtt()}}
+{\footnotesize\ttfamily int icmp\+\_\+unreach\+\_\+rtt (\begin{DoxyParamCaption}\item[{void $\ast$}]{quoted\+\_\+ip,  }\item[{int}]{size,  }\item[{int $\ast$}]{seqp,  }\item[{float $\ast$}]{ms\+\_\+delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structmyicmphdr_aadee172754b46ffe0517055d4479f2c9}{myicmphdr\+::echo}}, \mbox{\hyperlink{hping2_8h_ad58231410d58e34b455328b888a9e73c}{ICMP\+\_\+\+ECHO}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{globals_8h_aa95b4bbd88b261fa4da77a505e0c3353}{opt\+\_\+tr\+\_\+no\+\_\+rtt}}, \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{myiphdr\+::protocol}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}}, \mbox{\hyperlink{structmyicmphdr_a31eb0bd1fa3e44050cabdc0ca6f75bd6}{myicmphdr\+::sequence}}, \mbox{\hyperlink{globals_8h_a2d47efc2f2609185cf802853871de027}{src\+\_\+port}}, \mbox{\hyperlink{structmyicmphdr_aa05eefca31ad6bd4617aac0176b8366e}{myicmphdr\+::type}}, \mbox{\hyperlink{structmyudphdr_a74d4e0629251639aadfb8ad1c61a6d78}{myudphdr\+::uh\+\_\+sport}} , 以及 \mbox{\hyperlink{structmyicmphdr_a2b33a4cc4f4b559fc8f5b77d13bf7aac}{myicmphdr\+::un}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1}\label{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1}} 
+\index{waitpacket.c@{waitpacket.c}!log\_icmp\_addr@{log\_icmp\_addr}}
+\index{log\_icmp\_addr@{log\_icmp\_addr}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{log\_icmp\_addr()}{log\_icmp\_addr()}}
+{\footnotesize\ttfamily void log\+\_\+icmp\+\_\+addr (\begin{DoxyParamCaption}\item[{void $\ast$}]{addrptr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f}\label{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f}} 
+\index{waitpacket.c@{waitpacket.c}!log\_icmp\_ts@{log\_icmp\_ts}}
+\index{log\_icmp\_ts@{log\_icmp\_ts}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{log\_icmp\_ts()}{log\_icmp\_ts()}}
+{\footnotesize\ttfamily void log\+\_\+icmp\+\_\+ts (\begin{DoxyParamCaption}\item[{void $\ast$}]{ts }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_ad78c66cdc8808821a6ada0dac667c0ed}{get\+\_\+midnight\+\_\+ut\+\_\+ms}}, \mbox{\hyperlink{structicmp__tstamp__data_a78e421bac7736adef8e720f33aa34208}{icmp\+\_\+tstamp\+\_\+data\+::orig}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{structicmp__tstamp__data_abb747aa786f03ccd1b75ea82ec2b18db}{icmp\+\_\+tstamp\+\_\+data\+::recv}} , 以及 \mbox{\hyperlink{structicmp__tstamp__data_a724572501dbf904404e757b679da26da}{icmp\+\_\+tstamp\+\_\+data\+::tran}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}\label{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}} 
+\index{waitpacket.c@{waitpacket.c}!log\_ip@{log\_ip}}
+\index{log\_ip@{log\_ip}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{log\_ip()}{log\_ip()}}
+{\footnotesize\ttfamily void log\+\_\+ip (\begin{DoxyParamCaption}\item[{int}]{status,  }\item[{int}]{sequence }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structmyiphdr_a827bffd05d55a91dc04e51adcb8589ff}{myiphdr\+::frag\+\_\+off}}, \mbox{\hyperlink{structmyiphdr_ac4ef9be9becfbb17119420e650025348}{myiphdr\+::id}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{waitpacket_8c_af1c7185da1940e9a1b53e77fe49f259a}{ip\+\_\+size}}, \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}}, \mbox{\hyperlink{globals_8h_ae70d8695428cf9ef7d6cf16ca1c45eb6}{opt\+\_\+relid}}, \mbox{\hyperlink{globals_8h_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}}, \mbox{\hyperlink{globals_8h_ae4cc9bd75a7c87624a52f8b84ffa83d2}{opt\+\_\+winid\+\_\+order}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{hping2_8h_a22a9f04babf49e4b99ef17b0e7861d65}{relativize\+\_\+id()}}, \mbox{\hyperlink{hping2_8h_a1857c62d736b5ae6b327ea142301a6be}{S\+\_\+\+RECV}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}}, \mbox{\hyperlink{structmyiphdr_aabd17e6458449b589ae5385d8e07618a}{myiphdr\+::tos}}, \mbox{\hyperlink{structmyiphdr_a6551f504ae847a655574224316890281}{myiphdr\+::tot\+\_\+len}} , 以及 \mbox{\hyperlink{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}{myiphdr\+::ttl}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}} , 以及 \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}\label{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}} 
+\index{waitpacket.c@{waitpacket.c}!log\_traceroute@{log\_traceroute}}
+\index{log\_traceroute@{log\_traceroute}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{log\_traceroute()}{log\_traceroute()}}
+{\footnotesize\ttfamily void log\+\_\+traceroute (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{int}]{size,  }\item[{int}]{icmp\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}{icmp\+\_\+unreach\+\_\+rtt()}}, \mbox{\hyperlink{hping2_8h_aeee265ddaa2c58698cb245c08889313e}{ICMPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{hping2_8h_abb5fe16cf551d7bc21e26e5b127a451f}{log\+\_\+icmp\+\_\+timeexc()}}, \mbox{\hyperlink{globals_8h_af8eb20ec721c88a6f63a3e6ef066624f}{opt\+\_\+tr\+\_\+keep\+\_\+ttl}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}{myiphdr\+::saddr}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}} , 以及 \mbox{\hyperlink{globals_8h_a6ced2f3734fd89fe4b315d78bf91754c}{src\+\_\+ttl}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_af149840075919b47789e4c7d95a411f2}\label{waitpacket_8c_af149840075919b47789e4c7d95a411f2}} 
+\index{waitpacket.c@{waitpacket.c}!print\_tcp\_timestamp@{print\_tcp\_timestamp}}
+\index{print\_tcp\_timestamp@{print\_tcp\_timestamp}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{print\_tcp\_timestamp()}{print\_tcp\_timestamp()}}
+{\footnotesize\ttfamily void print\+\_\+tcp\+\_\+timestamp (\begin{DoxyParamCaption}\item[{void $\ast$}]{tcp,  }\item[{int}]{tcpsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{hping2_8h_a996f7be338ccb40d1a2a5abc1ad61759}{ABS}}, \mbox{\hyperlink{globals_8h_aa5ceab431a08f1b4eb39510becbf8d97}{opt\+\_\+waitinusec}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{globals_8h_a3a412ae544cb411a594a6439b0e9402f}{sending\+\_\+wait}}, \mbox{\hyperlink{hping2_8h_aca86f55de8648ffb0cadb8d8c6b7f272}{TCPHDR\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{structmytcphdr_a6713b9f6634a6bcc281b625d8ce3670d}{mytcphdr\+::th\+\_\+off}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{waitpacket_8c_af149840075919b47789e4c7d95a411f2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_af149840075919b47789e4c7d95a411f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f}\label{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f}} 
+\index{waitpacket.c@{waitpacket.c}!read\_packet@{read\_packet}}
+\index{read\_packet@{read\_packet}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{read\_packet()}{read\_packet()}}
+{\footnotesize\ttfamily int read\+\_\+packet (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_a6a53f92871b68acc848b9a3f6011da4e}{pcap\+\_\+recv()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}\label{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}} 
+\index{waitpacket.c@{waitpacket.c}!recv\_beep@{recv\_beep}}
+\index{recv\_beep@{recv\_beep}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{recv\_beep()}{recv\_beep()}}
+{\footnotesize\ttfamily void recv\+\_\+beep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a6971e872b4543ebfa54558f36d51d8b9}{opt\+\_\+beep}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}} , 以及 \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}\label{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}} 
+\index{waitpacket.c@{waitpacket.c}!recv\_icmp@{recv\_icmp}}
+\index{recv\_icmp@{recv\_icmp}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{recv\_icmp()}{recv\_icmp()}}
+{\footnotesize\ttfamily int recv\+\_\+icmp (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structmyicmphdr_a309385d6277e07c7945ec0f5762ea3c4}{myicmphdr\+::code}}, \mbox{\hyperlink{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}{myiphdr\+::daddr}}, \mbox{\hyperlink{structmyicmphdr_aadee172754b46ffe0517055d4479f2c9}{myicmphdr\+::echo}}, \mbox{\hyperlink{hping2_8h_a5221c1be67c2b9e9232d440efbfdf85e}{ICMP\+\_\+\+ADDRESSREPLY}}, \mbox{\hyperlink{hping2_8h_a82c3c22ccc3ab020f598fa6832a78d12}{ICMP\+\_\+\+ECHOREPLY}}, \mbox{\hyperlink{hping2_8h_a1625f313093312938c79e5ca21d9c474}{ICMP\+\_\+\+TIMESTAMPREPLY}}, \mbox{\hyperlink{hping2_8h_aeee265ddaa2c58698cb245c08889313e}{ICMPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{structmyicmphdr_ac4ef9be9becfbb17119420e650025348}{myicmphdr\+::id}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1}{log\+\_\+icmp\+\_\+addr()}}, \mbox{\hyperlink{hping2_8h_abb5fe16cf551d7bc21e26e5b127a451f}{log\+\_\+icmp\+\_\+timeexc()}}, \mbox{\hyperlink{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f}{log\+\_\+icmp\+\_\+ts()}}, \mbox{\hyperlink{hping2_8h_aadd89ae73223c40a0ddaed181dee7db6}{log\+\_\+icmp\+\_\+unreach()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}, \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}}, \mbox{\hyperlink{globals_8h_a91c529fef1d3cd0002e3fe2ccabe2dd5}{opt\+\_\+traceroute}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}{recv\+\_\+beep()}}, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{structmyicmphdr_a31eb0bd1fa3e44050cabdc0ca6f75bd6}{myicmphdr\+::sequence}}, \mbox{\hyperlink{structmyicmphdr_aa05eefca31ad6bd4617aac0176b8366e}{myicmphdr\+::type}} , 以及 \mbox{\hyperlink{structmyicmphdr_a2b33a4cc4f4b559fc8f5b77d13bf7aac}{myicmphdr\+::un}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a7ffe144369534044a0367b0026746519}\label{waitpacket_8c_a7ffe144369534044a0367b0026746519}} 
+\index{waitpacket.c@{waitpacket.c}!recv\_tcp@{recv\_tcp}}
+\index{recv\_tcp@{recv\_tcp}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{recv\_tcp()}{recv\_tcp()}}
+{\footnotesize\ttfamily int recv\+\_\+tcp (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{globals_8h_aa1fa50515de3127fe1150148fb9ee30f}{base\+\_\+dst\+\_\+port}}, \mbox{\hyperlink{globals_8h_adc30891256dc40c2b01f687b30dceff3}{dst\+\_\+port}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{globals_8h_a8a0925e905101ef98f39d269c4c5d490}{opt\+\_\+force\+\_\+incdport}}, \mbox{\hyperlink{globals_8h_a5d838f95efbd6f6d7d28cb66290f9937}{opt\+\_\+incdport}}, \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}}, \mbox{\hyperlink{globals_8h_a762fb7acc59299bae49670d52e1b8320}{opt\+\_\+seqnum}}, \mbox{\hyperlink{globals_8h_ab5e7218629149e8cd4da188fdb486deb}{opt\+\_\+tcp\+\_\+timestamp}}, \mbox{\hyperlink{globals_8h_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}}, \mbox{\hyperlink{waitpacket_8c_af149840075919b47789e4c7d95a411f2}{print\+\_\+tcp\+\_\+timestamp()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}{recv\+\_\+beep()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}}, \mbox{\hyperlink{globals_8h_a073736dd0b8962be665c187c3e5d1fd3}{tcp\+\_\+exitcode}}, \mbox{\hyperlink{hping2_8h_aca86f55de8648ffb0cadb8d8c6b7f272}{TCPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{hping2_8h_a362dae974cf06bab2b79b70f0cde524f}{TH\+\_\+\+ACK}}, \mbox{\hyperlink{structmytcphdr_a95ea81a0ecb6f505cd353f60b209980d}{mytcphdr\+::th\+\_\+ack}}, \mbox{\hyperlink{structmytcphdr_a80afd648df865d2a07db9906027ffefe}{mytcphdr\+::th\+\_\+dport}}, \mbox{\hyperlink{hping2_8h_a1cec9b372679734fcd8394d779442ddb}{TH\+\_\+\+FIN}}, \mbox{\hyperlink{structmytcphdr_a48eaa5ea327200f2452150036f794d64}{mytcphdr\+::th\+\_\+flags}}, \mbox{\hyperlink{hping2_8h_a45b9964096064c9a0c84fbddd2c80d38}{TH\+\_\+\+PUSH}}, \mbox{\hyperlink{hping2_8h_a7f2ce15991898c8d3397045087c4381f}{TH\+\_\+\+RST}}, \mbox{\hyperlink{structmytcphdr_a2177fcefcf88a27c352be21d67889672}{mytcphdr\+::th\+\_\+seq}}, \mbox{\hyperlink{structmytcphdr_a9d451e24db593175ea0f797de209149b}{mytcphdr\+::th\+\_\+sport}}, \mbox{\hyperlink{structmytcphdr_a4ee81b74e0cdb8b9465e4e2ca12f6dbc}{mytcphdr\+::th\+\_\+sum}}, \mbox{\hyperlink{hping2_8h_a91006117f7ae427b957773ab0e80bfa4}{TH\+\_\+\+SYN}}, \mbox{\hyperlink{hping2_8h_a7b18ca973f14696013696a00c5235f32}{TH\+\_\+\+URG}}, \mbox{\hyperlink{structmytcphdr_a140542dac4445e7374a354579e76a7c5}{mytcphdr\+::th\+\_\+urp}}, \mbox{\hyperlink{structmytcphdr_a265bd0338600b82c06c906cf4e6743be}{mytcphdr\+::th\+\_\+win}}, \mbox{\hyperlink{hping2_8h_a09952ee8b742f01da9b70a878e39f497}{TH\+\_\+X}} , 以及 \mbox{\hyperlink{hping2_8h_ae81f496286a3cf60a33d0e8a2fe6ebea}{TH\+\_\+Y}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a7ffe144369534044a0367b0026746519_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{waitpacket_8c_a7ffe144369534044a0367b0026746519_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}\label{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}} 
+\index{waitpacket.c@{waitpacket.c}!recv\_udp@{recv\_udp}}
+\index{recv\_udp@{recv\_udp}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{recv\_udp()}{recv\_udp()}}
+{\footnotesize\ttfamily int recv\+\_\+udp (\begin{DoxyParamCaption}\item[{void $\ast$}]{packet,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_aa1fa50515de3127fe1150148fb9ee30f}{base\+\_\+dst\+\_\+port}}, \mbox{\hyperlink{globals_8h_adc30891256dc40c2b01f687b30dceff3}{dst\+\_\+port}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{globals_8h_a8a0925e905101ef98f39d269c4c5d490}{opt\+\_\+force\+\_\+incdport}}, \mbox{\hyperlink{globals_8h_a5d838f95efbd6f6d7d28cb66290f9937}{opt\+\_\+incdport}}, \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}{recv\+\_\+beep()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}}, \mbox{\hyperlink{hping2_8h_a5dfedca0089aee438c914b591687d695}{UDPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{structmyudphdr_a62397c5440c5fe173d308af52ac1b6a1}{myudphdr\+::uh\+\_\+dport}} , 以及 \mbox{\hyperlink{structmyudphdr_a74d4e0629251639aadfb8ad1c61a6d78}{myudphdr\+::uh\+\_\+sport}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{waitpacket_8c_a079e5f804a3ee5589defe097e2dd0810}\label{waitpacket_8c_a079e5f804a3ee5589defe097e2dd0810}} 
+\index{waitpacket.c@{waitpacket.c}!wait\_packet@{wait\_packet}}
+\index{wait\_packet@{wait\_packet}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{wait\_packet()}{wait\_packet()}}
+{\footnotesize\ttfamily void wait\+\_\+packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}{myiphdr\+::daddr}}, \mbox{\hyperlink{display__ipopt_8c_a1aa67cccb8bf6e80f459c88d7929dc5a}{display\+\_\+ipopt()}}, \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, \mbox{\hyperlink{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65}{handle\+\_\+hcmp()}}, \mbox{\hyperlink{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5}{hex\+\_\+dump()}}, \mbox{\hyperlink{waitpacket_8c_a54057a0631275d3190715cabe7d92d11}{human\+\_\+dump()}}, \mbox{\hyperlink{hping2_8h_aeee265ddaa2c58698cb245c08889313e}{ICMPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{hping2_8h_a88cc02deecc7d0b93bb749a4ea071f73}{IP\+\_\+\+MAX\+\_\+\+SIZE}}, \mbox{\hyperlink{waitpacket_8c_af1c7185da1940e9a1b53e77fe49f259a}{ip\+\_\+size}}, \mbox{\hyperlink{hping2_8h_a96775901e8ca4b4e16fd4e42a803feff}{IPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{globals_8h_ad062de78f81964cdcb6cce72bab12f45}{linkhdr\+\_\+size}}, \mbox{\hyperlink{globals_8h_af6a24de9dab7bf14c58093a5b29c7c1d}{opt\+\_\+contdump}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{globals_8h_a273a4d215c7333288b66782bfc34c262}{opt\+\_\+hexdump}}, \mbox{\hyperlink{globals_8h_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}}, \mbox{\hyperlink{globals_8h_ab38f32bb8dd18bca53ddb3db3d853952}{opt\+\_\+rand\+\_\+dest}}, \mbox{\hyperlink{globals_8h_a6a205ebd500802c77d1d9ea715a14c2a}{opt\+\_\+rroute}}, \mbox{\hyperlink{globals_8h_a0b9fec9eed0aeb69739f27aa82017b9b}{opt\+\_\+sign}}, \mbox{\hyperlink{globals_8h_aedbb2664d988fa3a6c271de585fa4260}{opt\+\_\+tr\+\_\+stop}}, \mbox{\hyperlink{globals_8h_a91c529fef1d3cd0002e3fe2ccabe2dd5}{opt\+\_\+traceroute}}, \mbox{\hyperlink{hping2_8h_a6578ac428fac8022b788f3b58499ba81}{print\+\_\+statistics()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{myiphdr\+::protocol}}, \mbox{\hyperlink{waitpacket_8c_aa9a6df377e8120782df851e0b127f20f}{read\+\_\+packet()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{globals_8h_a935054c9eb5f6a70eb4c93981b7b8112}{recv\+\_\+pkt}}, \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}}, \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp()}}, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}{myiphdr\+::saddr}} , 以及 \mbox{\hyperlink{structmyicmphdr_aa05eefca31ad6bd4617aac0176b8366e}{myicmphdr\+::type}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{waitpacket_8c_a079e5f804a3ee5589defe097e2dd0810_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{waitpacket_8c_a079e5f804a3ee5589defe097e2dd0810_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}\label{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}} 
+\index{waitpacket.c@{waitpacket.c}!dst@{dst}}
+\index{dst@{dst}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{dst}{dst}}
+{\footnotesize\ttfamily struct in\+\_\+addr src dst\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a43997359e0663c857fcaa7b5972f4c6c}{adbuf\+\_\+clone()}}, \mbox{\hyperlink{adbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf}{adbuf\+\_\+printf()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv()}}, \mbox{\hyperlink{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}{inet\+\_\+pton()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_aeb79f86261de904967d433c1b5e9a1de}{strlcpy()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}\label{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}} 
+\index{waitpacket.c@{waitpacket.c}!ip@{ip}}
+\index{ip@{ip}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structmyiphdr}{myiphdr}} ip\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a671db4628929b600f09dfb1d89535a66}{ars\+\_\+bsd\+\_\+fix()}}, \mbox{\hyperlink{ars_8h_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum()}}, \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_ac39947e366c86a671125aab2b36103b8}{ars\+\_\+guess\+\_\+ipoff()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip()}}, \mbox{\hyperlink{ars_8c_a5503f19bc9c649c307216e54c8d871b0}{ars\+\_\+send()}}, \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet()}}, \mbox{\hyperlink{ars_8c_a9e47a057eb550803c626841b78a8dfc6}{ars\+\_\+udptcp\+\_\+cksum()}}, \mbox{\hyperlink{display__ipopt_8c_a1aa67cccb8bf6e80f459c88d7929dc5a}{display\+\_\+ipopt()}}, \mbox{\hyperlink{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}{dump\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}{empty\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{pcap-sita_8c_a8e1dd4af605a71dfcffde0b8298c8f46}{find\+\_\+nth\+\_\+interface\+\_\+name()}}, \mbox{\hyperlink{hping2_8h_a5b8464b2853447505dd03db6812c1e0d}{ip\+\_\+opt\+\_\+build()}}, \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}, \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{parseoptions_8c_a46c0aba246cc45db4170945b38724de5}{parse\+\_\+route()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{waitpacket_8c_af1c7185da1940e9a1b53e77fe49f259a}\label{waitpacket_8c_af1c7185da1940e9a1b53e77fe49f259a}} 
+\index{waitpacket.c@{waitpacket.c}!ip\_size@{ip\_size}}
+\index{ip\_size@{ip\_size}!waitpacket.c@{waitpacket.c}}
+\doxysubsubsection{\texorpdfstring{ip\_size}{ip\_size}}
+{\footnotesize\ttfamily int ip\+\_\+size\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+

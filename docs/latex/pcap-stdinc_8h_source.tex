@@ -1,0 +1,102 @@
+\hypertarget{pcap-stdinc_8h_source}{}\doxysection{pcap-\/stdinc.h}
+\label{pcap-stdinc_8h_source}\index{libpcap-\/1.1.1/pcap-\/stdinc.h@{libpcap-\/1.1.1/pcap-\/stdinc.h}}
+\mbox{\hyperlink{pcap-stdinc_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 2002 -\/ 2005 NetGroup, Politecnico di Torino (Italy)}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright (c) 2005 -\/ 2009 CACE Technologies, Inc. Davis (California)}}
+\DoxyCodeLine{4 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{7 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{8 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{12 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{13 \textcolor{comment}{ * notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{14 \textcolor{comment}{ * documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{15 \textcolor{comment}{ * 3. Neither the name of the Politecnico di Torino nor the names of its}}
+\DoxyCodeLine{16 \textcolor{comment}{ * contributors may be used to endorse or promote products derived from}}
+\DoxyCodeLine{17 \textcolor{comment}{ * this software without specific prior written permission.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{20 \textcolor{comment}{ * "{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{21 \textcolor{comment}{ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{22 \textcolor{comment}{ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{23 \textcolor{comment}{ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{24 \textcolor{comment}{ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{25 \textcolor{comment}{ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{26 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{27 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{28 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{29 \textcolor{comment}{ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap-\/stdinc.h,v 1.10.2.1 2008-\/10-\/06 15:38:39 gianluca Exp \$ (LBL)}}
+\DoxyCodeLine{32 \textcolor{comment}{ */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef pcap\_stdinc\_h}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define pcap\_stdinc\_h}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define SIZEOF\_CHAR 1}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SIZEOF\_SHORT 2}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define SIZEOF\_INT 4}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifndef \_MSC\_EXTENSIONS}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define SIZEOF\_LONG\_LONG 8}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{ * Avoids a compiler warning in case this was already defined      }}
+\DoxyCodeLine{45 \textcolor{comment}{ * (someone defined \_WINSOCKAPI\_ when including 'windows.h', in order}}
+\DoxyCodeLine{46 \textcolor{comment}{ * to prevent it from including 'winsock.h')}}
+\DoxyCodeLine{47 \textcolor{comment}{ */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_WINSOCKAPI\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#undef \_WINSOCKAPI\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <winsock2.h>}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <fcntl.h>}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{bittypes_8h}{bittypes.h}}"{}}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <io.h>}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef \_\_MINGW32\_\_}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include "{}IP6\_misc.h"{}}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define caddr\_t char*}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#if \_MSC\_VER < 1500}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define snprintf \_snprintf}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define vsnprintf \_vsnprintf}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define strdup \_strdup}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define inline \_\_inline }}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#ifdef \_\_MINGW32\_\_}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#else }\textcolor{comment}{/*\_\_MINGW32\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{76 \textcolor{comment}{/* MSVC compiler */}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#ifndef \_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifdef  \_WIN64}}
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64    \mbox{\hyperlink{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}{uintptr\_t}};}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \_W64 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   \mbox{\hyperlink{pcap-stdinc_8h_a31b85deecb45924320becd11d3ee16ce}{uintptr\_t}};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define \_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#ifndef \_INTPTR\_T\_DEFINED}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifdef  \_WIN64}}
+\DoxyCodeLine{88 \textcolor{keyword}{typedef} \_\_int64    \mbox{\hyperlink{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}{intptr\_t}};}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \_W64 \textcolor{keywordtype}{int}   \mbox{\hyperlink{pcap-stdinc_8h_a8849b1e6d66a4902c0ac1d257a0a91f0}{intptr\_t}};}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define \_INTPTR\_T\_DEFINED}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*\_\_MINGW32\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* pcap\_stdinc\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

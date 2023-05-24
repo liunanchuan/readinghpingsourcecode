@@ -1,0 +1,52 @@
+\hypertarget{Gnuc_8h_source}{}\doxysection{Gnuc.\+h}
+\label{Gnuc_8h_source}\index{libpcap-\/1.1.1/Win32/Include/Gnuc.h@{libpcap-\/1.1.1/Win32/Include/Gnuc.h}}
+\mbox{\hyperlink{Gnuc_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#) \$Header: /tcpdump/master/libpcap/Win32/Include/Gnuc.h,v 1.1 2002-\/08-\/01 08:33:05 risso Exp \$ (LBL) */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* Define \_\_P() macro, if necessary */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef \_\_P}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#if \_\_STDC\_\_}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_\_P(protos) protos}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_P(protos) ()}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/* inline foo */}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define inline \_\_inline}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define inline}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{/*}}
+\DoxyCodeLine{23 \textcolor{comment}{ * Handle new and old "{}dead"{} routine prototypes}}
+\DoxyCodeLine{24 \textcolor{comment}{ *}}
+\DoxyCodeLine{25 \textcolor{comment}{ * For example:}}
+\DoxyCodeLine{26 \textcolor{comment}{ *}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  \_\_dead void foo(void) \_\_attribute\_\_((volatile));}}
+\DoxyCodeLine{28 \textcolor{comment}{ *}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef \_\_dead}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define \_\_dead volatile}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ < 2  || (\_\_GNUC\_\_ == 2 \&\& \_\_GNUC\_MINOR\_\_ < 5)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifndef \_\_attribute\_\_}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define \_\_attribute\_\_(args)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef \_\_dead}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define \_\_dead}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef \_\_attribute\_\_}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define \_\_attribute\_\_(args)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,31 @@
+\hypertarget{bytesex_8h_source}{}\doxysection{bytesex.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Original code from the Linux C library */}}
+\DoxyCodeLine{2 \textcolor{comment}{/* Copyright (C) 2000,2001 Salvatore Sanfilippo <antirez@invece.org>}}
+\DoxyCodeLine{3 \textcolor{comment}{ * This code is under the original GNU C library license (GPL) */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{/* \$Id: bytesex.h,v 1.1.1.1 2003/08/31 17:23:48 antirez Exp \$ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef ARS\_BYTESEX\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define ARS\_BYTESEX\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#if     defined(\_\_i386\_\_) \(\backslash\)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    || defined(\_\_x86\_64\_\_) \(\backslash\)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    || defined(\_\_alpha\_\_) \(\backslash\)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    || (defined(\_\_mips\_\_) \&\& (defined(MIPSEL) || defined (\_\_MIPSEL\_\_)))}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define BYTE\_ORDER\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#elif   defined(\_\_mc68000\_\_) \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    || defined (\_\_sparc\_\_) \(\backslash\)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    || defined (\_\_sparc) \(\backslash\)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    || defined (\_\_PPC\_\_) \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    || defined (\_\_BIG\_ENDIAN\_\_) \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    || (defined(\_\_mips\_\_) \&\& (defined(MIPSEB) || defined (\_\_MIPSEB\_\_)))}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define BYTE\_ORDER\_BIG\_ENDIAN}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#error can not find the byte order for this architecture, fix bytesex.h}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ARS\_BYTESEX\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

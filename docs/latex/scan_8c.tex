@@ -1,0 +1,470 @@
+\hypertarget{scan_8c}{}\doxysection{scan.\+c 文件参考}
+\label{scan_8c}\index{scan.c@{scan.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sem.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hstring.\+h\char`\"{}}\newline
+scan.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structportinfo}{portinfo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{scan_8c_ac236520c643b4169a80336610e8be64f}{SEM\+\_\+\+MODE}}~0777
+\item 
+\#define \mbox{\hyperlink{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}{MAXPORT}}~65535
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{scan_8c_ab55554c9c313d414b0dd05461062b990}{shm\+\_\+creat}} (int size)
+\item 
+static void $\ast$ \mbox{\hyperlink{scan_8c_a27496a377cee60fc04e9e03ef5e7335e}{shm\+\_\+attach}} (void)
+\item 
+static int \mbox{\hyperlink{scan_8c_adb39493d5aae42f43f59c6cd0f8a326e}{shm\+\_\+rm}} (void)
+\item 
+static int \mbox{\hyperlink{scan_8c_a1cdfafe9fb00b0c6d95550277b798037}{shm\+\_\+detach}} (void $\ast$addr)
+\item 
+static void $\ast$ \mbox{\hyperlink{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}{shm\+\_\+init}} (int size)
+\item 
+static void \mbox{\hyperlink{scan_8c_ac4ba9f1f742a5c0985d9096182035726}{shm\+\_\+close}} (void $\ast$addr)
+\item 
+static char $\ast$ \mbox{\hyperlink{scan_8c_a996662cbb8c4edadc2c1a691b8a6c510}{tcp\+\_\+strflags}} (char $\ast$s, unsigned int flags)
+\item 
+static char $\ast$ \mbox{\hyperlink{scan_8c_a0ae189bcedc5045444b41ee99e923b0d}{port\+\_\+to\+\_\+name}} (int port)
+\item 
+static int \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports}} (struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$pi, char $\ast$ports)
+\item 
+static void \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender}} (struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$pi)
+\item 
+static void \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver}} (struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$pi, int childpid)
+\item 
+static void \mbox{\hyperlink{scan_8c_a22484d90423d26bbcc4b14cc0cd39216}{do\+\_\+exit}} (int sid)
+\item 
+void \mbox{\hyperlink{scan_8c_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{scan_8c_a5f7082d077778c31adc82114c51d2d13}{opt\+\_\+scan\+\_\+probes}} = 8
+\item 
+float \mbox{\hyperlink{scan_8c_aa114d5b2bb1c1ffb393bee13ca0fb8aa}{avrgms}} = 0
+\item 
+int \mbox{\hyperlink{scan_8c_a94106aaa5c106a688ba0f6680b55230d}{avrgcount}} = 0
+\item 
+static int \mbox{\hyperlink{scan_8c_a7441ef0865bcb3db9b8064dd7375c1ea}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}\label{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}} 
+\index{scan.c@{scan.c}!MAXPORT@{MAXPORT}}
+\index{MAXPORT@{MAXPORT}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{MAXPORT}{MAXPORT}}
+{\footnotesize\ttfamily \#define MAXPORT~65535}
+
+\mbox{\Hypertarget{scan_8c_ac236520c643b4169a80336610e8be64f}\label{scan_8c_ac236520c643b4169a80336610e8be64f}} 
+\index{scan.c@{scan.c}!SEM\_MODE@{SEM\_MODE}}
+\index{SEM\_MODE@{SEM\_MODE}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{SEM\_MODE}{SEM\_MODE}}
+{\footnotesize\ttfamily \#define SEM\+\_\+\+MODE~0777}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{scan_8c_a22484d90423d26bbcc4b14cc0cd39216}\label{scan_8c_a22484d90423d26bbcc4b14cc0cd39216}} 
+\index{scan.c@{scan.c}!do\_exit@{do\_exit}}
+\index{do\_exit@{do\_exit}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{do\_exit()}{do\_exit()}}
+{\footnotesize\ttfamily static void do\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{sid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{scan_8c_a22484d90423d26bbcc4b14cc0cd39216_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}\label{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}} 
+\index{scan.c@{scan.c}!parse\_ports@{parse\_ports}}
+\index{parse\_ports@{parse\_ports}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{parse\_ports()}{parse\_ports()}}
+{\footnotesize\ttfamily static int parse\+\_\+ports (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$}]{pi,  }\item[{char $\ast$}]{ports }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structportinfo_aa5805c5e936174e5092bf7a5b78e7e64}{portinfo\+::active}}, \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent()}}, \mbox{\hyperlink{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}{MAXPORT}}, \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent()}}, \mbox{\hyperlink{pcap-stdinc_8h_a9254b089d435892385cf14d0ab4a7a2d}{strdup}}, \mbox{\hyperlink{hstring_8c_ad5b3ae78e66909b179eb3a3c2f1e145a}{strftok()}}, \mbox{\hyperlink{hstring_8c_aed474e9c68fbad40b5457eecf0a605db}{strisnum()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}{strtol()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a0ae189bcedc5045444b41ee99e923b0d}\label{scan_8c_a0ae189bcedc5045444b41ee99e923b0d}} 
+\index{scan.c@{scan.c}!port\_to\_name@{port\_to\_name}}
+\index{port\_to\_name@{port\_to\_name}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{port\_to\_name()}{port\_to\_name()}}
+{\footnotesize\ttfamily static char $\ast$ port\+\_\+to\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}} , 以及 \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a0ae189bcedc5045444b41ee99e923b0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_acb18701d79099260adfd7ca0945e5d22}\label{scan_8c_acb18701d79099260adfd7ca0945e5d22}} 
+\index{scan.c@{scan.c}!receiver@{receiver}}
+\index{receiver@{receiver}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{receiver()}{receiver()}}
+{\footnotesize\ttfamily static void receiver (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$}]{pi,  }\item[{int}]{childpid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structportinfo_aa5805c5e936174e5092bf7a5b78e7e64}{portinfo\+::active}}, \mbox{\hyperlink{scan_8c_a94106aaa5c106a688ba0f6680b55230d}{avrgcount}}, \mbox{\hyperlink{scan_8c_aa114d5b2bb1c1ffb393bee13ca0fb8aa}{avrgms}}, \mbox{\hyperlink{structmyicmphdr_a309385d6277e07c7945ec0f5762ea3c4}{myicmphdr\+::code}}, \mbox{\hyperlink{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}{myiphdr\+::daddr}}, \mbox{\hyperlink{hping2_8h_ad78c66cdc8808821a6ada0dac667c0ed}{get\+\_\+midnight\+\_\+ut\+\_\+ms}}, \mbox{\hyperlink{structmyiphdr_ac4ef9be9becfbb17119420e650025348}{myiphdr\+::id}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{globals_8h_a304ffcaa9eb08837cfcf2bf38277f271}{initsport}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{hping2_8h_a88cc02deecc7d0b93bb749a4ea071f73}{IP\+\_\+\+MAX\+\_\+\+SIZE}}, \mbox{\hyperlink{globals_8h_ad062de78f81964cdcb6cce72bab12f45}{linkhdr\+\_\+size}}, \mbox{\hyperlink{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}{MAXPORT}}, \mbox{\hyperlink{scan_8c_a5f7082d077778c31adc82114c51d2d13}{opt\+\_\+scan\+\_\+probes}}, \mbox{\hyperlink{globals_8h_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}, \mbox{\hyperlink{scan_8c_a0ae189bcedc5045444b41ee99e923b0d}{port\+\_\+to\+\_\+name()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{myiphdr\+::protocol}}, \mbox{\hyperlink{hping2_8h_aa9a6df377e8120782df851e0b127f20f}{read\+\_\+packet()}}, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{structportinfo_addf2eb79daee1e400c823a699b0f856b}{portinfo\+::retry}}, \mbox{\hyperlink{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}{myiphdr\+::saddr}}, \mbox{\hyperlink{structportinfo_a89e38db9f12a3b306cea85311241aec8}{portinfo\+::sentms}}, \mbox{\hyperlink{scan_8c_a996662cbb8c4edadc2c1a691b8a6c510}{tcp\+\_\+strflags()}}, \mbox{\hyperlink{structmytcphdr_a80afd648df865d2a07db9906027ffefe}{mytcphdr\+::th\+\_\+dport}}, \mbox{\hyperlink{structmytcphdr_a48eaa5ea327200f2452150036f794d64}{mytcphdr\+::th\+\_\+flags}}, \mbox{\hyperlink{structmytcphdr_a9d451e24db593175ea0f797de209149b}{mytcphdr\+::th\+\_\+sport}}, \mbox{\hyperlink{hping2_8h_a91006117f7ae427b957773ab0e80bfa4}{TH\+\_\+\+SYN}}, \mbox{\hyperlink{structmytcphdr_a265bd0338600b82c06c906cf4e6743be}{mytcphdr\+::th\+\_\+win}}, \mbox{\hyperlink{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}{myiphdr\+::ttl}} , 以及 \mbox{\hyperlink{structmyicmphdr_aa05eefca31ad6bd4617aac0176b8366e}{myicmphdr\+::type}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_acb18701d79099260adfd7ca0945e5d22_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{scan_8c_acb18701d79099260adfd7ca0945e5d22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a1d4dcf16f13fdddeff4f64344ea80466}\label{scan_8c_a1d4dcf16f13fdddeff4f64344ea80466}} 
+\index{scan.c@{scan.c}!scanmain@{scanmain}}
+\index{scanmain@{scanmain}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{scanmain()}{scanmain()}}
+{\footnotesize\ttfamily void scanmain (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structportinfo_aa5805c5e936174e5092bf7a5b78e7e64}{portinfo\+::active}}, \mbox{\hyperlink{scan_8c_a22484d90423d26bbcc4b14cc0cd39216}{do\+\_\+exit()}}, \mbox{\hyperlink{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}{MAXPORT}}, \mbox{\hyperlink{scan_8c_a5f7082d077778c31adc82114c51d2d13}{opt\+\_\+scan\+\_\+probes}}, \mbox{\hyperlink{globals_8h_a676c85860f4b74ffbf17f5b6a14332ab}{opt\+\_\+scanports}}, \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{structportinfo_addf2eb79daee1e400c823a699b0f856b}{portinfo\+::retry}}, \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}, \mbox{\hyperlink{scan_8c_ac4ba9f1f742a5c0985d9096182035726}{shm\+\_\+close()}}, \mbox{\hyperlink{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}{shm\+\_\+init()}} , 以及 \mbox{\hyperlink{hping2_8h_a16afeb753915856e50a8bcaeb1345c42}{Signal}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a1d4dcf16f13fdddeff4f64344ea80466_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{scan_8c_a1d4dcf16f13fdddeff4f64344ea80466_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a6dddfa3e97245047d31975baa6a9690e}\label{scan_8c_a6dddfa3e97245047d31975baa6a9690e}} 
+\index{scan.c@{scan.c}!sender@{sender}}
+\index{sender@{sender}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{sender()}{sender()}}
+{\footnotesize\ttfamily static void sender (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structportinfo}{portinfo}} $\ast$}]{pi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{scan_8c_aa114d5b2bb1c1ffb393bee13ca0fb8aa}{avrgms}}, \mbox{\hyperlink{globals_8h_adc30891256dc40c2b01f687b30dceff3}{dst\+\_\+port}}, \mbox{\hyperlink{hping2_8h_ad78c66cdc8808821a6ada0dac667c0ed}{get\+\_\+midnight\+\_\+ut\+\_\+ms}}, \mbox{\hyperlink{scan_8c_ad5e30d36d01ca3de049aa58f3e37dfc3}{MAXPORT}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{scan_8c_a5f7082d077778c31adc82114c51d2d13}{opt\+\_\+scan\+\_\+probes}}, \mbox{\hyperlink{globals_8h_aa5ceab431a08f1b4eb39510becbf8d97}{opt\+\_\+waitinusec}}, \mbox{\hyperlink{scan_8c_a0ae189bcedc5045444b41ee99e923b0d}{port\+\_\+to\+\_\+name()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{structportinfo_addf2eb79daee1e400c823a699b0f856b}{portinfo\+::retry}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}}, \mbox{\hyperlink{globals_8h_a3a412ae544cb411a594a6439b0e9402f}{sending\+\_\+wait}}, \mbox{\hyperlink{structportinfo_a89e38db9f12a3b306cea85311241aec8}{portinfo\+::sentms}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}} , 以及 \mbox{\hyperlink{globals_8h_a179df26f82a603e41f4c556e7a206dcf}{usec\+\_\+delay}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a6dddfa3e97245047d31975baa6a9690e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{scan_8c_a6dddfa3e97245047d31975baa6a9690e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a27496a377cee60fc04e9e03ef5e7335e}\label{scan_8c_a27496a377cee60fc04e9e03ef5e7335e}} 
+\index{scan.c@{scan.c}!shm\_attach@{shm\_attach}}
+\index{shm\_attach@{shm\_attach}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_attach()}{shm\_attach()}}
+{\footnotesize\ttfamily static void $\ast$ shm\+\_\+attach (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}{shm\+\_\+init()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{scan_8c_a27496a377cee60fc04e9e03ef5e7335e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a27496a377cee60fc04e9e03ef5e7335e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_ac4ba9f1f742a5c0985d9096182035726}\label{scan_8c_ac4ba9f1f742a5c0985d9096182035726}} 
+\index{scan.c@{scan.c}!shm\_close@{shm\_close}}
+\index{shm\_close@{shm\_close}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_close()}{shm\_close()}}
+{\footnotesize\ttfamily static void shm\+\_\+close (\begin{DoxyParamCaption}\item[{void $\ast$}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{scan_8c_a1cdfafe9fb00b0c6d95550277b798037}{shm\+\_\+detach()}} , 以及 \mbox{\hyperlink{scan_8c_adb39493d5aae42f43f59c6cd0f8a326e}{shm\+\_\+rm()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{scan_8c_ac4ba9f1f742a5c0985d9096182035726_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{scan_8c_ac4ba9f1f742a5c0985d9096182035726_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_ab55554c9c313d414b0dd05461062b990}\label{scan_8c_ab55554c9c313d414b0dd05461062b990}} 
+\index{scan.c@{scan.c}!shm\_creat@{shm\_creat}}
+\index{shm\_creat@{shm\_creat}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_creat()}{shm\_creat()}}
+{\footnotesize\ttfamily static int shm\+\_\+creat (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{scan_8c_a7441ef0865bcb3db9b8064dd7375c1ea}{id}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}{shm\+\_\+init()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{scan_8c_ab55554c9c313d414b0dd05461062b990_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_ab55554c9c313d414b0dd05461062b990_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a1cdfafe9fb00b0c6d95550277b798037}\label{scan_8c_a1cdfafe9fb00b0c6d95550277b798037}} 
+\index{scan.c@{scan.c}!shm\_detach@{shm\_detach}}
+\index{shm\_detach@{shm\_detach}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_detach()}{shm\_detach()}}
+{\footnotesize\ttfamily static int shm\+\_\+detach (\begin{DoxyParamCaption}\item[{void $\ast$}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_ac4ba9f1f742a5c0985d9096182035726}{shm\+\_\+close()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a1cdfafe9fb00b0c6d95550277b798037_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}\label{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7}} 
+\index{scan.c@{scan.c}!shm\_init@{shm\_init}}
+\index{shm\_init@{shm\_init}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_init()}{shm\_init()}}
+{\footnotesize\ttfamily static void $\ast$ shm\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{scan_8c_a27496a377cee60fc04e9e03ef5e7335e}{shm\+\_\+attach()}} , 以及 \mbox{\hyperlink{scan_8c_ab55554c9c313d414b0dd05461062b990}{shm\+\_\+creat()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{scan_8c_a914d936de480a198f11c4a4ddf2b4ce7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_adb39493d5aae42f43f59c6cd0f8a326e}\label{scan_8c_adb39493d5aae42f43f59c6cd0f8a326e}} 
+\index{scan.c@{scan.c}!shm\_rm@{shm\_rm}}
+\index{shm\_rm@{shm\_rm}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{shm\_rm()}{shm\_rm()}}
+{\footnotesize\ttfamily static int shm\+\_\+rm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_ac4ba9f1f742a5c0985d9096182035726}{shm\+\_\+close()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_adb39493d5aae42f43f59c6cd0f8a326e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{scan_8c_a996662cbb8c4edadc2c1a691b8a6c510}\label{scan_8c_a996662cbb8c4edadc2c1a691b8a6c510}} 
+\index{scan.c@{scan.c}!tcp\_strflags@{tcp\_strflags}}
+\index{tcp\_strflags@{tcp\_strflags}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{tcp\_strflags()}{tcp\_strflags()}}
+{\footnotesize\ttfamily static char $\ast$ tcp\+\_\+strflags (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{unsigned int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scan_8c_a996662cbb8c4edadc2c1a691b8a6c510_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{scan_8c_a94106aaa5c106a688ba0f6680b55230d}\label{scan_8c_a94106aaa5c106a688ba0f6680b55230d}} 
+\index{scan.c@{scan.c}!avrgcount@{avrgcount}}
+\index{avrgcount@{avrgcount}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{avrgcount}{avrgcount}}
+{\footnotesize\ttfamily int avrgcount = 0}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}.
+
+\mbox{\Hypertarget{scan_8c_aa114d5b2bb1c1ffb393bee13ca0fb8aa}\label{scan_8c_aa114d5b2bb1c1ffb393bee13ca0fb8aa}} 
+\index{scan.c@{scan.c}!avrgms@{avrgms}}
+\index{avrgms@{avrgms}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{avrgms}{avrgms}}
+{\footnotesize\ttfamily float avrgms = 0}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}} , 以及 \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}.
+
+\mbox{\Hypertarget{scan_8c_a7441ef0865bcb3db9b8064dd7375c1ea}\label{scan_8c_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+\index{scan.c@{scan.c}!id@{id}}
+\index{id@{id}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int id\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}} , 以及 \mbox{\hyperlink{scan_8c_ab55554c9c313d414b0dd05461062b990}{shm\+\_\+creat()}}.
+
+\mbox{\Hypertarget{scan_8c_a5f7082d077778c31adc82114c51d2d13}\label{scan_8c_a5f7082d077778c31adc82114c51d2d13}} 
+\index{scan.c@{scan.c}!opt\_scan\_probes@{opt\_scan\_probes}}
+\index{opt\_scan\_probes@{opt\_scan\_probes}!scan.c@{scan.c}}
+\doxysubsubsection{\texorpdfstring{opt\_scan\_probes}{opt\_scan\_probes}}
+{\footnotesize\ttfamily int opt\+\_\+scan\+\_\+probes = 8}
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}} , 以及 \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}.
+

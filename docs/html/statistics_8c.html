@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: statistics.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">statistics.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="hping2_8h_source.html">hping2.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+statistics.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="statistics_8c__incl.png" border="0" usemap="#astatistics_8c" alt=""/></div>
+<map name="astatistics_8c" id="astatistics_8c">
+<area shape="rect" title=" " alt="" coords="397,5,483,32"/>
+<area shape="rect" title=" " alt="" coords="276,80,340,107"/>
+<area shape="rect" title=" " alt="" coords="364,80,425,107"/>
+<area shape="rect" href="hping2_8h.html" title=" " alt="" coords="450,80,521,107"/>
+<area shape="rect" href="globals_8h.html" title=" " alt="" coords="693,80,768,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,96,181"/>
+<area shape="rect" title=" " alt="" coords="121,155,218,181"/>
+<area shape="rect" title=" " alt="" coords="242,155,329,181"/>
+<area shape="rect" title=" " alt="" coords="353,155,417,181"/>
+<area shape="rect" href="byteorder_8h.html" title=" " alt="" coords="442,155,529,181"/>
+<area shape="rect" href="systype_8h.html" title=" " alt="" coords="553,155,631,181"/>
+<area shape="rect" href="fixtypes_8h.html" title=" " alt="" coords="655,155,734,181"/>
+<area shape="rect" href="hcmp_8h.html" title=" " alt="" coords="758,155,823,181"/>
+<area shape="rect" title=" " alt="" coords="848,155,909,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a9502a50722e34ad90ea6b673d9f4f373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="statistics_8c.html#a9502a50722e34ad90ea6b673d9f4f373">print_statistics</a> (int signal_id)</td></tr>
+<tr class="separator:a9502a50722e34ad90ea6b673d9f4f373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a9502a50722e34ad90ea6b673d9f4f373" name="a9502a50722e34ad90ea6b673d9f4f373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9502a50722e34ad90ea6b673d9f4f373">&#9670;&nbsp;</a></span>print_statistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_statistics </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signal_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="hping2_8h.html#ace5f82c0c1d233937e68b94de191a5b5">close_pcap()</a>, <a class="el" href="globals_8h.html#abb22ae25d4a395c6e0b540cc37a63b13">opt_tcpexitcode</a>, <a class="el" href="globals_8h.html#a41d10d6d9dd09994f0772d3979b249c3">out_of_sequence_pkt</a>, <a class="el" href="globals_8h.html#a935054c9eb5f6a70eb4c93981b7b8112">recv_pkt</a>, <a class="el" href="globals_8h.html#a1521cc16e96b4a60e4c0f18d6f0a5261">rtt_avg</a>, <a class="el" href="globals_8h.html#a500bb3dc86c57e2c20341e6b218004b0">rtt_max</a>, <a class="el" href="globals_8h.html#a16c2da0f27de9c87f077d2b62b1c57db">rtt_min</a>, <a class="el" href="globals_8h.html#a09cb00fd8967ae97f149e1fa8efb664c">sent_pkt</a>, <a class="el" href="globals_8h.html#ae9abba9190a6034a481b0d9321642e18">targetname</a> , 以及 <a class="el" href="globals_8h.html#a073736dd0b8962be665c187c3e5d1fd3">tcp_exitcode</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, <a class="el" href="hping2_8h.html#ad57d328977c476c9325b74a2f95019d9">send_packet()</a> , 以及 <a class="el" href="hping2_8h.html#a079e5f804a3ee5589defe097e2dd0810">wait_packet()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="statistics_8c_a9502a50722e34ad90ea6b673d9f4f373_cgraph.png" border="0" usemap="#astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_cgraph" alt=""/></div>
+<map name="astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_cgraph" id="astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" href="libpcap__stuff_8c.html#aef7635934d0a645b406df4b16566e315" title=" " alt="" coords="160,5,248,32"/>
+<area shape="rect" href="pcap_8c.html#aa45a5e1a4ba9925bb3586dcbeec78560" title=" " alt="" coords="296,5,384,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="statistics_8c_a9502a50722e34ad90ea6b673d9f4f373_icgraph.png" border="0" usemap="#astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_icgraph" alt=""/></div>
+<map name="astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_icgraph" id="astatistics_8c_a9502a50722e34ad90ea6b673d9f4f373_icgraph">
+<area shape="rect" title=" " alt="" coords="248,50,355,77"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,50,56,77"/>
+<area shape="rect" href="send_8c.html#ad57d328977c476c9325b74a2f95019d9" title=" " alt="" coords="104,50,200,77"/>
+<area shape="rect" href="waitpacket_8c.html#a079e5f804a3ee5589defe097e2dd0810" title=" " alt="" coords="106,101,198,127"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,34 @@
+\hypertarget{dlpisubs_8h_source}{}\doxysection{dlpisubs.\+h}
+\label{dlpisubs_8h_source}\index{libpcap-\/1.1.1/dlpisubs.h@{libpcap-\/1.1.1/dlpisubs.h}}
+\mbox{\hyperlink{dlpisubs_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/dlpisubs.h,v 1.2 2008-\/04-\/04 19:37:45 guy Exp \$}}
+\DoxyCodeLine{3 \textcolor{comment}{ */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef dlpisubs\_h}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define dlpisubs\_h}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{9 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{/*}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Functions used by dlpisubs.c.}}
+\DoxyCodeLine{14 \textcolor{comment}{ */}}
+\DoxyCodeLine{15 \textcolor{keywordtype}{int} \mbox{\hyperlink{dlpisubs_8h_a4ba030e19108cd22774a611dead44746}{pcap\_stats\_dlpi}}(pcap\_t *, \textcolor{keyword}{struct} \mbox{\hyperlink{structpcap__stat}{pcap\_stat}} *);}
+\DoxyCodeLine{16 \textcolor{keywordtype}{int} \mbox{\hyperlink{dlpisubs_8h_a9ac08cfe4b2bf8b23b7dac783a0a6ec0}{pcap\_process\_pkts}}(pcap\_t *, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\_handler}}, u\_char *, \textcolor{keywordtype}{int}, u\_char *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{17 \textcolor{keywordtype}{int} \mbox{\hyperlink{dlpisubs_8h_a929e44b68b7eda1efb2fb1a1b67a6570}{pcap\_process\_mactype}}(pcap\_t *, u\_int);}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef HAVE\_SYS\_BUFMOD\_H}}
+\DoxyCodeLine{19 \textcolor{keywordtype}{int} pcap\_conf\_bufmod(pcap\_t *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 \textcolor{keywordtype}{int} \mbox{\hyperlink{dlpisubs_8h_ad82f5046a7f894fbeef23c1d77ece0f3}{pcap\_alloc\_databuf}}(pcap\_t *);}
+\DoxyCodeLine{22 \textcolor{keywordtype}{int} \mbox{\hyperlink{dlpisubs_8h_ab47a1c5b42686626212c5659d745f117}{strioctl}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

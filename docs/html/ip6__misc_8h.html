@@ -1,0 +1,832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Include/ip6_misc.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_ed17a792b07c09ae6ce59b26add31fa3.html">Include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">ip6_misc.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;winsock2.h&gt;</code><br />
+<code>#include &lt;ws2tcpip.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ip6_misc.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ip6__misc_8h__incl.png" border="0" usemap="#alibpcap-1_81_81_2Win32_2Include_2ip6__misc_8h" alt=""/></div>
+<map name="alibpcap-1_81_81_2Win32_2Include_2ip6__misc_8h" id="alibpcap-1_81_81_2Win32_2Include_2ip6__misc_8h">
+<area shape="rect" title=" " alt="" coords="35,5,173,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,93,121"/>
+<area shape="rect" title=" " alt="" coords="117,95,203,121"/>
+</map>
+</div>
+</div>
+<p><a href="ip6__misc_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:abcddcc195249a64bb13b5fc8b438548d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#abcddcc195249a64bb13b5fc8b438548d">IN_MULTICAST</a>(a)&#160;&#160;&#160;IN_CLASSD(a)</td></tr>
+<tr class="separator:abcddcc195249a64bb13b5fc8b438548d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af168ec04d060a593fb5607320c90f06c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#af168ec04d060a593fb5607320c90f06c">IN_EXPERIMENTAL</a>(a)&#160;&#160;&#160;((((u_int32_t) (a)) &amp; 0xf0000000) == 0xf0000000)</td></tr>
+<tr class="separator:af168ec04d060a593fb5607320c90f06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2d5e8347d77665a4aa3bd3ada19ff0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a3d2d5e8347d77665a4aa3bd3ada19ff0">IN_LOOPBACKNET</a>&#160;&#160;&#160;127</td></tr>
+<tr class="separator:a3d2d5e8347d77665a4aa3bd3ada19ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4070ab87c58e9ea0b339a49d5599a716"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a4070ab87c58e9ea0b339a49d5599a716">ip6_vfc</a>&#160;&#160;&#160;ip6_ctlun.ip6_un2_vfc</td></tr>
+<tr class="separator:a4070ab87c58e9ea0b339a49d5599a716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7afb14f7a6dce90a6d382445c028ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a3b7afb14f7a6dce90a6d382445c028ee">ip6_flow</a>&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_flow</td></tr>
+<tr class="separator:a3b7afb14f7a6dce90a6d382445c028ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f12fbab2e739076876c82ae50da4f5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a2f12fbab2e739076876c82ae50da4f5a">ip6_plen</a>&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_plen</td></tr>
+<tr class="separator:a2f12fbab2e739076876c82ae50da4f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d28c6adc4201dbc5302e83815c7b6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a51d28c6adc4201dbc5302e83815c7b6b">ip6_nxt</a>&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_nxt</td></tr>
+<tr class="separator:a51d28c6adc4201dbc5302e83815c7b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace8be997ae474eb807fceb2f7b84f2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aace8be997ae474eb807fceb2f7b84f2c">ip6_hlim</a>&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_hlim</td></tr>
+<tr class="separator:aace8be997ae474eb807fceb2f7b84f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c6f491754e32143a7f9c1bef4b4856"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a22c6f491754e32143a7f9c1bef4b4856">ip6_hops</a>&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_hlim</td></tr>
+<tr class="separator:a22c6f491754e32143a7f9c1bef4b4856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed840851ebbf3520d7a072afc8aeda19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aed840851ebbf3520d7a072afc8aeda19">nd_rd_type</a>&#160;&#160;&#160;nd_rd_hdr.icmp6_type</td></tr>
+<tr class="separator:aed840851ebbf3520d7a072afc8aeda19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb140ac4c0bb0d49f8c7f2310b652d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aeeb140ac4c0bb0d49f8c7f2310b652d7">nd_rd_code</a>&#160;&#160;&#160;nd_rd_hdr.icmp6_code</td></tr>
+<tr class="separator:aeeb140ac4c0bb0d49f8c7f2310b652d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c618934c98e0aeaa1ddc5b08ceb1ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a52c618934c98e0aeaa1ddc5b08ceb1ed">nd_rd_cksum</a>&#160;&#160;&#160;nd_rd_hdr.icmp6_cksum</td></tr>
+<tr class="separator:a52c618934c98e0aeaa1ddc5b08ceb1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b74bcef751956e1ad37ac21bbd29519"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a0b74bcef751956e1ad37ac21bbd29519">nd_rd_reserved</a>&#160;&#160;&#160;nd_rd_hdr.icmp6_data32[0]</td></tr>
+<tr class="separator:a0b74bcef751956e1ad37ac21bbd29519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1ff353f3899a7f5d45b79be5d5ddd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aff1ff353f3899a7f5d45b79be5d5ddd7">IPPROTO_HOPOPTS</a>&#160;&#160;&#160;0	/* IPv6 hop-by-hop options	*/</td></tr>
+<tr class="separator:aff1ff353f3899a7f5d45b79be5d5ddd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029fc3b9526146e54addf53ca297e629"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a029fc3b9526146e54addf53ca297e629">IPPROTO_IPV6</a>&#160;&#160;&#160;41  /* IPv6 header.  */</td></tr>
+<tr class="separator:a029fc3b9526146e54addf53ca297e629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc955d9fee17d8992ad39fbc9feb7c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aedc955d9fee17d8992ad39fbc9feb7c7">IPPROTO_ROUTING</a>&#160;&#160;&#160;43	/* IPv6 routing header		*/</td></tr>
+<tr class="separator:aedc955d9fee17d8992ad39fbc9feb7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab31ae8fef94a70e83dca388d8eb1e874"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ab31ae8fef94a70e83dca388d8eb1e874">IPPROTO_FRAGMENT</a>&#160;&#160;&#160;44	/* IPv6 fragmentation header	*/</td></tr>
+<tr class="separator:ab31ae8fef94a70e83dca388d8eb1e874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9d5e2fbcca9ae84db04807a6693c31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a4b9d5e2fbcca9ae84db04807a6693c31">IPPROTO_ESP</a>&#160;&#160;&#160;50	/* encapsulating security payload */</td></tr>
+<tr class="separator:a4b9d5e2fbcca9ae84db04807a6693c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517be4ff177b5a3d70c10cb2ca7ea31e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a517be4ff177b5a3d70c10cb2ca7ea31e">IPPROTO_AH</a>&#160;&#160;&#160;51	/* authentication header	*/</td></tr>
+<tr class="separator:a517be4ff177b5a3d70c10cb2ca7ea31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a52cdbaf5f9fc647399ef2481c8204d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a3a52cdbaf5f9fc647399ef2481c8204d">IPPROTO_ICMPV6</a>&#160;&#160;&#160;58	/* ICMPv6			*/</td></tr>
+<tr class="separator:a3a52cdbaf5f9fc647399ef2481c8204d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c5c3c1082bd465a79cba2d1f05d66b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ae5c5c3c1082bd465a79cba2d1f05d66b">IPPROTO_NONE</a>&#160;&#160;&#160;59	/* IPv6 no next header		*/</td></tr>
+<tr class="separator:ae5c5c3c1082bd465a79cba2d1f05d66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d72ab52f56094df17a63accfe8f5e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a95d72ab52f56094df17a63accfe8f5e1">IPPROTO_DSTOPTS</a>&#160;&#160;&#160;60	/* IPv6 destination options	*/</td></tr>
+<tr class="separator:a95d72ab52f56094df17a63accfe8f5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06997f73d0cb6365963400e23d2c0e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ae06997f73d0cb6365963400e23d2c0e5">IPPROTO_PIM</a>&#160;&#160;&#160;103 /* Protocol Independent Multicast.  */</td></tr>
+<tr class="separator:ae06997f73d0cb6365963400e23d2c0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03abb90df75deec378801f8db1b62260"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a03abb90df75deec378801f8db1b62260">IPV6_RTHDR_TYPE_0</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a03abb90df75deec378801f8db1b62260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8334d544151f052317c2ae3727c121c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aa8334d544151f052317c2ae3727c121c">IP6OPT_PAD1</a>&#160;&#160;&#160;0x00	/* 00 0 00000 */</td></tr>
+<tr class="separator:aa8334d544151f052317c2ae3727c121c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49f318181963a2e514485b9330f7fb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#af49f318181963a2e514485b9330f7fb0">IP6OPT_PADN</a>&#160;&#160;&#160;0x01	/* 00 0 00001 */</td></tr>
+<tr class="separator:af49f318181963a2e514485b9330f7fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9b8d710aad6957e7c3d0afad761133"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a8e9b8d710aad6957e7c3d0afad761133">IP6OPT_JUMBO</a>&#160;&#160;&#160;0xC2	/* 11 0 00010 = 194 */</td></tr>
+<tr class="separator:a8e9b8d710aad6957e7c3d0afad761133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6dad3f922622d2ef092e3216b3fb561"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ae6dad3f922622d2ef092e3216b3fb561">IP6OPT_JUMBO_LEN</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:ae6dad3f922622d2ef092e3216b3fb561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ff48b19d8137f51c929ae6a5e22de0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a27ff48b19d8137f51c929ae6a5e22de0">IP6OPT_ROUTER_ALERT</a>&#160;&#160;&#160;0x05	/* 00 0 00101 */</td></tr>
+<tr class="separator:a27ff48b19d8137f51c929ae6a5e22de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c94a983ec0c69a09cf995c319c2931"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a23c94a983ec0c69a09cf995c319c2931">IP6OPT_RTALERT_LEN</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a23c94a983ec0c69a09cf995c319c2931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61dc665a1fc20474ebc6ac00435c37f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a61dc665a1fc20474ebc6ac00435c37f5">IP6OPT_RTALERT_MLD</a>&#160;&#160;&#160;0	/* Datagram contains an MLD message */</td></tr>
+<tr class="separator:a61dc665a1fc20474ebc6ac00435c37f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a054655689a860b2cab6f494760288a98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a054655689a860b2cab6f494760288a98">IP6OPT_RTALERT_RSVP</a>&#160;&#160;&#160;1	/* Datagram contains an RSVP message */</td></tr>
+<tr class="separator:a054655689a860b2cab6f494760288a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92affa9ac98c480c251272736bff7c46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a92affa9ac98c480c251272736bff7c46">IP6OPT_RTALERT_ACTNET</a>&#160;&#160;&#160;2 	/* contains an Active Networks msg */</td></tr>
+<tr class="separator:a92affa9ac98c480c251272736bff7c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d2d3a500608d3cfefa8e8976eaa4c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ab8d2d3a500608d3cfefa8e8976eaa4c3">IP6OPT_MINLEN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ab8d2d3a500608d3cfefa8e8976eaa4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae804108cbd7faeb2d1c0a6de3f0ec744"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ae804108cbd7faeb2d1c0a6de3f0ec744">IP6OPT_BINDING_UPDATE</a>&#160;&#160;&#160;0xc6	/* 11 0 00110 */</td></tr>
+<tr class="separator:ae804108cbd7faeb2d1c0a6de3f0ec744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4632a080530d9a583ab1b5ca4f225c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a2d4632a080530d9a583ab1b5ca4f225c">IP6OPT_BINDING_ACK</a>&#160;&#160;&#160;0x07	/* 00 0 00111 */</td></tr>
+<tr class="separator:a2d4632a080530d9a583ab1b5ca4f225c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099c787a68fe11c78b581171ace579d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a099c787a68fe11c78b581171ace579d9">IP6OPT_BINDING_REQ</a>&#160;&#160;&#160;0x08	/* 00 0 01000 */</td></tr>
+<tr class="separator:a099c787a68fe11c78b581171ace579d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b913461978e94df243ea5c14468b41b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a9b913461978e94df243ea5c14468b41b">IP6OPT_HOME_ADDRESS</a>&#160;&#160;&#160;0xc9	/* 11 0 01001 */</td></tr>
+<tr class="separator:a9b913461978e94df243ea5c14468b41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d0fb9a8f9cfe7176380685cccfd2de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#ac8d0fb9a8f9cfe7176380685cccfd2de">IP6OPT_EID</a>&#160;&#160;&#160;0x8a	/* 10 0 01010 */</td></tr>
+<tr class="separator:ac8d0fb9a8f9cfe7176380685cccfd2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac0d8d7522fa1fd450c2b97a3de589d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a1ac0d8d7522fa1fd450c2b97a3de589d">IP6OPT_TYPE</a>(o)&#160;&#160;&#160;((o) &amp; 0xC0)</td></tr>
+<tr class="separator:a1ac0d8d7522fa1fd450c2b97a3de589d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa377c02fb595e45472c4910e69dab749"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#aa377c02fb595e45472c4910e69dab749">IP6OPT_TYPE_SKIP</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:aa377c02fb595e45472c4910e69dab749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c16cf693e4b3b759afa1f705f8e8144"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a7c16cf693e4b3b759afa1f705f8e8144">IP6OPT_TYPE_DISCARD</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:a7c16cf693e4b3b759afa1f705f8e8144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee2929fffbcb2baa1fb529e2682a630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a1ee2929fffbcb2baa1fb529e2682a630">IP6OPT_TYPE_FORCEICMP</a>&#160;&#160;&#160;0x80</td></tr>
+<tr class="separator:a1ee2929fffbcb2baa1fb529e2682a630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42dea58e34f63d04583cba0f2e8ed56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#af42dea58e34f63d04583cba0f2e8ed56">IP6OPT_TYPE_ICMP</a>&#160;&#160;&#160;0xC0</td></tr>
+<tr class="separator:af42dea58e34f63d04583cba0f2e8ed56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d85cd93542e02f4b268dc2e5c08569"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip6__misc_8h.html#a57d85cd93542e02f4b268dc2e5c08569">IP6OPT_MUTABLE</a>&#160;&#160;&#160;0x20</td></tr>
+<tr class="separator:a57d85cd93542e02f4b268dc2e5c08569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="af168ec04d060a593fb5607320c90f06c" name="af168ec04d060a593fb5607320c90f06c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af168ec04d060a593fb5607320c90f06c">&#9670;&nbsp;</a></span>IN_EXPERIMENTAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IN_EXPERIMENTAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;((((u_int32_t) (a)) &amp; 0xf0000000) == 0xf0000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d2d5e8347d77665a4aa3bd3ada19ff0" name="a3d2d5e8347d77665a4aa3bd3ada19ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2d5e8347d77665a4aa3bd3ada19ff0">&#9670;&nbsp;</a></span>IN_LOOPBACKNET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IN_LOOPBACKNET&#160;&#160;&#160;127</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcddcc195249a64bb13b5fc8b438548d" name="abcddcc195249a64bb13b5fc8b438548d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcddcc195249a64bb13b5fc8b438548d">&#9670;&nbsp;</a></span>IN_MULTICAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IN_MULTICAST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;IN_CLASSD(a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b7afb14f7a6dce90a6d382445c028ee" name="a3b7afb14f7a6dce90a6d382445c028ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7afb14f7a6dce90a6d382445c028ee">&#9670;&nbsp;</a></span>ip6_flow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_flow&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_flow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aace8be997ae474eb807fceb2f7b84f2c" name="aace8be997ae474eb807fceb2f7b84f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace8be997ae474eb807fceb2f7b84f2c">&#9670;&nbsp;</a></span>ip6_hlim</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_hlim&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_hlim</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22c6f491754e32143a7f9c1bef4b4856" name="a22c6f491754e32143a7f9c1bef4b4856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c6f491754e32143a7f9c1bef4b4856">&#9670;&nbsp;</a></span>ip6_hops</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_hops&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_hlim</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51d28c6adc4201dbc5302e83815c7b6b" name="a51d28c6adc4201dbc5302e83815c7b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d28c6adc4201dbc5302e83815c7b6b">&#9670;&nbsp;</a></span>ip6_nxt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_nxt&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_nxt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f12fbab2e739076876c82ae50da4f5a" name="a2f12fbab2e739076876c82ae50da4f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f12fbab2e739076876c82ae50da4f5a">&#9670;&nbsp;</a></span>ip6_plen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_plen&#160;&#160;&#160;ip6_ctlun.ip6_un1.ip6_un1_plen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4070ab87c58e9ea0b339a49d5599a716" name="a4070ab87c58e9ea0b339a49d5599a716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4070ab87c58e9ea0b339a49d5599a716">&#9670;&nbsp;</a></span>ip6_vfc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ip6_vfc&#160;&#160;&#160;ip6_ctlun.ip6_un2_vfc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d4632a080530d9a583ab1b5ca4f225c" name="a2d4632a080530d9a583ab1b5ca4f225c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d4632a080530d9a583ab1b5ca4f225c">&#9670;&nbsp;</a></span>IP6OPT_BINDING_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_BINDING_ACK&#160;&#160;&#160;0x07	/* 00 0 00111 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a099c787a68fe11c78b581171ace579d9" name="a099c787a68fe11c78b581171ace579d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099c787a68fe11c78b581171ace579d9">&#9670;&nbsp;</a></span>IP6OPT_BINDING_REQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_BINDING_REQ&#160;&#160;&#160;0x08	/* 00 0 01000 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae804108cbd7faeb2d1c0a6de3f0ec744" name="ae804108cbd7faeb2d1c0a6de3f0ec744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae804108cbd7faeb2d1c0a6de3f0ec744">&#9670;&nbsp;</a></span>IP6OPT_BINDING_UPDATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_BINDING_UPDATE&#160;&#160;&#160;0xc6	/* 11 0 00110 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8d0fb9a8f9cfe7176380685cccfd2de" name="ac8d0fb9a8f9cfe7176380685cccfd2de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d0fb9a8f9cfe7176380685cccfd2de">&#9670;&nbsp;</a></span>IP6OPT_EID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_EID&#160;&#160;&#160;0x8a	/* 10 0 01010 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b913461978e94df243ea5c14468b41b" name="a9b913461978e94df243ea5c14468b41b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b913461978e94df243ea5c14468b41b">&#9670;&nbsp;</a></span>IP6OPT_HOME_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_HOME_ADDRESS&#160;&#160;&#160;0xc9	/* 11 0 01001 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e9b8d710aad6957e7c3d0afad761133" name="a8e9b8d710aad6957e7c3d0afad761133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e9b8d710aad6957e7c3d0afad761133">&#9670;&nbsp;</a></span>IP6OPT_JUMBO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_JUMBO&#160;&#160;&#160;0xC2	/* 11 0 00010 = 194 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6dad3f922622d2ef092e3216b3fb561" name="ae6dad3f922622d2ef092e3216b3fb561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dad3f922622d2ef092e3216b3fb561">&#9670;&nbsp;</a></span>IP6OPT_JUMBO_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_JUMBO_LEN&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8d2d3a500608d3cfefa8e8976eaa4c3" name="ab8d2d3a500608d3cfefa8e8976eaa4c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d2d3a500608d3cfefa8e8976eaa4c3">&#9670;&nbsp;</a></span>IP6OPT_MINLEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_MINLEN&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57d85cd93542e02f4b268dc2e5c08569" name="a57d85cd93542e02f4b268dc2e5c08569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d85cd93542e02f4b268dc2e5c08569">&#9670;&nbsp;</a></span>IP6OPT_MUTABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_MUTABLE&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8334d544151f052317c2ae3727c121c" name="aa8334d544151f052317c2ae3727c121c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8334d544151f052317c2ae3727c121c">&#9670;&nbsp;</a></span>IP6OPT_PAD1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_PAD1&#160;&#160;&#160;0x00	/* 00 0 00000 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af49f318181963a2e514485b9330f7fb0" name="af49f318181963a2e514485b9330f7fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49f318181963a2e514485b9330f7fb0">&#9670;&nbsp;</a></span>IP6OPT_PADN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_PADN&#160;&#160;&#160;0x01	/* 00 0 00001 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27ff48b19d8137f51c929ae6a5e22de0" name="a27ff48b19d8137f51c929ae6a5e22de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ff48b19d8137f51c929ae6a5e22de0">&#9670;&nbsp;</a></span>IP6OPT_ROUTER_ALERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_ROUTER_ALERT&#160;&#160;&#160;0x05	/* 00 0 00101 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92affa9ac98c480c251272736bff7c46" name="a92affa9ac98c480c251272736bff7c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92affa9ac98c480c251272736bff7c46">&#9670;&nbsp;</a></span>IP6OPT_RTALERT_ACTNET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_RTALERT_ACTNET&#160;&#160;&#160;2 	/* contains an Active Networks msg */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23c94a983ec0c69a09cf995c319c2931" name="a23c94a983ec0c69a09cf995c319c2931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c94a983ec0c69a09cf995c319c2931">&#9670;&nbsp;</a></span>IP6OPT_RTALERT_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_RTALERT_LEN&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61dc665a1fc20474ebc6ac00435c37f5" name="a61dc665a1fc20474ebc6ac00435c37f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61dc665a1fc20474ebc6ac00435c37f5">&#9670;&nbsp;</a></span>IP6OPT_RTALERT_MLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_RTALERT_MLD&#160;&#160;&#160;0	/* Datagram contains an MLD message */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a054655689a860b2cab6f494760288a98" name="a054655689a860b2cab6f494760288a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054655689a860b2cab6f494760288a98">&#9670;&nbsp;</a></span>IP6OPT_RTALERT_RSVP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_RTALERT_RSVP&#160;&#160;&#160;1	/* Datagram contains an RSVP message */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ac0d8d7522fa1fd450c2b97a3de589d" name="a1ac0d8d7522fa1fd450c2b97a3de589d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ac0d8d7522fa1fd450c2b97a3de589d">&#9670;&nbsp;</a></span>IP6OPT_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_TYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">o</td><td>)</td>
+          <td>&#160;&#160;&#160;((o) &amp; 0xC0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c16cf693e4b3b759afa1f705f8e8144" name="a7c16cf693e4b3b759afa1f705f8e8144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c16cf693e4b3b759afa1f705f8e8144">&#9670;&nbsp;</a></span>IP6OPT_TYPE_DISCARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_TYPE_DISCARD&#160;&#160;&#160;0x40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ee2929fffbcb2baa1fb529e2682a630" name="a1ee2929fffbcb2baa1fb529e2682a630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee2929fffbcb2baa1fb529e2682a630">&#9670;&nbsp;</a></span>IP6OPT_TYPE_FORCEICMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_TYPE_FORCEICMP&#160;&#160;&#160;0x80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af42dea58e34f63d04583cba0f2e8ed56" name="af42dea58e34f63d04583cba0f2e8ed56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42dea58e34f63d04583cba0f2e8ed56">&#9670;&nbsp;</a></span>IP6OPT_TYPE_ICMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_TYPE_ICMP&#160;&#160;&#160;0xC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa377c02fb595e45472c4910e69dab749" name="aa377c02fb595e45472c4910e69dab749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa377c02fb595e45472c4910e69dab749">&#9670;&nbsp;</a></span>IP6OPT_TYPE_SKIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IP6OPT_TYPE_SKIP&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a517be4ff177b5a3d70c10cb2ca7ea31e" name="a517be4ff177b5a3d70c10cb2ca7ea31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517be4ff177b5a3d70c10cb2ca7ea31e">&#9670;&nbsp;</a></span>IPPROTO_AH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_AH&#160;&#160;&#160;51	/* authentication header	*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95d72ab52f56094df17a63accfe8f5e1" name="a95d72ab52f56094df17a63accfe8f5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d72ab52f56094df17a63accfe8f5e1">&#9670;&nbsp;</a></span>IPPROTO_DSTOPTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_DSTOPTS&#160;&#160;&#160;60	/* IPv6 destination options	*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b9d5e2fbcca9ae84db04807a6693c31" name="a4b9d5e2fbcca9ae84db04807a6693c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9d5e2fbcca9ae84db04807a6693c31">&#9670;&nbsp;</a></span>IPPROTO_ESP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_ESP&#160;&#160;&#160;50	/* encapsulating security payload */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab31ae8fef94a70e83dca388d8eb1e874" name="ab31ae8fef94a70e83dca388d8eb1e874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab31ae8fef94a70e83dca388d8eb1e874">&#9670;&nbsp;</a></span>IPPROTO_FRAGMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_FRAGMENT&#160;&#160;&#160;44	/* IPv6 fragmentation header	*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff1ff353f3899a7f5d45b79be5d5ddd7" name="aff1ff353f3899a7f5d45b79be5d5ddd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1ff353f3899a7f5d45b79be5d5ddd7">&#9670;&nbsp;</a></span>IPPROTO_HOPOPTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_HOPOPTS&#160;&#160;&#160;0	/* IPv6 hop-by-hop options	*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a52cdbaf5f9fc647399ef2481c8204d" name="a3a52cdbaf5f9fc647399ef2481c8204d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a52cdbaf5f9fc647399ef2481c8204d">&#9670;&nbsp;</a></span>IPPROTO_ICMPV6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_ICMPV6&#160;&#160;&#160;58	/* ICMPv6			*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a029fc3b9526146e54addf53ca297e629" name="a029fc3b9526146e54addf53ca297e629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a029fc3b9526146e54addf53ca297e629">&#9670;&nbsp;</a></span>IPPROTO_IPV6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_IPV6&#160;&#160;&#160;41  /* IPv6 header.  */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5c5c3c1082bd465a79cba2d1f05d66b" name="ae5c5c3c1082bd465a79cba2d1f05d66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c5c3c1082bd465a79cba2d1f05d66b">&#9670;&nbsp;</a></span>IPPROTO_NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_NONE&#160;&#160;&#160;59	/* IPv6 no next header		*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae06997f73d0cb6365963400e23d2c0e5" name="ae06997f73d0cb6365963400e23d2c0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06997f73d0cb6365963400e23d2c0e5">&#9670;&nbsp;</a></span>IPPROTO_PIM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_PIM&#160;&#160;&#160;103 /* Protocol Independent Multicast.  */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedc955d9fee17d8992ad39fbc9feb7c7" name="aedc955d9fee17d8992ad39fbc9feb7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc955d9fee17d8992ad39fbc9feb7c7">&#9670;&nbsp;</a></span>IPPROTO_ROUTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPPROTO_ROUTING&#160;&#160;&#160;43	/* IPv6 routing header		*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03abb90df75deec378801f8db1b62260" name="a03abb90df75deec378801f8db1b62260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03abb90df75deec378801f8db1b62260">&#9670;&nbsp;</a></span>IPV6_RTHDR_TYPE_0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IPV6_RTHDR_TYPE_0&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52c618934c98e0aeaa1ddc5b08ceb1ed" name="a52c618934c98e0aeaa1ddc5b08ceb1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c618934c98e0aeaa1ddc5b08ceb1ed">&#9670;&nbsp;</a></span>nd_rd_cksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define nd_rd_cksum&#160;&#160;&#160;nd_rd_hdr.icmp6_cksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeeb140ac4c0bb0d49f8c7f2310b652d7" name="aeeb140ac4c0bb0d49f8c7f2310b652d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb140ac4c0bb0d49f8c7f2310b652d7">&#9670;&nbsp;</a></span>nd_rd_code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define nd_rd_code&#160;&#160;&#160;nd_rd_hdr.icmp6_code</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b74bcef751956e1ad37ac21bbd29519" name="a0b74bcef751956e1ad37ac21bbd29519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b74bcef751956e1ad37ac21bbd29519">&#9670;&nbsp;</a></span>nd_rd_reserved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define nd_rd_reserved&#160;&#160;&#160;nd_rd_hdr.icmp6_data32[0]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed840851ebbf3520d7a072afc8aeda19" name="aed840851ebbf3520d7a072afc8aeda19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed840851ebbf3520d7a072afc8aeda19">&#9670;&nbsp;</a></span>nd_rd_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define nd_rd_type&#160;&#160;&#160;nd_rd_hdr.icmp6_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

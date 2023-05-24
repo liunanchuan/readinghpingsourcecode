@@ -1,0 +1,56 @@
+\hypertarget{sendudp_8c}{}\doxysection{sendudp.\+c 文件参考}
+\label{sendudp_8c}\index{sendudp.c@{sendudp.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+sendudp.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sendudp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sendudp_8c_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{sendudp_8c_a984febb545a5d04809ffde7c10a53df6}\label{sendudp_8c_a984febb545a5d04809ffde7c10a53df6}} 
+\index{sendudp.c@{sendudp.c}!send\_udp@{send\_udp}}
+\index{send\_udp@{send\_udp}!sendudp.c@{sendudp.c}}
+\doxysubsubsection{\texorpdfstring{send\_udp()}{send\_udp()}}
+{\footnotesize\ttfamily void send\+\_\+udp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}}, \mbox{\hyperlink{cksum_8c_a6881dfd36fa09c766714436052439c67}{cksum()}}, \mbox{\hyperlink{structpseudohdr_a69d572e5f469add72342e3dada52fdc7}{pseudohdr\+::daddr}}, \mbox{\hyperlink{datahandler_8c_a56e016b2e2e54a2562e2aa0761ec3a37}{data\+\_\+handler()}}, \mbox{\hyperlink{globals_8h_acca4bef60e2a57436eb1413dcf482e5f}{data\+\_\+size}}, \mbox{\hyperlink{hping2_8h_a5c3d31936b1247d4c9ccd2aedd4bdeb8}{delaytable\+\_\+add()}}, \mbox{\hyperlink{globals_8h_adc30891256dc40c2b01f687b30dceff3}{dst\+\_\+port}}, \mbox{\hyperlink{getusec_8c_aeae3aba9a4e7957c11ecf4c4e4fbacc7}{get\+\_\+usec()}}, \mbox{\hyperlink{globals_8h_a304ffcaa9eb08837cfcf2bf38277f271}{initsport}}, \mbox{\hyperlink{structpseudohdr_a38111d7802994af61e483b3d5028110e}{pseudohdr\+::lenght}}, \mbox{\hyperlink{globals_8h_a8a0925e905101ef98f39d269c4c5d490}{opt\+\_\+force\+\_\+incdport}}, \mbox{\hyperlink{globals_8h_a52250405b6953484a30f1480670319b9}{opt\+\_\+keepstill}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}, \mbox{\hyperlink{structpseudohdr_a56a37c755bcacb62a730e595c482fd27}{pseudohdr\+::protocol}}, \mbox{\hyperlink{hping2_8h_a41ebda74eaaa6089d70b41e3f8d65ff2}{PSEUDOHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{hping2_8h_ab93b8666d5500364cdc5581b1c0387d5}{S\+\_\+\+SENT}}, \mbox{\hyperlink{structpseudohdr_ac8cbca8b4d42f62244dc68339102d2f4}{pseudohdr\+::saddr}}, \mbox{\hyperlink{hping2_8h_a7f4517543aca90dd837d76227783ae78}{send\+\_\+ip\+\_\+handler()}}, \mbox{\hyperlink{globals_8h_acc80722d9dd9349cbba06c72d6fb5972}{sequence}}, \mbox{\hyperlink{globals_8h_a2d47efc2f2609185cf802853871de027}{src\+\_\+port}}, \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time()}}, \mbox{\hyperlink{hping2_8h_a5dfedca0089aee438c914b591687d695}{UDPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{structmyudphdr_a62397c5440c5fe173d308af52ac1b6a1}{myudphdr\+::uh\+\_\+dport}}, \mbox{\hyperlink{structmyudphdr_a74d4e0629251639aadfb8ad1c61a6d78}{myudphdr\+::uh\+\_\+sport}}, \mbox{\hyperlink{structmyudphdr_a7d322b5a2fc66eea1fb792dbc707ddd8}{myudphdr\+::uh\+\_\+sum}} , 以及 \mbox{\hyperlink{structmyudphdr_a6cb40e8a2e4335d0226a29fe90de193f}{myudphdr\+::uh\+\_\+ulen}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sendudp_8c_a984febb545a5d04809ffde7c10a53df6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{sendudp_8c_a984febb545a5d04809ffde7c10a53df6_icgraph}
+\end{center}
+\end{figure}

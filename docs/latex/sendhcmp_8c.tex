@@ -1,0 +1,59 @@
+\hypertarget{sendhcmp_8c}{}\doxysection{sendhcmp.\+c 文件参考}
+\label{sendhcmp_8c}\index{sendhcmp.c@{sendhcmp.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+sendhcmp.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sendhcmp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sendhcmp_8c_a8108932c337831c5d3ef8e238f61e75c}{MUST\+\_\+\+BE\+\_\+\+UNREACHED}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sendhcmp_8c_a4b16ad8c3bf62de65cd843c01dedbfad}{send\+\_\+hcmp}} (\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} type, \mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} arg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{sendhcmp_8c_a8108932c337831c5d3ef8e238f61e75c}\label{sendhcmp_8c_a8108932c337831c5d3ef8e238f61e75c}} 
+\index{sendhcmp.c@{sendhcmp.c}!MUST\_BE\_UNREACHED@{MUST\_BE\_UNREACHED}}
+\index{MUST\_BE\_UNREACHED@{MUST\_BE\_UNREACHED}!sendhcmp.c@{sendhcmp.c}}
+\doxysubsubsection{\texorpdfstring{MUST\_BE\_UNREACHED}{MUST\_BE\_UNREACHED}}
+{\footnotesize\ttfamily \#define MUST\+\_\+\+BE\+\_\+\+UNREACHED~0}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{sendhcmp_8c_a4b16ad8c3bf62de65cd843c01dedbfad}\label{sendhcmp_8c_a4b16ad8c3bf62de65cd843c01dedbfad}} 
+\index{sendhcmp.c@{sendhcmp.c}!send\_hcmp@{send\_hcmp}}
+\index{send\_hcmp@{send\_hcmp}!sendhcmp.c@{sendhcmp.c}}
+\doxysubsubsection{\texorpdfstring{send\_hcmp()}{send\_hcmp()}}
+{\footnotesize\ttfamily void send\+\_\+hcmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}}}]{type,  }\item[{\mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}}]{arg }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}}, \mbox{\hyperlink{globals_8h_acca4bef60e2a57436eb1413dcf482e5f}{data\+\_\+size}}, \mbox{\hyperlink{hcmp_8h_a83cd8ea1875aea99b115fd76db22164c}{HCMP\+\_\+\+RESTART}}, \mbox{\hyperlink{hcmp_8h_aee4e7add5a353c0359bc59e535674dbd}{HCMP\+\_\+\+SOURCE\+\_\+\+QUENCH}}, \mbox{\hyperlink{hcmp_8h_a9fd378106d1914f09ff3d4f140cdab80}{HCMP\+\_\+\+SOURCE\+\_\+\+STIRUP}}, \mbox{\hyperlink{globals_8h_a71cd926ca6334092b988bdd35cecad99}{hcmphdr\+\_\+p}}, \mbox{\hyperlink{sendhcmp_8c_a8108932c337831c5d3ef8e238f61e75c}{MUST\+\_\+\+BE\+\_\+\+UNREACHED}}, \mbox{\hyperlink{structhcmphdr_acb9b84094e40255089b168fd33c08790}{hcmphdr\+::seqnum}}, \mbox{\hyperlink{globals_8h_a8bd6583d65e0d285b795ae6e710f3dd3}{signlen}}, \mbox{\hyperlink{structhcmphdr_aa05eefca31ad6bd4617aac0176b8366e}{hcmphdr\+::type}}, \mbox{\hyperlink{structhcmphdr_a1076576b572e6e8fee937730028b19a5}{hcmphdr\+::typedep}} , 以及 \mbox{\hyperlink{structhcmphdr_adf4c78d1836cda470179ad088c205a25}{hcmphdr\+::usec}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{sendhcmp_8c_a4b16ad8c3bf62de65cd843c01dedbfad_icgraph}
+\end{center}
+\end{figure}

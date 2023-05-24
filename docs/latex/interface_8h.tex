@@ -1,0 +1,468 @@
+\hypertarget{interface_8h}{}\doxysection{interface.\+h 文件参考}
+\label{interface_8h}\index{interface.h@{interface.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{interface_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmii__data}{mii\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structhpingif}{hpingif}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{interface_8h_ad69132a0962e3f95164c8e03ffdf5ad5}{\+\_\+\+LINUX\+\_\+\+MII\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac00d6572de21cc8ee58cccdfb0da3d91}{SIOCGMIIPHY}}~(SIOCDEVPRIVATE) /$\ast$ Read from current PHY $\ast$/
+\item 
+\#define \mbox{\hyperlink{interface_8h_a10a09b4112034e55f4228f0976fe1ddb}{SIOCGMIIREG}}~(SIOCDEVPRIVATE+1)  /$\ast$ Read \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} PHY register $\ast$/
+\item 
+\#define \mbox{\hyperlink{interface_8h_a6d1fa55b690d28eafba2f7a47e5f53ea}{SIOCSMIIREG}}~(SIOCDEVPRIVATE+2)  /$\ast$ Write \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} PHY register $\ast$/
+\item 
+\#define \mbox{\hyperlink{interface_8h_a8eb213c64af1139bcd7c674d8d5f8fa1}{SIOCGPARAMS}}~(SIOCDEVPRIVATE+3)  /$\ast$ Read operational parameters $\ast$/
+\item 
+\#define \mbox{\hyperlink{interface_8h_ab97c31d06ce5bc2100c4efebafdf5150}{SIOCSPARAMS}}~(SIOCDEVPRIVATE+4)  /$\ast$ Set operational parameters $\ast$/
+\item 
+\#define \mbox{\hyperlink{interface_8h_a9137acedc42ff140f244da7473cff29e}{MII\+\_\+\+BMCR}}~0x00
+\item 
+\#define \mbox{\hyperlink{interface_8h_a1001ac1540dc5bb6c4962f63b5fd6c3a}{MII\+\_\+\+BMCR\+\_\+\+RESET}}~0x8000
+\item 
+\#define \mbox{\hyperlink{interface_8h_aaade3d675167c736186a03dad857a7c9}{MII\+\_\+\+BMCR\+\_\+\+LOOPBACK}}~0x4000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a8bb3fa3beb4506367b2cc1e0c660e0d5}{MII\+\_\+\+BMCR\+\_\+100\+MBIT}}~0x2000
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac471ff72c731774ad35017f83ec63765}{MII\+\_\+\+BMCR\+\_\+\+AN\+\_\+\+ENA}}~0x1000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a288b983fab32fb073cc42c3817b2c217}{MII\+\_\+\+BMCR\+\_\+\+ISOLATE}}~0x0400
+\item 
+\#define \mbox{\hyperlink{interface_8h_ad306fa317c176d616c1f5b2106eb0acd}{MII\+\_\+\+BMCR\+\_\+\+RESTART}}~0x0200
+\item 
+\#define \mbox{\hyperlink{interface_8h_a2c70f14d3ec36c501d4ab55e2e452060}{MII\+\_\+\+BMCR\+\_\+\+DUPLEX}}~0x0100
+\item 
+\#define \mbox{\hyperlink{interface_8h_abb3fe4fce8d811fed1db18d91c84d787}{MII\+\_\+\+BMCR\+\_\+\+COLTEST}}~0x0080
+\item 
+\#define \mbox{\hyperlink{interface_8h_aa2f632686d6298a7c898b1c805586aab}{MII\+\_\+\+BMSR}}~0x01
+\item 
+\#define \mbox{\hyperlink{interface_8h_a275cd04aaa1eee99cc59bb36bb832a71}{MII\+\_\+\+BMSR\+\_\+\+CAP\+\_\+\+MASK}}~0xf800
+\item 
+\#define \mbox{\hyperlink{interface_8h_ad0a6a9bf92a81cbb6aa736a636886c23}{MII\+\_\+\+BMSR\+\_\+100\+BASET4}}~0x8000
+\item 
+\#define \mbox{\hyperlink{interface_8h_afe0d369959255d71f762e12de4ee6e54}{MII\+\_\+\+BMSR\+\_\+100\+BASETX\+\_\+\+FD}}~0x4000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a6d71bb3d58edf11d90eb3927982e821a}{MII\+\_\+\+BMSR\+\_\+100\+BASETX\+\_\+\+HD}}~0x2000
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac52976d38f25970969219614afc498e0}{MII\+\_\+\+BMSR\+\_\+10\+BASET\+\_\+\+FD}}~0x1000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a142eef9467ba6bfced538baa4c62e6a0}{MII\+\_\+\+BMSR\+\_\+10\+BASET\+\_\+\+HD}}~0x0800
+\item 
+\#define \mbox{\hyperlink{interface_8h_a81209ef4460583ff2cb54c0b7061cbd5}{MII\+\_\+\+BMSR\+\_\+\+NO\+\_\+\+PREAMBLE}}~0x0040
+\item 
+\#define \mbox{\hyperlink{interface_8h_acc58e62feb532961ddb90e8e29990e11}{MII\+\_\+\+BMSR\+\_\+\+AN\+\_\+\+COMPLETE}}~0x0020
+\item 
+\#define \mbox{\hyperlink{interface_8h_a0dd8421740c52ecd5e6a53e969d2e48a}{MII\+\_\+\+BMSR\+\_\+\+REMOTE\+\_\+\+FAULT}}~0x0010
+\item 
+\#define \mbox{\hyperlink{interface_8h_a541b0ba3820955dd73921b8f3e5036f5}{MII\+\_\+\+BMSR\+\_\+\+AN\+\_\+\+ABLE}}~0x0008
+\item 
+\#define \mbox{\hyperlink{interface_8h_afb1910f33aa4f3fea504f3af476bfa41}{MII\+\_\+\+BMSR\+\_\+\+LINK\+\_\+\+VALID}}~0x0004
+\item 
+\#define \mbox{\hyperlink{interface_8h_a27a3f60cdfa253fe16e53485712c0407}{MII\+\_\+\+BMSR\+\_\+\+JABBER}}~0x0002
+\item 
+\#define \mbox{\hyperlink{interface_8h_a22f97cd7ff356b6a88daf8f1d2de6d6a}{MII\+\_\+\+BMSR\+\_\+\+EXT\+\_\+\+CAP}}~0x0001
+\item 
+\#define \mbox{\hyperlink{interface_8h_aee8534c8aadbd7119a8349c43d4b5198}{MII\+\_\+\+PHY\+\_\+\+ID1}}~0x02
+\item 
+\#define \mbox{\hyperlink{interface_8h_a2be3a46d6a54439c3df86f826fc56b62}{MII\+\_\+\+PHY\+\_\+\+ID2}}~0x03
+\item 
+\#define \mbox{\hyperlink{interface_8h_aacb2ab0ea5579b5d9e30b075991add1d}{MII\+\_\+\+ANAR}}~0x04
+\item 
+\#define \mbox{\hyperlink{interface_8h_a445e8381a9ea9724054bfacc10bb4c81}{MII\+\_\+\+ANLPAR}}~0x05
+\item 
+\#define \mbox{\hyperlink{interface_8h_a9045828ea74cd3d9d8af9088bfc67cc8}{MII\+\_\+\+AN\+\_\+\+NEXT\+\_\+\+PAGE}}~0x8000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a1a720b1dae8cb79116982dad0a4603a4}{MII\+\_\+\+AN\+\_\+\+ACK}}~0x4000
+\item 
+\#define \mbox{\hyperlink{interface_8h_a8dbac9c287c4b937ca9417c5de8ff1ae}{MII\+\_\+\+AN\+\_\+\+REMOTE\+\_\+\+FAULT}}~0x2000
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac78e6368825393673cb8bef5b14ae397}{MII\+\_\+\+AN\+\_\+\+ABILITY\+\_\+\+MASK}}~0x07e0
+\item 
+\#define \mbox{\hyperlink{interface_8h_a7540680b8cfa6b31e23bf19bb9761778}{MII\+\_\+\+AN\+\_\+\+FLOW\+\_\+\+CONTROL}}~0x0400
+\item 
+\#define \mbox{\hyperlink{interface_8h_a73ff11f0449f598975920e0cc9b55ef3}{MII\+\_\+\+AN\+\_\+100\+BASET4}}~0x0200
+\item 
+\#define \mbox{\hyperlink{interface_8h_a71600e7da1d3bed47778461f90dcd95c}{MII\+\_\+\+AN\+\_\+100\+BASETX\+\_\+\+FD}}~0x0100
+\item 
+\#define \mbox{\hyperlink{interface_8h_adefb867d83e26c9855bd7f89e7f9471e}{MII\+\_\+\+AN\+\_\+100\+BASETX\+\_\+\+HD}}~0x0080
+\item 
+\#define \mbox{\hyperlink{interface_8h_a2afabdb3e29ec441c132e614760d4f98}{MII\+\_\+\+AN\+\_\+10\+BASET\+\_\+\+FD}}~0x0040
+\item 
+\#define \mbox{\hyperlink{interface_8h_a26ff4aab69ee3c2b3de34bce28989b82}{MII\+\_\+\+AN\+\_\+10\+BASET\+\_\+\+HD}}~0x0020
+\item 
+\#define \mbox{\hyperlink{interface_8h_a4ec3587246f6e673a38d292075c7aaba}{MII\+\_\+\+AN\+\_\+\+PROT\+\_\+\+MASK}}~0x001f
+\item 
+\#define \mbox{\hyperlink{interface_8h_a53052bee6f221288dd9fde303572c40a}{MII\+\_\+\+AN\+\_\+\+PROT\+\_\+802\+\_\+3}}~0x0001
+\item 
+\#define \mbox{\hyperlink{interface_8h_a6e5634d8831e21f963ddc16b91d5f6b9}{MII\+\_\+\+ANER}}~0x06
+\item 
+\#define \mbox{\hyperlink{interface_8h_ac77961ed549b9ba1e1e524a84fc41ad0}{MII\+\_\+\+ANER\+\_\+\+MULT\+\_\+\+FAULT}}~0x0010
+\item 
+\#define \mbox{\hyperlink{interface_8h_a18df340ab59944433bab674a6abfd297}{MII\+\_\+\+ANER\+\_\+\+LP\+\_\+\+NP\+\_\+\+ABLE}}~0x0008
+\item 
+\#define \mbox{\hyperlink{interface_8h_ab46deb4f3a4cbf5025d65b0bea823e59}{MII\+\_\+\+ANER\+\_\+\+NP\+\_\+\+ABLE}}~0x0004
+\item 
+\#define \mbox{\hyperlink{interface_8h_a3ea4a566f9c5a309eed2d4af7709d7c4}{MII\+\_\+\+ANER\+\_\+\+PAGE\+\_\+\+RX}}~0x0002
+\item 
+\#define \mbox{\hyperlink{interface_8h_a6cc741a4448d2debb13a89ade33b6ecd}{MII\+\_\+\+ANER\+\_\+\+LP\+\_\+\+AN\+\_\+\+ABLE}}~0x0001
+\item 
+\#define \mbox{\hyperlink{interface_8h_abb3aac2fe74ddcfb8978bc1921ac2b75}{HPING\+\_\+\+IFNAME\+\_\+\+LEN}}~24
+\item 
+\#define \mbox{\hyperlink{interface_8h_ae5e97e29017627b3aa1dc49d9b3d4145}{HPING\+\_\+\+IFACE\+\_\+\+MAX}}~64
+\item 
+\#define \mbox{\hyperlink{interface_8h_aef958a99d9671105fcb27b51890fde9d}{HPING\+\_\+\+IFADDR\+\_\+\+MAX}}~16
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_8h_a180366790b127c9f6d1f65245f275268}{hping\+\_\+get\+\_\+interfaces}} (struct \mbox{\hyperlink{structhpingif}{hpingif}} $\ast$hif, int ilen)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{interface_8h_ad69132a0962e3f95164c8e03ffdf5ad5}\label{interface_8h_ad69132a0962e3f95164c8e03ffdf5ad5}} 
+\index{interface.h@{interface.h}!\_LINUX\_MII\_H@{\_LINUX\_MII\_H}}
+\index{\_LINUX\_MII\_H@{\_LINUX\_MII\_H}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{\_LINUX\_MII\_H}{\_LINUX\_MII\_H}}
+{\footnotesize\ttfamily \#define \+\_\+\+LINUX\+\_\+\+MII\+\_\+H}
+
+\mbox{\Hypertarget{interface_8h_ae5e97e29017627b3aa1dc49d9b3d4145}\label{interface_8h_ae5e97e29017627b3aa1dc49d9b3d4145}} 
+\index{interface.h@{interface.h}!HPING\_IFACE\_MAX@{HPING\_IFACE\_MAX}}
+\index{HPING\_IFACE\_MAX@{HPING\_IFACE\_MAX}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{HPING\_IFACE\_MAX}{HPING\_IFACE\_MAX}}
+{\footnotesize\ttfamily \#define HPING\+\_\+\+IFACE\+\_\+\+MAX~64}
+
+\mbox{\Hypertarget{interface_8h_aef958a99d9671105fcb27b51890fde9d}\label{interface_8h_aef958a99d9671105fcb27b51890fde9d}} 
+\index{interface.h@{interface.h}!HPING\_IFADDR\_MAX@{HPING\_IFADDR\_MAX}}
+\index{HPING\_IFADDR\_MAX@{HPING\_IFADDR\_MAX}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{HPING\_IFADDR\_MAX}{HPING\_IFADDR\_MAX}}
+{\footnotesize\ttfamily \#define HPING\+\_\+\+IFADDR\+\_\+\+MAX~16}
+
+\mbox{\Hypertarget{interface_8h_abb3aac2fe74ddcfb8978bc1921ac2b75}\label{interface_8h_abb3aac2fe74ddcfb8978bc1921ac2b75}} 
+\index{interface.h@{interface.h}!HPING\_IFNAME\_LEN@{HPING\_IFNAME\_LEN}}
+\index{HPING\_IFNAME\_LEN@{HPING\_IFNAME\_LEN}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{HPING\_IFNAME\_LEN}{HPING\_IFNAME\_LEN}}
+{\footnotesize\ttfamily \#define HPING\+\_\+\+IFNAME\+\_\+\+LEN~24}
+
+\mbox{\Hypertarget{interface_8h_a73ff11f0449f598975920e0cc9b55ef3}\label{interface_8h_a73ff11f0449f598975920e0cc9b55ef3}} 
+\index{interface.h@{interface.h}!MII\_AN\_100BASET4@{MII\_AN\_100BASET4}}
+\index{MII\_AN\_100BASET4@{MII\_AN\_100BASET4}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_100BASET4}{MII\_AN\_100BASET4}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+100\+BASET4~0x0200}
+
+\mbox{\Hypertarget{interface_8h_a71600e7da1d3bed47778461f90dcd95c}\label{interface_8h_a71600e7da1d3bed47778461f90dcd95c}} 
+\index{interface.h@{interface.h}!MII\_AN\_100BASETX\_FD@{MII\_AN\_100BASETX\_FD}}
+\index{MII\_AN\_100BASETX\_FD@{MII\_AN\_100BASETX\_FD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_100BASETX\_FD}{MII\_AN\_100BASETX\_FD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+100\+BASETX\+\_\+\+FD~0x0100}
+
+\mbox{\Hypertarget{interface_8h_adefb867d83e26c9855bd7f89e7f9471e}\label{interface_8h_adefb867d83e26c9855bd7f89e7f9471e}} 
+\index{interface.h@{interface.h}!MII\_AN\_100BASETX\_HD@{MII\_AN\_100BASETX\_HD}}
+\index{MII\_AN\_100BASETX\_HD@{MII\_AN\_100BASETX\_HD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_100BASETX\_HD}{MII\_AN\_100BASETX\_HD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+100\+BASETX\+\_\+\+HD~0x0080}
+
+\mbox{\Hypertarget{interface_8h_a2afabdb3e29ec441c132e614760d4f98}\label{interface_8h_a2afabdb3e29ec441c132e614760d4f98}} 
+\index{interface.h@{interface.h}!MII\_AN\_10BASET\_FD@{MII\_AN\_10BASET\_FD}}
+\index{MII\_AN\_10BASET\_FD@{MII\_AN\_10BASET\_FD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_10BASET\_FD}{MII\_AN\_10BASET\_FD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+10\+BASET\+\_\+\+FD~0x0040}
+
+\mbox{\Hypertarget{interface_8h_a26ff4aab69ee3c2b3de34bce28989b82}\label{interface_8h_a26ff4aab69ee3c2b3de34bce28989b82}} 
+\index{interface.h@{interface.h}!MII\_AN\_10BASET\_HD@{MII\_AN\_10BASET\_HD}}
+\index{MII\_AN\_10BASET\_HD@{MII\_AN\_10BASET\_HD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_10BASET\_HD}{MII\_AN\_10BASET\_HD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+10\+BASET\+\_\+\+HD~0x0020}
+
+\mbox{\Hypertarget{interface_8h_ac78e6368825393673cb8bef5b14ae397}\label{interface_8h_ac78e6368825393673cb8bef5b14ae397}} 
+\index{interface.h@{interface.h}!MII\_AN\_ABILITY\_MASK@{MII\_AN\_ABILITY\_MASK}}
+\index{MII\_AN\_ABILITY\_MASK@{MII\_AN\_ABILITY\_MASK}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_ABILITY\_MASK}{MII\_AN\_ABILITY\_MASK}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+ABILITY\+\_\+\+MASK~0x07e0}
+
+\mbox{\Hypertarget{interface_8h_a1a720b1dae8cb79116982dad0a4603a4}\label{interface_8h_a1a720b1dae8cb79116982dad0a4603a4}} 
+\index{interface.h@{interface.h}!MII\_AN\_ACK@{MII\_AN\_ACK}}
+\index{MII\_AN\_ACK@{MII\_AN\_ACK}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_ACK}{MII\_AN\_ACK}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+ACK~0x4000}
+
+\mbox{\Hypertarget{interface_8h_a7540680b8cfa6b31e23bf19bb9761778}\label{interface_8h_a7540680b8cfa6b31e23bf19bb9761778}} 
+\index{interface.h@{interface.h}!MII\_AN\_FLOW\_CONTROL@{MII\_AN\_FLOW\_CONTROL}}
+\index{MII\_AN\_FLOW\_CONTROL@{MII\_AN\_FLOW\_CONTROL}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_FLOW\_CONTROL}{MII\_AN\_FLOW\_CONTROL}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+FLOW\+\_\+\+CONTROL~0x0400}
+
+\mbox{\Hypertarget{interface_8h_a9045828ea74cd3d9d8af9088bfc67cc8}\label{interface_8h_a9045828ea74cd3d9d8af9088bfc67cc8}} 
+\index{interface.h@{interface.h}!MII\_AN\_NEXT\_PAGE@{MII\_AN\_NEXT\_PAGE}}
+\index{MII\_AN\_NEXT\_PAGE@{MII\_AN\_NEXT\_PAGE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_NEXT\_PAGE}{MII\_AN\_NEXT\_PAGE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+NEXT\+\_\+\+PAGE~0x8000}
+
+\mbox{\Hypertarget{interface_8h_a53052bee6f221288dd9fde303572c40a}\label{interface_8h_a53052bee6f221288dd9fde303572c40a}} 
+\index{interface.h@{interface.h}!MII\_AN\_PROT\_802\_3@{MII\_AN\_PROT\_802\_3}}
+\index{MII\_AN\_PROT\_802\_3@{MII\_AN\_PROT\_802\_3}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_PROT\_802\_3}{MII\_AN\_PROT\_802\_3}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+PROT\+\_\+802\+\_\+3~0x0001}
+
+\mbox{\Hypertarget{interface_8h_a4ec3587246f6e673a38d292075c7aaba}\label{interface_8h_a4ec3587246f6e673a38d292075c7aaba}} 
+\index{interface.h@{interface.h}!MII\_AN\_PROT\_MASK@{MII\_AN\_PROT\_MASK}}
+\index{MII\_AN\_PROT\_MASK@{MII\_AN\_PROT\_MASK}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_PROT\_MASK}{MII\_AN\_PROT\_MASK}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+PROT\+\_\+\+MASK~0x001f}
+
+\mbox{\Hypertarget{interface_8h_a8dbac9c287c4b937ca9417c5de8ff1ae}\label{interface_8h_a8dbac9c287c4b937ca9417c5de8ff1ae}} 
+\index{interface.h@{interface.h}!MII\_AN\_REMOTE\_FAULT@{MII\_AN\_REMOTE\_FAULT}}
+\index{MII\_AN\_REMOTE\_FAULT@{MII\_AN\_REMOTE\_FAULT}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_AN\_REMOTE\_FAULT}{MII\_AN\_REMOTE\_FAULT}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+AN\+\_\+\+REMOTE\+\_\+\+FAULT~0x2000}
+
+\mbox{\Hypertarget{interface_8h_aacb2ab0ea5579b5d9e30b075991add1d}\label{interface_8h_aacb2ab0ea5579b5d9e30b075991add1d}} 
+\index{interface.h@{interface.h}!MII\_ANAR@{MII\_ANAR}}
+\index{MII\_ANAR@{MII\_ANAR}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANAR}{MII\_ANAR}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANAR~0x04}
+
+\mbox{\Hypertarget{interface_8h_a6e5634d8831e21f963ddc16b91d5f6b9}\label{interface_8h_a6e5634d8831e21f963ddc16b91d5f6b9}} 
+\index{interface.h@{interface.h}!MII\_ANER@{MII\_ANER}}
+\index{MII\_ANER@{MII\_ANER}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER}{MII\_ANER}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER~0x06}
+
+\mbox{\Hypertarget{interface_8h_a6cc741a4448d2debb13a89ade33b6ecd}\label{interface_8h_a6cc741a4448d2debb13a89ade33b6ecd}} 
+\index{interface.h@{interface.h}!MII\_ANER\_LP\_AN\_ABLE@{MII\_ANER\_LP\_AN\_ABLE}}
+\index{MII\_ANER\_LP\_AN\_ABLE@{MII\_ANER\_LP\_AN\_ABLE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER\_LP\_AN\_ABLE}{MII\_ANER\_LP\_AN\_ABLE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER\+\_\+\+LP\+\_\+\+AN\+\_\+\+ABLE~0x0001}
+
+\mbox{\Hypertarget{interface_8h_a18df340ab59944433bab674a6abfd297}\label{interface_8h_a18df340ab59944433bab674a6abfd297}} 
+\index{interface.h@{interface.h}!MII\_ANER\_LP\_NP\_ABLE@{MII\_ANER\_LP\_NP\_ABLE}}
+\index{MII\_ANER\_LP\_NP\_ABLE@{MII\_ANER\_LP\_NP\_ABLE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER\_LP\_NP\_ABLE}{MII\_ANER\_LP\_NP\_ABLE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER\+\_\+\+LP\+\_\+\+NP\+\_\+\+ABLE~0x0008}
+
+\mbox{\Hypertarget{interface_8h_ac77961ed549b9ba1e1e524a84fc41ad0}\label{interface_8h_ac77961ed549b9ba1e1e524a84fc41ad0}} 
+\index{interface.h@{interface.h}!MII\_ANER\_MULT\_FAULT@{MII\_ANER\_MULT\_FAULT}}
+\index{MII\_ANER\_MULT\_FAULT@{MII\_ANER\_MULT\_FAULT}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER\_MULT\_FAULT}{MII\_ANER\_MULT\_FAULT}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER\+\_\+\+MULT\+\_\+\+FAULT~0x0010}
+
+\mbox{\Hypertarget{interface_8h_ab46deb4f3a4cbf5025d65b0bea823e59}\label{interface_8h_ab46deb4f3a4cbf5025d65b0bea823e59}} 
+\index{interface.h@{interface.h}!MII\_ANER\_NP\_ABLE@{MII\_ANER\_NP\_ABLE}}
+\index{MII\_ANER\_NP\_ABLE@{MII\_ANER\_NP\_ABLE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER\_NP\_ABLE}{MII\_ANER\_NP\_ABLE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER\+\_\+\+NP\+\_\+\+ABLE~0x0004}
+
+\mbox{\Hypertarget{interface_8h_a3ea4a566f9c5a309eed2d4af7709d7c4}\label{interface_8h_a3ea4a566f9c5a309eed2d4af7709d7c4}} 
+\index{interface.h@{interface.h}!MII\_ANER\_PAGE\_RX@{MII\_ANER\_PAGE\_RX}}
+\index{MII\_ANER\_PAGE\_RX@{MII\_ANER\_PAGE\_RX}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANER\_PAGE\_RX}{MII\_ANER\_PAGE\_RX}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANER\+\_\+\+PAGE\+\_\+\+RX~0x0002}
+
+\mbox{\Hypertarget{interface_8h_a445e8381a9ea9724054bfacc10bb4c81}\label{interface_8h_a445e8381a9ea9724054bfacc10bb4c81}} 
+\index{interface.h@{interface.h}!MII\_ANLPAR@{MII\_ANLPAR}}
+\index{MII\_ANLPAR@{MII\_ANLPAR}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_ANLPAR}{MII\_ANLPAR}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+ANLPAR~0x05}
+
+\mbox{\Hypertarget{interface_8h_a9137acedc42ff140f244da7473cff29e}\label{interface_8h_a9137acedc42ff140f244da7473cff29e}} 
+\index{interface.h@{interface.h}!MII\_BMCR@{MII\_BMCR}}
+\index{MII\_BMCR@{MII\_BMCR}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR}{MII\_BMCR}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR~0x00}
+
+\mbox{\Hypertarget{interface_8h_a8bb3fa3beb4506367b2cc1e0c660e0d5}\label{interface_8h_a8bb3fa3beb4506367b2cc1e0c660e0d5}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_100MBIT@{MII\_BMCR\_100MBIT}}
+\index{MII\_BMCR\_100MBIT@{MII\_BMCR\_100MBIT}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_100MBIT}{MII\_BMCR\_100MBIT}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+100\+MBIT~0x2000}
+
+\mbox{\Hypertarget{interface_8h_ac471ff72c731774ad35017f83ec63765}\label{interface_8h_ac471ff72c731774ad35017f83ec63765}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_AN\_ENA@{MII\_BMCR\_AN\_ENA}}
+\index{MII\_BMCR\_AN\_ENA@{MII\_BMCR\_AN\_ENA}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_AN\_ENA}{MII\_BMCR\_AN\_ENA}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+AN\+\_\+\+ENA~0x1000}
+
+\mbox{\Hypertarget{interface_8h_abb3fe4fce8d811fed1db18d91c84d787}\label{interface_8h_abb3fe4fce8d811fed1db18d91c84d787}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_COLTEST@{MII\_BMCR\_COLTEST}}
+\index{MII\_BMCR\_COLTEST@{MII\_BMCR\_COLTEST}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_COLTEST}{MII\_BMCR\_COLTEST}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+COLTEST~0x0080}
+
+\mbox{\Hypertarget{interface_8h_a2c70f14d3ec36c501d4ab55e2e452060}\label{interface_8h_a2c70f14d3ec36c501d4ab55e2e452060}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_DUPLEX@{MII\_BMCR\_DUPLEX}}
+\index{MII\_BMCR\_DUPLEX@{MII\_BMCR\_DUPLEX}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_DUPLEX}{MII\_BMCR\_DUPLEX}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+DUPLEX~0x0100}
+
+\mbox{\Hypertarget{interface_8h_a288b983fab32fb073cc42c3817b2c217}\label{interface_8h_a288b983fab32fb073cc42c3817b2c217}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_ISOLATE@{MII\_BMCR\_ISOLATE}}
+\index{MII\_BMCR\_ISOLATE@{MII\_BMCR\_ISOLATE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_ISOLATE}{MII\_BMCR\_ISOLATE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+ISOLATE~0x0400}
+
+\mbox{\Hypertarget{interface_8h_aaade3d675167c736186a03dad857a7c9}\label{interface_8h_aaade3d675167c736186a03dad857a7c9}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_LOOPBACK@{MII\_BMCR\_LOOPBACK}}
+\index{MII\_BMCR\_LOOPBACK@{MII\_BMCR\_LOOPBACK}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_LOOPBACK}{MII\_BMCR\_LOOPBACK}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+LOOPBACK~0x4000}
+
+\mbox{\Hypertarget{interface_8h_a1001ac1540dc5bb6c4962f63b5fd6c3a}\label{interface_8h_a1001ac1540dc5bb6c4962f63b5fd6c3a}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_RESET@{MII\_BMCR\_RESET}}
+\index{MII\_BMCR\_RESET@{MII\_BMCR\_RESET}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_RESET}{MII\_BMCR\_RESET}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+RESET~0x8000}
+
+\mbox{\Hypertarget{interface_8h_ad306fa317c176d616c1f5b2106eb0acd}\label{interface_8h_ad306fa317c176d616c1f5b2106eb0acd}} 
+\index{interface.h@{interface.h}!MII\_BMCR\_RESTART@{MII\_BMCR\_RESTART}}
+\index{MII\_BMCR\_RESTART@{MII\_BMCR\_RESTART}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMCR\_RESTART}{MII\_BMCR\_RESTART}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMCR\+\_\+\+RESTART~0x0200}
+
+\mbox{\Hypertarget{interface_8h_aa2f632686d6298a7c898b1c805586aab}\label{interface_8h_aa2f632686d6298a7c898b1c805586aab}} 
+\index{interface.h@{interface.h}!MII\_BMSR@{MII\_BMSR}}
+\index{MII\_BMSR@{MII\_BMSR}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR}{MII\_BMSR}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR~0x01}
+
+\mbox{\Hypertarget{interface_8h_ad0a6a9bf92a81cbb6aa736a636886c23}\label{interface_8h_ad0a6a9bf92a81cbb6aa736a636886c23}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_100BASET4@{MII\_BMSR\_100BASET4}}
+\index{MII\_BMSR\_100BASET4@{MII\_BMSR\_100BASET4}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_100BASET4}{MII\_BMSR\_100BASET4}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+100\+BASET4~0x8000}
+
+\mbox{\Hypertarget{interface_8h_afe0d369959255d71f762e12de4ee6e54}\label{interface_8h_afe0d369959255d71f762e12de4ee6e54}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_100BASETX\_FD@{MII\_BMSR\_100BASETX\_FD}}
+\index{MII\_BMSR\_100BASETX\_FD@{MII\_BMSR\_100BASETX\_FD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_100BASETX\_FD}{MII\_BMSR\_100BASETX\_FD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+100\+BASETX\+\_\+\+FD~0x4000}
+
+\mbox{\Hypertarget{interface_8h_a6d71bb3d58edf11d90eb3927982e821a}\label{interface_8h_a6d71bb3d58edf11d90eb3927982e821a}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_100BASETX\_HD@{MII\_BMSR\_100BASETX\_HD}}
+\index{MII\_BMSR\_100BASETX\_HD@{MII\_BMSR\_100BASETX\_HD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_100BASETX\_HD}{MII\_BMSR\_100BASETX\_HD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+100\+BASETX\+\_\+\+HD~0x2000}
+
+\mbox{\Hypertarget{interface_8h_ac52976d38f25970969219614afc498e0}\label{interface_8h_ac52976d38f25970969219614afc498e0}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_10BASET\_FD@{MII\_BMSR\_10BASET\_FD}}
+\index{MII\_BMSR\_10BASET\_FD@{MII\_BMSR\_10BASET\_FD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_10BASET\_FD}{MII\_BMSR\_10BASET\_FD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+10\+BASET\+\_\+\+FD~0x1000}
+
+\mbox{\Hypertarget{interface_8h_a142eef9467ba6bfced538baa4c62e6a0}\label{interface_8h_a142eef9467ba6bfced538baa4c62e6a0}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_10BASET\_HD@{MII\_BMSR\_10BASET\_HD}}
+\index{MII\_BMSR\_10BASET\_HD@{MII\_BMSR\_10BASET\_HD}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_10BASET\_HD}{MII\_BMSR\_10BASET\_HD}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+10\+BASET\+\_\+\+HD~0x0800}
+
+\mbox{\Hypertarget{interface_8h_a541b0ba3820955dd73921b8f3e5036f5}\label{interface_8h_a541b0ba3820955dd73921b8f3e5036f5}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_AN\_ABLE@{MII\_BMSR\_AN\_ABLE}}
+\index{MII\_BMSR\_AN\_ABLE@{MII\_BMSR\_AN\_ABLE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_AN\_ABLE}{MII\_BMSR\_AN\_ABLE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+AN\+\_\+\+ABLE~0x0008}
+
+\mbox{\Hypertarget{interface_8h_acc58e62feb532961ddb90e8e29990e11}\label{interface_8h_acc58e62feb532961ddb90e8e29990e11}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_AN\_COMPLETE@{MII\_BMSR\_AN\_COMPLETE}}
+\index{MII\_BMSR\_AN\_COMPLETE@{MII\_BMSR\_AN\_COMPLETE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_AN\_COMPLETE}{MII\_BMSR\_AN\_COMPLETE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+AN\+\_\+\+COMPLETE~0x0020}
+
+\mbox{\Hypertarget{interface_8h_a275cd04aaa1eee99cc59bb36bb832a71}\label{interface_8h_a275cd04aaa1eee99cc59bb36bb832a71}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_CAP\_MASK@{MII\_BMSR\_CAP\_MASK}}
+\index{MII\_BMSR\_CAP\_MASK@{MII\_BMSR\_CAP\_MASK}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_CAP\_MASK}{MII\_BMSR\_CAP\_MASK}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+CAP\+\_\+\+MASK~0xf800}
+
+\mbox{\Hypertarget{interface_8h_a22f97cd7ff356b6a88daf8f1d2de6d6a}\label{interface_8h_a22f97cd7ff356b6a88daf8f1d2de6d6a}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_EXT\_CAP@{MII\_BMSR\_EXT\_CAP}}
+\index{MII\_BMSR\_EXT\_CAP@{MII\_BMSR\_EXT\_CAP}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_EXT\_CAP}{MII\_BMSR\_EXT\_CAP}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+EXT\+\_\+\+CAP~0x0001}
+
+\mbox{\Hypertarget{interface_8h_a27a3f60cdfa253fe16e53485712c0407}\label{interface_8h_a27a3f60cdfa253fe16e53485712c0407}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_JABBER@{MII\_BMSR\_JABBER}}
+\index{MII\_BMSR\_JABBER@{MII\_BMSR\_JABBER}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_JABBER}{MII\_BMSR\_JABBER}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+JABBER~0x0002}
+
+\mbox{\Hypertarget{interface_8h_afb1910f33aa4f3fea504f3af476bfa41}\label{interface_8h_afb1910f33aa4f3fea504f3af476bfa41}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_LINK\_VALID@{MII\_BMSR\_LINK\_VALID}}
+\index{MII\_BMSR\_LINK\_VALID@{MII\_BMSR\_LINK\_VALID}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_LINK\_VALID}{MII\_BMSR\_LINK\_VALID}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+LINK\+\_\+\+VALID~0x0004}
+
+\mbox{\Hypertarget{interface_8h_a81209ef4460583ff2cb54c0b7061cbd5}\label{interface_8h_a81209ef4460583ff2cb54c0b7061cbd5}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_NO\_PREAMBLE@{MII\_BMSR\_NO\_PREAMBLE}}
+\index{MII\_BMSR\_NO\_PREAMBLE@{MII\_BMSR\_NO\_PREAMBLE}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_NO\_PREAMBLE}{MII\_BMSR\_NO\_PREAMBLE}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+NO\+\_\+\+PREAMBLE~0x0040}
+
+\mbox{\Hypertarget{interface_8h_a0dd8421740c52ecd5e6a53e969d2e48a}\label{interface_8h_a0dd8421740c52ecd5e6a53e969d2e48a}} 
+\index{interface.h@{interface.h}!MII\_BMSR\_REMOTE\_FAULT@{MII\_BMSR\_REMOTE\_FAULT}}
+\index{MII\_BMSR\_REMOTE\_FAULT@{MII\_BMSR\_REMOTE\_FAULT}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_BMSR\_REMOTE\_FAULT}{MII\_BMSR\_REMOTE\_FAULT}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+BMSR\+\_\+\+REMOTE\+\_\+\+FAULT~0x0010}
+
+\mbox{\Hypertarget{interface_8h_aee8534c8aadbd7119a8349c43d4b5198}\label{interface_8h_aee8534c8aadbd7119a8349c43d4b5198}} 
+\index{interface.h@{interface.h}!MII\_PHY\_ID1@{MII\_PHY\_ID1}}
+\index{MII\_PHY\_ID1@{MII\_PHY\_ID1}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_PHY\_ID1}{MII\_PHY\_ID1}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+PHY\+\_\+\+ID1~0x02}
+
+\mbox{\Hypertarget{interface_8h_a2be3a46d6a54439c3df86f826fc56b62}\label{interface_8h_a2be3a46d6a54439c3df86f826fc56b62}} 
+\index{interface.h@{interface.h}!MII\_PHY\_ID2@{MII\_PHY\_ID2}}
+\index{MII\_PHY\_ID2@{MII\_PHY\_ID2}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{MII\_PHY\_ID2}{MII\_PHY\_ID2}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+PHY\+\_\+\+ID2~0x03}
+
+\mbox{\Hypertarget{interface_8h_ac00d6572de21cc8ee58cccdfb0da3d91}\label{interface_8h_ac00d6572de21cc8ee58cccdfb0da3d91}} 
+\index{interface.h@{interface.h}!SIOCGMIIPHY@{SIOCGMIIPHY}}
+\index{SIOCGMIIPHY@{SIOCGMIIPHY}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{SIOCGMIIPHY}{SIOCGMIIPHY}}
+{\footnotesize\ttfamily \#define SIOCGMIIPHY~(SIOCDEVPRIVATE) /$\ast$ Read from current PHY $\ast$/}
+
+\mbox{\Hypertarget{interface_8h_a10a09b4112034e55f4228f0976fe1ddb}\label{interface_8h_a10a09b4112034e55f4228f0976fe1ddb}} 
+\index{interface.h@{interface.h}!SIOCGMIIREG@{SIOCGMIIREG}}
+\index{SIOCGMIIREG@{SIOCGMIIREG}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{SIOCGMIIREG}{SIOCGMIIREG}}
+{\footnotesize\ttfamily \#define SIOCGMIIREG~(SIOCDEVPRIVATE+1)  /$\ast$ Read \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} PHY register $\ast$/}
+
+\mbox{\Hypertarget{interface_8h_a8eb213c64af1139bcd7c674d8d5f8fa1}\label{interface_8h_a8eb213c64af1139bcd7c674d8d5f8fa1}} 
+\index{interface.h@{interface.h}!SIOCGPARAMS@{SIOCGPARAMS}}
+\index{SIOCGPARAMS@{SIOCGPARAMS}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{SIOCGPARAMS}{SIOCGPARAMS}}
+{\footnotesize\ttfamily \#define SIOCGPARAMS~(SIOCDEVPRIVATE+3)  /$\ast$ Read operational parameters $\ast$/}
+
+\mbox{\Hypertarget{interface_8h_a6d1fa55b690d28eafba2f7a47e5f53ea}\label{interface_8h_a6d1fa55b690d28eafba2f7a47e5f53ea}} 
+\index{interface.h@{interface.h}!SIOCSMIIREG@{SIOCSMIIREG}}
+\index{SIOCSMIIREG@{SIOCSMIIREG}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{SIOCSMIIREG}{SIOCSMIIREG}}
+{\footnotesize\ttfamily \#define SIOCSMIIREG~(SIOCDEVPRIVATE+2)  /$\ast$ Write \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} PHY register $\ast$/}
+
+\mbox{\Hypertarget{interface_8h_ab97c31d06ce5bc2100c4efebafdf5150}\label{interface_8h_ab97c31d06ce5bc2100c4efebafdf5150}} 
+\index{interface.h@{interface.h}!SIOCSPARAMS@{SIOCSPARAMS}}
+\index{SIOCSPARAMS@{SIOCSPARAMS}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{SIOCSPARAMS}{SIOCSPARAMS}}
+{\footnotesize\ttfamily \#define SIOCSPARAMS~(SIOCDEVPRIVATE+4)  /$\ast$ Set operational parameters $\ast$/}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{interface_8h_a180366790b127c9f6d1f65245f275268}\label{interface_8h_a180366790b127c9f6d1f65245f275268}} 
+\index{interface.h@{interface.h}!hping\_get\_interfaces@{hping\_get\_interfaces}}
+\index{hping\_get\_interfaces@{hping\_get\_interfaces}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{hping\_get\_interfaces()}{hping\_get\_interfaces()}}
+{\footnotesize\ttfamily int hping\+\_\+get\+\_\+interfaces (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhpingif}{hpingif}} $\ast$}]{hif,  }\item[{int}]{ilen }\end{DoxyParamCaption})}
+

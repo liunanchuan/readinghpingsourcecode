@@ -1,0 +1,1292 @@
+\hypertarget{os-sunos4_8h}{}\doxysection{libpcap-\/1.1.1/lbl/os-\/sunos4.h 文件参考}
+\label{os-sunos4_8h}\index{libpcap-\/1.1.1/lbl/os-\/sunos4.h@{libpcap-\/1.1.1/lbl/os-\/sunos4.h}}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read}} (int, char $\ast$, u\+\_\+int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_acd05dd935a081148178734b4930031d5}{write}} (int, char $\ast$, u\+\_\+int)
+\item 
+long \mbox{\hyperlink{os-sunos4_8h_a4f3f099a09a8b63257b3ef4e9954e848}{a64l}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}{accept}} (int, struct sockaddr $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}{bind}} (int, struct sockaddr $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a72c50ea095a97296baa33780adea6353}{bcmp}} (const void $\ast$, const void $\ast$, u\+\_\+int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a9fc3f8664f469f650b368506c90c8834}{bcopy}} (const void $\ast$, void $\ast$, u\+\_\+int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_ab426c21b176346931201b586eca8f197}{bzero}} (void $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_acde801911074403b7a99843d399093e1}{chroot}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close}} (int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_ae1e4e53707d8c3fbc36bbc523fbbcda3}{closelog}} (void)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}{connect}} (int, struct sockaddr $\ast$, int)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_aa5a6657e29c699bedd3841832a99f3e9}{crypt}} (const char $\ast$, const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aa10914f5d815f5943722ae8be203eeff}{daemon}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a89b86cf07deb9f31696b1748d29be657}{fchmod}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a9250be04ffb2db7109b04356399e8e40}{fchown}} (int, int, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_ad8139e6b6a3e1c75bc059ff9507cbd48}{endgrent}} (void)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_acd2bac39cbb74a8b6fde9ac61f02d0f5}{endpwent}} (void)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent}} (void)
+\item 
+struct ether\+\_\+addr $\ast$ \mbox{\hyperlink{os-sunos4_8h_a80101fd8479ae64893ab2271f3a70079}{ether\+\_\+aton}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_adfd2c00559413ba0c3cbbaa019401f36}{flock}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a8a0f92a50668f8517f90b9717df22ee1}{fstat}} (int, struct \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a21e541a988e570aab5c27a5983572f2c}{fstatfs}} (int, struct \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}} $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ab37281e48f68c8fc6ec8002ae7e01ade}{fsync}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a53348135fbf16873b0821f381c1106d8}{ftime}} (struct timeb $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a76a347946c9ac1f133cfe409b505b172}{ftruncate}} (int, off\+\_\+t)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aed8cbba610ad1c8d427196a2984b2c0c}{getdtablesize}} (void)
+\item 
+long \mbox{\hyperlink{os-sunos4_8h_ab7b49a1dc7a37a50ea146982bc01eee1}{gethostid}} (void)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aef968ac34aee85cdf0a7ea26fa082219}{gethostname}} (char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60}{getopt}} (int, char $\ast$const $\ast$, const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a638757347bd9bf886b3d442b98033cf1}{getpagesize}} (void)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a9b1e810d888de75300d2490edbab3850}{getpass}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a3f9c86acc6f3bf2d3bdc2183400fd92c}{getpeername}} (int, struct sockaddr $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aab3d89bf9610c19e0d2b59f9ae77b7b4}{getpriority}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ac7e7a27a353c22831fe2fd0ad75138b6}{getrlimit}} (int, struct rlimit $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a3176a02298231e3a36c5dc559ecfa4de}{getsockname}} (int, struct sockaddr $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_abfa9ac1bdb73a7c1ade56853f15b661b}{getsockopt}} (int, int, int, char $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday}} (struct timeval $\ast$, struct \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a14fba5250b85caae8f2b02fe3b0940ed}{getusershell}} (void)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a0016dfa8c60e53506667c34e0de2fe6b}{getwd}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a40830fe36a1f391664c6f654eb65a953}{initgroups}} (const char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl}} (int, int, \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}})
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a146d4d3cc4f09081578f7aed440b09e6}{iruserok}} (u\+\_\+long, int, char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ab4155ffea05dab2dafae68fd88a0517f}{isatty}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a0f9ccf238ef6d954a458c6c9c1f3bda7}{killpg}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a33eddee13432eee315b71ffb679048a7}{listen}} (int, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_abf7e0ae449ac49750b14033a35193f24}{login}} (struct utmp $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a087886cef4e975924caa098f3c6390e5}{logout}} (const char $\ast$)
+\item 
+off\+\_\+t \mbox{\hyperlink{os-sunos4_8h_a5be409c8d98c21628b77dfb6b2b8f1e9}{lseek}} (int, off\+\_\+t, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a8a1463b29dc36ef8779dfd239c09fcb5}{lstat}} (const char $\ast$, struct \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a567fc2c0116424fbecf9238ecf7c5fe4}{mkstemp}} (char $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a533edecc05c149491ebb56c50d4ab245}{mktemp}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a173c0aa968a708f9070dbac834485037}{munmap}} (\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}}, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_adce444b3a44f1c03f1dded27939518ab}{openlog}} (const char $\ast$, int, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf}} (const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ad6eb8da5b318991f44cdd98e20939b7d}{puts}} (const char $\ast$)
+\item 
+long \mbox{\hyperlink{os-sunos4_8h_a114aeb1751119382aaf3340355b22cfd}{random}} (void)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aa569d745c17a5f1e7b5617b97e305606}{readlink}} (const char $\ast$, char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aacf602ca8b0e7f16583c7263d1af04a0}{readv}} (int, struct iovec $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv}} (int, char $\ast$, u\+\_\+int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a084738d626f8b7b2d9f9cdd4459d59e3}{recvfrom}} (int, char $\ast$, u\+\_\+int, int, struct sockaddr $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}{rename}} (const char $\ast$, const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a8ef54136f2c190012de45af7c458c49d}{rcmd}} (char $\ast$$\ast$, u\+\_\+short, char $\ast$, char $\ast$, char $\ast$, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a2f4a8d7e0d5184fcd21d06f5f3724517}{rresvport}} (int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a4842f0d9f5afc151b43714fc31c24db1}{send}} (int, char $\ast$, u\+\_\+int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a89feed6e12b76fb05833a36ea9c5fa9c}{sendto}} (int, char $\ast$, u\+\_\+int, int, struct sockaddr $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a4f163149d0e7590ff98d7c8bbd17583d}{setenv}} (const char $\ast$, const char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a9692bdc05813ad83377c4f93473fd983}{seteuid}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aad2c7c19dd4f169abe4404906dfbe204}{setpriority}} (int, int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}{select}} (int, fd\+\_\+set $\ast$, fd\+\_\+set $\ast$, fd\+\_\+set $\ast$, struct timeval $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ac9266117049b587709663cd066480eab}{setpgrp}} (int, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a015c67a1cd39fb9dc8910ad7d622c6fa}{setpwent}} (void)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a71e19c7ed86aa50a454be029ec62693d}{setrlimit}} (int, struct rlimit $\ast$)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}{setsockopt}} (int, int, int, char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a540f26e91bc6fc63f4e0fbe0fb8770dc}{shutdown}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a000ce90dde84441f24b23d5641780bdb}{sigblock}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a6164b494c8ed997871d09ba8ad81f04a}{sigpause}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a2c4485ec58a1037fecff014aca547457}{sigsetmask}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}{sigvec}} (int, struct sigvec $\ast$, struct sigvec $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf}} (char $\ast$, size\+\_\+t, const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket}} (int, int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ab7c84d52ee3f38110c6d163a4116e891}{socketpair}} (int, int, int, int $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aeb52d1ca2084a65df369e6d8fb082eec}{symlink}} (const char $\ast$, const char $\ast$)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a5b2355fcc8fdb51ee278428da113ebc5}{srandom}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf}} (char $\ast$, const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} (const char $\ast$, struct stat $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}} (char $\ast$, struct statfs $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp}} (const char $\ast$, const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a9393c4cc80a2f50a11a399184915ce0d}{strftime}} (char $\ast$, int, char $\ast$, struct tm $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aeb4648578588c0ec23bd2423ae916a2b}{strncasecmp}} (const char $\ast$, const char $\ast$, int)
+\item 
+long \mbox{\hyperlink{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}{strtol}} (const char $\ast$, char $\ast$$\ast$, int)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_ac4fa2e6d36e97983d62b9377cc4f6c73}{sync}} (void)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a8fd4d039dfe941b0576bab9cbe3ee4d9}{syslog}} (int, const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}} (const char $\ast$)
+\item 
+long \mbox{\hyperlink{os-sunos4_8h_ae00845adf05e73df234246215b9b83fb}{tell}} (int)
+\item 
+time\+\_\+t \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time}} (time\+\_\+t $\ast$)
+\item 
+char $\ast$ \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} (int, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ab6182394c667c4e4426f98af3309c30d}{toupper}} (int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a706cc4461aa1e45a95fc514fec810109}{truncate}} (char $\ast$, off\+\_\+t)
+\item 
+void \mbox{\hyperlink{os-sunos4_8h_a9963c80816ceddf2dfd74d15e1e27bf7}{unsetenv}} (const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aba5b3043c04ae3bf7073855e18e24d9a}{vfork}} (void)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}{vsprintf}} (char $\ast$, const char $\ast$,...)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_a38c23b0b20ef0f2eebe06f770df5eb48}{writev}} (int, struct iovec $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_aaa0305cfa0bfcfe2ec3d7b11870bf06c}{utimes}} (const char $\ast$, struct timeval $\ast$)
+\item 
+int \mbox{\hyperlink{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9}{wait}} (int $\ast$)
+\item 
+pid\+\_\+t \mbox{\hyperlink{os-sunos4_8h_a8f43719213946449cf4d1a00babeb514}{wait3}} (int $\ast$, int, struct rusage $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$)(int) \mbox{\hyperlink{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}{signal}} (int, void($\ast$)(int))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{os-sunos4_8h_a4f3f099a09a8b63257b3ef4e9954e848}\label{os-sunos4_8h_a4f3f099a09a8b63257b3ef4e9954e848}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!a64l@{a64l}}
+\index{a64l@{a64l}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{a64l()}{a64l()}}
+{\footnotesize\ttfamily long a64l (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}\label{os-sunos4_8h_a5827ebf1e1c7b3ddc81a6abf78a5d870}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!accept@{accept}}
+\index{accept@{accept}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily int accept (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a72c50ea095a97296baa33780adea6353}\label{os-sunos4_8h_a72c50ea095a97296baa33780adea6353}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!bcmp@{bcmp}}
+\index{bcmp@{bcmp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{bcmp()}{bcmp()}}
+{\footnotesize\ttfamily int bcmp (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{const void $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a9fc3f8664f469f650b368506c90c8834}\label{os-sunos4_8h_a9fc3f8664f469f650b368506c90c8834}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!bcopy@{bcopy}}
+\index{bcopy@{bcopy}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{bcopy()}{bcopy()}}
+{\footnotesize\ttfamily void bcopy (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{void $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}\label{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!bind@{bind}}
+\index{bind@{bind}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily int bind (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}, \mbox{\hyperlink{pcap-can-linux_8c_a17de993776f7d667e7dcd634b6e13f65}{can\+\_\+activate()}}, \mbox{\hyperlink{pcap-linux_8c_a2987cf3851d0f6dae83cf308fd2e39d8}{iface\+\_\+bind\+\_\+old()}}, \mbox{\hyperlink{pcap-nit_8c_adce209d0a829695da441dd4463f18ebf}{pcap\+\_\+activate\+\_\+nit()}} , 以及 \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_afa56c9d41eaf75f4db8c02351ece79ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ab426c21b176346931201b586eca8f197}\label{os-sunos4_8h_ab426c21b176346931201b586eca8f197}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!bzero@{bzero}}
+\index{bzero@{bzero}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{bzero()}{bzero()}}
+{\footnotesize\ttfamily void bzero (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}{translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_ab426c21b176346931201b586eca8f197_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_acde801911074403b7a99843d399093e1}\label{os-sunos4_8h_acde801911074403b7a99843d399093e1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!chroot@{chroot}}
+\index{chroot@{chroot}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{chroot()}{chroot()}}
+{\footnotesize\ttfamily int chroot (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}\label{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!close@{close}}
+\index{close@{close}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily int close (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_ab3e746464bc134062a22afd8c5526326}{activate\+\_\+new()}}, \mbox{\hyperlink{inet_8c_ab33d156eb14d2b242dc3cf9218a03c81}{add\+\_\+addr\+\_\+to\+\_\+iflist()}}, \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}, \mbox{\hyperlink{ars_8c_a1ed1956228553634c4f934947c429d9b}{ars\+\_\+open\+\_\+rawsocket()}}, \mbox{\hyperlink{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}{bt\+\_\+platform\+\_\+finddevs()}}, \mbox{\hyperlink{pcap-bpf_8c_acec2b61b77e0abc5bf6abf636892c94d}{check\+\_\+setif\+\_\+failure()}}, \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}}, \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{pcap-bpf_8c_aaf543ffda3d4ae8bdcbea95316dfbb94}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+bpf()}}, \mbox{\hyperlink{pcap-linux_8c_a75e1cf1f81ff6b6d72480d05a7fcac75}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+linux()}}, \mbox{\hyperlink{pcap-bpf_8c_ab1319ab916da18f7a7acf7dba1457010}{pcap\+\_\+cleanup\+\_\+bpf()}}, \mbox{\hyperlink{pcap-dlpi_8c_a2da7da9e07798040ec76e582792415bd}{pcap\+\_\+cleanup\+\_\+dlpi()}}, \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}, \mbox{\hyperlink{fad-gifc_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}{probe\+\_\+devices()}}, \mbox{\hyperlink{pcap-linux_8c_afb293431bb9ec076f757d3444d875f0f}{scan\+\_\+proc\+\_\+net\+\_\+dev()}}, \mbox{\hyperlink{pcap-linux_8c_a775e9e3fa61d2f1f0baffb4983bfecc7}{scan\+\_\+sys\+\_\+class\+\_\+net()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}{usb\+\_\+stats\+\_\+linux()}} , 以及 \mbox{\hyperlink{pcap-enet_8c_af534fe0580fe829e1351a2a5f8af9ece}{wrapup()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ae1e4e53707d8c3fbc36bbc523fbbcda3}\label{os-sunos4_8h_ae1e4e53707d8c3fbc36bbc523fbbcda3}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!closelog@{closelog}}
+\index{closelog@{closelog}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{closelog()}{closelog()}}
+{\footnotesize\ttfamily void closelog (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}\label{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!connect@{connect}}
+\index{connect@{connect}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily int connect (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_aa5a6657e29c699bedd3841832a99f3e9}\label{os-sunos4_8h_aa5a6657e29c699bedd3841832a99f3e9}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!crypt@{crypt}}
+\index{crypt@{crypt}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{crypt()}{crypt()}}
+{\footnotesize\ttfamily char $\ast$ crypt (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aa10914f5d815f5943722ae8be203eeff}\label{os-sunos4_8h_aa10914f5d815f5943722ae8be203eeff}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!daemon@{daemon}}
+\index{daemon@{daemon}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{daemon()}{daemon()}}
+{\footnotesize\ttfamily int daemon (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ad8139e6b6a3e1c75bc059ff9507cbd48}\label{os-sunos4_8h_ad8139e6b6a3e1c75bc059ff9507cbd48}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!endgrent@{endgrent}}
+\index{endgrent@{endgrent}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{endgrent()}{endgrent()}}
+{\footnotesize\ttfamily void endgrent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_acd2bac39cbb74a8b6fde9ac61f02d0f5}\label{os-sunos4_8h_acd2bac39cbb74a8b6fde9ac61f02d0f5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!endpwent@{endpwent}}
+\index{endpwent@{endpwent}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{endpwent()}{endpwent()}}
+{\footnotesize\ttfamily void endpwent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}\label{os-sunos4_8h_adf81140af263bf72a02dc4a484e98d6a}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!endservent@{endservent}}
+\index{endservent@{endservent}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{endservent()}{endservent()}}
+{\footnotesize\ttfamily void endservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_aae749e080afa19f0f459fe71a3671383}{\+\_\+serv\+\_\+stayopen}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+\mbox{\Hypertarget{os-sunos4_8h_a80101fd8479ae64893ab2271f3a70079}\label{os-sunos4_8h_a80101fd8479ae64893ab2271f3a70079}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!ether\_aton@{ether\_aton}}
+\index{ether\_aton@{ether\_aton}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{ether\_aton()}{ether\_aton()}}
+{\footnotesize\ttfamily struct ether\+\_\+addr $\ast$ ether\+\_\+aton (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a89b86cf07deb9f31696b1748d29be657}\label{os-sunos4_8h_a89b86cf07deb9f31696b1748d29be657}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!fchmod@{fchmod}}
+\index{fchmod@{fchmod}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{fchmod()}{fchmod()}}
+{\footnotesize\ttfamily int fchmod (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a9250be04ffb2db7109b04356399e8e40}\label{os-sunos4_8h_a9250be04ffb2db7109b04356399e8e40}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!fchown@{fchown}}
+\index{fchown@{fchown}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{fchown()}{fchown()}}
+{\footnotesize\ttfamily int fchown (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_adfd2c00559413ba0c3cbbaa019401f36}\label{os-sunos4_8h_adfd2c00559413ba0c3cbbaa019401f36}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!flock@{flock}}
+\index{flock@{flock}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{flock()}{flock()}}
+{\footnotesize\ttfamily int flock (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a8a0f92a50668f8517f90b9717df22ee1}\label{os-sunos4_8h_a8a0f92a50668f8517f90b9717df22ee1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!fstat@{fstat}}
+\index{fstat@{fstat}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{fstat()}{fstat()}}
+{\footnotesize\ttfamily int fstat (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a21e541a988e570aab5c27a5983572f2c}\label{os-sunos4_8h_a21e541a988e570aab5c27a5983572f2c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!fstatfs@{fstatfs}}
+\index{fstatfs@{fstatfs}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{fstatfs()}{fstatfs()}}
+{\footnotesize\ttfamily int fstatfs (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct \mbox{\hyperlink{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}{statfs}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ab37281e48f68c8fc6ec8002ae7e01ade}\label{os-sunos4_8h_ab37281e48f68c8fc6ec8002ae7e01ade}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!fsync@{fsync}}
+\index{fsync@{fsync}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{fsync()}{fsync()}}
+{\footnotesize\ttfamily int fsync (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a53348135fbf16873b0821f381c1106d8}\label{os-sunos4_8h_a53348135fbf16873b0821f381c1106d8}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!ftime@{ftime}}
+\index{ftime@{ftime}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{ftime()}{ftime()}}
+{\footnotesize\ttfamily int ftime (\begin{DoxyParamCaption}\item[{struct timeb $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a76a347946c9ac1f133cfe409b505b172}\label{os-sunos4_8h_a76a347946c9ac1f133cfe409b505b172}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!ftruncate@{ftruncate}}
+\index{ftruncate@{ftruncate}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{ftruncate()}{ftruncate()}}
+{\footnotesize\ttfamily int ftruncate (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{off\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aed8cbba610ad1c8d427196a2984b2c0c}\label{os-sunos4_8h_aed8cbba610ad1c8d427196a2984b2c0c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getdtablesize@{getdtablesize}}
+\index{getdtablesize@{getdtablesize}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getdtablesize()}{getdtablesize()}}
+{\footnotesize\ttfamily int getdtablesize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ab7b49a1dc7a37a50ea146982bc01eee1}\label{os-sunos4_8h_ab7b49a1dc7a37a50ea146982bc01eee1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!gethostid@{gethostid}}
+\index{gethostid@{gethostid}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{gethostid()}{gethostid()}}
+{\footnotesize\ttfamily long gethostid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aef968ac34aee85cdf0a7ea26fa082219}\label{os-sunos4_8h_aef968ac34aee85cdf0a7ea26fa082219}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!gethostname@{gethostname}}
+\index{gethostname@{gethostname}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{gethostname()}{gethostname()}}
+{\footnotesize\ttfamily int gethostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60}\label{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getopt@{getopt}}
+\index{getopt@{getopt}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getopt()}{getopt()}}
+{\footnotesize\ttfamily int getopt (\begin{DoxyParamCaption}\item[{int}]{nargc,  }\item[{char $\ast$const $\ast$}]{nargv,  }\item[{const char $\ast$}]{ostr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getopt_8c_aa66fa298ed3187720cb609e15cd7d22c}{BADARG}}, \mbox{\hyperlink{getopt_8c_a1c8c2c090f7416155b04f9d6eb50faa0}{BADCH}}, \mbox{\hyperlink{getopt_8c_ac393ec775622430dfe25cd2ac9dec9f4}{EMSG}}, \mbox{\hyperlink{getopt_8c_adb50a0eab9fed92fc3bfc7dfa4f2c410}{optarg}}, \mbox{\hyperlink{getopt_8c_ae30f05ee1e2e5652f174a35c7875d25e}{opterr}}, \mbox{\hyperlink{getopt_8c_ad5e1c16213bbee2d5e8cc363309f418c}{optind}}, \mbox{\hyperlink{getopt_8c_a475b8db98445da73e5f62a1ef6324b95}{optopt}} , 以及 \mbox{\hyperlink{getopt_8c_a62231492adf03e02ff80d0bfb3b3ebd6}{optreset}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a638757347bd9bf886b3d442b98033cf1}\label{os-sunos4_8h_a638757347bd9bf886b3d442b98033cf1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getpagesize@{getpagesize}}
+\index{getpagesize@{getpagesize}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getpagesize()}{getpagesize()}}
+{\footnotesize\ttfamily int getpagesize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a638757347bd9bf886b3d442b98033cf1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a9b1e810d888de75300d2490edbab3850}\label{os-sunos4_8h_a9b1e810d888de75300d2490edbab3850}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getpass@{getpass}}
+\index{getpass@{getpass}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getpass()}{getpass()}}
+{\footnotesize\ttfamily char $\ast$ getpass (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a3f9c86acc6f3bf2d3bdc2183400fd92c}\label{os-sunos4_8h_a3f9c86acc6f3bf2d3bdc2183400fd92c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getpeername@{getpeername}}
+\index{getpeername@{getpeername}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getpeername()}{getpeername()}}
+{\footnotesize\ttfamily int getpeername (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aab3d89bf9610c19e0d2b59f9ae77b7b4}\label{os-sunos4_8h_aab3d89bf9610c19e0d2b59f9ae77b7b4}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getpriority@{getpriority}}
+\index{getpriority@{getpriority}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getpriority()}{getpriority()}}
+{\footnotesize\ttfamily int getpriority (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ac7e7a27a353c22831fe2fd0ad75138b6}\label{os-sunos4_8h_ac7e7a27a353c22831fe2fd0ad75138b6}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getrlimit@{getrlimit}}
+\index{getrlimit@{getrlimit}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getrlimit()}{getrlimit()}}
+{\footnotesize\ttfamily int getrlimit (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct rlimit $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a3176a02298231e3a36c5dc559ecfa4de}\label{os-sunos4_8h_a3176a02298231e3a36c5dc559ecfa4de}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getsockname@{getsockname}}
+\index{getsockname@{getsockname}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getsockname()}{getsockname()}}
+{\footnotesize\ttfamily int getsockname (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a3176a02298231e3a36c5dc559ecfa4de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_abfa9ac1bdb73a7c1ade56853f15b661b}\label{os-sunos4_8h_abfa9ac1bdb73a7c1ade56853f15b661b}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getsockopt@{getsockopt}}
+\index{getsockopt@{getsockopt}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getsockopt()}{getsockopt()}}
+{\footnotesize\ttfamily int getsockopt (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a2987cf3851d0f6dae83cf308fd2e39d8}{iface\+\_\+bind\+\_\+old()}} , 以及 \mbox{\hyperlink{pcap-linux_8c_a7fde4f71d980a296660ea64ac0bd6a0a}{pcap\+\_\+stats\+\_\+linux()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_abfa9ac1bdb73a7c1ade56853f15b661b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}\label{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!gettimeofday@{gettimeofday}}
+\index{gettimeofday@{gettimeofday}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{gettimeofday()}{gettimeofday()}}
+{\footnotesize\ttfamily int gettimeofday (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{,  }\item[{struct \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-can-linux_8c_a5238dc2e6d0dee271f1561b4b6644df8}{can\+\_\+read\+\_\+linux()}}, \mbox{\hyperlink{getusec_8c_aeae3aba9a4e7957c11ecf4c4e4fbacc7}{get\+\_\+usec()}}, \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}, \mbox{\hyperlink{getusec_8c_a1a80b671ff8e4ed8bfb5158bdf283d5e}{milliseconds()}}, \mbox{\hyperlink{dlpisubs_8c_afd3f34fe24078cb7081ba9c8a1d8a321}{pcap\+\_\+process\+\_\+pkts()}} , 以及 \mbox{\hyperlink{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7}{septel\+\_\+read()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a14fba5250b85caae8f2b02fe3b0940ed}\label{os-sunos4_8h_a14fba5250b85caae8f2b02fe3b0940ed}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getusershell@{getusershell}}
+\index{getusershell@{getusershell}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getusershell()}{getusershell()}}
+{\footnotesize\ttfamily char $\ast$ getusershell (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a0016dfa8c60e53506667c34e0de2fe6b}\label{os-sunos4_8h_a0016dfa8c60e53506667c34e0de2fe6b}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!getwd@{getwd}}
+\index{getwd@{getwd}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{getwd()}{getwd()}}
+{\footnotesize\ttfamily char $\ast$ getwd (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a40830fe36a1f391664c6f654eb65a953}\label{os-sunos4_8h_a40830fe36a1f391664c6f654eb65a953}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!initgroups@{initgroups}}
+\index{initgroups@{initgroups}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{initgroups()}{initgroups()}}
+{\footnotesize\ttfamily int initgroups (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}\label{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!ioctl@{ioctl}}
+\index{ioctl@{ioctl}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{ioctl()}{ioctl()}}
+{\footnotesize\ttfamily int ioctl (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a983baf5089f49a441ec053fb53bad095}{activate\+\_\+old()}}, \mbox{\hyperlink{inet_8c_ab33d156eb14d2b242dc3cf9218a03c81}{add\+\_\+addr\+\_\+to\+\_\+iflist()}}, \mbox{\hyperlink{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}{bt\+\_\+platform\+\_\+finddevs()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a7a7a172c187134fe151f805736870be5}{bt\+\_\+stats\+\_\+linux()}}, \mbox{\hyperlink{pcap-can-linux_8c_a17de993776f7d667e7dcd634b6e13f65}{can\+\_\+activate()}}, \mbox{\hyperlink{pcap-bpf_8c_acec2b61b77e0abc5bf6abf636892c94d}{check\+\_\+setif\+\_\+failure()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{hping2_8h_a4a10e3c2d78485a88a6846f317d196a0}{if\+\_\+promisc\+\_\+off()}}, \mbox{\hyperlink{hping2_8h_a298f69a0fbd93d7703e09283998083c6}{if\+\_\+promisc\+\_\+on()}}, \mbox{\hyperlink{pcap-linux_8c_a13b9caf18a63aa318a536ab8043fcd56}{iface\+\_\+get\+\_\+arptype()}}, \mbox{\hyperlink{pcap-linux_8c_aa2b94257ec0a1caa4b8f12ec1c8ff39a}{iface\+\_\+get\+\_\+mtu()}}, \mbox{\hyperlink{pcap-enet_8c_a081426746bfe415624aa1735b7e5c4cc}{initdevice()}}, \mbox{\hyperlink{pcap-nit_8c_a4a5db1310294b89131acfd401e2b9d76}{nit\+\_\+setflags()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{pcap-dlpi_8c_a49b2500071f1db1336f6e0c7374e3c18}{pcap\+\_\+activate\+\_\+dlpi()}}, \mbox{\hyperlink{pcap-libdlpi_8c_abb02c563551c957697b24a9b3e9c786b}{pcap\+\_\+activate\+\_\+libdlpi()}}, \mbox{\hyperlink{pcap-pf_8c_ad2e28cca9656f97146400f5f9ce20b67}{pcap\+\_\+activate\+\_\+pf()}}, \mbox{\hyperlink{pcap-snit_8c_a3d71e704d4a9ce2c9970c3e4d07b23e7}{pcap\+\_\+activate\+\_\+snit()}}, \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}, \mbox{\hyperlink{pcap-bpf_8c_aaf543ffda3d4ae8bdcbea95316dfbb94}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+bpf()}}, \mbox{\hyperlink{pcap-linux_8c_a75e1cf1f81ff6b6d72480d05a7fcac75}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+linux()}}, \mbox{\hyperlink{pcap-bpf_8c_ab1319ab916da18f7a7acf7dba1457010}{pcap\+\_\+cleanup\+\_\+bpf()}}, \mbox{\hyperlink{pcap-linux_8c_a8d091b827ecc32c7ab2469ae36f77b15}{pcap\+\_\+cleanup\+\_\+linux()}}, \mbox{\hyperlink{fad-gifc_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-bpf_8c_a02d1840e95ee2e631cefc19826229c67}{pcap\+\_\+inject\+\_\+bpf()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}}, \mbox{\hyperlink{pcap-linux_8c_aae0df3027522e0e83021890891cb10ea}{pcap\+\_\+read\+\_\+packet()}}, \mbox{\hyperlink{pcap-bpf_8c_aeb4a9bf3e5e0f7b5191ed72db478287a}{pcap\+\_\+set\+\_\+datalink\+\_\+bpf()}}, \mbox{\hyperlink{pcap-bpf_8c_abf2da4ba6bcf18a809835042c3e3248e}{pcap\+\_\+setdirection\+\_\+bpf()}}, \mbox{\hyperlink{pcap-bpf_8c_aff3f64212f7bf2c6a24d8d79884a4271}{pcap\+\_\+setfilter\+\_\+bpf()}}, \mbox{\hyperlink{pcap-pf_8c_ae29f0f3a55cfd5e0bb85001e06c96a4f}{pcap\+\_\+setfilter\+\_\+pf()}}, \mbox{\hyperlink{pcap-bpf_8c_ab8e3bc45aa154ec93c9f0accf92398e6}{pcap\+\_\+stats\+\_\+bpf()}}, \mbox{\hyperlink{pcap-snoop_8c_acd1a379cc4f0d40891e3c8c0d926bc11}{pcap\+\_\+stats\+\_\+snoop()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a7770431caab852b3494c3e17f0475487}{probe\+\_\+devices()}}, \mbox{\hyperlink{pcap-linux_8c_afb293431bb9ec076f757d3444d875f0f}{scan\+\_\+proc\+\_\+net\+\_\+dev()}}, \mbox{\hyperlink{pcap-linux_8c_a775e9e3fa61d2f1f0baffb4983bfecc7}{scan\+\_\+sys\+\_\+class\+\_\+net()}}, \mbox{\hyperlink{dlpisubs_8c_a31621b9b75368c10511cdbacd452f5b8}{strioctl()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a1bf16fd100c726175bcdd21275c8ef42}{usb\+\_\+mmap()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a8caa825ff9b1c56a1fc747bd8215291a}{usb\+\_\+read\+\_\+linux\+\_\+bin()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}{usb\+\_\+read\+\_\+linux\+\_\+mmap()}}, \mbox{\hyperlink{pcap-usb-linux_8c_af03e75e2c19ee3c5cadeede6fd023461}{usb\+\_\+stats\+\_\+linux\+\_\+bin()}} , 以及 \mbox{\hyperlink{pcap-enet_8c_af534fe0580fe829e1351a2a5f8af9ece}{wrapup()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a146d4d3cc4f09081578f7aed440b09e6}\label{os-sunos4_8h_a146d4d3cc4f09081578f7aed440b09e6}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!iruserok@{iruserok}}
+\index{iruserok@{iruserok}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{iruserok()}{iruserok()}}
+{\footnotesize\ttfamily int iruserok (\begin{DoxyParamCaption}\item[{u\+\_\+long}]{,  }\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ab4155ffea05dab2dafae68fd88a0517f}\label{os-sunos4_8h_ab4155ffea05dab2dafae68fd88a0517f}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!isatty@{isatty}}
+\index{isatty@{isatty}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{isatty()}{isatty()}}
+{\footnotesize\ttfamily int isatty (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a0f9ccf238ef6d954a458c6c9c1f3bda7}\label{os-sunos4_8h_a0f9ccf238ef6d954a458c6c9c1f3bda7}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!killpg@{killpg}}
+\index{killpg@{killpg}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{killpg()}{killpg()}}
+{\footnotesize\ttfamily int killpg (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a33eddee13432eee315b71ffb679048a7}\label{os-sunos4_8h_a33eddee13432eee315b71ffb679048a7}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!listen@{listen}}
+\index{listen@{listen}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily int listen (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_abf7e0ae449ac49750b14033a35193f24}\label{os-sunos4_8h_abf7e0ae449ac49750b14033a35193f24}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!login@{login}}
+\index{login@{login}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void login (\begin{DoxyParamCaption}\item[{struct utmp $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a087886cef4e975924caa098f3c6390e5}\label{os-sunos4_8h_a087886cef4e975924caa098f3c6390e5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!logout@{logout}}
+\index{logout@{logout}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily int logout (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a5be409c8d98c21628b77dfb6b2b8f1e9}\label{os-sunos4_8h_a5be409c8d98c21628b77dfb6b2b8f1e9}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!lseek@{lseek}}
+\index{lseek@{lseek}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{lseek()}{lseek()}}
+{\footnotesize\ttfamily off\+\_\+t lseek (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{off\+\_\+t}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{pcap-enet_8c_a6f39c088c6b24a6bb4336b07dfc14b10}{ef\+Read\+Error()}}, \mbox{\hyperlink{pcap-bpf_8c_aa874721bd1c8c314ad22e9a3162ddd89}{pcap\+\_\+read\+\_\+bpf()}} , 以及 \mbox{\hyperlink{pcap-pf_8c_a598421b7d42b922459c5fc71399212c3}{pcap\+\_\+read\+\_\+pf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a5be409c8d98c21628b77dfb6b2b8f1e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a8a1463b29dc36ef8779dfd239c09fcb5}\label{os-sunos4_8h_a8a1463b29dc36ef8779dfd239c09fcb5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!lstat@{lstat}}
+\index{lstat@{lstat}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{lstat()}{lstat()}}
+{\footnotesize\ttfamily int lstat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{struct \mbox{\hyperlink{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}{stat}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a567fc2c0116424fbecf9238ecf7c5fe4}\label{os-sunos4_8h_a567fc2c0116424fbecf9238ecf7c5fe4}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!mkstemp@{mkstemp}}
+\index{mkstemp@{mkstemp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{mkstemp()}{mkstemp()}}
+{\footnotesize\ttfamily int mkstemp (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a533edecc05c149491ebb56c50d4ab245}\label{os-sunos4_8h_a533edecc05c149491ebb56c50d4ab245}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!mktemp@{mktemp}}
+\index{mktemp@{mktemp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{mktemp()}{mktemp()}}
+{\footnotesize\ttfamily char $\ast$ mktemp (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a173c0aa968a708f9070dbac834485037}\label{os-sunos4_8h_a173c0aa968a708f9070dbac834485037}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!munmap@{munmap}}
+\index{munmap@{munmap}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{munmap()}{munmap()}}
+{\footnotesize\ttfamily int munmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}}}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-bpf_8c_ab1319ab916da18f7a7acf7dba1457010}{pcap\+\_\+cleanup\+\_\+bpf()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a4ce042ed04440d6e714194f61d83b8d1}{usb\+\_\+cleanup\+\_\+linux\+\_\+mmap()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a173c0aa968a708f9070dbac834485037_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_adce444b3a44f1c03f1dded27939518ab}\label{os-sunos4_8h_adce444b3a44f1c03f1dded27939518ab}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!openlog@{openlog}}
+\index{openlog@{openlog}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{openlog()}{openlog()}}
+{\footnotesize\ttfamily void openlog (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}\label{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!perror@{perror}}
+\index{perror@{perror}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{perror()}{perror()}}
+{\footnotesize\ttfamily void perror (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{pcap-enet_8c_a6f39c088c6b24a6bb4336b07dfc14b10}{ef\+Read\+Error()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}}, \mbox{\hyperlink{arsglue_8c_a7f310785d3b7d85c48f8b4d89fa4be92}{hping\+\_\+ars\+\_\+send()}}, \mbox{\hyperlink{hping2_8h_a4a10e3c2d78485a88a6846f317d196a0}{if\+\_\+promisc\+\_\+off()}}, \mbox{\hyperlink{hping2_8h_a298f69a0fbd93d7703e09283998083c6}{if\+\_\+promisc\+\_\+on()}}, \mbox{\hyperlink{pcap-enet_8c_a081426746bfe415624aa1735b7e5c4cc}{initdevice()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}}, \mbox{\hyperlink{hping2_8h_aed3d68218fc4ed1b514990fd73dc53f2}{open\+\_\+sockraw()}}, \mbox{\hyperlink{hping2_8h_aa9a6df377e8120782df851e0b127f20f}{read\+\_\+packet()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}, \mbox{\hyperlink{sendicmp_8c_a1895ef47376ed349366a917e74bbab6a}{send\+\_\+icmp\+\_\+address()}}, \mbox{\hyperlink{sendicmp_8c_ab7ee2606f9c854ef1d8e12daaa989d0a}{send\+\_\+icmp\+\_\+echo()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{sendicmp_8c_a783066f0b12bfbc163d93ddc215cb1a2}{send\+\_\+icmp\+\_\+timestamp()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}, \mbox{\hyperlink{hping2_8h_a78a83d8c35164efd189a6d3584ba5537}{send\+\_\+rawip()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}}, \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}}, \mbox{\hyperlink{scan_8c_a27496a377cee60fc04e9e03ef5e7335e}{shm\+\_\+attach()}}, \mbox{\hyperlink{scan_8c_ab55554c9c313d414b0dd05461062b990}{shm\+\_\+creat()}} , 以及 \mbox{\hyperlink{pcap-enet_8c_af534fe0580fe829e1351a2a5f8af9ece}{wrapup()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}\label{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!printf@{printf}}
+\index{printf@{printf}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{printf()}{printf()}}
+{\footnotesize\ttfamily int printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_a7f98bd5bf2f9caccac80d8c60f5b3ef2}{\+\_\+gen\+\_\+basepowtable()}}, \mbox{\hyperlink{gentables_8c_ad24a7f029e6cd75f45410045bd6248c1}{\+\_\+gen\+\_\+basetable()}}, \mbox{\hyperlink{ars_8c_a66b4e254eb995a08088c59c90d5f018c}{ars\+\_\+compile()}}, \mbox{\hyperlink{ars_8c_a1d36ceecc88c613958c9cfe45a6ffd4e}{ars\+\_\+compiler\+\_\+ipopt()}}, \mbox{\hyperlink{ars_8c_a3aba9bd729d1ee7ca14ba986060fcbb9}{ars\+\_\+compiler\+\_\+tcpopt()}}, \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build()}}, \mbox{\hyperlink{ars_8h_ad37d3d2b7c7c3f89c8b88e6a4d683d2f}{ars\+\_\+d\+\_\+from\+\_\+ars()}}, \mbox{\hyperlink{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4}{ars\+\_\+d\+\_\+setlayer\+\_\+size()}}, \mbox{\hyperlink{split_8c_a728ee81320f386e40fd9eff85eb7f425}{ars\+\_\+split\+\_\+udp()}}, \mbox{\hyperlink{bpf__dump_8c_acd8665619218212a236e1b773ce3470b}{bpf\+\_\+dump()}}, \mbox{\hyperlink{gencode_8h_ade5e280695cf37e6e6eea9affe27a9cc}{bpf\+\_\+optimize()}}, \mbox{\hyperlink{optimize_8c_a675c6706247a94ad907cc634a7820910}{convert\+\_\+code\+\_\+r()}}, \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{display__ipopt_8c_a1aa67cccb8bf6e80f459c88d7929dc5a}{display\+\_\+ipopt()}}, \mbox{\hyperlink{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}{dump\+\_\+interface\+\_\+list()}}, \mbox{\hyperlink{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}{dump\+\_\+interface\+\_\+list\+\_\+p()}}, \mbox{\hyperlink{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}{dump\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}{gen\+\_\+basepowtable()}}, \mbox{\hyperlink{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}{gen\+\_\+basetable()}}, \mbox{\hyperlink{gentables_8c_a477f4d5497ac89307a6cdc068718e630}{gen\+\_\+bitstable()}}, \mbox{\hyperlink{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}{gen\+\_\+cset()}}, \mbox{\hyperlink{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}{gen\+\_\+rcset()}}, \mbox{\hyperlink{gethostname_8c_aaca32c63740c80e6796dc38aa853ce29}{get\+\_\+hostname()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{getlhs_8c_aaf84b07cf9b335dc1b5230148a3d28f2}{get\+\_\+linkhdr\+\_\+size()}}, \mbox{\hyperlink{waitpacket_8c_a05fdc831f79de0355dbf137f64d42b65}{handle\+\_\+hcmp()}}, \mbox{\hyperlink{waitpacket_8c_a20f566b998cc83ce3dba6c95968ae5b5}{hex\+\_\+dump()}}, \mbox{\hyperlink{waitpacket_8c_a54057a0631275d3190715cabe7d92d11}{human\+\_\+dump()}}, \mbox{\hyperlink{hping2_8h_a45a4f7c51682bdc30a0b32442e36606c}{icmp\+\_\+help()}}, \mbox{\hyperlink{findalldevstest_8c_a4c5dac237ee931a2e60092ae73024ac8}{ifprint()}}, \mbox{\hyperlink{binding_8c_ad28cda14450b7c602003b7621168c2f2}{inc\+\_\+destparm()}}, \mbox{\hyperlink{pcap-dos_8c_a3b89596de37c07644976d22760223140}{init\+\_\+watt32()}}, \mbox{\hyperlink{hping2_8h_a5b8464b2853447505dd03db6812c1e0d}{ip\+\_\+opt\+\_\+build()}}, \mbox{\hyperlink{waitpacket_8c_a17ff5c8f9232e34703f288cf42a8add1}{log\+\_\+icmp\+\_\+addr()}}, \mbox{\hyperlink{hping2_8h_abb5fe16cf551d7bc21e26e5b127a451f}{log\+\_\+icmp\+\_\+timeexc()}}, \mbox{\hyperlink{waitpacket_8c_a5f2ae8f5675f03c10361bb8a1b7d891f}{log\+\_\+icmp\+\_\+ts()}}, \mbox{\hyperlink{hping2_8h_aadd89ae73223c40a0ddaed181dee7db6}{log\+\_\+icmp\+\_\+unreach()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}, \mbox{\hyperlink{byteorder_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}}, \mbox{\hyperlink{optimize_8c_ad664f1145b3994daced3429c2d5e6143}{opt\+\_\+loop()}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{hping2_8h_a6a53f92871b68acc848b9a3f6011da4e}{pcap\+\_\+recv()}}, \mbox{\hyperlink{pktdrvr_8c_a849ff06677b32cef04f54103d2fc403c}{Pkt\+Exit\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}, \mbox{\hyperlink{waitpacket_8c_af149840075919b47789e4c7d95a411f2}{print\+\_\+tcp\+\_\+timestamp()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{waitpacket_8c_a71fa9ecc574ab6b26f3a7c34ad48e179}{recv\+\_\+beep()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}}, \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp()}}, \mbox{\hyperlink{hping2_8h_a60693a8fc79dcfebde5cb9a1345e4422}{route\+\_\+help()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest()}}, \mbox{\hyperlink{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}{select\+\_\+next\+\_\+random\+\_\+source()}}, \mbox{\hyperlink{hping2_8h_a778018b290defb2ea52818225c3169f9}{send\+\_\+icmp()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}, \mbox{\hyperlink{hping2_8h_a7f4517543aca90dd837d76227783ae78}{send\+\_\+ip\+\_\+handler()}}, \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}, \mbox{\hyperlink{hping2_8h_a5ca4ba3ead2e600e7a6bada7396a5e4d}{show\+\_\+usage()}}, \mbox{\hyperlink{hping2_8h_ab66a54d0e499ddbca17b3c87d8d953ab}{show\+\_\+version()}}, \mbox{\hyperlink{hping2_8h_a1e797ac335dd26471f8cbb5582e50a9f}{socket\+\_\+broadcast()}}, \mbox{\hyperlink{hping2_8h_a1b61c2998f5801a7c1395912e883b951}{socket\+\_\+iphdrincl()}}, \mbox{\hyperlink{hping2_8h_af837acd2fbe52aae7403652500875923}{tos\+\_\+help()}}, \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{os-sunos4_8h_ad6eb8da5b318991f44cdd98e20939b7d}\label{os-sunos4_8h_ad6eb8da5b318991f44cdd98e20939b7d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!puts@{puts}}
+\index{puts@{puts}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{puts()}{puts()}}
+{\footnotesize\ttfamily int puts (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{bpf__dump_8c_acd8665619218212a236e1b773ce3470b}{bpf\+\_\+dump()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{os-sunos4_8h_ad6eb8da5b318991f44cdd98e20939b7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a114aeb1751119382aaf3340355b22cfd}\label{os-sunos4_8h_a114aeb1751119382aaf3340355b22cfd}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!random@{random}}
+\index{random@{random}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{random()}{random()}}
+{\footnotesize\ttfamily long random (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a8ef54136f2c190012de45af7c458c49d}\label{os-sunos4_8h_a8ef54136f2c190012de45af7c458c49d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!rcmd@{rcmd}}
+\index{rcmd@{rcmd}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{rcmd()}{rcmd()}}
+{\footnotesize\ttfamily int rcmd (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{,  }\item[{u\+\_\+short}]{,  }\item[{char $\ast$}]{,  }\item[{char $\ast$}]{,  }\item[{char $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}\label{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!read@{read}}
+\index{read@{read}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int read (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}, \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}, \mbox{\hyperlink{pcap-bpf_8c_aa874721bd1c8c314ad22e9a3162ddd89}{pcap\+\_\+read\+\_\+bpf()}}, \mbox{\hyperlink{pcap-nit_8c_a3f4978c58c9585a70ede02c0b12409eb}{pcap\+\_\+read\+\_\+nit()}}, \mbox{\hyperlink{pcap-pf_8c_a598421b7d42b922459c5fc71399212c3}{pcap\+\_\+read\+\_\+pf()}}, \mbox{\hyperlink{pcap-snit_8c_a4120ec73a58b35cd8673a3c417d4b294}{pcap\+\_\+read\+\_\+snit()}}, \mbox{\hyperlink{pcap-snoop_8c_a328efbf9e31adbebeb07671d5a704bf2}{pcap\+\_\+read\+\_\+snoop()}}, \mbox{\hyperlink{pcap-enet_8c_a3fa1952f1268b3fe397e870471b88e75}{readloop()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}{usb\+\_\+read\+\_\+linux()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}{usb\+\_\+stats\+\_\+linux()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_aa569d745c17a5f1e7b5617b97e305606}\label{os-sunos4_8h_aa569d745c17a5f1e7b5617b97e305606}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!readlink@{readlink}}
+\index{readlink@{readlink}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{readlink()}{readlink()}}
+{\footnotesize\ttfamily int readlink (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aacf602ca8b0e7f16583c7263d1af04a0}\label{os-sunos4_8h_aacf602ca8b0e7f16583c7263d1af04a0}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!readv@{readv}}
+\index{readv@{readv}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{readv()}{readv()}}
+{\footnotesize\ttfamily int readv (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct iovec $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}\label{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!recv@{recv}}
+\index{recv@{recv}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{recv()}{recv()}}
+{\footnotesize\ttfamily int recv (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}{acn\+\_\+read\+\_\+n\+\_\+bytes\+\_\+with\+\_\+timeout()}}, \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response()}}, \mbox{\hyperlink{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}{read\+\_\+client\+\_\+data()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a66548453e6802e4e8e99997070888878}{read\+\_\+client\+\_\+nbytes()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a084738d626f8b7b2d9f9cdd4459d59e3}\label{os-sunos4_8h_a084738d626f8b7b2d9f9cdd4459d59e3}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!recvfrom@{recvfrom}}
+\index{recvfrom@{recvfrom}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{recvfrom()}{recvfrom()}}
+{\footnotesize\ttfamily int recvfrom (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{,  }\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_aae0df3027522e0e83021890891cb10ea}{pcap\+\_\+read\+\_\+packet()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a084738d626f8b7b2d9f9cdd4459d59e3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}\label{os-sunos4_8h_a4f8f5f61d31d143fd3c1fc74210053d5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!rename@{rename}}
+\index{rename@{rename}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{rename()}{rename()}}
+{\footnotesize\ttfamily int rename (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a2f4a8d7e0d5184fcd21d06f5f3724517}\label{os-sunos4_8h_a2f4a8d7e0d5184fcd21d06f5f3724517}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!rresvport@{rresvport}}
+\index{rresvport@{rresvport}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{rresvport()}{rresvport()}}
+{\footnotesize\ttfamily int rresvport (\begin{DoxyParamCaption}\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}\label{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!select@{select}}
+\index{select@{select}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily int select (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{fd\+\_\+set $\ast$}]{,  }\item[{fd\+\_\+set $\ast$}]{,  }\item[{fd\+\_\+set $\ast$}]{,  }\item[{struct timeval $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}{acn\+\_\+read\+\_\+n\+\_\+bytes\+\_\+with\+\_\+timeout()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a4842f0d9f5afc151b43714fc31c24db1}\label{os-sunos4_8h_a4842f0d9f5afc151b43714fc31c24db1}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!send@{send}}
+\index{send@{send}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily int send (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a22d891a3f9e5c41cea8f7a992ce7b36d}{pcap\+\_\+inject\+\_\+linux()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a4842f0d9f5afc151b43714fc31c24db1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a89feed6e12b76fb05833a36ea9c5fa9c}\label{os-sunos4_8h_a89feed6e12b76fb05833a36ea9c5fa9c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sendto@{sendto}}
+\index{sendto@{sendto}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sendto()}{sendto()}}
+{\footnotesize\ttfamily int sendto (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{,  }\item[{int}]{,  }\item[{struct sockaddr $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a5503f19bc9c649c307216e54c8d871b0}{ars\+\_\+send()}}, \mbox{\hyperlink{pcap-nit_8c_acc9c18341bb8cfe8892632555d82ce99}{pcap\+\_\+inject\+\_\+nit()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a89feed6e12b76fb05833a36ea9c5fa9c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a4f163149d0e7590ff98d7c8bbd17583d}\label{os-sunos4_8h_a4f163149d0e7590ff98d7c8bbd17583d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setenv@{setenv}}
+\index{setenv@{setenv}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setenv()}{setenv()}}
+{\footnotesize\ttfamily int setenv (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a9692bdc05813ad83377c4f93473fd983}\label{os-sunos4_8h_a9692bdc05813ad83377c4f93473fd983}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!seteuid@{seteuid}}
+\index{seteuid@{seteuid}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{seteuid()}{seteuid()}}
+{\footnotesize\ttfamily int seteuid (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ac9266117049b587709663cd066480eab}\label{os-sunos4_8h_ac9266117049b587709663cd066480eab}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setpgrp@{setpgrp}}
+\index{setpgrp@{setpgrp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setpgrp()}{setpgrp()}}
+{\footnotesize\ttfamily int setpgrp (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aad2c7c19dd4f169abe4404906dfbe204}\label{os-sunos4_8h_aad2c7c19dd4f169abe4404906dfbe204}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setpriority@{setpriority}}
+\index{setpriority@{setpriority}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setpriority()}{setpriority()}}
+{\footnotesize\ttfamily int setpriority (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a015c67a1cd39fb9dc8910ad7d622c6fa}\label{os-sunos4_8h_a015c67a1cd39fb9dc8910ad7d622c6fa}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setpwent@{setpwent}}
+\index{setpwent@{setpwent}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setpwent()}{setpwent()}}
+{\footnotesize\ttfamily void setpwent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a71e19c7ed86aa50a454be029ec62693d}\label{os-sunos4_8h_a71e19c7ed86aa50a454be029ec62693d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setrlimit@{setrlimit}}
+\index{setrlimit@{setrlimit}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setrlimit()}{setrlimit()}}
+{\footnotesize\ttfamily int setrlimit (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct rlimit $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}\label{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setservent@{setservent}}
+\index{setservent@{setservent}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setservent()}{setservent()}}
+{\footnotesize\ttfamily void setservent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_aae749e080afa19f0f459fe71a3671383}{\+\_\+serv\+\_\+stayopen}}, \mbox{\hyperlink{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}{SERVDB}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}\label{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!setsockopt@{setsockopt}}
+\index{setsockopt@{setsockopt}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{setsockopt()}{setsockopt()}}
+{\footnotesize\ttfamily int setsockopt (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_ab3e746464bc134062a22afd8c5526326}{activate\+\_\+new()}}, \mbox{\hyperlink{ars_8c_a1ed1956228553634c4f934947c429d9b}{ars\+\_\+open\+\_\+rawsocket()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}, \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}}, \mbox{\hyperlink{pcap-linux_8c_abf00c7429030bf1c86d04cc53d5fad69}{pcap\+\_\+activate\+\_\+linux()}}, \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}, \mbox{\hyperlink{hping2_8h_a1e797ac335dd26471f8cbb5582e50a9f}{socket\+\_\+broadcast()}} , 以及 \mbox{\hyperlink{hping2_8h_a1b61c2998f5801a7c1395912e883b951}{socket\+\_\+iphdrincl()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a3d0f7782b71851613d36bc556d2c3b51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a540f26e91bc6fc63f4e0fbe0fb8770dc}\label{os-sunos4_8h_a540f26e91bc6fc63f4e0fbe0fb8770dc}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily int shutdown (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a000ce90dde84441f24b23d5641780bdb}\label{os-sunos4_8h_a000ce90dde84441f24b23d5641780bdb}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sigblock@{sigblock}}
+\index{sigblock@{sigblock}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sigblock()}{sigblock()}}
+{\footnotesize\ttfamily int sigblock (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a6164b494c8ed997871d09ba8ad81f04a}\label{os-sunos4_8h_a6164b494c8ed997871d09ba8ad81f04a}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sigpause@{sigpause}}
+\index{sigpause@{sigpause}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sigpause()}{sigpause()}}
+{\footnotesize\ttfamily int sigpause (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a2c4485ec58a1037fecff014aca547457}\label{os-sunos4_8h_a2c4485ec58a1037fecff014aca547457}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sigsetmask@{sigsetmask}}
+\index{sigsetmask@{sigsetmask}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sigsetmask()}{sigsetmask()}}
+{\footnotesize\ttfamily int sigsetmask (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}\label{os-sunos4_8h_a3e8a40f7d14fd9c9b05f271f1ccd8250}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sigvec@{sigvec}}
+\index{sigvec@{sigvec}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sigvec()}{sigvec()}}
+{\footnotesize\ttfamily int sigvec (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct sigvec $\ast$}]{,  }\item[{struct sigvec $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a357a42eb6494ea592e9c3f96c55cebe2}\label{os-sunos4_8h_a357a42eb6494ea592e9c3f96c55cebe2}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{snprintf()}{snprintf()}}
+{\footnotesize\ttfamily int snprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{sz,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}\label{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!socket@{socket}}
+\index{socket@{socket}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{socket()}{socket()}}
+{\footnotesize\ttfamily int socket (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_ab3e746464bc134062a22afd8c5526326}{activate\+\_\+new()}}, \mbox{\hyperlink{pcap-linux_8c_a983baf5089f49a441ec053fb53bad095}{activate\+\_\+old()}}, \mbox{\hyperlink{inet_8c_ab33d156eb14d2b242dc3cf9218a03c81}{add\+\_\+addr\+\_\+to\+\_\+iflist()}}, \mbox{\hyperlink{ars_8c_a1ed1956228553634c4f934947c429d9b}{ars\+\_\+open\+\_\+rawsocket()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}, \mbox{\hyperlink{pcap-bt-linux_8c_af33c1907230627118031bd60e780ca7c}{bt\+\_\+platform\+\_\+finddevs()}}, \mbox{\hyperlink{pcap-can-linux_8c_a17de993776f7d667e7dcd634b6e13f65}{can\+\_\+activate()}}, \mbox{\hyperlink{pcap-bpf_8c_acec2b61b77e0abc5bf6abf636892c94d}{check\+\_\+setif\+\_\+failure()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{getifname_8c_a6ffe51531e5f25f565cd086136d2ae60}{get\+\_\+output\+\_\+if()}}, \mbox{\hyperlink{hping2_8h_aed3d68218fc4ed1b514990fd73dc53f2}{open\+\_\+sockraw()}}, \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{pcap-nit_8c_adce209d0a829695da441dd4463f18ebf}{pcap\+\_\+activate\+\_\+nit()}}, \mbox{\hyperlink{pcap-snoop_8c_afe81ec21835beeddf56717bcc0bb6cda}{pcap\+\_\+activate\+\_\+snoop()}}, \mbox{\hyperlink{pcap-bpf_8c_aaf543ffda3d4ae8bdcbea95316dfbb94}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+bpf()}}, \mbox{\hyperlink{pcap-linux_8c_a75e1cf1f81ff6b6d72480d05a7fcac75}{pcap\+\_\+can\+\_\+set\+\_\+rfmon\+\_\+linux()}}, \mbox{\hyperlink{pcap-bpf_8c_ab1319ab916da18f7a7acf7dba1457010}{pcap\+\_\+cleanup\+\_\+bpf()}}, \mbox{\hyperlink{fad-gifc_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}}, \mbox{\hyperlink{pcap-linux_8c_afb293431bb9ec076f757d3444d875f0f}{scan\+\_\+proc\+\_\+net\+\_\+dev()}} , 以及 \mbox{\hyperlink{pcap-linux_8c_a775e9e3fa61d2f1f0baffb4983bfecc7}{scan\+\_\+sys\+\_\+class\+\_\+net()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ab7c84d52ee3f38110c6d163a4116e891}\label{os-sunos4_8h_ab7c84d52ee3f38110c6d163a4116e891}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!socketpair@{socketpair}}
+\index{socketpair@{socketpair}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{socketpair()}{socketpair()}}
+{\footnotesize\ttfamily int socketpair (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a5b2355fcc8fdb51ee278428da113ebc5}\label{os-sunos4_8h_a5b2355fcc8fdb51ee278428da113ebc5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!srandom@{srandom}}
+\index{srandom@{srandom}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{srandom()}{srandom()}}
+{\footnotesize\ttfamily void srandom (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}\label{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sscanf@{sscanf}}
+\index{sscanf@{sscanf}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sscanf()}{sscanf()}}
+{\footnotesize\ttfamily int sscanf (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_a05e6bdf1ac92a7905e191fa3ffe2dff3}{\+\_\+\+\_\+pcap\+\_\+atodn()}}, \mbox{\hyperlink{pcap-bt-linux_8c_a282ce77bad9faf7c80e7728584e169f6}{bt\+\_\+activate()}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{parseoptions_8c_a46c0aba246cc45db4170945b38724de5}{parse\+\_\+route()}}, \mbox{\hyperlink{nametoaddr_8c_a26f7c4e13c0ebfca657eb9c7614adc53}{pcap\+\_\+nametoportrange()}}, \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest()}}, \mbox{\hyperlink{pcap-snf_8c_ad88721a600440242739f88f5277b6d12}{snf\+\_\+create()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}, \mbox{\hyperlink{pcap-usb-linux_8c_a15687eb86e6e27d6dfc3078cceeac6dc}{usb\+\_\+platform\+\_\+finddevs()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_ac98e9f40ca588800eeef720f4d5b78ec}{usb\+\_\+stats\+\_\+linux()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}\label{os-sunos4_8h_a4f3cc37bc79351b98643c69f33ba8866}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!stat@{stat}}
+\index{stat@{stat}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{stat()}{stat()}}
+{\footnotesize\ttfamily int stat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{struct stat $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}\label{os-sunos4_8h_ac425a0e3897c3c8dccef27448da95016}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!statfs@{statfs}}
+\index{statfs@{statfs}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{statfs()}{statfs()}}
+{\footnotesize\ttfamily int statfs (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{struct statfs $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}\label{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!strcasecmp@{strcasecmp}}
+\index{strcasecmp@{strcasecmp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{strcasecmp()}{strcasecmp()}}
+{\footnotesize\ttfamily int strcasecmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}, \mbox{\hyperlink{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5}{ars\+\_\+d\+\_\+set\+\_\+icmp()}}, \mbox{\hyperlink{apd_8c_aa42e3771840b6b1886e185eea3eb726f}{ars\+\_\+d\+\_\+set\+\_\+igrp()}}, \mbox{\hyperlink{apd_8c_ae3e0e9511e97f031fea20ed24552975a}{ars\+\_\+d\+\_\+set\+\_\+igrpentry()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a79cb39ada52e13dc62e562f610799b04}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+dumb()}}, \mbox{\hyperlink{apd_8c_ad925becd6981030954850920425bdb4c}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+rr()}}, \mbox{\hyperlink{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sec()}}, \mbox{\hyperlink{apd_8c_aa6cd2912002579bb7e642a06b8831d0c}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sid()}}, \mbox{\hyperlink{apd_8c_ac21222ee280708df5d2f27f660904d43}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+ts()}}, \mbox{\hyperlink{apd_8c_a7e1cb905f0466fab2df56c98f0c36923}{ars\+\_\+d\+\_\+set\+\_\+tcp()}}, \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+dumb()}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo()}}, \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss()}}, \mbox{\hyperlink{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+sack()}}, \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale()}}, \mbox{\hyperlink{apd_8c_a72b437229d3db59032ace2158b2a031d}{ars\+\_\+d\+\_\+set\+\_\+udp()}} , 以及 \mbox{\hyperlink{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}{ars\+\_\+get\+\_\+keyword\+\_\+by\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a91ca23db677fbf51663c03060776457d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a40e8f54ca9a5765257eebf9f08516dc4}\label{os-sunos4_8h_a40e8f54ca9a5765257eebf9f08516dc4}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!strerror@{strerror}}
+\index{strerror@{strerror}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{strerror()}{strerror()}}
+{\footnotesize\ttfamily char $\ast$ strerror (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a9393c4cc80a2f50a11a399184915ce0d}\label{os-sunos4_8h_a9393c4cc80a2f50a11a399184915ce0d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!strftime@{strftime}}
+\index{strftime@{strftime}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{strftime()}{strftime()}}
+{\footnotesize\ttfamily int strftime (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{struct tm $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aeb4648578588c0ec23bd2423ae916a2b}\label{os-sunos4_8h_aeb4648578588c0ec23bd2423ae916a2b}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!strncasecmp@{strncasecmp}}
+\index{strncasecmp@{strncasecmp}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{strncasecmp()}{strncasecmp()}}
+{\footnotesize\ttfamily int strncasecmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}\label{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!strtol@{strtol}}
+\index{strtol@{strtol}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{strtol()}{strtol()}}
+{\footnotesize\ttfamily long strtol (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{char $\ast$$\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a9d0317110e0d36def0edeb04ae4b8e74}{linux\+\_\+if\+\_\+drops()}}, \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}} , 以及 \mbox{\hyperlink{pcap-dlpi_8c_aabe71d4675a4854a52d22861db2f174b}{split\+\_\+dname()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_aeb52d1ca2084a65df369e6d8fb082eec}\label{os-sunos4_8h_aeb52d1ca2084a65df369e6d8fb082eec}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!symlink@{symlink}}
+\index{symlink@{symlink}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{symlink()}{symlink()}}
+{\footnotesize\ttfamily int symlink (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ac4fa2e6d36e97983d62b9377cc4f6c73}\label{os-sunos4_8h_ac4fa2e6d36e97983d62b9377cc4f6c73}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!sync@{sync}}
+\index{sync@{sync}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily void sync (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a8fd4d039dfe941b0576bab9cbe3ee4d9}\label{os-sunos4_8h_a8fd4d039dfe941b0576bab9cbe3ee4d9}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!syslog@{syslog}}
+\index{syslog@{syslog}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{syslog()}{syslog()}}
+{\footnotesize\ttfamily void syslog (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const char $\ast$}]{,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}\label{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!system@{system}}
+\index{system@{system}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{system()}{system()}}
+{\footnotesize\ttfamily int system (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_ae00845adf05e73df234246215b9b83fb}\label{os-sunos4_8h_ae00845adf05e73df234246215b9b83fb}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!tell@{tell}}
+\index{tell@{tell}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily long tell (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}\label{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!time@{time}}
+\index{time@{time}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily time\+\_\+t time (\begin{DoxyParamCaption}\item[{time\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{binding_8c_ad28cda14450b7c602003b7621168c2f2}{inc\+\_\+destparm()}}, \mbox{\hyperlink{bin2c_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{sendicmp_8c_a1895ef47376ed349366a917e74bbab6a}{send\+\_\+icmp\+\_\+address()}}, \mbox{\hyperlink{sendicmp_8c_ab7ee2606f9c854ef1d8e12daaa989d0a}{send\+\_\+icmp\+\_\+echo()}}, \mbox{\hyperlink{sendicmp_8c_a783066f0b12bfbc163d93ddc215cb1a2}{send\+\_\+icmp\+\_\+timestamp()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}} , 以及 \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_aae026724f73c36340024c657f4f44dab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}\label{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!timezone@{timezone}}
+\index{timezone@{timezone}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{timezone()}{timezone()}}
+{\footnotesize\ttfamily char $\ast$ timezone (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}\label{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!tolower@{tolower}}
+\index{tolower@{tolower}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{tolower()}{tolower()}}
+{\footnotesize\ttfamily int tolower (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_a50f9246b180d1423593a5219375ec590_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ab6182394c667c4e4426f98af3309c30d}\label{os-sunos4_8h_ab6182394c667c4e4426f98af3309c30d}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!toupper@{toupper}}
+\index{toupper@{toupper}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{toupper()}{toupper()}}
+{\footnotesize\ttfamily int toupper (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a706cc4461aa1e45a95fc514fec810109}\label{os-sunos4_8h_a706cc4461aa1e45a95fc514fec810109}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!truncate@{truncate}}
+\index{truncate@{truncate}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{truncate()}{truncate()}}
+{\footnotesize\ttfamily int truncate (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{off\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a9963c80816ceddf2dfd74d15e1e27bf7}\label{os-sunos4_8h_a9963c80816ceddf2dfd74d15e1e27bf7}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!unsetenv@{unsetenv}}
+\index{unsetenv@{unsetenv}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{unsetenv()}{unsetenv()}}
+{\footnotesize\ttfamily void unsetenv (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aaa0305cfa0bfcfe2ec3d7b11870bf06c}\label{os-sunos4_8h_aaa0305cfa0bfcfe2ec3d7b11870bf06c}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!utimes@{utimes}}
+\index{utimes@{utimes}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{utimes()}{utimes()}}
+{\footnotesize\ttfamily int utimes (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{struct timeval $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_aba5b3043c04ae3bf7073855e18e24d9a}\label{os-sunos4_8h_aba5b3043c04ae3bf7073855e18e24d9a}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!vfork@{vfork}}
+\index{vfork@{vfork}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{vfork()}{vfork()}}
+{\footnotesize\ttfamily int vfork (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}\label{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!vsprintf@{vsprintf}}
+\index{vsprintf@{vsprintf}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{vsprintf()}{vsprintf()}}
+{\footnotesize\ttfamily int vsprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9}\label{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!wait@{wait}}
+\index{wait@{wait}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily int wait (\begin{DoxyParamCaption}\item[{int $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a64b8a4baa7c2b1982dfced7fee4b5700}{pcap\+\_\+set\+\_\+wait()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{os-sunos4_8h_ac0a9ba3c0c7a3e7e4f5b7e6122ef75c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a8f43719213946449cf4d1a00babeb514}\label{os-sunos4_8h_a8f43719213946449cf4d1a00babeb514}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!wait3@{wait3}}
+\index{wait3@{wait3}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{wait3()}{wait3()}}
+{\footnotesize\ttfamily pid\+\_\+t wait3 (\begin{DoxyParamCaption}\item[{int $\ast$}]{,  }\item[{int}]{,  }\item[{struct rusage $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-sunos4_8h_acd05dd935a081148178734b4930031d5}\label{os-sunos4_8h_acd05dd935a081148178734b4930031d5}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!write@{write}}
+\index{write@{write}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily int write (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{pcap-bpf_8c_a02d1840e95ee2e631cefc19826229c67}{pcap\+\_\+inject\+\_\+bpf()}}, \mbox{\hyperlink{pcap-dlpi_8c_a9f54a77c575718a339fd97348e59a604}{pcap\+\_\+inject\+\_\+dlpi()}}, \mbox{\hyperlink{pcap-pf_8c_a7b102af5c78801a3aa15e6136aa8cfb1}{pcap\+\_\+inject\+\_\+pf()}}, \mbox{\hyperlink{pcap-snoop_8c_a6c62bbc854d75d462f7b65ad33824336}{pcap\+\_\+inject\+\_\+snoop()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os-sunos4_8h_acd05dd935a081148178734b4930031d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{os-sunos4_8h_a38c23b0b20ef0f2eebe06f770df5eb48}\label{os-sunos4_8h_a38c23b0b20ef0f2eebe06f770df5eb48}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!writev@{writev}}
+\index{writev@{writev}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{writev()}{writev()}}
+{\footnotesize\ttfamily int writev (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{struct iovec $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}\label{os-sunos4_8h_a6fc82cd60ac4b31003cf10983a4d5cde}} 
+\index{os-\/sunos4.h@{os-\/sunos4.h}!signal@{signal}}
+\index{signal@{signal}!os-\/sunos4.h@{os-\/sunos4.h}}
+\doxysubsubsection{\texorpdfstring{signal}{signal}}
+{\footnotesize\ttfamily void($\ast$)(int) signal(int, void($\ast$)(int)) (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{void($\ast$)(int)}]{ }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{binding_8c_ad28cda14450b7c602003b7621168c2f2}{inc\+\_\+destparm()}}.
+

@@ -1,0 +1,135 @@
+\hypertarget{sll_8h_source}{}\doxysection{sll.\+h}
+\label{sll_8h_source}\index{libpcap-\/1.1.1/pcap/sll.h@{libpcap-\/1.1.1/pcap/sll.h}}
+\mbox{\hyperlink{sll_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * This code is derived from the Stanford/CMU enet packet filter,}}
+\DoxyCodeLine{6 \textcolor{comment}{ * (net/enet.c) distributed as part of 4.3BSD, and code contributed}}
+\DoxyCodeLine{7 \textcolor{comment}{ * to Berkeley by Steven McCanne and Van Jacobson both of Lawrence}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Berkeley Laboratory.}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{11 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{12 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{15 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{16 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{17 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{18 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{20 \textcolor{comment}{ *      This product includes software developed by the University of}}
+\DoxyCodeLine{21 \textcolor{comment}{ *      California, Berkeley and its contributors.}}
+\DoxyCodeLine{22 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{23 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{24 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{27 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{28 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{29 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{30 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{31 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{32 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{33 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{34 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{35 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{36 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{37 \textcolor{comment}{ *}}
+\DoxyCodeLine{38 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/sll.h,v 1.3 2008-\/05-\/30 01:35:33 guy Exp \$ (LBL)}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/*}}
+\DoxyCodeLine{42 \textcolor{comment}{ * For captures on Linux cooked sockets, we construct a fake header}}
+\DoxyCodeLine{43 \textcolor{comment}{ * that includes:}}
+\DoxyCodeLine{44 \textcolor{comment}{ *}}
+\DoxyCodeLine{45 \textcolor{comment}{ *  a 2-\/byte "{}packet type"{} which is one of:}}
+\DoxyCodeLine{46 \textcolor{comment}{ *}}
+\DoxyCodeLine{47 \textcolor{comment}{ *      LINUX\_SLL\_HOST      packet was sent to us}}
+\DoxyCodeLine{48 \textcolor{comment}{ *      LINUX\_SLL\_BROADCAST packet was broadcast}}
+\DoxyCodeLine{49 \textcolor{comment}{ *      LINUX\_SLL\_MULTICAST packet was multicast}}
+\DoxyCodeLine{50 \textcolor{comment}{ *      LINUX\_SLL\_OTHERHOST packet was sent to somebody else}}
+\DoxyCodeLine{51 \textcolor{comment}{ *      LINUX\_SLL\_OUTGOING  packet was sent *by* us;}}
+\DoxyCodeLine{52 \textcolor{comment}{ *}}
+\DoxyCodeLine{53 \textcolor{comment}{ *  a 2-\/byte Ethernet protocol field;}}
+\DoxyCodeLine{54 \textcolor{comment}{ *}}
+\DoxyCodeLine{55 \textcolor{comment}{ *  a 2-\/byte link-\/layer type;}}
+\DoxyCodeLine{56 \textcolor{comment}{ *}}
+\DoxyCodeLine{57 \textcolor{comment}{ *  a 2-\/byte link-\/layer address length;}}
+\DoxyCodeLine{58 \textcolor{comment}{ *}}
+\DoxyCodeLine{59 \textcolor{comment}{ *  an 8-\/byte source link-\/layer address, whose actual length is}}
+\DoxyCodeLine{60 \textcolor{comment}{ *  specified by the previous value.}}
+\DoxyCodeLine{61 \textcolor{comment}{ *}}
+\DoxyCodeLine{62 \textcolor{comment}{ * All fields except for the link-\/layer address are in network byte order.}}
+\DoxyCodeLine{63 \textcolor{comment}{ *}}
+\DoxyCodeLine{64 \textcolor{comment}{ * DO NOT change the layout of this structure, or change any of the}}
+\DoxyCodeLine{65 \textcolor{comment}{ * LINUX\_SLL\_ values below.  If you must change the link-\/layer header}}
+\DoxyCodeLine{66 \textcolor{comment}{ * for a "{}cooked"{} Linux capture, introduce a new DLT\_ type (ask}}
+\DoxyCodeLine{67 \textcolor{comment}{ * "{}tcpdump-\/workers@lists.tcpdump.org"{} for one, so that you don't give it}}
+\DoxyCodeLine{68 \textcolor{comment}{ * a value that collides with a value already being used), and use the}}
+\DoxyCodeLine{69 \textcolor{comment}{ * new header in captures of that type, so that programs that can}}
+\DoxyCodeLine{70 \textcolor{comment}{ * handle DLT\_LINUX\_SLL captures will continue to handle them correctly}}
+\DoxyCodeLine{71 \textcolor{comment}{ * without any change, and so that capture files with different headers}}
+\DoxyCodeLine{72 \textcolor{comment}{ * can be told apart and programs that read them can dissect the}}
+\DoxyCodeLine{73 \textcolor{comment}{ * packets in them.}}
+\DoxyCodeLine{74 \textcolor{comment}{ */}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifndef lib\_pcap\_sll\_h}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define lib\_pcap\_sll\_h}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{/*}}
+\DoxyCodeLine{80 \textcolor{comment}{ * A DLT\_LINUX\_SLL fake link-\/layer header.}}
+\DoxyCodeLine{81 \textcolor{comment}{ */}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define SLL\_HDR\_LEN 16      }\textcolor{comment}{/* total header length */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define SLL\_ADDRLEN 8       }\textcolor{comment}{/* length of address field */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{struct }\mbox{\hyperlink{structsll__header}{sll\_header}} \{}
+\DoxyCodeLine{86     u\_int16\_t \mbox{\hyperlink{structsll__header_a3e472d5ead18d88c1172b6b1de35fbf9}{sll\_pkttype}};       \textcolor{comment}{/* packet type */}}
+\DoxyCodeLine{87     u\_int16\_t \mbox{\hyperlink{structsll__header_af460dd96bb3338c7aae88f10f765d24f}{sll\_hatype}};     \textcolor{comment}{/* link-\/layer address type */}}
+\DoxyCodeLine{88     u\_int16\_t \mbox{\hyperlink{structsll__header_ae3355652cca43fb7ac4d74b3297a3d4d}{sll\_halen}};       \textcolor{comment}{/* link-\/layer address length */}}
+\DoxyCodeLine{89     u\_int8\_t \mbox{\hyperlink{structsll__header_aefba1369c3844825523c93649e1123f2}{sll\_addr}}[\mbox{\hyperlink{sll_8h_aa9d4dab8f22850b820ad7de1662981af}{SLL\_ADDRLEN}}];  \textcolor{comment}{/* link-\/layer address */}}
+\DoxyCodeLine{90     u\_int16\_t \mbox{\hyperlink{structsll__header_a74085125ed6c7f45974b2cefe087a872}{sll\_protocol}};     \textcolor{comment}{/* protocol */}}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/*}}
+\DoxyCodeLine{94 \textcolor{comment}{ * The LINUX\_SLL\_ values for "{}sll\_pkttype"{}; these correspond to the}}
+\DoxyCodeLine{95 \textcolor{comment}{ * PACKET\_ values on Linux, but are defined here so that they're}}
+\DoxyCodeLine{96 \textcolor{comment}{ * available even on systems other than Linux, and so that they}}
+\DoxyCodeLine{97 \textcolor{comment}{ * don't change even if the PACKET\_ values change.}}
+\DoxyCodeLine{98 \textcolor{comment}{ */}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define LINUX\_SLL\_HOST      0}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define LINUX\_SLL\_BROADCAST 1}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define LINUX\_SLL\_MULTICAST 2}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define LINUX\_SLL\_OTHERHOST 3}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define LINUX\_SLL\_OUTGOING  4}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/*}}
+\DoxyCodeLine{106 \textcolor{comment}{ * The LINUX\_SLL\_ values for "{}sll\_protocol"{}; these correspond to the}}
+\DoxyCodeLine{107 \textcolor{comment}{ * ETH\_P\_ values on Linux, but are defined here so that they're}}
+\DoxyCodeLine{108 \textcolor{comment}{ * available even on systems other than Linux.  We assume, for now,}}
+\DoxyCodeLine{109 \textcolor{comment}{ * that the ETH\_P\_ values won't change in Linux; if they do, then:}}
+\DoxyCodeLine{110 \textcolor{comment}{ *}}
+\DoxyCodeLine{111 \textcolor{comment}{ *  if we don't translate them in "{}pcap-\/linux.c"{}, capture files}}
+\DoxyCodeLine{112 \textcolor{comment}{ *  won't necessarily be readable if captured on a system that}}
+\DoxyCodeLine{113 \textcolor{comment}{ *  defines ETH\_P\_ values that don't match these values;}}
+\DoxyCodeLine{114 \textcolor{comment}{ *}}
+\DoxyCodeLine{115 \textcolor{comment}{ *  if we do translate them in "{}pcap-\/linux.c"{}, that makes life}}
+\DoxyCodeLine{116 \textcolor{comment}{ *  unpleasant for the BPF code generator, as the values you test}}
+\DoxyCodeLine{117 \textcolor{comment}{ *  for in the kernel aren't the values that you test for when}}
+\DoxyCodeLine{118 \textcolor{comment}{ *  reading a capture file, so the fixup code run on BPF programs}}
+\DoxyCodeLine{119 \textcolor{comment}{ *  handed to the kernel ends up having to do more work.}}
+\DoxyCodeLine{120 \textcolor{comment}{ *}}
+\DoxyCodeLine{121 \textcolor{comment}{ * Add other values here as necessary, for handling packet types that}}
+\DoxyCodeLine{122 \textcolor{comment}{ * might show up on non-\/Ethernet, non-\/802.x networks.  (Not all the ones}}
+\DoxyCodeLine{123 \textcolor{comment}{ * in the Linux "{}if\_ether.h"{} will, I suspect, actually show up in}}
+\DoxyCodeLine{124 \textcolor{comment}{ * captures.)}}
+\DoxyCodeLine{125 \textcolor{comment}{ */}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define LINUX\_SLL\_P\_802\_3   0x0001  }\textcolor{comment}{/* Novell 802.3 frames without 802.2 LLC header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define LINUX\_SLL\_P\_802\_2   0x0004  }\textcolor{comment}{/* 802.2 frames (not D/I/X Ethernet) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

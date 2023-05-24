@@ -1,0 +1,120 @@
+\hypertarget{send_8c}{}\doxysection{send.\+c 文件参考}
+\label{send_8c}\index{send.c@{send.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+send.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}{select\+\_\+next\+\_\+random\+\_\+source}} (void)
+\item 
+static void \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest}} (void)
+\item 
+void \mbox{\hyperlink{send_8c_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet}} (int signal\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}\label{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}} 
+\index{send.c@{send.c}!select\_next\_random\_dest@{select\_next\_random\_dest}}
+\index{select\_next\_random\_dest@{select\_next\_random\_dest}!send.c@{send.c}}
+\doxysubsubsection{\texorpdfstring{select\_next\_random\_dest()}{select\_next\_random\_dest()}}
+{\footnotesize\ttfamily static void select\+\_\+next\+\_\+random\+\_\+dest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand()}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{globals_8h_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}} , 以及 \mbox{\hyperlink{globals_8h_ae9abba9190a6034a481b0d9321642e18}{targetname}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}\label{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}} 
+\index{send.c@{send.c}!select\_next\_random\_source@{select\_next\_random\_source}}
+\index{select\_next\_random\_source@{select\_next\_random\_source}!send.c@{send.c}}
+\doxysubsubsection{\texorpdfstring{select\_next\_random\_source()}{select\_next\_random\_source()}}
+{\footnotesize\ttfamily static void select\+\_\+next\+\_\+random\+\_\+source (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand()}}, \mbox{\hyperlink{globals_8h_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{send_8c_ad57d328977c476c9325b74a2f95019d9}\label{send_8c_ad57d328977c476c9325b74a2f95019d9}} 
+\index{send.c@{send.c}!send\_packet@{send\_packet}}
+\index{send\_packet@{send\_packet}!send.c@{send.c}}
+\doxysubsubsection{\texorpdfstring{send\_packet()}{send\_packet()}}
+{\footnotesize\ttfamily void send\+\_\+packet (\begin{DoxyParamCaption}\item[{int}]{signal\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{hping2_8h_a5e9194c44375c703d4fa3effbefee2d8}{COUNTREACHED\+\_\+\+TIMEOUT}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{globals_8h_a590a0ee97a08e5687390742d730a4695}{opt\+\_\+icmpmode}}, \mbox{\hyperlink{globals_8h_ae9439861ce4c9d4aac2eaa1ab5f709ee}{opt\+\_\+listenmode}}, \mbox{\hyperlink{globals_8h_ab38f32bb8dd18bca53ddb3db3d853952}{opt\+\_\+rand\+\_\+dest}}, \mbox{\hyperlink{globals_8h_aad551c4bf388639cfdeb5ff979f18675}{opt\+\_\+rand\+\_\+source}}, \mbox{\hyperlink{globals_8h_af96cc2ab9bdc36c4832e315e1fb0f27d}{opt\+\_\+rawipmode}}, \mbox{\hyperlink{globals_8h_a829a520a76fb048736c250eff24e85e9}{opt\+\_\+udpmode}}, \mbox{\hyperlink{globals_8h_aa5ceab431a08f1b4eb39510becbf8d97}{opt\+\_\+waitinusec}}, \mbox{\hyperlink{hping2_8h_a6578ac428fac8022b788f3b58499ba81}{print\+\_\+statistics()}}, \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest()}}, \mbox{\hyperlink{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}{select\+\_\+next\+\_\+random\+\_\+source()}}, \mbox{\hyperlink{hping2_8h_a778018b290defb2ea52818225c3169f9}{send\+\_\+icmp()}}, \mbox{\hyperlink{send_8c_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}, \mbox{\hyperlink{hping2_8h_a78a83d8c35164efd189a6d3584ba5537}{send\+\_\+rawip()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}}, \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}}, \mbox{\hyperlink{globals_8h_a3a412ae544cb411a594a6439b0e9402f}{sending\+\_\+wait}}, \mbox{\hyperlink{globals_8h_a09cb00fd8967ae97f149e1fa8efb664c}{sent\+\_\+pkt}}, \mbox{\hyperlink{hping2_8h_a16afeb753915856e50a8bcaeb1345c42}{Signal}} , 以及 \mbox{\hyperlink{globals_8h_a179df26f82a603e41f4c556e7a206dcf}{usec\+\_\+delay}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} , 以及 \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{send_8c_ad57d328977c476c9325b74a2f95019d9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{send_8c_ad57d328977c476c9325b74a2f95019d9_icgraph}
+\end{center}
+\end{figure}

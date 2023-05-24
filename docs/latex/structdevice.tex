@@ -1,0 +1,262 @@
+\hypertarget{structdevice}{}\doxysection{device结构体 参考}
+\label{structdevice}\index{device@{device}}
+
+
+{\ttfamily \#include $<$pcap-\/dos.\+h$>$}
+
+
+
+device 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{structdevice__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{structdevice_a8f8f80d37794cde9472343e4487ba3eb}{name}}
+\item 
+const char $\ast$ \mbox{\hyperlink{structdevice_a4c33c7528c496ba2624340a9f3b561d3}{long\+\_\+name}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structdevice_a5887f13be098ab68b731f53b4a764b75}{base\+\_\+addr}}
+\item 
+int \mbox{\hyperlink{structdevice_aea22ec27eb52d3e0d744184067cbca3a}{irq}}
+\item 
+int \mbox{\hyperlink{structdevice_aeda5492e885c290734bd00220b7df52e}{dma}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structdevice_a2fb64a985825b1c20768f4e30913e64a}{mem\+\_\+start}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structdevice_a84494514d50af98afa7351a6f43c97b6}{mem\+\_\+end}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structdevice_a2cd2b779f8cf7251464e26a100dfeb83}{rmem\+\_\+start}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structdevice_a048ffec2fd2f237a4823b4b05f2b737d}{rmem\+\_\+end}}
+\item 
+struct \mbox{\hyperlink{structdevice}{device}} $\ast$ \mbox{\hyperlink{structdevice_a37f558b4fc81c233fc9745ffa9fdf856}{next}}
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_ac96336806bad2ffec214e7fb691f57a1}{probe}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_adaf94dd8c4c0be5a085ac4336df2c0ba}{open}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)
+\item 
+void($\ast$ \mbox{\hyperlink{structdevice_aef42d65e64abd60a8c85d438a4e4498d}{close}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_a12d350d6cc9db5ed39e20cb861dd3a1d}{xmit}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev, const void $\ast$buf, int len)
+\item 
+void $\ast$($\ast$ \mbox{\hyperlink{structdevice_a1f65a7dbfc1caabbcc78f1215a2f3715}{get\+\_\+stats}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)
+\item 
+void($\ast$ \mbox{\hyperlink{structdevice_a9a5c3ec9aeb1ee9c1486dedf9b20c39d}{set\+\_\+multicast\+\_\+list}} )(struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_a3e1a911cb3ab2824a8aa963265b840ea}{copy\+\_\+rx\+\_\+buf}} )(\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$buf, int \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}})
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$($\ast$ \mbox{\hyperlink{structdevice_a82ae246b4be1bc109ea157a8e1774aba}{get\+\_\+rx\+\_\+buf}} )(int len)
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_a7f49c4d9124f80d17e97b56079e43d19}{peek\+\_\+rx\+\_\+buf}} )(\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$$\ast$buf)
+\item 
+int($\ast$ \mbox{\hyperlink{structdevice_a85c2eb971c6c7ba302478faf82f3b1ae}{release\+\_\+rx\+\_\+buf}} )(\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$buf)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{structdevice_aa5250ff1f63a5d1730bc299c7a96b6af}{flags}}
+\item 
+void $\ast$ \mbox{\hyperlink{structdevice_a8b6505c37d4ff95854b8b00527e4d9fa}{priv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structdevice_a5887f13be098ab68b731f53b4a764b75}\label{structdevice_a5887f13be098ab68b731f53b4a764b75}} 
+\index{device@{device}!base\_addr@{base\_addr}}
+\index{base\_addr@{base\_addr}!device@{device}}
+\doxysubsubsection{\texorpdfstring{base\_addr}{base\_addr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} base\+\_\+addr}
+
+\mbox{\Hypertarget{structdevice_aef42d65e64abd60a8c85d438a4e4498d}\label{structdevice_aef42d65e64abd60a8c85d438a4e4498d}} 
+\index{device@{device}!close@{close}}
+\index{close@{close}!device@{device}}
+\doxysubsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily void($\ast$ close) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_ab2e3e511f2294360812433e148d8c271}{close\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_a3e1a911cb3ab2824a8aa963265b840ea}\label{structdevice_a3e1a911cb3ab2824a8aa963265b840ea}} 
+\index{device@{device}!copy\_rx\_buf@{copy\_rx\_buf}}
+\index{copy\_rx\_buf@{copy\_rx\_buf}!device@{device}}
+\doxysubsubsection{\texorpdfstring{copy\_rx\_buf}{copy\_rx\_buf}}
+{\footnotesize\ttfamily int($\ast$ copy\+\_\+rx\+\_\+buf) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$buf, int \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_aec6cd3bef19d4fe22e546386b2aee1c5}{first\+\_\+init()}}, \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a22756b39ec035bc508bd91700ee3d110}{pcap\+\_\+read\+\_\+one()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_aeda5492e885c290734bd00220b7df52e}\label{structdevice_aeda5492e885c290734bd00220b7df52e}} 
+\index{device@{device}!dma@{dma}}
+\index{dma@{dma}!device@{device}}
+\doxysubsubsection{\texorpdfstring{dma}{dma}}
+{\footnotesize\ttfamily int dma}
+
+\mbox{\Hypertarget{structdevice_aa5250ff1f63a5d1730bc299c7a96b6af}\label{structdevice_aa5250ff1f63a5d1730bc299c7a96b6af}} 
+\index{device@{device}!flags@{flags}}
+\index{flags@{flags}!device@{device}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} flags}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_afc2364b62d73a8a88202f0f5d092eb89}{ndis\+\_\+open()}}, \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a6e083a82cc8c3606f437c4340e5f1806}{pkt\+\_\+open()}}.
+
+\mbox{\Hypertarget{structdevice_a82ae246b4be1bc109ea157a8e1774aba}\label{structdevice_a82ae246b4be1bc109ea157a8e1774aba}} 
+\index{device@{device}!get\_rx\_buf@{get\_rx\_buf}}
+\index{get\_rx\_buf@{get\_rx\_buf}!device@{device}}
+\doxysubsubsection{\texorpdfstring{get\_rx\_buf}{get\_rx\_buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$($\ast$ get\+\_\+rx\+\_\+buf) (int len)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_aec6cd3bef19d4fe22e546386b2aee1c5}{first\+\_\+init()}}, \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_a1f65a7dbfc1caabbcc78f1215a2f3715}\label{structdevice_a1f65a7dbfc1caabbcc78f1215a2f3715}} 
+\index{device@{device}!get\_stats@{get\_stats}}
+\index{get\_stats@{get\_stats}!device@{device}}
+\doxysubsubsection{\texorpdfstring{get\_stats}{get\_stats}}
+{\footnotesize\ttfamily void $\ast$($\ast$ get\+\_\+stats) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_ad8419173ac3c79e4d8d00dbc7a86c255}{pcap\+\_\+stats\+\_\+dos()}}, \mbox{\hyperlink{pcap-dos_8c_a22886ae6ac68b6c519e155d1c5275ebb}{pcap\+\_\+stats\+\_\+ex()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_aea22ec27eb52d3e0d744184067cbca3a}\label{structdevice_aea22ec27eb52d3e0d744184067cbca3a}} 
+\index{device@{device}!irq@{irq}}
+\index{irq@{irq}!device@{device}}
+\doxysubsubsection{\texorpdfstring{irq}{irq}}
+{\footnotesize\ttfamily int irq}
+
+\mbox{\Hypertarget{structdevice_a4c33c7528c496ba2624340a9f3b561d3}\label{structdevice_a4c33c7528c496ba2624340a9f3b561d3}} 
+\index{device@{device}!long\_name@{long\_name}}
+\index{long\_name@{long\_name}!device@{device}}
+\doxysubsubsection{\texorpdfstring{long\_name}{long\_name}}
+{\footnotesize\ttfamily const char$\ast$ long\+\_\+name}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}.
+
+\mbox{\Hypertarget{structdevice_a84494514d50af98afa7351a6f43c97b6}\label{structdevice_a84494514d50af98afa7351a6f43c97b6}} 
+\index{device@{device}!mem\_end@{mem\_end}}
+\index{mem\_end@{mem\_end}!device@{device}}
+\doxysubsubsection{\texorpdfstring{mem\_end}{mem\_end}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} mem\+\_\+end}
+
+\mbox{\Hypertarget{structdevice_a2fb64a985825b1c20768f4e30913e64a}\label{structdevice_a2fb64a985825b1c20768f4e30913e64a}} 
+\index{device@{device}!mem\_start@{mem\_start}}
+\index{mem\_start@{mem\_start}!device@{device}}
+\doxysubsubsection{\texorpdfstring{mem\_start}{mem\_start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} mem\+\_\+start}
+
+\mbox{\Hypertarget{structdevice_a8f8f80d37794cde9472343e4487ba3eb}\label{structdevice_a8f8f80d37794cde9472343e4487ba3eb}} 
+\index{device@{device}!name@{name}}
+\index{name@{name}!device@{device}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char$\ast$ name}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_aec6cd3bef19d4fe22e546386b2aee1c5}{first\+\_\+init()}}, \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_ada98e95bb2fbda9dfa5bdebc208ae1ac}{pcap\+\_\+activate\+\_\+dos()}}, \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{inet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191}{pcap\+\_\+lookupdev()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a22886ae6ac68b6c519e155d1c5275ebb}{pcap\+\_\+stats\+\_\+ex()}}.
+
+\mbox{\Hypertarget{structdevice_a37f558b4fc81c233fc9745ffa9fdf856}\label{structdevice_a37f558b4fc81c233fc9745ffa9fdf856}} 
+\index{device@{device}!next@{next}}
+\index{next@{next}!device@{device}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdevice}{device}}$\ast$ next}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_aa6eef9a21d83e73353d8001bb9b2686f}{pcap\+\_\+lookupdev()}}.
+
+\mbox{\Hypertarget{structdevice_adaf94dd8c4c0be5a085ac4336df2c0ba}\label{structdevice_adaf94dd8c4c0be5a085ac4336df2c0ba}} 
+\index{device@{device}!open@{open}}
+\index{open@{open}!device@{device}}
+\doxysubsubsection{\texorpdfstring{open}{open}}
+{\footnotesize\ttfamily int($\ast$ open) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_a7f49c4d9124f80d17e97b56079e43d19}\label{structdevice_a7f49c4d9124f80d17e97b56079e43d19}} 
+\index{device@{device}!peek\_rx\_buf@{peek\_rx\_buf}}
+\index{peek\_rx\_buf@{peek\_rx\_buf}!device@{device}}
+\doxysubsubsection{\texorpdfstring{peek\_rx\_buf}{peek\_rx\_buf}}
+{\footnotesize\ttfamily int($\ast$ peek\+\_\+rx\+\_\+buf) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$$\ast$buf)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_aec6cd3bef19d4fe22e546386b2aee1c5}{first\+\_\+init()}}, \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a22756b39ec035bc508bd91700ee3d110}{pcap\+\_\+read\+\_\+one()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_a8b6505c37d4ff95854b8b00527e4d9fa}\label{structdevice_a8b6505c37d4ff95854b8b00527e4d9fa}} 
+\index{device@{device}!priv@{priv}}
+\index{priv@{priv}!device@{device}}
+\doxysubsubsection{\texorpdfstring{priv}{priv}}
+{\footnotesize\ttfamily void$\ast$ priv}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a85c9278df2ce935980c76f85c233d708}{pkt\+\_\+close()}}, \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a87136d2b7291dd38e8b784c10c96d7eb}{pkt\+\_\+stats()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_af1c55f88c466277a54e8e5d34804547a}{pkt\+\_\+xmit()}}.
+
+\mbox{\Hypertarget{structdevice_ac96336806bad2ffec214e7fb691f57a1}\label{structdevice_ac96336806bad2ffec214e7fb691f57a1}} 
+\index{device@{device}!probe@{probe}}
+\index{probe@{probe}!device@{device}}
+\doxysubsubsection{\texorpdfstring{probe}{probe}}
+{\footnotesize\ttfamily int($\ast$ probe) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_aa6eef9a21d83e73353d8001bb9b2686f}{pcap\+\_\+lookupdev()}}.
+
+\mbox{\Hypertarget{structdevice_a85c2eb971c6c7ba302478faf82f3b1ae}\label{structdevice_a85c2eb971c6c7ba302478faf82f3b1ae}} 
+\index{device@{device}!release\_rx\_buf@{release\_rx\_buf}}
+\index{release\_rx\_buf@{release\_rx\_buf}!device@{device}}
+\doxysubsubsection{\texorpdfstring{release\_rx\_buf}{release\_rx\_buf}}
+{\footnotesize\ttfamily int($\ast$ release\+\_\+rx\+\_\+buf) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$buf)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_aec6cd3bef19d4fe22e546386b2aee1c5}{first\+\_\+init()}}, \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_a22756b39ec035bc508bd91700ee3d110}{pcap\+\_\+read\+\_\+one()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+\mbox{\Hypertarget{structdevice_a048ffec2fd2f237a4823b4b05f2b737d}\label{structdevice_a048ffec2fd2f237a4823b4b05f2b737d}} 
+\index{device@{device}!rmem\_end@{rmem\_end}}
+\index{rmem\_end@{rmem\_end}!device@{device}}
+\doxysubsubsection{\texorpdfstring{rmem\_end}{rmem\_end}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} rmem\+\_\+end}
+
+\mbox{\Hypertarget{structdevice_a2cd2b779f8cf7251464e26a100dfeb83}\label{structdevice_a2cd2b779f8cf7251464e26a100dfeb83}} 
+\index{device@{device}!rmem\_start@{rmem\_start}}
+\index{rmem\_start@{rmem\_start}!device@{device}}
+\doxysubsubsection{\texorpdfstring{rmem\_start}{rmem\_start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} rmem\+\_\+start}
+
+\mbox{\Hypertarget{structdevice_a9a5c3ec9aeb1ee9c1486dedf9b20c39d}\label{structdevice_a9a5c3ec9aeb1ee9c1486dedf9b20c39d}} 
+\index{device@{device}!set\_multicast\_list@{set\_multicast\_list}}
+\index{set\_multicast\_list@{set\_multicast\_list}!device@{device}}
+\doxysubsubsection{\texorpdfstring{set\_multicast\_list}{set\_multicast\_list}}
+{\footnotesize\ttfamily void($\ast$ set\+\_\+multicast\+\_\+list) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}.
+
+\mbox{\Hypertarget{structdevice_a12d350d6cc9db5ed39e20cb861dd3a1d}\label{structdevice_a12d350d6cc9db5ed39e20cb861dd3a1d}} 
+\index{device@{device}!xmit@{xmit}}
+\index{xmit@{xmit}!device@{device}}
+\doxysubsubsection{\texorpdfstring{xmit}{xmit}}
+{\footnotesize\ttfamily int($\ast$ xmit) (struct \mbox{\hyperlink{structdevice}{device}} $\ast$dev, const void $\ast$buf, int len)}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a5ced1e51dc22e99bd60aeff9484687d1}{ndis\+\_\+probe()}}, \mbox{\hyperlink{pcap-dos_8c_aa1c4d25ec98e79b75e025ea251de5763}{pcap\+\_\+sendpacket\+\_\+dos()}} , 以及 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\mbox{\hyperlink{pcap-dos_8h}{pcap-\/dos.\+h}}\end{DoxyCompactItemize}

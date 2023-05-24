@@ -1,0 +1,177 @@
+\hypertarget{filtertest_8c}{}\doxysection{libpcap-\/1.1.1/filtertest.c 文件参考}
+\label{filtertest_8c}\index{libpcap-\/1.1.1/filtertest.c@{libpcap-\/1.1.1/filtertest.c}}
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+filtertest.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filtertest_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{filtertest_8c_a9d373a9b65ff25b2db84c07394e1c212}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}(x)
+\item 
+\#define \mbox{\hyperlink{filtertest_8c_a36fa9b2e726512bc17a7a6d3e39002be}{O\+\_\+\+BINARY}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{filtertest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}{usage}} (void)
+\item 
+static void \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} (const char $\ast$fmt,...)
+\item 
+static char $\ast$ \mbox{\hyperlink{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv}} (register char $\ast$$\ast$argv)
+\item 
+int \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char \mbox{\hyperlink{selpolltest_8c_a2dd5f713078a5183481aa95a74b706a8}{copyright}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{filtertest_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+static char $\ast$ \mbox{\hyperlink{filtertest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{filtertest_8c_a9d373a9b65ff25b2db84c07394e1c212}\label{filtertest_8c_a9d373a9b65ff25b2db84c07394e1c212}} 
+\index{filtertest.c@{filtertest.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+attribute\+\_\+\+\_\+(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{filtertest_8c_a36fa9b2e726512bc17a7a6d3e39002be}\label{filtertest_8c_a36fa9b2e726512bc17a7a6d3e39002be}} 
+\index{filtertest.c@{filtertest.c}!O\_BINARY@{O\_BINARY}}
+\index{O\_BINARY@{O\_BINARY}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{O\_BINARY}{O\_BINARY}}
+{\footnotesize\ttfamily \#define O\+\_\+\+BINARY~0}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}\label{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}} 
+\index{filtertest.c@{filtertest.c}!copy\_argv@{copy\_argv}}
+\index{copy\_argv@{copy\_argv}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{copy\_argv()}{copy\_argv()}}
+{\footnotesize\ttfamily static char $\ast$ copy\+\_\+argv (\begin{DoxyParamCaption}\item[{register char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}} , 以及 \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}\label{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}} 
+\index{filtertest.c@{filtertest.c}!error@{error}}
+\index{error@{error}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily static void error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{filtertest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{antigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f}{ago\+\_\+gnu\+\_\+error()}}, \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build()}}, \mbox{\hyperlink{ars_8c_a5503f19bc9c649c307216e54c8d871b0}{ars\+\_\+send()}}, \mbox{\hyperlink{split_8c_addee705cd8463099b6ce1268dc23ce1e}{ars\+\_\+split\+\_\+igrp()}}, \mbox{\hyperlink{split_8c_ab7f5f1e9b5fd84364bde479ba7d55309}{ars\+\_\+split\+\_\+igrpentry()}}, \mbox{\hyperlink{split_8c_aacd81d7a386a95272cfd88d256d3aaed}{ars\+\_\+split\+\_\+ipopt()}}, \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet()}}, \mbox{\hyperlink{split_8c_aa6199a795f02d7e6bb2e4ef824398090}{ars\+\_\+split\+\_\+tcp()}}, \mbox{\hyperlink{split_8c_a2725c19b46085b0b1dae7a520009522c}{ars\+\_\+split\+\_\+tcpopt()}}, \mbox{\hyperlink{split_8c_a728ee81320f386e40fd9eff85eb7f425}{ars\+\_\+split\+\_\+udp()}}, \mbox{\hyperlink{pcap-bpf_8c_acec2b61b77e0abc5bf6abf636892c94d}{check\+\_\+setif\+\_\+failure()}}, \mbox{\hyperlink{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv()}}, \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}, \mbox{\hyperlink{getaddrinfo_8c_af492fbe130cdd41e837374d2ca1b2a09}{explore\+\_\+null()}}, \mbox{\hyperlink{getaddrinfo_8c_ad1d9909585e73a06fae8d6093340ecf7}{explore\+\_\+numeric()}}, \mbox{\hyperlink{getaddrinfo_8c_ae2666f01a4bdb84fe45241a800f42d77}{explore\+\_\+numeric\+\_\+scope()}}, \mbox{\hyperlink{getaddrinfo_8c_a6287e507ed607f110c04f445548c7d1c}{get\+\_\+name()}}, \mbox{\hyperlink{getaddrinfo_8c_ab0aab8a39ccc5d46759d1d419c5d0826}{getaddrinfo()}}, \mbox{\hyperlink{pcap-enet_8c_a081426746bfe415624aa1735b7e5c4cc}{initdevice()}}, \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}, \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}} , 以及 \mbox{\hyperlink{pcap_2pcap_8h_ade4503a8294892b8cdbaebd99b97f83e}{pcap\+\_\+dump\+\_\+close()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{filtertest.c@{filtertest.c}!main@{main}}
+\index{main@{main}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{bpf__dump_8c_acd8665619218212a236e1b773ce3470b}{bpf\+\_\+dump()}}, \mbox{\hyperlink{filtertest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv()}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{os-sunos4_8h_a09d633c0a8afac8b4a910a5dfce67d60}{getopt()}}, \mbox{\hyperlink{inet__aton_8c_a3d2472d6cf31b73eeb829110dd0fffea}{INADDR\+\_\+\+NONE}}, \mbox{\hyperlink{gencode_8c_a98fbcc64be2e1b5ec40bde6104a21137}{netmask}}, \mbox{\hyperlink{getopt_8c_adb50a0eab9fed92fc3bfc7dfa4f2c410}{optarg}}, \mbox{\hyperlink{getopt_8c_ae30f05ee1e2e5652f174a35c7875d25e}{opterr}}, \mbox{\hyperlink{getopt_8c_ad5e1c16213bbee2d5e8cc363309f418c}{optind}}, \mbox{\hyperlink{pcap_8c_aa45a5e1a4ba9925bb3586dcbeec78560}{pcap\+\_\+close()}}, \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}, \mbox{\hyperlink{pcap_8c_a440b2f0757acd4804588933324909207}{pcap\+\_\+datalink\+\_\+name\+\_\+to\+\_\+val()}}, \mbox{\hyperlink{pcap_8c_a767d68aec8f78e5d46b5b17b17e73997}{pcap\+\_\+geterr()}}, \mbox{\hyperlink{pcap_2pcap_8h_a9423c03c24a0aa2166b1044999eac103}{PCAP\+\_\+\+NETMASK\+\_\+\+UNKNOWN}}, \mbox{\hyperlink{pcap_8c_ac163a8197ea255bec3e41facdb50c6f9}{pcap\+\_\+open\+\_\+dead()}}, \mbox{\hyperlink{filtertest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}, \mbox{\hyperlink{gencode_8c_a50cfacfae55017276b69cd587333b70b}{snaplen}}, \mbox{\hyperlink{os-sunos4_8h_a18c431bde684e5338c737b1f7d423c05}{strtol()}}, \mbox{\hyperlink{filtertest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}{usage()}} , 以及 \mbox{\hyperlink{pcap-win32_8c_a015b1f8119af0eebbf75a4cf27e5d336}{wsockinit()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{filtertest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}\label{filtertest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}} 
+\index{filtertest.c@{filtertest.c}!usage@{usage}}
+\index{usage@{usage}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{usage()}{usage()}}
+{\footnotesize\ttfamily static void usage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{filtertest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{filtertest_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{filtertest_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{filtertest.c@{filtertest.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 2000\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{The Regents of the University of California.  All rights reserved.\(\backslash\)n"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{filtertest_8c_a289c5900d90626d909f0a85d5a0ed61d}\label{filtertest_8c_a289c5900d90626d909f0a85d5a0ed61d}} 
+\index{filtertest.c@{filtertest.c}!program\_name@{program\_name}}
+\index{program\_name@{program\_name}!filtertest.c@{filtertest.c}}
+\doxysubsubsection{\texorpdfstring{program\_name}{program\_name}}
+{\footnotesize\ttfamily char$\ast$ program\+\_\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}} , 以及 \mbox{\hyperlink{filtertest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+

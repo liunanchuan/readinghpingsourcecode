@@ -1,0 +1,114 @@
+\hypertarget{pcap-dag_8h_source}{}\doxysection{pcap-\/dag.h}
+\label{pcap-dag_8h_source}\index{libpcap-\/1.1.1/pcap-\/dag.h@{libpcap-\/1.1.1/pcap-\/dag.h}}
+\mbox{\hyperlink{pcap-dag_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * pcap-\/dag.c: Packet capture interface for Endace DAG card.}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * The functionality of this code attempts to mimic that of pcap-\/linux as much}}
+\DoxyCodeLine{5 \textcolor{comment}{ * as possible.  This code is only needed when compiling in the DAG card code}}
+\DoxyCodeLine{6 \textcolor{comment}{ * at the same time as another type of device.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Author: Richard Littin, Sean Irvine (\{richard,sean\}@reeltwo.com)}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap-\/dag.h,v 1.7 2008-\/04-\/04 19:37:45 guy Exp \$ (LBL)}}
+\DoxyCodeLine{11 \textcolor{comment}{ */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 pcap\_t *\mbox{\hyperlink{pcap-dag_8h_a0e8928cf493475e262a22a5fc788add9}{dag\_create}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{14 \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-dag_8h_a6d9e13e5daffb6ef73c72f8323c79921}{dag\_platform\_finddevs}}(pcap\_if\_t **devlistp, \textcolor{keywordtype}{char} *\mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}});}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef TYPE\_AAL5}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define TYPE\_AAL5               4}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_HDLC}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define TYPE\_MC\_HDLC            5}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_RAW}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define TYPE\_MC\_RAW             6}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_ATM}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define TYPE\_MC\_ATM             7}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_RAW\_CHANNEL}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define TYPE\_MC\_RAW\_CHANNEL     8}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_AAL5}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define TYPE\_MC\_AAL5            9}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef TYPE\_COLOR\_HDLC\_POS}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define TYPE\_COLOR\_HDLC\_POS     10}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef TYPE\_COLOR\_ETH}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define TYPE\_COLOR\_ETH          11}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef TYPE\_MC\_AAL2}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define TYPE\_MC\_AAL2            12}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifndef TYPE\_IP\_COUNTER}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define TYPE\_IP\_COUNTER         13}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifndef TYPE\_TCP\_FLOW\_COUNTER}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define TYPE\_TCP\_FLOW\_COUNTER   14}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#ifndef TYPE\_DSM\_COLOR\_HDLC\_POS}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define TYPE\_DSM\_COLOR\_HDLC\_POS 15}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifndef TYPE\_DSM\_COLOR\_ETH}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define TYPE\_DSM\_COLOR\_ETH      16}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#ifndef TYPE\_COLOR\_MC\_HDLC\_POS}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define TYPE\_COLOR\_MC\_HDLC\_POS  17}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#ifndef TYPE\_AAL2}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define TYPE\_AAL2               18}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifndef TYPE\_COLOR\_HASH\_POS}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define TYPE\_COLOR\_HASH\_POS     19}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#ifndef TYPE\_COLOR\_HASH\_ETH}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define TYPE\_COLOR\_HASH\_ETH     20}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifndef TYPE\_INFINIBAND}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define TYPE\_INFINIBAND         21}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifndef TYPE\_IPV4}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define TYPE\_IPV4               22}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#ifndef TYPE\_IPV6}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define TYPE\_IPV6               23}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#ifndef TYPE\_RAW\_LINK}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define TYPE\_RAW\_LINK           24}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#ifndef TYPE\_INFINIBAND\_LINK}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define TYPE\_INFINIBAND\_LINK    25}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#ifndef TYPE\_PAD}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define TYPE\_PAD                48}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

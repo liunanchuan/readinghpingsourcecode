@@ -1,0 +1,229 @@
+\hypertarget{getnetent_8c}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Src/getnetent.c 文件参考}
+\label{getnetent_8c}\index{libpcap-\/1.1.1/Win32/Src/getnetent.c@{libpcap-\/1.1.1/Win32/Src/getnetent.c}}
+{\ttfamily \#include \char`\"{}inetprivate.\+h\char`\"{}}\newline
+getnetent.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{getnetent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}~35
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any}} (char $\ast$, char $\ast$)
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f}{inet\+\_\+network}} (const char $\ast$cp)
+\item 
+void \mbox{\hyperlink{getnetent_8c_ac2e94619797c1c08e14b7cda0942cf40}{setnetent}} (int f)
+\item 
+void \mbox{\hyperlink{getnetent_8c_a1b181def9700aef075559a4630fdb8ab}{endnetent}} ()
+\item 
+struct netent $\ast$ \mbox{\hyperlink{getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463}{getnetent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}{NETDB}} \mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{netdb_8h_a5cead70d4c9d69680e9bcf5e7dea14cf}{\+\_\+\+PATH\+\_\+\+NETWORKS}}
+\item 
+static FILE $\ast$ \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}} = NULL
+\item 
+static char \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} \mbox{[}BUFSIZ+1\mbox{]}
+\item 
+static struct netent \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}
+\item 
+static char $\ast$ \mbox{\hyperlink{getnetent_8c_acc83aa10a6a87d88f3d56ebf1403cd67}{net\+\_\+aliases}} \mbox{[}\mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}\mbox{]}
+\item 
+int \mbox{\hyperlink{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{getnetent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}\label{getnetent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}} 
+\index{getnetent.c@{getnetent.c}!MAXALIASES@{MAXALIASES}}
+\index{MAXALIASES@{MAXALIASES}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{MAXALIASES}{MAXALIASES}}
+{\footnotesize\ttfamily \#define MAXALIASES~35}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}\label{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}} 
+\index{getnetent.c@{getnetent.c}!any@{any}}
+\index{any@{any}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily static char $\ast$ any (\begin{DoxyParamCaption}\item[{char $\ast$}]{cp,  }\item[{char $\ast$}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getnetent_8c_a1b181def9700aef075559a4630fdb8ab}\label{getnetent_8c_a1b181def9700aef075559a4630fdb8ab}} 
+\index{getnetent.c@{getnetent.c}!endnetent@{endnetent}}
+\index{endnetent@{endnetent}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{endnetent()}{endnetent()}}
+{\footnotesize\ttfamily void endnetent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c_a1b181def9700aef075559a4630fdb8ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463}\label{getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463}} 
+\index{getnetent.c@{getnetent.c}!getnetent@{getnetent}}
+\index{getnetent@{getnetent}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{getnetent()}{getnetent()}}
+{\footnotesize\ttfamily struct netent $\ast$ getnetent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any()}}, \mbox{\hyperlink{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f}{inet\+\_\+network()}}, \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}, \mbox{\hyperlink{getnetent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}, \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}, \mbox{\hyperlink{getnetent_8c_acc83aa10a6a87d88f3d56ebf1403cd67}{net\+\_\+aliases}}, \mbox{\hyperlink{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}{NETDB}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c_a313d5be3d1f84e576e3d9ad98c2af463_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f}\label{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f}} 
+\index{getnetent.c@{getnetent.c}!inet\_network@{inet\_network}}
+\index{inet\_network@{inet\_network}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{inet\_network()}{inet\_network()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t inet\+\_\+network (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cp }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{inet__aton_8c_a3d2472d6cf31b73eeb829110dd0fffea}{INADDR\+\_\+\+NONE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{getnetent_8c_ac2e94619797c1c08e14b7cda0942cf40}\label{getnetent_8c_ac2e94619797c1c08e14b7cda0942cf40}} 
+\index{getnetent.c@{getnetent.c}!setnetent@{setnetent}}
+\index{setnetent@{setnetent}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{setnetent()}{setnetent()}}
+{\footnotesize\ttfamily void setnetent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}, \mbox{\hyperlink{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}{NETDB}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getnetent_8c_ac2e94619797c1c08e14b7cda0942cf40_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}\label{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}} 
+\index{getnetent.c@{getnetent.c}!\_net\_stayopen@{\_net\_stayopen}}
+\index{\_net\_stayopen@{\_net\_stayopen}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{\_net\_stayopen}{\_net\_stayopen}}
+{\footnotesize\ttfamily int \+\_\+net\+\_\+stayopen}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent()}}, \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+
+\mbox{\Hypertarget{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}\label{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}} 
+\index{getnetent.c@{getnetent.c}!line@{line}}
+\index{line@{line}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily char line\mbox{[}BUFSIZ+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}}, \mbox{\hyperlink{pcap-dos_8c_a456ba43432fb029cddfc893d7757d519}{pcap\+\_\+assert()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_ae72f2ced4aa5a96fdcf4cb43ef31f613}{usb\+\_\+read\+\_\+linux()}}.
+
+\mbox{\Hypertarget{getnetent_8c_ae974633668b9933ac480461fadb7d388}\label{getnetent_8c_ae974633668b9933ac480461fadb7d388}} 
+\index{getnetent.c@{getnetent.c}!net@{net}}
+\index{net@{net}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{net}{net}}
+{\footnotesize\ttfamily struct netent net\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}} , 以及 \mbox{\hyperlink{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{getnetent_8c_acc83aa10a6a87d88f3d56ebf1403cd67}\label{getnetent_8c_acc83aa10a6a87d88f3d56ebf1403cd67}} 
+\index{getnetent.c@{getnetent.c}!net\_aliases@{net\_aliases}}
+\index{net\_aliases@{net\_aliases}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{net\_aliases}{net\_aliases}}
+{\footnotesize\ttfamily char$\ast$ net\+\_\+aliases\mbox{[}\mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}}.
+
+\mbox{\Hypertarget{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}\label{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}} 
+\index{getnetent.c@{getnetent.c}!NETDB@{NETDB}}
+\index{NETDB@{NETDB}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{NETDB}{NETDB}}
+{\footnotesize\ttfamily char NETDB\mbox{[}$\,$\mbox{]} = \mbox{\hyperlink{netdb_8h_a5cead70d4c9d69680e9bcf5e7dea14cf}{\+\_\+\+PATH\+\_\+\+NETWORKS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+
+\mbox{\Hypertarget{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}\label{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}} 
+\index{getnetent.c@{getnetent.c}!netf@{netf}}
+\index{netf@{netf}!getnetent.c@{getnetent.c}}
+\doxysubsubsection{\texorpdfstring{netf}{netf}}
+{\footnotesize\ttfamily FILE$\ast$ netf = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent()}}, \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+

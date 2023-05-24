@@ -1,0 +1,377 @@
+\hypertarget{netdb_8h}{}\doxysection{libpcap-\/1.1.1/\+Win32/\+Include/net/netdb.h 文件参考}
+\label{netdb_8h}\index{libpcap-\/1.1.1/Win32/Include/net/netdb.h@{libpcap-\/1.1.1/Win32/Include/net/netdb.h}}
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$net/paths.\+h$>$}\newline
+netdb.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{netdb_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrpcent}{rpcent}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_af3b17e408f96400aa79f126cb5674fec}{\+\_\+\+PATH\+\_\+\+HEQUIV}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/hosts.\+equiv\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_a7e07a7dad650f9f47e5de7152a91fa96}{\+\_\+\+PATH\+\_\+\+HOSTS}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/hosts\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_a5cead70d4c9d69680e9bcf5e7dea14cf}{\+\_\+\+PATH\+\_\+\+NETWORKS}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/networks\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_ae7390877d477167bd4bb2506f4e4d6c8}{\+\_\+\+PATH\+\_\+\+PROTOCOLS}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/protocols\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_a0dd470c1e7fa3618600e792bfaea217c}{\+\_\+\+PATH\+\_\+\+SERVICES}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/services\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_ae20887848cf35f8fb40f94d2391d48ff}{\+\_\+\+PATH\+\_\+\+RESCONF}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/resolv.\+conf\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_a0eb767cff3bdd5ad0177a833ceff7cd9}{\+\_\+\+PATH\+\_\+\+RPC}}~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/rpc\char`\"{}
+\item 
+\#define \mbox{\hyperlink{netdb_8h_a93598d1131d75df799acd66eccd039b0}{NETDB\+\_\+\+INTERNAL}}~-\/1 /$\ast$ see \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{netdb_8h_abc7a398cd18856c798bb60c9bd1696f1}{NETDB\+\_\+\+SUCCESS}}~0 /$\ast$ no problem $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{netdb_8h_accc64bf7bad3dd2a6b683c10533aa076}{endhostent}} (void)
+\item 
+void \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent}} (void)
+\item 
+void \mbox{\hyperlink{netdb_8h_a3ac0597abceec2060997db1355d462f8}{endprotoent}} (void)
+\item 
+void \mbox{\hyperlink{netdb_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent}} (void)
+\item 
+void \mbox{\hyperlink{netdb_8h_a14260003fb562efb32a2e2cdcdef416d}{endrpcent}} (void)
+\item 
+struct hostent $\ast$ \mbox{\hyperlink{netdb_8h_a4b9065f385acd38096aa190110429420}{gethostent}} (void)
+\item 
+struct netent $\ast$ \mbox{\hyperlink{netdb_8h_a3792f0c71a6b163a15e6966f7b2e2faf}{getnetbyaddr}} (long, int)
+\item 
+struct netent $\ast$ \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname}} (const char $\ast$)
+\item 
+struct netent $\ast$ \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent}} (void)
+\item 
+struct protoent $\ast$ \mbox{\hyperlink{netdb_8h_a816ddf34b4aa42f0b9c70c81ce832fb2}{getprotoent}} (void)
+\item 
+struct servent $\ast$ \mbox{\hyperlink{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}{getservent}} (void)
+\item 
+struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ \mbox{\hyperlink{netdb_8h_a60071d199df8b3f37b035d07932186e6}{getrpcent}} (void)
+\item 
+struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ \mbox{\hyperlink{netdb_8h_ae90d424f8a6f49a15aa585bc6cc507cd}{getrpcbyname}} (const char $\ast$)
+\item 
+struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ \mbox{\hyperlink{netdb_8h_a1c2a4eff048ecd69da8e61538f04c223}{getrpcbynumber}} (int)
+\item 
+void \mbox{\hyperlink{netdb_8h_a322d2618d1e0cd0f07fbacc21a97fb8b}{herror}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{netdb_8h_a930ce54a6ab42d93c3dec6ce4590a0f9}{sethostent}} (int)
+\item 
+void \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent}} (int)
+\item 
+void \mbox{\hyperlink{netdb_8h_a5f503c81a12abf4453d7a3daa0ab43ea}{setprotoent}} (int)
+\item 
+void \mbox{\hyperlink{netdb_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}{setservent}} (int)
+\item 
+void \mbox{\hyperlink{netdb_8h_a20d9aea9b2893517616c13e0ea4804a8}{setrpcent}} (int)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{netdb_8h_a2a1ce3f2040007303d36c0b682b5ac10}{h\+\_\+errno}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{netdb_8h_af3b17e408f96400aa79f126cb5674fec}\label{netdb_8h_af3b17e408f96400aa79f126cb5674fec}} 
+\index{netdb.h@{netdb.h}!\_PATH\_HEQUIV@{\_PATH\_HEQUIV}}
+\index{\_PATH\_HEQUIV@{\_PATH\_HEQUIV}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_HEQUIV}{\_PATH\_HEQUIV}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+HEQUIV~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/hosts.\+equiv\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_a7e07a7dad650f9f47e5de7152a91fa96}\label{netdb_8h_a7e07a7dad650f9f47e5de7152a91fa96}} 
+\index{netdb.h@{netdb.h}!\_PATH\_HOSTS@{\_PATH\_HOSTS}}
+\index{\_PATH\_HOSTS@{\_PATH\_HOSTS}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_HOSTS}{\_PATH\_HOSTS}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+HOSTS~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/hosts\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_a5cead70d4c9d69680e9bcf5e7dea14cf}\label{netdb_8h_a5cead70d4c9d69680e9bcf5e7dea14cf}} 
+\index{netdb.h@{netdb.h}!\_PATH\_NETWORKS@{\_PATH\_NETWORKS}}
+\index{\_PATH\_NETWORKS@{\_PATH\_NETWORKS}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_NETWORKS}{\_PATH\_NETWORKS}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+NETWORKS~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/networks\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_ae7390877d477167bd4bb2506f4e4d6c8}\label{netdb_8h_ae7390877d477167bd4bb2506f4e4d6c8}} 
+\index{netdb.h@{netdb.h}!\_PATH\_PROTOCOLS@{\_PATH\_PROTOCOLS}}
+\index{\_PATH\_PROTOCOLS@{\_PATH\_PROTOCOLS}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_PROTOCOLS}{\_PATH\_PROTOCOLS}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+PROTOCOLS~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/protocols\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_ae20887848cf35f8fb40f94d2391d48ff}\label{netdb_8h_ae20887848cf35f8fb40f94d2391d48ff}} 
+\index{netdb.h@{netdb.h}!\_PATH\_RESCONF@{\_PATH\_RESCONF}}
+\index{\_PATH\_RESCONF@{\_PATH\_RESCONF}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_RESCONF}{\_PATH\_RESCONF}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+RESCONF~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/resolv.\+conf\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_a0eb767cff3bdd5ad0177a833ceff7cd9}\label{netdb_8h_a0eb767cff3bdd5ad0177a833ceff7cd9}} 
+\index{netdb.h@{netdb.h}!\_PATH\_RPC@{\_PATH\_RPC}}
+\index{\_PATH\_RPC@{\_PATH\_RPC}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_RPC}{\_PATH\_RPC}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+RPC~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/rpc\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_a0dd470c1e7fa3618600e792bfaea217c}\label{netdb_8h_a0dd470c1e7fa3618600e792bfaea217c}} 
+\index{netdb.h@{netdb.h}!\_PATH\_SERVICES@{\_PATH\_SERVICES}}
+\index{\_PATH\_SERVICES@{\_PATH\_SERVICES}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_SERVICES}{\_PATH\_SERVICES}}
+{\footnotesize\ttfamily \#define \+\_\+\+PATH\+\_\+\+SERVICES~\mbox{\hyperlink{paths_8h_a0c94e0b60237814573f6d924f6a654f3}{\+\_\+\+\_\+\+PATH\+\_\+\+ETC\+\_\+\+INET}}\char`\"{}/services\char`\"{}}
+
+\mbox{\Hypertarget{netdb_8h_a93598d1131d75df799acd66eccd039b0}\label{netdb_8h_a93598d1131d75df799acd66eccd039b0}} 
+\index{netdb.h@{netdb.h}!NETDB\_INTERNAL@{NETDB\_INTERNAL}}
+\index{NETDB\_INTERNAL@{NETDB\_INTERNAL}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{NETDB\_INTERNAL}{NETDB\_INTERNAL}}
+{\footnotesize\ttfamily \#define NETDB\+\_\+\+INTERNAL~-\/1 /$\ast$ see \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}} $\ast$/}
+
+\mbox{\Hypertarget{netdb_8h_abc7a398cd18856c798bb60c9bd1696f1}\label{netdb_8h_abc7a398cd18856c798bb60c9bd1696f1}} 
+\index{netdb.h@{netdb.h}!NETDB\_SUCCESS@{NETDB\_SUCCESS}}
+\index{NETDB\_SUCCESS@{NETDB\_SUCCESS}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{NETDB\_SUCCESS}{NETDB\_SUCCESS}}
+{\footnotesize\ttfamily \#define NETDB\+\_\+\+SUCCESS~0 /$\ast$ no problem $\ast$/}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{netdb_8h_accc64bf7bad3dd2a6b683c10533aa076}\label{netdb_8h_accc64bf7bad3dd2a6b683c10533aa076}} 
+\index{netdb.h@{netdb.h}!endhostent@{endhostent}}
+\index{endhostent@{endhostent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{endhostent()}{endhostent()}}
+{\footnotesize\ttfamily void endhostent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}\label{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}} 
+\index{netdb.h@{netdb.h}!endnetent@{endnetent}}
+\index{endnetent@{endnetent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{endnetent()}{endnetent()}}
+{\footnotesize\ttfamily void endnetent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{netdb_8h_a3ac0597abceec2060997db1355d462f8}\label{netdb_8h_a3ac0597abceec2060997db1355d462f8}} 
+\index{netdb.h@{netdb.h}!endprotoent@{endprotoent}}
+\index{endprotoent@{endprotoent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{endprotoent()}{endprotoent()}}
+{\footnotesize\ttfamily void endprotoent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a14260003fb562efb32a2e2cdcdef416d}\label{netdb_8h_a14260003fb562efb32a2e2cdcdef416d}} 
+\index{netdb.h@{netdb.h}!endrpcent@{endrpcent}}
+\index{endrpcent@{endrpcent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{endrpcent()}{endrpcent()}}
+{\footnotesize\ttfamily void endrpcent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_adf81140af263bf72a02dc4a484e98d6a}\label{netdb_8h_adf81140af263bf72a02dc4a484e98d6a}} 
+\index{netdb.h@{netdb.h}!endservent@{endservent}}
+\index{endservent@{endservent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{endservent()}{endservent()}}
+{\footnotesize\ttfamily void endservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a4b9065f385acd38096aa190110429420}\label{netdb_8h_a4b9065f385acd38096aa190110429420}} 
+\index{netdb.h@{netdb.h}!gethostent@{gethostent}}
+\index{gethostent@{gethostent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{gethostent()}{gethostent()}}
+{\footnotesize\ttfamily struct hostent $\ast$ gethostent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a3792f0c71a6b163a15e6966f7b2e2faf}\label{netdb_8h_a3792f0c71a6b163a15e6966f7b2e2faf}} 
+\index{netdb.h@{netdb.h}!getnetbyaddr@{getnetbyaddr}}
+\index{getnetbyaddr@{getnetbyaddr}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getnetbyaddr()}{getnetbyaddr()}}
+{\footnotesize\ttfamily struct netent $\ast$ getnetbyaddr (\begin{DoxyParamCaption}\item[{long}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}\label{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}} 
+\index{netdb.h@{netdb.h}!getnetbyname@{getnetbyname}}
+\index{getnetbyname@{getnetbyname}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getnetbyname()}{getnetbyname()}}
+{\footnotesize\ttfamily struct netent $\ast$ getnetbyname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetbynm_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}, \mbox{\hyperlink{netdb_8h_a9c23830b9c634ac761f3f2daa3e6b724}{endnetent()}}, \mbox{\hyperlink{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}{getnetent()}} , 以及 \mbox{\hyperlink{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}{setnetent()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{nametoaddr_8c_abd19e1e440174857e87058b8fabd5708}{pcap\+\_\+nametonetaddr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}\label{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9}} 
+\index{netdb.h@{netdb.h}!getnetent@{getnetent}}
+\index{getnetent@{getnetent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getnetent()}{getnetent()}}
+{\footnotesize\ttfamily struct netent $\ast$ getnetent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_adc27da37db2f90aec5484fc8f57f1202}{any()}}, \mbox{\hyperlink{getnetent_8c_a5f4f2b3d1d19b8d39ccb67b7408b467f}{inet\+\_\+network()}}, \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}, \mbox{\hyperlink{getnetent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}, \mbox{\hyperlink{getnetent_8c_ae974633668b9933ac480461fadb7d388}{net}}, \mbox{\hyperlink{getnetent_8c_acc83aa10a6a87d88f3d56ebf1403cd67}{net\+\_\+aliases}}, \mbox{\hyperlink{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}{NETDB}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h_a199e7f8bde21efa3d6d44efd870a72a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{netdb_8h_a816ddf34b4aa42f0b9c70c81ce832fb2}\label{netdb_8h_a816ddf34b4aa42f0b9c70c81ce832fb2}} 
+\index{netdb.h@{netdb.h}!getprotoent@{getprotoent}}
+\index{getprotoent@{getprotoent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getprotoent()}{getprotoent()}}
+{\footnotesize\ttfamily struct protoent $\ast$ getprotoent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_ae90d424f8a6f49a15aa585bc6cc507cd}\label{netdb_8h_ae90d424f8a6f49a15aa585bc6cc507cd}} 
+\index{netdb.h@{netdb.h}!getrpcbyname@{getrpcbyname}}
+\index{getrpcbyname@{getrpcbyname}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getrpcbyname()}{getrpcbyname()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ getrpcbyname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a1c2a4eff048ecd69da8e61538f04c223}\label{netdb_8h_a1c2a4eff048ecd69da8e61538f04c223}} 
+\index{netdb.h@{netdb.h}!getrpcbynumber@{getrpcbynumber}}
+\index{getrpcbynumber@{getrpcbynumber}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getrpcbynumber()}{getrpcbynumber()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ getrpcbynumber (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a60071d199df8b3f37b035d07932186e6}\label{netdb_8h_a60071d199df8b3f37b035d07932186e6}} 
+\index{netdb.h@{netdb.h}!getrpcent@{getrpcent}}
+\index{getrpcent@{getrpcent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getrpcent()}{getrpcent()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrpcent}{rpcent}} $\ast$ getrpcent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}\label{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10}} 
+\index{netdb.h@{netdb.h}!getservent@{getservent}}
+\index{getservent@{getservent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{getservent()}{getservent()}}
+{\footnotesize\ttfamily struct servent $\ast$ getservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}}, \mbox{\hyperlink{getservent_8c_ad37f747e9cb2fd51e289b9f5a8e31fa5}{MAXALIASES}}, \mbox{\hyperlink{getservent_8c_a14126bc0f5aba1f6ac18840479c6e07d}{serv}}, \mbox{\hyperlink{getservent_8c_a2b24d478d7e4e967d13af5ced1c7f8e4}{serv\+\_\+aliases}}, \mbox{\hyperlink{getservent_8c_a7bdf1ae351d4b7ee3764d39e9fb62f8f}{SERVDB}} , 以及 \mbox{\hyperlink{getservent_8c_a4f76b0a378f5310f03b220bc912ea1d6}{servf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{scan_8c_a2a46020415a0cfe80dcd08dd1b0357e6}{parse\+\_\+ports()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h_aa04c5e5229bf6ad9dc77bb261577df10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{netdb_8h_a322d2618d1e0cd0f07fbacc21a97fb8b}\label{netdb_8h_a322d2618d1e0cd0f07fbacc21a97fb8b}} 
+\index{netdb.h@{netdb.h}!herror@{herror}}
+\index{herror@{herror}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{herror()}{herror()}}
+{\footnotesize\ttfamily void herror (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a930ce54a6ab42d93c3dec6ce4590a0f9}\label{netdb_8h_a930ce54a6ab42d93c3dec6ce4590a0f9}} 
+\index{netdb.h@{netdb.h}!sethostent@{sethostent}}
+\index{sethostent@{sethostent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{sethostent()}{sethostent()}}
+{\footnotesize\ttfamily void sethostent (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}\label{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa}} 
+\index{netdb.h@{netdb.h}!setnetent@{setnetent}}
+\index{setnetent@{setnetent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{setnetent()}{setnetent()}}
+{\footnotesize\ttfamily void setnetent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{getnetent_8c_a3c34a2622df4d072db2c7a2bb24e1866}{\+\_\+net\+\_\+stayopen}}, \mbox{\hyperlink{getnetent_8c_aa190c732ffff6b10b88fb9db92324fa3}{NETDB}} , 以及 \mbox{\hyperlink{getnetent_8c_ab14414047bd3d462d79fb1dfebd30ea5}{netf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{netdb_8h_ade8721a534c606e62c6bc06ad4e30db7}{getnetbyname()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{netdb_8h_a59a8ca67f71ca0bdcc45e34c1f163efa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{netdb_8h_a5f503c81a12abf4453d7a3daa0ab43ea}\label{netdb_8h_a5f503c81a12abf4453d7a3daa0ab43ea}} 
+\index{netdb.h@{netdb.h}!setprotoent@{setprotoent}}
+\index{setprotoent@{setprotoent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{setprotoent()}{setprotoent()}}
+{\footnotesize\ttfamily void setprotoent (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a20d9aea9b2893517616c13e0ea4804a8}\label{netdb_8h_a20d9aea9b2893517616c13e0ea4804a8}} 
+\index{netdb.h@{netdb.h}!setrpcent@{setrpcent}}
+\index{setrpcent@{setrpcent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{setrpcent()}{setrpcent()}}
+{\footnotesize\ttfamily void setrpcent (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{netdb_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}\label{netdb_8h_a81d63bcc9ede6bc9122452fc8c3ad5ed}} 
+\index{netdb.h@{netdb.h}!setservent@{setservent}}
+\index{setservent@{setservent}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{setservent()}{setservent()}}
+{\footnotesize\ttfamily void setservent (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{netdb_8h_a2a1ce3f2040007303d36c0b682b5ac10}\label{netdb_8h_a2a1ce3f2040007303d36c0b682b5ac10}} 
+\index{netdb.h@{netdb.h}!h\_errno@{h\_errno}}
+\index{h\_errno@{h\_errno}!netdb.h@{netdb.h}}
+\doxysubsubsection{\texorpdfstring{h\_errno}{h\_errno}}
+{\footnotesize\ttfamily int h\+\_\+errno\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getaddrinfo_8c_aa556bc84646b2d89818efa323c1ae2c2}{explore\+\_\+fqdn()}}.
+

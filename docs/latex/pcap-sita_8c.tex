@@ -1,0 +1,1176 @@
+\hypertarget{pcap-sita_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/sita.c 文件参考}
+\label{pcap-sita_8c}\index{libpcap-\/1.1.1/pcap-\/sita.c@{libpcap-\/1.1.1/pcap-\/sita.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcap-\/sita.\+h\char`\"{}}\newline
+pcap-\/sita.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structiface__t}{iface\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structunit__t}{unit\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a159583f75afcbae01e1527317b2330bd}{IOP\+\_\+\+SNIFFER\+\_\+\+PORT}}~49152   /$\ast$ TCP port on the IOP used for \textquotesingle{}distributed \mbox{\hyperlink{structpcap}{pcap}}\textquotesingle{} \mbox{\hyperlink{selpolltest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}{usage}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a706068f562dd5c64a8b7bbd4b2298dd1}{MAX\+\_\+\+LINE\+\_\+\+SIZE}}~255    /$\ast$ \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}} size of a buffer/\mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} in /etc/hosts we allow $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}~8    /$\ast$ number of chassis in an ACN site $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}~8    /$\ast$ \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}} number of access \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}} in an ACN site $\ast$/
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}{FIND}}~0
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}}~1
+\item 
+\#define \mbox{\hyperlink{pcap-sita_8c_a49999be01380f41cc0d0f1f1406fb277}{HEADER\+\_\+\+SIZE}}~(4 $\ast$ 4)
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}{dump\+\_\+interface\+\_\+list}} (void)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_aa65c0e2852a2363704b1c5fbed504ca7}{dump}} (unsigned char $\ast$ptr, int i, int indent)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}{dump\+\_\+interface\+\_\+list\+\_\+p}} (void)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}{dump\+\_\+unit\+\_\+table}} (void)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd}} (int fd, int $\ast$chassis, int $\ast$geoslot, \mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$$\ast$unit\+\_\+ptr)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a66548453e6802e4e8e99997070888878}{read\+\_\+client\+\_\+nbytes}} (int fd, int \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, unsigned char $\ast$buf)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067}{empty\+\_\+unit\+\_\+iface}} (\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$u)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}{empty\+\_\+unit}} (int chassis, int geoslot)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}{empty\+\_\+unit\+\_\+table}} (void)
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a8e1dd4af605a71dfcffde0b8298c8f46}{find\+\_\+nth\+\_\+interface\+\_\+name}} (int n)
+\item 
+int \mbox{\hyperlink{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}{acn\+\_\+parse\+\_\+hosts\+\_\+file}} (char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP}} (\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$u, int flag)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP}} (int chassis, int geoslot, int flag)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}{pcap\+\_\+cleanup\+\_\+acn}} (pcap\+\_\+t $\ast$handle)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd}} (int fd, int len, unsigned char $\ast$str)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a1c270520ac4dcc38c6ce2653f557eb52}{acn\+\_\+freealldevs}} (void)
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852}{non\+Unified\+\_\+port\+\_\+num}} (\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$u, int IOPportnum)
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb}{unified\+\_\+port\+\_\+num}} (\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$u, int IOPportnum)
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}{translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name}} (\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$u, char $\ast$IOPname, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}} iftype)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a58a703f6a6b4082c61830d3ddad5da4a}{if\+\_\+sort}} (char $\ast$s1, char $\ast$s2)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}{sort\+\_\+if\+\_\+table}} (void)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data}} (char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}{read\+\_\+client\+\_\+data}} (int fd)
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers}} (void)
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response}} (int fd, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+int \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs}} (char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}{pcap\+\_\+stats\+\_\+acn}} (pcap\+\_\+t $\ast$handle, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$ps)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live}} (const char $\ast$name, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, int $\ast$\mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}})
+\item 
+static void \mbox{\hyperlink{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}{acn\+\_\+start\+\_\+monitor}} (int fd, int \mbox{\hyperlink{gencode_8c_a50cfacfae55017276b69cd587333b70b}{snaplen}}, int timeout, int promiscuous, int direction)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_aaef2a573cc601e5b1d8447d5694efd7f}{pcap\+\_\+inject\+\_\+acn}} (pcap\+\_\+t $\ast$p, const void $\ast$buf \mbox{\hyperlink{inet__pton_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}, size\+\_\+t size \mbox{\hyperlink{inet__pton_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}})
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn}} (pcap\+\_\+t $\ast$handle, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$bpf)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_aab985bb9991899334f3b64d205424589}{pcap\+\_\+setdirection\+\_\+acn}} (pcap\+\_\+t $\ast$handle, \mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}} d)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}{acn\+\_\+read\+\_\+n\+\_\+bytes\+\_\+with\+\_\+timeout}} (pcap\+\_\+t $\ast$handle, int \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}})
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}{pcap\+\_\+read\+\_\+acn}} (pcap\+\_\+t $\ast$handle, int max\+\_\+packets, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} callback, u\+\_\+char $\ast$user)
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita}} (pcap\+\_\+t $\ast$handle)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-sita_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \mbox{\hyperlink{pcap-sita_8c_a6131894d045fd73eb198e1f861bf5586}{error\+String}}
+\item 
+static \mbox{\hyperlink{structunit__t}{unit\+\_\+t}} \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}} \mbox{[}\mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}+1\mbox{]}\mbox{[}\mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}+1\mbox{]}
+\item 
+static fd\+\_\+set \mbox{\hyperlink{pcap-sita_8c_a9414d40779d181f95abce79de81fbcba}{readfds}}
+\item 
+static fd\+\_\+set \mbox{\hyperlink{pcap-sita_8c_a3017c4c276a2ec2281bc00fb7fda3000}{working\+\_\+set}}
+\item 
+static int \mbox{\hyperlink{pcap-sita_8c_a59300bf76be129230d76fc4ed5309e40}{max\+\_\+fs}}
+\item 
+static char \mbox{\hyperlink{pcap-sita_8c_a2f87d0fd734201077ac6876ed7c45513}{static\+\_\+buf}} \mbox{[}32\mbox{]}
+\item 
+pcap\+\_\+if\+\_\+t $\ast$ \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}\label{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!FIND@{FIND}}
+\index{FIND@{FIND}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{FIND}{FIND}}
+{\footnotesize\ttfamily \#define FIND~0}
+
+\mbox{\Hypertarget{pcap-sita_8c_a49999be01380f41cc0d0f1f1406fb277}\label{pcap-sita_8c_a49999be01380f41cc0d0f1f1406fb277}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!HEADER\_SIZE@{HEADER\_SIZE}}
+\index{HEADER\_SIZE@{HEADER\_SIZE}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{HEADER\_SIZE}{HEADER\_SIZE}}
+{\footnotesize\ttfamily \#define HEADER\+\_\+\+SIZE~(4 $\ast$ 4)}
+
+\mbox{\Hypertarget{pcap-sita_8c_a159583f75afcbae01e1527317b2330bd}\label{pcap-sita_8c_a159583f75afcbae01e1527317b2330bd}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!IOP\_SNIFFER\_PORT@{IOP\_SNIFFER\_PORT}}
+\index{IOP\_SNIFFER\_PORT@{IOP\_SNIFFER\_PORT}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{IOP\_SNIFFER\_PORT}{IOP\_SNIFFER\_PORT}}
+{\footnotesize\ttfamily \#define IOP\+\_\+\+SNIFFER\+\_\+\+PORT~49152   /$\ast$ TCP port on the IOP used for \textquotesingle{}distributed \mbox{\hyperlink{structpcap}{pcap}}\textquotesingle{} \mbox{\hyperlink{selpolltest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}{usage}} $\ast$/}
+
+\mbox{\Hypertarget{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}\label{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!LIVE@{LIVE}}
+\index{LIVE@{LIVE}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{LIVE}{LIVE}}
+{\footnotesize\ttfamily \#define LIVE~1}
+
+\mbox{\Hypertarget{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}\label{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!MAX\_CHASSIS@{MAX\_CHASSIS}}
+\index{MAX\_CHASSIS@{MAX\_CHASSIS}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHASSIS}{MAX\_CHASSIS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHASSIS~8    /$\ast$ number of chassis in an ACN site $\ast$/}
+
+\mbox{\Hypertarget{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}\label{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!MAX\_GEOSLOT@{MAX\_GEOSLOT}}
+\index{MAX\_GEOSLOT@{MAX\_GEOSLOT}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_GEOSLOT}{MAX\_GEOSLOT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GEOSLOT~8    /$\ast$ \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}} number of access \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}} in an ACN site $\ast$/}
+
+\mbox{\Hypertarget{pcap-sita_8c_a706068f562dd5c64a8b7bbd4b2298dd1}\label{pcap-sita_8c_a706068f562dd5c64a8b7bbd4b2298dd1}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!MAX\_LINE\_SIZE@{MAX\_LINE\_SIZE}}
+\index{MAX\_LINE\_SIZE@{MAX\_LINE\_SIZE}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINE\_SIZE}{MAX\_LINE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LINE\+\_\+\+SIZE~255    /$\ast$ \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}} size of a buffer/\mbox{\hyperlink{getservent_8c_a5b625afb8853050432e347f405fd6cc3}{line}} in /etc/hosts we allow $\ast$/}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}\label{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_findalldevs@{acn\_findalldevs}}
+\index{acn\_findalldevs@{acn\_findalldevs}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_findalldevs()}{acn\_findalldevs()}}
+{\footnotesize\ttfamily int acn\+\_\+findalldevs (\begin{DoxyParamCaption}\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}{FIND}}, \mbox{\hyperlink{structunit__t_a16fc9159bd3b5baf0fd8f44c1e1a9bc2}{unit\+\_\+t\+::find\+\_\+fd}}, \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response()}}, \mbox{\hyperlink{structunit__t_afbc356cd0e25d1dbbece7c10fd025fa6}{unit\+\_\+t\+::ip}}, \mbox{\hyperlink{structunit__t_afed088663f8704004425cdae2120b9b3}{unit\+\_\+t\+::len}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a59300bf76be129230d76fc4ed5309e40}{max\+\_\+fs}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}}, \mbox{\hyperlink{pcap-sita_8c_a9414d40779d181f95abce79de81fbcba}{readfds}}, \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}{sort\+\_\+if\+\_\+table()}}, \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a1c270520ac4dcc38c6ce2653f557eb52}\label{pcap-sita_8c_a1c270520ac4dcc38c6ce2653f557eb52}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_freealldevs@{acn\_freealldevs}}
+\index{acn\_freealldevs@{acn\_freealldevs}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_freealldevs()}{acn\_freealldevs()}}
+{\footnotesize\ttfamily static void acn\+\_\+freealldevs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}\label{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_open\_live@{acn\_open\_live}}
+\index{acn\_open\_live@{acn\_open\_live}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_open\_live()}{acn\_open\_live()}}
+{\footnotesize\ttfamily static int acn\+\_\+open\+\_\+live (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{char $\ast$}]{errbuf,  }\item[{int $\ast$}]{linktype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{structunit__t_a6f8059414f0228f0256115e024eeed4b}{unit\+\_\+t\+::fd}}, \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response()}}, \mbox{\hyperlink{structunit__t_a86b7b83c3ff679d88e0e134ce010579a}{unit\+\_\+t\+::iface}}, \mbox{\hyperlink{structiface__t_a167508a1c4d8cf1eca562d5acda665ca}{iface\+\_\+t\+::iftype}}, \mbox{\hyperlink{structiface__t_ae7dd6e69d0147447fd05a0d5332578ef}{iface\+\_\+t\+::\+IOPname}}, \mbox{\hyperlink{structunit__t_afbc356cd0e25d1dbbece7c10fd025fa6}{unit\+\_\+t\+::ip}}, \mbox{\hyperlink{gencode_8c_a34f63781fb4328501b07c3ccf6e16b19}{linktype}}, \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{structiface__t_a5ac083a645d964373f022d03df4849c8}{iface\+\_\+t\+::name}}, \mbox{\hyperlink{structiface__t_a3c41ec26bd41798c2b4840a35508fb64}{iface\+\_\+t\+::next}}, \mbox{\hyperlink{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}{open\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{fad-getad_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}\label{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_parse\_hosts\_file@{acn\_parse\_hosts\_file}}
+\index{acn\_parse\_hosts\_file@{acn\_parse\_hosts\_file}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_parse\_hosts\_file()}{acn\_parse\_hosts\_file()}}
+{\footnotesize\ttfamily int acn\+\_\+parse\+\_\+hosts\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a6d0d461c30ae760c6c59bdd3801c8ffd}{unit\+\_\+t\+::chassis}}, \mbox{\hyperlink{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}{empty\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structunit__t_a4caaf428f9a79fcda8d8d1e1e37c446c}{unit\+\_\+t\+::geoslot}}, \mbox{\hyperlink{structunit__t_afbc356cd0e25d1dbbece7c10fd025fa6}{unit\+\_\+t\+::ip}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{pcap-sita_8c_a706068f562dd5c64a8b7bbd4b2298dd1}{MAX\+\_\+\+LINE\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}\label{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_read\_n\_bytes\_with\_timeout@{acn\_read\_n\_bytes\_with\_timeout}}
+\index{acn\_read\_n\_bytes\_with\_timeout@{acn\_read\_n\_bytes\_with\_timeout}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_read\_n\_bytes\_with\_timeout()}{acn\_read\_n\_bytes\_with\_timeout()}}
+{\footnotesize\ttfamily static int acn\+\_\+read\+\_\+n\+\_\+bytes\+\_\+with\+\_\+timeout (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}{select()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}{pcap\+\_\+read\+\_\+acn()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}\label{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_start\_monitor@{acn\_start\_monitor}}
+\index{acn\_start\_monitor@{acn\_start\_monitor}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_start\_monitor()}{acn\_start\_monitor()}}
+{\footnotesize\ttfamily static void acn\+\_\+start\+\_\+monitor (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{snaplen,  }\item[{int}]{timeout,  }\item[{int}]{promiscuous,  }\item[{int}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{structunit__t_a2251ba55279aef307357d4b82d7cffb7}{unit\+\_\+t\+::first\+\_\+time}}, \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}} , 以及 \mbox{\hyperlink{gencode_8c_a50cfacfae55017276b69cd587333b70b}{snaplen}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}{pcap\+\_\+read\+\_\+acn()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}\label{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!close\_with\_IOP@{close\_with\_IOP}}
+\index{close\_with\_IOP@{close\_with\_IOP}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{close\_with\_IOP()}{close\_with\_IOP()}}
+{\footnotesize\ttfamily static void close\+\_\+with\+\_\+\+IOP (\begin{DoxyParamCaption}\item[{int}]{chassis,  }\item[{int}]{geoslot,  }\item[{int}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{structunit__t_a6f8059414f0228f0256115e024eeed4b}{unit\+\_\+t\+::fd}}, \mbox{\hyperlink{structunit__t_a16fc9159bd3b5baf0fd8f44c1e1a9bc2}{unit\+\_\+t\+::find\+\_\+fd}}, \mbox{\hyperlink{scan_8c_a7441ef0865bcb3db9b8064dd7375c1ea}{id}}, \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}{pcap\+\_\+cleanup\+\_\+acn()}}, \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_aa65c0e2852a2363704b1c5fbed504ca7}\label{pcap-sita_8c_aa65c0e2852a2363704b1c5fbed504ca7}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!dump@{dump}}
+\index{dump@{dump}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily static void dump (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{ptr,  }\item[{int}]{i,  }\item[{int}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}{dump\+\_\+interface\+\_\+list\+\_\+p()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{pcap-sita_8c_aa65c0e2852a2363704b1c5fbed504ca7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}\label{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!dump\_interface\_list@{dump\_interface\_list}}
+\index{dump\_interface\_list@{dump\_interface\_list}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{dump\_interface\_list()}{dump\_interface\_list()}}
+{\footnotesize\ttfamily static void dump\+\_\+interface\+\_\+list (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}, \mbox{\hyperlink{pcap_2pcap_8h_a43a6601bfd438efc02b0ba71c5439647}{PCAP\+\_\+\+IF\+\_\+\+LOOPBACK}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}\label{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!dump\_interface\_list\_p@{dump\_interface\_list\_p}}
+\index{dump\_interface\_list\_p@{dump\_interface\_list\_p}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{dump\_interface\_list\_p()}{dump\_interface\_list\_p()}}
+{\footnotesize\ttfamily static void dump\+\_\+interface\+\_\+list\+\_\+p (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}, \mbox{\hyperlink{pcap-sita_8c_aa65c0e2852a2363704b1c5fbed504ca7}{dump()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}\label{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!dump\_unit\_table@{dump\_unit\_table}}
+\index{dump\_unit\_table@{dump\_unit\_table}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{dump\_unit\_table()}{dump\_unit\_table()}}
+{\footnotesize\ttfamily static void dump\+\_\+unit\+\_\+table (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a86b7b83c3ff679d88e0e134ce010579a}{unit\+\_\+t\+::iface}}, \mbox{\hyperlink{structiface__t_ae7dd6e69d0147447fd05a0d5332578ef}{iface\+\_\+t\+::\+IOPname}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{structiface__t_a5ac083a645d964373f022d03df4849c8}{iface\+\_\+t\+::name}}, \mbox{\hyperlink{structiface__t_a3c41ec26bd41798c2b4840a35508fb64}{iface\+\_\+t\+::next}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}\label{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!empty\_unit@{empty\_unit}}
+\index{empty\_unit@{empty\_unit}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{empty\_unit()}{empty\_unit()}}
+{\footnotesize\ttfamily static void empty\+\_\+unit (\begin{DoxyParamCaption}\item[{int}]{chassis,  }\item[{int}]{geoslot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067}{empty\+\_\+unit\+\_\+iface()}}, \mbox{\hyperlink{structunit__t_a077ec065df1a19c4199c00ba165b5301}{unit\+\_\+t\+::imsg}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}{empty\+\_\+unit\+\_\+table()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067}\label{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!empty\_unit\_iface@{empty\_unit\_iface}}
+\index{empty\_unit\_iface@{empty\_unit\_iface}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{empty\_unit\_iface()}{empty\_unit\_iface()}}
+{\footnotesize\ttfamily static void empty\+\_\+unit\+\_\+iface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a86b7b83c3ff679d88e0e134ce010579a}{unit\+\_\+t\+::iface}}, \mbox{\hyperlink{structiface__t_ae7dd6e69d0147447fd05a0d5332578ef}{iface\+\_\+t\+::\+IOPname}}, \mbox{\hyperlink{structiface__t_a5ac083a645d964373f022d03df4849c8}{iface\+\_\+t\+::name}} , 以及 \mbox{\hyperlink{structiface__t_a3c41ec26bd41798c2b4840a35508fb64}{iface\+\_\+t\+::next}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}{empty\+\_\+unit()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}\label{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!empty\_unit\_table@{empty\_unit\_table}}
+\index{empty\_unit\_table@{empty\_unit\_table}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{empty\_unit\_table()}{empty\_unit\_table()}}
+{\footnotesize\ttfamily static void empty\+\_\+unit\+\_\+table (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}{empty\+\_\+unit()}}, \mbox{\hyperlink{structunit__t_afbc356cd0e25d1dbbece7c10fd025fa6}{unit\+\_\+t\+::ip}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}{acn\+\_\+parse\+\_\+hosts\+\_\+file()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a8e1dd4af605a71dfcffde0b8298c8f46}\label{pcap-sita_8c_a8e1dd4af605a71dfcffde0b8298c8f46}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!find\_nth\_interface\_name@{find\_nth\_interface\_name}}
+\index{find\_nth\_interface\_name@{find\_nth\_interface\_name}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{find\_nth\_interface\_name()}{find\_nth\_interface\_name()}}
+{\footnotesize\ttfamily static char $\ast$ find\+\_\+nth\+\_\+interface\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a86b7b83c3ff679d88e0e134ce010579a}{unit\+\_\+t\+::iface}}, \mbox{\hyperlink{structiface__t_ae7dd6e69d0147447fd05a0d5332578ef}{iface\+\_\+t\+::\+IOPname}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{structiface__t_a5ac083a645d964373f022d03df4849c8}{iface\+\_\+t\+::name}}, \mbox{\hyperlink{structiface__t_a3c41ec26bd41798c2b4840a35508fb64}{iface\+\_\+t\+::next}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}\label{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!find\_unit\_by\_fd@{find\_unit\_by\_fd}}
+\index{find\_unit\_by\_fd@{find\_unit\_by\_fd}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{find\_unit\_by\_fd()}{find\_unit\_by\_fd()}}
+{\footnotesize\ttfamily static int find\+\_\+unit\+\_\+by\+\_\+fd (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int $\ast$}]{chassis,  }\item[{int $\ast$}]{geoslot,  }\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$$\ast$}]{unit\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}{acn\+\_\+start\+\_\+monitor()}}, \mbox{\hyperlink{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}{pcap\+\_\+cleanup\+\_\+acn()}}, \mbox{\hyperlink{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}{read\+\_\+client\+\_\+data()}}, \mbox{\hyperlink{pcap-sita_8c_a66548453e6802e4e8e99997070888878}{read\+\_\+client\+\_\+nbytes()}}, \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}\label{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!get\_error\_response@{get\_error\_response}}
+\index{get\_error\_response@{get\_error\_response}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{get\_error\_response()}{get\_error\_response()}}
+{\footnotesize\ttfamily static char $\ast$ get\+\_\+error\+\_\+response (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a58a703f6a6b4082c61830d3ddad5da4a}\label{pcap-sita_8c_a58a703f6a6b4082c61830d3ddad5da4a}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!if\_sort@{if\_sort}}
+\index{if\_sort@{if\_sort}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{if\_sort()}{if\_sort()}}
+{\footnotesize\ttfamily static int if\+\_\+sort (\begin{DoxyParamCaption}\item[{char $\ast$}]{s1,  }\item[{char $\ast$}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a706068f562dd5c64a8b7bbd4b2298dd1}{MAX\+\_\+\+LINE\+\_\+\+SIZE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}{sort\+\_\+if\+\_\+table()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a58a703f6a6b4082c61830d3ddad5da4a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852}\label{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!nonUnified\_port\_num@{nonUnified\_port\_num}}
+\index{nonUnified\_port\_num@{nonUnified\_port\_num}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{nonUnified\_port\_num()}{nonUnified\_port\_num()}}
+{\footnotesize\ttfamily static char $\ast$ non\+Unified\+\_\+port\+\_\+num (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$}]{u,  }\item[{int}]{IOPportnum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a6d0d461c30ae760c6c59bdd3801c8ffd}{unit\+\_\+t\+::chassis}}, \mbox{\hyperlink{structunit__t_a4caaf428f9a79fcda8d8d1e1e37c446c}{unit\+\_\+t\+::geoslot}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2f87d0fd734201077ac6876ed7c45513}{static\+\_\+buf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}{translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}\label{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!open\_with\_IOP@{open\_with\_IOP}}
+\index{open\_with\_IOP@{open\_with\_IOP}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{open\_with\_IOP()}{open\_with\_IOP()}}
+{\footnotesize\ttfamily static int open\+\_\+with\+\_\+\+IOP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$}]{u,  }\item[{int}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ab426c21b176346931201b586eca8f197}{bzero()}}, \mbox{\hyperlink{os-sunos4_8h_a155ec88a20b5846c8e7358475f8f0e4e}{connect()}}, \mbox{\hyperlink{structunit__t_a6f8059414f0228f0256115e024eeed4b}{unit\+\_\+t\+::fd}}, \mbox{\hyperlink{structunit__t_a16fc9159bd3b5baf0fd8f44c1e1a9bc2}{unit\+\_\+t\+::find\+\_\+fd}}, \mbox{\hyperlink{structunit__t_a2251ba55279aef307357d4b82d7cffb7}{unit\+\_\+t\+::first\+\_\+time}}, \mbox{\hyperlink{pcap-sita_8c_a159583f75afcbae01e1527317b2330bd}{IOP\+\_\+\+SNIFFER\+\_\+\+PORT}}, \mbox{\hyperlink{structunit__t_afbc356cd0e25d1dbbece7c10fd025fa6}{unit\+\_\+t\+::ip}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}}, \mbox{\hyperlink{structunit__t_ad01d2ded45b5f4a1cd0b63166eb43b6b}{unit\+\_\+t\+::serv\+\_\+addr}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad8757ba7b643ff8279abf9593f543494}{socket()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a09b8f7b6f944fc066ab1efdbc19d7694_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}\label{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_activate\_sita@{pcap\_activate\_sita}}
+\index{pcap\_activate\_sita@{pcap\_activate\_sita}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_activate\_sita()}{pcap\_activate\_sita()}}
+{\footnotesize\ttfamily static int pcap\+\_\+activate\+\_\+sita (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}{pcap\+\_\+cleanup\+\_\+acn()}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_af113fa82244cf1246dc09d9399049000}{PCAP\+\_\+\+ERROR}}, \mbox{\hyperlink{pcap_2pcap_8h_a2bdaca673eb2ddf3e63f4cc68342cf56}{PCAP\+\_\+\+ERROR\+\_\+\+RFMON\+\_\+\+NOTSUP}}, \mbox{\hyperlink{pcap-int_8h_a6e157e229eceba8cccc16f0ff9d8e438}{pcap\+\_\+getnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_aaef2a573cc601e5b1d8447d5694efd7f}{pcap\+\_\+inject\+\_\+acn()}}, \mbox{\hyperlink{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}{pcap\+\_\+read\+\_\+acn()}}, \mbox{\hyperlink{pcap-sita_8c_aab985bb9991899334f3b64d205424589}{pcap\+\_\+setdirection\+\_\+acn()}}, \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn()}}, \mbox{\hyperlink{pcap-int_8h_a541d703f493e59bc6e2925ad3a9e913d}{pcap\+\_\+setnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}{pcap\+\_\+stats\+\_\+acn()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}\label{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_cleanup\_acn@{pcap\_cleanup\_acn}}
+\index{pcap\_cleanup\_acn@{pcap\_cleanup\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_cleanup\_acn()}{pcap\_cleanup\_acn()}}
+{\footnotesize\ttfamily static void pcap\+\_\+cleanup\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{structunit__t_a2251ba55279aef307357d4b82d7cffb7}{unit\+\_\+t\+::first\+\_\+time}}, \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}} , 以及 \mbox{\hyperlink{pcap-int_8h_a50639981820eecf318e85605bda37f8e}{pcap\+\_\+cleanup\+\_\+live\+\_\+common()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_afba00853ed00bd372bcb9dae2540d56e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a79459f4198464b94a23dbc29b5f26faa}\label{pcap-sita_8c_a79459f4198464b94a23dbc29b5f26faa}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_create@{pcap\_create}}
+\index{pcap\_create@{pcap\_create}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_create()}{pcap\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ pcap\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}} , 以及 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a79459f4198464b94a23dbc29b5f26faa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_aaef2a573cc601e5b1d8447d5694efd7f}\label{pcap-sita_8c_aaef2a573cc601e5b1d8447d5694efd7f}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_inject\_acn@{pcap\_inject\_acn}}
+\index{pcap\_inject\_acn@{pcap\_inject\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_inject\_acn()}{pcap\_inject\_acn()}}
+{\footnotesize\ttfamily static int pcap\+\_\+inject\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{const void $\ast$buf}]{\+\_\+\+U\+\_\+,  }\item[{size\+\_\+t size}]{\+\_\+\+U\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_aaef2a573cc601e5b1d8447d5694efd7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}\label{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_read\_acn@{pcap\_read\_acn}}
+\index{pcap\_read\_acn@{pcap\_read\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_read\_acn()}{pcap\_read\_acn()}}
+{\footnotesize\ttfamily static int pcap\+\_\+read\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{int}]{max\+\_\+packets,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a795be84d1e1aada2e1a056ff1e934ef7}{acn\+\_\+read\+\_\+n\+\_\+bytes\+\_\+with\+\_\+timeout()}}, \mbox{\hyperlink{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}{acn\+\_\+start\+\_\+monitor()}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{pcap-sita_8c_a49999be01380f41cc0d0f1f1406fb277}{HEADER\+\_\+\+SIZE}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3f83958289cde0ca88104473d1f2f9ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_aab985bb9991899334f3b64d205424589}\label{pcap-sita_8c_aab985bb9991899334f3b64d205424589}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_setdirection\_acn@{pcap\_setdirection\_acn}}
+\index{pcap\_setdirection\_acn@{pcap\_setdirection\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setdirection\_acn()}{pcap\_setdirection\_acn()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setdirection\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_ab506e3602b2ac94641699a4b7818b129}{pcap\+\_\+direction\+\_\+t}}}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_aab985bb9991899334f3b64d205424589_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}\label{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_setfilter\_acn@{pcap\_setfilter\_acn}}
+\index{pcap\_setfilter\_acn@{pcap\_setfilter\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_setfilter\_acn()}{pcap\_setfilter\_acn()}}
+{\footnotesize\ttfamily static int pcap\+\_\+setfilter\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{bpf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structbpf__program_aed556880943c25c15e7ed3b1502603e9}{bpf\+\_\+program\+::bf\+\_\+insns}}, \mbox{\hyperlink{structbpf__program_ab083593fb14595185d9503f0184804cd}{bpf\+\_\+program\+::bf\+\_\+len}}, \mbox{\hyperlink{structbpf__insn_a31d2b9573d5369a1ec61c298c9b04c8b}{bpf\+\_\+insn\+::code}}, \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response()}}, \mbox{\hyperlink{structbpf__insn_ac17ca94afd8698ccd3509f2a266d98d4}{bpf\+\_\+insn\+::jf}}, \mbox{\hyperlink{structbpf__insn_a05f79dc12cd247354eea27e8df2d896c}{bpf\+\_\+insn\+::jt}}, \mbox{\hyperlink{structbpf__insn_a8f0e122f9da41d35d9b87ebfc599b5d8}{bpf\+\_\+insn\+::k}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3eb476bba79449960fa66095991b35df_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3eb476bba79449960fa66095991b35df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}\label{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!pcap\_stats\_acn@{pcap\_stats\_acn}}
+\index{pcap\_stats\_acn@{pcap\_stats\_acn}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_stats\_acn()}{pcap\_stats\_acn()}}
+{\footnotesize\ttfamily static int pcap\+\_\+stats\+\_\+acn (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{ps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structpcap__stat_a2cfc89d84a0ba404cacfa59f6b112bc1}{pcap\+\_\+stat\+::ps\+\_\+drop}}, \mbox{\hyperlink{structpcap__stat_abc51be1ec5423e462bde5eac5a9b7c56}{pcap\+\_\+stat\+::ps\+\_\+ifdrop}}, \mbox{\hyperlink{structpcap__stat_a825c8bdb589e7de8e597f6d6f7af8125}{pcap\+\_\+stat\+::ps\+\_\+recv}}, \mbox{\hyperlink{pcap-sita_8c_a66548453e6802e4e8e99997070888878}{read\+\_\+client\+\_\+nbytes()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a880fa868cc99403bbbeca18a97386ac6}{pcap\+\_\+activate\+\_\+sita()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a096343734009d244a97b66ceb480476b}\label{pcap-sita_8c_a096343734009d244a97b66ceb480476b}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!process\_client\_data@{process\_client\_data}}
+\index{process\_client\_data@{process\_client\_data}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{process\_client\_data()}{process\_client\_data()}}
+{\footnotesize\ttfamily static int process\+\_\+client\+\_\+data (\begin{DoxyParamCaption}\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}}, \mbox{\hyperlink{os-sunos4_8h_ab426c21b176346931201b586eca8f197}{bzero()}}, \mbox{\hyperlink{pcap-sita_8c_a5236cfbecb9f93ec209a87ce51e88067}{empty\+\_\+unit\+\_\+iface()}}, \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{structunit__t_a077ec065df1a19c4199c00ba165b5301}{unit\+\_\+t\+::imsg}}, \mbox{\hyperlink{structunit__t_afed088663f8704004425cdae2120b9b3}{unit\+\_\+t\+::len}}, \mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}, \mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}, \mbox{\hyperlink{pcap_2pcap_8h_a43a6601bfd438efc02b0ba71c5439647}{PCAP\+\_\+\+IF\+\_\+\+LOOPBACK}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}}, \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}, \mbox{\hyperlink{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}{translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a096343734009d244a97b66ceb480476b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a096343734009d244a97b66ceb480476b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}\label{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!read\_client\_data@{read\_client\_data}}
+\index{read\_client\_data@{read\_client\_data}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{read\_client\_data()}{read\_client\_data()}}
+{\footnotesize\ttfamily static int read\+\_\+client\+\_\+data (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{structunit__t_a077ec065df1a19c4199c00ba165b5301}{unit\+\_\+t\+::imsg}}, \mbox{\hyperlink{structunit__t_afed088663f8704004425cdae2120b9b3}{unit\+\_\+t\+::len}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a66548453e6802e4e8e99997070888878}\label{pcap-sita_8c_a66548453e6802e4e8e99997070888878}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!read\_client\_nbytes@{read\_client\_nbytes}}
+\index{read\_client\_nbytes@{read\_client\_nbytes}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{read\_client\_nbytes()}{read\_client\_nbytes()}}
+{\footnotesize\ttfamily static int read\+\_\+client\+\_\+nbytes (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{count,  }\item[{unsigned char $\ast$}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a25af868dc51b35e33328fe2fb6909839}{recv()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}{pcap\+\_\+stats\+\_\+acn()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{pcap-sita_8c_a66548453e6802e4e8e99997070888878_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a66548453e6802e4e8e99997070888878_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}\label{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!send\_to\_fd@{send\_to\_fd}}
+\index{send\_to\_fd@{send\_to\_fd}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{send\_to\_fd()}{send\_to\_fd()}}
+{\footnotesize\ttfamily static void send\+\_\+to\+\_\+fd (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{len,  }\item[{unsigned char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}{empty\+\_\+unit()}}, \mbox{\hyperlink{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}{FIND}}, \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_a3148d7709dc6606cdc38956bd2635940}{LIVE}}, \mbox{\hyperlink{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}{units}} , 以及 \mbox{\hyperlink{os-sunos4_8h_acd05dd935a081148178734b4930031d5}{write()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{pcap-sita_8c_ac5decbe96fe4a38f0e247b3033271949}{acn\+\_\+start\+\_\+monitor()}}, \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a3258091fefcfd31251e97c33ba086103}{pcap\+\_\+stats\+\_\+acn()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}\label{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!sort\_if\_table@{sort\_if\_table}}
+\index{sort\_if\_table@{sort\_if\_table}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{sort\_if\_table()}{sort\_if\_table()}}
+{\footnotesize\ttfamily static void sort\+\_\+if\+\_\+table (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}{acn\+\_\+if\+\_\+list}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a58a703f6a6b4082c61830d3ddad5da4a}{if\+\_\+sort()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}\label{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!translate\_IOP\_to\_pcap\_name@{translate\_IOP\_to\_pcap\_name}}
+\index{translate\_IOP\_to\_pcap\_name@{translate\_IOP\_to\_pcap\_name}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{translate\_IOP\_to\_pcap\_name()}{translate\_IOP\_to\_pcap\_name()}}
+{\footnotesize\ttfamily static char $\ast$ translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$}]{u,  }\item[{char $\ast$}]{IOPname,  }\item[{\mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\+\_\+u\+\_\+int32}}}]{iftype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ab426c21b176346931201b586eca8f197}{bzero()}}, \mbox{\hyperlink{bpf_8h_a2adfa9ce9372b56bd4b1c402be9a3d4b}{DLT\+\_\+\+EN10\+MB}}, \mbox{\hyperlink{bpf_8h_a9f466bd81e4db80cdd8f726e32c286f9}{DLT\+\_\+\+SITA}}, \mbox{\hyperlink{structunit__t_a86b7b83c3ff679d88e0e134ce010579a}{unit\+\_\+t\+::iface}}, \mbox{\hyperlink{structiface__t_a167508a1c4d8cf1eca562d5acda665ca}{iface\+\_\+t\+::iftype}}, \mbox{\hyperlink{structiface__t_ae7dd6e69d0147447fd05a0d5332578ef}{iface\+\_\+t\+::\+IOPname}}, \mbox{\hyperlink{structiface__t_a5ac083a645d964373f022d03df4849c8}{iface\+\_\+t\+::name}}, \mbox{\hyperlink{structiface__t_a3c41ec26bd41798c2b4840a35508fb64}{iface\+\_\+t\+::next}}, \mbox{\hyperlink{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852}{non\+Unified\+\_\+port\+\_\+num()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb}{unified\+\_\+port\+\_\+num()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb}\label{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!unified\_port\_num@{unified\_port\_num}}
+\index{unified\_port\_num@{unified\_port\_num}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{unified\_port\_num()}{unified\_port\_num()}}
+{\footnotesize\ttfamily static char $\ast$ unified\+\_\+port\+\_\+num (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structunit__t}{unit\+\_\+t}} $\ast$}]{u,  }\item[{int}]{IOPportnum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structunit__t_a6d0d461c30ae760c6c59bdd3801c8ffd}{unit\+\_\+t\+::chassis}}, \mbox{\hyperlink{structunit__t_a4caaf428f9a79fcda8d8d1e1e37c446c}{unit\+\_\+t\+::geoslot}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a2f87d0fd734201077ac6876ed7c45513}{static\+\_\+buf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a03b8059db745959bf2236b0b6aff0169}{translate\+\_\+\+IOP\+\_\+to\+\_\+pcap\+\_\+name()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}\label{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!wait\_for\_all\_answers@{wait\_for\_all\_answers}}
+\index{wait\_for\_all\_answers@{wait\_for\_all\_answers}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_all\_answers()}{wait\_for\_all\_answers()}}
+{\footnotesize\ttfamily static void wait\+\_\+for\+\_\+all\+\_\+answers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-sita_8c_ad9ee182c6e9d1c3e11a19ea996ac8762}{FIND}}, \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_a59300bf76be129230d76fc4ed5309e40}{max\+\_\+fs}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{pcap-sita_8c_aa1adbfca3dd4dd1977f09e50641b1760}{read\+\_\+client\+\_\+data()}}, \mbox{\hyperlink{pcap-sita_8c_a9414d40779d181f95abce79de81fbcba}{readfds}}, \mbox{\hyperlink{os-sunos4_8h_a63bad960746361d24877cc9fb1267ac1}{select()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a3017c4c276a2ec2281bc00fb7fda3000}{working\+\_\+set}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}\label{pcap-sita_8c_a6a1c511b05d0c24ec6e65df41c806bc4}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!acn\_if\_list@{acn\_if\_list}}
+\index{acn\_if\_list@{acn\_if\_list}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{acn\_if\_list}{acn\_if\_list}}
+{\footnotesize\ttfamily pcap\+\_\+if\+\_\+t$\ast$ acn\+\_\+if\+\_\+list}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a1c270520ac4dcc38c6ce2653f557eb52}{acn\+\_\+freealldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a1de5364f964a4f2c6c60805112d118cb}{dump\+\_\+interface\+\_\+list()}}, \mbox{\hyperlink{pcap-sita_8c_abff7ab491635ac91dc0f7c96c7918ce2}{dump\+\_\+interface\+\_\+list\+\_\+p()}}, \mbox{\hyperlink{fad-sita_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a8d5389b63b642868aaad0d6bba61f555}{sort\+\_\+if\+\_\+table()}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a6131894d045fd73eb198e1f861bf5586}\label{pcap-sita_8c_a6131894d045fd73eb198e1f861bf5586}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!errorString@{errorString}}
+\index{errorString@{errorString}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{errorString}{errorString}}
+{\footnotesize\ttfamily char$\ast$ error\+String\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{pcap-sita_8c_a59300bf76be129230d76fc4ed5309e40}\label{pcap-sita_8c_a59300bf76be129230d76fc4ed5309e40}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!max\_fs@{max\_fs}}
+\index{max\_fs@{max\_fs}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{max\_fs}{max\_fs}}
+{\footnotesize\ttfamily int max\+\_\+fs\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a9414d40779d181f95abce79de81fbcba}\label{pcap-sita_8c_a9414d40779d181f95abce79de81fbcba}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!readfds@{readfds}}
+\index{readfds@{readfds}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{readfds}{readfds}}
+{\footnotesize\ttfamily fd\+\_\+set readfds\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a2f87d0fd734201077ac6876ed7c45513}\label{pcap-sita_8c_a2f87d0fd734201077ac6876ed7c45513}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!static\_buf@{static\_buf}}
+\index{static\_buf@{static\_buf}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{static\_buf}{static\_buf}}
+{\footnotesize\ttfamily char static\+\_\+buf\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a0a58a73255350252f6ce77c3e0894852}{non\+Unified\+\_\+port\+\_\+num()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a9fdd60b444c1bd06aab9e27ce3917dbb}{unified\+\_\+port\+\_\+num()}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}\label{pcap-sita_8c_a2dec9910b866f659fbfdf3a04a4b4a50}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!units@{units}}
+\index{units@{units}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{units}{units}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structunit__t}{unit\+\_\+t}} units\mbox{[}\mbox{\hyperlink{pcap-sita_8c_a22efd492ca06173ff987952b51cb5455}{MAX\+\_\+\+CHASSIS}}+1\mbox{]}\mbox{[}\mbox{\hyperlink{pcap-sita_8c_a3db80411e8ffbd782d78d34ceed92810}{MAX\+\_\+\+GEOSLOT}}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}{acn\+\_\+parse\+\_\+hosts\+\_\+file()}}, \mbox{\hyperlink{pcap-sita_8c_a4b0e15e9936c0d5a0279f70219d6c724}{close\+\_\+with\+\_\+\+IOP()}}, \mbox{\hyperlink{pcap-sita_8c_a5f3671694f6c4b43ef438522dc97913d}{dump\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{pcap-sita_8c_ac259ec0930b41b0c2bd8d5b45eeacfbb}{empty\+\_\+unit()}}, \mbox{\hyperlink{pcap-sita_8c_acf37c8c5c911b789784da55764a9e9fb}{empty\+\_\+unit\+\_\+table()}}, \mbox{\hyperlink{pcap-sita_8c_a8e1dd4af605a71dfcffde0b8298c8f46}{find\+\_\+nth\+\_\+interface\+\_\+name()}}, \mbox{\hyperlink{pcap-sita_8c_a1881f77ebe2cbf0934ba10dd5bc3c255}{find\+\_\+unit\+\_\+by\+\_\+fd()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a05a414128af6b734c88d42127f18e9b9}{send\+\_\+to\+\_\+fd()}}.
+
+\mbox{\Hypertarget{pcap-sita_8c_a3017c4c276a2ec2281bc00fb7fda3000}\label{pcap-sita_8c_a3017c4c276a2ec2281bc00fb7fda3000}} 
+\index{pcap-\/sita.c@{pcap-\/sita.c}!working\_set@{working\_set}}
+\index{working\_set@{working\_set}!pcap-\/sita.c@{pcap-\/sita.c}}
+\doxysubsubsection{\texorpdfstring{working\_set}{working\_set}}
+{\footnotesize\ttfamily fd\+\_\+set working\+\_\+set\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_a156806c57b312edaaeaeb886aa32da8a}{wait\+\_\+for\+\_\+all\+\_\+answers()}}.
+

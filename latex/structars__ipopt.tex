@@ -1,0 +1,45 @@
+\hypertarget{structars__ipopt}{}\doxysection{ars\+\_\+ipopt Struct Reference}
+\label{structars__ipopt}\index{ars\_ipopt@{ars\_ipopt}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structars__ipopt_afe8b04a7ba49387a4e743bfe3e8537db}\label{structars__ipopt_afe8b04a7ba49387a4e743bfe3e8537db}} 
+u\+\_\+int8\+\_\+t {\bfseries kind}
+\item 
+\mbox{\Hypertarget{structars__ipopt_a85613889f6fdef76bc2da004ef4eacce}\label{structars__ipopt_a85613889f6fdef76bc2da004ef4eacce}} 
+u\+\_\+int8\+\_\+t {\bfseries len}
+\item 
+\mbox{\Hypertarget{structars__ipopt_a07caa852578fba989cfcece2bc68ed52}\label{structars__ipopt_a07caa852578fba989cfcece2bc68ed52}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>u\_int16\_t {\bfseries s}\\
+\>\>u\_int16\_t {\bfseries c}\\
+\>\>u\_int16\_t {\bfseries h}\\
+\>\>u\_int8\_t {\bfseries tcc} \mbox{[}3\mbox{]}\\
+\>\} {\bfseries sec}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries ptr}\\
+\>\>u\_int8\_t {\bfseries data} \mbox{[}37\mbox{]}\\
+\>\} {\bfseries src}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries ptr}\\
+\>\>u\_int8\_t {\bfseries data} \mbox{[}37\mbox{]}\\
+\>\} {\bfseries rr}\\
+\>struct \{\\
+\>\>u\_int16\_t {\bfseries id}\\
+\>\} {\bfseries sid}\\
+\>struct \{\\
+\>\>u\_int8\_t {\bfseries ptr}\\
+\>\>u\_int8\_t {\bfseries flags}\\
+\>\>u\_int8\_t {\bfseries data} \mbox{[}36\mbox{]}\\
+\>\} {\bfseries ts}\\
+\} {\bfseries un}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ars.\+h\end{DoxyCompactItemize}

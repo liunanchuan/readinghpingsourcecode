@@ -1,0 +1,96 @@
+\hypertarget{os-ultrix4_8h}{}\doxysection{libpcap-\/1.1.1/lbl/os-\/ultrix4.h 文件参考}
+\label{os-ultrix4_8h}\index{libpcap-\/1.1.1/lbl/os-\/ultrix4.h@{libpcap-\/1.1.1/lbl/os-\/ultrix4.h}}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_a0713ee9175192f630dc31a75a8e63820}{bcmp}} (const char $\ast$, const char $\ast$, u\+\_\+int)
+\item 
+void \mbox{\hyperlink{os-ultrix4_8h_a9fc3f8664f469f650b368506c90c8834}{bcopy}} (const void $\ast$, void $\ast$, u\+\_\+int)
+\item 
+void \mbox{\hyperlink{os-ultrix4_8h_a34e9a4ef4228bd090e28101a4a7787a8}{bzero}} (void $\ast$, u\+\_\+int)
+\item 
+void \mbox{\hyperlink{os-ultrix4_8h_adf81140af263bf72a02dc4a484e98d6a}{endservent}} (void)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_a09d633c0a8afac8b4a910a5dfce67d60}{getopt}} (int, char $\ast$const $\ast$, const char $\ast$)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday}} (struct timeval $\ast$, struct \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} $\ast$)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl}} (int, int, \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}})
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_ab12b50e5f7e4369d431c2283a208bb77}{pfopen}} (char $\ast$, int)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_adf8040f62d4c5e32a91622352cc62e5e}{setlinebuf}} (FILE $\ast$)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_ad8757ba7b643ff8279abf9593f543494}{socket}} (int, int, int)
+\item 
+int \mbox{\hyperlink{os-ultrix4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp}} (const char $\ast$, const char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{os-ultrix4_8h_a0713ee9175192f630dc31a75a8e63820}\label{os-ultrix4_8h_a0713ee9175192f630dc31a75a8e63820}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!bcmp@{bcmp}}
+\index{bcmp@{bcmp}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{bcmp()}{bcmp()}}
+{\footnotesize\ttfamily int bcmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a9fc3f8664f469f650b368506c90c8834}\label{os-ultrix4_8h_a9fc3f8664f469f650b368506c90c8834}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!bcopy@{bcopy}}
+\index{bcopy@{bcopy}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{bcopy()}{bcopy()}}
+{\footnotesize\ttfamily void bcopy (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{void $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a34e9a4ef4228bd090e28101a4a7787a8}\label{os-ultrix4_8h_a34e9a4ef4228bd090e28101a4a7787a8}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!bzero@{bzero}}
+\index{bzero@{bzero}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{bzero()}{bzero()}}
+{\footnotesize\ttfamily void bzero (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{u\+\_\+int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_adf81140af263bf72a02dc4a484e98d6a}\label{os-ultrix4_8h_adf81140af263bf72a02dc4a484e98d6a}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!endservent@{endservent}}
+\index{endservent@{endservent}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{endservent()}{endservent()}}
+{\footnotesize\ttfamily void endservent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a09d633c0a8afac8b4a910a5dfce67d60}\label{os-ultrix4_8h_a09d633c0a8afac8b4a910a5dfce67d60}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!getopt@{getopt}}
+\index{getopt@{getopt}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{getopt()}{getopt()}}
+{\footnotesize\ttfamily int getopt (\begin{DoxyParamCaption}\item[{int}]{nargc,  }\item[{char $\ast$const $\ast$}]{nargv,  }\item[{const char $\ast$}]{ostr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a091a762f60d91b0f5441d9520dc2079c}\label{os-ultrix4_8h_a091a762f60d91b0f5441d9520dc2079c}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!gettimeofday@{gettimeofday}}
+\index{gettimeofday@{gettimeofday}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{gettimeofday()}{gettimeofday()}}
+{\footnotesize\ttfamily int gettimeofday (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{,  }\item[{struct \mbox{\hyperlink{os-sunos4_8h_a646dcbfee00991036fb6cf6f8d940796}{timezone}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}\label{os-ultrix4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!ioctl@{ioctl}}
+\index{ioctl@{ioctl}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{ioctl()}{ioctl()}}
+{\footnotesize\ttfamily int ioctl (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_ab12b50e5f7e4369d431c2283a208bb77}\label{os-ultrix4_8h_ab12b50e5f7e4369d431c2283a208bb77}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!pfopen@{pfopen}}
+\index{pfopen@{pfopen}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{pfopen()}{pfopen()}}
+{\footnotesize\ttfamily int pfopen (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_adf8040f62d4c5e32a91622352cc62e5e}\label{os-ultrix4_8h_adf8040f62d4c5e32a91622352cc62e5e}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!setlinebuf@{setlinebuf}}
+\index{setlinebuf@{setlinebuf}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{setlinebuf()}{setlinebuf()}}
+{\footnotesize\ttfamily int setlinebuf (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_ad8757ba7b643ff8279abf9593f543494}\label{os-ultrix4_8h_ad8757ba7b643ff8279abf9593f543494}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!socket@{socket}}
+\index{socket@{socket}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{socket()}{socket()}}
+{\footnotesize\ttfamily int socket (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{os-ultrix4_8h_a91ca23db677fbf51663c03060776457d}\label{os-ultrix4_8h_a91ca23db677fbf51663c03060776457d}} 
+\index{os-\/ultrix4.h@{os-\/ultrix4.h}!strcasecmp@{strcasecmp}}
+\index{strcasecmp@{strcasecmp}!os-\/ultrix4.h@{os-\/ultrix4.h}}
+\doxysubsubsection{\texorpdfstring{strcasecmp()}{strcasecmp()}}
+{\footnotesize\ttfamily int strcasecmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+

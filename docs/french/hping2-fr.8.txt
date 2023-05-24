@@ -1,0 +1,694 @@
+HPING2(8)                                               HPING2(8)
+
+NOM
+       hping2 - envoie des paquets TCP/IP (presque) arbitraires �
+       des syst鑝es r閟eaux
+
+RESUME
+       hping2 [ -hvnqVDzZ012WrfxykQbFSRPAUXYjJBuTG ] [ -c count ]
+       [ -i wait ] [ --fast ] [ -I interface ] [ -9 signature ] [
+       -a host ] [ -t ttl ] [ -N ip id ] [ -H ip protocol ] [  -g
+       fragoff ] [ -m mtu ] [ -o tos ] [ -C icmp type ] [ -K icmp
+       code ] [ -s source port ] [ -p[+][+] dest port ] [ -w  tcp
+       window ] [ -O tcp offset ] [ -M tcp sequence number ] [ -L
+       tcp ack ] [ -d data size ] [ -E filename ] [ -e  signature
+       ]  [  --icmp-ipver  version  ]  [ --icmp-iphlen length ] [
+       --icmp-iplen length ] [ --icmp-ipid id ] [  --icmp-ipproto
+       protocol  ]  [  --icmp-cksum  checksum  ]  [ --icmp-ts ] [
+       --icmp-addr ] [ --tcpexitcode  ]  [  --tcp-timestamp  ]  [
+       --tr-stop  ]  [  --tr-keep-ttl ] [ --tr-no-rtt ] [ --rand-
+       dest ] [ --rand-source ] hostname
+
+DESCRIPTION
+       hping2 est un outil r閟eau capable d'envoyer  des  paquets
+       TCP/IP sur commande et d'afficher les r閜onses de la cible
+       comme le programme ping le fait avec  les  r閜onses  ICMP.
+       hping2 traite la fragmentation, les contenus de paquets et
+       les tailles arbitraires, et peut 阾re utilis� dans le  but
+       de  transf閞er des fichiers encapsul閟 dans les protocoles
+       support閟.  En  utilisant   hping2   vous   阾es   capable
+       d'effectuer au moins les t鈉hes suivantes :
+
+        - Tester les r鑗les d'un firewall
+        - Scanner des ports de fa鏾n avanc閑
+        -  Tester les performances r閟eau en utilisant diff閞ents
+       protocoles, tailles de paquets, TOS (type de  service)  et
+       fragmentation.
+        - D閏ouverte de "Path MTU"
+        -  Transf閞er  des  fichiers m阭e au travers de r鑗les de
+       firewall vraiment fascistes.
+        - Comme traceroute avec diff閞ents protocoles.
+        - Utilisation comme Firewalk.
+        - D閠ermination d'OS � distance.
+        - Audit de pile TCP/IP.
+        - Beaucoup d'autres.
+
+       C'est 間alement un bon  outil  didactique  pour  apprendre
+       TCP/IP.     hping2   est   d関elopp�   et   maintenu   par
+       antirez@invece.org et est sous la version 2 de la  licence
+       GPL.   Le   d関eloppement  est  ouvert  donc  vous  pouvez
+       m'envoyer des patches, suggestions et affronts sans  inhi�
+       bition.
+
+SITE DE HPING
+       site primaire sur http://www.hping.org.  Vous pouvez trou�
+       ver � la fois la version stable et les  instructions  pour
+       t閘閏harger     le     dernier     code     source     sur
+       http://www.hping.org/download.html
+
+OPTIONS DE BASE
+       -h --help
+              Montre l'閏ran d'aide sur la sortie standard,  donc
+              vous pouvez rediriger vers less.
+
+       -v --version
+              Montre  l'information  de version et l'API utilis閑
+              pour acc閐er au niveau donn閑s (data  link  layer),
+              linux sock packet ou libpcap.
+
+       -c --count count
+              Arr阾e  apr鑣  avoir envoy� (et re鐄) count paquets
+              r閜onse. Apr鑣 que le dernier paquet a  閠�  envoy�
+              hping2  attend  COUNTREACHED_TIMEOUT  secondes  les
+              r閜onses du syst鑝e cible. Vous avez la possibilit�
+              de r間ler COUNTREACHED_TIMEOUT en 閐itant hping2.h
+
+       -i --interval
+              Attend  le  nombre sp閏ifi� de secondes ou de micro
+              secondes entre l'envoie de chaque paquet.  --inter�
+              val  X  fixe  wait � X secondes, --interval uX fixe
+              wait � X micro secondes. Le d閒aut  est  d'attendre
+              une  seconde  entre  chaque  paquet.  En  utilisant
+              hping2 pour transf閞er  des  fichiers  fixer  cette
+              option est tr鑣 important pour augmenter le taux de
+              transfert. M阭e en utilisant hping2 pour  effectuer
+              des  scans  passifs/avec  usurpation d'adresse vous
+              devriez fixer cette option, voir HPING2-HOWTO  pour
+              plus d'informations.
+
+       --fast Alias  pour -i u10000. Hping enverra 10 paquets par
+              seconde.
+
+       --faster
+              Alias pour -i u1. Plus rapide que --fast  ;)  (mais
+              pas  aussi rapide que votre ordinateur peut envoyer
+              des paquets � cause de la conception bas閑 sur  les
+              signaux).
+
+       -n --numeric
+              Sortie  num閞ique  seulement,  aucune  tentative ne
+              sera faite pour chercher les noms symboliques  pour
+              les adresses syst鑝e.
+
+       -q --quiet
+              Sortie  silencieuse. Rien n'est affiche except� les
+              lignes de r閟ume au moment du  d閙arrage  et  quand
+              c'est fini.
+
+       -I --interface interface name
+              Par  d閒aut  sur  les  syst鑝es linux et BSD hping2
+              utilise l'interface  de  routage  par  d閒aut.  Sur
+              d'autres syst鑝es ou quand il n'y a pas d'interface
+              de routage par d閒aut hping2  utilise  la  premi鑢e
+              interface  non  loopback.   Quoi qu'il en soit vous
+              avez la possibilit� de  forcer  hping2  �  utiliser
+              l'interface  dont  vous  avez  besoin  en utilisant
+              cette option. Note :  vous  n'avez  pas  besoin  de
+              sp閏ifier le nom complet, par exemple -I et va cor�
+              respondre � eth0  ethernet0  myet1  et  cetera.  Si
+              aucune  interface  ne  correspond  hping2  essayera
+              d'utiliser lo.
+
+       -V --verbose
+              Active la sortie verbeuse. Les r閜onses TCP  seront
+              affich閑s comme suit :
+
+              len=46  ip=192.168.1.1  flags=RA  DF  seq=0 ttl=255
+              id=0  win=0  rtt=0.4  ms   tos=0   iplen=40   seq=0
+              ack=1380893504 sum=2010 urp=0
+
+       -D --debug
+              Active  le mode de d閎ogage, c'est utile quand vous
+              rencontrez quelques probl鑝es avec hping2. Quand le
+              mode  de  d閎ogage  est activ� vous obtiendrez plus
+              d'informations � propos de la d閠ection des  inter�
+              faces, de l'acc鑣 au niveau donn閑s, du r間lage des
+              interfaces, des options d'analyse, de la fragmenta�
+              tion, du protocole HCMP et d'autres choses.
+
+       -z --bind
+              Lie  CTRL+Z  au time to live (TTL) ainsi vous serez
+              capable  d'incr閙enter/d閏r閙enter   le   ttl   des
+              paquets  sortant  en  pressant  CTRL+Z  une ou deux
+              fois.
+
+       -Z --unbind
+              D�-lie CTRL+Z ainsi vous  serez  capable  d'arr阾er
+              hping2
+
+SELECTION DE PROTOCOLE
+       Le protocole par d閒aut est TCP, par d閒aut hping2 enverra
+       des ent阾es TCP sur le port 0 du syst鑝e  cible  avec  une
+       winsize (ndt : taille de fen阾re) de 64 sans aucun drapeau
+       TCP activ�. Souvent c'est la meilleure mani鑢e de faire un
+       'ping  cach�',  utile quand la cible est derri鑢e un fire�
+       wall qui jette ICMP. De plus un paquet TCP null-flag  (ndt
+       : sans drapeau) vers le port 0 a de bonnes probabilit閟 de
+       ne pas 阾re journalis�.
+
+       -0 --rawip
+              Mode RAW IP, dans ce mode hping2 enverra une ent阾e
+              IP avec les donn閑s ajout閑s avec --signature et/ou
+              --file, voir 間alement --ipproto qui vous  autorise
+              � fixer le champ protocole IP.
+
+       -1 --icmp
+              Mode ICMP, par d閒aut hping2 enverra un paquet ICMP
+              echo-request, vous pouvez fixer un autre  type/code
+              ICMP en utilisant les options --icmptype --icmpcode
+
+       -2 --udp
+              Mode UDP, par d閒aut hping2 enverra des paquets UDP
+              vers  le  port  0  du  syst鑝e  cible.  Les options
+              r間lables des ent阾es  UDP  sont  les  suivantes  :
+              --baseport, --destport, --keep.
+
+       -8 --scan
+              Mode  scan,  l'option attend un argument qui d閏rit
+              des groupes de ports  �  scanner.  Les  groupes  de
+              ports  sont  s閜ar閟  par  des virgules : un nombre
+              d閏rit seulement un port unique, donc 1,2,3  signi�
+              fie ports 1, 2 et 3. Les intervalles sont sp閏ifi閟
+              en utilisant une notation d閎ut-fin, comme  1-1000,
+              qui  dit  �  hping  de scanner les ports entre 1 et
+              1000 (inclus). Le mot sp閏ial all est un alors pour
+              0-65535,  pendant  que  le mot sp閏ial known inclut
+              tous les ports list閟 dans /etc/services.
+              Les groupes peuvent 阾re combin閟, donc la commande
+              suivante  scannera  les ports entre 1 et 1000 ET le
+              port 8888 ET les ports list閟  dans  /etc/services:
+              hping --scan 1-1000,8888,known -S target.host.com
+              Les groupes peuvent 阾re ni閟 (soustraits) en util�
+              isant un caract鑢e ! comme pr閒ix, donc la ligne de
+              commande  suivante  scannera  tous  les  ports  NON
+              list閟 dans /etc/services dans l'intervalle  1-1024
+              : hping --scan '1-1024,!known' -S target.host.com
+              Gardez  �  l'esprit  que pendant que hping appara顃
+              beaucoup plus comme un scanneur de  ports  dans  ce
+              mode,   la   plupart   des  options  sont  toujours
+              honor閑s, donc pour effectuer par exemple  un  scan
+              SYN vous avez besoin de sp閏ifier l'option -S, vous
+              pouvez changer la taille de la fen阾re TCP, le TTL,
+              contr鬺er la fragmentation IP comme habituellement,
+              et ainsi de suite. La seule diff閞ence  r閑lle  est
+              que le comportement standard de hping est encapsul�
+              dans un algorithme de scan.
+              Note technique : Le mode scan utilise  une  concep�
+              tion  bas閑  sur deux processus, avec de la m閙oire
+              partag閑 pour la synchronisation.  L'algorithlme de
+              scan  n'est  toujours  pas optimal, mais d閖� assez
+              rapide.
+              Conseil : � la diff閞ence de la plupart  des  scan�
+              neurs,    hping    montre   quelques   informations
+              int閞essantes  �  propos  des  paquets  re鐄s,  les
+              champs  IP  ID,  TCP  win,  TTL, et ainsi de suite,
+              n'oubliez pas de regarder  ces  informations  addi�
+              tionnelles  quand  vous effectuez un scan! Quelques
+              fois elles montrent des d閠ails int閞essants.
+
+       -9 --listen signature
+              Mode d'閏oute de HPING2, en utilisant cette  option
+              hping2 attend les paquets qui contiennent signature
+              et exporte de la fin de la signature �  la  fin  du
+              paquet.  Par exemple si hping2 --listen TEST lit un
+              paquet qui contient 234-09sdflkjs45-TESThello_world
+              il affichera hello_world.
+
+OPTIONS IP
+       -a --spoof hostname
+              Utiliser  cette  option  dans  le  but de fixer une
+              fausse adresse source, cette option assure  que  le
+              syst鑝e cible n'obtiendra pas votre adresse r閑lle.
+              Quoi qu'il en soit les r閜onses seront  envoy閑s  �
+              l'adresse  usurp閑, ainsi vous ne serez pas capable
+              de les voir. Afin de voir comment il  est  possible
+              d'effectuer    des    scans   avec   des   adresses
+              usurp閑s/passifs voir le fichier HPING2-HOWTO.
+
+       --rand-source
+              Cette  option  active  le  mode  source  al閍toire.
+              hping enverra des paquets avec des adresses sources
+              al閍toires. Il  est  int閞essant  d'utiliser  cette
+              option  pour  stresser les tables d'閠鈚 d'un fire�
+              wall, et d'autres tables dynamiques bas閑s sur  les
+              IP dans les piles TCP/IP et les firewall logiciels.
+
+       --rand-dest
+              Cette option active le mode destination  al閍toire.
+              hping enverra des paquets � des adresses al閍toires
+              obtenues  en  suivant  la  r鑗le  que   vous   avez
+              sp閏ifi閑  comme syst鑝e cible. Vous avez besoin de
+              sp閏ifier une adresse  IP  num閞ique  en  tant  que
+              syst鑝e  cible  comme  10.0.0.x.  Toutes les occur�
+              rences  de  x  seront  remplac閑s  avec  un  nombre
+              al閍toire   dans  l'intervalle  0-255.  Ainsi  pour
+              obtenir des adresses IP internet dans l'espace IPv4
+              complet  utilisez quelque chose comme hping x.x.x.x
+              --rand-dest.  Si vous  n'阾es  pas  s鹯s  du  genre
+              d'adresses   que   votre   r鑗le   g閚鑢e   essayez
+              d'utiliser l'option --debug  pour  afficher  chaque
+              nouvelle adresse destination g閚閞閑.
+              Attention : quand cette option est activ閑 hping ne
+              peut pas d閠ecter la bonne interface de sortie pour
+              les  paquets,  ainsi  vous  devez utiliser l'option
+              --interface pour s閘ectionner l'interface  de  sor�
+              tie.
+
+       -t --ttl time to live
+              En  utilisant cette option vous pouvez fixer le TTL
+              (time to live) des paquets sortant, il est vraisem�
+              blable  que  vous  utiliserez ceci avec les options
+              --traceroute  ou  --bind  Dans  le  doute   essayez
+              `hping2 some.host.com -t 1 --traceroute'.
+
+       -N --id
+              Fixe  le  champ  ip->id . La valeur du champ id par
+              d閒aut est al閍toire mais si la  fragmentation  est
+              activ閑 et que le champ id n'est pas sp閏ifi� alors
+              il sera 間al � getpid() & 0xFF,  mettre  en  oeuvre
+              une  meilleure solution est dans la liste TODO (ndt
+              : � faire).
+
+       -H --ipproto
+              Fixe le protocole IP dans le mode RAW IP.
+
+       -W --winid
+              Le champ id des syst鑝es Windows* avant  Win2k  ont
+              un   byte   ordering   (ndt  :  ordre  des  octets)
+              diff閞ent,  si  cette  option  est  activ閑  hping2
+              affichera  proprement les champs id des r閜onses de
+              ces Windows.
+
+       -r --rel
+              Affiche les incr閙ents du champ id au lieu du champ
+              id. Voir le fichier HPING2-HOWTO pour plus d'infor�
+              mations. Les incr閙ents ne sont pas calcul閟  comme
+              id[N]-id[N-1] mais en utilisant une compensation de
+              pertes de paquets. Voir  le  fichier  relid.c  pour
+              plus d'informations.
+
+       -f --frag
+              D閏oupe  les  paquets  en fragments, ceci peut 阾re
+              utile afin de tester les performances de  la  frag�
+              mentation  des  piles  IP  et de tester si certains
+              filtres de paquets sont si faibles  qu'ils  peuvent
+              阾re   pass閟  en  utilisant  de  petits  fragments
+              (anachronique). Par d閒aut le 'mtu virtuel' (ndt  :
+              taille des fragments) est de 16 octets. Voir 間ale�
+              ment l'option --mtu.
+
+       -x --morefrag
+              Fixe le drapeau IP "more fragments" (ndt : d'autres
+              fragments),  utilisez  cette  option si vous voulez
+              que le syst鑝e cible envoie un  paquet  ICMP  time-
+              exceeded  during  reassembly  (ndt  : d閘ai d閜ass�
+              durant le r�-assemblage).
+
+       -y --dontfrag
+              Fixe le drapeau IP "don't fragment" (ndt :  ne  pas
+              fragmenter),  ceci peut 阾re utilis� pour effectuer
+              un MTU path  discovery  (ndt  :  d閏ouverte  de  la
+              valeur minimale de la "taille maximale des paquets"
+              sur le chemin).
+
+       -g --fragoff fragment offset value
+              Fixe l'offset du fragment.
+
+       -m --mtu mtu value
+              Fixe un 'mtu virtuel'  diff閞ent  de  16  quand  la
+              fragmentation est activ閑. Si la taille des paquets
+              est sup閞ieure au 'mtu virtuel' alors la fragmenta�
+              tion est automatiquement activ閑.
+
+       -o --tos hex_tos
+              Fixe  Type  Of Service (TOS) (ndt : le type de ser�
+              vice), pour plus d'informations essayez --tos help.
+
+       -G --rroute
+              Enregistrer  la route. Inclut l'option RECORD_ROUTE
+              dans chaque  paquet  envoy�  et  affiche  la  route
+              pr閟ente  dans  le tampon du paquet retourn�. Notez
+              que l'ent阾e IP n'est suffisamment large  que  pour
+              neuf  routes. Beaucoup de syst鑝es ignorent ou sup�
+              priment cette option. Notez 間alement  qu'en  util�
+              isant  hping  vous 阾es capable d'utiliser l'enreg�
+              istrement de la route m阭e si le syst鑝e cible fil�
+              tre  ICMP.  Enregistrer la route est une option IP,
+              non pas une option ICMP, ainsi vous pouvez utiliser
+              l'option d'enregistrement de la route m阭e dans les
+              modes TCP et UDP.
+
+OPTIONS ICMP
+       -C --icmptype type
+              Fixe le type ICMP, le d閒aut est ICMP echo request.
+
+       -K --icmpcode code
+              Fixe  le  code  ICMP,  le  d閒aut  est  0 (implique
+              --icmp).
+
+       --icmp-ipver
+              Fixe la version IP de l'ent阾e IP contenue dans les
+              donn閑s ICMP, le d閒aut est 4.
+
+       --icmp-iphlen
+              Fixe  la  longueur de l'ent阾e IP contenue dans les
+              donn閑s ICMP, le d閒aut est 5 (5 mots de 32  bits).
+
+       --icmp-iplen
+              Fixe  la  longueur du paquet IP de l'ent阾e IP con�
+              tenue dans les  donn閑s  ICMP,  le  d閒aut  est  la
+              taille r閑lle.
+
+       --icmp-ipid
+              Fixe  le  champ  IP id de l'ent阾e IP contenue dans
+              les donn閑s ICMP, le d閒aut est al閍toire.
+
+       --icmp-ipproto
+              Fixe le protocole IP de l'ent阾e IP  contenue  dans
+              les donn閑s ICMP, le d閒aut est TCP.
+
+       --icmp-cksum
+              Fixe  la  somme  de contr鬺e ICMP, le d閒aut est la
+              somme de contr鬺e valide.
+
+       --icmp-ts
+              Alias pour --icmptype 13 (pour envoyer des requ阾es
+              ICMP timestamp).
+
+       --icmp-addr
+              Alias pour --icmptype 17 (pour envoyer des requ阾es
+              ICMP masque r閟eau).
+
+OPTIONS TCP/UDP
+       -s --baseport source port
+              hping2 utilise le port source afin de  deviner  les
+              num閞os  de s閝uence des r閜onses. Il commence avec
+              un num閞o de port source de base, et incr閙ente  ce
+              num閞o  pour  chaque paquet envoy�. Quand un paquet
+              est re鐄 alors le num閞o de s閝uence peut 阾re cal�
+              cul�        comme       port.source.r閜onse       -
+              port.source.de.base.  Le port source  de  base  par
+              d閒aut  est  al閍toire,  en  utilisant cette option
+              vous 阾es capable de fixer un num閞o diff閞ent.  Si
+              vous  avez  besoin  que  le port source ne soit pas
+              incr閙ent�  pour  chaque  paquet  envoy�   utilisez
+              l'option -k --keep.
+
+       -p --destport [+][+]dest port
+              Fixe  le  port  destination, le d閒aut est 0. Si le
+              caract鑢e '+' pr閏鑔e le num閞o de port destination
+              (i.e.  +1024)  le  port destination sera incr閙ent�
+              pour chaque paquet re鐄. Si deux '+'  pr閏鑔ent  le
+              num閞o  de  port destination (i.e. ++1024), le port
+              destination  sera  incr閙ent�  pour  chaque  paquet
+              envoy�.   Par  d閒aut le port destination peut 阾re
+              modifi� interactivement en utilisant CTRL+z.
+
+       --keep Garde constant le port source, voir --baseport pour
+              plus d'informations.
+
+       -w --win
+              Fixe la taille de la fen阾re TCP. Le d閒aut est 64.
+
+       -O --tcpoff
+              Fixe un faux offset (ndt :  d閏alage)  des  donn閑s
+              TCP. L'offset normal des donn閑s est tcphdrlen / 4.
+
+       -M --tcpseq
+              Fixe le num閞o de s閝uence TCP.
+
+       -L --tcpack
+              Fixe le drapeau TCP ack.
+
+       -Q --seqnum
+              Cette option peut 阾re utilis閑 afin  de  collecter
+              les  num閞os  de  s閝uence  g閚閞閟  par le syst鑝e
+              cible. Ceci peut 阾re utile quand vous avez  besoin
+              d'analyser  si  les  num閞os  de  s閝uence TCP sont
+              pr関isibles. Exemple de sortie :
+
+              #hping2 win98 --seqnum -p 139 -S -i u1 -I eth0
+              HPING uaz (eth0 192.168.4.41): S set, 40 headers + 0 data bytes
+              2361294848 +2361294848
+              2411626496 +50331648
+              2545844224 +134217728
+              2713616384 +167772160
+              2881388544 +167772160
+              3049160704 +167772160
+              3216932864 +167772160
+              3384705024 +167772160
+              3552477184 +167772160
+              3720249344 +167772160
+              3888021504 +167772160
+              4055793664 +167772160
+              4223565824 +167772160
+
+              La  premi鑢e  colonne  reporte   les   num閞os   de
+              s閝uence,  la seconde la diff閞ence entre le num閞o
+              de s閝uence courant et le dernier. Comme vous  pou�
+              vez  le  voir  les  num閞os  de s閝uence du syst鑝e
+              cible sont pr関isibles.
+
+       -b --badcksum
+              Envoie des  paquets  avec  une  mauvaise  somme  de
+              contr鬺e UDP/TCP
+
+       --tcp-timestamp
+              Active l'option TCP timestamp, et essaye de deviner
+              la  fr閝uence  de  mise  �  jour  du  timestamp  et
+              l'uptime du syst鑝e distant.
+
+       -F --fin
+              Fixe le drapeau TCP FIN.
+
+       -S --syn
+              Fixe le drapeau TCP SYN.
+
+       -R --rst
+              Fixe le drapeau TCP RST.
+
+       -P --push
+              Fixe le drapeau TCP PUSH.
+
+       -A --ack
+              Fixe le drapeau TCP ACK.
+
+       -U --urg
+              Fixe le drapeau TCP URG.
+
+       -X --xmas
+              Fixe le drapeau TCP Xmas.
+
+       -Y --ymas
+              Fixe le drapeau TCP Ymas.
+
+OPTIONS COMMUNES
+       -d --data data size
+              Fixe  la  taille  du corps du paquet. Attention, en
+              utilisant --data 40  hping2  ne  g閚閞era  pas  des
+              paquets  de  0 octet mais de ent阾e_de_protocole+40
+              octets. hping2 affichera en information  la  taille
+              des  paquets  comme premi鑢e ligne de sortie, comme
+              ceci : HPING www.yahoo.com (ppp0 204.71.200.67): NO
+              FLAGS are set, 40 headers + 40 data bytes
+
+       -E --file filename
+              Utilise  le  contenu du  fichier filename pour rem�
+              plir les donn閑s du paquet.
+
+       -e --sign signature
+              Remplit d'abord longueur  de  signature  octets  de
+              donn閑s  avec  signature.  Si longueur de signature
+              est plus grand que la taille des donn閑s  alors  un
+              message   d'erreur   sera   affich�.   Si  vous  ne
+              sp閏ifiez pas la taille des donn閑s hping utilisera
+              la taille de la signature comme taille des donn閑s.
+              Cette option peut 阾re utilis閑  sans  risque  avec
+              l'option   --file  filename,  l'espace  de  donn閑s
+              restant sera rempli en utilisant le  fichier  file�
+              name.
+
+       -j --dump
+              Affiche les paquets en hexad閏imal.
+
+       -J --print
+              Affiche  les  caract鑢es  imprimables  des  paquets
+              re鐄s.
+
+       -B --safe
+              Active le protocole safe, en utilisant cette option
+              les  paquets  perdus  dans  un transfert de fichier
+              seront renvoy閟.  Par  exemple  afin  d'envoyer  le
+              fichier  /etc/passwd depuis le syst鑝e A au syst鑝e
+              B vous pouvez utiliser ce qui suit :
+              [host_a]
+              # hping2 host_b --udp -p 53 -d 100 --sign signature --safe --file /etc/passwd
+              [host_b]
+              # hping2 host_a --listen signature --safe --icmp
+
+       -u --end
+              Si vous utilisez  l'option  --file  filename,  cela
+              vous  dit  quand  la fin du fichier a 閠� atteinte.
+              D'ailleurs cela pr関ient que l'autre  c魌�  accepte
+              plus   de  paquets.  S'il  vous  pla顃,  pour  plus
+              d'informations voir le fichier HPING2-HOWTO.
+
+       -T --traceroute
+              Mode traceroute. En utilisant cette  option  hping2
+              incr閙entera le ttl pour chaque paquet ICMP time to
+              live 0 during transit  re鐄.  Essayez  hping2  host
+              --traceroute.   Cette  option  implique  --bind  et
+              --ttl 1. Vous pouvez l'emporter sur le ttl �  1  en
+              utilisant  l'option  --ttl.  Depuis 2.0.0 stable il
+              affiche les  informations  de  RTT.   --tr-keep-ttl
+              garde  le  ttl  fixe en mode traceroute, ainsi vous
+              pouvez contr鬺er simplement un noeud sur la  route.
+              Par  exemple,  pour contr鬺er comment le 5鑝e noeud
+              change  ou  comment  son  RTT  change  vous  pouvez
+              essayer hping2 host --traceroute --ttl 5 --tr-keep-
+              ttl.
+
+       --tr-stop
+              Si cette option est sp閏ifi閑  hping  quittera  d鑣
+              que  le  premier  paquet qui n'est pas un ICMP time
+              exceeded est re鐄. Ceci 閙ule mieux le comportement
+              de traceroute.
+
+       --tr-no-rtt
+              Ne montre pas l'information RTT en mode traceroute.
+              L'information du RTT des ICMP time  exceeded  n'est
+              m阭e  pas calcul閑 si cette option est positionn閑.
+
+       --tcpexitcode
+              Quitte avec le champ tcp->th_flag du dernier paquet
+              re鐄  comme  code de retour. Utile pour les scripts
+              qui ont besoin, par exemple, de savoir si  le  port
+              999  de quelque syst鑝e r閜ond avec SYN/ACK ou avec
+              RST en r閜onse � un SYN, i.e. le service est  lanc�
+              ou arr阾�.
+
+FORMAT DE SORTIE TCP
+       Le format standard de sortie TCP est le suivant :
+
+       len=46 ip=192.168.1.1 flags=RA DF seq=0 ttl=255 id=0 win=0
+       rtt=0.4 ms
+
+       len est la taille, en octets, des donn閑s  captur閑s  dans
+       la  couche  liaison  de  donn閑s  en excluant la taille de
+       l'ent阾e de liaison de donn閑s. Ceci peut  ne  pas  corre�
+       spondre  �  la taille du datagramme IP � cause du rembour�
+       rage bas niveau de la couche liaison de donn閑s.
+
+       ip est l'adresse ip source.
+
+       flags sont les drapeaux TCP, R pour RESET, S pour  SYN,  A
+       pour  ACK,  F pour FIN, P pour PUSH, U pour URGENT, X pour
+       0x40 non standard, Y pour 0x80 non standard.
+
+       Si la r閜onse contient DF l'ent阾e IP poss鑔e le bit don't
+       fragment (ndt : ne pas fragmenter) positionn�.
+
+       seq  est  le num閞o de s閝uence du paquet, obtenu en util�
+       isant le port source pour les paquets  TCP/UDP,  le  champ
+       s閝uence pour les paquets ICMP.
+
+       id est le champ IP ID.
+
+       win est la taille de la fen阾re TCP
+
+       rtt est le "round trip time" (ndt : temps aller-retour) en
+       millisecondes.
+
+       Si vous ex閏utez hping en  utilisant  l'option  -V  de  la
+       ligne de commande il affichera des informations suppl閙en�
+       taires � propos du paquet, par exemple :
+
+       len=46 ip=192.168.1.1 flags=RA DF seq=0 ttl=255 id=0 win=0
+       rtt=0.4  ms  tos=0  iplen=40 seq=0 ack=1223672061 sum=e61d
+       urp=0
+
+       tos est le champ type de service de l'ent阾e IP.
+
+       iplen est le champ IP longueur totale.
+
+       seq et ack sont les num閞os de s閝uence et  d'acquittement
+       sur 32 bits dans l'ent阾e TCP.
+
+       sum est la valeur de la somme de contr鬺e de l'ent阾e TCP.
+
+       urp est la valeur du pointeur urgent TCP.
+
+FORMAT DE SORTIE UDP
+       Le format standard de sortie est :
+
+       len=46 ip=192.168.1.1 seq=0 ttl=64 id=0 rtt=6.0 ms
+
+       La signification des champs est la m阭e que  celle  de  la
+       sortie TCP pour les champs de m阭e nom.
+
+FORMAT DE SORTIE ICMP
+       Un exemple de sortie ICMP est :
+
+       ICMP  Port  Unreachable from ip=192.168.1.1 name=nano.mar�
+       moc.net
+
+       Il est tr鑣 facile  �  comprendre.  Il  commence  avec  la
+       cha頽e  "ICMP" suivie par la description de l'erreur ICMP,
+       dans l'exemple Port Unreachable (ndt : port  non  accessi�
+       ble). Le champ ip est l'adresse IP source du datagramme IP
+       contenant l'erreur ICMP,  le  champ  name  est  simplement
+       l'adresse  num閞ique  r閟olue  en  un nom (une requ阾e dns
+       PTR) ou UNKNOWN si la r閟olution a 閏hou�.
+
+       Le format ICMP de Time exceeded during  ou  de  reassembly
+       est un peu diff閞ent :
+
+       TTL  0  during  transit from ip=192.168.1.1 name=nano.mar�
+       moc.net
+
+       TTL 0 during reassembly from ip=192.70.106.25 name=UNKNOWN
+
+       La  seule  diff閞ence est la description de l'erreur, elle
+       commence avec TTL 0.
+
+AUTEUR
+       Salvatore Sanfilippo <antirez@invece.org>, avec l'aide des
+       personnes  mentionn閑s  dans  le  fichier  AUTHORS  et sur
+       http://www.hping.org/authors.html
+
+BOGUES
+       M阭e  en  utilisant  les  options  --end  et  --safe  pour
+       transf閞er  des  fichiers,  le paquet final sera rembourr�
+       avec des octets 0x00.
+
+       Les donn閑s sont lues sans tenir compte  de  l'alignement,
+       mais  l'alignement  est  impos�  dans  les  structures  de
+       donn閑s.  Ceci ne sera pas un  probl鑝e  sous  i386  mais,
+       alors  que  normalement les ent阾es TCP/IP sont naturelle�
+       ment align閑s, cela peut cr閑r des probl鑝es  avec  divers
+       processeurs  et des paquets mal-form閟 si il y a des acc鑣
+       non align閟 quelque part dans le code (aucun avec  un  peu
+       de chance).
+
+       Sur  Solaris hping ne fonctionne pas sur l'interface loop�
+       back. Ceci semble 阾re un probl鑝e solaris,  comme  expos�
+       dans la liste de diffusion tcpdump-workers, ainsi la libp�
+       cap ne peut rien faire pour la supporter correctement.
+
+VOIR AUSSI
+       ping(8), traceroute(8), ifconfig(8), nmap(1)
+
+TRADUCTEUR
+       Denis Ducamp <Denis.Ducamp@groar.org>
+
+                           2001 Aug 14                  HPING2(8)

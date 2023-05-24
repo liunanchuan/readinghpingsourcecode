@@ -1,0 +1,130 @@
+\hypertarget{selpolltest_8c}{}\doxysection{libpcap-\/1.1.1/selpolltest.c 文件参考}
+\label{selpolltest_8c}\index{libpcap-\/1.1.1/selpolltest.c@{libpcap-\/1.1.1/selpolltest.c}}
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/select.\+h$>$}\newline
+{\ttfamily \#include $<$poll.\+h$>$}\newline
+selpolltest.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selpolltest_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{selpolltest_8c_ab44cedfe75116b381a211b54296d4d3f}{countme}} (u\+\_\+char $\ast$, const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$, const u\+\_\+char $\ast$)
+\item 
+static void \mbox{\hyperlink{selpolltest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}{usage}} (void)
+\item 
+static void \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} (const char $\ast$fmt,...)
+\item 
+static void \mbox{\hyperlink{selpolltest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}{warning}} (const char $\ast$fmt,...)
+\item 
+static char $\ast$ \mbox{\hyperlink{selpolltest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv}} (register char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char \mbox{\hyperlink{selpolltest_8c_a2dd5f713078a5183481aa95a74b706a8}{copyright}} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \mbox{\hyperlink{selpolltest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{selpolltest_8c_aedea9ffc7247d9802dfa95b83dbd7174}\label{selpolltest_8c_aedea9ffc7247d9802dfa95b83dbd7174}} 
+\index{selpolltest.c@{selpolltest.c}!copy\_argv@{copy\_argv}}
+\index{copy\_argv@{copy\_argv}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{copy\_argv()}{copy\_argv()}}
+{\footnotesize\ttfamily static char $\ast$ copy\+\_\+argv (\begin{DoxyParamCaption}\item[{register char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}} , 以及 \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{selpolltest_8c_aedea9ffc7247d9802dfa95b83dbd7174_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{selpolltest_8c_ab44cedfe75116b381a211b54296d4d3f}\label{selpolltest_8c_ab44cedfe75116b381a211b54296d4d3f}} 
+\index{selpolltest.c@{selpolltest.c}!countme@{countme}}
+\index{countme@{countme}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{countme()}{countme()}}
+{\footnotesize\ttfamily static void countme (\begin{DoxyParamCaption}\item[{u\+\_\+char $\ast$}]{user,  }\item[{const struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} $\ast$}]{h,  }\item[{const u\+\_\+char $\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}\label{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}} 
+\index{selpolltest.c@{selpolltest.c}!error@{error}}
+\index{error@{error}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily static void error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{selpolltest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{selpolltest_8c_aedea9ffc7247d9802dfa95b83dbd7174}{copy\+\_\+argv()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{selpolltest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}\label{selpolltest_8c_ad96d407a911fbb914fa8e4cfbf2faf0f}} 
+\index{selpolltest.c@{selpolltest.c}!usage@{usage}}
+\index{usage@{usage}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{usage()}{usage()}}
+{\footnotesize\ttfamily static void usage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{selpolltest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}\label{selpolltest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}} 
+\index{selpolltest.c@{selpolltest.c}!warning@{warning}}
+\index{warning@{warning}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily static void warning (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{selpolltest_8c_a289c5900d90626d909f0a85d5a0ed61d}{program\+\_\+name}}.
+
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{selpolltest_8c_a2dd5f713078a5183481aa95a74b706a8}\label{selpolltest_8c_a2dd5f713078a5183481aa95a74b706a8}} 
+\index{selpolltest.c@{selpolltest.c}!copyright@{copyright}}
+\index{copyright@{copyright}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{copyright}{copyright}}
+{\footnotesize\ttfamily const char copyright\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 2000\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{The Regents of the University of California.  All rights reserved.\(\backslash\)n"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{selpolltest_8c_a289c5900d90626d909f0a85d5a0ed61d}\label{selpolltest_8c_a289c5900d90626d909f0a85d5a0ed61d}} 
+\index{selpolltest.c@{selpolltest.c}!program\_name@{program\_name}}
+\index{program\_name@{program\_name}!selpolltest.c@{selpolltest.c}}
+\doxysubsubsection{\texorpdfstring{program\_name}{program\_name}}
+{\footnotesize\ttfamily char$\ast$ program\+\_\+name}
+
+
+
+被这些函数引用 \mbox{\hyperlink{selpolltest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}} , 以及 \mbox{\hyperlink{selpolltest_8c_a02e60e39f9f8f0f7ed2d646b37ff21b2}{warning()}}.
+

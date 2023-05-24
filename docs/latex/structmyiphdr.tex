@@ -1,0 +1,149 @@
+\hypertarget{structmyiphdr}{}\doxysection{myiphdr结构体 参考}
+\label{structmyiphdr}\index{myiphdr@{myiphdr}}
+
+
+{\ttfamily \#include $<$hping2.\+h$>$}
+
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{ihl}}\+:4
+\item 
+\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} \mbox{\hyperlink{structmyiphdr_af686b52749a9ad1d63eb745cf0c1fce8}{version}}\+:4
+\item 
+\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} \mbox{\hyperlink{structmyiphdr_aabd17e6458449b589ae5385d8e07618a}{tos}}
+\item 
+\mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} \mbox{\hyperlink{structmyiphdr_a6551f504ae847a655574224316890281}{tot\+\_\+len}}
+\item 
+\mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} \mbox{\hyperlink{structmyiphdr_ac4ef9be9becfbb17119420e650025348}{id}}
+\item 
+\mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} \mbox{\hyperlink{structmyiphdr_a827bffd05d55a91dc04e51adcb8589ff}{frag\+\_\+off}}
+\item 
+\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} \mbox{\hyperlink{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}{ttl}}
+\item 
+\mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{protocol}}
+\item 
+\mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} \mbox{\hyperlink{structmyiphdr_a2e0a6add4070845e799bff9728765de8}{check}}
+\item 
+\mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} \mbox{\hyperlink{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}{saddr}}
+\item 
+\mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} \mbox{\hyperlink{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}{daddr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structmyiphdr_a2e0a6add4070845e799bff9728765de8}\label{structmyiphdr_a2e0a6add4070845e799bff9728765de8}} 
+\index{myiphdr@{myiphdr}!check@{check}}
+\index{check@{check}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{check}{check}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} check}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum()}}, \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}\label{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}} 
+\index{myiphdr@{myiphdr}!daddr@{daddr}}
+\index{daddr@{daddr}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{daddr}{daddr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} daddr}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8c_a5503f19bc9c649c307216e54c8d871b0}{ars\+\_\+send()}}, \mbox{\hyperlink{ars_8c_a9e47a057eb550803c626841b78a8dfc6}{ars\+\_\+udptcp\+\_\+cksum()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{structmyiphdr_a827bffd05d55a91dc04e51adcb8589ff}\label{structmyiphdr_a827bffd05d55a91dc04e51adcb8589ff}} 
+\index{myiphdr@{myiphdr}!frag\_off@{frag\_off}}
+\index{frag\_off@{frag\_off}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{frag\_off}{frag\_off}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} frag\+\_\+off}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a671db4628929b600f09dfb1d89535a66}{ars\+\_\+bsd\+\_\+fix()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_ac4ef9be9becfbb17119420e650025348}\label{structmyiphdr_ac4ef9be9becfbb17119420e650025348}} 
+\index{myiphdr@{myiphdr}!id@{id}}
+\index{id@{id}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} id}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}\label{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}} 
+\index{myiphdr@{myiphdr}!ihl@{ihl}}
+\index{ihl@{ihl}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{ihl}{ihl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} ihl}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a607d30a8f190001e54e88b7478e885bf}{ars\+\_\+check\+\_\+ip\+\_\+cksum()}}, \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip()}}, \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip()}}, \mbox{\hyperlink{display__ipopt_8c_a1aa67cccb8bf6e80f459c88d7929dc5a}{display\+\_\+ipopt()}}, \mbox{\hyperlink{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}{icmp\+\_\+unreach\+\_\+rtt()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}\label{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}} 
+\index{myiphdr@{myiphdr}!protocol@{protocol}}
+\index{protocol@{protocol}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{protocol}{protocol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} protocol}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{split_8c_a00cea6ffe7515275bbccd9fcd5deb0be}{ars\+\_\+split\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}{icmp\+\_\+unreach\+\_\+rtt()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}\label{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}} 
+\index{myiphdr@{myiphdr}!saddr@{saddr}}
+\index{saddr@{saddr}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{saddr}{saddr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} saddr}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8c_a9e47a057eb550803c626841b78a8dfc6}{ars\+\_\+udptcp\+\_\+cksum()}}, \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{structmyiphdr_aabd17e6458449b589ae5385d8e07618a}\label{structmyiphdr_aabd17e6458449b589ae5385d8e07618a}} 
+\index{myiphdr@{myiphdr}!tos@{tos}}
+\index{tos@{tos}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{tos}{tos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} tos}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_a6551f504ae847a655574224316890281}\label{structmyiphdr_a6551f504ae847a655574224316890281}} 
+\index{myiphdr@{myiphdr}!tot\_len@{tot\_len}}
+\index{tot\_len@{tot\_len}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{tot\_len}{tot\_len}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}} tot\+\_\+len}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_a671db4628929b600f09dfb1d89535a66}{ars\+\_\+bsd\+\_\+fix()}}, \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\+\_\+split\+\_\+packet()}}, \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}\label{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}} 
+\index{myiphdr@{myiphdr}!ttl@{ttl}}
+\index{ttl@{ttl}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{ttl}{ttl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} ttl}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{waitpacket_8c_a5e57a2a3af4ad93ff52af94390be964a}{log\+\_\+ip()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+\mbox{\Hypertarget{structmyiphdr_af686b52749a9ad1d63eb745cf0c1fce8}\label{structmyiphdr_af686b52749a9ad1d63eb745cf0c1fce8}} 
+\index{myiphdr@{myiphdr}!version@{version}}
+\index{version@{version}!myiphdr@{myiphdr}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hping2_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}} version}
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8c_ae981557c0f6446b1082191852f636d81}{ars\+\_\+compiler\+\_\+ip()}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_a481d59fddb08ee4c5b3985c95e727bcd}{ars\+\_\+seems\+\_\+ip()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}} , 以及 \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hping2_8h}{hping2.\+h}}\end{DoxyCompactItemize}

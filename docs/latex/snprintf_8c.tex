@@ -1,0 +1,325 @@
+\hypertarget{snprintf_8c}{}\doxysection{libpcap-\/1.1.1/missing/snprintf.c 文件参考}
+\label{snprintf_8c}\index{libpcap-\/1.1.1/missing/snprintf.c@{libpcap-\/1.1.1/missing/snprintf.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$pcap-\/int.\+h$>$}\newline
+snprintf.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{snprintf_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstate}{state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{snprintf_8c_ad0912f0e67d4130dcf5721b46f60c2cd}{PARSE\+\_\+\+INT\+\_\+\+FORMAT}}(res,  arg,  unsig)
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788a}{format\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}{minus\+\_\+flag}} = 1
+, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aad18866955bd0f1d8e2cc5cf7c916d86a}{plus\+\_\+flag}} = 2
+, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2859ea6ff37cbdf41b0dbd3a1466141d}{space\+\_\+flag}} = 4
+, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2182097ef7aa1f0f695a4bc9af52a63d}{alternate\+\_\+flag}} = 8
+, \newline
+\mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa6c1637572f72523fd38078e7a677ba55}{zero\+\_\+flag}} = 16
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}{sn\+\_\+reserve}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, size\+\_\+t n)
+\item 
+static int \mbox{\hyperlink{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}{sn\+\_\+append\+\_\+char}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, unsigned char c)
+\item 
+static int \mbox{\hyperlink{snprintf_8c_a70bcd6ba423afba9ebf63da7b38b8419}{append\+\_\+number}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, unsigned long num, unsigned base, char $\ast$rep, int width, int prec, int flags, int minusp)
+\item 
+static int \mbox{\hyperlink{snprintf_8c_afa2c6cad459f37c7a4d5a0b6d413c6ce}{append\+\_\+string}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, unsigned char $\ast$arg, int width, int prec, int flags)
+\item 
+static int \mbox{\hyperlink{snprintf_8c_a8e8176c14f472b8955d409cef22a3a41}{append\+\_\+char}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, unsigned char arg, int width, int flags)
+\item 
+static int \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf}} (struct \mbox{\hyperlink{structstate}{state}} $\ast$\mbox{\hyperlink{structstate}{state}}, const char $\ast$char\+\_\+format, va\+\_\+list ap)
+\item 
+int \mbox{\hyperlink{snprintf_8c_a112b791108ea3727bfff465e29d1c6e3}{snprintf}} (char $\ast$str, size\+\_\+t sz, const char $\ast$\mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}},...)
+\item 
+int \mbox{\hyperlink{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6}{vsnprintf}} (char $\ast$str, size\+\_\+t sz, const char $\ast$\mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format}}, va\+\_\+list args)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{snprintf_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{snprintf_8c_ad0912f0e67d4130dcf5721b46f60c2cd}\label{snprintf_8c_ad0912f0e67d4130dcf5721b46f60c2cd}} 
+\index{snprintf.c@{snprintf.c}!PARSE\_INT\_FORMAT@{PARSE\_INT\_FORMAT}}
+\index{PARSE\_INT\_FORMAT@{PARSE\_INT\_FORMAT}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{PARSE\_INT\_FORMAT}{PARSE\_INT\_FORMAT}}
+{\footnotesize\ttfamily \#define PARSE\+\_\+\+INT\+\_\+\+FORMAT(\begin{DoxyParamCaption}\item[{}]{res,  }\item[{}]{arg,  }\item[{}]{unsig }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (long\_flag) \(\backslash\)}
+\DoxyCodeLine{     res = (unsig long)va\_arg(arg, unsig \textcolor{keywordtype}{long}); \(\backslash\)}
+\DoxyCodeLine{else \textcolor{keywordflow}{if} (short\_flag) \(\backslash\)}
+\DoxyCodeLine{     res = (unsig short)va\_arg(arg, unsig \textcolor{keywordtype}{int}); \(\backslash\)}
+\DoxyCodeLine{else \(\backslash\)}
+\DoxyCodeLine{     res = (unsig int)va\_arg(arg, unsig \textcolor{keywordtype}{int})}
+
+\end{DoxyCode}
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788a}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788a}} 
+\index{snprintf.c@{snprintf.c}!format\_flags@{format\_flags}}
+\index{format\_flags@{format\_flags}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{format\_flags}{format\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788a}{format\+\_\+flags}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{minus\_flag@{minus\_flag}!snprintf.c@{snprintf.c}}\index{snprintf.c@{snprintf.c}!minus\_flag@{minus\_flag}}}\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}} 
+minus\+\_\+flag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{plus\_flag@{plus\_flag}!snprintf.c@{snprintf.c}}\index{snprintf.c@{snprintf.c}!plus\_flag@{plus\_flag}}}\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788aad18866955bd0f1d8e2cc5cf7c916d86a}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788aad18866955bd0f1d8e2cc5cf7c916d86a}} 
+plus\+\_\+flag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{space\_flag@{space\_flag}!snprintf.c@{snprintf.c}}\index{snprintf.c@{snprintf.c}!space\_flag@{space\_flag}}}\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2859ea6ff37cbdf41b0dbd3a1466141d}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2859ea6ff37cbdf41b0dbd3a1466141d}} 
+space\+\_\+flag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alternate\_flag@{alternate\_flag}!snprintf.c@{snprintf.c}}\index{snprintf.c@{snprintf.c}!alternate\_flag@{alternate\_flag}}}\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2182097ef7aa1f0f695a4bc9af52a63d}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2182097ef7aa1f0f695a4bc9af52a63d}} 
+alternate\+\_\+flag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{zero\_flag@{zero\_flag}!snprintf.c@{snprintf.c}}\index{snprintf.c@{snprintf.c}!zero\_flag@{zero\_flag}}}\mbox{\Hypertarget{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa6c1637572f72523fd38078e7a677ba55}\label{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa6c1637572f72523fd38078e7a677ba55}} 
+zero\+\_\+flag&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{snprintf_8c_a8e8176c14f472b8955d409cef22a3a41}\label{snprintf_8c_a8e8176c14f472b8955d409cef22a3a41}} 
+\index{snprintf.c@{snprintf.c}!append\_char@{append\_char}}
+\index{append\_char@{append\_char}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{append\_char()}{append\_char()}}
+{\footnotesize\ttfamily static int append\+\_\+char (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{unsigned char}]{arg,  }\item[{int}]{width,  }\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}} , 以及 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}{minus\+\_\+flag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{snprintf_8c_a8e8176c14f472b8955d409cef22a3a41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_a70bcd6ba423afba9ebf63da7b38b8419}\label{snprintf_8c_a70bcd6ba423afba9ebf63da7b38b8419}} 
+\index{snprintf.c@{snprintf.c}!append\_number@{append\_number}}
+\index{append\_number@{append\_number}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{append\_number()}{append\_number()}}
+{\footnotesize\ttfamily static int append\+\_\+number (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{unsigned long}]{num,  }\item[{unsigned}]{base,  }\item[{char $\ast$}]{rep,  }\item[{int}]{width,  }\item[{int}]{prec,  }\item[{int}]{flags,  }\item[{int}]{minusp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2182097ef7aa1f0f695a4bc9af52a63d}{alternate\+\_\+flag}}, \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}{minus\+\_\+flag}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aad18866955bd0f1d8e2cc5cf7c916d86a}{plus\+\_\+flag}}, \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2859ea6ff37cbdf41b0dbd3a1466141d}{space\+\_\+flag}} , 以及 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa6c1637572f72523fd38078e7a677ba55}{zero\+\_\+flag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{snprintf_8c_a70bcd6ba423afba9ebf63da7b38b8419_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_afa2c6cad459f37c7a4d5a0b6d413c6ce}\label{snprintf_8c_afa2c6cad459f37c7a4d5a0b6d413c6ce}} 
+\index{snprintf.c@{snprintf.c}!append\_string@{append\_string}}
+\index{append\_string@{append\_string}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{append\_string()}{append\_string()}}
+{\footnotesize\ttfamily static int append\+\_\+string (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{unsigned char $\ast$}]{arg,  }\item[{int}]{width,  }\item[{int}]{prec,  }\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}} , 以及 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}{minus\+\_\+flag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{snprintf_8c_afa2c6cad459f37c7a4d5a0b6d413c6ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}\label{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}} 
+\index{snprintf.c@{snprintf.c}!sn\_append\_char@{sn\_append\_char}}
+\index{sn\_append\_char@{sn\_append\_char}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{sn\_append\_char()}{sn\_append\_char()}}
+{\footnotesize\ttfamily static int sn\+\_\+append\+\_\+char (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{unsigned char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}} , 以及 \mbox{\hyperlink{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}{sn\+\_\+reserve()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}{vsnprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}\label{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}} 
+\index{snprintf.c@{snprintf.c}!sn\_reserve@{sn\_reserve}}
+\index{sn\_reserve@{sn\_reserve}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{sn\_reserve()}{sn\_reserve()}}
+{\footnotesize\ttfamily static int sn\+\_\+reserve (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}} , 以及 \mbox{\hyperlink{structstate_a472825078d73c2517e1a9c295801553e}{state\+::theend}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}{sn\+\_\+append\+\_\+char()}} , 以及 \mbox{\hyperlink{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}{vsnprintf()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_a112b791108ea3727bfff465e29d1c6e3}\label{snprintf_8c_a112b791108ea3727bfff465e29d1c6e3}} 
+\index{snprintf.c@{snprintf.c}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{snprintf()}{snprintf()}}
+{\footnotesize\ttfamily int snprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{sz,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format()}}, \mbox{\hyperlink{structstate_a214402067aedcae7c5723a17b7886e27}{state\+::str}}, \mbox{\hyperlink{structstate_aad50db3bff52eed270f16ef9e6acd8b1}{state\+::sz}}, \mbox{\hyperlink{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6}{vsnprintf()}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a5dd168c11588608e374c88ef26416bd3}{vsprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{snprintf_8c_a112b791108ea3727bfff465e29d1c6e3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6}\label{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6}} 
+\index{snprintf.c@{snprintf.c}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{vsnprintf()}{vsnprintf()}}
+{\footnotesize\ttfamily int vsnprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{sz,  }\item[{const char $\ast$}]{format,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}}, \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format()}}, \mbox{\hyperlink{structstate_ad80ffe6c93c17258c88d3e8615785012}{state\+::max\+\_\+sz}}, \mbox{\hyperlink{structstate_a69e534834c0430b4aff255ed9eefd754}{state\+::reserve}}, \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}}, \mbox{\hyperlink{snprintf_8c_aae1bbc41182c4f8b15e5f6cc27a1de40}{sn\+\_\+append\+\_\+char()}}, \mbox{\hyperlink{snprintf_8c_a7bebee2ebd76af93425f9fea2384df20}{sn\+\_\+reserve()}}, \mbox{\hyperlink{structstate_a214402067aedcae7c5723a17b7886e27}{state\+::str}}, \mbox{\hyperlink{structstate_aad50db3bff52eed270f16ef9e6acd8b1}{state\+::sz}}, \mbox{\hyperlink{structstate_a472825078d73c2517e1a9c295801553e}{state\+::theend}} , 以及 \mbox{\hyperlink{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}{xyzprintf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-osf4_8h_a357a42eb6494ea592e9c3f96c55cebe2}{snprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{snprintf_8c_a6bbb23cc253a47d915271ce0681e29b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}\label{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae}} 
+\index{snprintf.c@{snprintf.c}!xyzprintf@{xyzprintf}}
+\index{xyzprintf@{xyzprintf}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{xyzprintf()}{xyzprintf()}}
+{\footnotesize\ttfamily static int xyzprintf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstate}{state}} $\ast$}]{state,  }\item[{const char $\ast$}]{char\+\_\+format,  }\item[{va\+\_\+list}]{ap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2182097ef7aa1f0f695a4bc9af52a63d}{alternate\+\_\+flag}}, \mbox{\hyperlink{snprintf_8c_a8e8176c14f472b8955d409cef22a3a41}{append\+\_\+char()}}, \mbox{\hyperlink{structstate_aba14788ce232170336993ea19e718a47}{state\+::append\+\_\+char}}, \mbox{\hyperlink{snprintf_8c_a70bcd6ba423afba9ebf63da7b38b8419}{append\+\_\+number()}}, \mbox{\hyperlink{snprintf_8c_afa2c6cad459f37c7a4d5a0b6d413c6ce}{append\+\_\+string()}}, \mbox{\hyperlink{gencode_8h_a97004ad95faa3887342fc18888a2a588}{format()}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa7069e974fc89839a79b14d207469b948}{minus\+\_\+flag}}, \mbox{\hyperlink{snprintf_8c_ad0912f0e67d4130dcf5721b46f60c2cd}{PARSE\+\_\+\+INT\+\_\+\+FORMAT}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aad18866955bd0f1d8e2cc5cf7c916d86a}{plus\+\_\+flag}}, \mbox{\hyperlink{structstate_a671eca2e10f113e16cc4dda975f34de9}{state\+::s}}, \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa2859ea6ff37cbdf41b0dbd3a1466141d}{space\+\_\+flag}}, \mbox{\hyperlink{structstate_a214402067aedcae7c5723a17b7886e27}{state\+::str}} , 以及 \mbox{\hyperlink{snprintf_8c_a321164e3630f356cc3ddd246b09b788aa6c1637572f72523fd38078e7a677ba55}{zero\+\_\+flag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{os-osf4_8h_a0495b4aa0b2ea7e5dd10e976aa63e4d3}{vsnprintf()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{snprintf_8c_a022f96b2c4f0af7851c2b321e6eb5aae_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{snprintf_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{snprintf_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{snprintf.c@{snprintf.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!snprintf.c@{snprintf.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{     \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/missing/snprintf.c,v 1.1 2004-\/04-\/05 22:43:51 guy Exp \$"{}}}
+
+\end{DoxyCode}

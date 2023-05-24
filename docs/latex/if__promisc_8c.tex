@@ -1,0 +1,62 @@
+\hypertarget{if__promisc_8c}{}\doxysection{if\+\_\+promisc.\+c 文件参考}
+\label{if__promisc_8c}\index{if\_promisc.c@{if\_promisc.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$net/if.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+if\+\_\+promisc.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if__promisc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{if__promisc_8c_a298f69a0fbd93d7703e09283998083c6}{if\+\_\+promisc\+\_\+on}} (int s)
+\item 
+int \mbox{\hyperlink{if__promisc_8c_a4a10e3c2d78485a88a6846f317d196a0}{if\+\_\+promisc\+\_\+off}} (int s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{if__promisc_8c_a4a10e3c2d78485a88a6846f317d196a0}\label{if__promisc_8c_a4a10e3c2d78485a88a6846f317d196a0}} 
+\index{if\_promisc.c@{if\_promisc.c}!if\_promisc\_off@{if\_promisc\_off}}
+\index{if\_promisc\_off@{if\_promisc\_off}!if\_promisc.c@{if\_promisc.c}}
+\doxysubsubsection{\texorpdfstring{if\_promisc\_off()}{if\_promisc\_off()}}
+{\footnotesize\ttfamily int if\+\_\+promisc\+\_\+off (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}}, \mbox{\hyperlink{hping2_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}, \mbox{\hyperlink{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}{ifreq\+::ifr\+\_\+name}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{if__promisc_8c_a4a10e3c2d78485a88a6846f317d196a0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{if__promisc_8c_a298f69a0fbd93d7703e09283998083c6}\label{if__promisc_8c_a298f69a0fbd93d7703e09283998083c6}} 
+\index{if\_promisc.c@{if\_promisc.c}!if\_promisc\_on@{if\_promisc\_on}}
+\index{if\_promisc\_on@{if\_promisc\_on}!if\_promisc.c@{if\_promisc.c}}
+\doxysubsubsection{\texorpdfstring{if\_promisc\_on()}{if\_promisc\_on()}}
+{\footnotesize\ttfamily int if\+\_\+promisc\+\_\+on (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}}, \mbox{\hyperlink{hping2_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}, \mbox{\hyperlink{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}{ifreq\+::ifr\+\_\+name}}, \mbox{\hyperlink{os-sunos4_8h_a0b54bbe3103711f0f1ce73d2184b7b00}{ioctl()}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{if__promisc_8c_a298f69a0fbd93d7703e09283998083c6_cgraph}
+\end{center}
+\end{figure}

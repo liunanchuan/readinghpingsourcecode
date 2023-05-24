@@ -1,0 +1,269 @@
+\hypertarget{pcap-septel_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/septel.c 文件参考}
+\label{pcap-septel_8c}\index{libpcap-\/1.1.1/pcap-\/septel.c@{libpcap-\/1.1.1/pcap-\/septel.c}}
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+pcap-\/septel.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5}{septel\+\_\+setfilter}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$fp)
+\item 
+static int \mbox{\hyperlink{pcap-septel_8c_adf84f921697cdfcbc39936b3c4e57c2c}{septel\+\_\+stats}} (pcap\+\_\+t $\ast$p, struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$ps)
+\item 
+static int \mbox{\hyperlink{pcap-septel_8c_a466df92a382a9bd01abd0f9545534f86}{septel\+\_\+setnonblock}} (pcap\+\_\+t $\ast$p, int nonblock, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\item 
+static int \mbox{\hyperlink{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7}{septel\+\_\+read}} (pcap\+\_\+t $\ast$p, int cnt, \mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}} callback, u\+\_\+char $\ast$user)
+\item 
+static int \mbox{\hyperlink{pcap-septel_8c_ad7edfd45a5df801ffd5e77438f191430}{septel\+\_\+inject}} (pcap\+\_\+t $\ast$handle, const void $\ast$buf \mbox{\hyperlink{inet__pton_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}, size\+\_\+t size \mbox{\hyperlink{inet__pton_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}})
+\item 
+static pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate}} (pcap\+\_\+t $\ast$handle)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171}{septel\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\item 
+int \mbox{\hyperlink{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3}{septel\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$devlistp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-septel_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}\label{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_activate@{septel\_activate}}
+\index{septel\_activate@{septel\_activate}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_activate()}{septel\_activate()}}
+{\footnotesize\ttfamily static pcap\+\_\+t $\ast$ septel\+\_\+activate (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{bpf_8h_ab7191af73121cad434e6f49dcfb1c30f}{DLT\+\_\+\+MTP2}}, \mbox{\hyperlink{pcap-int_8h_a6e157e229eceba8cccc16f0ff9d8e438}{pcap\+\_\+getnonblock\+\_\+fd()}}, \mbox{\hyperlink{pcap-septel_8c_ad7edfd45a5df801ffd5e77438f191430}{septel\+\_\+inject()}}, \mbox{\hyperlink{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7}{septel\+\_\+read()}}, \mbox{\hyperlink{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5}{septel\+\_\+setfilter()}}, \mbox{\hyperlink{pcap-septel_8c_a466df92a382a9bd01abd0f9545534f86}{septel\+\_\+setnonblock()}} , 以及 \mbox{\hyperlink{pcap-septel_8c_adf84f921697cdfcbc39936b3c4e57c2c}{septel\+\_\+stats()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171}{septel\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171}\label{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_create@{septel\_create}}
+\index{septel\_create@{septel\_create}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_create()}{septel\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ septel\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}} , 以及 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{pcap-septel_8c_ab1955b1513a3ea4c6189bd91670d8171_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_ad7edfd45a5df801ffd5e77438f191430}\label{pcap-septel_8c_ad7edfd45a5df801ffd5e77438f191430}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_inject@{septel\_inject}}
+\index{septel\_inject@{septel\_inject}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_inject()}{septel\_inject()}}
+{\footnotesize\ttfamily static int septel\+\_\+inject (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{handle,  }\item[{const void $\ast$buf}]{\+\_\+\+U\+\_\+,  }\item[{size\+\_\+t size}]{\+\_\+\+U\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_ad7edfd45a5df801ffd5e77438f191430_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3}\label{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_platform\_finddevs@{septel\_platform\_finddevs}}
+\index{septel\_platform\_finddevs@{septel\_platform\_finddevs}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_platform\_finddevs()}{septel\_platform\_finddevs()}}
+{\footnotesize\ttfamily int septel\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{devlistp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a41891cad090df07cd9360f1d8a9f1396}{errbuf}} , 以及 \mbox{\hyperlink{inet_8c_ae61261e756b0e199b9d361f500c49f17}{pcap\+\_\+add\+\_\+if()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7}\label{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_read@{septel\_read}}
+\index{septel\_read@{septel\_read}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_read()}{septel\_read()}}
+{\footnotesize\ttfamily static int septel\+\_\+read (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{cnt,  }\item[{\mbox{\hyperlink{pcap_2pcap_8h_a4da5ed7abea875423886ba3f1bcf7588}{pcap\+\_\+handler}}}]{callback,  }\item[{u\+\_\+char $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{bpf__filter_8c_a22d8361f9c26da729a711306eea03264}{bpf\+\_\+filter()}}, \mbox{\hyperlink{structpcap__pkthdr_aac5771ed2efd92508bb4fe650f2ce7d7}{pcap\+\_\+pkthdr\+::caplen}}, \mbox{\hyperlink{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday()}}, \mbox{\hyperlink{structpcap__pkthdr_a728f264db4f5cc304742565a2bcdbeea}{pcap\+\_\+pkthdr\+::len}} , 以及 \mbox{\hyperlink{structpcap__pkthdr_a21be78b2818c91cb205885b8a6f5aed8}{pcap\+\_\+pkthdr\+::ts}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a1e8e4b9445e44d494eb506d71b53c2a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5}\label{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_setfilter@{septel\_setfilter}}
+\index{septel\_setfilter@{septel\_setfilter}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_setfilter()}{septel\_setfilter()}}
+{\footnotesize\ttfamily static int septel\+\_\+setfilter (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structbpf__program}{bpf\+\_\+program}} $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{optimize_8c_ad016c0b6c48c3af42f162f11c3b4f241}{install\+\_\+bpf\+\_\+program()}}, \mbox{\hyperlink{pcap_8c_a0844ee879af1601b13fa3b78733b7e7e}{pcap\+\_\+strerror()}} , 以及 \mbox{\hyperlink{pcap-int_8h_aa367b75c5aed883fef5befbdf04835a4}{snprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a9e70f8d2f48bc2be55396c28b315ead5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_a466df92a382a9bd01abd0f9545534f86}\label{pcap-septel_8c_a466df92a382a9bd01abd0f9545534f86}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_setnonblock@{septel\_setnonblock}}
+\index{septel\_setnonblock@{septel\_setnonblock}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_setnonblock()}{septel\_setnonblock()}}
+{\footnotesize\ttfamily static int septel\+\_\+setnonblock (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{int}]{nonblock,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_a466df92a382a9bd01abd0f9545534f86_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-septel_8c_adf84f921697cdfcbc39936b3c4e57c2c}\label{pcap-septel_8c_adf84f921697cdfcbc39936b3c4e57c2c}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!septel\_stats@{septel\_stats}}
+\index{septel\_stats@{septel\_stats}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{septel\_stats()}{septel\_stats()}}
+{\footnotesize\ttfamily static int septel\+\_\+stats (\begin{DoxyParamCaption}\item[{pcap\+\_\+t $\ast$}]{p,  }\item[{struct \mbox{\hyperlink{structpcap__stat}{pcap\+\_\+stat}} $\ast$}]{ps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-septel_8c_a622dc36034f35b280446126d78ebfb8c}{septel\+\_\+activate()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-septel_8c_adf84f921697cdfcbc39936b3c4e57c2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-septel_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-septel_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/septel.c@{pcap-\/septel.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/septel.c@{pcap-\/septel.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/septel.c,v 1.4 2008-\/04-\/14 20:40:58 guy Exp \$"{}}}
+
+\end{DoxyCode}

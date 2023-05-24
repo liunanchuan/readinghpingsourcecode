@@ -1,0 +1,95 @@
+\hypertarget{namedb_8h_source}{}\doxysection{namedb.\+h}
+\label{namedb_8h_source}\index{libpcap-\/1.1.1/pcap/namedb.h@{libpcap-\/1.1.1/pcap/namedb.h}}
+\mbox{\hyperlink{namedb_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1994, 1996}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  This product includes software developed by the Computer Systems}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  Engineering Group at Lawrence Berkeley Laboratory.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * 4. Neither the name of the University nor of the Laboratory may be used}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    to endorse or promote products derived from this software without}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{23 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{24 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{26 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{27 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{28 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{29 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{30 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{31 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap/namedb.h,v 1.1 2006-\/10-\/04 18:09:22 guy Exp \$ (LBL)}}
+\DoxyCodeLine{34 \textcolor{comment}{ */}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef lib\_pcap\_namedb\_h}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define lib\_pcap\_namedb\_h}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{ * As returned by the pcap\_next\_etherent()}}
+\DoxyCodeLine{45 \textcolor{comment}{ * XXX this stuff doesn't belong in this interface, but this}}
+\DoxyCodeLine{46 \textcolor{comment}{ * library already must do name to address translation, so}}
+\DoxyCodeLine{47 \textcolor{comment}{ * on systems that don't have support for /etc/ethers, we}}
+\DoxyCodeLine{48 \textcolor{comment}{ * export these hooks since they'll}}
+\DoxyCodeLine{49 \textcolor{comment}{ */}}
+\DoxyCodeLine{50 \textcolor{keyword}{struct }\mbox{\hyperlink{structpcap__etherent}{pcap\_etherent}} \{}
+\DoxyCodeLine{51     u\_char \mbox{\hyperlink{structpcap__etherent_afc40b70652293465418325013ada9b78}{addr}}[6];}
+\DoxyCodeLine{52     \textcolor{keywordtype}{char} \mbox{\hyperlink{structpcap__etherent_a2fc24ecb842e2234c373008ca16ac1ba}{name}}[122];}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifndef PCAP\_ETHERS\_FILE}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define PCAP\_ETHERS\_FILE "{}/etc/ethers"{}}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 \textcolor{keyword}{struct  }\mbox{\hyperlink{structpcap__etherent}{pcap\_etherent}} *\mbox{\hyperlink{namedb_8h_abc0a2769dcd738dd12bd891768ff2750}{pcap\_next\_etherent}}(FILE *);}
+\DoxyCodeLine{58 u\_char *\mbox{\hyperlink{namedb_8h_acc1b9820ff8b2080b64f062dec26cbf3}{pcap\_ether\_hostton}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{59 u\_char *\mbox{\hyperlink{namedb_8h_adcaa9d6f44acc2a9fc6046a20c32e0af}{pcap\_ether\_aton}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} **\mbox{\hyperlink{namedb_8h_a47c40c3a0f419bf07c0d91182d97a8d6}{pcap\_nametoaddr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#ifdef INET6}}
+\DoxyCodeLine{63 \textcolor{keyword}{struct }\mbox{\hyperlink{structaddrinfo}{addrinfo}} *pcap\_nametoaddrinfo(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{65 \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} \mbox{\hyperlink{namedb_8h_a3fbe8725539a8ef586d3628c2137bf09}{pcap\_nametonetaddr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_ad4417f76e2f7b8d2bddaee30975f4222}{pcap\_nametoport}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_af16cfc0f8dc101ce0c2aad5ca27a7428}{pcap\_nametoportrange}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{69 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_a73be419386f9f1aa25b2cfcaede3c874}{pcap\_nametoproto}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_a78670dbea10f4a7a4df5c8781c288c39}{pcap\_nametoeproto}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{71 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_ad6c9bb176a95c343b7059ccd17b1d0e9}{pcap\_nametollc}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{72 \textcolor{comment}{/*}}
+\DoxyCodeLine{73 \textcolor{comment}{ * If a protocol is unknown, PROTO\_UNDEF is returned.}}
+\DoxyCodeLine{74 \textcolor{comment}{ * Also, pcap\_nametoport() returns the protocol along with the port number.}}
+\DoxyCodeLine{75 \textcolor{comment}{ * If there are ambiguous entried in /etc/services (i.e. domain}}
+\DoxyCodeLine{76 \textcolor{comment}{ * can be either tcp or udp) PROTO\_UNDEF is returned.}}
+\DoxyCodeLine{77 \textcolor{comment}{ */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PROTO\_UNDEF     -\/1}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/* XXX move these to pcap-\/int.h? */}}
+\DoxyCodeLine{81 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_a1ccd3bb8e0da9134c7531e8082a4bb9b}{\_\_pcap\_atodn}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} *);}
+\DoxyCodeLine{82 \textcolor{keywordtype}{int} \mbox{\hyperlink{namedb_8h_a17641612c37afc2707e07d306ebee9cb}{\_\_pcap\_atoin}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \mbox{\hyperlink{bpf_8h_a37fdbc8313e90fb2041203a2e40cd482}{bpf\_u\_int32}} *);}
+\DoxyCodeLine{83 u\_short \mbox{\hyperlink{namedb_8h_a499cc65e74da0ad66bc1e53f3f52ce60}{\_\_pcap\_nametodnaddr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

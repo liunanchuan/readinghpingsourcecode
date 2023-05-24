@@ -1,0 +1,102 @@
+\hypertarget{hex_8c}{}\doxysection{hex.\+c 文件参考}
+\label{hex_8c}\index{hex.c@{hex.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+hex.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{hex_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{hex_8c_a1a2d25ff0c17ecd48667e282428dab48}{hextobin}} (void $\ast$dest, char $\ast$hexstr, int len)
+\item 
+void \mbox{\hyperlink{hex_8c_aebe87d65a000cf9a19f5a2f024693da1}{bintohex}} (char $\ast$dest, void $\ast$bin, int len)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{hex_8c_a39c3a13c224f5641b9f59fab49e635aa}{hval}} \mbox{[}256\mbox{]}
+\item 
+static char \mbox{\hyperlink{hex_8c_a46d45667dde066b13877e5442202514c}{hcharset}} \mbox{[}16\mbox{]} = \char`\"{}0123456789abcdef\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{hex_8c_aebe87d65a000cf9a19f5a2f024693da1}\label{hex_8c_aebe87d65a000cf9a19f5a2f024693da1}} 
+\index{hex.c@{hex.c}!bintohex@{bintohex}}
+\index{bintohex@{bintohex}!hex.c@{hex.c}}
+\doxysubsubsection{\texorpdfstring{bintohex()}{bintohex()}}
+{\footnotesize\ttfamily void bintohex (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{void $\ast$}]{bin,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hex_8c_a46d45667dde066b13877e5442202514c}{hcharset}}.
+
+\mbox{\Hypertarget{hex_8c_a1a2d25ff0c17ecd48667e282428dab48}\label{hex_8c_a1a2d25ff0c17ecd48667e282428dab48}} 
+\index{hex.c@{hex.c}!hextobin@{hextobin}}
+\index{hextobin@{hextobin}!hex.c@{hex.c}}
+\doxysubsubsection{\texorpdfstring{hextobin()}{hextobin()}}
+{\footnotesize\ttfamily int hextobin (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{char $\ast$}]{hexstr,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hex_8c_a39c3a13c224f5641b9f59fab49e635aa}{hval}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sec()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{hex_8c_a1a2d25ff0c17ecd48667e282428dab48_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{hex_8c_a46d45667dde066b13877e5442202514c}\label{hex_8c_a46d45667dde066b13877e5442202514c}} 
+\index{hex.c@{hex.c}!hcharset@{hcharset}}
+\index{hcharset@{hcharset}!hex.c@{hex.c}}
+\doxysubsubsection{\texorpdfstring{hcharset}{hcharset}}
+{\footnotesize\ttfamily char hcharset\mbox{[}16\mbox{]} = \char`\"{}0123456789abcdef\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hex_8c_aebe87d65a000cf9a19f5a2f024693da1}{bintohex()}}.
+
+\mbox{\Hypertarget{hex_8c_a39c3a13c224f5641b9f59fab49e635aa}\label{hex_8c_a39c3a13c224f5641b9f59fab49e635aa}} 
+\index{hex.c@{hex.c}!hval@{hval}}
+\index{hval@{hval}!hex.c@{hex.c}}
+\doxysubsubsection{\texorpdfstring{hval}{hval}}
+{\footnotesize\ttfamily char hval\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{  0,   1,   2,   3,   4,   5,   6,   7,   8,   9, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255,  10,  11,  12,  13,  14,  15, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255,  10,  11,  12,  13,  14,  15, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, }
+\DoxyCodeLine{255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, \}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{hex_8c_a1a2d25ff0c17ecd48667e282428dab48}{hextobin()}}.
+

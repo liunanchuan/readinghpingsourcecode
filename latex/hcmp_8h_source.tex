@@ -1,0 +1,31 @@
+\hypertarget{hcmp_8h_source}{}\doxysection{hcmp.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$smu-\/mark\$ }}
+\DoxyCodeLine{3 \textcolor{comment}{ * \$name: hcmp.h\$ }}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$author: Salvatore Sanfilippo <antirez@invece.org>\$ }}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$copyright: Copyright (C) 1999 by Salvatore Sanfilippo\$ }}
+\DoxyCodeLine{6 \textcolor{comment}{ * \$license: This software is under GPL version 2 of license\$ }}
+\DoxyCodeLine{7 \textcolor{comment}{ * \$date: Fri Nov  5 11:55:47 MET 1999\$ }}
+\DoxyCodeLine{8 \textcolor{comment}{ * \$rev: 9\$ }}
+\DoxyCodeLine{9 \textcolor{comment}{ */} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* Hping Control Message Protocol */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define HCMP\_RESTART        1}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define HCMP\_SOURCE\_QUENCH  2}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define HCMP\_SOURCE\_STIRUP  3}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define HCMP\_CHPROTO        4 }\textcolor{comment}{/* still unused */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{structhcmphdr}{hcmphdr}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \_\_u8    type;}
+\DoxyCodeLine{21     \textcolor{keyword}{union}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \_\_u16 seqnum;}
+\DoxyCodeLine{24         \_\_u32 usec;}
+\DoxyCodeLine{25     \} typedep;}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

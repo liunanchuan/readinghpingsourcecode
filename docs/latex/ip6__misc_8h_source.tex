@@ -1,0 +1,169 @@
+\hypertarget{ip6__misc_8h_source}{}\doxysection{ip6\+\_\+misc.\+h}
+\label{ip6__misc_8h_source}\index{libpcap-\/1.1.1/Win32/Include/ip6\_misc.h@{libpcap-\/1.1.1/Win32/Include/ip6\_misc.h}}
+\mbox{\hyperlink{ip6__misc_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1993, 1994, 1997}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that: (1) source code distributions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * retain the above copyright notice and this paragraph in its entirety, (2)}}
+\DoxyCodeLine{8 \textcolor{comment}{ * distributions including binary code include the above copyright notice and}}
+\DoxyCodeLine{9 \textcolor{comment}{ * this paragraph in its entirety in the documentation or other materials}}
+\DoxyCodeLine{10 \textcolor{comment}{ * provided with the distribution, and (3) all advertising materials mentioning}}
+\DoxyCodeLine{11 \textcolor{comment}{ * features or use of this software display the following acknowledgement:}}
+\DoxyCodeLine{12 \textcolor{comment}{ * ``This product includes software developed by the University of California,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Lawrence Berkeley Laboratory and its contributors.'' Neither the name of}}
+\DoxyCodeLine{14 \textcolor{comment}{ * the University nor the names of its contributors may be used to endorse}}
+\DoxyCodeLine{15 \textcolor{comment}{ * or promote products derived from this software without specific prior}}
+\DoxyCodeLine{16 \textcolor{comment}{ * written permission.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED}}
+\DoxyCodeLine{18 \textcolor{comment}{ * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF}}
+\DoxyCodeLine{19 \textcolor{comment}{ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/Win32/Include/ip6\_misc.h,v 1.5 2006-\/01-\/22 18:02:18 gianluca Exp \$ (LBL)}}
+\DoxyCodeLine{22 \textcolor{comment}{ */}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*}}
+\DoxyCodeLine{25 \textcolor{comment}{ * This file contains a collage of declarations for IPv6 from FreeBSD not present in Windows}}
+\DoxyCodeLine{26 \textcolor{comment}{ */}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <winsock2.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <ws2tcpip.h>}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef \_\_MINGW32\_\_}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define IN\_MULTICAST(a)     IN\_CLASSD(a)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define IN\_EXPERIMENTAL(a)  ((((u\_int32\_t) (a)) \& 0xf0000000) == 0xf0000000)}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define IN\_LOOPBACKNET      127}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if defined(\_\_MINGW32\_\_) \&\& defined(DEFINE\_ADDITIONAL\_IPV6\_STUFF)}}
+\DoxyCodeLine{41 \textcolor{comment}{/* IPv6 address */}}
+\DoxyCodeLine{42 \textcolor{keyword}{struct }in6\_addr}
+\DoxyCodeLine{43   \{}
+\DoxyCodeLine{44     \textcolor{keyword}{union}}
+\DoxyCodeLine{45       \{}
+\DoxyCodeLine{46     u\_int8\_t        u6\_addr8[16];}
+\DoxyCodeLine{47     u\_int16\_t   u6\_addr16[8];}
+\DoxyCodeLine{48     u\_int32\_t   u6\_addr32[4];}
+\DoxyCodeLine{49       \} in6\_u;}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define s6\_addr         in6\_u.u6\_addr8}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define s6\_addr16       in6\_u.u6\_addr16}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define s6\_addr32       in6\_u.u6\_addr32}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define s6\_addr64       in6\_u.u6\_addr64}}
+\DoxyCodeLine{54   \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define IN6ADDR\_ANY\_INIT \{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 \}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define IN6ADDR\_LOOPBACK\_INIT \{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 \}}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_MINGW32\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#if (defined \_MSC\_VER) || (defined(\_\_MINGW32\_\_) \&\& defined(DEFINE\_ADDITIONAL\_IPV6\_STUFF))}}
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}  sa\_family\_t;}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#if defined(\_\_MINGW32\_\_) \&\& defined(DEFINE\_ADDITIONAL\_IPV6\_STUFF)}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_\_SOCKADDR\_COMMON(sa\_prefix) \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{  sa\_family\_t sa\_prefix\#\#family}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{/* Ditto, for IPv6.  */}}
+\DoxyCodeLine{72 \textcolor{keyword}{struct }sockaddr\_in6}
+\DoxyCodeLine{73   \{}
+\DoxyCodeLine{74     \_\_SOCKADDR\_COMMON (sin6\_);}
+\DoxyCodeLine{75     u\_int16\_t sin6\_port;        \textcolor{comment}{/* Transport layer port \# */}}
+\DoxyCodeLine{76     u\_int32\_t sin6\_flowinfo;    \textcolor{comment}{/* IPv6 flow information */}}
+\DoxyCodeLine{77     \textcolor{keyword}{struct }in6\_addr sin6\_addr;  \textcolor{comment}{/* IPv6 address */}}
+\DoxyCodeLine{78   \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define IN6\_IS\_ADDR\_V4MAPPED(a) \(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{    ((((u\_int32\_t *) (a))[0] == 0) \&\& (((u\_int32\_t *) (a))[1] == 0) \&\& \(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{     (((u\_int32\_t *) (a))[2] == htonl (0xffff)))}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define IN6\_IS\_ADDR\_MULTICAST(a) (((u\_int8\_t *) (a))[0] == 0xff)}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define IN6\_IS\_ADDR\_LINKLOCAL(a) \(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{    ((((u\_int32\_t *) (a))[0] \& htonl (0xffc00000)) == htonl (0xfe800000))}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define IN6\_IS\_ADDR\_LOOPBACK(a) \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{    (((u\_int32\_t *) (a))[0] == 0 \&\& ((u\_int32\_t *) (a))[1] == 0 \&\& \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{     ((u\_int32\_t *) (a))[2] == 0 \&\& ((u\_int32\_t *) (a))[3] == htonl (1))}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_MINGW32\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define ip6\_vfc   ip6\_ctlun.ip6\_un2\_vfc}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define ip6\_flow  ip6\_ctlun.ip6\_un1.ip6\_un1\_flow}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define ip6\_plen  ip6\_ctlun.ip6\_un1.ip6\_un1\_plen}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define ip6\_nxt   ip6\_ctlun.ip6\_un1.ip6\_un1\_nxt}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define ip6\_hlim  ip6\_ctlun.ip6\_un1.ip6\_un1\_hlim}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define ip6\_hops  ip6\_ctlun.ip6\_un1.ip6\_un1\_hlim}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define nd\_rd\_type               nd\_rd\_hdr.icmp6\_type}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define nd\_rd\_code               nd\_rd\_hdr.icmp6\_code}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define nd\_rd\_cksum              nd\_rd\_hdr.icmp6\_cksum}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define nd\_rd\_reserved           nd\_rd\_hdr.icmp6\_data32[0]}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{comment}{/*}}
+\DoxyCodeLine{107 \textcolor{comment}{ *  IPV6 extension headers}}
+\DoxyCodeLine{108 \textcolor{comment}{ */}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define IPPROTO\_HOPOPTS     0   }\textcolor{comment}{/* IPv6 hop-\/by-\/hop options  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define IPPROTO\_IPV6        41  }\textcolor{comment}{/* IPv6 header.  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define IPPROTO\_ROUTING     43  }\textcolor{comment}{/* IPv6 routing header      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define IPPROTO\_FRAGMENT    44  }\textcolor{comment}{/* IPv6 fragmentation header    */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define IPPROTO\_ESP     50  }\textcolor{comment}{/* encapsulating security payload */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define IPPROTO\_AH      51  }\textcolor{comment}{/* authentication header    */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define IPPROTO\_ICMPV6      58  }\textcolor{comment}{/* ICMPv6           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define IPPROTO\_NONE        59  }\textcolor{comment}{/* IPv6 no next header      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define IPPROTO\_DSTOPTS     60  }\textcolor{comment}{/* IPv6 destination options */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define IPPROTO\_PIM         103 }\textcolor{comment}{/* Protocol Independent Multicast.  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define  IPV6\_RTHDR\_TYPE\_0 0}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{/* Option types and related macros */}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define IP6OPT\_PAD1     0x00    }\textcolor{comment}{/* 00 0 00000 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define IP6OPT\_PADN     0x01    }\textcolor{comment}{/* 00 0 00001 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define IP6OPT\_JUMBO        0xC2    }\textcolor{comment}{/* 11 0 00010 = 194 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define IP6OPT\_JUMBO\_LEN    6}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define IP6OPT\_ROUTER\_ALERT 0x05    }\textcolor{comment}{/* 00 0 00101 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define IP6OPT\_RTALERT\_LEN  4}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define IP6OPT\_RTALERT\_MLD  0   }\textcolor{comment}{/* Datagram contains an MLD message */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define IP6OPT\_RTALERT\_RSVP 1   }\textcolor{comment}{/* Datagram contains an RSVP message */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define IP6OPT\_RTALERT\_ACTNET   2   }\textcolor{comment}{/* contains an Active Networks msg */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define IP6OPT\_MINLEN       2}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define IP6OPT\_BINDING\_UPDATE   0xc6    }\textcolor{comment}{/* 11 0 00110 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define IP6OPT\_BINDING\_ACK  0x07    }\textcolor{comment}{/* 00 0 00111 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define IP6OPT\_BINDING\_REQ  0x08    }\textcolor{comment}{/* 00 0 01000 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define IP6OPT\_HOME\_ADDRESS 0xc9    }\textcolor{comment}{/* 11 0 01001 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define IP6OPT\_EID      0x8a    }\textcolor{comment}{/* 10 0 01010 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define IP6OPT\_TYPE(o)      ((o) \& 0xC0)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define IP6OPT\_TYPE\_SKIP    0x00}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define IP6OPT\_TYPE\_DISCARD 0x40}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define IP6OPT\_TYPE\_FORCEICMP   0x80}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define IP6OPT\_TYPE\_ICMP    0xC0}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define IP6OPT\_MUTABLE      0x20}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#if defined(\_\_MINGW32\_\_) \&\& defined(DEFINE\_ADDITIONAL\_IPV6\_STUFF)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#ifndef EAI\_ADDRFAMILY}}
+\DoxyCodeLine{152 \textcolor{keyword}{struct }\mbox{\hyperlink{structaddrinfo}{addrinfo}} \{}
+\DoxyCodeLine{153     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{ai\_flags}};   \textcolor{comment}{/* AI\_PASSIVE, AI\_CANONNAME */}}
+\DoxyCodeLine{154     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{ai\_family}}; \textcolor{comment}{/* PF\_xxx */}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a2109130e73586150c41fed16311e1af6}{ai\_socktype}}; \textcolor{comment}{/* SOCK\_xxx */}}
+\DoxyCodeLine{156     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a6ade486587feaa03d492eb84cfc83451}{ai\_protocol}}; \textcolor{comment}{/* 0 or IPPROTO\_xxx for IPv4 and IPv6 */}}
+\DoxyCodeLine{157     \textcolor{keywordtype}{size\_t}  \mbox{\hyperlink{structaddrinfo_a98d686f4346a14c118092536d61ecf8d}{ai\_addrlen}};   \textcolor{comment}{/* length of ai\_addr */}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{char}    *\mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{ai\_canonname}};  \textcolor{comment}{/* canonical name for hostname */}}
+\DoxyCodeLine{159     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{ai\_addr}};    \textcolor{comment}{/* binary address */}}
+\DoxyCodeLine{160     \textcolor{keyword}{struct }\mbox{\hyperlink{structaddrinfo}{addrinfo}} *\mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{ai\_next}};    \textcolor{comment}{/* next structure in linked list */}}
+\DoxyCodeLine{161 \};}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_MINGW32\_\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\hypertarget{structbpf__program}{}\doxysection{bpf\+\_\+program结构体 参考}
+\label{structbpf__program}\index{bpf\_program@{bpf\_program}}
+
+
+{\ttfamily \#include $<$bpf.\+h$>$}
+
+
+
+bpf\+\_\+program 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{structbpf__program__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int \mbox{\hyperlink{structbpf__program_ab083593fb14595185d9503f0184804cd}{bf\+\_\+len}}
+\item 
+struct \mbox{\hyperlink{structbpf__insn}{bpf\+\_\+insn}} $\ast$ \mbox{\hyperlink{structbpf__program_aed556880943c25c15e7ed3b1502603e9}{bf\+\_\+insns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structbpf__program_aed556880943c25c15e7ed3b1502603e9}\label{structbpf__program_aed556880943c25c15e7ed3b1502603e9}} 
+\index{bpf\_program@{bpf\_program}!bf\_insns@{bf\_insns}}
+\index{bf\_insns@{bf\_insns}!bpf\_program@{bpf\_program}}
+\doxysubsubsection{\texorpdfstring{bf\_insns}{bf\_insns}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbpf__insn}{bpf\+\_\+insn}}$\ast$ bf\+\_\+insns}
+
+
+
+被这些函数引用 \mbox{\hyperlink{bpf__dump_8c_acd8665619218212a236e1b773ce3470b}{bpf\+\_\+dump()}}, \mbox{\hyperlink{optimize_8c_ad016c0b6c48c3af42f162f11c3b4f241}{install\+\_\+bpf\+\_\+program()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}, \mbox{\hyperlink{gencode_8c_ae91597f8e7d1b02123008f7847d7bfd7}{pcap\+\_\+freecode()}}, \mbox{\hyperlink{pcap_8c_ae52fc14c94b8a634750b0820f79fc478}{pcap\+\_\+offline\+\_\+filter()}}, \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn()}} , 以及 \mbox{\hyperlink{pcap-enet_8c_a3fa1952f1268b3fe397e870471b88e75}{readloop()}}.
+
+\mbox{\Hypertarget{structbpf__program_ab083593fb14595185d9503f0184804cd}\label{structbpf__program_ab083593fb14595185d9503f0184804cd}} 
+\index{bpf\_program@{bpf\_program}!bf\_len@{bf\_len}}
+\index{bf\_len@{bf\_len}!bpf\_program@{bpf\_program}}
+\doxysubsubsection{\texorpdfstring{bf\_len}{bf\_len}}
+{\footnotesize\ttfamily u\+\_\+int bf\+\_\+len}
+
+
+
+被这些函数引用 \mbox{\hyperlink{bpf__dump_8c_acd8665619218212a236e1b773ce3470b}{bpf\+\_\+dump()}}, \mbox{\hyperlink{optimize_8c_ad016c0b6c48c3af42f162f11c3b4f241}{install\+\_\+bpf\+\_\+program()}}, \mbox{\hyperlink{pcap-bpf_8c_a18ac15bc16cfc96b0beb31400a3483b0}{pcap\+\_\+activate\+\_\+bpf()}}, \mbox{\hyperlink{gencode_8c_a91d529e973ba6402e81ba652511a2b19}{pcap\+\_\+compile()}}, \mbox{\hyperlink{gencode_8c_ae91597f8e7d1b02123008f7847d7bfd7}{pcap\+\_\+freecode()}} , 以及 \mbox{\hyperlink{pcap-sita_8c_a3eb476bba79449960fa66095991b35df}{pcap\+\_\+setfilter\+\_\+acn()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/pcap/\mbox{\hyperlink{bpf_8h}{bpf.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,2198 @@
+\hypertarget{sbignum_8c}{}\doxysection{sbignum.\+c 文件参考}
+\label{sbignum_8c}\index{sbignum.c@{sbignum.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sbignum.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sbignum-\/tables.\+h\char`\"{}}\newline
+sbignum.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~((a)$>$(b)?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)~((a)$<$(b)?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}(t,  u,  l)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}~5
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}~((1$<$$<$\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}})-\/1)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}}(mpz,  t,  l)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_ab2f1573d70519bfd87710cce0bb3060a}{\+\_\+mpz\+\_\+raw\+\_\+init}}(z,  d,  l,  a,  s)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a897f010587219ce9d348bba1822eb14c}{\+\_\+mpz\+\_\+neg}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_ab6d50cc5dc98fec295f0d27b8460fd7d}{debugprint}}(m,  z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_aaeed02f1ba4c4c1d731aaed86fa903e5}{debugprint2}}(m,  z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_abfcf761a3b1433406712819c467a1a30}{\+\_\+mpz\+\_\+normalize}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_aed0d6a087c3c5a5e378a3b399e7e824c}{\+\_\+mpz\+\_\+rawclone\+\_\+stack}}(z,  D,  L)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_abb9249682dea6cd6bfd4a2d9359c05fc}{\+\_\+mpz\+\_\+copy\+\_\+stack}}(r,  z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a7f92664209c6e75ef27f8c76454041fe}{\+\_\+mpz\+\_\+setbit}}(z,  i)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a82233587e880a5bcb8bb269f9084e9d4}{\+\_\+\+\_\+mpz\+\_\+setbit}}(z,  i)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_ab5901ecc32c2d05564d3f4e4789c514e}{\+\_\+mpz\+\_\+clrbit}}(z,  i)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a83aa94345af1bf3bde32931b51369761}{\+\_\+\+\_\+mpz\+\_\+clrbit}}(z,  i)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a7580c4a89c6de275bd0eb47188947432}{\+\_\+mpz\+\_\+testbit}}(z,  i)~  ((z)-\/$>$d\mbox{[}(i)$>$$>$\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}\mbox{]} \& ((\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}})1$<$$<$((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}})))
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_aa37f524e87d5dc95e125a5fd1ceb60ff}{mpz\+\_\+is\+\_\+odd}}(z)~(((z)-\/$>$l) ? ((z)-\/$>$d\mbox{[}0\mbox{]} \& 1) \+: 0)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}{\+\_\+mpz\+\_\+is\+\_\+odd}}(z)~((z)-\/$>$d\mbox{[}0\mbox{]} \& 1)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a0ab4b143b60d9d7096ddaa316d8f5e72}{\+\_\+mpz\+\_\+is\+\_\+even}}(z)~(!\mbox{\hyperlink{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}{\+\_\+mpz\+\_\+is\+\_\+odd}}(z))
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a3655cdbd23d9b76b3e4121e9e97022e4}{\+\_\+mpz\+\_\+self\+\_\+lshift1}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a4b3d29be8fb7b2c91a596d3ff99fd562}{\+\_\+mpz\+\_\+self\+\_\+lshift1\+\_\+setbit0}}(z,  b)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a46921df3e067ff66104936d142030dc8}{\+\_\+mpz\+\_\+self\+\_\+rshift1}}(z)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_adcae82fee953b4ded81ff28db3ea6959}{\+\_\+mpz\+\_\+set}}(D,  S)
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a969f9fd700967be14441ae44e307be30}{sbn\+\_\+chartoval}}(c)~(\mbox{\hyperlink{sbignum-tables_8h_a09d18deb07243cb33e5de71801338e08}{r\+\_\+cset}}\mbox{[}\mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower}}(c)\mbox{]})
+\item 
+\#define \mbox{\hyperlink{sbignum_8c_a34dcc0238de427a50a7dbe14ea92afe6}{sbn\+\_\+valtochar}}(v)~(\mbox{\hyperlink{sbignum-tables_8h_ac17ddd6d46f440054b900a082f40929d}{cset}}\mbox{[}v\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+static void \mbox{\hyperlink{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}{mpz\+\_\+zero}} (mpz\+\_\+ptr z)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91}{mpz\+\_\+lshiftword}} (mpz\+\_\+ptr r, u\+\_\+int32\+\_\+t i)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d}{mpz\+\_\+rshiftword}} (mpz\+\_\+ptr r, u\+\_\+int32\+\_\+t i)
+\item 
+static int32\+\_\+t \mbox{\hyperlink{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}{mpz\+\_\+cmpabsi\+\_\+raw}} (mpz\+\_\+ptr a, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs}} (mpz\+\_\+ptr a, mpz\+\_\+ptr b)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw}} (mpz\+\_\+ptr q, mpz\+\_\+ptr r, mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$d, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw}} (mpz\+\_\+ptr g, mpz\+\_\+ptr a, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$b, u\+\_\+int32\+\_\+t l)
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t b, void $\ast$s, size\+\_\+t l)
+\item 
+static void \mbox{\hyperlink{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}{sbn\+\_\+rand\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init}} (mpz\+\_\+ptr z)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+void \mbox{\hyperlink{sbignum_8c_af37448c43cf5056704e339342cf014e7}{mpz\+\_\+normalize}} (mpz\+\_\+ptr z)
+\item 
+void \mbox{\hyperlink{sbignum_8c_a0ce5432dca78ee24d984720fe5294edc}{mpz\+\_\+normalize\+\_\+sign}} (mpz\+\_\+ptr z)
+\item 
+void \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear}} (mpz\+\_\+ptr z)
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}{mpz\+\_\+bits}} (mpz\+\_\+ptr z)
+\item 
+int \mbox{\hyperlink{sbignum_8c_aa90d09b20f17c30b0d5572281efbc5da}{mpz\+\_\+setbit}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ae05d28b5a9a64ca99d412525ad04fc2d}{mpz\+\_\+clrbit}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a8f2f5d1cba2f7422b49c7d122dc18ecc}{mpz\+\_\+testbit}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}{mpz\+\_\+lshift}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae}{mpz\+\_\+rshift}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}{mpz\+\_\+and}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, mpz\+\_\+ptr m)
+\item 
+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}{mpz\+\_\+cmpabs\+\_\+ui}} (mpz\+\_\+ptr a, u\+\_\+int32\+\_\+t u)
+\item 
+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a98596f49f450c942072f25b509d8e360}{mpz\+\_\+cmp}} (mpz\+\_\+ptr a, mpz\+\_\+ptr b)
+\item 
+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a501923fd6990e612a58a7d4d57ce5268}{mpz\+\_\+cmp\+\_\+ui}} (mpz\+\_\+ptr a, u\+\_\+int32\+\_\+t u)
+\item 
+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_ad8f385080bb3b1cf2d47d34610e809f1}{mpz\+\_\+cmp\+\_\+si}} (mpz\+\_\+ptr a, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ac65c3d09dabbbef570e15bb887dcedb1}{mpz\+\_\+add\+\_\+ui}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a53ae0c22ae07adb510731d5ac2b62dce}{mpz\+\_\+add\+\_\+si}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add}} (mpz\+\_\+ptr r, mpz\+\_\+ptr a, mpz\+\_\+ptr b)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub}} (mpz\+\_\+ptr r, mpz\+\_\+ptr a, mpz\+\_\+ptr b)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a6adfc2d8ede735ca4bd0ffcfc36ef07a}{mpz\+\_\+sub\+\_\+ui}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_af79cc0eab3db5e37cce8398f904c9401}{mpz\+\_\+sub\+\_\+si}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a568713e406452d41f0879510b10d7718}{mpz\+\_\+mul}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, mpz\+\_\+ptr f)
+\item 
+int \mbox{\hyperlink{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}{mpz\+\_\+mul\+\_\+ui}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a851bb2a7b69e12413baaa55168eb0519}{mpz\+\_\+mul\+\_\+si}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}{mpz\+\_\+fac\+\_\+ui}} (mpz\+\_\+ptr r, u\+\_\+int32\+\_\+t i)
+\item 
+int \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm}} (mpz\+\_\+ptr r, mpz\+\_\+ptr b, mpz\+\_\+ptr e, mpz\+\_\+ptr m)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow}} (mpz\+\_\+ptr r, mpz\+\_\+ptr b, mpz\+\_\+ptr e)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr}} (mpz\+\_\+ptr q, mpz\+\_\+ptr r, mpz\+\_\+ptr z, mpz\+\_\+ptr d)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a1ea4a70f4039bf4ee745e01865b2c3cf}{mpz\+\_\+tdiv\+\_\+qr\+\_\+ui}} (mpz\+\_\+ptr q, mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a693b4f9a52854ed3637310b2f86f87b5}{mpz\+\_\+tdiv\+\_\+qr\+\_\+si}} (mpz\+\_\+ptr q, mpz\+\_\+ptr r, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, mpz\+\_\+ptr d)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a6c71d6549f2940d3fd70c075cc6377bd}{mpz\+\_\+tdiv\+\_\+r\+\_\+ui}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a96611e0363845c0b9bb3bf2d0b2afccd}{mpz\+\_\+tdiv\+\_\+r\+\_\+si}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}{mpz\+\_\+tdiv\+\_\+q}} (mpz\+\_\+ptr q, mpz\+\_\+ptr z, mpz\+\_\+ptr d)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a4c9068aea61f61056aebea9e9c827595}{mpz\+\_\+tdiv\+\_\+q\+\_\+ui}} (mpz\+\_\+ptr q, mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_af28b1dc2f9c81a099277f0ef38bf9b7b}{mpz\+\_\+tdiv\+\_\+q\+\_\+si}} (mpz\+\_\+ptr q, mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} \mbox{\hyperlink{sbignum_8c_aed3ce85996d98a3b1d140545c956dd2e}{\+\_\+mpz\+\_\+selfdiv1\+\_\+qr\+\_\+raw}} (mpz\+\_\+ptr z, \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} d)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ad14f285fb838becce984b5878188f614}{mpz\+\_\+mod}} (mpz\+\_\+ptr r, mpz\+\_\+ptr z, mpz\+\_\+ptr m)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero}} (mpz\+\_\+ptr z)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set}} (mpz\+\_\+ptr d, mpz\+\_\+ptr s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a00602345aa51818b9cbd4cb68724facc}{mpz\+\_\+set\+\_\+d}} (mpz\+\_\+ptr z, double d)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a2336671b5abff7620f928f60e869704d}{mpz\+\_\+set\+\_\+ui64}} (mpz\+\_\+ptr z, u\+\_\+int64\+\_\+t u)
+\item 
+int \mbox{\hyperlink{sbignum_8c_ac291687865f843925f10c7e8045e4fca}{mpz\+\_\+set\+\_\+si64}} (mpz\+\_\+ptr z, int64\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a4e40ea687d4fc2d16bf6d412b7c05638}{mpz\+\_\+set\+\_\+si}} (mpz\+\_\+ptr z, int32\+\_\+t s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a2c63fe7d6872f76ed0360ead99a3489f}{mpz\+\_\+abs}} (mpz\+\_\+ptr d, mpz\+\_\+ptr s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a4f77b6a070346e0e4f9415357d3671f8}{mpz\+\_\+neg}} (mpz\+\_\+ptr d, mpz\+\_\+ptr s)
+\item 
+int \mbox{\hyperlink{sbignum_8c_af8584e7d2907ebd5db25596705021972}{mpz\+\_\+gcd}} (mpz\+\_\+ptr g, mpz\+\_\+ptr a, mpz\+\_\+ptr b)
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a1e3e9866f1bc916f512734dc8a2c2167}{mpz\+\_\+gcd\+\_\+ui}} (mpz\+\_\+ptr g, mpz\+\_\+ptr a, u\+\_\+int32\+\_\+t b)
+\item 
+size\+\_\+t \mbox{\hyperlink{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee}{mpz\+\_\+sizeinbase}} (mpz\+\_\+ptr z, u\+\_\+int32\+\_\+t b)
+\item 
+char $\ast$ \mbox{\hyperlink{sbignum_8c_aac739e27126529ad246f59831461caf9}{mpz\+\_\+get\+\_\+str}} (char $\ast$str, int b, mpz\+\_\+ptr z)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str}} (mpz\+\_\+ptr z, char $\ast$s, int b)
+\item 
+void \mbox{\hyperlink{sbignum_8c_ae24357f20cab2a414405b5534655cad7}{sbn\+\_\+seed}} (void $\ast$seed, size\+\_\+t len)
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand}} (void)
+\item 
+int \mbox{\hyperlink{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}{mpz\+\_\+random}} (mpz\+\_\+ptr z, int32\+\_\+t len)
+\item 
+double \mbox{\hyperlink{sbignum_8c_a48969a7a48d7ee8a24eb050e579a91ff}{mpz\+\_\+get\+\_\+d}} (mpz\+\_\+ptr z)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \mbox{\hyperlink{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}} \mbox{[}256\mbox{]}
+\item 
+static int \mbox{\hyperlink{sbignum_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{sbignum_8c_a83aa94345af1bf3bde32931b51369761}\label{sbignum_8c_a83aa94345af1bf3bde32931b51369761}} 
+\index{sbignum.c@{sbignum.c}!\_\_mpz\_clrbit@{\_\_mpz\_clrbit}}
+\index{\_\_mpz\_clrbit@{\_\_mpz\_clrbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_\_mpz\_clrbit}{\_\_mpz\_clrbit}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mpz\+\_\+clrbit(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t \_atom = (i)>>\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\_SHIFT}}; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[\_atom] \&= \string~((\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}}) 1<<((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\_MASK}}));\(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a82233587e880a5bcb8bb269f9084e9d4}\label{sbignum_8c_a82233587e880a5bcb8bb269f9084e9d4}} 
+\index{sbignum.c@{sbignum.c}!\_\_mpz\_setbit@{\_\_mpz\_setbit}}
+\index{\_\_mpz\_setbit@{\_\_mpz\_setbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_\_mpz\_setbit}{\_\_mpz\_setbit}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mpz\+\_\+setbit(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t \_atom = (i)>>\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\_SHIFT}}; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[\_atom] |= (\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}}) 1<<((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\_MASK}});\(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}\label{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_abs@{\_mpz\_abs}}
+\index{\_mpz\_abs@{\_mpz\_abs}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_abs}{\_mpz\_abs}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+abs(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>s = 0; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}\label{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_clone\_stack@{\_mpz\_clone\_stack}}
+\index{\_mpz\_clone\_stack@{\_mpz\_clone\_stack}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_clone\_stack}{\_mpz\_clone\_stack}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+clone\+\_\+stack(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    mpz\_ptr t = alloca(\textcolor{keyword}{sizeof}(mpz\_t)); \(\backslash\)}
+\DoxyCodeLine{    t-\/>d = alloca((z)-\/>a*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{    t-\/>s = (z)-\/>s; \(\backslash\)}
+\DoxyCodeLine{    t-\/>l = (z)-\/>l; \(\backslash\)}
+\DoxyCodeLine{    t-\/>a = (z)-\/>a; \(\backslash\)}
+\DoxyCodeLine{    memcpy(t-\/>d, (z)-\/>d, (z)-\/>a*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{    (z) = t; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_ab5901ecc32c2d05564d3f4e4789c514e}\label{sbignum_8c_ab5901ecc32c2d05564d3f4e4789c514e}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_clrbit@{\_mpz\_clrbit}}
+\index{\_mpz\_clrbit@{\_mpz\_clrbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_clrbit}{\_mpz\_clrbit}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+clrbit(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t \_atom = (i)>>\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\_SHIFT}}; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[\_atom] \&= \string~((\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}}) 1<<((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\_MASK}})); \(\backslash\)}
+\DoxyCodeLine{    if (\_atom == z-\/>l-\/1) \(\backslash\)}
+\DoxyCodeLine{        \_mpz\_normalize(z); \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_abb9249682dea6cd6bfd4a2d9359c05fc}\label{sbignum_8c_abb9249682dea6cd6bfd4a2d9359c05fc}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_copy\_stack@{\_mpz\_copy\_stack}}
+\index{\_mpz\_copy\_stack@{\_mpz\_copy\_stack}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_copy\_stack}{\_mpz\_copy\_stack}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+copy\+\_\+stack(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    r = alloca(\textcolor{keyword}{sizeof}(mpz\_t)); \(\backslash\)}
+\DoxyCodeLine{    (r)-\/>d = alloca((z)-\/>a*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{    (r)-\/>s = (z)-\/>s; \(\backslash\)}
+\DoxyCodeLine{    (r)-\/>l = (z)-\/>l; \(\backslash\)}
+\DoxyCodeLine{    (r)-\/>a = (z)-\/>a; \(\backslash\)}
+\DoxyCodeLine{    memcpy((r)-\/>d, (z)-\/>d, (z)-\/>a*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a0ab4b143b60d9d7096ddaa316d8f5e72}\label{sbignum_8c_a0ab4b143b60d9d7096ddaa316d8f5e72}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_is\_even@{\_mpz\_is\_even}}
+\index{\_mpz\_is\_even@{\_mpz\_is\_even}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_is\_even}{\_mpz\_is\_even}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+is\+\_\+even(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})~(!\mbox{\hyperlink{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}{\+\_\+mpz\+\_\+is\+\_\+odd}}(z))}
+
+\mbox{\Hypertarget{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}\label{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_is\_odd@{\_mpz\_is\_odd}}
+\index{\_mpz\_is\_odd@{\_mpz\_is\_odd}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_is\_odd}{\_mpz\_is\_odd}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+is\+\_\+odd(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})~((z)-\/$>$d\mbox{[}0\mbox{]} \& 1)}
+
+\mbox{\Hypertarget{sbignum_8c_a897f010587219ce9d348bba1822eb14c}\label{sbignum_8c_a897f010587219ce9d348bba1822eb14c}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_neg@{\_mpz\_neg}}
+\index{\_mpz\_neg@{\_mpz\_neg}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_neg}{\_mpz\_neg}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+neg(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>s \string^= 1; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_abfcf761a3b1433406712819c467a1a30}\label{sbignum_8c_abfcf761a3b1433406712819c467a1a30}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_normalize@{\_mpz\_normalize}}
+\index{\_mpz\_normalize@{\_mpz\_normalize}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_normalize}{\_mpz\_normalize}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+normalize(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    int32\_t j = (z)-\/>a-\/1; \(\backslash\)}
+\DoxyCodeLine{    while(j >=0 \&\& !(z)-\/>d[j]) \(\backslash\)}
+\DoxyCodeLine{        j-\/-\/; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>l = j+1; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_ab2f1573d70519bfd87710cce0bb3060a}\label{sbignum_8c_ab2f1573d70519bfd87710cce0bb3060a}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_raw\_init@{\_mpz\_raw\_init}}
+\index{\_mpz\_raw\_init@{\_mpz\_raw\_init}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_raw\_init}{\_mpz\_raw\_init}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+raw\+\_\+init(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{d,  }\item[{}]{l,  }\item[{}]{a,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d = d; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>l = l; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>a = a; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>s = s; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_aed0d6a087c3c5a5e378a3b399e7e824c}\label{sbignum_8c_aed0d6a087c3c5a5e378a3b399e7e824c}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_rawclone\_stack@{\_mpz\_rawclone\_stack}}
+\index{\_mpz\_rawclone\_stack@{\_mpz\_rawclone\_stack}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_rawclone\_stack}{\_mpz\_rawclone\_stack}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+rawclone\+\_\+stack(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{D,  }\item[{}]{L }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d = alloca((L)*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>l = z-\/>a = (L); \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>s = 0; \(\backslash\)}
+\DoxyCodeLine{    memcpy((z)-\/>d, (D), (L)*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a3655cdbd23d9b76b3e4121e9e97022e4}\label{sbignum_8c_a3655cdbd23d9b76b3e4121e9e97022e4}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_self\_lshift1@{\_mpz\_self\_lshift1}}
+\index{\_mpz\_self\_lshift1@{\_mpz\_self\_lshift1}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_self\_lshift1}{\_mpz\_self\_lshift1}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+self\+\_\+lshift1(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    int32\_t j; \(\backslash\)}
+\DoxyCodeLine{    for (j = (z)-\/>l-\/1; j >= 0; j-\/-\/) \{ \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j+1] |= ((z)-\/>d[j] \& (1<<(\mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}-\/1))) >> (\mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}-\/1);\(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j] <<= 1; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    if ((z)-\/>d[(z)-\/>l]) \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>l++; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a4b3d29be8fb7b2c91a596d3ff99fd562}\label{sbignum_8c_a4b3d29be8fb7b2c91a596d3ff99fd562}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_self\_lshift1\_setbit0@{\_mpz\_self\_lshift1\_setbit0}}
+\index{\_mpz\_self\_lshift1\_setbit0@{\_mpz\_self\_lshift1\_setbit0}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_self\_lshift1\_setbit0}{\_mpz\_self\_lshift1\_setbit0}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+self\+\_\+lshift1\+\_\+setbit0(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    int32\_t j; \(\backslash\)}
+\DoxyCodeLine{    for (j = (z)-\/>l-\/1; j >= 0; j-\/-\/) \{ \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j+1] |= ((z)-\/>d[j] \& (1<<(\mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}-\/1))) >> (\mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}-\/1);\(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j] <<= 1; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[0] |= b; \(\backslash\)}
+\DoxyCodeLine{    if ((z)-\/>d[(z)-\/>l]) \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>l++; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a46921df3e067ff66104936d142030dc8}\label{sbignum_8c_a46921df3e067ff66104936d142030dc8}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_self\_rshift1@{\_mpz\_self\_rshift1}}
+\index{\_mpz\_self\_rshift1@{\_mpz\_self\_rshift1}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_self\_rshift1}{\_mpz\_self\_rshift1}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+self\+\_\+rshift1(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t j; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[0] >>= 1; \(\backslash\)}
+\DoxyCodeLine{    for (j = 1; j < (z)-\/>l; j++) \{ \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j-\/1] |= ((z)-\/>d[j] \& 1) << (\mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}-\/1); \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>d[j] >>= 1; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    if (!(z)-\/>d[(z)-\/>l-\/1]) \(\backslash\)}
+\DoxyCodeLine{        (z)-\/>l-\/-\/; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_adcae82fee953b4ded81ff28db3ea6959}\label{sbignum_8c_adcae82fee953b4ded81ff28db3ea6959}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_set@{\_mpz\_set}}
+\index{\_mpz\_set@{\_mpz\_set}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_set}{\_mpz\_set}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+set(\begin{DoxyParamCaption}\item[{}]{D,  }\item[{}]{S }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    memcpy(D-\/>d, S-\/>d, S-\/>l*\mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\_ATOMSZ}}); \(\backslash\)}
+\DoxyCodeLine{    D-\/>l = S-\/>l; \(\backslash\)}
+\DoxyCodeLine{    D-\/>s = S-\/>s; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a7f92664209c6e75ef27f8c76454041fe}\label{sbignum_8c_a7f92664209c6e75ef27f8c76454041fe}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_setbit@{\_mpz\_setbit}}
+\index{\_mpz\_setbit@{\_mpz\_setbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_setbit}{\_mpz\_setbit}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+setbit(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t \_atom = (i)>>\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\_SHIFT}}; \(\backslash\)}
+\DoxyCodeLine{    (z)-\/>d[\_atom] |= (\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}}) 1<<((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\_MASK}});\(\backslash\)}
+\DoxyCodeLine{    if ((z)-\/>l < \_atom+1) (z)-\/>l = \_atom+1; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a7580c4a89c6de275bd0eb47188947432}\label{sbignum_8c_a7580c4a89c6de275bd0eb47188947432}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_testbit@{\_mpz\_testbit}}
+\index{\_mpz\_testbit@{\_mpz\_testbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_testbit}{\_mpz\_testbit}}
+{\footnotesize\ttfamily \#define \+\_\+mpz\+\_\+testbit(\begin{DoxyParamCaption}\item[{}]{z,  }\item[{}]{i }\end{DoxyParamCaption})~  ((z)-\/$>$d\mbox{[}(i)$>$$>$\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}\mbox{]} \& ((\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}})1$<$$<$((i)\&\mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}})))}
+
+\mbox{\Hypertarget{sbignum_8c_ab6d50cc5dc98fec295f0d27b8460fd7d}\label{sbignum_8c_ab6d50cc5dc98fec295f0d27b8460fd7d}} 
+\index{sbignum.c@{sbignum.c}!debugprint@{debugprint}}
+\index{debugprint@{debugprint}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{debugprint}{debugprint}}
+{\footnotesize\ttfamily \#define debugprint(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    char *\_s = \mbox{\hyperlink{sbignum_8c_aac739e27126529ad246f59831461caf9}{mpz\_get\_str}}(NULL, 10, z); \(\backslash\)}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}[\%d]\%s\(\backslash\)n"{}}, m, \_s); \(\backslash\)}
+\DoxyCodeLine{    free(\_s); \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_aaeed02f1ba4c4c1d731aaed86fa903e5}\label{sbignum_8c_aaeed02f1ba4c4c1d731aaed86fa903e5}} 
+\index{sbignum.c@{sbignum.c}!debugprint2@{debugprint2}}
+\index{debugprint2@{debugprint2}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{debugprint2}{debugprint2}}
+{\footnotesize\ttfamily \#define debugprint2(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{z }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    char *\_s = \mbox{\hyperlink{sbignum_8c_aac739e27126529ad246f59831461caf9}{mpz\_get\_str}}(NULL, 2, z); \(\backslash\)}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}[\%d]\%s\(\backslash\)n"{}}, m, \_s); \(\backslash\)}
+\DoxyCodeLine{    free(\_s); \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}\label{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}} 
+\index{sbignum.c@{sbignum.c}!DIVATOMBITS\_SHIFT@{DIVATOMBITS\_SHIFT}}
+\index{DIVATOMBITS\_SHIFT@{DIVATOMBITS\_SHIFT}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{DIVATOMBITS\_SHIFT}{DIVATOMBITS\_SHIFT}}
+{\footnotesize\ttfamily \#define DIVATOMBITS\+\_\+\+SHIFT~5}
+
+\mbox{\Hypertarget{sbignum_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{sbignum_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{sbignum.c@{sbignum.c}!MAX@{MAX}}
+\index{MAX@{MAX}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a)$>$(b)?(a)\+:(b))}
+
+\mbox{\Hypertarget{sbignum_8c_a3acffbd305ee72dcd4593c0d8af64a4f}\label{sbignum_8c_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{sbignum.c@{sbignum.c}!MIN@{MIN}}
+\index{MIN@{MIN}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a)$<$(b)?(a)\+:(b))}
+
+\mbox{\Hypertarget{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}\label{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}} 
+\index{sbignum.c@{sbignum.c}!MODATOMBITS\_MASK@{MODATOMBITS\_MASK}}
+\index{MODATOMBITS\_MASK@{MODATOMBITS\_MASK}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{MODATOMBITS\_MASK}{MODATOMBITS\_MASK}}
+{\footnotesize\ttfamily \#define MODATOMBITS\+\_\+\+MASK~((1$<$$<$\mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}})-\/1)}
+
+\mbox{\Hypertarget{sbignum_8c_aa37f524e87d5dc95e125a5fd1ceb60ff}\label{sbignum_8c_aa37f524e87d5dc95e125a5fd1ceb60ff}} 
+\index{sbignum.c@{sbignum.c}!mpz\_is\_odd@{mpz\_is\_odd}}
+\index{mpz\_is\_odd@{mpz\_is\_odd}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_is\_odd}{mpz\_is\_odd}}
+{\footnotesize\ttfamily \#define mpz\+\_\+is\+\_\+odd(\begin{DoxyParamCaption}\item[{}]{z }\end{DoxyParamCaption})~(((z)-\/$>$l) ? ((z)-\/$>$d\mbox{[}0\mbox{]} \& 1) \+: 0)}
+
+\mbox{\Hypertarget{sbignum_8c_a969f9fd700967be14441ae44e307be30}\label{sbignum_8c_a969f9fd700967be14441ae44e307be30}} 
+\index{sbignum.c@{sbignum.c}!sbn\_chartoval@{sbn\_chartoval}}
+\index{sbn\_chartoval@{sbn\_chartoval}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{sbn\_chartoval}{sbn\_chartoval}}
+{\footnotesize\ttfamily \#define sbn\+\_\+chartoval(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(\mbox{\hyperlink{sbignum-tables_8h_a09d18deb07243cb33e5de71801338e08}{r\+\_\+cset}}\mbox{[}\mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower}}(c)\mbox{]})}
+
+\mbox{\Hypertarget{sbignum_8c_a34dcc0238de427a50a7dbe14ea92afe6}\label{sbignum_8c_a34dcc0238de427a50a7dbe14ea92afe6}} 
+\index{sbignum.c@{sbignum.c}!sbn\_valtochar@{sbn\_valtochar}}
+\index{sbn\_valtochar@{sbn\_valtochar}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{sbn\_valtochar}{sbn\_valtochar}}
+{\footnotesize\ttfamily \#define sbn\+\_\+valtochar(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{sbignum-tables_8h_ac17ddd6d46f440054b900a082f40929d}{cset}}\mbox{[}v\mbox{]})}
+
+\mbox{\Hypertarget{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}\label{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}} 
+\index{sbignum.c@{sbignum.c}!u32pack@{u32pack}}
+\index{u32pack@{u32pack}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{u32pack}{u32pack}}
+{\footnotesize\ttfamily \#define u32pack(\begin{DoxyParamCaption}\item[{}]{mpz,  }\item[{}]{t,  }\item[{}]{l }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    (mpz)-\/>l = l; \(\backslash\)}
+\DoxyCodeLine{    (mpz)-\/>a = l; \(\backslash\)}
+\DoxyCodeLine{    (mpz)-\/>s = 0; \(\backslash\)}
+\DoxyCodeLine{    (mpz)-\/>d = t; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sbignum_8c_a04184b491683a5dc625d83fd1b139386}\label{sbignum_8c_a04184b491683a5dc625d83fd1b139386}} 
+\index{sbignum.c@{sbignum.c}!u32tompz@{u32tompz}}
+\index{u32tompz@{u32tompz}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{u32tompz}{u32tompz}}
+{\footnotesize\ttfamily \#define u32tompz(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{u,  }\item[{}]{l }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\_atom\_t}} t[1]; \(\backslash\)}
+\DoxyCodeLine{    u\_int32\_t l = 0; \(\backslash\)}
+\DoxyCodeLine{    t[0] = u; \(\backslash\)}
+\DoxyCodeLine{    if (t[0]) l = 1}
+
+\end{DoxyCode}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{sbignum_8c_aed3ce85996d98a3b1d140545c956dd2e}\label{sbignum_8c_aed3ce85996d98a3b1d140545c956dd2e}} 
+\index{sbignum.c@{sbignum.c}!\_mpz\_selfdiv1\_qr\_raw@{\_mpz\_selfdiv1\_qr\_raw}}
+\index{\_mpz\_selfdiv1\_qr\_raw@{\_mpz\_selfdiv1\_qr\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{\_mpz\_selfdiv1\_qr\_raw()}{\_mpz\_selfdiv1\_qr\_raw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} \+\_\+mpz\+\_\+selfdiv1\+\_\+qr\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}}}]{d }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a0f686bcd18cb9383ca1cf3096fe11262}{MPZ\+\_\+\+SHIFT}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aed3ce85996d98a3b1d140545c956dd2e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a2c63fe7d6872f76ed0360ead99a3489f}\label{sbignum_8c_a2c63fe7d6872f76ed0360ead99a3489f}} 
+\index{sbignum.c@{sbignum.c}!mpz\_abs@{mpz\_abs}}
+\index{mpz\_abs@{mpz\_abs}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_abs()}{mpz\_abs()}}
+{\footnotesize\ttfamily int mpz\+\_\+abs (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{d,  }\item[{mpz\+\_\+ptr}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a2c63fe7d6872f76ed0360ead99a3489f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}\label{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}} 
+\index{sbignum.c@{sbignum.c}!mpz\_add@{mpz\_add}}
+\index{mpz\_add@{mpz\_add}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_add()}{mpz\_add()}}
+{\footnotesize\ttfamily int mpz\+\_\+add (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{a,  }\item[{mpz\+\_\+ptr}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a53ae0c22ae07adb510731d5ac2b62dce}{mpz\+\_\+add\+\_\+si()}}, \mbox{\hyperlink{sbignum_8c_ac65c3d09dabbbef570e15bb887dcedb1}{mpz\+\_\+add\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_ad14f285fb838becce984b5878188f614}{mpz\+\_\+mod()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a53ae0c22ae07adb510731d5ac2b62dce}\label{sbignum_8c_a53ae0c22ae07adb510731d5ac2b62dce}} 
+\index{sbignum.c@{sbignum.c}!mpz\_add\_si@{mpz\_add\_si}}
+\index{mpz\_add\_si@{mpz\_add\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_add\_si()}{mpz\_add\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+add\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a53ae0c22ae07adb510731d5ac2b62dce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ac65c3d09dabbbef570e15bb887dcedb1}\label{sbignum_8c_ac65c3d09dabbbef570e15bb887dcedb1}} 
+\index{sbignum.c@{sbignum.c}!mpz\_add\_ui@{mpz\_add\_ui}}
+\index{mpz\_add\_ui@{mpz\_add\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_add\_ui()}{mpz\_add\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+add\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac65c3d09dabbbef570e15bb887dcedb1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}\label{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}} 
+\index{sbignum.c@{sbignum.c}!mpz\_addi\_raw@{mpz\_addi\_raw}}
+\index{mpz\_addi\_raw@{mpz\_addi\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_addi\_raw()}{mpz\_addi\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+addi\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}, \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8h_a0f686bcd18cb9383ca1cf3096fe11262}{MPZ\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281}{SBN\+\_\+\+MEM}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}} , 以及 \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac1aafc3fb447994ff377ec0634063959_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac1aafc3fb447994ff377ec0634063959_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}\label{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}} 
+\index{sbignum.c@{sbignum.c}!mpz\_and@{mpz\_and}}
+\index{mpz\_and@{mpz\_and}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_and()}{mpz\_and()}}
+{\footnotesize\ttfamily int mpz\+\_\+and (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{m }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}, \mbox{\hyperlink{sbignum_8c_af37448c43cf5056704e339342cf014e7}{mpz\+\_\+normalize()}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}\label{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}} 
+\index{sbignum.c@{sbignum.c}!mpz\_bits@{mpz\_bits}}
+\index{mpz\_bits@{mpz\_bits}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_bits()}{mpz\_bits()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t mpz\+\_\+bits (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}\label{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}} 
+\index{sbignum.c@{sbignum.c}!mpz\_clear@{mpz\_clear}}
+\index{mpz\_clear@{mpz\_clear}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_clear()}{mpz\_clear()}}
+{\footnotesize\ttfamily void mpz\+\_\+clear (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}, \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}, \mbox{\hyperlink{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}{mpz\+\_\+tdiv\+\_\+q()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ae05d28b5a9a64ca99d412525ad04fc2d}\label{sbignum_8c_ae05d28b5a9a64ca99d412525ad04fc2d}} 
+\index{sbignum.c@{sbignum.c}!mpz\_clrbit@{mpz\_clrbit}}
+\index{mpz\_clrbit@{mpz\_clrbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_clrbit()}{mpz\_clrbit()}}
+{\footnotesize\ttfamily int mpz\+\_\+clrbit (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_af37448c43cf5056704e339342cf014e7}{mpz\+\_\+normalize()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{sbignum_8c_ae05d28b5a9a64ca99d412525ad04fc2d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a98596f49f450c942072f25b509d8e360}\label{sbignum_8c_a98596f49f450c942072f25b509d8e360}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmp@{mpz\_cmp}}
+\index{mpz\_cmp@{mpz\_cmp}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmp()}{mpz\_cmp()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmp (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{mpz\+\_\+ptr}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ad8f385080bb3b1cf2d47d34610e809f1}{mpz\+\_\+cmp\+\_\+si()}} , 以及 \mbox{\hyperlink{sbignum_8c_a501923fd6990e612a58a7d4d57ce5268}{mpz\+\_\+cmp\+\_\+ui()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{sbignum_8c_a98596f49f450c942072f25b509d8e360_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{sbignum_8c_a98596f49f450c942072f25b509d8e360_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ad8f385080bb3b1cf2d47d34610e809f1}\label{sbignum_8c_ad8f385080bb3b1cf2d47d34610e809f1}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmp\_si@{mpz\_cmp\_si}}
+\index{mpz\_cmp\_si@{mpz\_cmp\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmp\_si()}{mpz\_cmp\_si()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmp\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a98596f49f450c942072f25b509d8e360}{mpz\+\_\+cmp()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ad8f385080bb3b1cf2d47d34610e809f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a501923fd6990e612a58a7d4d57ce5268}\label{sbignum_8c_a501923fd6990e612a58a7d4d57ce5268}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmp\_ui@{mpz\_cmp\_ui}}
+\index{mpz\_cmp\_ui@{mpz\_cmp\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmp\_ui()}{mpz\_cmp\_ui()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmp\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a98596f49f450c942072f25b509d8e360}{mpz\+\_\+cmp()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a501923fd6990e612a58a7d4d57ce5268_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}\label{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmpabs@{mpz\_cmpabs}}
+\index{mpz\_cmpabs@{mpz\_cmpabs}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmpabs()}{mpz\_cmpabs()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmpabs (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{mpz\+\_\+ptr}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a98596f49f450c942072f25b509d8e360}{mpz\+\_\+cmp()}}, \mbox{\hyperlink{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}{mpz\+\_\+cmpabs\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}{mpz\+\_\+cmpabsi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}, \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}, \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}} , 以及 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}\label{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmpabs\_ui@{mpz\_cmpabs\_ui}}
+\index{mpz\_cmpabs\_ui@{mpz\_cmpabs\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmpabs\_ui()}{mpz\_cmpabs\_ui()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmpabs\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}} , 以及 \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}\label{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}} 
+\index{sbignum.c@{sbignum.c}!mpz\_cmpabsi\_raw@{mpz\_cmpabsi\_raw}}
+\index{mpz\_cmpabsi\_raw@{mpz\_cmpabsi\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_cmpabsi\_raw()}{mpz\_cmpabsi\_raw()}}
+{\footnotesize\ttfamily int32\+\_\+t mpz\+\_\+cmpabsi\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{a,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}\label{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}} 
+\index{sbignum.c@{sbignum.c}!mpz\_divi\_qr\_raw@{mpz\_divi\_qr\_raw}}
+\index{mpz\_divi\_qr\_raw@{mpz\_divi\_qr\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_divi\_qr\_raw()}{mpz\_divi\_qr\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+divi\+\_\+qr\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a82233587e880a5bcb8bb269f9084e9d4}{\+\_\+\+\_\+mpz\+\_\+setbit}}, \mbox{\hyperlink{sbignum_8c_abfcf761a3b1433406712819c467a1a30}{\+\_\+mpz\+\_\+normalize}}, \mbox{\hyperlink{sbignum_8c_a4b3d29be8fb7b2c91a596d3ff99fd562}{\+\_\+mpz\+\_\+self\+\_\+lshift1\+\_\+setbit0}}, \mbox{\hyperlink{sbignum_8c_a7580c4a89c6de275bd0eb47188947432}{\+\_\+mpz\+\_\+testbit}}, \mbox{\hyperlink{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}{mpz\+\_\+bits()}}, \mbox{\hyperlink{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}{mpz\+\_\+cmpabsi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a36b7faa34967f62092738e61935bde2a}\label{sbignum_8c_a36b7faa34967f62092738e61935bde2a}} 
+\index{sbignum.c@{sbignum.c}!mpz\_divi\_r\_raw@{mpz\_divi\_r\_raw}}
+\index{mpz\_divi\_r\_raw@{mpz\_divi\_r\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_divi\_r\_raw()}{mpz\_divi\_r\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+divi\+\_\+r\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_abfcf761a3b1433406712819c467a1a30}{\+\_\+mpz\+\_\+normalize}}, \mbox{\hyperlink{sbignum_8c_a4b3d29be8fb7b2c91a596d3ff99fd562}{\+\_\+mpz\+\_\+self\+\_\+lshift1\+\_\+setbit0}}, \mbox{\hyperlink{sbignum_8c_a7580c4a89c6de275bd0eb47188947432}{\+\_\+mpz\+\_\+testbit}}, \mbox{\hyperlink{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}{mpz\+\_\+bits()}}, \mbox{\hyperlink{sbignum_8c_ac2e16dd8540611a8cc544516a642fc92}{mpz\+\_\+cmpabsi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a36b7faa34967f62092738e61935bde2a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a36b7faa34967f62092738e61935bde2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}\label{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}} 
+\index{sbignum.c@{sbignum.c}!mpz\_fac\_ui@{mpz\_fac\_ui}}
+\index{mpz\_fac\_ui@{mpz\_fac\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_fac\_ui()}{mpz\_fac\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+fac\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}{mpz\+\_\+mul\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af8584e7d2907ebd5db25596705021972}\label{sbignum_8c_af8584e7d2907ebd5db25596705021972}} 
+\index{sbignum.c@{sbignum.c}!mpz\_gcd@{mpz\_gcd}}
+\index{mpz\_gcd@{mpz\_gcd}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_gcd()}{mpz\_gcd()}}
+{\footnotesize\ttfamily int mpz\+\_\+gcd (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{g,  }\item[{mpz\+\_\+ptr}]{a,  }\item[{mpz\+\_\+ptr}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}, \mbox{\hyperlink{sbignum_8h_a144823437c7ba6ee754fbb469618ef78}{\+\_\+mpz\+\_\+iszero}}, \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_af8584e7d2907ebd5db25596705021972_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}\label{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}} 
+\index{sbignum.c@{sbignum.c}!mpz\_gcd\_raw@{mpz\_gcd\_raw}}
+\index{mpz\_gcd\_raw@{mpz\_gcd\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_gcd\_raw()}{mpz\_gcd\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+gcd\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{g,  }\item[{mpz\+\_\+ptr}]{a,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{b,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}, \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_a0ab4b143b60d9d7096ddaa316d8f5e72}{\+\_\+mpz\+\_\+is\+\_\+even}}, \mbox{\hyperlink{sbignum_8h_a63dd49243919c3499f262f24b166ec66}{\+\_\+mpz\+\_\+nonzero}}, \mbox{\hyperlink{sbignum_8c_aed0d6a087c3c5a5e378a3b399e7e824c}{\+\_\+mpz\+\_\+rawclone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_a3655cdbd23d9b76b3e4121e9e97022e4}{\+\_\+mpz\+\_\+self\+\_\+lshift1}}, \mbox{\hyperlink{sbignum_8c_a46921df3e067ff66104936d142030dc8}{\+\_\+mpz\+\_\+self\+\_\+rshift1}}, \mbox{\hyperlink{sbignum_8c_adcae82fee953b4ded81ff28db3ea6959}{\+\_\+mpz\+\_\+set}}, \mbox{\hyperlink{sbignum_8c_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_af8584e7d2907ebd5db25596705021972}{mpz\+\_\+gcd()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a1e3e9866f1bc916f512734dc8a2c2167}\label{sbignum_8c_a1e3e9866f1bc916f512734dc8a2c2167}} 
+\index{sbignum.c@{sbignum.c}!mpz\_gcd\_ui@{mpz\_gcd\_ui}}
+\index{mpz\_gcd\_ui@{mpz\_gcd\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_gcd\_ui()}{mpz\_gcd\_ui()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t mpz\+\_\+gcd\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{g,  }\item[{mpz\+\_\+ptr}]{a,  }\item[{u\+\_\+int32\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+\mbox{\Hypertarget{sbignum_8c_a48969a7a48d7ee8a24eb050e579a91ff}\label{sbignum_8c_a48969a7a48d7ee8a24eb050e579a91ff}} 
+\index{sbignum.c@{sbignum.c}!mpz\_get\_d@{mpz\_get\_d}}
+\index{mpz\_get\_d@{mpz\_get\_d}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_get\_d()}{mpz\_get\_d()}}
+{\footnotesize\ttfamily double mpz\+\_\+get\+\_\+d (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a5298c0d291726d11eaa81c262f50d4f8}{MPZ\+\_\+\+BASE}}.
+
+\mbox{\Hypertarget{sbignum_8c_aac739e27126529ad246f59831461caf9}\label{sbignum_8c_aac739e27126529ad246f59831461caf9}} 
+\index{sbignum.c@{sbignum.c}!mpz\_get\_str@{mpz\_get\_str}}
+\index{mpz\_get\_str@{mpz\_get\_str}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_get\_str()}{mpz\_get\_str()}}
+{\footnotesize\ttfamily char $\ast$ mpz\+\_\+get\+\_\+str (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{int}]{b,  }\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee}{mpz\+\_\+sizeinbase()}}, \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aac739e27126529ad246f59831461caf9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a155f4decbf38d2a77651223a7af49160}\label{sbignum_8c_a155f4decbf38d2a77651223a7af49160}} 
+\index{sbignum.c@{sbignum.c}!mpz\_init@{mpz\_init}}
+\index{mpz\_init@{mpz\_init}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_init()}{mpz\_init()}}
+{\footnotesize\ttfamily void mpz\+\_\+init (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}, \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}, \mbox{\hyperlink{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}{mpz\+\_\+tdiv\+\_\+q()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a155f4decbf38d2a77651223a7af49160_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}\label{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}} 
+\index{sbignum.c@{sbignum.c}!mpz\_lshift@{mpz\_lshift}}
+\index{mpz\_lshift@{mpz\_lshift}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_lshift()}{mpz\_lshift()}}
+{\footnotesize\ttfamily int mpz\+\_\+lshift (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}, \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91}{mpz\+\_\+lshiftword()}}, \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91}\label{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91}} 
+\index{sbignum.c@{sbignum.c}!mpz\_lshiftword@{mpz\_lshiftword}}
+\index{mpz\_lshiftword@{mpz\_lshiftword}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_lshiftword()}{mpz\_lshiftword()}}
+{\footnotesize\ttfamily int mpz\+\_\+lshiftword (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}{mpz\+\_\+lshift()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ad14f285fb838becce984b5878188f614}\label{sbignum_8c_ad14f285fb838becce984b5878188f614}} 
+\index{sbignum.c@{sbignum.c}!mpz\_mod@{mpz\_mod}}
+\index{mpz\_mod@{mpz\_mod}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_mod()}{mpz\_mod()}}
+{\footnotesize\ttfamily int mpz\+\_\+mod (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{m }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}, \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ad14f285fb838becce984b5878188f614_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{sbignum_8c_ad14f285fb838becce984b5878188f614_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a568713e406452d41f0879510b10d7718}\label{sbignum_8c_a568713e406452d41f0879510b10d7718}} 
+\index{sbignum.c@{sbignum.c}!mpz\_mul@{mpz\_mul}}
+\index{mpz\_mul@{mpz\_mul}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_mul()}{mpz\_mul()}}
+{\footnotesize\ttfamily int mpz\+\_\+mul (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{f }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a568713e406452d41f0879510b10d7718_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{sbignum_8c_a568713e406452d41f0879510b10d7718_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a851bb2a7b69e12413baaa55168eb0519}\label{sbignum_8c_a851bb2a7b69e12413baaa55168eb0519}} 
+\index{sbignum.c@{sbignum.c}!mpz\_mul\_si@{mpz\_mul\_si}}
+\index{mpz\_mul\_si@{mpz\_mul\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_mul\_si()}{mpz\_mul\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+mul\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a851bb2a7b69e12413baaa55168eb0519_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}\label{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}} 
+\index{sbignum.c@{sbignum.c}!mpz\_mul\_ui@{mpz\_mul\_ui}}
+\index{mpz\_mul\_ui@{mpz\_mul\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_mul\_ui()}{mpz\_mul\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+mul\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}{mpz\+\_\+fac\+\_\+ui()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}\label{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}} 
+\index{sbignum.c@{sbignum.c}!mpz\_muli\_raw@{mpz\_muli\_raw}}
+\index{mpz\_muli\_raw@{mpz\_muli\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_muli\_raw()}{mpz\_muli\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+muli\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_af37448c43cf5056704e339342cf014e7}{mpz\+\_\+normalize()}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8h_a0f686bcd18cb9383ca1cf3096fe11262}{MPZ\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}{mpz\+\_\+zero()}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281}{SBN\+\_\+\+MEM}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a568713e406452d41f0879510b10d7718}{mpz\+\_\+mul()}}, \mbox{\hyperlink{sbignum_8c_a851bb2a7b69e12413baaa55168eb0519}{mpz\+\_\+mul\+\_\+si()}} , 以及 \mbox{\hyperlink{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}{mpz\+\_\+mul\+\_\+ui()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aec91da635da4419496ecc6e91b5b255f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aec91da635da4419496ecc6e91b5b255f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a4f77b6a070346e0e4f9415357d3671f8}\label{sbignum_8c_a4f77b6a070346e0e4f9415357d3671f8}} 
+\index{sbignum.c@{sbignum.c}!mpz\_neg@{mpz\_neg}}
+\index{mpz\_neg@{mpz\_neg}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_neg()}{mpz\_neg()}}
+{\footnotesize\ttfamily int mpz\+\_\+neg (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{d,  }\item[{mpz\+\_\+ptr}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a897f010587219ce9d348bba1822eb14c}{\+\_\+mpz\+\_\+neg}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a4f77b6a070346e0e4f9415357d3671f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af37448c43cf5056704e339342cf014e7}\label{sbignum_8c_af37448c43cf5056704e339342cf014e7}} 
+\index{sbignum.c@{sbignum.c}!mpz\_normalize@{mpz\_normalize}}
+\index{mpz\_normalize@{mpz\_normalize}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_normalize()}{mpz\_normalize()}}
+{\footnotesize\ttfamily void mpz\+\_\+normalize (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}{mpz\+\_\+and()}}, \mbox{\hyperlink{sbignum_8c_ae05d28b5a9a64ca99d412525ad04fc2d}{mpz\+\_\+clrbit()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_af37448c43cf5056704e339342cf014e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a0ce5432dca78ee24d984720fe5294edc}\label{sbignum_8c_a0ce5432dca78ee24d984720fe5294edc}} 
+\index{sbignum.c@{sbignum.c}!mpz\_normalize\_sign@{mpz\_normalize\_sign}}
+\index{mpz\_normalize\_sign@{mpz\_normalize\_sign}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_normalize\_sign()}{mpz\_normalize\_sign()}}
+{\footnotesize\ttfamily void mpz\+\_\+normalize\+\_\+sign (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}\label{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}} 
+\index{sbignum.c@{sbignum.c}!mpz\_pow@{mpz\_pow}}
+\index{mpz\_pow@{mpz\_pow}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_pow()}{mpz\_pow()}}
+{\footnotesize\ttfamily int mpz\+\_\+pow (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{b,  }\item[{mpz\+\_\+ptr}]{e }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}, \mbox{\hyperlink{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}{\+\_\+mpz\+\_\+is\+\_\+odd}}, \mbox{\hyperlink{sbignum_8c_a46921df3e067ff66104936d142030dc8}{\+\_\+mpz\+\_\+self\+\_\+rshift1}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}{mpz\+\_\+cmpabs\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_a568713e406452d41f0879510b10d7718}{mpz\+\_\+mul()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}\label{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}} 
+\index{sbignum.c@{sbignum.c}!mpz\_powm@{mpz\_powm}}
+\index{mpz\_powm@{mpz\_powm}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_powm()}{mpz\_powm()}}
+{\footnotesize\ttfamily int mpz\+\_\+powm (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{b,  }\item[{mpz\+\_\+ptr}]{e,  }\item[{mpz\+\_\+ptr}]{m }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac773c6f9c3be2f15d4c2eb2454a60cf7}{\+\_\+mpz\+\_\+abs}}, \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_aeb8bafe71412e918ef7ebee9fd0d07b2}{\+\_\+mpz\+\_\+is\+\_\+odd}}, \mbox{\hyperlink{sbignum_8c_a46921df3e067ff66104936d142030dc8}{\+\_\+mpz\+\_\+self\+\_\+rshift1}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_aed5a2a88b58c08bf3a05f9e423a9e24e}{mpz\+\_\+cmpabs\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_ad14f285fb838becce984b5878188f614}{mpz\+\_\+mod()}}, \mbox{\hyperlink{sbignum_8c_a568713e406452d41f0879510b10d7718}{mpz\+\_\+mul()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aea50f2185cf7b1db77ea90580e742768_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}\label{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}} 
+\index{sbignum.c@{sbignum.c}!mpz\_random@{mpz\_random}}
+\index{mpz\_random@{mpz\_random}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_random()}{mpz\_random()}}
+{\footnotesize\ttfamily int mpz\+\_\+random (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_abfcf761a3b1433406712819c467a1a30}{\+\_\+mpz\+\_\+normalize}}, \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}, \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand()}} , 以及 \mbox{\hyperlink{globals_8h_ab810ad4f7c0efd73662227c61460490b}{sign}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}\label{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}} 
+\index{sbignum.c@{sbignum.c}!mpz\_realloc@{mpz\_realloc}}
+\index{mpz\_realloc@{mpz\_realloc}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_realloc()}{mpz\_realloc()}}
+{\footnotesize\ttfamily int mpz\+\_\+realloc (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281}{SBN\+\_\+\+MEM}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}{mpz\+\_\+and()}}, \mbox{\hyperlink{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}{mpz\+\_\+lshift()}}, \mbox{\hyperlink{sbignum_8c_a09eaaabbe757d9ea9043f8a400412a91}{mpz\+\_\+lshiftword()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}{mpz\+\_\+random()}}, \mbox{\hyperlink{sbignum_8c_a00602345aa51818b9cbd4cb68724facc}{mpz\+\_\+set\+\_\+d()}}, \mbox{\hyperlink{sbignum_8c_a2336671b5abff7620f928f60e869704d}{mpz\+\_\+set\+\_\+ui64()}}, \mbox{\hyperlink{sbignum_8c_aa90d09b20f17c30b0d5572281efbc5da}{mpz\+\_\+setbit()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}} , 以及 \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae}\label{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae}} 
+\index{sbignum.c@{sbignum.c}!mpz\_rshift@{mpz\_rshift}}
+\index{mpz\_rshift@{mpz\_rshift}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_rshift()}{mpz\_rshift()}}
+{\footnotesize\ttfamily int mpz\+\_\+rshift (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a24ea5828f786c3bc0615f44a0f891142}{ATOMBITS}}, \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d}{mpz\+\_\+rshiftword()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d}\label{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d}} 
+\index{sbignum.c@{sbignum.c}!mpz\_rshiftword@{mpz\_rshiftword}}
+\index{mpz\_rshiftword@{mpz\_rshiftword}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_rshiftword()}{mpz\_rshiftword()}}
+{\footnotesize\ttfamily int mpz\+\_\+rshiftword (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}{mpz\+\_\+zero()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae}{mpz\+\_\+rshift()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}\label{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set@{mpz\_set}}
+\index{mpz\_set@{mpz\_set}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set()}{mpz\_set()}}
+{\footnotesize\ttfamily int mpz\+\_\+set (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{d,  }\item[{mpz\+\_\+ptr}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a2c63fe7d6872f76ed0360ead99a3489f}{mpz\+\_\+abs()}}, \mbox{\hyperlink{sbignum_8c_a2388a0dd8de4004a1a9a9d5da42126c0}{mpz\+\_\+and()}}, \mbox{\hyperlink{sbignum_8c_af8584e7d2907ebd5db25596705021972}{mpz\+\_\+gcd()}}, \mbox{\hyperlink{sbignum_8c_a5b96ccdb71ddff491e70fef8a467adcc}{mpz\+\_\+lshift()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a4f77b6a070346e0e4f9415357d3671f8}{mpz\+\_\+neg()}}, \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}, \mbox{\hyperlink{sbignum_8c_a15f2b3ae8a1d86b3f37d3405d7376bae}{mpz\+\_\+rshift()}}, \mbox{\hyperlink{sbignum_8c_a4e40ea687d4fc2d16bf6d412b7c05638}{mpz\+\_\+set\+\_\+si()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}, \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}{mpz\+\_\+tostr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a00602345aa51818b9cbd4cb68724facc}\label{sbignum_8c_a00602345aa51818b9cbd4cb68724facc}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_d@{mpz\_set\_d}}
+\index{mpz\_set\_d@{mpz\_set\_d}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_d()}{mpz\_set\_d()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+d (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0f686bcd18cb9383ca1cf3096fe11262}{MPZ\+\_\+\+SHIFT}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{sbignum_8c_a00602345aa51818b9cbd4cb68724facc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a4e40ea687d4fc2d16bf6d412b7c05638}\label{sbignum_8c_a4e40ea687d4fc2d16bf6d412b7c05638}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_si@{mpz\_set\_si}}
+\index{mpz\_set\_si@{mpz\_set\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_si()}{mpz\_set\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a897f010587219ce9d348bba1822eb14c}{\+\_\+mpz\+\_\+neg}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a4e40ea687d4fc2d16bf6d412b7c05638_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ac291687865f843925f10c7e8045e4fca}\label{sbignum_8c_ac291687865f843925f10c7e8045e4fca}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_si64@{mpz\_set\_si64}}
+\index{mpz\_set\_si64@{mpz\_set\_si64}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_si64()}{mpz\_set\_si64()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+si64 (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{int64\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a2336671b5abff7620f928f60e869704d}{mpz\+\_\+set\+\_\+ui64()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}} , 以及 \mbox{\hyperlink{globals_8h_ab810ad4f7c0efd73662227c61460490b}{sign}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac291687865f843925f10c7e8045e4fca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}\label{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_str@{mpz\_set\_str}}
+\index{mpz\_set\_str@{mpz\_set\_str}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_str()}{mpz\_set\_str()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+str (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{char $\ast$}]{s,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_a568713e406452d41f0879510b10d7718}{mpz\+\_\+mul()}}, \mbox{\hyperlink{sbignum_8c_af94c24ad93bddcd093ce056c9b8f9cbc}{mpz\+\_\+mul\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}{mpz\+\_\+zero()}}, \mbox{\hyperlink{sbignum_8c_a969f9fd700967be14441ae44e307be30}{sbn\+\_\+chartoval}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}}, \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}\label{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_ui@{mpz\_set\_ui}}
+\index{mpz\_set\_ui@{mpz\_set\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_ui()}{mpz\_set\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}{mpz\+\_\+fac\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a3576ae57e37f2e32af3db314eb80f3f2}{mpz\+\_\+pow()}}, \mbox{\hyperlink{sbignum_8c_aea50f2185cf7b1db77ea90580e742768}{mpz\+\_\+powm()}}, \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a2336671b5abff7620f928f60e869704d}\label{sbignum_8c_a2336671b5abff7620f928f60e869704d}} 
+\index{sbignum.c@{sbignum.c}!mpz\_set\_ui64@{mpz\_set\_ui64}}
+\index{mpz\_set\_ui64@{mpz\_set\_ui64}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_set\_ui64()}{mpz\_set\_ui64()}}
+{\footnotesize\ttfamily int mpz\+\_\+set\+\_\+ui64 (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int64\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_ab6a1a141a1564a16ecf325167b5b76d9}{MPZ\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_a0f686bcd18cb9383ca1cf3096fe11262}{MPZ\+\_\+\+SHIFT}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ac291687865f843925f10c7e8045e4fca}{mpz\+\_\+set\+\_\+si64()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{sbignum_8c_a2336671b5abff7620f928f60e869704d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{sbignum_8c_a2336671b5abff7620f928f60e869704d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_aa90d09b20f17c30b0d5572281efbc5da}\label{sbignum_8c_aa90d09b20f17c30b0d5572281efbc5da}} 
+\index{sbignum.c@{sbignum.c}!mpz\_setbit@{mpz\_setbit}}
+\index{mpz\_setbit@{mpz\_setbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_setbit()}{mpz\_setbit()}}
+{\footnotesize\ttfamily int mpz\+\_\+setbit (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{sbignum_8c_aa90d09b20f17c30b0d5572281efbc5da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}\label{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}} 
+\index{sbignum.c@{sbignum.c}!mpz\_setzero@{mpz\_setzero}}
+\index{mpz\_setzero@{mpz\_setzero}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_setzero()}{mpz\_setzero()}}
+{\footnotesize\ttfamily int mpz\+\_\+setzero (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a9805b5951dd9e2e296a5c426fa89466e}{mpz\+\_\+fac\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}{mpz\+\_\+random()}}, \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}} , 以及 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee}\label{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee}} 
+\index{sbignum.c@{sbignum.c}!mpz\_sizeinbase@{mpz\_sizeinbase}}
+\index{mpz\_sizeinbase@{mpz\_sizeinbase}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_sizeinbase()}{mpz\_sizeinbase()}}
+{\footnotesize\ttfamily size\+\_\+t mpz\+\_\+sizeinbase (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum-tables_8c_a0b6c556c241aa49223b50237837beb70}{basetable}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}} , 以及 \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_aac739e27126529ad246f59831461caf9}{mpz\+\_\+get\+\_\+str()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{sbignum_8c_a009aaaaec7bcc82c7df61659a03461ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}\label{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}} 
+\index{sbignum.c@{sbignum.c}!mpz\_sqrt@{mpz\_sqrt}}
+\index{mpz\_sqrt@{mpz\_sqrt}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_sqrt()}{mpz\_sqrt()}}
+{\footnotesize\ttfamily int mpz\+\_\+sqrt (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_ab5901ecc32c2d05564d3f4e4789c514e}{\+\_\+mpz\+\_\+clrbit}}, \mbox{\hyperlink{sbignum_8c_a46921df3e067ff66104936d142030dc8}{\+\_\+mpz\+\_\+self\+\_\+rshift1}}, \mbox{\hyperlink{sbignum_8c_a7f92664209c6e75ef27f8c76454041fe}{\+\_\+mpz\+\_\+setbit}}, \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}}, \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a8e2d434e89ad24d3c664278c2411bd5a}{mpz\+\_\+bits()}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}\label{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}} 
+\index{sbignum.c@{sbignum.c}!mpz\_sub@{mpz\_sub}}
+\index{mpz\_sub@{mpz\_sub}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_sub()}{mpz\_sub()}}
+{\footnotesize\ttfamily int mpz\+\_\+sub (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{a,  }\item[{mpz\+\_\+ptr}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}{mpz\+\_\+subi\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ad14f285fb838becce984b5878188f614}{mpz\+\_\+mod()}}, \mbox{\hyperlink{sbignum_8c_af79cc0eab3db5e37cce8398f904c9401}{mpz\+\_\+sub\+\_\+si()}} , 以及 \mbox{\hyperlink{sbignum_8c_a6adfc2d8ede735ca4bd0ffcfc36ef07a}{mpz\+\_\+sub\+\_\+ui()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af79cc0eab3db5e37cce8398f904c9401}\label{sbignum_8c_af79cc0eab3db5e37cce8398f904c9401}} 
+\index{sbignum.c@{sbignum.c}!mpz\_sub\_si@{mpz\_sub\_si}}
+\index{mpz\_sub\_si@{mpz\_sub\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_sub\_si()}{mpz\_sub\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+sub\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_af79cc0eab3db5e37cce8398f904c9401_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a6adfc2d8ede735ca4bd0ffcfc36ef07a}\label{sbignum_8c_a6adfc2d8ede735ca4bd0ffcfc36ef07a}} 
+\index{sbignum.c@{sbignum.c}!mpz\_sub\_ui@{mpz\_sub\_ui}}
+\index{mpz\_sub\_ui@{mpz\_sub\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_sub\_ui()}{mpz\_sub\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+sub\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a6adfc2d8ede735ca4bd0ffcfc36ef07a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}\label{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f}} 
+\index{sbignum.c@{sbignum.c}!mpz\_subi\_raw@{mpz\_subi\_raw}}
+\index{mpz\_subi\_raw@{mpz\_subi\_raw}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_subi\_raw()}{mpz\_subi\_raw()}}
+{\footnotesize\ttfamily int mpz\+\_\+subi\+\_\+raw (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{\mbox{\hyperlink{sbignum_8h_a39aec9d1dc1d2044e035e92972ce956a}{mpz\+\_\+atom\+\_\+t}} $\ast$}]{d,  }\item[{u\+\_\+int32\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}, \mbox{\hyperlink{sbignum_8h_a5298c0d291726d11eaa81c262f50d4f8}{MPZ\+\_\+\+BASE}}, \mbox{\hyperlink{sbignum_8c_af37448c43cf5056704e339342cf014e7}{mpz\+\_\+normalize()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345daff495730abb45d343df30ee9ff704281}{SBN\+\_\+\+MEM}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a058f5485fbbf522dc2dd597c475aed77}{mpz\+\_\+add()}}, \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}} , 以及 \mbox{\hyperlink{sbignum_8c_a1489b364ff6b84146063dda27abbbaa8}{mpz\+\_\+sub()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_aa6b3b1c7990f02db28d33b18674cee3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}\label{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_q@{mpz\_tdiv\_q}}
+\index{mpz\_tdiv\_q@{mpz\_tdiv\_q}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_q()}{mpz\_tdiv\_q()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+q (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{d }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}} , 以及 \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_af28b1dc2f9c81a099277f0ef38bf9b7b}\label{sbignum_8c_af28b1dc2f9c81a099277f0ef38bf9b7b}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_q\_si@{mpz\_tdiv\_q\_si}}
+\index{mpz\_tdiv\_q\_si@{mpz\_tdiv\_q\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_q\_si()}{mpz\_tdiv\_q\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+q\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_af28b1dc2f9c81a099277f0ef38bf9b7b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a4c9068aea61f61056aebea9e9c827595}\label{sbignum_8c_a4c9068aea61f61056aebea9e9c827595}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_q\_ui@{mpz\_tdiv\_q\_ui}}
+\index{mpz\_tdiv\_q\_ui@{mpz\_tdiv\_q\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_q\_ui()}{mpz\_tdiv\_q\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+q\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a4c9068aea61f61056aebea9e9c827595_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}\label{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_qr@{mpz\_tdiv\_qr}}
+\index{mpz\_tdiv\_qr@{mpz\_tdiv\_qr}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_qr()}{mpz\_tdiv\_qr()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+qr (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{d }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_a46b3ca345c22261c031aa8888cc02b14}{mpz\+\_\+set\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ab4821ac288ac7c085f017d7418cca46d}{mpz\+\_\+tdiv\+\_\+q()}}, \mbox{\hyperlink{sbignum_8c_a693b4f9a52854ed3637310b2f86f87b5}{mpz\+\_\+tdiv\+\_\+qr\+\_\+si()}} , 以及 \mbox{\hyperlink{sbignum_8c_a1ea4a70f4039bf4ee745e01865b2c3cf}{mpz\+\_\+tdiv\+\_\+qr\+\_\+ui()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a5973c800cce3116b92f54b23c41d3951_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{sbignum_8c_a5973c800cce3116b92f54b23c41d3951_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a693b4f9a52854ed3637310b2f86f87b5}\label{sbignum_8c_a693b4f9a52854ed3637310b2f86f87b5}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_qr\_si@{mpz\_tdiv\_qr\_si}}
+\index{mpz\_tdiv\_qr\_si@{mpz\_tdiv\_qr\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_qr\_si()}{mpz\_tdiv\_qr\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+qr\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a693b4f9a52854ed3637310b2f86f87b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a1ea4a70f4039bf4ee745e01865b2c3cf}\label{sbignum_8c_a1ea4a70f4039bf4ee745e01865b2c3cf}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_qr\_ui@{mpz\_tdiv\_qr\_ui}}
+\index{mpz\_tdiv\_qr\_ui@{mpz\_tdiv\_qr\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_qr\_ui()}{mpz\_tdiv\_qr\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+qr\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{q,  }\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a5973c800cce3116b92f54b23c41d3951}{mpz\+\_\+tdiv\+\_\+qr()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a1ea4a70f4039bf4ee745e01865b2c3cf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}\label{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_r@{mpz\_tdiv\_r}}
+\index{mpz\_tdiv\_r@{mpz\_tdiv\_r}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_r()}{mpz\_tdiv\_r()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+r (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{mpz\+\_\+ptr}]{d }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a3cf0de64ac9bc95fe9c0a2d5400eefad}{\+\_\+mpz\+\_\+clone\+\_\+stack}}, \mbox{\hyperlink{sbignum_8c_a955c2dedc6f372c1fec2629ebf42da29}{mpz\+\_\+cmpabs()}}, \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ad14f285fb838becce984b5878188f614}{mpz\+\_\+mod()}}, \mbox{\hyperlink{sbignum_8c_af28b1dc2f9c81a099277f0ef38bf9b7b}{mpz\+\_\+tdiv\+\_\+q\+\_\+si()}}, \mbox{\hyperlink{sbignum_8c_a4c9068aea61f61056aebea9e9c827595}{mpz\+\_\+tdiv\+\_\+q\+\_\+ui()}}, \mbox{\hyperlink{sbignum_8c_a96611e0363845c0b9bb3bf2d0b2afccd}{mpz\+\_\+tdiv\+\_\+r\+\_\+si()}} , 以及 \mbox{\hyperlink{sbignum_8c_a6c71d6549f2940d3fd70c075cc6377bd}{mpz\+\_\+tdiv\+\_\+r\+\_\+ui()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a77779785febd13b3dbdf74ef02958c38_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a77779785febd13b3dbdf74ef02958c38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a96611e0363845c0b9bb3bf2d0b2afccd}\label{sbignum_8c_a96611e0363845c0b9bb3bf2d0b2afccd}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_r\_si@{mpz\_tdiv\_r\_si}}
+\index{mpz\_tdiv\_r\_si@{mpz\_tdiv\_r\_si}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_r\_si()}{mpz\_tdiv\_r\_si()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+r\+\_\+si (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{int32\+\_\+t}]{s }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a96611e0363845c0b9bb3bf2d0b2afccd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a6c71d6549f2940d3fd70c075cc6377bd}\label{sbignum_8c_a6c71d6549f2940d3fd70c075cc6377bd}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tdiv\_r\_ui@{mpz\_tdiv\_r\_ui}}
+\index{mpz\_tdiv\_r\_ui@{mpz\_tdiv\_r\_ui}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tdiv\_r\_ui()}{mpz\_tdiv\_r\_ui()}}
+{\footnotesize\ttfamily int mpz\+\_\+tdiv\+\_\+r\+\_\+ui (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{r,  }\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{u }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a77779785febd13b3dbdf74ef02958c38}{mpz\+\_\+tdiv\+\_\+r()}}, \mbox{\hyperlink{sbignum_8c_a3f0f426c12d5d85b76ac564ae6d06792}{u32pack}} , 以及 \mbox{\hyperlink{sbignum_8c_a04184b491683a5dc625d83fd1b139386}{u32tompz}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a6c71d6549f2940d3fd70c075cc6377bd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a8f2f5d1cba2f7422b49c7d122dc18ecc}\label{sbignum_8c_a8f2f5d1cba2f7422b49c7d122dc18ecc}} 
+\index{sbignum.c@{sbignum.c}!mpz\_testbit@{mpz\_testbit}}
+\index{mpz\_testbit@{mpz\_testbit}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_testbit()}{mpz\_testbit()}}
+{\footnotesize\ttfamily int mpz\+\_\+testbit (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a396179854027059e7383ce26ee6e7b4f}{DIVATOMBITS\+\_\+\+SHIFT}} , 以及 \mbox{\hyperlink{sbignum_8c_a6a07c6b73826254ed5ed5ddde73e0d11}{MODATOMBITS\+\_\+\+MASK}}.
+
+\mbox{\Hypertarget{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}\label{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe}} 
+\index{sbignum.c@{sbignum.c}!mpz\_tostr@{mpz\_tostr}}
+\index{mpz\_tostr@{mpz\_tostr}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_tostr()}{mpz\_tostr()}}
+{\footnotesize\ttfamily int mpz\+\_\+tostr (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{b,  }\item[{void $\ast$}]{s,  }\item[{size\+\_\+t}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a144823437c7ba6ee754fbb469618ef78}{\+\_\+mpz\+\_\+iszero}}, \mbox{\hyperlink{sbignum_8h_a63dd49243919c3499f262f24b166ec66}{\+\_\+mpz\+\_\+nonzero}}, \mbox{\hyperlink{sbignum_8c_aed3ce85996d98a3b1d140545c956dd2e}{\+\_\+mpz\+\_\+selfdiv1\+\_\+qr\+\_\+raw()}}, \mbox{\hyperlink{sbignum-tables_8c_a09404c84bd56da5b20a2f3c152d762aa}{basepowtable}}, \mbox{\hyperlink{optimize_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}}, \mbox{\hyperlink{structsbn__basepow_a5a748df3212c2f8f5cfd9e2f835c3890}{sbn\+\_\+basepow\+::maxexp}}, \mbox{\hyperlink{structsbn__basepow_ab42806f5ca024680404e5e82b14b49b9}{sbn\+\_\+basepow\+::maxpow}}, \mbox{\hyperlink{sbignum_8c_a19188aa5fd692f2035196a15e3780d3d}{mpz\+\_\+clear()}}, \mbox{\hyperlink{sbignum_8c_a155f4decbf38d2a77651223a7af49160}{mpz\+\_\+init()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345da482d3d34dbeed991eb59c58f56a89fad}{SBN\+\_\+\+INVAL}}, \mbox{\hyperlink{sbignum_8h_a0eafeac4b3d0388455b24603ed99a952}{SBN\+\_\+\+MAXBASE}}, \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}} , 以及 \mbox{\hyperlink{sbignum_8c_a34dcc0238de427a50a7dbe14ea92afe6}{sbn\+\_\+valtochar}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_aac739e27126529ad246f59831461caf9}{mpz\+\_\+get\+\_\+str()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{sbignum_8c_a5fd277573d0d45207146d43fe3b2eefe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}\label{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}} 
+\index{sbignum.c@{sbignum.c}!mpz\_zero@{mpz\_zero}}
+\index{mpz\_zero@{mpz\_zero}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_zero()}{mpz\_zero()}}
+{\footnotesize\ttfamily void mpz\+\_\+zero (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8h_a59b16bb08e36481575ea03a1bf9afdb2}{MPZ\+\_\+\+ATOMSZ}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_af9ce363a23dc37552f5be5aa7aeafc3d}{mpz\+\_\+rshiftword()}}, \mbox{\hyperlink{sbignum_8c_a5b5f39959d23202fe9db7a975705cf03}{mpz\+\_\+set\+\_\+str()}} , 以及 \mbox{\hyperlink{sbignum_8c_ac9d5459c616eda942475205903649b89}{mpz\+\_\+zero\+\_\+realloc()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ac9d5459c616eda942475205903649b89}\label{sbignum_8c_ac9d5459c616eda942475205903649b89}} 
+\index{sbignum.c@{sbignum.c}!mpz\_zero\_realloc@{mpz\_zero\_realloc}}
+\index{mpz\_zero\_realloc@{mpz\_zero\_realloc}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{mpz\_zero\_realloc()}{mpz\_zero\_realloc()}}
+{\footnotesize\ttfamily int mpz\+\_\+zero\+\_\+realloc (\begin{DoxyParamCaption}\item[{mpz\+\_\+ptr}]{z,  }\item[{u\+\_\+int32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_a8551e1cd7e244c0cf2802e4b9f99272a}{mpz\+\_\+realloc()}}, \mbox{\hyperlink{sbignum_8c_ad40ba979c5b5f86bd8fdb58a2fec223f}{mpz\+\_\+zero()}} , 以及 \mbox{\hyperlink{sbignum_8h_ac5a955bdbbd2c489865072c00c8d345dacf7e5b63303eeced69ce61d8a6eea9d8}{SBN\+\_\+\+OK}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_ac1aafc3fb447994ff377ec0634063959}{mpz\+\_\+addi\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a0865e9f64d52e6baf2d7bd77e2ca0cab}{mpz\+\_\+divi\+\_\+qr\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a36b7faa34967f62092738e61935bde2a}{mpz\+\_\+divi\+\_\+r\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a21c2eff8f9853f594f21107ae9f60a64}{mpz\+\_\+gcd\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_aec91da635da4419496ecc6e91b5b255f}{mpz\+\_\+muli\+\_\+raw()}}, \mbox{\hyperlink{sbignum_8c_a8e08dfe16c7ac957f9784383da1312c6}{mpz\+\_\+set()}}, \mbox{\hyperlink{sbignum_8c_ae8dc70e0a181360dbd7c73b34204ab4c}{mpz\+\_\+setzero()}} , 以及 \mbox{\hyperlink{sbignum_8c_a9002b8a2e6e3f8403c36713110643d3a}{mpz\+\_\+sqrt()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{sbignum_8c_ac9d5459c616eda942475205903649b89_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ac9d5459c616eda942475205903649b89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}\label{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}} 
+\index{sbignum.c@{sbignum.c}!sbn\_rand@{sbn\_rand}}
+\index{sbn\_rand@{sbn\_rand}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{sbn\_rand()}{sbn\_rand()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t sbn\+\_\+rand (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}}, \mbox{\hyperlink{sbignum_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}} , 以及 \mbox{\hyperlink{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}{sbn\+\_\+rand\+\_\+init()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a32a4b79db24d21ef39d2b2ef92ad503f}{mpz\+\_\+random()}} , 以及 \mbox{\hyperlink{sbignum_8c_ae24357f20cab2a414405b5534655cad7}{sbn\+\_\+seed()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{sbignum_8c_a162c378d1c9ff49927d12be161b02be4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{sbignum_8c_a162c378d1c9ff49927d12be161b02be4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}\label{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}} 
+\index{sbignum.c@{sbignum.c}!sbn\_rand\_init@{sbn\_rand\_init}}
+\index{sbn\_rand\_init@{sbn\_rand\_init}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{sbn\_rand\_init()}{sbn\_rand\_init()}}
+{\footnotesize\ttfamily void sbn\+\_\+rand\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}} , 以及 \mbox{\hyperlink{sbignum_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sbignum_8c_ae24357f20cab2a414405b5534655cad7}\label{sbignum_8c_ae24357f20cab2a414405b5534655cad7}} 
+\index{sbignum.c@{sbignum.c}!sbn\_seed@{sbn\_seed}}
+\index{sbn\_seed@{sbn\_seed}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{sbn\_seed()}{sbn\_seed()}}
+{\footnotesize\ttfamily void sbn\+\_\+seed (\begin{DoxyParamCaption}\item[{void $\ast$}]{seed,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}} , 以及 \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{sbignum_8c_ae24357f20cab2a414405b5534655cad7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}\label{sbignum_8c_aec948ef8ee5b83e49ce7bc3d972a1768}} 
+\index{sbignum.c@{sbignum.c}!rc4\_sbox@{rc4\_sbox}}
+\index{rc4\_sbox@{rc4\_sbox}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{rc4\_sbox}{rc4\_sbox}}
+{\footnotesize\ttfamily unsigned char rc4\+\_\+sbox\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand()}}, \mbox{\hyperlink{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}{sbn\+\_\+rand\+\_\+init()}} , 以及 \mbox{\hyperlink{sbignum_8c_ae24357f20cab2a414405b5534655cad7}{sbn\+\_\+seed()}}.
+
+\mbox{\Hypertarget{sbignum_8c_a1311983966ac797c879f02267c98b2a7}\label{sbignum_8c_a1311983966ac797c879f02267c98b2a7}} 
+\index{sbignum.c@{sbignum.c}!rc4\_seedflag@{rc4\_seedflag}}
+\index{rc4\_seedflag@{rc4\_seedflag}!sbignum.c@{sbignum.c}}
+\doxysubsubsection{\texorpdfstring{rc4\_seedflag}{rc4\_seedflag}}
+{\footnotesize\ttfamily int rc4\+\_\+seedflag = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{sbignum_8c_a162c378d1c9ff49927d12be161b02be4}{sbn\+\_\+rand()}} , 以及 \mbox{\hyperlink{sbignum_8c_ab6749d5b877c8a22b05a86f1e7be0eb3}{sbn\+\_\+rand\+\_\+init()}}.
+

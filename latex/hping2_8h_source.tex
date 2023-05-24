@@ -1,0 +1,435 @@
+\hypertarget{hping2_8h_source}{}\doxysection{hping2.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$smu-\/mark\$ }}
+\DoxyCodeLine{3 \textcolor{comment}{ * \$name: hping2.h\$ }}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$author: Salvatore Sanfilippo <antirez@invece.org>\$ }}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$copyright: Copyright (C) 1999 by Salvatore Sanfilippo\$ }}
+\DoxyCodeLine{6 \textcolor{comment}{ * \$license: This software is under GPL version 2 of license\$ }}
+\DoxyCodeLine{7 \textcolor{comment}{ * \$date: Fri Nov  5 11:55:48 MET 1999\$ }}
+\DoxyCodeLine{8 \textcolor{comment}{ * \$rev: 9\$ }}
+\DoxyCodeLine{9 \textcolor{comment}{ */} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* \$Id: hping2.h,v 1.4 2004/06/04 07:22:38 antirez Exp \$ */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef \_HPING2\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define \_HPING2\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}byteorder.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}systype.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}fixtypes.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* types */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef \_\_u8}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define \_\_u8        u\_int8\_t}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_u8 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef \_\_u16}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define \_\_u16       u\_int16\_t}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_u16 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifndef \_\_u32}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define \_\_u32       u\_int32\_t}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_u32 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifndef \_\_uint8\_t}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define \_\_uint8\_t   u\_int8\_t}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_uint8\_t */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef \_\_uint16\_t}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define \_\_uint16\_t  u\_int16\_t}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_uint16\_t */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef \_\_uint32\_t}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define \_\_uint32\_t  u\_int32\_t}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_uint32\_t */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}hcmp.h"{}} \textcolor{comment}{/* Hping Control Message Protocol */}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/* protocols header size */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef ICMPHDR\_SIZE}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define ICMPHDR\_SIZE    sizeof(struct myicmphdr)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifndef UDPHDR\_SIZE}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define UDPHDR\_SIZE sizeof(struct myudphdr)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifndef TCPHDR\_SIZE}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define TCPHDR\_SIZE sizeof(struct mytcphdr)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef IPHDR\_SIZE}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define IPHDR\_SIZE  sizeof(struct myiphdr)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/* wait X seconds after reached to sent packets in oreder to display replies */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define COUNTREACHED\_TIMEOUT 1}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* requests status table stuffs */}}
+\DoxyCodeLine{65 \textcolor{comment}{/* Warning, TABLESIZE 0 == floating point exception */}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define TABLESIZE   400}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define S\_SENT      0}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define S\_RECV      1}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/* usefull defines */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#ifndef TRUE}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define TRUE    1}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define FALSE   0}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#ifndef IFNAMSIZ}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define IFNAMSIZ 16}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifndef PF\_PACKET}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define PF\_PACKET 17        }\textcolor{comment}{/* kernel 2.[12].* with 2.0.* kernel headers? */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#ifndef ETH\_P\_IP}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define ETH\_P\_IP  0x0800    }\textcolor{comment}{/* Internet Protocol packet     */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifndef ABS}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define ABS(x) (((x)>0) ? (x) : -\/(x))}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/* header size of some physical layer type */}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define PPPHDR\_SIZE\_LINUX   0}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define PPPHDR\_SIZE\_FREEBSD 4}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define PPPHDR\_SIZE\_OPENBSD 4}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define PPPHDR\_SIZE\_NETBSD  4}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define PPPHDR\_SIZE\_BSDI    4}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define ETHHDR\_SIZE     14}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define LOHDR\_SIZE      14}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define WLANHDR\_SIZE        14}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define TRHDR\_SIZE      20}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{/* packet size (physical header size + ip header + tcp header + 0 data bytes) */}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#ifndef IP\_MAX\_SIZE}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define IP\_MAX\_SIZE 65535}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/* absolute offsets */}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define ABS\_OFFSETIP    linkhdr\_size}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define ABS\_OFFSETTCP   ( linkhdr\_size + IPHDR\_SIZE )}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define ABS\_OFFSETICMP  ( linkhdr\_size + IPHDR\_SIZE )}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define ABS\_OFFSETUDP   ( linkhdr\_size + IPHDR\_SIZE )}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{/* defaults and misc */}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define DEFAULT\_SENDINGWAIT 1   }\textcolor{comment}{/* wait 1 sec. between sending each packets */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define DEFAULT\_DPORT       0   }\textcolor{comment}{/* default dest. port */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define DEFAULT\_INITSPORT  -\/1   }\textcolor{comment}{/* default initial source port: -\/1 means random */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define DEFAULT\_COUNT      -\/1   }\textcolor{comment}{/* default packets count: -\/1 means forever */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define DEFAULT\_TTL    64   }\textcolor{comment}{/* default ip-\/>ttl value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define DEFAULT\_SRCWINSIZE 512  }\textcolor{comment}{/* default tcp windows size */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define DEFAULT\_VIRTUAL\_MTU 16  }\textcolor{comment}{/* tiny fragments */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_TYPE   8   }\textcolor{comment}{/* echo request */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_CODE   0   }\textcolor{comment}{/* icmp-\/type relative */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_VERSION     4}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_IHL     (IPHDR\_SIZE >> 2)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_TOS     0}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_TOT\_LEN     0 }\textcolor{comment}{/* computed by send\_icmp\_*() */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_ID      0 }\textcolor{comment}{/* rand */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_CKSUM      -\/1 }\textcolor{comment}{/* -\/1 means compute the cksum */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define DEFAULT\_ICMP\_IP\_PROTOCOL    6 }\textcolor{comment}{/* TCP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define DEFAULT\_RAW\_IP\_PROTOCOL     6 }\textcolor{comment}{/* TCP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define DEFAULT\_TRACEROUTE\_TTL      1}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define BIND\_NONE   0       }\textcolor{comment}{/* no bind */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define BIND\_DPORT  1       }\textcolor{comment}{/* bind destination port */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define BIND\_TTL    2       }\textcolor{comment}{/* bind ip-\/>ttl */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define DEFAULT\_BIND    BIND\_DPORT}}
+\DoxyCodeLine{134     }
+\DoxyCodeLine{135 \textcolor{comment}{/* fragmentation defines */}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define MF ((unsigned short)0x2000) }\textcolor{comment}{/* more fragments */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define DF ((unsigned short)0x4000) }\textcolor{comment}{/* dont fragment */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define NF ((unsigned short)0x0000) }\textcolor{comment}{/* no more fragments */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{/* ip options defines */}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define IPOPT\_COPY      0x80}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define IPOPT\_CLASS\_MASK    0x60}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define IPOPT\_NUMBER\_MASK   0x1f}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define IPOPT\_COPIED(o)     ((o)\&IPOPT\_COPY)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define IPOPT\_CLASS(o)      ((o)\&IPOPT\_CLASS\_MASK)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define IPOPT\_NUMBER(o)     ((o)\&IPOPT\_NUMBER\_MASK)}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define IPOPT\_CONTROL       0x00}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define IPOPT\_RESERVED1     0x20}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define IPOPT\_MEASUREMENT   0x40}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define IPOPT\_RESERVED2     0x60}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define IPOPT\_END   (0 |IPOPT\_CONTROL)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define IPOPT\_NOOP  (1 |IPOPT\_CONTROL)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define IPOPT\_SEC   (2 |IPOPT\_CONTROL|IPOPT\_COPY)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define IPOPT\_LSRR  (3 |IPOPT\_CONTROL|IPOPT\_COPY)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define IPOPT\_TIMESTAMP (4 |IPOPT\_MEASUREMENT)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define IPOPT\_RR    (7 |IPOPT\_CONTROL)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define IPOPT\_SID   (8 |IPOPT\_CONTROL|IPOPT\_COPY)}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define IPOPT\_SSRR  (9 |IPOPT\_CONTROL|IPOPT\_COPY)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define IPOPT\_RA    (20|IPOPT\_CONTROL|IPOPT\_COPY)}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define IPOPT\_OPTVAL 0}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define IPOPT\_OLEN   1}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define IPOPT\_OFFSET 2}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define IPOPT\_MINOFF 4}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define MAX\_IPOPTLEN 40}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define IPOPT\_NOP IPOPT\_NOOP}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define IPOPT\_EOL IPOPT\_END}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define IPOPT\_TS  IPOPT\_TIMESTAMP}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define IPOPT\_TS\_TSONLY     0       }\textcolor{comment}{/* timestamps only */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define IPOPT\_TS\_TSANDADDR  1       }\textcolor{comment}{/* timestamps and addresses */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define IPOPT\_TS\_PRESPEC    3       }\textcolor{comment}{/* specified modules only */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* tcp flags */}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#ifndef TH\_FIN}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define TH\_FIN  0x01}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#ifndef TH\_SYN}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define TH\_SYN  0x02}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#ifndef TH\_RST}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define TH\_RST  0x04}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#ifndef TH\_PUSH}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define TH\_PUSH 0x08}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#ifndef TH\_ACK}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define TH\_ACK  0x10}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#ifndef TH\_URG}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define TH\_URG  0x20}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#ifndef TH\_X}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define TH\_X 0x40   }\textcolor{comment}{/* X tcp flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#ifndef TH\_Y}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define TH\_Y 0x80   }\textcolor{comment}{/* Y tcp flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{comment}{/* ICMP TYPE */}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define ICMP\_ECHOREPLY          0       }\textcolor{comment}{/* Echo Reply                   */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define ICMP\_DEST\_UNREACH       3       }\textcolor{comment}{/* Destination Unreachable      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define ICMP\_SOURCE\_QUENCH      4       }\textcolor{comment}{/* Source Quench                */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define ICMP\_REDIRECT           5       }\textcolor{comment}{/* Redirect (change route)      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define ICMP\_ECHO               8       }\textcolor{comment}{/* Echo Request                 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define ICMP\_TIME\_EXCEEDED      11      }\textcolor{comment}{/* Time Exceeded                */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define ICMP\_PARAMETERPROB      12      }\textcolor{comment}{/* Parameter Problem            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define ICMP\_TIMESTAMP          13      }\textcolor{comment}{/* Timestamp Request            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define ICMP\_TIMESTAMPREPLY     14      }\textcolor{comment}{/* Timestamp Reply              */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define ICMP\_INFO\_REQUEST       15      }\textcolor{comment}{/* Information Request          */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define ICMP\_INFO\_REPLY         16      }\textcolor{comment}{/* Information Reply            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define ICMP\_ADDRESS            17      }\textcolor{comment}{/* Address Mask Request         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define ICMP\_ADDRESSREPLY       18      }\textcolor{comment}{/* Address Mask Reply           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{comment}{/* Codes for UNREACHABLE */}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define ICMP\_NET\_UNREACH        0       }\textcolor{comment}{/* Network Unreachable          */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define ICMP\_HOST\_UNREACH       1       }\textcolor{comment}{/* Host Unreachable             */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define ICMP\_PROT\_UNREACH       2       }\textcolor{comment}{/* Protocol Unreachable         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define ICMP\_PORT\_UNREACH       3       }\textcolor{comment}{/* Port Unreachable             */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define ICMP\_FRAG\_NEEDED        4       }\textcolor{comment}{/* Fragmentation Needed/DF set  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define ICMP\_SR\_FAILED          5       }\textcolor{comment}{/* Source Route failed          */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define ICMP\_NET\_UNKNOWN        6}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define ICMP\_HOST\_UNKNOWN       7}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define ICMP\_HOST\_ISOLATED      8}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define ICMP\_NET\_ANO            9}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define ICMP\_HOST\_ANO           10}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define ICMP\_NET\_UNR\_TOS        11}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define ICMP\_HOST\_UNR\_TOS       12}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define ICMP\_PKT\_FILTERED       13      }\textcolor{comment}{/* Packet filtered */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define ICMP\_PREC\_VIOLATION     14      }\textcolor{comment}{/* Precedence violation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define ICMP\_PREC\_CUTOFF        15      }\textcolor{comment}{/* Precedence cut off */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define NR\_ICMP\_UNREACH 15        }\textcolor{comment}{/* instead of hardcoding immediate value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{comment}{/* Codes for REDIRECT */}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define ICMP\_REDIR\_NET          0       }\textcolor{comment}{/* Redirect Net                 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define ICMP\_REDIR\_HOST         1       }\textcolor{comment}{/* Redirect Host                */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define ICMP\_REDIR\_NETTOS       2       }\textcolor{comment}{/* Redirect Net for TOS         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define ICMP\_REDIR\_HOSTTOS      3       }\textcolor{comment}{/* Redirect Host for TOS        */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{comment}{/* Codes for TIME\_EXCEEDED */}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define ICMP\_EXC\_TTL            0       }\textcolor{comment}{/* TTL count exceeded           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define ICMP\_EXC\_FRAGTIME       1       }\textcolor{comment}{/* Fragment Reass time exceeded */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{comment}{/*}}
+\DoxyCodeLine{248 \textcolor{comment}{ * IP header}}
+\DoxyCodeLine{249 \textcolor{comment}{ */}}
+\DoxyCodeLine{250 \textcolor{keyword}{struct }\mbox{\hyperlink{structmyiphdr}{myiphdr}} \{}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#if defined(\_\_LITTLE\_ENDIAN\_BITFIELD)}}
+\DoxyCodeLine{252         \_\_u8    ihl:4,}
+\DoxyCodeLine{253                 version:4;}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#elif defined (\_\_BIG\_ENDIAN\_BITFIELD)}}
+\DoxyCodeLine{255         \_\_u8    version:4,}
+\DoxyCodeLine{256                 ihl:4;}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#error  "{}Please, edit Makefile and add -\/D\_\_(LITTLE|BIG)\_ENDIAN\_BITFIEND"{}}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{260         \_\_u8    tos;}
+\DoxyCodeLine{261         \_\_u16   tot\_len;}
+\DoxyCodeLine{262         \_\_u16   id;}
+\DoxyCodeLine{263         \_\_u16   frag\_off;}
+\DoxyCodeLine{264         \_\_u8    ttl;}
+\DoxyCodeLine{265         \_\_u8    protocol;}
+\DoxyCodeLine{266         \_\_u16   check;}
+\DoxyCodeLine{267         \_\_u32   saddr;}
+\DoxyCodeLine{268         \_\_u32   daddr;}
+\DoxyCodeLine{269 \};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{comment}{/*}}
+\DoxyCodeLine{272 \textcolor{comment}{ * UDP header}}
+\DoxyCodeLine{273 \textcolor{comment}{ */}}
+\DoxyCodeLine{274 \textcolor{keyword}{struct }\mbox{\hyperlink{structmyudphdr}{myudphdr}} \{ }
+\DoxyCodeLine{275     \_\_u16 uh\_sport;     \textcolor{comment}{/* source port */}}
+\DoxyCodeLine{276     \_\_u16 uh\_dport;     \textcolor{comment}{/* destination port */}}
+\DoxyCodeLine{277     \_\_u16 uh\_ulen;      \textcolor{comment}{/* udp length */}}
+\DoxyCodeLine{278     \_\_u16 uh\_sum;       \textcolor{comment}{/* udp checksum */}}
+\DoxyCodeLine{279 \};}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{comment}{/*}}
+\DoxyCodeLine{282 \textcolor{comment}{ * TCP header.}}
+\DoxyCodeLine{283 \textcolor{comment}{ * Per RFC 793, September, 1981.}}
+\DoxyCodeLine{284 \textcolor{comment}{ */}}
+\DoxyCodeLine{285 \textcolor{keyword}{struct }\mbox{\hyperlink{structmytcphdr}{mytcphdr}} \{}
+\DoxyCodeLine{286     \_\_u16   th\_sport;               \textcolor{comment}{/* source port */}}
+\DoxyCodeLine{287     \_\_u16   th\_dport;               \textcolor{comment}{/* destination port */}}
+\DoxyCodeLine{288     \_\_u32   th\_seq;                 \textcolor{comment}{/* sequence number */}}
+\DoxyCodeLine{289     \_\_u32   th\_ack;                 \textcolor{comment}{/* acknowledgement number */}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#if defined (\_\_LITTLE\_ENDIAN\_BITFIELD)}}
+\DoxyCodeLine{291     \_\_u8    th\_x2:4,                \textcolor{comment}{/* (unused) */}}
+\DoxyCodeLine{292         th\_off:4;               \textcolor{comment}{/* data offset */}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#elif defined (\_\_BIG\_ENDIAN\_BITFIELD)}}
+\DoxyCodeLine{294     \_\_u8    th\_off:4,               \textcolor{comment}{/* data offset */}}
+\DoxyCodeLine{295         th\_x2:4;                \textcolor{comment}{/* (unused) */}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#error  "{}Please, edit Makefile and add -\/D\_\_(LITTLE|BIG)\_ENDIAN\_BITFIEND"{}}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{299     \_\_u8    th\_flags;}
+\DoxyCodeLine{300     \_\_u16   th\_win;                 \textcolor{comment}{/* window */}}
+\DoxyCodeLine{301     \_\_u16   th\_sum;                 \textcolor{comment}{/* checksum */}}
+\DoxyCodeLine{302     \_\_u16   th\_urp;                 \textcolor{comment}{/* urgent pointer */}}
+\DoxyCodeLine{303 \};}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{comment}{/*}}
+\DoxyCodeLine{306 \textcolor{comment}{ * ICMP header}}
+\DoxyCodeLine{307 \textcolor{comment}{ */}}
+\DoxyCodeLine{308 \textcolor{keyword}{struct }\mbox{\hyperlink{structmyicmphdr}{myicmphdr}}}
+\DoxyCodeLine{309 \{}
+\DoxyCodeLine{310     \_\_u8          type;}
+\DoxyCodeLine{311     \_\_u8          code;}
+\DoxyCodeLine{312     \_\_u16         checksum;}
+\DoxyCodeLine{313     \textcolor{keyword}{union}}
+\DoxyCodeLine{314     \{}
+\DoxyCodeLine{315         \textcolor{keyword}{struct}}
+\DoxyCodeLine{316         \{}
+\DoxyCodeLine{317             \_\_u16   id;}
+\DoxyCodeLine{318             \_\_u16   sequence;}
+\DoxyCodeLine{319         \} echo;}
+\DoxyCodeLine{320         \_\_u32   gateway;}
+\DoxyCodeLine{321     \} un;}
+\DoxyCodeLine{322 \};}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{keyword}{struct }\mbox{\hyperlink{structicmp__tstamp__data}{icmp\_tstamp\_data}} \{}
+\DoxyCodeLine{325     \_\_u32 orig;}
+\DoxyCodeLine{326     \_\_u32 recv;}
+\DoxyCodeLine{327     \_\_u32 tran;}
+\DoxyCodeLine{328 \};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{comment}{/*}}
+\DoxyCodeLine{331 \textcolor{comment}{ * UDP/TCP pseudo header}}
+\DoxyCodeLine{332 \textcolor{comment}{ * for cksum computing}}
+\DoxyCodeLine{333 \textcolor{comment}{ */}}
+\DoxyCodeLine{334 \textcolor{keyword}{struct }\mbox{\hyperlink{structpseudohdr}{pseudohdr}}}
+\DoxyCodeLine{335 \{}
+\DoxyCodeLine{336     \_\_u32 saddr;}
+\DoxyCodeLine{337     \_\_u32 daddr;}
+\DoxyCodeLine{338     \_\_u8  zero;}
+\DoxyCodeLine{339     \_\_u8  protocol;}
+\DoxyCodeLine{340     \_\_u16 lenght;}
+\DoxyCodeLine{341 \};}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define PSEUDOHDR\_SIZE sizeof(struct pseudohdr)}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{comment}{/*}}
+\DoxyCodeLine{346 \textcolor{comment}{ * hping replies delay table}}
+\DoxyCodeLine{347 \textcolor{comment}{ */}}
+\DoxyCodeLine{348 \textcolor{keyword}{struct }\mbox{\hyperlink{structdelaytable__element}{delaytable\_element}} \{}
+\DoxyCodeLine{349     \textcolor{keywordtype}{int} seq;}
+\DoxyCodeLine{350     \textcolor{keywordtype}{int} src;}
+\DoxyCodeLine{351     time\_t sec;}
+\DoxyCodeLine{352     time\_t usec;}
+\DoxyCodeLine{353     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{354 \};}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#ifndef \_HPING2\_H}}
+\DoxyCodeLine{357     \textcolor{keyword}{volatile} \textcolor{keyword}{struct }\mbox{\hyperlink{structdelaytable__element}{delaytable\_element}} delaytable[TABLESIZE];}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{359 \textcolor{comment}{/* protos */}}
+\DoxyCodeLine{360 \textcolor{keywordtype}{void}    nop(\textcolor{keywordtype}{void});              \textcolor{comment}{/* nop */}}
+\DoxyCodeLine{361 \textcolor{keywordtype}{int} parse\_options(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char}**);     \textcolor{comment}{/* option parser */}}
+\DoxyCodeLine{362 \textcolor{keywordtype}{int} get\_if\_name(\textcolor{keywordtype}{void});          \textcolor{comment}{/* get interface (see source) */}}
+\DoxyCodeLine{363 \textcolor{keywordtype}{int} get\_output\_if(\textcolor{keyword}{struct} sockaddr\_in *dest, \textcolor{keyword}{struct} sockaddr\_in *ifip);}
+\DoxyCodeLine{364 \textcolor{keywordtype}{int} dltype\_to\_lhs(\textcolor{keywordtype}{int} dltype);}
+\DoxyCodeLine{365 \textcolor{keywordtype}{int} get\_linkhdr\_size(\textcolor{keywordtype}{char}*);        \textcolor{comment}{/* get link layer hdr size */}}
+\DoxyCodeLine{366 \textcolor{keywordtype}{int} open\_sockpacket(\textcolor{keywordtype}{void});          \textcolor{comment}{/* open SOCK\_PACKET socket */}}
+\DoxyCodeLine{367 \textcolor{keywordtype}{int} open\_sockpacket\_ifindex(\textcolor{keywordtype}{int} ifindex);}
+\DoxyCodeLine{368 \textcolor{keywordtype}{int} close\_sockpacket(\textcolor{keywordtype}{int});          \textcolor{comment}{/* close SOCK\_PACKET socket */}}
+\DoxyCodeLine{369 \textcolor{keywordtype}{int} open\_sockraw(\textcolor{keywordtype}{void});         \textcolor{comment}{/* open raw socket */}}
+\DoxyCodeLine{370 \textcolor{keywordtype}{void}    send\_packet (\textcolor{keywordtype}{int} signal\_id);}
+\DoxyCodeLine{371 \textcolor{keywordtype}{void}    send\_rawip (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{372 \textcolor{keywordtype}{void}    send\_tcp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{373 \textcolor{keywordtype}{void}    send\_udp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{374 \textcolor{keywordtype}{void}    send\_icmp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{375 \textcolor{keywordtype}{void}    send\_hcmp(\_\_u8 type, \_\_u32 arg);    \textcolor{comment}{/* send hcmp packets */}}
+\DoxyCodeLine{376 \textcolor{keywordtype}{void}    send\_ip (\textcolor{keywordtype}{char}*, \textcolor{keywordtype}{char}*, \textcolor{keywordtype}{char}*, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short},}
+\DoxyCodeLine{377          \textcolor{keywordtype}{char}*, \textcolor{keywordtype}{char});}
+\DoxyCodeLine{378 \textcolor{keywordtype}{void}    send\_ip\_handler(\textcolor{keywordtype}{char} *packet, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size); \textcolor{comment}{/* fragmentation}}
+\DoxyCodeLine{379 \textcolor{comment}{                                                             handler */}}
+\DoxyCodeLine{380 \textcolor{keywordtype}{void}    wait\_packet(\textcolor{keywordtype}{void});          \textcolor{comment}{/* handle incoming packets */}}
+\DoxyCodeLine{381 \textcolor{keywordtype}{void}    print\_statistics(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{382 \textcolor{keywordtype}{void}    show\_usage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{383 \textcolor{keywordtype}{void}    show\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{384 \textcolor{keywordtype}{int} resolve\_addr(\textcolor{keyword}{struct} sockaddr * addr, \textcolor{keywordtype}{char} *hostname); \textcolor{comment}{/* resolver */}}
+\DoxyCodeLine{385 \textcolor{keywordtype}{void}    resolve(\textcolor{keyword}{struct} sockaddr*, \textcolor{keywordtype}{char}*);   \textcolor{comment}{/* resolver, exit on err. */}}
+\DoxyCodeLine{386 \textcolor{keywordtype}{void}    log\_icmp\_unreach(\textcolor{keywordtype}{char}*, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short});\textcolor{comment}{/* ICMP unreachable logger */}}
+\DoxyCodeLine{387 \textcolor{keywordtype}{void}    log\_icmp\_timeexc(\textcolor{keywordtype}{char}*, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short});\textcolor{comment}{/* ICMP time exceeded logger */}}
+\DoxyCodeLine{388 time\_t  get\_usec(\textcolor{keywordtype}{void});             \textcolor{comment}{/* return current usec */}}
+\DoxyCodeLine{389 time\_t  milliseconds(\textcolor{keywordtype}{void});         \textcolor{comment}{/* ms from UT midnight */}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define get\_midnight\_ut\_ms milliseconds     }\textcolor{comment}{/* backward compatibilty */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{391 \_\_u16   cksum(\_\_u16 *buf, \textcolor{keywordtype}{int} nwords);      \textcolor{comment}{/* compute 16bit checksum */}}
+\DoxyCodeLine{392 \textcolor{keywordtype}{void}    inc\_destparm(\textcolor{keywordtype}{int} sid);          \textcolor{comment}{/* inc dst port or ttl */}}
+\DoxyCodeLine{393 \textcolor{keywordtype}{char}    *get\_hostname(\textcolor{keywordtype}{char}*);           \textcolor{comment}{/* get host from addr */}}
+\DoxyCodeLine{394 \textcolor{keywordtype}{void}    datafiller(\textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{int} size);      \textcolor{comment}{/* fill data from file */}}
+\DoxyCodeLine{395 \textcolor{keywordtype}{void}    data\_handler(\textcolor{keywordtype}{char} *data, \textcolor{keywordtype}{int} data\_size);\textcolor{comment}{/* handle data filling */}}
+\DoxyCodeLine{396 \textcolor{keywordtype}{void}    socket\_broadcast(\textcolor{keywordtype}{int} sd);       \textcolor{comment}{/* set SO\_BROADCAST option */}}
+\DoxyCodeLine{397 \textcolor{keywordtype}{void}    socket\_iphdrincl(\textcolor{keywordtype}{int} sd);       \textcolor{comment}{/* set SO\_IPHDRINCL option */}}
+\DoxyCodeLine{398 \textcolor{keywordtype}{void}    listenmain(\textcolor{keywordtype}{void});           \textcolor{comment}{/* main for listen mode */}}
+\DoxyCodeLine{399 \textcolor{keywordtype}{char}    *memstr(\textcolor{keywordtype}{char} *haystack, \textcolor{keywordtype}{char} *needle, \textcolor{keywordtype}{int} size); \textcolor{comment}{/* memstr */}}
+\DoxyCodeLine{400 \textcolor{keywordtype}{void}    tos\_help(\textcolor{keywordtype}{void});             \textcolor{comment}{/* show the TOS help */}}
+\DoxyCodeLine{401 \textcolor{keywordtype}{int} rtt(\textcolor{keywordtype}{int} *seqp, \textcolor{keywordtype}{int} recvport, \textcolor{keywordtype}{float} *ms\_delay);  \textcolor{comment}{/* compute round trip time */}}
+\DoxyCodeLine{402 \textcolor{keywordtype}{int} relativize\_id(\textcolor{keywordtype}{int} seqnum, \textcolor{keywordtype}{int} *ip\_id);  \textcolor{comment}{/* compute relative id */}}
+\DoxyCodeLine{403 \textcolor{keywordtype}{int} if\_promisc\_on(\textcolor{keywordtype}{int} s);           \textcolor{comment}{/* promisc. mode ON */}}
+\DoxyCodeLine{404 \textcolor{keywordtype}{int} if\_promisc\_off(\textcolor{keywordtype}{int} s);          \textcolor{comment}{/* promisc. mode OFF */}}
+\DoxyCodeLine{405 \textcolor{keywordtype}{int} open\_pcap(\textcolor{keywordtype}{void});            \textcolor{comment}{/* open libpcap socket */}}
+\DoxyCodeLine{406 \textcolor{keywordtype}{int} close\_pcap(\textcolor{keywordtype}{void});           \textcolor{comment}{/* close libpcap socket */}}
+\DoxyCodeLine{407 \textcolor{keywordtype}{int} pcap\_recv(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});    \textcolor{comment}{/* libpcap api wrapper */}}
+\DoxyCodeLine{408 \textcolor{keywordtype}{int} memlock(\textcolor{keywordtype}{char} *addr, \textcolor{keywordtype}{size\_t} size);   \textcolor{comment}{/* disable paging */}}
+\DoxyCodeLine{409 \textcolor{keywordtype}{int} memunlock(\textcolor{keywordtype}{char} *addr, \textcolor{keywordtype}{size\_t} size); \textcolor{comment}{/* enable paging */}}
+\DoxyCodeLine{410 \textcolor{keywordtype}{int} memlockall(\textcolor{keywordtype}{void});           \textcolor{comment}{/* disable paging (all pages) */}}
+\DoxyCodeLine{411 \textcolor{keywordtype}{int} memunlockall(\textcolor{keywordtype}{void});         \textcolor{comment}{/* enable paging (all pages) */}}
+\DoxyCodeLine{412 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ip\_opt\_build(\textcolor{keywordtype}{char} *ip\_opt);       \textcolor{comment}{/* build ip options */}}
+\DoxyCodeLine{413 \textcolor{keywordtype}{void}    display\_ipopt(\textcolor{keywordtype}{char}* buf);       \textcolor{comment}{/* display ip options */}}
+\DoxyCodeLine{414 \textcolor{keywordtype}{void}    icmp\_help(\textcolor{keywordtype}{void});            \textcolor{comment}{/* show the ICMP help */}}
+\DoxyCodeLine{415 \textcolor{keywordtype}{void}    route\_help(\textcolor{keywordtype}{void});           \textcolor{comment}{/* show the route help */}}
+\DoxyCodeLine{416 void    (*Signal(\textcolor{keywordtype}{int} signo, \textcolor{keywordtype}{void} (*func)(\textcolor{keywordtype}{int})))(int);}
+\DoxyCodeLine{417 \textcolor{keywordtype}{void}    delaytable\_add(\textcolor{keywordtype}{int} seq, \textcolor{keywordtype}{int} src, time\_t sec, time\_t usec, \textcolor{keywordtype}{int} status);}
+\DoxyCodeLine{418 \textcolor{keywordtype}{int} read\_packet(\textcolor{keywordtype}{void} *packet, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{419 \textcolor{keywordtype}{void}    scanmain(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{420 \textcolor{keywordtype}{void}    hping\_script(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv);}
+\DoxyCodeLine{421 u\_int32\_t hp\_rand(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#if !defined(\_\_FreeBSD\_\_) \&\& !defined(\_\_OpenBSD\_\_) \&\& !defined(\_\_NetBSD\_\_) \&\& \(\backslash\)}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{    !defined(\_\_bsdi\_\_) \&\& !defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{424 \textcolor{keywordtype}{size\_t} strlcpy(\textcolor{keywordtype}{char} *dst, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *src, \textcolor{keywordtype}{size\_t} siz);}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{comment}{/* ARS glue */}}
+\DoxyCodeLine{428 \textcolor{keywordtype}{void} hping\_ars\_send(\textcolor{keywordtype}{char} *s);}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_HPING2\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

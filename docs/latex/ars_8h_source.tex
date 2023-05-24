@@ -1,0 +1,536 @@
+\hypertarget{ars_8h_source}{}\doxysection{ars.\+h}
+\mbox{\hyperlink{ars_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* Copyright (C) 2000,2001 Salvatore Sanfilippo <antirez@invece.org>}}
+\DoxyCodeLine{2 \textcolor{comment}{ * See the LICENSE file for more information. */}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* \$Id: ars.h,v 1.4 2004/06/04 07:22:38 antirez Exp \$ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_ARS\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_ARS\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/* define before including sys/socket.h */}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_) \&\& !defined(\_BSD\_SOCKLEN\_T\_)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_BSD\_SOCKLEN\_T\_ int}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <errno.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{systype_8h}{systype.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{in_8h}{in.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{bytesex_8h}{bytesex.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{adbuf_8h}{adbuf.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fixtypes_8h}{fixtypes.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef TRUE}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define TRUE    1}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define FALSE   0}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifndef MIN}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define MIN(x,y)    ((x)<(y)?(x):(y))}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef MAX}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define MAX(x,y)    ((x)>(y)?(x):(y))}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef DEBUG}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define \_\_D(x) x}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define \_\_D(x) do \{ \} while (0);}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef \_\_u8}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define \_\_u8    u\_int8\_t}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define \_\_u16   u\_int16\_t}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define \_\_u32   u\_int32\_t}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/* error codes */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define ARS\_OK          0}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define ARS\_ERROR   1}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define ARS\_NOSPACE     2}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define ARS\_NOMEM       3}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define ARS\_INVALID 4}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{/* Headers size */}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define ARS\_ICMPHDR\_SIZE    sizeof(struct ars\_icmphdr)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define ARS\_UDPHDR\_SIZE     sizeof(struct ars\_udphdr)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define ARS\_TCPHDR\_SIZE     sizeof(struct ars\_tcphdr)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define ARS\_IPHDR\_SIZE      sizeof(struct ars\_iphdr)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define ARS\_PSEUDOHDR\_SIZE  sizeof(struct pseudohdr)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define ARS\_IGRPHDR\_SIZE    sizeof(struct ars\_igrphdr)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define ARS\_IGRPENTRY\_SIZE  sizeof(struct ars\_igrpentry)}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/* IP defines */}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define ARS\_MAX\_IP\_SIZE     65535}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define ARS\_IP\_MF ((unsigned short)0x2000)  }\textcolor{comment}{/* more fragments */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define ARS\_IP\_DF ((unsigned short)0x4000)  }\textcolor{comment}{/* dont fragment */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define ARS\_IP\_RF ((unsigned short)0x8000)  }\textcolor{comment}{/* reserved fragment flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define ARS\_IPOPT\_COPY      0x80}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define ARS\_IPOPT\_CLASS\_MASK    0x60}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define ARS\_IPOPT\_NUMBER\_MASK   0x1f}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define ARS\_IPOPT\_COPIED(o)     ((o)\&ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define ARS\_IPOPT\_CLASS(o)      ((o)\&ARS\_IPOPT\_CLASS\_MASK)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define ARS\_IPOPT\_NUMBER(o)     ((o)\&ARS\_IPOPT\_NUMBER\_MASK)}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define ARS\_IPOPT\_CONTROL       0x00}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define ARS\_IPOPT\_RESERVED1     0x20}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define ARS\_IPOPT\_MEASUREMENT       0x40}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define ARS\_IPOPT\_RESERVED2     0x60}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define ARS\_IPOPT\_END       (0 |ARS\_IPOPT\_CONTROL)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define ARS\_IPOPT\_NOOP      (1 |ARS\_IPOPT\_CONTROL)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define ARS\_IPOPT\_SEC       (2 |ARS\_IPOPT\_CONTROL|ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define ARS\_IPOPT\_LSRR      (3 |ARS\_IPOPT\_CONTROL|ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define ARS\_IPOPT\_TIMESTAMP (4 |ARS\_IPOPT\_MEASUREMENT)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define ARS\_IPOPT\_RR        (7 |ARS\_IPOPT\_CONTROL)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define ARS\_IPOPT\_SID       (8 |ARS\_IPOPT\_CONTROL|ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define ARS\_IPOPT\_SSRR      (9 |ARS\_IPOPT\_CONTROL|ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define ARS\_IPOPT\_RA        (20|ARS\_IPOPT\_CONTROL|ARS\_IPOPT\_COPY)}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define ARS\_IPOPT\_OPTVAL 0}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define ARS\_IPOPT\_OLEN   1}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define ARS\_IPOPT\_OFFSET 2}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define ARS\_IPOPT\_MINOFF 4}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define ARS\_MAX\_IPOPTLEN 40}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define ARS\_IPOPT\_NOP ARS\_IPOPT\_NOOP}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define ARS\_IPOPT\_EOL ARS\_IPOPT\_END}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define ARS\_IPOPT\_TS  ARS\_IPOPT\_TIMESTAMP}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define ARS\_IPOPT\_TS\_TSONLY 0       }\textcolor{comment}{/* timestamps only */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define ARS\_IPOPT\_TS\_TSANDADDR  1       }\textcolor{comment}{/* timestamps and addresses */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define ARS\_IPOPT\_TS\_PRESPEC    3       }\textcolor{comment}{/* specified modules only */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/* IPV4 and IPV6 string rappresentation len */}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define ARS\_INET\_ADDRSTRLEN 16}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define ARS\_INET6\_ADDRSTRLEN    46}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{/* TCP */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_EOL      0}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_NOP      1}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_MAXSEG   2}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_WINDOW   3}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_SACK\_PERM    4}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_SACK     5}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_ECHOREQUEST  6}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_ECHOREPLY    7}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define ARS\_TCPOPT\_TIMESTAMP    8}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_FIN  0x01}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_SYN  0x02}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_RST  0x04}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_PUSH 0x08}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_ACK  0x10}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_URG  0x20}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_X    0x40    }\textcolor{comment}{/* X tcp flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define ARS\_TCP\_TH\_Y    0x80    }\textcolor{comment}{/* Y tcp flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{comment}{/* ICMP TYPE */}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define ARS\_ICMP\_ECHOREPLY          0       }\textcolor{comment}{/* Echo Reply                   */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define ARS\_ICMP\_DEST\_UNREACH       3       }\textcolor{comment}{/* Destination Unreachable      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define ARS\_ICMP\_SOURCE\_QUENCH      4       }\textcolor{comment}{/* Source Quench                */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define ARS\_ICMP\_REDIRECT           5       }\textcolor{comment}{/* Redirect (change route)      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define ARS\_ICMP\_ECHO               8       }\textcolor{comment}{/* Echo Request                 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define ARS\_ICMP\_TIME\_EXCEEDED      11      }\textcolor{comment}{/* Time Exceeded                */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define ARS\_ICMP\_PARAMETERPROB      12      }\textcolor{comment}{/* Parameter Problem            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define ARS\_ICMP\_TIMESTAMP          13      }\textcolor{comment}{/* Timestamp Request            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define ARS\_ICMP\_TIMESTAMPREPLY     14      }\textcolor{comment}{/* Timestamp Reply              */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define ARS\_ICMP\_INFO\_REQUEST       15      }\textcolor{comment}{/* Information Request          */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define ARS\_ICMP\_INFO\_REPLY         16      }\textcolor{comment}{/* Information Reply            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define ARS\_ICMP\_ADDRESS            17      }\textcolor{comment}{/* Address Mask Request         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define ARS\_ICMP\_ADDRESSREPLY       18      }\textcolor{comment}{/* Address Mask Reply           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{/* Codes for UNREACHABLE */}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_NET        0       }\textcolor{comment}{/* Network Unreachable */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_HOST       1       }\textcolor{comment}{/* Host Unreachable */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_PROT       2       }\textcolor{comment}{/* Protocol Unreachable */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_PORT       3       }\textcolor{comment}{/* Port Unreachable */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_FRAG\_NEEDED    4       }\textcolor{comment}{/* Fragmentation Needed,DF set*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_SR\_FAILED          5       }\textcolor{comment}{/* Source Route failed */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_UNK\_NET        6}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_UNK\_HOST       7}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_ISOLATED\_HOST  8}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_NET\_ANO        9}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_HOST\_ANO       10}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_NET\_UNR\_TOS    11}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_HOST\_UNR\_TOS   12}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_PKT\_FILTERED   13      }\textcolor{comment}{/* Packet filtered */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_PREC\_VIOLATION 14      }\textcolor{comment}{/* Precedence violation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define ARS\_ICMP\_UNR\_PREC\_CUTOFF    15      }\textcolor{comment}{/* Precedence cut off */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define ARS\_NR\_ICMP\_UNREACH 15  }\textcolor{comment}{/* Instead of hardcoded immediate value */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{/* Codes for REDIRECT */}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define ARS\_ICMP\_REDIR\_NET      0       }\textcolor{comment}{/* Redirect Net */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define ARS\_ICMP\_REDIR\_HOST     1       }\textcolor{comment}{/* Redirect Host */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define ARS\_ICMP\_REDIR\_NETTOS       2       }\textcolor{comment}{/* Redirect Net for TOS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define ARS\_ICMP\_REDIR\_HOSTTOS      3       }\textcolor{comment}{/* Redirect Host for TOS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{/* Codes for TIME\_EXCEEDED */}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define ARS\_ICMP\_EXC\_TTL        0       }\textcolor{comment}{/* TTL count exceeded */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define ARS\_ICMP\_EXC\_FRAGTIME       1       }\textcolor{comment}{/* TTL exceeded reassembling */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* IGRP defines */}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define ARS\_IGRP\_OPCODE\_UPDATE      1}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define ARS\_IGRP\_OPCODE\_REQUEST     2}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{comment}{/* The IP header structure */}}
+\DoxyCodeLine{182 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__iphdr}{ars\_iphdr}} \{}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#if defined(BYTE\_ORDER\_LITTLE\_ENDIAN)}}
+\DoxyCodeLine{184         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    ihl:4,}
+\DoxyCodeLine{185                 version:4;}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#elif defined (BYTE\_ORDER\_BIG\_ENDIAN)}}
+\DoxyCodeLine{187         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    version:4,}
+\DoxyCodeLine{188                 ihl:4;}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#error  "{}Please, edit Makefile and add -\/DBYTE\_ORDER\_(BIG|LITTLE)\_ENDIAN"{}}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{192         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__iphdr_aabd17e6458449b589ae5385d8e07618a}{tos}};}
+\DoxyCodeLine{193         \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__iphdr_a6551f504ae847a655574224316890281}{tot\_len}};}
+\DoxyCodeLine{194         \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__iphdr_ac4ef9be9becfbb17119420e650025348}{id}};}
+\DoxyCodeLine{195         \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__iphdr_a827bffd05d55a91dc04e51adcb8589ff}{frag\_off}};}
+\DoxyCodeLine{196         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__iphdr_af3198a23e5fea714a5d6d95afc2b8efd}{ttl}};}
+\DoxyCodeLine{197         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__iphdr_a56a37c755bcacb62a730e595c482fd27}{protocol}};}
+\DoxyCodeLine{198         \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__iphdr_a2e0a6add4070845e799bff9728765de8}{check}};}
+\DoxyCodeLine{199         \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}}   \mbox{\hyperlink{structars__iphdr_ac8cbca8b4d42f62244dc68339102d2f4}{saddr}};}
+\DoxyCodeLine{200         \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}}   \mbox{\hyperlink{structars__iphdr_a69d572e5f469add72342e3dada52fdc7}{daddr}};}
+\DoxyCodeLine{201 \};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{comment}{/* The IP options structure */}}
+\DoxyCodeLine{204 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__ipopt}{ars\_ipopt}} \{}
+\DoxyCodeLine{205     u\_int8\_t \mbox{\hyperlink{structars__ipopt_a5182523bec98d011e06c3bbcc7dded0a}{kind}};}
+\DoxyCodeLine{206     u\_int8\_t \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{len}};}
+\DoxyCodeLine{207     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{208         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{209             u\_int16\_t \mbox{\hyperlink{structars__ipopt_a7d5f708c269ede5167c03cfc12d142fb}{s}};}
+\DoxyCodeLine{210             u\_int16\_t \mbox{\hyperlink{structars__ipopt_a367edc5bbb367c604825a668fd801d89}{c}};}
+\DoxyCodeLine{211             u\_int16\_t \mbox{\hyperlink{structars__ipopt_ab31af47d5720dc3fd2f36db04be133a6}{h}};}
+\DoxyCodeLine{212             u\_int8\_t \mbox{\hyperlink{structars__ipopt_afdffedc4934841273c641887fc661c65}{tcc}}[3];}
+\DoxyCodeLine{213         \} \mbox{\hyperlink{structars__ipopt_a7cc4b9c2eeb73bd5916a359ea6522b3b}{sec}};       \textcolor{comment}{/* security */}}
+\DoxyCodeLine{214         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{215             u\_int8\_t \mbox{\hyperlink{structars__ipopt_a8c31a70d0d5b269e0ae43daeeb48b397}{ptr}};}
+\DoxyCodeLine{216             u\_int8\_t \mbox{\hyperlink{structars__ipopt_adbc1386888caf5d40abf8a83336cc833}{data}}[37];}
+\DoxyCodeLine{217         \} \mbox{\hyperlink{structars__ipopt_a75868cadf240789b43bf1a0f7c167c2e}{src}};       \textcolor{comment}{/* loose and strict source routing */}}
+\DoxyCodeLine{218         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{219             u\_int8\_t \mbox{\hyperlink{structars__ipopt_a8c31a70d0d5b269e0ae43daeeb48b397}{ptr}};}
+\DoxyCodeLine{220             u\_int8\_t \mbox{\hyperlink{structars__ipopt_adbc1386888caf5d40abf8a83336cc833}{data}}[37];}
+\DoxyCodeLine{221         \} \mbox{\hyperlink{structars__ipopt_a907b209b01e279f58e641bf80d09dd7c}{rr}};     \textcolor{comment}{/* record route */}}
+\DoxyCodeLine{222         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{223             u\_int16\_t \mbox{\hyperlink{structars__ipopt_af2283199518742adc0a4f4a264aeb47a}{id}};}
+\DoxyCodeLine{224         \} \mbox{\hyperlink{structars__ipopt_a2218b121f20aea96f293db94f39a52e9}{sid}};       \textcolor{comment}{/* stream id */}}
+\DoxyCodeLine{225         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{226             u\_int8\_t \mbox{\hyperlink{structars__ipopt_a8c31a70d0d5b269e0ae43daeeb48b397}{ptr}};}
+\DoxyCodeLine{227             u\_int8\_t \mbox{\hyperlink{structars__ipopt_aff1a49ace550ffdd4860e52422343ba5}{flags}};}
+\DoxyCodeLine{228             u\_int8\_t \mbox{\hyperlink{structars__ipopt_adbc1386888caf5d40abf8a83336cc833}{data}}[36];}
+\DoxyCodeLine{229         \} \mbox{\hyperlink{structars__ipopt_af02cf59192f33b5e558c142672a7a07f}{ts}};     \textcolor{comment}{/* timestamp */}}
+\DoxyCodeLine{230     \} \mbox{\hyperlink{structars__ipopt_a4dea0eef7811d67f05b82dec40782128}{un}};}
+\DoxyCodeLine{231 \};}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{comment}{/* The UDP header structure */}}
+\DoxyCodeLine{234 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__udphdr}{ars\_udphdr}} \{ }
+\DoxyCodeLine{235     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structars__udphdr_a74d4e0629251639aadfb8ad1c61a6d78}{uh\_sport}};     \textcolor{comment}{/* source port */}}
+\DoxyCodeLine{236     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structars__udphdr_a62397c5440c5fe173d308af52ac1b6a1}{uh\_dport}};     \textcolor{comment}{/* destination port */}}
+\DoxyCodeLine{237     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structars__udphdr_a6cb40e8a2e4335d0226a29fe90de193f}{uh\_ulen}};      \textcolor{comment}{/* udp length */}}
+\DoxyCodeLine{238     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structars__udphdr_a7d322b5a2fc66eea1fb792dbc707ddd8}{uh\_sum}};       \textcolor{comment}{/* udp checksum */}}
+\DoxyCodeLine{239 \};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{comment}{/* The TCP header structure */}}
+\DoxyCodeLine{242 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__tcphdr}{ars\_tcphdr}} \{}
+\DoxyCodeLine{243     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__tcphdr_a9d451e24db593175ea0f797de209149b}{th\_sport}};               \textcolor{comment}{/* source port */}}
+\DoxyCodeLine{244     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__tcphdr_a80afd648df865d2a07db9906027ffefe}{th\_dport}};               \textcolor{comment}{/* destination port */}}
+\DoxyCodeLine{245     \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}}  \mbox{\hyperlink{structars__tcphdr_a2177fcefcf88a27c352be21d67889672}{th\_seq}};                 \textcolor{comment}{/* sequence number */}}
+\DoxyCodeLine{246     \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}}  \mbox{\hyperlink{structars__tcphdr_a95ea81a0ecb6f505cd353f60b209980d}{th\_ack}};                 \textcolor{comment}{/* acknowledgement number */}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#if defined (BYTE\_ORDER\_LITTLE\_ENDIAN)}}
+\DoxyCodeLine{248     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    th\_x2:4,                \textcolor{comment}{/* (unused) */}}
+\DoxyCodeLine{249         th\_off:4;               \textcolor{comment}{/* data offset */}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#elif defined (BYTE\_ORDER\_BIG\_ENDIAN)}}
+\DoxyCodeLine{251     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    th\_off:4,               \textcolor{comment}{/* data offset */}}
+\DoxyCodeLine{252         th\_x2:4;                \textcolor{comment}{/* (unused) */}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#error  "{}Please, edit Makefile and add -\/DBYTE\_ORDER\_(BIG|LITTLE)\_ENDIAN"{}}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{256     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__tcphdr_a48eaa5ea327200f2452150036f794d64}{th\_flags}};}
+\DoxyCodeLine{257     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__tcphdr_a265bd0338600b82c06c906cf4e6743be}{th\_win}};                 \textcolor{comment}{/* window */}}
+\DoxyCodeLine{258     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__tcphdr_a4ee81b74e0cdb8b9465e4e2ca12f6dbc}{th\_sum}};                 \textcolor{comment}{/* checksum */}}
+\DoxyCodeLine{259     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__tcphdr_a140542dac4445e7374a354579e76a7c5}{th\_urp}};                 \textcolor{comment}{/* urgent pointer */}}
+\DoxyCodeLine{260 \};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{comment}{/* The TCP options structure */}}
+\DoxyCodeLine{263 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__tcpopt}{ars\_tcpopt}} \{}
+\DoxyCodeLine{264     u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a5182523bec98d011e06c3bbcc7dded0a}{kind}};}
+\DoxyCodeLine{265     u\_int8\_t \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{len}};}
+\DoxyCodeLine{266     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{267         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{268             u\_int16\_t \mbox{\hyperlink{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}{size}};}
+\DoxyCodeLine{269         \} \mbox{\hyperlink{structars__tcpopt_a8bf1606a45f983cb9473ca4a58c891f0}{mss}};}
+\DoxyCodeLine{270         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{271             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a826530d4b102dbf8286b88f738e5394e}{shift}};}
+\DoxyCodeLine{272         \} \mbox{\hyperlink{structars__tcpopt_ace82fe1d432217f5d64c771cab352e15}{win}};}
+\DoxyCodeLine{273         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{274             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_ae6181a128818bb77ea92fee7c2e8a87b}{origin}}[4];}
+\DoxyCodeLine{275             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}{size}}[4];}
+\DoxyCodeLine{276         \} \mbox{\hyperlink{structars__tcpopt_aae0c4f803dbf3e263d955186c4696e84}{sack}}[4]; \textcolor{comment}{/* max 4 SACK blocks in 40 bytes of space */}}
+\DoxyCodeLine{277         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{278             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_aa48f51965ed460142d6f5764a62a555d}{info}}[4];}
+\DoxyCodeLine{279         \} \mbox{\hyperlink{structars__tcpopt_a3fe8f35f70c2e4d22232c5b755434797}{echo}};}
+\DoxyCodeLine{280         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{281             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a9fb98aadc6fbca8722bac71c2a0887b5}{tsval}}[4];}
+\DoxyCodeLine{282             u\_int8\_t \mbox{\hyperlink{structars__tcpopt_a129383b6ff7dda859904eaf42721cddf}{tsecr}}[4];}
+\DoxyCodeLine{283         \} \mbox{\hyperlink{structars__tcpopt_a4e23315ace74ead8b4a23f516a98ed8b}{timestamp}};}
+\DoxyCodeLine{284     \} \mbox{\hyperlink{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}{un}};}
+\DoxyCodeLine{285 \};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{comment}{/* The ICMP header structure */}}
+\DoxyCodeLine{288 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__icmphdr}{ars\_icmphdr}}}
+\DoxyCodeLine{289 \{}
+\DoxyCodeLine{290     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}          \mbox{\hyperlink{structars__icmphdr_aa05eefca31ad6bd4617aac0176b8366e}{type}};}
+\DoxyCodeLine{291     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}          \mbox{\hyperlink{structars__icmphdr_a309385d6277e07c7945ec0f5762ea3c4}{code}};}
+\DoxyCodeLine{292     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}         \mbox{\hyperlink{structars__icmphdr_a5ac4d40ff194847164757a9cd6f59393}{checksum}};}
+\DoxyCodeLine{293     \textcolor{keyword}{union}}
+\DoxyCodeLine{294     \{}
+\DoxyCodeLine{295         \textcolor{keyword}{struct}}
+\DoxyCodeLine{296         \{}
+\DoxyCodeLine{297             \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__icmphdr_ac4ef9be9becfbb17119420e650025348}{id}};}
+\DoxyCodeLine{298             \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}   \mbox{\hyperlink{structars__icmphdr_a31eb0bd1fa3e44050cabdc0ca6f75bd6}{sequence}};}
+\DoxyCodeLine{299         \} \mbox{\hyperlink{structars__icmphdr_ae6bb149008969a60b212498bc69c06cb}{echo}}; \textcolor{comment}{/* called echo since it's the most used */}}
+\DoxyCodeLine{300         \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}}   \mbox{\hyperlink{structars__icmphdr_ac3274499d7ceec6f665f8e76c683c850}{gateway}};}
+\DoxyCodeLine{301     \} \mbox{\hyperlink{structars__icmphdr_a006aa8d92995f6021285a77d1d6945cd}{un}};}
+\DoxyCodeLine{302 \};}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{/* TCP/UDP pseudo header used to compute the checksum */}}
+\DoxyCodeLine{305 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__pseudohdr}{ars\_pseudohdr}}}
+\DoxyCodeLine{306 \{}
+\DoxyCodeLine{307     \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}} \mbox{\hyperlink{structars__pseudohdr_ac8cbca8b4d42f62244dc68339102d2f4}{saddr}};}
+\DoxyCodeLine{308     \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\_\_u32}} \mbox{\hyperlink{structars__pseudohdr_a69d572e5f469add72342e3dada52fdc7}{daddr}};}
+\DoxyCodeLine{309     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}  \mbox{\hyperlink{structars__pseudohdr_aa7dbd53a2c967689e2e5f00d4263d5e8}{zero}};}
+\DoxyCodeLine{310     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}  \mbox{\hyperlink{structars__pseudohdr_a56a37c755bcacb62a730e595c482fd27}{protocol}};}
+\DoxyCodeLine{311     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}} \mbox{\hyperlink{structars__pseudohdr_a38111d7802994af61e483b3d5028110e}{lenght}};}
+\DoxyCodeLine{312 \};}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 \textcolor{comment}{/* The IGRP header structure */}}
+\DoxyCodeLine{315 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__igrphdr}{ars\_igrphdr}} \{}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#if defined(BYTE\_ORDER\_LITTLE\_ENDIAN)}}
+\DoxyCodeLine{317         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    opcode:4,}
+\DoxyCodeLine{318                 version:4;}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#elif defined (BYTE\_ORDER\_BIG\_ENDIAN)}}
+\DoxyCodeLine{320         \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    version:4,}
+\DoxyCodeLine{321                 opcode:4;}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#error  "{}Please, edit Makefile and add -\/DBYTE\_ORDER\_(BIG|LITTLE)\_ENDIAN"{}}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{325     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrphdr_a6b29182231bf4f351fb886fcc60df6b7}{edition}};}
+\DoxyCodeLine{326     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__igrphdr_af4e0d17b9fb9c7696a07fda714ab3695}{autosys}};}
+\DoxyCodeLine{327     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__igrphdr_a41b683d04415e4a5518db950b4639dbc}{interior}};}
+\DoxyCodeLine{328     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__igrphdr_ab062a3c2f3be1611d42218e5e8c887ae}{system}};}
+\DoxyCodeLine{329     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__igrphdr_aea245f529e5854d0daff96549476484f}{exterior}};}
+\DoxyCodeLine{330     \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\_\_u16}}  \mbox{\hyperlink{structars__igrphdr_a5ac4d40ff194847164757a9cd6f59393}{checksum}};}
+\DoxyCodeLine{331 \};}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{comment}{/* The IGRP entry */}}
+\DoxyCodeLine{334 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__igrpentry}{ars\_igrpentry}} \{}
+\DoxyCodeLine{335     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_acddf301f691e7a695759f17978055fd3}{destination}}[3];}
+\DoxyCodeLine{336     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_a7b941e815cee0143cbbdca1758ee0706}{delay}}[3];}
+\DoxyCodeLine{337     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_ad8a9873f6bf0f9ce1b8f42ed3d683800}{bandwidth}}[3];}
+\DoxyCodeLine{338     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_a1b2c04322d50556dff6d54b9d11c5bb4}{mtu}}[2];}
+\DoxyCodeLine{339     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_ad91be3652211e0ff545f55e2feb45992}{reliability}};}
+\DoxyCodeLine{340     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_af8ac2d5fb42a33641a1becb0cff0a293}{load}};}
+\DoxyCodeLine{341     \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\_\_u8}}    \mbox{\hyperlink{structars__igrpentry_a63c69db3cb427a4f55639b70c51fd7a3}{hopcount}};}
+\DoxyCodeLine{342 \};}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__packet}{ars\_packet}}; \textcolor{comment}{/* forward declaration */}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{comment}{/* ARS layer */}}
+\DoxyCodeLine{347 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__layer}{ars\_layer}} \{}
+\DoxyCodeLine{348     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__layer_a99806d94e347451617697fdb6beb57c3}{l\_type}};}
+\DoxyCodeLine{349     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__layer_a06b47c31d917b16aca9942546c8646f2}{l\_size}};}
+\DoxyCodeLine{350     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{l\_flags}};}
+\DoxyCodeLine{351     \textcolor{keywordtype}{void} *\mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{l\_data}};}
+\DoxyCodeLine{352     \textcolor{keyword}{struct }\mbox{\hyperlink{structars__packet}{ars\_packet}} *\mbox{\hyperlink{structars__layer_a36dd7e078ffa9b32174f220c9534e5fe}{l\_packet}};}
+\DoxyCodeLine{353 \};}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define ARS\_MAX\_LAYER   256}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define ARS\_ERR\_BUFSZ   1024}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{comment}{/* Types */}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define ARS\_TYPE\_SIZE       32}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define ARS\_TYPE\_NULL       0}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define ARS\_TYPE\_IP     1}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define ARS\_TYPE\_IPOPT      2}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define ARS\_TYPE\_ICMP       3}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define ARS\_TYPE\_UDP        4}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define ARS\_TYPE\_TCP        5}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define ARS\_TYPE\_TCPOPT     6}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define ARS\_TYPE\_IGRP       7}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define ARS\_TYPE\_IGRPENTRY  8}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define ARS\_TYPE\_DATA       31}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 \textcolor{comment}{/* ARS packet context */}}
+\DoxyCodeLine{372 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__packet}{ars\_packet}} \{}
+\DoxyCodeLine{373     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structars__packet_a8768e3dd344db5896ce7f68165537de8}{p\_error}};}
+\DoxyCodeLine{374     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__packet_ab14e3db8eb67682ec17c6521385fd801}{p\_layer\_nr}};}
+\DoxyCodeLine{375     \textcolor{keyword}{struct }\mbox{\hyperlink{structars__layer}{ars\_layer}} \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{p\_layer}}[\mbox{\hyperlink{ars_8h_a9f8cf96c24821f7659ce49f1d3bcb7ce}{ARS\_MAX\_LAYER}}];}
+\DoxyCodeLine{376     \textcolor{keywordtype}{void} *\mbox{\hyperlink{structars__packet_ac63864ce6ab54ebf0c025a41ce48b3d3}{p\_default}}[\mbox{\hyperlink{ars_8h_a413e48ff2593d006730304a8d809b3c2}{ARS\_TYPE\_SIZE}}];}
+\DoxyCodeLine{377     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__packet_a23498097c2606e5eda589701a8b81f90}{p\_options}};}
+\DoxyCodeLine{378     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__packet_a13307a0c81bbf19030ea4732534efbec}{aux}}; \textcolor{comment}{/* Auxiliar variable for data exchange between functions */}}
+\DoxyCodeLine{379     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__packet_a9de6bfc936a69cb54ed00430d6524dff}{aux\_ipproto}}; \textcolor{comment}{/* This hold the ip-\/>proto field seen in the last}}
+\DoxyCodeLine{380 \textcolor{comment}{              IP datagram so that when the IP options processing}}
+\DoxyCodeLine{381 \textcolor{comment}{              is done, the split-\/machine can continue with}}
+\DoxyCodeLine{382 \textcolor{comment}{              the right state. */}}
+\DoxyCodeLine{383 \};}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{comment}{/* Facility to check for flags */}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define ARS\_TAKE(f,x)       (f \& x)}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define ARS\_DONTTAKE(f, x)  (!(f \& x))}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define ARS\_TAKE\_NONE       0}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{comment}{/* IP layer flags */}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define ARS\_TAKE\_IP\_VERSION (1 << 0)}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define ARS\_TAKE\_IP\_HDRLEN  (1 << 1)}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define ARS\_TAKE\_IP\_TOTLEN  (1 << 2)}}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define ARS\_TAKE\_IP\_PROTOCOL    (1 << 3)}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#define ARS\_TAKE\_IP\_CKSUM   (1 << 4)}}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 \textcolor{comment}{/* IP options layers flags */}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define ARS\_TAKE\_IPOPT\_PTR  (1 << 0) }\textcolor{comment}{/* for RR, LSRR, SSRR */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{comment}{/* ICMP layer flags */}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define ARS\_TAKE\_ICMP\_CKSUM (1 << 0)}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 \textcolor{comment}{/* UDP layer flags */}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define ARS\_TAKE\_UDP\_CKSUM  (1 << 0)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define ARS\_TAKE\_UDP\_LEN    (1 << 1)}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 \textcolor{comment}{/* TCP layer flags */}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define ARS\_TAKE\_TCP\_HDRLEN (1 << 0)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define ARS\_TAKE\_TCP\_CKSUM  (1 << 1)}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{comment}{/* IGRP layer flags */}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#define ARS\_TAKE\_IGRP\_CKSUM (1 << 0)}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{comment}{/* Some function that acts on layer switch to the last layer with this */}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define ARS\_LAST\_LAYER      -\/1}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 \textcolor{comment}{/* Structure and defines needed to calculate the internet-\/like checksum}}
+\DoxyCodeLine{418 \textcolor{comment}{ * when the data is splitted in more not adjacent buffers */}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define ARS\_MC\_INIT     0}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define ARS\_MC\_UPDATE   1}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define ARS\_MC\_FINAL    2}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{keyword}{struct }\mbox{\hyperlink{structmc__context}{mc\_context}} \{}
+\DoxyCodeLine{424     u\_int32\_t \mbox{\hyperlink{structmc__context_a342af9c301f6ee4993377f903ef0cef3}{oddbyte\_flag}};}
+\DoxyCodeLine{425     u\_int32\_t \mbox{\hyperlink{structmc__context_a87942700d8859d4dd44d35c352bc82c4}{old}};}
+\DoxyCodeLine{426     u\_int8\_t \mbox{\hyperlink{structmc__context_a577d87350019f1df205672f17517843f}{oddbyte}};}
+\DoxyCodeLine{427     u\_int8\_t \mbox{\hyperlink{structmc__context_a7ba9cc4db996da6c6b06276a0ed36a9c}{pad}};}
+\DoxyCodeLine{428 \};}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{comment}{/* ARS layer info structure */}}
+\DoxyCodeLine{431 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__layer__info}{ars\_layer\_info}} \{}
+\DoxyCodeLine{432     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structars__layer__info_a32cece8eb03d85b23df68312d04ca9e7}{li\_name}}; \textcolor{comment}{/* NULL = unused slot */}}
+\DoxyCodeLine{433     int (*\mbox{\hyperlink{structars__layer__info_a2a14d1de081a5c6533c26db9af9f23e2}{li\_compiler}}) (\textcolor{keyword}{struct }\mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer); \textcolor{comment}{/* NULL = NOP */}}
+\DoxyCodeLine{434     int (*\mbox{\hyperlink{structars__layer__info_a4cd643bb5116ac50a13338419ee5d437}{li\_rapd}}) (\textcolor{keyword}{struct }\mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct }\mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{435     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__layer__info_ad3f99071e2a45a0a256d33c018950293}{layer\_id}};}
+\DoxyCodeLine{436 \};}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 \textcolor{comment}{/* ARS layer info table */}}
+\DoxyCodeLine{439 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structars__layer__info}{ars\_layer\_info}} \mbox{\hyperlink{ars_8h_a7bb206e0c5d1143529484fecea161e6d}{ars\_linfo}}[\mbox{\hyperlink{ars_8h_a413e48ff2593d006730304a8d809b3c2}{ARS\_TYPE\_SIZE}}];}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{comment}{/* ARS interface managment structure and defines */}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define ARS\_IF\_UP   (1 << 0)}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define ARS\_IF\_LOOP (1 << 1)}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define ARS\_IF\_IPV4 (1 << 2)}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define ARS\_IF\_IPV6     (1 << 3)}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define ARS\_IF\_MISCONF  (1 << 4)}}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define ARS\_IF\_MAX\_IFACE    16}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define ARS\_IF\_NAME\_SIZE    32}}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{comment}{/* iface type are obtained using libpcap to avoid efforts duplication */}}
+\DoxyCodeLine{452 \textcolor{keyword}{struct }\mbox{\hyperlink{structars__iface}{ars\_iface}} \{}
+\DoxyCodeLine{453     \textcolor{keywordtype}{char} \mbox{\hyperlink{structars__iface_a0cf65151d888282d738166d2185f922b}{if\_name}}[\mbox{\hyperlink{ars_8h_a3b38fc400cf846dac154c52e2adb8122}{ARS\_IF\_NAME\_SIZE}}];}
+\DoxyCodeLine{454     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__iface_abcc5d05d40a2a7768638cb7abf47316d}{if\_mtu}};}
+\DoxyCodeLine{455     \textcolor{keywordtype}{int} \mbox{\hyperlink{structars__iface_ab88aadfbe4d6232cf391131d2e3ca4ed}{if\_flags}};}
+\DoxyCodeLine{456     \textcolor{keywordtype}{char} \mbox{\hyperlink{structars__iface_ad5825285a8f6f13d5017e9f8ab7c86ef}{if\_ipv4addr}}[\mbox{\hyperlink{ars_8h_aada83b9034c78ac3bbb1b4569e6c20b8}{ARS\_INET\_ADDRSTRLEN}}];}
+\DoxyCodeLine{457     \textcolor{keywordtype}{char} \mbox{\hyperlink{structars__iface_ac79363f34bc66d2fdc1a9580f83e87ab}{if\_ipv6addr}}[\mbox{\hyperlink{ars_8h_aea7e0add4960052d0c6ccf51cbc0d796}{ARS\_INET6\_ADDRSTRLEN}}];}
+\DoxyCodeLine{458 \};}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460 \textcolor{comment}{/* Flags for packet splitting */}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define ARS\_SPLIT\_FTRUNC        (1 << 0)}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define ARS\_SPLIT\_FBADCKSUM     (1 << 1)}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 \textcolor{comment}{/* Ars packet options */}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define ARS\_OPT\_RAPD\_HEXDATA    (1 << 0) }\textcolor{comment}{/* Use hex format for RAPD data */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 \textcolor{comment}{/* More macros */}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define ars\_atou(x) strtoul(x, (char **) NULL, 0)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#define ars\_set\_option(pkt,opt) do \{ (pkt)-\/>p\_options |= (opt); \} while(0)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#define ars\_clear\_option(pkt,opt) do \{ (pkt)-\/>p\_options \&= \string~(opt); \} while(0)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define ars\_test\_option(pkt,opt) ((pkt)-\/>p\_options \& (opt))}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{comment}{/* Prototypes */}}
+\DoxyCodeLine{474 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a0a6e5594619f586edb2416852ed21894}{ars\_init}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{475 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_afb188f5cb31c058809567f25c012ca02}{ars\_destroy}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{476 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ae59fc88a494e6837ec2f6f4fa28c7eba}{ars\_nospace}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{477 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a1ce7c6839c7cd151386d7c774f2764c0}{ars\_add\_generic}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{int} type);}
+\DoxyCodeLine{478 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a96a021f2a062c189a2a76c52c125d955}{ars\_add\_iphdr}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{479 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} option);}
+\DoxyCodeLine{480 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a799f01a17a1ca063f83133e69692b45a}{ars\_add\_udphdr}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{481 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a598390035eb5a96bfc9b26c2a00bd391}{ars\_add\_tcphdr}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{482 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} option);}
+\DoxyCodeLine{483 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a69c72255daed019058e26bb8fbba56f2}{ars\_add\_icmphdr}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{484 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_ac37ea8d7531e615ce1b435f75f622d9d}{ars\_add\_igrphdr}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{485 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_ab603fc84b6537b17dc7fcb3d5720dbc5}{ars\_add\_igrpentry}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} unused);}
+\DoxyCodeLine{486 \textcolor{keywordtype}{void} *\mbox{\hyperlink{ars_8h_a1a0861f5793b91de1c4c9358c72eea07}{ars\_add\_data}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{487 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{ars_8h_a241b0bdc526cdc15746ca54a30e777d6}{ars\_relative\_size}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer\_nr);}
+\DoxyCodeLine{488 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{ars_8h_a7007095adb110b508f205465bd1daac1}{ars\_packet\_size}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{489 u\_int16\_t \mbox{\hyperlink{ars_8h_a334e7533211976bde06b8993431ecc30}{ars\_cksum}}(\textcolor{keywordtype}{void} *vbuf, \textcolor{keywordtype}{size\_t} nbytes);}
+\DoxyCodeLine{490 u\_int16\_t \mbox{\hyperlink{ars_8h_a9bd43b64bdc0b20882624b9738bc7ea7}{ars\_multi\_cksum}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structmc__context}{mc\_context}} *c, \textcolor{keywordtype}{int} op, \textcolor{keywordtype}{void} *vbuf, \textcolor{keywordtype}{size\_t} nbytes);}
+\DoxyCodeLine{491 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a66b4e254eb995a08088c59c90d5f018c}{ars\_compile}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{492 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a9e47a057eb550803c626841b78a8dfc6}{ars\_udptcp\_cksum}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer, u\_int16\_t *sum);}
+\DoxyCodeLine{493 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a1ed1956228553634c4f934947c429d9b}{ars\_open\_rawsocket}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{494 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a9be6f3a1f8125962ff51fcd818946c6a}{ars\_build\_packet}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} **packet, \textcolor{keywordtype}{size\_t} *size);}
+\DoxyCodeLine{495 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a671db4628929b600f09dfb1d89535a66}{ars\_bsd\_fix}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *packet, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{496 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_aebcdf7d54a17d16b195a5edbde303446}{ars\_set\_flags}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer, \textcolor{keywordtype}{int} flags);}
+\DoxyCodeLine{497 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a5503f19bc9c649c307216e54c8d871b0}{ars\_send}}(\textcolor{keywordtype}{int} s, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keyword}{struct} sockaddr *sa, \mbox{\hyperlink{pcap-linux_8c_a6b82106923cc13b3a9734520ecc29514}{socklen\_t}} slen);}
+\DoxyCodeLine{498 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ab8349ba26df7375ef8171d0426f8ded9}{ars\_resolve}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, u\_int32\_t *dest, \textcolor{keywordtype}{char} *hostname);}
+\DoxyCodeLine{499 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a3cf8802392c7683727136ce6dfd90f2d}{ars\_set\_error}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt, ...);}
+\DoxyCodeLine{500 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_af729708f8aafff8605adfc66ad0ee440}{ars\_d\_build}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{char} *t);}
+\DoxyCodeLine{501 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a5399e563c9295f71aee54041d67888c7}{ars\_valid\_layer}}(\textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{502 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ad61d2d753038e71cec6adce3c068de0a}{ars\_get\_iface\_list}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__iface}{ars\_iface}} *iface, \textcolor{keywordtype}{size\_t} *isize);}
+\DoxyCodeLine{503 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a6efa77fd12cb81cbdc2f88815ac10108}{ars\_get\_iface}}(\textcolor{keywordtype}{char} *name, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__iface}{ars\_iface}} *i);}
+\DoxyCodeLine{504 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a5399e563c9295f71aee54041d67888c7}{ars\_valid\_layer}}(\textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{505 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a7b7275594e4793959743943019f0a428}{ars\_remove\_layer}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507 \textcolor{comment}{/* split.c prototypes */}}
+\DoxyCodeLine{508 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a481d59fddb08ee4c5b3985c95e727bcd}{ars\_seems\_ip}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__iphdr}{ars\_iphdr}} *\mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{509 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ac39947e366c86a671125aab2b36103b8}{ars\_guess\_ipoff}}(\textcolor{keywordtype}{void} *packet, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{int} *lhs);}
+\DoxyCodeLine{510 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a607d30a8f190001e54e88b7478e885bf}{ars\_check\_ip\_cksum}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__iphdr}{ars\_iphdr}} *\mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}});}
+\DoxyCodeLine{511 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a6b9d2d8541bae8e74d2be03876a7b5cf}{ars\_check\_icmp\_cksum}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structars__icmphdr}{ars\_icmphdr}} *icmp, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{512 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a50794dabefd2dbfd27da3d8b54d379f5}{ars\_split\_packet}}(\textcolor{keywordtype}{void} *packet, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{int} ipoff, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514 \textcolor{comment}{/* reverse apd */}}
+\DoxyCodeLine{515 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ad37d3d2b7c7c3f89c8b88e6a4d683d2f}{ars\_d\_from\_ars}}(\textcolor{keywordtype}{char} *dest, \textcolor{keywordtype}{size\_t} len, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt);}
+\DoxyCodeLine{516 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\_rapd\_ip}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{517 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_ad69959640d8fae0edf5c45d11a791af3}{ars\_rapd\_ipopt}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{518 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a56b59ff18e1d699e8740e43477bda583}{ars\_rapd\_icmp}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{519 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a78cd12df0ebfe55f254af36348207b65}{ars\_rapd\_udp}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{520 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_aa14e6020b5e018413374191971aa4dec}{ars\_rapd\_tcp}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{521 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\_rapd\_tcpopt}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{522 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_aedfd78f246469ae0d54dc40444be01b0}{ars\_rapd\_igrp}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{523 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a45d10527dac7e1230157c084bac3fe36}{ars\_rapd\_igrpentry}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{524 \textcolor{keywordtype}{int} \mbox{\hyperlink{ars_8h_a5e5001c9bb1e92b7ebc6d5fd2fc5cc07}{ars\_rapd\_data}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structadbuf}{adbuf}} *dest, \textcolor{keyword}{struct} \mbox{\hyperlink{structars__packet}{ars\_packet}} *pkt, \textcolor{keywordtype}{int} layer);}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#if !defined(\_\_FreeBSD\_\_) \&\& !defined(\_\_OpenBSD\_\_) \&\& !defined(\_\_NetBSD\_\_) \&\& \(\backslash\)}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{    !defined(\_\_bsdi\_\_) \&\& !defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{528 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{ars_8h_aeb79f86261de904967d433c1b5e9a1de}{strlcpy}}(\textcolor{keywordtype}{char} *\mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *src, \textcolor{keywordtype}{size\_t} siz);}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_ARS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

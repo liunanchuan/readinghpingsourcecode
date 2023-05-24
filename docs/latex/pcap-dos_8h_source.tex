@@ -1,0 +1,233 @@
+\hypertarget{pcap-dos_8h_source}{}\doxysection{pcap-\/dos.h}
+\label{pcap-dos_8h_source}\index{libpcap-\/1.1.1/pcap-\/dos.h@{libpcap-\/1.1.1/pcap-\/dos.h}}
+\mbox{\hyperlink{pcap-dos_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Internal details for libpcap on DOS.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * 32-\/bit targets: djgpp, Pharlap or DOS4GW.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * @(\#) \$Header: /tcpdump/master/libpcap/pcap-\/dos.h,v 1.1 2004-\/12-\/18 08:52:10 guy Exp \$ (LBL)}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_PCAP\_DOS\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_PCAP\_DOS\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef \_\_DJGPP\_\_}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <pc.h>}    \textcolor{comment}{/* simple non-\/conio kbhit */}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int}            \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}};}
+\DoxyCodeLine{18 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}  \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}};}
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}};}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}  \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}};}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}           \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}}[6];}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define ETH\_ALEN       sizeof(ETHER)   }\textcolor{comment}{/* Ether address length */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define ETH\_HLEN       (2*ETH\_ALEN+2)  }\textcolor{comment}{/* Ether header length  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define ETH\_MTU        1500}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define ETH\_MIN        60}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define ETH\_MAX        (ETH\_MTU+ETH\_HLEN)}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef TRUE}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{  \#define TRUE   1}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{  \#define FALSE  0}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define PHARLAP  1}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define DJGPP    2}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define DOS4GW   4}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef \_\_DJGPP\_\_}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{  \#undef  DOSX}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{  \#define DOSX DJGPP}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_WATCOMC\_\_}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  \#undef  DOSX}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{  \#define DOSX DOS4GW}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_HIGHC\_\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  \#include <pharlap.h>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{  \#undef  DOSX}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{  \#define DOSX PHARLAP}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{  \#define inline}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{54   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-dos_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{UINT}};}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) || defined(\_\_HIGHC\_\_)}}
+\DoxyCodeLine{59   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}  uint64;}
+\DoxyCodeLine{60   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}  QWORD;}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if defined(\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{64   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64  uint64;}
+\DoxyCodeLine{65   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64  QWORD;}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define ARGSUSED(x)  (void) x}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined (\_\_SMALL\_\_) || defined(\_\_LARGE\_\_)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{  \#define DOSX 0}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#elif !defined(DOSX)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{  \#error DOSX not defined; 1 = PharLap, 2 = djgpp, 4 = DOS4GW}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#ifdef \_\_HIGHC\_\_}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define min(a,b) \_min(a,b)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define max(a,b) \_max(a,b)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifndef min}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define min(a,b) ((a) < (b) ? (a) : (b))}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#ifndef max}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define max(a,b) ((a) < (b) ? (b) : (a))}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#if !defined(\_U\_) \&\& defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define \_U\_  \_\_attribute\_\_((unused))}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifndef \_U\_}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define \_U\_}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#if defined(USE\_32BIT\_DRIVERS)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{  \#include "{}msdos/pm\_drvr/lock.h"{}}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{  \#ifndef RECEIVE\_QUEUE\_SIZE}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{  \#define RECEIVE\_QUEUE\_SIZE  60}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{  \#ifndef RECEIVE\_BUF\_SIZE}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{  \#define RECEIVE\_BUF\_SIZE   (ETH\_MAX+20)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} el2\_dev     \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};  \textcolor{comment}{/* 3Com EtherLink II */}}
+\DoxyCodeLine{110   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} el3\_dev     \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};  \textcolor{comment}{/*      EtherLink III */}}
+\DoxyCodeLine{111   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} tc59\_dev    \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};  \textcolor{comment}{/* 3Com Vortex Card (?) */}}
+\DoxyCodeLine{112   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} tc515\_dev   \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{113   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} tc90x\_dev   \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{114   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} tc90bcx\_dev \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{115   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} wd\_dev      \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{116   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} ne\_dev      \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{117   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} acct\_dev    \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{118   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} cs89\_dev    \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{119   \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} rtl8139\_dev \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keyword}{struct }rx\_ringbuf \{}
+\DoxyCodeLine{122          \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} in\_index;   \textcolor{comment}{/* queue index head */}}
+\DoxyCodeLine{123          \textcolor{keywordtype}{int}          out\_index;  \textcolor{comment}{/* queue index tail */}}
+\DoxyCodeLine{124          \textcolor{keywordtype}{int}          elem\_size;  \textcolor{comment}{/* size of each element */}}
+\DoxyCodeLine{125          \textcolor{keywordtype}{int}          num\_elem;   \textcolor{comment}{/* number of elements */}}
+\DoxyCodeLine{126          \textcolor{keywordtype}{char}        *buf\_start;  \textcolor{comment}{/* start of buffer pool */}}
+\DoxyCodeLine{127        \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{keyword}{struct }rx\_elem \{}
+\DoxyCodeLine{130          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} size;              \textcolor{comment}{/* size copied to this element */}}
+\DoxyCodeLine{131          \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  data[\mbox{\hyperlink{pcap-dos_8h_a6e1a515d60dc09e1dc05784dc9ddeab6}{ETH\_MAX}}+10];  \textcolor{comment}{/* add some margin. data[0] should be */}}
+\DoxyCodeLine{132        \};                         \textcolor{comment}{/* dword aligned */}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{keyword}{extern} \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *get\_rxbuf     (\textcolor{keywordtype}{int} len) \mbox{\hyperlink{pcap-dos_8h_ade55b97fb64d28922a508daa3489a765}{LOCKED\_FUNC}};}
+\DoxyCodeLine{135   \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   peek\_rxbuf    (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} **buf);}
+\DoxyCodeLine{136   \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   release\_rxbuf (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *buf);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{  \#define LOCKED\_VAR}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{  \#define LOCKED\_FUNC}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} \{}
+\DoxyCodeLine{143          \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{structdevice_a8f8f80d37794cde9472343e4487ba3eb}{name}};}
+\DoxyCodeLine{144          \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{structdevice_a4c33c7528c496ba2624340a9f3b561d3}{long\_name}};}
+\DoxyCodeLine{145          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structdevice_a5887f13be098ab68b731f53b4a764b75}{base\_addr}};      \textcolor{comment}{/* device I/O address       */}}
+\DoxyCodeLine{146          \textcolor{keywordtype}{int}    \mbox{\hyperlink{structdevice_aea22ec27eb52d3e0d744184067cbca3a}{irq}};            \textcolor{comment}{/* device IRQ number        */}}
+\DoxyCodeLine{147          \textcolor{keywordtype}{int}    \mbox{\hyperlink{structdevice_aeda5492e885c290734bd00220b7df52e}{dma}};            \textcolor{comment}{/* DMA channel              */}}
+\DoxyCodeLine{148          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structdevice_a2fb64a985825b1c20768f4e30913e64a}{mem\_start}};      \textcolor{comment}{/* shared mem start         */}}
+\DoxyCodeLine{149          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structdevice_a84494514d50af98afa7351a6f43c97b6}{mem\_end}};        \textcolor{comment}{/* shared mem end           */}}
+\DoxyCodeLine{150          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structdevice_a2cd2b779f8cf7251464e26a100dfeb83}{rmem\_start}};     \textcolor{comment}{/* shmem "{}recv"{} start       */}}
+\DoxyCodeLine{151          \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structdevice_a048ffec2fd2f237a4823b4b05f2b737d}{rmem\_end}};       \textcolor{comment}{/* shared "{}recv"{} end        */}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153          \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *\mbox{\hyperlink{structdevice_a37f558b4fc81c233fc9745ffa9fdf856}{next}};   \textcolor{comment}{/* next device in list      */}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155          \textcolor{comment}{/* interface service routines */}}
+\DoxyCodeLine{156          int   (*\mbox{\hyperlink{structdevice_ac96336806bad2ffec214e7fb691f57a1}{probe}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev);}
+\DoxyCodeLine{157          int   (*\mbox{\hyperlink{structdevice_adaf94dd8c4c0be5a085ac4336df2c0ba}{open}}) (\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev);}
+\DoxyCodeLine{158          void  (*\mbox{\hyperlink{structdevice_aef42d65e64abd60a8c85d438a4e4498d}{close}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev);}
+\DoxyCodeLine{159          int   (*\mbox{\hyperlink{structdevice_a12d350d6cc9db5ed39e20cb861dd3a1d}{xmit}}) (\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *buf, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{160          \textcolor{keywordtype}{void} *(*get\_stats)(\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev);}
+\DoxyCodeLine{161          void  (*\mbox{\hyperlink{structdevice_a9a5c3ec9aeb1ee9c1486dedf9b20c39d}{set\_multicast\_list}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *dev);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163          \textcolor{comment}{/* driver-\/to-\/pcap receive buffer routines */}}
+\DoxyCodeLine{164          int   (*\mbox{\hyperlink{structdevice_a3e1a911cb3ab2824a8aa963265b840ea}{copy\_rx\_buf}}) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *buf, \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}}); \textcolor{comment}{/* rx-\/copy (pktdrvr only) */}}
+\DoxyCodeLine{165          \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *(*get\_rx\_buf) (\textcolor{keywordtype}{int} len);             \textcolor{comment}{/* rx-\/buf fetch/enqueue */}}
+\DoxyCodeLine{166          int   (*\mbox{\hyperlink{structdevice_a7f49c4d9124f80d17e97b56079e43d19}{peek\_rx\_buf}}) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} **buf);         \textcolor{comment}{/* rx-\/non-\/copy at queue */}}
+\DoxyCodeLine{167          int   (*\mbox{\hyperlink{structdevice_a85c2eb971c6c7ba302478faf82f3b1ae}{release\_rx\_buf}}) (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *buf);       \textcolor{comment}{/* release after peek */}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169          \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structdevice_aa5250ff1f63a5d1730bc299c7a96b6af}{flags}};          \textcolor{comment}{/* Low-\/level status flags. */}}
+\DoxyCodeLine{170          \textcolor{keywordtype}{void}  *\mbox{\hyperlink{structdevice_a8b6505c37d4ff95854b8b00527e4d9fa}{priv}};           \textcolor{comment}{/* private data */}}
+\DoxyCodeLine{171        \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173   \textcolor{comment}{/*}}
+\DoxyCodeLine{174 \textcolor{comment}{   * Network device statistics}}
+\DoxyCodeLine{175 \textcolor{comment}{   */}}
+\DoxyCodeLine{176   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }net\_device\_stats \{}
+\DoxyCodeLine{177           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_ac54fabb9c2287d1ce949f010e5691c75}{rx\_packets}};            \textcolor{comment}{/* total packets received       */}}
+\DoxyCodeLine{178           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_aa424213fa177128e163983cd316d3225}{tx\_packets}};            \textcolor{comment}{/* total packets transmitted    */}}
+\DoxyCodeLine{179           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a3b1baa11a7f39619243253e8bc8a42a8}{rx\_bytes}};              \textcolor{comment}{/* total bytes received         */}}
+\DoxyCodeLine{180           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_acdca19f3deece10e8e060a0913424048}{tx\_bytes}};              \textcolor{comment}{/* total bytes transmitted      */}}
+\DoxyCodeLine{181           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_aa729949318519804e4eec91978cfcfb7}{rx\_errors}};             \textcolor{comment}{/* bad packets received         */}}
+\DoxyCodeLine{182           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a5eb251ef158af3eafcd2365ab7818fe9}{tx\_errors}};             \textcolor{comment}{/* packet transmit problems     */}}
+\DoxyCodeLine{183           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a033dbfcf044c5cc59357a2fb963e457d}{rx\_dropped}};            \textcolor{comment}{/* no space in Rx buffers       */}}
+\DoxyCodeLine{184           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a3e7e3b098a83455a49de27665cf85de0}{tx\_dropped}};            \textcolor{comment}{/* no space available for Tx    */}}
+\DoxyCodeLine{185           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a395113c4442527b23e2bc67362f1980d}{multicast}};             \textcolor{comment}{/* multicast packets received   */}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187           \textcolor{comment}{/* detailed rx\_errors: */}}
+\DoxyCodeLine{188           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a4e5b85ce5d87b4f4b87cac82f4860dae}{rx\_length\_errors}};}
+\DoxyCodeLine{189           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a00dcd08ef2a48829f93d70085577ef45}{rx\_over\_errors}};        \textcolor{comment}{/* recv'r overrun error         */}}
+\DoxyCodeLine{190           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a60626eb4e039e36455170b4c635e4249}{rx\_osize\_errors}};       \textcolor{comment}{/* recv'r over-\/size error       */}}
+\DoxyCodeLine{191           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_acc11f8720933256717880091c9183e28}{rx\_crc\_errors}};         \textcolor{comment}{/* recv'd pkt with crc error    */}}
+\DoxyCodeLine{192           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a90b77c73d5b780cea0151448a584feb0}{rx\_frame\_errors}};       \textcolor{comment}{/* recv'd frame alignment error */}}
+\DoxyCodeLine{193           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a925b6052b84e4db6c01ae0c147bafce4}{rx\_fifo\_errors}};        \textcolor{comment}{/* recv'r fifo overrun          */}}
+\DoxyCodeLine{194           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a3d44fdd050b2cb143b37ea224c30688e}{rx\_missed\_errors}};      \textcolor{comment}{/* recv'r missed packet         */}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196           \textcolor{comment}{/* detailed tx\_errors */}}
+\DoxyCodeLine{197           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a79a37e7bc48713a7c67a246be39f23ae}{tx\_aborted\_errors}};}
+\DoxyCodeLine{198           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a1cff31d9ecae1fc899bd1f3abc69d147}{tx\_carrier\_errors}};}
+\DoxyCodeLine{199           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_ada05ad8911f9fcb359b0549e1009fe8f}{tx\_fifo\_errors}};}
+\DoxyCodeLine{200           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_ad6f27f1719b83e740d574c0776a83728}{tx\_heartbeat\_errors}};}
+\DoxyCodeLine{201           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a9a4fc5fe396380a3fc7a42e3db35816c}{tx\_window\_errors}};}
+\DoxyCodeLine{202           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_a75011431c54ecd55c182fa38d1141a29}{tx\_collisions}};}
+\DoxyCodeLine{203           \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structNET__STATS_aac7568d35d9087cb716888dae93c2033}{tx\_jabbers}};}
+\DoxyCodeLine{204         \} \mbox{\hyperlink{structNET__STATS}{NET\_STATS}};}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}}       *\mbox{\hyperlink{pcap-dos_8c_a315e8171d7704b27f1aef1e95d5f4f03}{active\_dev}}  \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{208 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}} *\mbox{\hyperlink{pcap-dos_8c_ac069497cd155cec8e6ee50a97de2539d}{dev\_base}}    \mbox{\hyperlink{pcap-dos_8h_a9403858d455cbcf0f9a39cce269bcfa7}{LOCKED\_VAR}};}
+\DoxyCodeLine{209 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structdevice}{device}}       *\mbox{\hyperlink{pcap-dos_8h_a12e539ba49af667ce134621fc23c02cd}{probed\_dev}};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{pcap-dos_8h_af445df5a1038ac09bfd17b3f8614eaa9}{pcap\_pkt\_debug}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{pcap-dos_8h_af883df70fa82504e02fa17e38d653e17}{\_w32\_os\_yield}} (\textcolor{keywordtype}{void}); \textcolor{comment}{/* Watt-\/32's misc.c */}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#ifdef NDEBUG}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{  \#define PCAP\_ASSERT(x) ((void)0)}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{219   \textcolor{keywordtype}{void} \mbox{\hyperlink{pcap-dos_8h_a456ba43432fb029cddfc893d7757d519}{pcap\_assert}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *what, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *file, \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{getnetent_8c_a5b625afb8853050432e347f405fd6cc3}{line}});  }
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{preprocessor}{  \#define PCAP\_ASSERT(x) do \{ \(\backslash\)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{                           if (!(x)) \(\backslash\)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{                              pcap\_assert (\#x, \_\_FILE\_\_, \_\_LINE\_\_); \(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{                         \} while (0)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_PCAP\_DOS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

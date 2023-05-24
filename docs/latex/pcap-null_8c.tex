@@ -1,0 +1,70 @@
+\hypertarget{pcap-null_8c}{}\doxysection{libpcap-\/1.1.1/pcap-\/null.c 文件参考}
+\label{pcap-null_8c}\index{libpcap-\/1.1.1/pcap-\/null.c@{libpcap-\/1.1.1/pcap-\/null.c}}
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pcap-\/int.\+h\char`\"{}}\newline
+pcap-\/null.c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-null_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-null_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\item 
+int \mbox{\hyperlink{pcap-null_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$\mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static const char rcsid\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{pcap-null_8c_a5578b12d2cc7e3ee27ff908df9e14a21}{\+\_\+\+U\+\_\+}}
+\item 
+static char \mbox{\hyperlink{pcap-null_8c_a1c8b2206729c2bdd23872f55bcbb7778}{nosup}} \mbox{[}$\,$\mbox{]} = \char`\"{}live packet capture not supported on this \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-null_8c_a79459f4198464b94a23dbc29b5f26faa}\label{pcap-null_8c_a79459f4198464b94a23dbc29b5f26faa}} 
+\index{pcap-\/null.c@{pcap-\/null.c}!pcap\_create@{pcap\_create}}
+\index{pcap\_create@{pcap\_create}!pcap-\/null.c@{pcap-\/null.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_create()}{pcap\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ pcap\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-null_8c_a1c8b2206729c2bdd23872f55bcbb7778}{nosup}}, \mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}.
+
+\mbox{\Hypertarget{pcap-null_8c_a14b88a933c5761e5038182b4c30bf0c8}\label{pcap-null_8c_a14b88a933c5761e5038182b4c30bf0c8}} 
+\index{pcap-\/null.c@{pcap-\/null.c}!pcap\_platform\_finddevs@{pcap\_platform\_finddevs}}
+\index{pcap\_platform\_finddevs@{pcap\_platform\_finddevs}!pcap-\/null.c@{pcap-\/null.c}}
+\doxysubsubsection{\texorpdfstring{pcap\_platform\_finddevs()}{pcap\_platform\_finddevs()}}
+{\footnotesize\ttfamily int pcap\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{errbuf }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pcap-null_8c_a5578b12d2cc7e3ee27ff908df9e14a21}\label{pcap-null_8c_a5578b12d2cc7e3ee27ff908df9e14a21}} 
+\index{pcap-\/null.c@{pcap-\/null.c}!\_U\_@{\_U\_}}
+\index{\_U\_@{\_U\_}!pcap-\/null.c@{pcap-\/null.c}}
+\doxysubsubsection{\texorpdfstring{\_U\_}{\_U\_}}
+{\footnotesize\ttfamily const char rcsid \mbox{[}$\,$\mbox{]} \+\_\+\+U\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}@(\#) \$Header: /tcpdump/master/libpcap/pcap-\/null.c,v 1.22 2008-\/04-\/04 19:37:45 guy Exp \$ (LBL)"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pcap-null_8c_a1c8b2206729c2bdd23872f55bcbb7778}\label{pcap-null_8c_a1c8b2206729c2bdd23872f55bcbb7778}} 
+\index{pcap-\/null.c@{pcap-\/null.c}!nosup@{nosup}}
+\index{nosup@{nosup}!pcap-\/null.c@{pcap-\/null.c}}
+\doxysubsubsection{\texorpdfstring{nosup}{nosup}}
+{\footnotesize\ttfamily char nosup\mbox{[}$\,$\mbox{]} = \char`\"{}live packet capture not supported on this \mbox{\hyperlink{os-sunos4_8h_acc83831a3c113aad520e966b931821b4}{system}}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-null_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+

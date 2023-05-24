@@ -1,0 +1,853 @@
+\hypertarget{apd_8c}{}\doxysection{apd.\+c 文件参考}
+\label{apd_8c}\index{apd.c@{apd.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ars.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hstring.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hex.\+h\char`\"{}}\newline
+apd.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structars__d__keyword__info}{ars\+\_\+d\+\_\+keyword\+\_\+info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{apd_8c_a008d44dfb155925c2613edbfdde1aaf0}{ARS\+\_\+\+MAX\+\_\+\+TSIZE}}~(3000$\ast$4)
+\item 
+\#define \mbox{\hyperlink{apd_8c_a7b03a3892228085762404c17c11b47ec}{ARS\+\_\+\+G\+\_\+\+LAYER}}~0
+\item 
+\#define \mbox{\hyperlink{apd_8c_a1640ceaf645f2e15c9f65aa0fee10658}{ARS\+\_\+\+G\+\_\+\+FIELD\+\_\+\+OR\+\_\+\+CBRACE}}~1
+\item 
+\#define \mbox{\hyperlink{apd_8c_ab489861bcf42c73ba12d6def50307204}{ARS\+\_\+\+G\+\_\+\+VALUE}}~2
+\item 
+\#define \mbox{\hyperlink{apd_8c_a662e3b4c4d9988e986ba61ac86642306}{ARS\+\_\+\+G\+\_\+\+OBRACE\+\_\+\+OR\+\_\+\+PLUS}}~3
+\item 
+\#define \mbox{\hyperlink{apd_8c_abf88adf5b168b049e9b58456b0570b3d}{ARS\+\_\+\+G\+\_\+\+CBRACE}}~4
+\item 
+\#define \mbox{\hyperlink{apd_8c_a2a74762e56f94f81a9d124b549656bb7}{ARS\+\_\+\+G\+\_\+\+COMMA\+\_\+\+OR\+\_\+\+CBRACE}}~5
+\item 
+\#define \mbox{\hyperlink{apd_8c_a33bddc1ee79f83493f89646dee82b9de}{ARS\+\_\+\+G\+\_\+\+LEN\+\_\+\+OR\+\_\+\+PLUS}}~6
+\item 
+\#define \mbox{\hyperlink{apd_8c_a6979c2328611451a395e70f1b052629b}{ARS\+\_\+\+G\+\_\+\+PLUS}}~7
+\item 
+\#define \mbox{\hyperlink{apd_8c_a00d242b87cae2c7a2cf6029405bdacb4}{ARS\+\_\+\+G\+\_\+\+EQUAL}}~8
+\item 
+\#define \mbox{\hyperlink{apd_8c_aae016a3259903a2ddd194b07e7781a94}{ARS\+\_\+\+DKINFO\+\_\+\+SIZE}}~64
+\item 
+\#define \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}
+\item 
+\#define \mbox{\hyperlink{apd_8c_a2b0d456590fdd60708b19e26d2ccd4a4}{BOGUS\+\_\+\+SET\+\_\+F}}(x)~  int (x)(struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v) \{ return 0; \}
+\item 
+\#define \mbox{\hyperlink{apd_8c_a0c8a2a2bae5761ebcf6c17c6f926d591}{IPOPTRR\+\_\+\+MAX\+\_\+\+ENTRIES}}~9
+\item 
+\#define \mbox{\hyperlink{apd_8c_aeef2b9db7899f61907050ba95df957ac}{IPOPTTS\+\_\+\+MAX\+\_\+\+ENTRIES}}~9
+\item 
+\#define \mbox{\hyperlink{apd_8c_a2c42ecead3145aacc75749e9f5b37527}{TCPOPTSACK\+\_\+\+MAX\+\_\+\+ENTRIES}}~4
+\item 
+\#define \mbox{\hyperlink{apd_8c_a750e65239bf29bf81aa387007030f5a0}{ARS\+\_\+\+DATA\+\_\+\+BUF\+\_\+\+SIZE}}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{apd_8c_a887eecfaaac22503070102f900c0c14d}{ars\+\_\+d\+\_\+parser}} (char $\ast$t, char $\ast$next, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\+\_\+d\+\_\+set\+\_\+ip}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a72b437229d3db59032ace2158b2a031d}{ars\+\_\+d\+\_\+set\+\_\+udp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a7e1cb905f0466fab2df56c98f0c36923}{ars\+\_\+d\+\_\+set\+\_\+tcp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5}{ars\+\_\+d\+\_\+set\+\_\+icmp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_ad925becd6981030954850920425bdb4c}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+rr}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_ac21222ee280708df5d2f27f660904d43}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+ts}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_aa6cd2912002579bb7e642a06b8831d0c}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sid}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sec}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a79cb39ada52e13dc62e562f610799b04}{ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+dumb}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+sack}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+dumb}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_aa42e3771840b6b1886e185eea3eb726f}{ars\+\_\+d\+\_\+set\+\_\+igrp}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_ae3e0e9511e97f031fea20ed24552975a}{ars\+\_\+d\+\_\+set\+\_\+igrpentry}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v)
+\item 
+struct \mbox{\hyperlink{structars__d__keyword__info}{ars\+\_\+d\+\_\+keyword\+\_\+info}} $\ast$ \mbox{\hyperlink{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}{ars\+\_\+get\+\_\+keyword\+\_\+by\+\_\+name}} (char $\ast$name)
+\item 
+int \mbox{\hyperlink{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4}{ars\+\_\+d\+\_\+setlayer\+\_\+size}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$size)
+\item 
+static int \mbox{\hyperlink{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b}{igrp\+\_\+set\+\_\+dest}} (unsigned char $\ast$d, char $\ast$v)
+\item 
+static void \mbox{\hyperlink{apd_8c_a0f5dd0a494d7f5f028c988e69d77dd6a}{igrp\+\_\+set\+\_\+uint24}} (void $\ast$d, char $\ast$v)
+\item 
+int \mbox{\hyperlink{apd_8c_ae10bac77e977ec9fd898727de51b7255}{ars\+\_\+push\+\_\+data}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, void $\ast$data, size\+\_\+t size)
+\item 
+static char $\ast$ \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, char $\ast$s, int $\ast$blen)
+\item 
+static char $\ast$ \mbox{\hyperlink{apd_8c_aa7bc4e89305a953abdedd423be3ff536}{ars\+\_\+decode\+\_\+string}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, char $\ast$s, int $\ast$blen)
+\item 
+int \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build}} (struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, char $\ast$t)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structars__d__keyword__info}{ars\+\_\+d\+\_\+keyword\+\_\+info}} \mbox{\hyperlink{apd_8c_a50401c41a43cb0b0aa26084970905ab8}{ars\+\_\+dkinfo}} \mbox{[}\mbox{\hyperlink{apd_8c_aae016a3259903a2ddd194b07e7781a94}{ARS\+\_\+\+DKINFO\+\_\+\+SIZE}}\mbox{]}
+\item 
+static int \mbox{\hyperlink{apd_8c_a3ef6c4c86cf62b8a6eb5bb10551f8ed1}{hextab}} \mbox{[}256\mbox{]}
+\item 
+static int \mbox{\hyperlink{apd_8c_a3dc0cc330e42bd9a51ce843df700d202}{hextab\+\_\+initialized}} = 0
+\item 
+static char $\ast$ \mbox{\hyperlink{apd_8c_a3e7d795a892b3c5cb01d759994f09354}{hexdig}} = \char`\"{}0123456789abcdef\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{apd_8c_a750e65239bf29bf81aa387007030f5a0}\label{apd_8c_a750e65239bf29bf81aa387007030f5a0}} 
+\index{apd.c@{apd.c}!ARS\_DATA\_BUF\_SIZE@{ARS\_DATA\_BUF\_SIZE}}
+\index{ARS\_DATA\_BUF\_SIZE@{ARS\_DATA\_BUF\_SIZE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_DATA\_BUF\_SIZE}{ARS\_DATA\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+DATA\+\_\+\+BUF\+\_\+\+SIZE~4096}
+
+\mbox{\Hypertarget{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}\label{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}} 
+\index{apd.c@{apd.c}!ARS\_DEF\_LAYER@{ARS\_DEF\_LAYER}}
+\index{ARS\_DEF\_LAYER@{ARS\_DEF\_LAYER}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_DEF\_LAYER}{ARS\_DEF\_LAYER}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+DEF\+\_\+\+LAYER}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    if (layer == \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\_LAST\_LAYER}}) \(\backslash\)}
+\DoxyCodeLine{        layer = pkt-\/>p\_layer\_nr -\/ 1; \(\backslash\)}
+\DoxyCodeLine{    if (\mbox{\hyperlink{ars_8c_a5399e563c9295f71aee54041d67888c7}{ars\_valid\_layer}}(layer) != -\/\mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\_OK}}) \(\backslash\)}
+\DoxyCodeLine{        return -\/\mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\_INVALID}}; \(\backslash\)}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{apd_8c_aae016a3259903a2ddd194b07e7781a94}\label{apd_8c_aae016a3259903a2ddd194b07e7781a94}} 
+\index{apd.c@{apd.c}!ARS\_DKINFO\_SIZE@{ARS\_DKINFO\_SIZE}}
+\index{ARS\_DKINFO\_SIZE@{ARS\_DKINFO\_SIZE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_DKINFO\_SIZE}{ARS\_DKINFO\_SIZE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+DKINFO\+\_\+\+SIZE~64}
+
+\mbox{\Hypertarget{apd_8c_abf88adf5b168b049e9b58456b0570b3d}\label{apd_8c_abf88adf5b168b049e9b58456b0570b3d}} 
+\index{apd.c@{apd.c}!ARS\_G\_CBRACE@{ARS\_G\_CBRACE}}
+\index{ARS\_G\_CBRACE@{ARS\_G\_CBRACE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_CBRACE}{ARS\_G\_CBRACE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+CBRACE~4}
+
+\mbox{\Hypertarget{apd_8c_a2a74762e56f94f81a9d124b549656bb7}\label{apd_8c_a2a74762e56f94f81a9d124b549656bb7}} 
+\index{apd.c@{apd.c}!ARS\_G\_COMMA\_OR\_CBRACE@{ARS\_G\_COMMA\_OR\_CBRACE}}
+\index{ARS\_G\_COMMA\_OR\_CBRACE@{ARS\_G\_COMMA\_OR\_CBRACE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_COMMA\_OR\_CBRACE}{ARS\_G\_COMMA\_OR\_CBRACE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+COMMA\+\_\+\+OR\+\_\+\+CBRACE~5}
+
+\mbox{\Hypertarget{apd_8c_a00d242b87cae2c7a2cf6029405bdacb4}\label{apd_8c_a00d242b87cae2c7a2cf6029405bdacb4}} 
+\index{apd.c@{apd.c}!ARS\_G\_EQUAL@{ARS\_G\_EQUAL}}
+\index{ARS\_G\_EQUAL@{ARS\_G\_EQUAL}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_EQUAL}{ARS\_G\_EQUAL}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+EQUAL~8}
+
+\mbox{\Hypertarget{apd_8c_a1640ceaf645f2e15c9f65aa0fee10658}\label{apd_8c_a1640ceaf645f2e15c9f65aa0fee10658}} 
+\index{apd.c@{apd.c}!ARS\_G\_FIELD\_OR\_CBRACE@{ARS\_G\_FIELD\_OR\_CBRACE}}
+\index{ARS\_G\_FIELD\_OR\_CBRACE@{ARS\_G\_FIELD\_OR\_CBRACE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_FIELD\_OR\_CBRACE}{ARS\_G\_FIELD\_OR\_CBRACE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+FIELD\+\_\+\+OR\+\_\+\+CBRACE~1}
+
+\mbox{\Hypertarget{apd_8c_a7b03a3892228085762404c17c11b47ec}\label{apd_8c_a7b03a3892228085762404c17c11b47ec}} 
+\index{apd.c@{apd.c}!ARS\_G\_LAYER@{ARS\_G\_LAYER}}
+\index{ARS\_G\_LAYER@{ARS\_G\_LAYER}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_LAYER}{ARS\_G\_LAYER}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+LAYER~0}
+
+\mbox{\Hypertarget{apd_8c_a33bddc1ee79f83493f89646dee82b9de}\label{apd_8c_a33bddc1ee79f83493f89646dee82b9de}} 
+\index{apd.c@{apd.c}!ARS\_G\_LEN\_OR\_PLUS@{ARS\_G\_LEN\_OR\_PLUS}}
+\index{ARS\_G\_LEN\_OR\_PLUS@{ARS\_G\_LEN\_OR\_PLUS}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_LEN\_OR\_PLUS}{ARS\_G\_LEN\_OR\_PLUS}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+LEN\+\_\+\+OR\+\_\+\+PLUS~6}
+
+\mbox{\Hypertarget{apd_8c_a662e3b4c4d9988e986ba61ac86642306}\label{apd_8c_a662e3b4c4d9988e986ba61ac86642306}} 
+\index{apd.c@{apd.c}!ARS\_G\_OBRACE\_OR\_PLUS@{ARS\_G\_OBRACE\_OR\_PLUS}}
+\index{ARS\_G\_OBRACE\_OR\_PLUS@{ARS\_G\_OBRACE\_OR\_PLUS}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_OBRACE\_OR\_PLUS}{ARS\_G\_OBRACE\_OR\_PLUS}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+OBRACE\+\_\+\+OR\+\_\+\+PLUS~3}
+
+\mbox{\Hypertarget{apd_8c_a6979c2328611451a395e70f1b052629b}\label{apd_8c_a6979c2328611451a395e70f1b052629b}} 
+\index{apd.c@{apd.c}!ARS\_G\_PLUS@{ARS\_G\_PLUS}}
+\index{ARS\_G\_PLUS@{ARS\_G\_PLUS}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_PLUS}{ARS\_G\_PLUS}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+PLUS~7}
+
+\mbox{\Hypertarget{apd_8c_ab489861bcf42c73ba12d6def50307204}\label{apd_8c_ab489861bcf42c73ba12d6def50307204}} 
+\index{apd.c@{apd.c}!ARS\_G\_VALUE@{ARS\_G\_VALUE}}
+\index{ARS\_G\_VALUE@{ARS\_G\_VALUE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_G\_VALUE}{ARS\_G\_VALUE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+G\+\_\+\+VALUE~2}
+
+\mbox{\Hypertarget{apd_8c_a008d44dfb155925c2613edbfdde1aaf0}\label{apd_8c_a008d44dfb155925c2613edbfdde1aaf0}} 
+\index{apd.c@{apd.c}!ARS\_MAX\_TSIZE@{ARS\_MAX\_TSIZE}}
+\index{ARS\_MAX\_TSIZE@{ARS\_MAX\_TSIZE}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ARS\_MAX\_TSIZE}{ARS\_MAX\_TSIZE}}
+{\footnotesize\ttfamily \#define ARS\+\_\+\+MAX\+\_\+\+TSIZE~(3000$\ast$4)}
+
+\mbox{\Hypertarget{apd_8c_a2b0d456590fdd60708b19e26d2ccd4a4}\label{apd_8c_a2b0d456590fdd60708b19e26d2ccd4a4}} 
+\index{apd.c@{apd.c}!BOGUS\_SET\_F@{BOGUS\_SET\_F}}
+\index{BOGUS\_SET\_F@{BOGUS\_SET\_F}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{BOGUS\_SET\_F}{BOGUS\_SET\_F}}
+{\footnotesize\ttfamily \#define BOGUS\+\_\+\+SET\+\_\+F(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~  int (x)(struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$pkt, int layer, char $\ast$f, char $\ast$v) \{ return 0; \}}
+
+\mbox{\Hypertarget{apd_8c_a0c8a2a2bae5761ebcf6c17c6f926d591}\label{apd_8c_a0c8a2a2bae5761ebcf6c17c6f926d591}} 
+\index{apd.c@{apd.c}!IPOPTRR\_MAX\_ENTRIES@{IPOPTRR\_MAX\_ENTRIES}}
+\index{IPOPTRR\_MAX\_ENTRIES@{IPOPTRR\_MAX\_ENTRIES}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{IPOPTRR\_MAX\_ENTRIES}{IPOPTRR\_MAX\_ENTRIES}}
+{\footnotesize\ttfamily \#define IPOPTRR\+\_\+\+MAX\+\_\+\+ENTRIES~9}
+
+\mbox{\Hypertarget{apd_8c_aeef2b9db7899f61907050ba95df957ac}\label{apd_8c_aeef2b9db7899f61907050ba95df957ac}} 
+\index{apd.c@{apd.c}!IPOPTTS\_MAX\_ENTRIES@{IPOPTTS\_MAX\_ENTRIES}}
+\index{IPOPTTS\_MAX\_ENTRIES@{IPOPTTS\_MAX\_ENTRIES}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{IPOPTTS\_MAX\_ENTRIES}{IPOPTTS\_MAX\_ENTRIES}}
+{\footnotesize\ttfamily \#define IPOPTTS\+\_\+\+MAX\+\_\+\+ENTRIES~9}
+
+\mbox{\Hypertarget{apd_8c_a2c42ecead3145aacc75749e9f5b37527}\label{apd_8c_a2c42ecead3145aacc75749e9f5b37527}} 
+\index{apd.c@{apd.c}!TCPOPTSACK\_MAX\_ENTRIES@{TCPOPTSACK\_MAX\_ENTRIES}}
+\index{TCPOPTSACK\_MAX\_ENTRIES@{TCPOPTSACK\_MAX\_ENTRIES}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{TCPOPTSACK\_MAX\_ENTRIES}{TCPOPTSACK\_MAX\_ENTRIES}}
+{\footnotesize\ttfamily \#define TCPOPTSACK\+\_\+\+MAX\+\_\+\+ENTRIES~4}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{apd_8c_af729708f8aafff8605adfc66ad0ee440}\label{apd_8c_af729708f8aafff8605adfc66ad0ee440}} 
+\index{apd.c@{apd.c}!ars\_d\_build@{ars\_d\_build}}
+\index{ars\_d\_build@{ars\_d\_build}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_build()}{ars\_d\_build()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+build (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{char $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a0b8f31a464bd122d1a4c09ba9758964e}{\+\_\+\+\_\+D}}, \mbox{\hyperlink{apd_8c_a887eecfaaac22503070102f900c0c14d}{ars\+\_\+d\+\_\+parser()}}, \mbox{\hyperlink{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4}{ars\+\_\+d\+\_\+setlayer\+\_\+size()}}, \mbox{\hyperlink{apd_8c_abf88adf5b168b049e9b58456b0570b3d}{ARS\+\_\+\+G\+\_\+\+CBRACE}}, \mbox{\hyperlink{apd_8c_a2a74762e56f94f81a9d124b549656bb7}{ARS\+\_\+\+G\+\_\+\+COMMA\+\_\+\+OR\+\_\+\+CBRACE}}, \mbox{\hyperlink{apd_8c_a00d242b87cae2c7a2cf6029405bdacb4}{ARS\+\_\+\+G\+\_\+\+EQUAL}}, \mbox{\hyperlink{apd_8c_a1640ceaf645f2e15c9f65aa0fee10658}{ARS\+\_\+\+G\+\_\+\+FIELD\+\_\+\+OR\+\_\+\+CBRACE}}, \mbox{\hyperlink{apd_8c_a7b03a3892228085762404c17c11b47ec}{ARS\+\_\+\+G\+\_\+\+LAYER}}, \mbox{\hyperlink{apd_8c_a33bddc1ee79f83493f89646dee82b9de}{ARS\+\_\+\+G\+\_\+\+LEN\+\_\+\+OR\+\_\+\+PLUS}}, \mbox{\hyperlink{apd_8c_a662e3b4c4d9988e986ba61ac86642306}{ARS\+\_\+\+G\+\_\+\+OBRACE\+\_\+\+OR\+\_\+\+PLUS}}, \mbox{\hyperlink{apd_8c_a6979c2328611451a395e70f1b052629b}{ARS\+\_\+\+G\+\_\+\+PLUS}}, \mbox{\hyperlink{apd_8c_ab489861bcf42c73ba12d6def50307204}{ARS\+\_\+\+G\+\_\+\+VALUE}}, \mbox{\hyperlink{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}{ars\+\_\+get\+\_\+keyword\+\_\+by\+\_\+name()}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_a9d42e343f5f6e188b4bf9086519a231e}{ARS\+\_\+\+LAST\+\_\+\+LAYER}}, \mbox{\hyperlink{apd_8c_a008d44dfb155925c2613edbfdde1aaf0}{ARS\+\_\+\+MAX\+\_\+\+TSIZE}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error()}}, \mbox{\hyperlink{structars__d__keyword__info_aedc84e6162467f764c3f23e5e70122df}{ars\+\_\+d\+\_\+keyword\+\_\+info\+::ki\+\_\+add}}, \mbox{\hyperlink{structars__d__keyword__info_af1533e4a41b14b0c2c236c125eb537c7}{ars\+\_\+d\+\_\+keyword\+\_\+info\+::ki\+\_\+opt}}, \mbox{\hyperlink{structars__d__keyword__info_a185f39792a62a035b6ee7d57c1b085a4}{ars\+\_\+d\+\_\+keyword\+\_\+info\+::ki\+\_\+set}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{arsglue_8c_a7f310785d3b7d85c48f8b4d89fa4be92}{hping\+\_\+ars\+\_\+send()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_af729708f8aafff8605adfc66ad0ee440_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_af729708f8aafff8605adfc66ad0ee440_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a887eecfaaac22503070102f900c0c14d}\label{apd_8c_a887eecfaaac22503070102f900c0c14d}} 
+\index{apd.c@{apd.c}!ars\_d\_parser@{ars\_d\_parser}}
+\index{ars\_d\_parser@{ars\_d\_parser}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_parser()}{ars\_d\_parser()}}
+{\footnotesize\ttfamily char $\ast$ ars\+\_\+d\+\_\+parser (\begin{DoxyParamCaption}\item[{char $\ast$}]{t,  }\item[{char $\ast$}]{next,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a887eecfaaac22503070102f900c0c14d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a037090eaa510e52320e8af6806036599}\label{apd_8c_a037090eaa510e52320e8af6806036599}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_data@{ars\_d\_set\_data}}
+\index{ars\_d\_set\_data@{ars\_d\_set\_data}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_data()}{ars\_d\_set\_data()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}}, \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{ars_8h_abb0f2ad1ab0fc28516dafcf956d11a6b}{\+\_\+\+\_\+u8}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_a750e65239bf29bf81aa387007030f5a0}{ARS\+\_\+\+DATA\+\_\+\+BUF\+\_\+\+SIZE}}, \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex()}}, \mbox{\hyperlink{apd_8c_aa7bc4e89305a953abdedd423be3ff536}{ars\+\_\+decode\+\_\+string()}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a471d88729a8efefdccc483c8c36bdb90}{ARS\+\_\+\+ERROR}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{apd_8c_ae10bac77e977ec9fd898727de51b7255}{ars\+\_\+push\+\_\+data()}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{pcap-enet_8c_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}, \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read()}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{os-solaris2_8h_a40e8f54ca9a5765257eebf9f08516dc4}{strerror()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a037090eaa510e52320e8af6806036599_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5}\label{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_icmp@{ars\_d\_set\_icmp}}
+\index{ars\_d\_set\_icmp@{ars\_d\_set\_icmp}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_icmp()}{ars\_d\_set\_icmp()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+icmp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_ab8349ba26df7375ef8171d0426f8ded9}{ars\+\_\+resolve()}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_afb0490a234379772cf54acd7b62b8de5}{ARS\+\_\+\+TAKE\+\_\+\+ICMP\+\_\+\+CKSUM}}, \mbox{\hyperlink{structars__icmphdr_a5ac4d40ff194847164757a9cd6f59393}{ars\+\_\+icmphdr\+::checksum}}, \mbox{\hyperlink{structars__icmphdr_a309385d6277e07c7945ec0f5762ea3c4}{ars\+\_\+icmphdr\+::code}}, \mbox{\hyperlink{structars__icmphdr_ae6bb149008969a60b212498bc69c06cb}{ars\+\_\+icmphdr\+::echo}}, \mbox{\hyperlink{structars__icmphdr_ac3274499d7ceec6f665f8e76c683c850}{ars\+\_\+icmphdr\+::gateway}}, \mbox{\hyperlink{structars__icmphdr_ac4ef9be9becfbb17119420e650025348}{ars\+\_\+icmphdr\+::id}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__icmphdr_a31eb0bd1fa3e44050cabdc0ca6f75bd6}{ars\+\_\+icmphdr\+::sequence}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{structars__icmphdr_aa05eefca31ad6bd4617aac0176b8366e}{ars\+\_\+icmphdr\+::type}} , 以及 \mbox{\hyperlink{structars__icmphdr_a006aa8d92995f6021285a77d1d6945cd}{ars\+\_\+icmphdr\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_aa42e3771840b6b1886e185eea3eb726f}\label{apd_8c_aa42e3771840b6b1886e185eea3eb726f}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_igrp@{ars\_d\_set\_igrp}}
+\index{ars\_d\_set\_igrp@{ars\_d\_set\_igrp}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_igrp()}{ars\_d\_set\_igrp()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+igrp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_ab4d8dca841c9b42156a3bdd75ade8bf7}{ARS\+\_\+\+IGRP\+\_\+\+OPCODE\+\_\+\+REQUEST}}, \mbox{\hyperlink{ars_8h_a34a4fe458f56c37185b1c97be878662e}{ARS\+\_\+\+IGRP\+\_\+\+OPCODE\+\_\+\+UPDATE}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_ad3686b025ec070d9c7f0982f25a3e505}{ARS\+\_\+\+TAKE\+\_\+\+IGRP\+\_\+\+CKSUM}}, \mbox{\hyperlink{structars__igrphdr_af4e0d17b9fb9c7696a07fda714ab3695}{ars\+\_\+igrphdr\+::autosys}}, \mbox{\hyperlink{structars__igrphdr_a5ac4d40ff194847164757a9cd6f59393}{ars\+\_\+igrphdr\+::checksum}}, \mbox{\hyperlink{structars__igrphdr_a6b29182231bf4f351fb886fcc60df6b7}{ars\+\_\+igrphdr\+::edition}}, \mbox{\hyperlink{structars__igrphdr_aea245f529e5854d0daff96549476484f}{ars\+\_\+igrphdr\+::exterior}}, \mbox{\hyperlink{structars__igrphdr_a41b683d04415e4a5518db950b4639dbc}{ars\+\_\+igrphdr\+::interior}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{structars__igrphdr_ab062a3c2f3be1611d42218e5e8c887ae}{ars\+\_\+igrphdr\+::system}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{apd_8c_aa42e3771840b6b1886e185eea3eb726f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ae3e0e9511e97f031fea20ed24552975a}\label{apd_8c_ae3e0e9511e97f031fea20ed24552975a}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_igrpentry@{ars\_d\_set\_igrpentry}}
+\index{ars\_d\_set\_igrpentry@{ars\_d\_set\_igrpentry}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_igrpentry()}{ars\_d\_set\_igrpentry()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+igrpentry (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a5ece5635db977edd094b1c365c0357a3}{\+\_\+\+\_\+u16}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__igrpentry_ad8a9873f6bf0f9ce1b8f42ed3d683800}{ars\+\_\+igrpentry\+::bandwidth}}, \mbox{\hyperlink{structars__igrpentry_a7b941e815cee0143cbbdca1758ee0706}{ars\+\_\+igrpentry\+::delay}}, \mbox{\hyperlink{structars__igrpentry_acddf301f691e7a695759f17978055fd3}{ars\+\_\+igrpentry\+::destination}}, \mbox{\hyperlink{structars__igrpentry_a63c69db3cb427a4f55639b70c51fd7a3}{ars\+\_\+igrpentry\+::hopcount}}, \mbox{\hyperlink{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b}{igrp\+\_\+set\+\_\+dest()}}, \mbox{\hyperlink{apd_8c_a0f5dd0a494d7f5f028c988e69d77dd6a}{igrp\+\_\+set\+\_\+uint24()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__igrpentry_af8ac2d5fb42a33641a1becb0cff0a293}{ars\+\_\+igrpentry\+::load}}, \mbox{\hyperlink{structars__igrpentry_a1b2c04322d50556dff6d54b9d11c5bb4}{ars\+\_\+igrpentry\+::mtu}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__igrpentry_ad91be3652211e0ff545f55e2feb45992}{ars\+\_\+igrpentry\+::reliability}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_ae3e0e9511e97f031fea20ed24552975a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a38d5cabca3b685e6896d00acc045ff42}\label{apd_8c_a38d5cabca3b685e6896d00acc045ff42}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ip@{ars\_d\_set\_ip}}
+\index{ars\_d\_set\_ip@{ars\_d\_set\_ip}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ip()}{ars\_d\_set\_ip()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ip (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_a3345771ea9710302e8c732708b642504}{ARS\+\_\+\+IP\+\_\+\+DF}}, \mbox{\hyperlink{ars_8h_a4a11b4cdf066a1b231778e43f4ca51ac}{ARS\+\_\+\+IP\+\_\+\+MF}}, \mbox{\hyperlink{ars_8h_aff698e692948ec290d7c972b9594bd4d}{ARS\+\_\+\+IP\+\_\+\+RF}}, \mbox{\hyperlink{in_8h_adb0f36f185742c118972d14c67edc22f}{ARS\+\_\+\+IPPROTO\+\_\+\+ICMP}}, \mbox{\hyperlink{in_8h_a6f4474bcf11c8c917ba4c891655689f4}{ARS\+\_\+\+IPPROTO\+\_\+\+TCP}}, \mbox{\hyperlink{in_8h_a7a615e10b96d4509b25fa1687a7fa4e1}{ARS\+\_\+\+IPPROTO\+\_\+\+UDP}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_ab8349ba26df7375ef8171d0426f8ded9}{ars\+\_\+resolve()}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_aed70a01969611f7faa638688b1e0f5dd}{ARS\+\_\+\+TAKE\+\_\+\+IP\+\_\+\+CKSUM}}, \mbox{\hyperlink{ars_8h_a82f867d09ccb9c65310b9b24e273a4a4}{ARS\+\_\+\+TAKE\+\_\+\+IP\+\_\+\+HDRLEN}}, \mbox{\hyperlink{ars_8h_a4f6a18b3f75d995e6a4d99d4f84e7010}{ARS\+\_\+\+TAKE\+\_\+\+IP\+\_\+\+PROTOCOL}}, \mbox{\hyperlink{ars_8h_a034af76226168ae8528872ba57dd7a00}{ARS\+\_\+\+TAKE\+\_\+\+IP\+\_\+\+TOTLEN}}, \mbox{\hyperlink{ars_8h_a653605c1209131cd063a5ca0ceae766a}{ARS\+\_\+\+TAKE\+\_\+\+IP\+\_\+\+VERSION}}, \mbox{\hyperlink{structmyiphdr_a2e0a6add4070845e799bff9728765de8}{myiphdr\+::check}}, \mbox{\hyperlink{structmyiphdr_a69d572e5f469add72342e3dada52fdc7}{myiphdr\+::daddr}}, \mbox{\hyperlink{structmyiphdr_a827bffd05d55a91dc04e51adcb8589ff}{myiphdr\+::frag\+\_\+off}}, \mbox{\hyperlink{structmyiphdr_ac4ef9be9becfbb17119420e650025348}{myiphdr\+::id}}, \mbox{\hyperlink{structmyiphdr_a2b32c9fc36dd11e02d56ea87a6a02e1f}{myiphdr\+::ihl}}, \mbox{\hyperlink{waitpacket_8c_a4b8d3105472eefd31c31e13b8d5115d5}{ip}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structmyiphdr_a56a37c755bcacb62a730e595c482fd27}{myiphdr\+::protocol}}, \mbox{\hyperlink{structmyiphdr_ac8cbca8b4d42f62244dc68339102d2f4}{myiphdr\+::saddr}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{structmyiphdr_aabd17e6458449b589ae5385d8e07618a}{myiphdr\+::tos}}, \mbox{\hyperlink{structmyiphdr_a6551f504ae847a655574224316890281}{myiphdr\+::tot\+\_\+len}}, \mbox{\hyperlink{structmyiphdr_af3198a23e5fea714a5d6d95afc2b8efd}{myiphdr\+::ttl}} , 以及 \mbox{\hyperlink{structmyiphdr_af686b52749a9ad1d63eb745cf0c1fce8}{myiphdr\+::version}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a38d5cabca3b685e6896d00acc045ff42_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a79cb39ada52e13dc62e562f610799b04}\label{apd_8c_a79cb39ada52e13dc62e562f610799b04}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ipopt\_dumb@{ars\_d\_set\_ipopt\_dumb}}
+\index{ars\_d\_set\_ipopt\_dumb@{ars\_d\_set\_ipopt\_dumb}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ipopt\_dumb()}{ars\_d\_set\_ipopt\_dumb()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+dumb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{apd_8c_a79cb39ada52e13dc62e562f610799b04_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ad925becd6981030954850920425bdb4c}\label{apd_8c_ad925becd6981030954850920425bdb4c}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ipopt\_rr@{ars\_d\_set\_ipopt\_rr}}
+\index{ars\_d\_set\_ipopt\_rr@{ars\_d\_set\_ipopt\_rr}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ipopt\_rr()}{ars\_d\_set\_ipopt\_rr()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+rr (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a74b7e94bbef417afde11f6d5c3e21d76}{ARS\+\_\+\+DONTTAKE}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_a6e5b396847ed2628c07870dbde8c5036}{ARS\+\_\+\+IPOPT\+\_\+\+RR}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_ab8349ba26df7375ef8171d0426f8ded9}{ars\+\_\+resolve()}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_ab3ddc1c211016be0e6a1804dd34febd3}{ARS\+\_\+\+TAKE\+\_\+\+IPOPT\+\_\+\+PTR}}, \mbox{\hyperlink{structars__ipopt_adbc1386888caf5d40abf8a83336cc833}{ars\+\_\+ipopt\+::data}}, \mbox{\hyperlink{apd_8c_a0c8a2a2bae5761ebcf6c17c6f926d591}{IPOPTRR\+\_\+\+MAX\+\_\+\+ENTRIES}}, \mbox{\hyperlink{structars__ipopt_a5182523bec98d011e06c3bbcc7dded0a}{ars\+\_\+ipopt\+::kind}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__ipopt_a8c31a70d0d5b269e0ae43daeeb48b397}{ars\+\_\+ipopt\+::ptr}}, \mbox{\hyperlink{structars__ipopt_a907b209b01e279f58e641bf80d09dd7c}{ars\+\_\+ipopt\+::rr}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{hstring_8c_ad5b3ae78e66909b179eb3a3c2f1e145a}{strftok()}} , 以及 \mbox{\hyperlink{structars__ipopt_a4dea0eef7811d67f05b82dec40782128}{ars\+\_\+ipopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_ad925becd6981030954850920425bdb4c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}\label{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ipopt\_sec@{ars\_d\_set\_ipopt\_sec}}
+\index{ars\_d\_set\_ipopt\_sec@{ars\_d\_set\_ipopt\_sec}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ipopt\_sec()}{ars\_d\_set\_ipopt\_sec()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__ipopt_a367edc5bbb367c604825a668fd801d89}{ars\+\_\+ipopt\+::c}}, \mbox{\hyperlink{structars__ipopt_ab31af47d5720dc3fd2f36db04be133a6}{ars\+\_\+ipopt\+::h}}, \mbox{\hyperlink{hex_8c_a1a2d25ff0c17ecd48667e282428dab48}{hextobin()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__ipopt_a7d5f708c269ede5167c03cfc12d142fb}{ars\+\_\+ipopt\+::s}}, \mbox{\hyperlink{structars__ipopt_a7cc4b9c2eeb73bd5916a359ea6522b3b}{ars\+\_\+ipopt\+::sec}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{structars__ipopt_a4dea0eef7811d67f05b82dec40782128}{ars\+\_\+ipopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_aa6cd2912002579bb7e642a06b8831d0c}\label{apd_8c_aa6cd2912002579bb7e642a06b8831d0c}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ipopt\_sid@{ars\_d\_set\_ipopt\_sid}}
+\index{ars\_d\_set\_ipopt\_sid@{ars\_d\_set\_ipopt\_sid}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ipopt\_sid()}{ars\_d\_set\_ipopt\_sid()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+sid (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__ipopt_af2283199518742adc0a4f4a264aeb47a}{ars\+\_\+ipopt\+::id}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__ipopt_a2218b121f20aea96f293db94f39a52e9}{ars\+\_\+ipopt\+::sid}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{structars__ipopt_a4dea0eef7811d67f05b82dec40782128}{ars\+\_\+ipopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{apd_8c_aa6cd2912002579bb7e642a06b8831d0c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ac21222ee280708df5d2f27f660904d43}\label{apd_8c_ac21222ee280708df5d2f27f660904d43}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_ipopt\_ts@{ars\_d\_set\_ipopt\_ts}}
+\index{ars\_d\_set\_ipopt\_ts@{ars\_d\_set\_ipopt\_ts}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_ipopt\_ts()}{ars\_d\_set\_ipopt\_ts()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+ipopt\+\_\+ts (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a74b7e94bbef417afde11f6d5c3e21d76}{ARS\+\_\+\+DONTTAKE}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_a940d435909b27497f0f34855161d4a11}{ARS\+\_\+\+IPOPT\+\_\+\+TS\+\_\+\+PRESPEC}}, \mbox{\hyperlink{ars_8h_a14a188d2abbd76b5b202ca5984002e59}{ARS\+\_\+\+IPOPT\+\_\+\+TS\+\_\+\+TSANDADDR}}, \mbox{\hyperlink{ars_8h_ad9cb03e2a146239618db00f106840b90}{ARS\+\_\+\+IPOPT\+\_\+\+TS\+\_\+\+TSONLY}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_ab8349ba26df7375ef8171d0426f8ded9}{ars\+\_\+resolve()}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_ab3ddc1c211016be0e6a1804dd34febd3}{ARS\+\_\+\+TAKE\+\_\+\+IPOPT\+\_\+\+PTR}}, \mbox{\hyperlink{structars__ipopt_adbc1386888caf5d40abf8a83336cc833}{ars\+\_\+ipopt\+::data}}, \mbox{\hyperlink{structars__ipopt_aff1a49ace550ffdd4860e52422343ba5}{ars\+\_\+ipopt\+::flags}}, \mbox{\hyperlink{apd_8c_aeef2b9db7899f61907050ba95df957ac}{IPOPTTS\+\_\+\+MAX\+\_\+\+ENTRIES}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__ipopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+ipopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__ipopt_a8c31a70d0d5b269e0ae43daeeb48b397}{ars\+\_\+ipopt\+::ptr}}, \mbox{\hyperlink{structars__ipopt_a907b209b01e279f58e641bf80d09dd7c}{ars\+\_\+ipopt\+::rr}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{hstring_8c_ad5b3ae78e66909b179eb3a3c2f1e145a}{strftok()}}, \mbox{\hyperlink{hstring_8c_aed474e9c68fbad40b5457eecf0a605db}{strisnum()}}, \mbox{\hyperlink{structars__ipopt_af02cf59192f33b5e558c142672a7a07f}{ars\+\_\+ipopt\+::ts}} , 以及 \mbox{\hyperlink{structars__ipopt_a4dea0eef7811d67f05b82dec40782128}{ars\+\_\+ipopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_ac21222ee280708df5d2f27f660904d43_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a7e1cb905f0466fab2df56c98f0c36923}\label{apd_8c_a7e1cb905f0466fab2df56c98f0c36923}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcp@{ars\_d\_set\_tcp}}
+\index{ars\_d\_set\_tcp@{ars\_d\_set\_tcp}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcp()}{ars\_d\_set\_tcp()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_a61b4bec7ecf323b07d590eada589c8ad}{ARS\+\_\+\+TAKE\+\_\+\+TCP\+\_\+\+CKSUM}}, \mbox{\hyperlink{ars_8h_a85a3e67bd7a96240dd59bcba4cd6e826}{ARS\+\_\+\+TAKE\+\_\+\+TCP\+\_\+\+HDRLEN}}, \mbox{\hyperlink{ars_8h_a7b2b76b32c886e058256694bbbe1a2d0}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+ACK}}, \mbox{\hyperlink{ars_8h_afb062cb917f847f04efec7a828b095e7}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+FIN}}, \mbox{\hyperlink{ars_8h_a403b3d82526b2a0ba9d9c3084a3e4046}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+PUSH}}, \mbox{\hyperlink{ars_8h_ae6020cc3b8534ef800f8a57bdcd8d50a}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+RST}}, \mbox{\hyperlink{ars_8h_a7746b88a321f672aa72790eab5d38ac1}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+SYN}}, \mbox{\hyperlink{ars_8h_a249fa77469d44d1b104433acc41c19ad}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+\+URG}}, \mbox{\hyperlink{ars_8h_a16f7704cba414ce530777298a8cecb11}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+X}}, \mbox{\hyperlink{ars_8h_adac9bfe94eb02b03f1c0e60f6c89b8fe}{ARS\+\_\+\+TCP\+\_\+\+TH\+\_\+Y}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{structars__tcphdr_a95ea81a0ecb6f505cd353f60b209980d}{ars\+\_\+tcphdr\+::th\+\_\+ack}}, \mbox{\hyperlink{structars__tcphdr_a80afd648df865d2a07db9906027ffefe}{ars\+\_\+tcphdr\+::th\+\_\+dport}}, \mbox{\hyperlink{structars__tcphdr_a48eaa5ea327200f2452150036f794d64}{ars\+\_\+tcphdr\+::th\+\_\+flags}}, \mbox{\hyperlink{structars__tcphdr_a2177fcefcf88a27c352be21d67889672}{ars\+\_\+tcphdr\+::th\+\_\+seq}}, \mbox{\hyperlink{structars__tcphdr_a9d451e24db593175ea0f797de209149b}{ars\+\_\+tcphdr\+::th\+\_\+sport}}, \mbox{\hyperlink{structars__tcphdr_a4ee81b74e0cdb8b9465e4e2ca12f6dbc}{ars\+\_\+tcphdr\+::th\+\_\+sum}}, \mbox{\hyperlink{structars__tcphdr_a140542dac4445e7374a354579e76a7c5}{ars\+\_\+tcphdr\+::th\+\_\+urp}} , 以及 \mbox{\hyperlink{structars__tcphdr_a265bd0338600b82c06c906cf4e6743be}{ars\+\_\+tcphdr\+::th\+\_\+win}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{apd_8c_a7e1cb905f0466fab2df56c98f0c36923_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ab8257c335026315da31432e42f14818b}\label{apd_8c_ab8257c335026315da31432e42f14818b}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcpopt\_dumb@{ars\_d\_set\_tcpopt\_dumb}}
+\index{ars\_d\_set\_tcpopt\_dumb@{ars\_d\_set\_tcpopt\_dumb}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcpopt\_dumb()}{ars\_d\_set\_tcpopt\_dumb()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+dumb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{apd_8c_ab8257c335026315da31432e42f14818b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_acf62656a652bb2a82c61ed4922508396}\label{apd_8c_acf62656a652bb2a82c61ed4922508396}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcpopt\_echo@{ars\_d\_set\_tcpopt\_echo}}
+\index{ars\_d\_set\_tcpopt\_echo@{ars\_d\_set\_tcpopt\_echo}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcpopt\_echo()}{ars\_d\_set\_tcpopt\_echo()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+echo (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__tcpopt_a3fe8f35f70c2e4d22232c5b755434797}{ars\+\_\+tcpopt\+::echo}}, \mbox{\hyperlink{structars__tcpopt_aa48f51965ed460142d6f5764a62a555d}{ars\+\_\+tcpopt\+::info}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}{ars\+\_\+tcpopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{apd_8c_acf62656a652bb2a82c61ed4922508396_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}\label{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcpopt\_mss@{ars\_d\_set\_tcpopt\_mss}}
+\index{ars\_d\_set\_tcpopt\_mss@{ars\_d\_set\_tcpopt\_mss}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcpopt\_mss()}{ars\_d\_set\_tcpopt\_mss()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+mss (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{structars__tcpopt_a8bf1606a45f983cb9473ca4a58c891f0}{ars\+\_\+tcpopt\+::mss}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__tcpopt_aa24ebf45ec8460edab3749cabc073dc0}{ars\+\_\+tcpopt\+::size}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}} , 以及 \mbox{\hyperlink{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}{ars\+\_\+tcpopt\+::un}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{apd_8c_a595a3322687af1a1fd897c4e27cee1dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}\label{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcpopt\_sack@{ars\_d\_set\_tcpopt\_sack}}
+\index{ars\_d\_set\_tcpopt\_sack@{ars\_d\_set\_tcpopt\_sack}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcpopt\_sack()}{ars\_d\_set\_tcpopt\_sack()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+sack (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{hstring_8c_ad5b3ae78e66909b179eb3a3c2f1e145a}{strftok()}} , 以及 \mbox{\hyperlink{apd_8c_a2c42ecead3145aacc75749e9f5b37527}{TCPOPTSACK\+\_\+\+MAX\+\_\+\+ENTRIES}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{apd_8c_a018475deb69ab996e8bd72d1e4c45dae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}\label{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_tcpopt\_wscale@{ars\_d\_set\_tcpopt\_wscale}}
+\index{ars\_d\_set\_tcpopt\_wscale@{ars\_d\_set\_tcpopt\_wscale}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_tcpopt\_wscale()}{ars\_d\_set\_tcpopt\_wscale()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+tcpopt\+\_\+wscale (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__tcpopt_aa5695e5ebd05aece35b2d0d88c983fac}{ars\+\_\+tcpopt\+::len}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{structars__tcpopt_a826530d4b102dbf8286b88f738e5394e}{ars\+\_\+tcpopt\+::shift}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{structars__tcpopt_afe38becb96abfa4a5a3ad7e8e5258458}{ars\+\_\+tcpopt\+::un}} , 以及 \mbox{\hyperlink{structars__tcpopt_ace82fe1d432217f5d64c771cab352e15}{ars\+\_\+tcpopt\+::win}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{apd_8c_a3217f6072ae61dd13e0da3e3bea51293_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a72b437229d3db59032ace2158b2a031d}\label{apd_8c_a72b437229d3db59032ace2158b2a031d}} 
+\index{apd.c@{apd.c}!ars\_d\_set\_udp@{ars\_d\_set\_udp}}
+\index{ars\_d\_set\_udp@{ars\_d\_set\_udp}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_set\_udp()}{ars\_d\_set\_udp()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+set\+\_\+udp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{f,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{ars_8h_a82b52ac1183412e96deae92c56adb138}{ARS\+\_\+\+TAKE\+\_\+\+UDP\+\_\+\+CKSUM}}, \mbox{\hyperlink{ars_8h_a8eca3737fa0cc73b0a29733c592617e9}{ARS\+\_\+\+TAKE\+\_\+\+UDP\+\_\+\+LEN}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_aed46b207ee6a2c6e488762462bfb163e}{ars\+\_\+layer\+::l\+\_\+flags}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}, \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}, \mbox{\hyperlink{structars__udphdr_a62397c5440c5fe173d308af52ac1b6a1}{ars\+\_\+udphdr\+::uh\+\_\+dport}}, \mbox{\hyperlink{structars__udphdr_a74d4e0629251639aadfb8ad1c61a6d78}{ars\+\_\+udphdr\+::uh\+\_\+sport}}, \mbox{\hyperlink{structars__udphdr_a7d322b5a2fc66eea1fb792dbc707ddd8}{ars\+\_\+udphdr\+::uh\+\_\+sum}} , 以及 \mbox{\hyperlink{structars__udphdr_a6cb40e8a2e4335d0226a29fe90de193f}{ars\+\_\+udphdr\+::uh\+\_\+ulen}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{apd_8c_a72b437229d3db59032ace2158b2a031d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4}\label{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4}} 
+\index{apd.c@{apd.c}!ars\_d\_setlayer\_size@{ars\_d\_setlayer\_size}}
+\index{ars\_d\_setlayer\_size@{ars\_d\_setlayer\_size}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_d\_setlayer\_size()}{ars\_d\_setlayer\_size()}}
+{\footnotesize\ttfamily int ars\+\_\+d\+\_\+setlayer\+\_\+size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{char $\ast$}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a0b8f31a464bd122d1a4c09ba9758964e}{\+\_\+\+\_\+D}}, \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}, \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_acad19800ec882b7a6ff6e0f47f292569}{ARS\+\_\+\+INVALID}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{structars__layer_a06b47c31d917b16aca9942546c8646f2}{ars\+\_\+layer\+::l\+\_\+size}}, \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}} , 以及 \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a259d0f5daba28a9f1f13b5122ca408e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}\label{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}} 
+\index{apd.c@{apd.c}!ars\_decode\_hex@{ars\_decode\_hex}}
+\index{ars\_decode\_hex@{ars\_decode\_hex}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_decode\_hex()}{ars\_decode\_hex()}}
+{\footnotesize\ttfamily static char $\ast$ ars\+\_\+decode\+\_\+hex (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{char $\ast$}]{s,  }\item[{int $\ast$}]{blen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{apd_8c_a3e7d795a892b3c5cb01d759994f09354}{hexdig}}, \mbox{\hyperlink{apd_8c_a3ef6c4c86cf62b8a6eb5bb10551f8ed1}{hextab}}, \mbox{\hyperlink{apd_8c_a3dc0cc330e42bd9a51ce843df700d202}{hextab\+\_\+initialized}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a50f9246b180d1423593a5219375ec590}{tolower()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_aa7bc4e89305a953abdedd423be3ff536}\label{apd_8c_aa7bc4e89305a953abdedd423be3ff536}} 
+\index{apd.c@{apd.c}!ars\_decode\_string@{ars\_decode\_string}}
+\index{ars\_decode\_string@{ars\_decode\_string}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_decode\_string()}{ars\_decode\_string()}}
+{\footnotesize\ttfamily static char $\ast$ ars\+\_\+decode\+\_\+string (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{char $\ast$}]{s,  }\item[{int $\ast$}]{blen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8c_a3cf8802392c7683727136ce6dfd90f2d}{ars\+\_\+set\+\_\+error()}}, \mbox{\hyperlink{apd_8c_a3e7d795a892b3c5cb01d759994f09354}{hexdig}}, \mbox{\hyperlink{apd_8c_a3ef6c4c86cf62b8a6eb5bb10551f8ed1}{hextab}} , 以及 \mbox{\hyperlink{apd_8c_a3dc0cc330e42bd9a51ce843df700d202}{hextab\+\_\+initialized}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{apd_8c_aa7bc4e89305a953abdedd423be3ff536_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{apd_8c_aa7bc4e89305a953abdedd423be3ff536_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}\label{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}} 
+\index{apd.c@{apd.c}!ars\_get\_keyword\_by\_name@{ars\_get\_keyword\_by\_name}}
+\index{ars\_get\_keyword\_by\_name@{ars\_get\_keyword\_by\_name}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_get\_keyword\_by\_name()}{ars\_get\_keyword\_by\_name()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structars__d__keyword__info}{ars\+\_\+d\+\_\+keyword\+\_\+info}} $\ast$ ars\+\_\+get\+\_\+keyword\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{apd_8c_a50401c41a43cb0b0aa26084970905ab8}{ars\+\_\+dkinfo}}, \mbox{\hyperlink{structars__d__keyword__info_a423a2f8ec6538747ba95731a7fa52de5}{ars\+\_\+d\+\_\+keyword\+\_\+info\+::ki\+\_\+keyword}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a91ca23db677fbf51663c03060776457d}{strcasecmp()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_af729708f8aafff8605adfc66ad0ee440}{ars\+\_\+d\+\_\+build()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ae10bac77e977ec9fd898727de51b7255}\label{apd_8c_ae10bac77e977ec9fd898727de51b7255}} 
+\index{apd.c@{apd.c}!ars\_push\_data@{ars\_push\_data}}
+\index{ars\_push\_data@{ars\_push\_data}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_push\_data()}{ars\_push\_data()}}
+{\footnotesize\ttfamily int ars\+\_\+push\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structars__packet}{ars\+\_\+packet}} $\ast$}]{pkt,  }\item[{int}]{layer,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{apd_8c_ac22d7357384f08898cd733ca8e2d4c15}{ARS\+\_\+\+DEF\+\_\+\+LAYER}}, \mbox{\hyperlink{ars_8h_a30fda43d72fc8e528d39d3b573755576}{ARS\+\_\+\+NOMEM}}, \mbox{\hyperlink{ars_8h_ae00d7844985acbccdc88f63315166101}{ARS\+\_\+\+OK}}, \mbox{\hyperlink{structars__layer_a5259c64ea6c9b5983ff02362dab74d28}{ars\+\_\+layer\+::l\+\_\+data}}, \mbox{\hyperlink{structars__layer_a06b47c31d917b16aca9942546c8646f2}{ars\+\_\+layer\+::l\+\_\+size}} , 以及 \mbox{\hyperlink{structars__packet_ac4c1ea83bdfa991cb8d9de13d66171ef}{ars\+\_\+packet\+::p\+\_\+layer}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\+\_\+d\+\_\+set\+\_\+data()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{apd_8c_ae10bac77e977ec9fd898727de51b7255_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b}\label{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b}} 
+\index{apd.c@{apd.c}!igrp\_set\_dest@{igrp\_set\_dest}}
+\index{igrp\_set\_dest@{igrp\_set\_dest}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{igrp\_set\_dest()}{igrp\_set\_dest()}}
+{\footnotesize\ttfamily static int igrp\+\_\+set\+\_\+dest (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{d,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}} , 以及 \mbox{\hyperlink{hstring_8c_aed474e9c68fbad40b5457eecf0a605db}{strisnum()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_ae3e0e9511e97f031fea20ed24552975a}{ars\+\_\+d\+\_\+set\+\_\+igrpentry()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{apd_8c_ae071e1f228e66d2313606a0a8fc5fd4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{apd_8c_a0f5dd0a494d7f5f028c988e69d77dd6a}\label{apd_8c_a0f5dd0a494d7f5f028c988e69d77dd6a}} 
+\index{apd.c@{apd.c}!igrp\_set\_uint24@{igrp\_set\_uint24}}
+\index{igrp\_set\_uint24@{igrp\_set\_uint24}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{igrp\_set\_uint24()}{igrp\_set\_uint24()}}
+{\footnotesize\ttfamily static void igrp\+\_\+set\+\_\+uint24 (\begin{DoxyParamCaption}\item[{void $\ast$}]{d,  }\item[{char $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_a6328586d70f5190812c2957438e61b17}{\+\_\+\+\_\+u32}} , 以及 \mbox{\hyperlink{ars_8h_a44beb34b1c629b953913d301152ff713}{ars\+\_\+atou}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_ae3e0e9511e97f031fea20ed24552975a}{ars\+\_\+d\+\_\+set\+\_\+igrpentry()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{apd_8c_a0f5dd0a494d7f5f028c988e69d77dd6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{apd_8c_a50401c41a43cb0b0aa26084970905ab8}\label{apd_8c_a50401c41a43cb0b0aa26084970905ab8}} 
+\index{apd.c@{apd.c}!ars\_dkinfo@{ars\_dkinfo}}
+\index{ars\_dkinfo@{ars\_dkinfo}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{ars\_dkinfo}{ars\_dkinfo}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structars__d__keyword__info}{ars\+\_\+d\+\_\+keyword\+\_\+info}} ars\+\_\+dkinfo\mbox{[}\mbox{\hyperlink{apd_8c_aae016a3259903a2ddd194b07e7781a94}{ARS\+\_\+\+DKINFO\+\_\+\+SIZE}}\mbox{]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip"{}},      0,      \mbox{\hyperlink{ars_8c_a96a021f2a062c189a2a76c52c125d955}{ars\_add\_iphdr}}, \mbox{\hyperlink{apd_8c_a38d5cabca3b685e6896d00acc045ff42}{ars\_d\_set\_ip}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.eol"{}},  \mbox{\hyperlink{ars_8h_a58c6df43a83a16d943fa2ae5c9c61211}{ARS\_IPOPT\_EOL}}, \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_a79cb39ada52e13dc62e562f610799b04}{ars\_d\_set\_ipopt\_dumb}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.nop"{}},  \mbox{\hyperlink{ars_8h_a3b451766ea92af6841db925302b52863}{ARS\_IPOPT\_NOP}}, \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_a79cb39ada52e13dc62e562f610799b04}{ars\_d\_set\_ipopt\_dumb}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.sec"{}},  \mbox{\hyperlink{ars_8h_acda19014bed6d8aea4ca4191af4aedb8}{ARS\_IPOPT\_SEC}}, \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_a4c758a249bf8fb2a3b606e68884ccdb5}{ars\_d\_set\_ipopt\_sec}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.sid"{}},  \mbox{\hyperlink{ars_8h_a430f2772c08ff3f425cf4749789bfb2b}{ARS\_IPOPT\_SID}}, \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_aa6cd2912002579bb7e642a06b8831d0c}{ars\_d\_set\_ipopt\_sid}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.lsrr"{}}, \mbox{\hyperlink{ars_8h_a31503860b70d5ac3619f11baf3de32ac}{ARS\_IPOPT\_LSRR}},   \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_ad925becd6981030954850920425bdb4c}{ars\_d\_set\_ipopt\_rr}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.ssrr"{}}, \mbox{\hyperlink{ars_8h_aff55e816f2e796168fedc97daadf2c8c}{ARS\_IPOPT\_SSRR}},   \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_ad925becd6981030954850920425bdb4c}{ars\_d\_set\_ipopt\_rr}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.rr"{}},   \mbox{\hyperlink{ars_8h_a6e5b396847ed2628c07870dbde8c5036}{ARS\_IPOPT\_RR}},   \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_ad925becd6981030954850920425bdb4c}{ars\_d\_set\_ipopt\_rr}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}ip.ts"{}},   \mbox{\hyperlink{ars_8h_a6aeb9542d702e8282fae7511d3fa47c0}{ARS\_IPOPT\_TIMESTAMP}}, \mbox{\hyperlink{ars_8c_aa525d8df8c0fd33f4732f22cf13d437f}{ars\_add\_ipopt}}, \mbox{\hyperlink{apd_8c_ac21222ee280708df5d2f27f660904d43}{ars\_d\_set\_ipopt\_ts}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}udp"{}},     0,      \mbox{\hyperlink{ars_8c_a799f01a17a1ca063f83133e69692b45a}{ars\_add\_udphdr}},   \mbox{\hyperlink{apd_8c_a72b437229d3db59032ace2158b2a031d}{ars\_d\_set\_udp}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp"{}},     0,      \mbox{\hyperlink{ars_8c_a598390035eb5a96bfc9b26c2a00bd391}{ars\_add\_tcphdr}},   \mbox{\hyperlink{apd_8c_a7e1cb905f0466fab2df56c98f0c36923}{ars\_d\_set\_tcp}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.eol"{}}, \mbox{\hyperlink{ars_8h_a66a775b58206e40b7ca580501f191f16}{ARS\_TCPOPT\_EOL}},   \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}},   \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\_d\_set\_tcpopt\_dumb}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.nop"{}}, \mbox{\hyperlink{ars_8h_ae9b07510f4f1a271dee29953244ce4bb}{ARS\_TCPOPT\_NOP}},   \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}},   \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\_d\_set\_tcpopt\_dumb}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.mss"{}}, \mbox{\hyperlink{ars_8h_a02c3199cb4a9e1d98f280c5f8e8bd4f9}{ARS\_TCPOPT\_MAXSEG}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_a595a3322687af1a1fd897c4e27cee1dc}{ars\_d\_set\_tcpopt\_mss}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.wscale"{}}, \mbox{\hyperlink{ars_8h_a323a54df2b339d0a3e44f289bb61cfa0}{ARS\_TCPOPT\_WINDOW}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_a3217f6072ae61dd13e0da3e3bea51293}{ars\_d\_set\_tcpopt\_wscale}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.sackperm"{}}, \mbox{\hyperlink{ars_8h_ace9ff12798996971c5f239c6c07a6c36}{ARS\_TCPOPT\_SACK\_PERM}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_ab8257c335026315da31432e42f14818b}{ars\_d\_set\_tcpopt\_dumb}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.sack"{}}, \mbox{\hyperlink{ars_8h_aa43c94bc3e4675f897bcce53b3b03ac6}{ARS\_TCPOPT\_SACK}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_a018475deb69ab996e8bd72d1e4c45dae}{ars\_d\_set\_tcpopt\_sack}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.echo"{}}, \mbox{\hyperlink{ars_8h_a7cde42e98796319b9deae6d51945bf30}{ARS\_TCPOPT\_ECHOREQUEST}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\_d\_set\_tcpopt\_echo}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.echoreply"{}}, \mbox{\hyperlink{ars_8h_a3555f700f2c7087134e78fa6683934d3}{ARS\_TCPOPT\_ECHOREPLY}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, \mbox{\hyperlink{apd_8c_acf62656a652bb2a82c61ed4922508396}{ars\_d\_set\_tcpopt\_echo}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}tcp.ts"{}},  \mbox{\hyperlink{ars_8h_a1243d0dbfdc3be209beb24cd70e73a52}{ARS\_TCPOPT\_TIMESTAMP}}, \mbox{\hyperlink{ars_8c_a8be8fa0a21d7eb92974d3641d81744aa}{ars\_add\_tcpopt}}, ars\_d\_set\_tcpopt\_ts\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}icmp"{}},    0,      \mbox{\hyperlink{ars_8c_a69c72255daed019058e26bb8fbba56f2}{ars\_add\_icmphdr}}, \mbox{\hyperlink{apd_8c_a5e739e3de16fbb0ac3debc607d8abfb5}{ars\_d\_set\_icmp}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}igrp"{}},    0,      \mbox{\hyperlink{ars_8c_ac37ea8d7531e615ce1b435f75f622d9d}{ars\_add\_igrphdr}}, \mbox{\hyperlink{apd_8c_aa42e3771840b6b1886e185eea3eb726f}{ars\_d\_set\_igrp}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}igrp.entry"{}},  0,      \mbox{\hyperlink{ars_8c_ab603fc84b6537b17dc7fcb3d5720dbc5}{ars\_add\_igrpentry}}, \mbox{\hyperlink{apd_8c_ae3e0e9511e97f031fea20ed24552975a}{ars\_d\_set\_igrpentry}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}data"{}},    0,      \mbox{\hyperlink{ars_8c_a1a0861f5793b91de1c4c9358c72eea07}{ars\_add\_data}},   \mbox{\hyperlink{apd_8c_a037090eaa510e52320e8af6806036599}{ars\_d\_set\_data}}\},}
+\DoxyCodeLine{    \{NULL, 0, NULL, NULL\} }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a50a7efd6fe93ec7b53aa341acfcce76b}{ars\+\_\+get\+\_\+keyword\+\_\+by\+\_\+name()}}.
+
+\mbox{\Hypertarget{apd_8c_a3e7d795a892b3c5cb01d759994f09354}\label{apd_8c_a3e7d795a892b3c5cb01d759994f09354}} 
+\index{apd.c@{apd.c}!hexdig@{hexdig}}
+\index{hexdig@{hexdig}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{hexdig}{hexdig}}
+{\footnotesize\ttfamily char$\ast$ hexdig = \char`\"{}0123456789abcdef\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex()}} , 以及 \mbox{\hyperlink{apd_8c_aa7bc4e89305a953abdedd423be3ff536}{ars\+\_\+decode\+\_\+string()}}.
+
+\mbox{\Hypertarget{apd_8c_a3ef6c4c86cf62b8a6eb5bb10551f8ed1}\label{apd_8c_a3ef6c4c86cf62b8a6eb5bb10551f8ed1}} 
+\index{apd.c@{apd.c}!hextab@{hextab}}
+\index{hextab@{hextab}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{hextab}{hextab}}
+{\footnotesize\ttfamily int hextab\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex()}} , 以及 \mbox{\hyperlink{apd_8c_aa7bc4e89305a953abdedd423be3ff536}{ars\+\_\+decode\+\_\+string()}}.
+
+\mbox{\Hypertarget{apd_8c_a3dc0cc330e42bd9a51ce843df700d202}\label{apd_8c_a3dc0cc330e42bd9a51ce843df700d202}} 
+\index{apd.c@{apd.c}!hextab\_initialized@{hextab\_initialized}}
+\index{hextab\_initialized@{hextab\_initialized}!apd.c@{apd.c}}
+\doxysubsubsection{\texorpdfstring{hextab\_initialized}{hextab\_initialized}}
+{\footnotesize\ttfamily int hextab\+\_\+initialized = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{apd_8c_a6ed7d5ef9fbdf5c63c459143b3165aed}{ars\+\_\+decode\+\_\+hex()}} , 以及 \mbox{\hyperlink{apd_8c_aa7bc4e89305a953abdedd423be3ff536}{ars\+\_\+decode\+\_\+string()}}.
+

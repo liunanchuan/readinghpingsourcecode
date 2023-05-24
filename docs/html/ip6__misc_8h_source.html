@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Include/ip6_misc.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_ed17a792b07c09ae6ce59b26add31fa3.html">Include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ip6_misc.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ip6__misc_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 1993, 1994, 1997</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *  The Regents of the University of California.  All rights reserved.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * modification, are permitted provided that: (1) source code distributions</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * retain the above copyright notice and this paragraph in its entirety, (2)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * distributions including binary code include the above copyright notice and</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * this paragraph in its entirety in the documentation or other materials</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * provided with the distribution, and (3) all advertising materials mentioning</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * features or use of this software display the following acknowledgement:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * ``This product includes software developed by the University of California,</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * Lawrence Berkeley Laboratory and its contributors.&#39;&#39; Neither the name of</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * the University nor the names of its contributors may be used to endorse</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * or promote products derived from this software without specific prior</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * written permission.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * THIS SOFTWARE IS PROVIDED ``AS IS&#39;&#39; AND WITHOUT ANY EXPRESS OR IMPLIED</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * @(#) $Header: /tcpdump/master/libpcap/Win32/Include/ip6_misc.h,v 1.5 2006-01-22 18:02:18 gianluca Exp $ (LBL)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * This file contains a collage of declarations for IPv6 from FreeBSD not present in Windows</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;winsock2.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;ws2tcpip.h&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#ifndef __MINGW32__</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#abcddcc195249a64bb13b5fc8b438548d">   33</a></span><span class="preprocessor">#define IN_MULTICAST(a)     IN_CLASSD(a)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#af168ec04d060a593fb5607320c90f06c">   36</a></span><span class="preprocessor">#define IN_EXPERIMENTAL(a)  ((((u_int32_t) (a)) &amp; 0xf0000000) == 0xf0000000)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a3d2d5e8347d77665a4aa3bd3ada19ff0">   38</a></span><span class="preprocessor">#define IN_LOOPBACKNET      127</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#if defined(__MINGW32__) &amp;&amp; defined(DEFINE_ADDITIONAL_IPV6_STUFF)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/* IPv6 address */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">struct </span>in6_addr</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">union</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    u_int8_t        u6_addr8[16];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    u_int16_t   u6_addr16[8];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    u_int32_t   u6_addr32[4];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      } in6_u;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define s6_addr         in6_u.u6_addr8</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define s6_addr16       in6_u.u6_addr16</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define s6_addr32       in6_u.u6_addr32</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define s6_addr64       in6_u.u6_addr64</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define IN6ADDR_ANY_INIT { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define IN6ADDR_LOOPBACK_INIT { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 }</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif </span><span class="comment">/* __MINGW32__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#if (defined _MSC_VER) || (defined(__MINGW32__) &amp;&amp; defined(DEFINE_ADDITIONAL_IPV6_STUFF))</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>  sa_family_t;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#if defined(__MINGW32__) &amp;&amp; defined(DEFINE_ADDITIONAL_IPV6_STUFF)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#define __SOCKADDR_COMMON(sa_prefix) \</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">  sa_family_t sa_prefix##family</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/* Ditto, for IPv6.  */</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">struct </span>sockaddr_in6</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    __SOCKADDR_COMMON (sin6_);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    u_int16_t sin6_port;        <span class="comment">/* Transport layer port # */</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    u_int32_t sin6_flowinfo;    <span class="comment">/* IPv6 flow information */</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">struct </span>in6_addr sin6_addr;  <span class="comment">/* IPv6 address */</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  };</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#define IN6_IS_ADDR_V4MAPPED(a) \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">    ((((u_int32_t *) (a))[0] == 0) &amp;&amp; (((u_int32_t *) (a))[1] == 0) &amp;&amp; \</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">     (((u_int32_t *) (a))[2] == htonl (0xffff)))</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#define IN6_IS_ADDR_MULTICAST(a) (((u_int8_t *) (a))[0] == 0xff)</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#define IN6_IS_ADDR_LINKLOCAL(a) \</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">    ((((u_int32_t *) (a))[0] &amp; htonl (0xffc00000)) == htonl (0xfe800000))</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#define IN6_IS_ADDR_LOOPBACK(a) \</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">    (((u_int32_t *) (a))[0] == 0 &amp;&amp; ((u_int32_t *) (a))[1] == 0 &amp;&amp; \</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">     ((u_int32_t *) (a))[2] == 0 &amp;&amp; ((u_int32_t *) (a))[3] == htonl (1))</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">/* __MINGW32__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a4070ab87c58e9ea0b339a49d5599a716">   94</a></span><span class="preprocessor">#define ip6_vfc   ip6_ctlun.ip6_un2_vfc</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a3b7afb14f7a6dce90a6d382445c028ee">   95</a></span><span class="preprocessor">#define ip6_flow  ip6_ctlun.ip6_un1.ip6_un1_flow</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a2f12fbab2e739076876c82ae50da4f5a">   96</a></span><span class="preprocessor">#define ip6_plen  ip6_ctlun.ip6_un1.ip6_un1_plen</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a51d28c6adc4201dbc5302e83815c7b6b">   97</a></span><span class="preprocessor">#define ip6_nxt   ip6_ctlun.ip6_un1.ip6_un1_nxt</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aace8be997ae474eb807fceb2f7b84f2c">   98</a></span><span class="preprocessor">#define ip6_hlim  ip6_ctlun.ip6_un1.ip6_un1_hlim</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a22c6f491754e32143a7f9c1bef4b4856">   99</a></span><span class="preprocessor">#define ip6_hops  ip6_ctlun.ip6_un1.ip6_un1_hlim</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aed840851ebbf3520d7a072afc8aeda19">  101</a></span><span class="preprocessor">#define nd_rd_type               nd_rd_hdr.icmp6_type</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aeeb140ac4c0bb0d49f8c7f2310b652d7">  102</a></span><span class="preprocessor">#define nd_rd_code               nd_rd_hdr.icmp6_code</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a52c618934c98e0aeaa1ddc5b08ceb1ed">  103</a></span><span class="preprocessor">#define nd_rd_cksum              nd_rd_hdr.icmp6_cksum</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a0b74bcef751956e1ad37ac21bbd29519">  104</a></span><span class="preprocessor">#define nd_rd_reserved           nd_rd_hdr.icmp6_data32[0]</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"> *  IPV6 extension headers</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aff1ff353f3899a7f5d45b79be5d5ddd7">  109</a></span><span class="preprocessor">#define IPPROTO_HOPOPTS     0   </span><span class="comment">/* IPv6 hop-by-hop options  */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a029fc3b9526146e54addf53ca297e629">  110</a></span><span class="preprocessor">#define IPPROTO_IPV6        41  </span><span class="comment">/* IPv6 header.  */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aedc955d9fee17d8992ad39fbc9feb7c7">  111</a></span><span class="preprocessor">#define IPPROTO_ROUTING     43  </span><span class="comment">/* IPv6 routing header      */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ab31ae8fef94a70e83dca388d8eb1e874">  112</a></span><span class="preprocessor">#define IPPROTO_FRAGMENT    44  </span><span class="comment">/* IPv6 fragmentation header    */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a4b9d5e2fbcca9ae84db04807a6693c31">  113</a></span><span class="preprocessor">#define IPPROTO_ESP     50  </span><span class="comment">/* encapsulating security payload */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a517be4ff177b5a3d70c10cb2ca7ea31e">  114</a></span><span class="preprocessor">#define IPPROTO_AH      51  </span><span class="comment">/* authentication header    */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a3a52cdbaf5f9fc647399ef2481c8204d">  115</a></span><span class="preprocessor">#define IPPROTO_ICMPV6      58  </span><span class="comment">/* ICMPv6           */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ae5c5c3c1082bd465a79cba2d1f05d66b">  116</a></span><span class="preprocessor">#define IPPROTO_NONE        59  </span><span class="comment">/* IPv6 no next header      */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a95d72ab52f56094df17a63accfe8f5e1">  117</a></span><span class="preprocessor">#define IPPROTO_DSTOPTS     60  </span><span class="comment">/* IPv6 destination options */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ae06997f73d0cb6365963400e23d2c0e5">  118</a></span><span class="preprocessor">#define IPPROTO_PIM         103 </span><span class="comment">/* Protocol Independent Multicast.  */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a03abb90df75deec378801f8db1b62260">  120</a></span><span class="preprocessor">#define  IPV6_RTHDR_TYPE_0 0</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">/* Option types and related macros */</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aa8334d544151f052317c2ae3727c121c">  123</a></span><span class="preprocessor">#define IP6OPT_PAD1     0x00    </span><span class="comment">/* 00 0 00000 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#af49f318181963a2e514485b9330f7fb0">  124</a></span><span class="preprocessor">#define IP6OPT_PADN     0x01    </span><span class="comment">/* 00 0 00001 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a8e9b8d710aad6957e7c3d0afad761133">  125</a></span><span class="preprocessor">#define IP6OPT_JUMBO        0xC2    </span><span class="comment">/* 11 0 00010 = 194 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ae6dad3f922622d2ef092e3216b3fb561">  126</a></span><span class="preprocessor">#define IP6OPT_JUMBO_LEN    6</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a27ff48b19d8137f51c929ae6a5e22de0">  127</a></span><span class="preprocessor">#define IP6OPT_ROUTER_ALERT 0x05    </span><span class="comment">/* 00 0 00101 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a23c94a983ec0c69a09cf995c319c2931">  129</a></span><span class="preprocessor">#define IP6OPT_RTALERT_LEN  4</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a61dc665a1fc20474ebc6ac00435c37f5">  130</a></span><span class="preprocessor">#define IP6OPT_RTALERT_MLD  0   </span><span class="comment">/* Datagram contains an MLD message */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a054655689a860b2cab6f494760288a98">  131</a></span><span class="preprocessor">#define IP6OPT_RTALERT_RSVP 1   </span><span class="comment">/* Datagram contains an RSVP message */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a92affa9ac98c480c251272736bff7c46">  132</a></span><span class="preprocessor">#define IP6OPT_RTALERT_ACTNET   2   </span><span class="comment">/* contains an Active Networks msg */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ab8d2d3a500608d3cfefa8e8976eaa4c3">  133</a></span><span class="preprocessor">#define IP6OPT_MINLEN       2</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ae804108cbd7faeb2d1c0a6de3f0ec744">  135</a></span><span class="preprocessor">#define IP6OPT_BINDING_UPDATE   0xc6    </span><span class="comment">/* 11 0 00110 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a2d4632a080530d9a583ab1b5ca4f225c">  136</a></span><span class="preprocessor">#define IP6OPT_BINDING_ACK  0x07    </span><span class="comment">/* 00 0 00111 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a099c787a68fe11c78b581171ace579d9">  137</a></span><span class="preprocessor">#define IP6OPT_BINDING_REQ  0x08    </span><span class="comment">/* 00 0 01000 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a9b913461978e94df243ea5c14468b41b">  138</a></span><span class="preprocessor">#define IP6OPT_HOME_ADDRESS 0xc9    </span><span class="comment">/* 11 0 01001 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#ac8d0fb9a8f9cfe7176380685cccfd2de">  139</a></span><span class="preprocessor">#define IP6OPT_EID      0x8a    </span><span class="comment">/* 10 0 01010 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a1ac0d8d7522fa1fd450c2b97a3de589d">  141</a></span><span class="preprocessor">#define IP6OPT_TYPE(o)      ((o) &amp; 0xC0)</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#aa377c02fb595e45472c4910e69dab749">  142</a></span><span class="preprocessor">#define IP6OPT_TYPE_SKIP    0x00</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a7c16cf693e4b3b759afa1f705f8e8144">  143</a></span><span class="preprocessor">#define IP6OPT_TYPE_DISCARD 0x40</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a1ee2929fffbcb2baa1fb529e2682a630">  144</a></span><span class="preprocessor">#define IP6OPT_TYPE_FORCEICMP   0x80</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#af42dea58e34f63d04583cba0f2e8ed56">  145</a></span><span class="preprocessor">#define IP6OPT_TYPE_ICMP    0xC0</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="ip6__misc_8h.html#a57d85cd93542e02f4b268dc2e5c08569">  147</a></span><span class="preprocessor">#define IP6OPT_MUTABLE      0x20</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#if defined(__MINGW32__) &amp;&amp; defined(DEFINE_ADDITIONAL_IPV6_STUFF)</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#ifndef EAI_ADDRFAMILY</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">struct </span><a class="code hl_struct" href="structaddrinfo.html">addrinfo</a> {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structaddrinfo.html#a92528a848ebf34ab99687dd06a09cc93">ai_flags</a>;   <span class="comment">/* AI_PASSIVE, AI_CANONNAME */</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structaddrinfo.html#a4dc44d22f13bc5c59bff73e549e96a5c">ai_family</a>;  <span class="comment">/* PF_xxx */</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structaddrinfo.html#a2109130e73586150c41fed16311e1af6">ai_socktype</a>;    <span class="comment">/* SOCK_xxx */</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structaddrinfo.html#a6ade486587feaa03d492eb84cfc83451">ai_protocol</a>;    <span class="comment">/* 0 or IPPROTO_xxx for IPv4 and IPv6 */</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">size_t</span>  <a class="code hl_variable" href="structaddrinfo.html#a98d686f4346a14c118092536d61ecf8d">ai_addrlen</a>; <span class="comment">/* length of ai_addr */</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">char</span>    *<a class="code hl_variable" href="structaddrinfo.html#a9fcbdd64fcb9adcf195a78b10f1fe8f6">ai_canonname</a>;  <span class="comment">/* canonical name for hostname */</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">struct </span>sockaddr *<a class="code hl_variable" href="structaddrinfo.html#a12798d0c9e56159c6e506eee1f7b9946">ai_addr</a>;   <span class="comment">/* binary address */</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structaddrinfo.html">addrinfo</a> *<a class="code hl_variable" href="structaddrinfo.html#ab14efb2c3cdb16b4f765c1cbc29a5182">ai_next</a>;   <span class="comment">/* next structure in linked list */</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#endif </span><span class="comment">/* __MINGW32__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="astructaddrinfo_html"><div class="ttname"><a href="structaddrinfo.html">addrinfo</a></div><div class="ttdef"><b>Definition:</b> addrinfo.h:71</div></div>
+<div class="ttc" id="astructaddrinfo_html_a12798d0c9e56159c6e506eee1f7b9946"><div class="ttname"><a href="structaddrinfo.html#a12798d0c9e56159c6e506eee1f7b9946">addrinfo::ai_addr</a></div><div class="ttdeci">struct sockaddr * ai_addr</div><div class="ttdef"><b>Definition:</b> addrinfo.h:78</div></div>
+<div class="ttc" id="astructaddrinfo_html_a2109130e73586150c41fed16311e1af6"><div class="ttname"><a href="structaddrinfo.html#a2109130e73586150c41fed16311e1af6">addrinfo::ai_socktype</a></div><div class="ttdeci">int ai_socktype</div><div class="ttdef"><b>Definition:</b> addrinfo.h:74</div></div>
+<div class="ttc" id="astructaddrinfo_html_a4dc44d22f13bc5c59bff73e549e96a5c"><div class="ttname"><a href="structaddrinfo.html#a4dc44d22f13bc5c59bff73e549e96a5c">addrinfo::ai_family</a></div><div class="ttdeci">int ai_family</div><div class="ttdef"><b>Definition:</b> addrinfo.h:73</div></div>
+<div class="ttc" id="astructaddrinfo_html_a6ade486587feaa03d492eb84cfc83451"><div class="ttname"><a href="structaddrinfo.html#a6ade486587feaa03d492eb84cfc83451">addrinfo::ai_protocol</a></div><div class="ttdeci">int ai_protocol</div><div class="ttdef"><b>Definition:</b> addrinfo.h:75</div></div>
+<div class="ttc" id="astructaddrinfo_html_a92528a848ebf34ab99687dd06a09cc93"><div class="ttname"><a href="structaddrinfo.html#a92528a848ebf34ab99687dd06a09cc93">addrinfo::ai_flags</a></div><div class="ttdeci">int ai_flags</div><div class="ttdef"><b>Definition:</b> addrinfo.h:72</div></div>
+<div class="ttc" id="astructaddrinfo_html_a98d686f4346a14c118092536d61ecf8d"><div class="ttname"><a href="structaddrinfo.html#a98d686f4346a14c118092536d61ecf8d">addrinfo::ai_addrlen</a></div><div class="ttdeci">size_t ai_addrlen</div><div class="ttdef"><b>Definition:</b> addrinfo.h:76</div></div>
+<div class="ttc" id="astructaddrinfo_html_a9fcbdd64fcb9adcf195a78b10f1fe8f6"><div class="ttname"><a href="structaddrinfo.html#a9fcbdd64fcb9adcf195a78b10f1fe8f6">addrinfo::ai_canonname</a></div><div class="ttdeci">char * ai_canonname</div><div class="ttdef"><b>Definition:</b> addrinfo.h:77</div></div>
+<div class="ttc" id="astructaddrinfo_html_ab14efb2c3cdb16b4f765c1cbc29a5182"><div class="ttname"><a href="structaddrinfo.html#ab14efb2c3cdb16b4f765c1cbc29a5182">addrinfo::ai_next</a></div><div class="ttdeci">struct addrinfo * ai_next</div><div class="ttdef"><b>Definition:</b> addrinfo.h:79</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: libpcap-1.1.1/Win32/Src/getopt.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_917fa916bccd4717f5815e4916563639.html">libpcap-1.1.1</a></li><li class="navelem"><a class="el" href="dir_54e6d2a320d9971eafce78a5ab874f40.html">Win32</a></li><li class="navelem"><a class="el" href="dir_15938365a03fce7f68d2b279197f6a3c.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">getopt.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+getopt.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getopt_8c__incl.png" border="0" usemap="#alibpcap-1_81_81_2Win32_2Src_2getopt_8c" alt=""/></div>
+<map name="alibpcap-1_81_81_2Win32_2Src_2getopt_8c" id="alibpcap-1_81_81_2Win32_2Src_2getopt_8c">
+<area shape="rect" title=" " alt="" coords="54,5,191,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,67,121"/>
+<area shape="rect" title=" " alt="" coords="91,95,155,121"/>
+<area shape="rect" title=" " alt="" coords="179,95,245,121"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a1c8c2c090f7416155b04f9d6eb50faa0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#a1c8c2c090f7416155b04f9d6eb50faa0">BADCH</a>&#160;&#160;&#160;(int)'?'</td></tr>
+<tr class="separator:a1c8c2c090f7416155b04f9d6eb50faa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66fa298ed3187720cb609e15cd7d22c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#aa66fa298ed3187720cb609e15cd7d22c">BADARG</a>&#160;&#160;&#160;(int)':'</td></tr>
+<tr class="separator:aa66fa298ed3187720cb609e15cd7d22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac393ec775622430dfe25cd2ac9dec9f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#ac393ec775622430dfe25cd2ac9dec9f4">EMSG</a>&#160;&#160;&#160;&quot;&quot;</td></tr>
+<tr class="separator:ac393ec775622430dfe25cd2ac9dec9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ac4cbd81bf756957d5021b41159a17d0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#ac4cbd81bf756957d5021b41159a17d0d">getopt</a> (int nargc, char *const *nargv, const char *ostr)</td></tr>
+<tr class="separator:ac4cbd81bf756957d5021b41159a17d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ae30f05ee1e2e5652f174a35c7875d25e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#ae30f05ee1e2e5652f174a35c7875d25e">opterr</a> = 1</td></tr>
+<tr class="separator:ae30f05ee1e2e5652f174a35c7875d25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e1c16213bbee2d5e8cc363309f418c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#ad5e1c16213bbee2d5e8cc363309f418c">optind</a> = 1</td></tr>
+<tr class="separator:ad5e1c16213bbee2d5e8cc363309f418c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475b8db98445da73e5f62a1ef6324b95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#a475b8db98445da73e5f62a1ef6324b95">optopt</a></td></tr>
+<tr class="separator:a475b8db98445da73e5f62a1ef6324b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62231492adf03e02ff80d0bfb3b3ebd6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#a62231492adf03e02ff80d0bfb3b3ebd6">optreset</a></td></tr>
+<tr class="separator:a62231492adf03e02ff80d0bfb3b3ebd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb50a0eab9fed92fc3bfc7dfa4f2c410"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getopt_8c.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">optarg</a></td></tr>
+<tr class="separator:adb50a0eab9fed92fc3bfc7dfa4f2c410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="aa66fa298ed3187720cb609e15cd7d22c" name="aa66fa298ed3187720cb609e15cd7d22c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66fa298ed3187720cb609e15cd7d22c">&#9670;&nbsp;</a></span>BADARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BADARG&#160;&#160;&#160;(int)':'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c8c2c090f7416155b04f9d6eb50faa0" name="a1c8c2c090f7416155b04f9d6eb50faa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8c2c090f7416155b04f9d6eb50faa0">&#9670;&nbsp;</a></span>BADCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BADCH&#160;&#160;&#160;(int)'?'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac393ec775622430dfe25cd2ac9dec9f4" name="ac393ec775622430dfe25cd2ac9dec9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac393ec775622430dfe25cd2ac9dec9f4">&#9670;&nbsp;</a></span>EMSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMSG&#160;&#160;&#160;&quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ac4cbd81bf756957d5021b41159a17d0d" name="ac4cbd81bf756957d5021b41159a17d0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4cbd81bf756957d5021b41159a17d0d">&#9670;&nbsp;</a></span>getopt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getopt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nargc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char * const *&#160;</td>
+          <td class="paramname"><em>nargv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ostr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="getopt_8c.html#aa66fa298ed3187720cb609e15cd7d22c">BADARG</a>, <a class="el" href="getopt_8c.html#a1c8c2c090f7416155b04f9d6eb50faa0">BADCH</a>, <a class="el" href="getopt_8c.html#ac393ec775622430dfe25cd2ac9dec9f4">EMSG</a>, <a class="el" href="getopt_8c.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">optarg</a>, <a class="el" href="getopt_8c.html#ae30f05ee1e2e5652f174a35c7875d25e">opterr</a>, <a class="el" href="getopt_8c.html#ad5e1c16213bbee2d5e8cc363309f418c">optind</a>, <a class="el" href="getopt_8c.html#a475b8db98445da73e5f62a1ef6324b95">optopt</a> , 以及 <a class="el" href="getopt_8c.html#a62231492adf03e02ff80d0bfb3b3ebd6">optreset</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="filtertest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="getopt_8c_ac4cbd81bf756957d5021b41159a17d0d_icgraph.png" border="0" usemap="#agetopt_8c_ac4cbd81bf756957d5021b41159a17d0d_icgraph" alt=""/></div>
+<map name="agetopt_8c_ac4cbd81bf756957d5021b41159a17d0d_icgraph" id="agetopt_8c_ac4cbd81bf756957d5021b41159a17d0d_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,163,32"/>
+<area shape="rect" href="filtertest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="adb50a0eab9fed92fc3bfc7dfa4f2c410" name="adb50a0eab9fed92fc3bfc7dfa4f2c410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb50a0eab9fed92fc3bfc7dfa4f2c410">&#9670;&nbsp;</a></span>optarg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* optarg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="os-sunos4_8h.html#a09d633c0a8afac8b4a910a5dfce67d60">getopt()</a> , 以及 <a class="el" href="filtertest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="ae30f05ee1e2e5652f174a35c7875d25e" name="ae30f05ee1e2e5652f174a35c7875d25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30f05ee1e2e5652f174a35c7875d25e">&#9670;&nbsp;</a></span>opterr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opterr = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="os-sunos4_8h.html#a09d633c0a8afac8b4a910a5dfce67d60">getopt()</a> , 以及 <a class="el" href="filtertest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad5e1c16213bbee2d5e8cc363309f418c" name="ad5e1c16213bbee2d5e8cc363309f418c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e1c16213bbee2d5e8cc363309f418c">&#9670;&nbsp;</a></span>optind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optind = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="os-sunos4_8h.html#a09d633c0a8afac8b4a910a5dfce67d60">getopt()</a> , 以及 <a class="el" href="filtertest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a475b8db98445da73e5f62a1ef6324b95" name="a475b8db98445da73e5f62a1ef6324b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475b8db98445da73e5f62a1ef6324b95">&#9670;&nbsp;</a></span>optopt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optopt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="os-sunos4_8h.html#a09d633c0a8afac8b4a910a5dfce67d60">getopt()</a>.</p>
+
+</div>
+</div>
+<a id="a62231492adf03e02ff80d0bfb3b3ebd6" name="a62231492adf03e02ff80d0bfb3b3ebd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62231492adf03e02ff80d0bfb3b3ebd6">&#9670;&nbsp;</a></span>optreset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optreset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="os-sunos4_8h.html#a09d633c0a8afac8b4a910a5dfce67d60">getopt()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

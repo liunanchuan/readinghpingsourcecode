@@ -1,0 +1,152 @@
+\hypertarget{addrinfo_8h_source}{}\doxysection{addrinfo.\+h}
+\label{addrinfo_8h_source}\index{libpcap-\/1.1.1/Win32/Include/addrinfo.h@{libpcap-\/1.1.1/Win32/Include/addrinfo.h}}
+\mbox{\hyperlink{addrinfo_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995, 1996, 1997, 1998, and 1999 WIDE Project.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * }}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. Neither the name of the project nor the names of its contributors}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{15 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{ * }}
+\DoxyCodeLine{17 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{18 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{19 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{20 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{21 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{22 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{23 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{24 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{25 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{26 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{27 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/* \$Id: addrinfo.h,v 1.1 2002-\/08-\/01 08:33:05 risso Exp \$ */}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef HAVE\_ADDRINFO}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{/*}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Error return codes from getaddrinfo()}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define EAI\_ADDRFAMILY   1  }\textcolor{comment}{/* address family for hostname not supported */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define EAI\_AGAIN    2  }\textcolor{comment}{/* temporary failure in name resolution */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define EAI\_BADFLAGS     3  }\textcolor{comment}{/* invalid value for ai\_flags */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define EAI\_FAIL     4  }\textcolor{comment}{/* non-\/recoverable failure in name resolution */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define EAI\_FAMILY   5  }\textcolor{comment}{/* ai\_family not supported */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define EAI\_MEMORY   6  }\textcolor{comment}{/* memory allocation failure */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define EAI\_NODATA   7  }\textcolor{comment}{/* no address associated with hostname */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define EAI\_NONAME   8  }\textcolor{comment}{/* hostname nor servname provided, or not known */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define EAI\_SERVICE  9  }\textcolor{comment}{/* servname not supported for ai\_socktype */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define EAI\_SOCKTYPE    10  }\textcolor{comment}{/* ai\_socktype not supported */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define EAI\_SYSTEM  11  }\textcolor{comment}{/* system error returned in errno */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define EAI\_BADHINTS    12}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define EAI\_PROTOCOL    13}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define EAI\_MAX     14}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{/* internal error */}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define NETDB\_INTERNAL  -\/1  }\textcolor{comment}{/* see errno */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/*}}
+\DoxyCodeLine{56 \textcolor{comment}{ * Flag values for getaddrinfo()}}
+\DoxyCodeLine{57 \textcolor{comment}{ */}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define AI\_PASSIVE  0x00000001 }\textcolor{comment}{/* get address to use bind() */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define AI\_CANONNAME    0x00000002 }\textcolor{comment}{/* fill ai\_canonname */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define AI\_NUMERICHOST  0x00000004 }\textcolor{comment}{/* prevent name resolution */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{comment}{/* valid flags for addrinfo */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define AI\_MASK     (AI\_PASSIVE | AI\_CANONNAME | AI\_NUMERICHOST)}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define AI\_ALL      0x00000100 }\textcolor{comment}{/* IPv6 and IPv4-\/mapped (with AI\_V4MAPPED) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define AI\_V4MAPPED\_CFG 0x00000200 }\textcolor{comment}{/* accept IPv4-\/mapped if kernel supports */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define AI\_ADDRCONFIG   0x00000400 }\textcolor{comment}{/* only if any address is assigned */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define AI\_V4MAPPED 0x00000800 }\textcolor{comment}{/* accept IPv4-\/mapped IPv6 address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{68 \textcolor{comment}{/* special recommended flags for getipnodebyname */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define AI\_DEFAULT  (AI\_V4MAPPED\_CFG | AI\_ADDRCONFIG)}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{struct }\mbox{\hyperlink{structaddrinfo}{addrinfo}} \{}
+\DoxyCodeLine{72     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a92528a848ebf34ab99687dd06a09cc93}{ai\_flags}};   \textcolor{comment}{/* AI\_PASSIVE, AI\_CANONNAME */}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a4dc44d22f13bc5c59bff73e549e96a5c}{ai\_family}}; \textcolor{comment}{/* PF\_xxx */}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a2109130e73586150c41fed16311e1af6}{ai\_socktype}}; \textcolor{comment}{/* SOCK\_xxx */}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} \mbox{\hyperlink{structaddrinfo_a6ade486587feaa03d492eb84cfc83451}{ai\_protocol}}; \textcolor{comment}{/* 0 or IPPROTO\_xxx for IPv4 and IPv6 */}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{size\_t}  \mbox{\hyperlink{structaddrinfo_a98d686f4346a14c118092536d61ecf8d}{ai\_addrlen}};   \textcolor{comment}{/* length of ai\_addr */}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{char}    *\mbox{\hyperlink{structaddrinfo_a9fcbdd64fcb9adcf195a78b10f1fe8f6}{ai\_canonname}};  \textcolor{comment}{/* canonical name for hostname */}}
+\DoxyCodeLine{78     \textcolor{keyword}{struct }sockaddr *\mbox{\hyperlink{structaddrinfo_a12798d0c9e56159c6e506eee1f7b9946}{ai\_addr}};    \textcolor{comment}{/* binary address */}}
+\DoxyCodeLine{79     \textcolor{keyword}{struct }\mbox{\hyperlink{structaddrinfo}{addrinfo}} *\mbox{\hyperlink{structaddrinfo_ab14efb2c3cdb16b4f765c1cbc29a5182}{ai\_next}};    \textcolor{comment}{/* next structure in linked list */}}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{addrinfo_8h_ab3ea0e0f67dca182dc4a4cf4df7f29ee}{freeaddrinfo}} (\textcolor{keyword}{struct} \mbox{\hyperlink{structaddrinfo}{addrinfo}} *);}
+\DoxyCodeLine{83 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{addrinfo_8h_a284a0be4cc7422bcf65ad89fc150abbf}{freehostent}} (\textcolor{keyword}{struct} hostent *);}
+\DoxyCodeLine{84 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *\mbox{\hyperlink{addrinfo_8h_a2188e19091eb51ac870bb7ed19f44658}{gai\_strerror}} (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{85 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{addrinfo_8h_a0399cf551e1061c0828721601957e03e}{getaddrinfo}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *,}
+\DoxyCodeLine{86                 \textcolor{keyword}{const} \textcolor{keyword}{struct} \mbox{\hyperlink{structaddrinfo}{addrinfo}} *, \textcolor{keyword}{struct} \mbox{\hyperlink{structaddrinfo}{addrinfo}} **);}
+\DoxyCodeLine{87 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{addrinfo_8h_ae1985b06e8b5c4efe3bd2ac8e2c833ab}{getnameinfo}} (\textcolor{keyword}{const} \textcolor{keyword}{struct} sockaddr *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{char} *,}
+\DoxyCodeLine{88                 \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{89 \textcolor{keyword}{extern} \textcolor{keyword}{struct }hostent *\mbox{\hyperlink{addrinfo_8h_a069cef6c60208601a6fad2b60fc01617}{getipnodebyaddr}} (\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{90 \textcolor{keyword}{extern} \textcolor{keyword}{struct }hostent *\mbox{\hyperlink{addrinfo_8h_a03798f3991da03803a3ca2453bd8cae4}{getipnodebyname}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} *);}
+\DoxyCodeLine{91 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{addrinfo_8h_a04448ca94417a08fd6782a0850dd673b}{inet\_pton}} (\textcolor{keywordtype}{int}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{void} *);}
+\DoxyCodeLine{92 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{addrinfo_8h_adbc71c1dadd53ea3fb812d8ca23d7dbf}{inet\_ntop}} (\textcolor{keywordtype}{int}, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#ifndef EAI\_BADHINTS}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define EAI\_BADHINTS    12}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#ifndef EAI\_PROTOCOL    }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EAI\_PROTOCOL    13}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#ifndef EAI\_MAX }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define EAI\_MAX     14}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#ifndef NETDB\_INTERNAL}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define NETDB\_INTERNAL  -\/1  }\textcolor{comment}{/* see errno */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#ifndef AI\_MASK}}
+\DoxyCodeLine{112 \textcolor{comment}{/* valid flags for addrinfo */}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define AI\_MASK     (AI\_PASSIVE | AI\_CANONNAME | AI\_NUMERICHOST)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* HAVE\_ADDRINFO */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{/*}}
+\DoxyCodeLine{119 \textcolor{comment}{ * Constants for getnameinfo()}}
+\DoxyCodeLine{120 \textcolor{comment}{ */}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#ifndef NI\_MAXHOST}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define NI\_MAXHOST  1025}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#ifndef NI\_MAXSERV}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define NI\_MAXSERV  32}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{comment}{/*}}
+\DoxyCodeLine{129 \textcolor{comment}{ * Flag values for getnameinfo()}}
+\DoxyCodeLine{130 \textcolor{comment}{ */}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#ifndef NI\_NOFQDN}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define NI\_NOFQDN   0x00000001}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#ifndef NI\_NUMERICHOST}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define NI\_NUMERICHOST  0x00000002}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#ifndef NI\_NAMEREQD}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define NI\_NAMEREQD 0x00000004}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifndef NI\_NUMERICSERV}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define NI\_NUMERICSERV  0x00000008}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#ifndef NI\_DGRAM}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define NI\_DGRAM    0x00000010}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{146 }
+
+\end{DoxyCode}

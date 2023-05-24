@@ -1,0 +1,408 @@
+\hypertarget{adbuf_8h}{}\doxysection{adbuf.\+h 文件参考}
+\label{adbuf_8h}\index{adbuf.h@{adbuf.h}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+adbuf.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{adbuf_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structadbuf}{adbuf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{adbuf_8h_adfba5d692940d98fd97ab6ba91f7144f}{ADBUF\+\_\+\+INCR}}~256 /$\ast$ note that this MUST BE $>$= 1 $\ast$/
+\item 
+\#define \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}}(b)~((b)-\/$>$size -\/ (b)-\/$>$left)
+\item 
+\#define \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}(b)~((b)-\/$>$buf)
+\item 
+\#define \mbox{\hyperlink{adbuf_8h_a6fefda3cbb24995e657ccf75938c2f31}{adbuf\+\_\+from\+\_\+heapstring}}(b,  s)~ do \{ b-\/$>$buf = s; b-\/$>$left = 0; b-\/$>$size = strlen(s); \} while(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{adbuf_8h_a4dc971542b7ecf05b4bb6aa9ce4730a6}{adbuf\+\_\+init}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b)
+\item 
+void \mbox{\hyperlink{adbuf_8h_a19302597670685055c4d1d27a427a713}{adbuf\+\_\+free}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a959344d986042c77accfa5d31a6b85bc}{adbuf\+\_\+reset}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, void $\ast$data, size\+\_\+t len)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a7fb35a5091978805949a39509e1b5bba}{adbuf\+\_\+addchar}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, int c)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a6e4cbc487a1a0a1c7b937ed6e9a395c6}{adbuf\+\_\+strcat}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, char $\ast$string)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a45c741bd520f800beb2375f5527e6d1f}{adbuf\+\_\+cat}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$a, struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a6bb71faa3048386b70ca4c8c88c92c37}{adbuf\+\_\+cut}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, size\+\_\+t \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}})
+\item 
+int \mbox{\hyperlink{adbuf_8h_a71253da01bd44b96cfedd12c4dbf20f6}{adbuf\+\_\+ltrim}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, size\+\_\+t \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}})
+\item 
+int \mbox{\hyperlink{adbuf_8h_ac3a4ff9ac84f22002a84a537d01601d0}{adbuf\+\_\+rtrim}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, size\+\_\+t \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}})
+\item 
+int \mbox{\hyperlink{adbuf_8h_a307f51a6ab10313ca2c545802bede9df}{adbuf\+\_\+add\+\_\+long}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, long l)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a73c1eee265cd01fbbe44852ba0281934}{adbuf\+\_\+add\+\_\+ulong}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$b, unsigned long l)
+\item 
+int \mbox{\hyperlink{adbuf_8h_a43997359e0663c857fcaa7b5972f4c6c}{adbuf\+\_\+clone}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$src, struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$\mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}})
+\item 
+int \mbox{\hyperlink{adbuf_8h_a08d6dfb73888a1aff2f0992f43fe36bf}{adbuf\+\_\+printf}} (struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$\mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{adbuf_8h_a6fefda3cbb24995e657ccf75938c2f31}\label{adbuf_8h_a6fefda3cbb24995e657ccf75938c2f31}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_from\_heapstring@{adbuf\_from\_heapstring}}
+\index{adbuf\_from\_heapstring@{adbuf\_from\_heapstring}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_from\_heapstring}{adbuf\_from\_heapstring}}
+{\footnotesize\ttfamily \#define adbuf\+\_\+from\+\_\+heapstring(\begin{DoxyParamCaption}\item[{}]{b,  }\item[{}]{s }\end{DoxyParamCaption})~ do \{ b-\/$>$buf = s; b-\/$>$left = 0; b-\/$>$size = strlen(s); \} while(0)}
+
+\mbox{\Hypertarget{adbuf_8h_adfba5d692940d98fd97ab6ba91f7144f}\label{adbuf_8h_adfba5d692940d98fd97ab6ba91f7144f}} 
+\index{adbuf.h@{adbuf.h}!ADBUF\_INCR@{ADBUF\_INCR}}
+\index{ADBUF\_INCR@{ADBUF\_INCR}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{ADBUF\_INCR}{ADBUF\_INCR}}
+{\footnotesize\ttfamily \#define ADBUF\+\_\+\+INCR~256 /$\ast$ note that this MUST BE $>$= 1 $\ast$/}
+
+\mbox{\Hypertarget{adbuf_8h_a6c7845a13405e64498e74538f3f35644}\label{adbuf_8h_a6c7845a13405e64498e74538f3f35644}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_ptr@{adbuf\_ptr}}
+\index{adbuf\_ptr@{adbuf\_ptr}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_ptr}{adbuf\_ptr}}
+{\footnotesize\ttfamily \#define adbuf\+\_\+ptr(\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})~((b)-\/$>$buf)}
+
+\mbox{\Hypertarget{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}\label{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_used@{adbuf\_used}}
+\index{adbuf\_used@{adbuf\_used}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_used}{adbuf\_used}}
+{\footnotesize\ttfamily \#define adbuf\+\_\+used(\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})~((b)-\/$>$size -\/ (b)-\/$>$left)}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{adbuf_8h_a61b3dab2f05bd8d830fed69810bd8dc7}\label{adbuf_8h_a61b3dab2f05bd8d830fed69810bd8dc7}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_add@{adbuf\_add}}
+\index{adbuf\_add@{adbuf\_add}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_add()}{adbuf\_add()}}
+{\footnotesize\ttfamily int adbuf\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8h_adfba5d692940d98fd97ab6ba91f7144f}{ADBUF\+\_\+\+INCR}}, \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}}, \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}, \mbox{\hyperlink{structadbuf_a951236a0702535ba18ba51db69428658}{adbuf\+::left}} , 以及 \mbox{\hyperlink{structadbuf_a854352f53b148adc24983a58a1866d66}{adbuf\+::size}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a7fb35a5091978805949a39509e1b5bba}{adbuf\+\_\+addchar()}}, \mbox{\hyperlink{adbuf_8c_a45c741bd520f800beb2375f5527e6d1f}{adbuf\+\_\+cat()}}, \mbox{\hyperlink{adbuf_8c_a43997359e0663c857fcaa7b5972f4c6c}{adbuf\+\_\+clone()}}, \mbox{\hyperlink{adbuf_8c_a08d6dfb73888a1aff2f0992f43fe36bf}{adbuf\+\_\+printf()}} , 以及 \mbox{\hyperlink{adbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6}{adbuf\+\_\+strcat()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a61b3dab2f05bd8d830fed69810bd8dc7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a307f51a6ab10313ca2c545802bede9df}\label{adbuf_8h_a307f51a6ab10313ca2c545802bede9df}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_add\_long@{adbuf\_add\_long}}
+\index{adbuf\_add\_long@{adbuf\_add\_long}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_add\_long()}{adbuf\_add\_long()}}
+{\footnotesize\ttfamily int adbuf\+\_\+add\+\_\+long (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{long}]{l }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a3cec3aa21a2172dee79fa698065036f1}{ADBUF\+\_\+\+ITOABUFSZ}} , 以及 \mbox{\hyperlink{adbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6}{adbuf\+\_\+strcat()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a307f51a6ab10313ca2c545802bede9df_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a73c1eee265cd01fbbe44852ba0281934}\label{adbuf_8h_a73c1eee265cd01fbbe44852ba0281934}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_add\_ulong@{adbuf\_add\_ulong}}
+\index{adbuf\_add\_ulong@{adbuf\_add\_ulong}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_add\_ulong()}{adbuf\_add\_ulong()}}
+{\footnotesize\ttfamily int adbuf\+\_\+add\+\_\+ulong (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{unsigned long}]{l }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a3cec3aa21a2172dee79fa698065036f1}{ADBUF\+\_\+\+ITOABUFSZ}} , 以及 \mbox{\hyperlink{adbuf_8c_a6e4cbc487a1a0a1c7b937ed6e9a395c6}{adbuf\+\_\+strcat()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a73c1eee265cd01fbbe44852ba0281934_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a7fb35a5091978805949a39509e1b5bba}\label{adbuf_8h_a7fb35a5091978805949a39509e1b5bba}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_addchar@{adbuf\_addchar}}
+\index{adbuf\_addchar@{adbuf\_addchar}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_addchar()}{adbuf\_addchar()}}
+{\footnotesize\ttfamily int adbuf\+\_\+addchar (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add()}}, \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}}, \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}} , 以及 \mbox{\hyperlink{structadbuf_a951236a0702535ba18ba51db69428658}{adbuf\+::left}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{adbuf_8h_a7fb35a5091978805949a39509e1b5bba_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{adbuf_8h_a7fb35a5091978805949a39509e1b5bba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a45c741bd520f800beb2375f5527e6d1f}\label{adbuf_8h_a45c741bd520f800beb2375f5527e6d1f}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_cat@{adbuf\_cat}}
+\index{adbuf\_cat@{adbuf\_cat}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_cat()}{adbuf\_cat()}}
+{\footnotesize\ttfamily int adbuf\+\_\+cat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{a,  }\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add()}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}} , 以及 \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{adbuf_8h_a45c741bd520f800beb2375f5527e6d1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a43997359e0663c857fcaa7b5972f4c6c}\label{adbuf_8h_a43997359e0663c857fcaa7b5972f4c6c}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_clone@{adbuf\_clone}}
+\index{adbuf\_clone@{adbuf\_clone}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_clone()}{adbuf\_clone()}}
+{\footnotesize\ttfamily int adbuf\+\_\+clone (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{src,  }\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add()}}, \mbox{\hyperlink{adbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6}{adbuf\+\_\+init()}}, \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}} , 以及 \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{adbuf_8h_a43997359e0663c857fcaa7b5972f4c6c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a6bb71faa3048386b70ca4c8c88c92c37}\label{adbuf_8h_a6bb71faa3048386b70ca4c8c88c92c37}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_cut@{adbuf\_cut}}
+\index{adbuf\_cut@{adbuf\_cut}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_cut()}{adbuf\_cut()}}
+{\footnotesize\ttfamily int adbuf\+\_\+cut (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}}, \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}, \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{structadbuf_a951236a0702535ba18ba51db69428658}{adbuf\+::left}} , 以及 \mbox{\hyperlink{structadbuf_a854352f53b148adc24983a58a1866d66}{adbuf\+::size}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_ac3a4ff9ac84f22002a84a537d01601d0}{adbuf\+\_\+rtrim()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a6bb71faa3048386b70ca4c8c88c92c37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a19302597670685055c4d1d27a427a713}\label{adbuf_8h_a19302597670685055c4d1d27a427a713}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_free@{adbuf\_free}}
+\index{adbuf\_free@{adbuf\_free}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_free()}{adbuf\_free()}}
+{\footnotesize\ttfamily void adbuf\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a959344d986042c77accfa5d31a6b85bc}{adbuf\+\_\+reset()}} , 以及 \mbox{\hyperlink{ars_8h_ad37d3d2b7c7c3f89c8b88e6a4d683d2f}{ars\+\_\+d\+\_\+from\+\_\+ars()}}.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a19302597670685055c4d1d27a427a713_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a4dc971542b7ecf05b4bb6aa9ce4730a6}\label{adbuf_8h_a4dc971542b7ecf05b4bb6aa9ce4730a6}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_init@{adbuf\_init}}
+\index{adbuf\_init@{adbuf\_init}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_init()}{adbuf\_init()}}
+{\footnotesize\ttfamily int adbuf\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}, \mbox{\hyperlink{structadbuf_a951236a0702535ba18ba51db69428658}{adbuf\+::left}} , 以及 \mbox{\hyperlink{structadbuf_a854352f53b148adc24983a58a1866d66}{adbuf\+::size}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a43997359e0663c857fcaa7b5972f4c6c}{adbuf\+\_\+clone()}}, \mbox{\hyperlink{adbuf_8c_a959344d986042c77accfa5d31a6b85bc}{adbuf\+\_\+reset()}} , 以及 \mbox{\hyperlink{ars_8h_ad37d3d2b7c7c3f89c8b88e6a4d683d2f}{ars\+\_\+d\+\_\+from\+\_\+ars()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adbuf_8h_a4dc971542b7ecf05b4bb6aa9ce4730a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a71253da01bd44b96cfedd12c4dbf20f6}\label{adbuf_8h_a71253da01bd44b96cfedd12c4dbf20f6}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_ltrim@{adbuf\_ltrim}}
+\index{adbuf\_ltrim@{adbuf\_ltrim}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_ltrim()}{adbuf\_ltrim()}}
+{\footnotesize\ttfamily int adbuf\+\_\+ltrim (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8h_a6c7845a13405e64498e74538f3f35644}{adbuf\+\_\+ptr}}, \mbox{\hyperlink{adbuf_8c_a959344d986042c77accfa5d31a6b85bc}{adbuf\+\_\+reset()}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}}, \mbox{\hyperlink{structadbuf_a1fe855c208bc17a51a4d34fefdb2d5b1}{adbuf\+::buf}}, \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}, \mbox{\hyperlink{structadbuf_a951236a0702535ba18ba51db69428658}{adbuf\+::left}} , 以及 \mbox{\hyperlink{structadbuf_a854352f53b148adc24983a58a1866d66}{adbuf\+::size}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{adbuf_8h_a71253da01bd44b96cfedd12c4dbf20f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a08d6dfb73888a1aff2f0992f43fe36bf}\label{adbuf_8h_a08d6dfb73888a1aff2f0992f43fe36bf}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_printf@{adbuf\_printf}}
+\index{adbuf\_printf@{adbuf\_printf}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_printf()}{adbuf\_printf()}}
+{\footnotesize\ttfamily int adbuf\+\_\+printf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{dst,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add()}}, \mbox{\hyperlink{adbuf_8c_aba019fc5fd858d4d04ba0169ff7ad9b0}{ADBUF\+\_\+\+PRINTF\+\_\+\+BUFSZ}}, \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}} , 以及 \mbox{\hyperlink{pcap-int_8h_a00ba2ca988495904efc418acbf0627d7}{vsnprintf}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_a5e5001c9bb1e92b7ebc6d5fd2fc5cc07}{ars\+\_\+rapd\+\_\+data()}}, \mbox{\hyperlink{ars_8h_a56b59ff18e1d699e8740e43477bda583}{ars\+\_\+rapd\+\_\+icmp()}}, \mbox{\hyperlink{ars_8h_aedfd78f246469ae0d54dc40444be01b0}{ars\+\_\+rapd\+\_\+igrp()}}, \mbox{\hyperlink{ars_8h_a45d10527dac7e1230157c084bac3fe36}{ars\+\_\+rapd\+\_\+igrpentry()}}, \mbox{\hyperlink{ars_8h_a9fa4f68a58bf672f7bde52b586dd5b0f}{ars\+\_\+rapd\+\_\+ip()}}, \mbox{\hyperlink{ars_8h_ad69959640d8fae0edf5c45d11a791af3}{ars\+\_\+rapd\+\_\+ipopt()}}, \mbox{\hyperlink{ars_8h_aa14e6020b5e018413374191971aa4dec}{ars\+\_\+rapd\+\_\+tcp()}}, \mbox{\hyperlink{ars_8h_afa4953932c173f84864169674dc1c298}{ars\+\_\+rapd\+\_\+tcpopt()}} , 以及 \mbox{\hyperlink{ars_8h_a78cd12df0ebfe55f254af36348207b65}{ars\+\_\+rapd\+\_\+udp()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{adbuf_8h_a08d6dfb73888a1aff2f0992f43fe36bf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{adbuf_8h_a08d6dfb73888a1aff2f0992f43fe36bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a959344d986042c77accfa5d31a6b85bc}\label{adbuf_8h_a959344d986042c77accfa5d31a6b85bc}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_reset@{adbuf\_reset}}
+\index{adbuf\_reset@{adbuf\_reset}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_reset()}{adbuf\_reset()}}
+{\footnotesize\ttfamily int adbuf\+\_\+reset (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a19302597670685055c4d1d27a427a713}{adbuf\+\_\+free()}} , 以及 \mbox{\hyperlink{adbuf_8c_a4dc971542b7ecf05b4bb6aa9ce4730a6}{adbuf\+\_\+init()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a71253da01bd44b96cfedd12c4dbf20f6}{adbuf\+\_\+ltrim()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{adbuf_8h_a959344d986042c77accfa5d31a6b85bc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{adbuf_8h_a959344d986042c77accfa5d31a6b85bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_ac3a4ff9ac84f22002a84a537d01601d0}\label{adbuf_8h_ac3a4ff9ac84f22002a84a537d01601d0}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_rtrim@{adbuf\_rtrim}}
+\index{adbuf\_rtrim@{adbuf\_rtrim}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_rtrim()}{adbuf\_rtrim()}}
+{\footnotesize\ttfamily int adbuf\+\_\+rtrim (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a6bb71faa3048386b70ca4c8c88c92c37}{adbuf\+\_\+cut()}}, \mbox{\hyperlink{adbuf_8h_adacb4fb4f87563077a97e35e21f3e60d}{adbuf\+\_\+used}} , 以及 \mbox{\hyperlink{globals_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{ars_8h_ad37d3d2b7c7c3f89c8b88e6a4d683d2f}{ars\+\_\+d\+\_\+from\+\_\+ars()}}, \mbox{\hyperlink{ars_8h_a56b59ff18e1d699e8740e43477bda583}{ars\+\_\+rapd\+\_\+icmp()}}, \mbox{\hyperlink{ars_8h_ad69959640d8fae0edf5c45d11a791af3}{ars\+\_\+rapd\+\_\+ipopt()}} , 以及 \mbox{\hyperlink{ars_8h_aa14e6020b5e018413374191971aa4dec}{ars\+\_\+rapd\+\_\+tcp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{adbuf_8h_ac3a4ff9ac84f22002a84a537d01601d0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{adbuf_8h_ac3a4ff9ac84f22002a84a537d01601d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adbuf_8h_a6e4cbc487a1a0a1c7b937ed6e9a395c6}\label{adbuf_8h_a6e4cbc487a1a0a1c7b937ed6e9a395c6}} 
+\index{adbuf.h@{adbuf.h}!adbuf\_strcat@{adbuf\_strcat}}
+\index{adbuf\_strcat@{adbuf\_strcat}!adbuf.h@{adbuf.h}}
+\doxysubsubsection{\texorpdfstring{adbuf\_strcat()}{adbuf\_strcat()}}
+{\footnotesize\ttfamily int adbuf\+\_\+strcat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structadbuf}{adbuf}} $\ast$}]{b,  }\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{adbuf_8c_a61b3dab2f05bd8d830fed69810bd8dc7}{adbuf\+\_\+add()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{adbuf_8c_a307f51a6ab10313ca2c545802bede9df}{adbuf\+\_\+add\+\_\+long()}} , 以及 \mbox{\hyperlink{adbuf_8c_a73c1eee265cd01fbbe44852ba0281934}{adbuf\+\_\+add\+\_\+ulong()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{adbuf_8h_a6e4cbc487a1a0a1c7b937ed6e9a395c6_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{adbuf_8h_a6e4cbc487a1a0a1c7b937ed6e9a395c6_icgraph}
+\end{center}
+\end{figure}

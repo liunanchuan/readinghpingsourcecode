@@ -1,0 +1,74 @@
+\hypertarget{resolve_8c}{}\doxysection{resolve.\+c 文件参考}
+\label{resolve_8c}\index{resolve.c@{resolve.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+resolve.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{resolve_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{resolve_8c_a6b2e51e6f4af7dcf16e0a3d502cdde3a}{resolve\+\_\+addr}} (struct sockaddr $\ast$addr, char $\ast$hostname)
+\item 
+void \mbox{\hyperlink{resolve_8c_ac9ba556d9cb0c8d9332dac7a6cce56e2}{resolve}} (struct sockaddr $\ast$addr, char $\ast$hostname)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{resolve_8c_ac9ba556d9cb0c8d9332dac7a6cce56e2}\label{resolve_8c_ac9ba556d9cb0c8d9332dac7a6cce56e2}} 
+\index{resolve.c@{resolve.c}!resolve@{resolve}}
+\index{resolve@{resolve}!resolve.c@{resolve.c}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily void resolve (\begin{DoxyParamCaption}\item[{struct sockaddr $\ast$}]{addr,  }\item[{char $\ast$}]{hostname }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{resolve_8c_a6b2e51e6f4af7dcf16e0a3d502cdde3a}{resolve\+\_\+addr()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{resolve_8c_ac9ba556d9cb0c8d9332dac7a6cce56e2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{resolve_8c_ac9ba556d9cb0c8d9332dac7a6cce56e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{resolve_8c_a6b2e51e6f4af7dcf16e0a3d502cdde3a}\label{resolve_8c_a6b2e51e6f4af7dcf16e0a3d502cdde3a}} 
+\index{resolve.c@{resolve.c}!resolve\_addr@{resolve\_addr}}
+\index{resolve\_addr@{resolve\_addr}!resolve.c@{resolve.c}}
+\doxysubsubsection{\texorpdfstring{resolve\_addr()}{resolve\_addr()}}
+{\footnotesize\ttfamily int resolve\+\_\+addr (\begin{DoxyParamCaption}\item[{struct sockaddr $\ast$}]{addr,  }\item[{char $\ast$}]{hostname }\end{DoxyParamCaption})}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a22ceb1502b4f419e5be97c078dd9e1b9}{resolve()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{resolve_8c_a6b2e51e6f4af7dcf16e0a3d502cdde3a_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: antigetopt.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">antigetopt.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="antigetopt_8h_source.html">antigetopt.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+antigetopt.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c__incl.png" border="0" usemap="#aantigetopt_8c" alt=""/></div>
+<map name="aantigetopt_8c" id="aantigetopt_8c">
+<area shape="rect" title=" " alt="" coords="125,5,216,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,69,107"/>
+<area shape="rect" title=" " alt="" coords="94,80,159,107"/>
+<area shape="rect" title=" " alt="" coords="184,80,245,107"/>
+<area shape="rect" href="antigetopt_8h.html" title=" " alt="" coords="269,80,360,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structago__exception.html">ago_exception</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:aa241b93f0ebeb8285826a82c4e5e5c53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#aa241b93f0ebeb8285826a82c4e5e5c53">UNK_SHORT_ERRSTRING</a>&#160;&#160;&#160;&quot;invalid option -- %c\n&quot;</td></tr>
+<tr class="separator:aa241b93f0ebeb8285826a82c4e5e5c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4df8846af200e17ee3d229cce10cdff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#ad4df8846af200e17ee3d229cce10cdff">UNK_LONG_ERRSTRING</a>&#160;&#160;&#160;&quot;unrecognized option `--%s'\n&quot;</td></tr>
+<tr class="separator:ad4df8846af200e17ee3d229cce10cdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04f8d97975608ddac88e42e25b24fc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#aa04f8d97975608ddac88e42e25b24fc2">ARG_SHORT_ERRSTRING</a>&#160;&#160;&#160;&quot;option requires an argument -- %c\n&quot;</td></tr>
+<tr class="separator:aa04f8d97975608ddac88e42e25b24fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a29a4ce648380faec22403798ba9e3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a4a29a4ce648380faec22403798ba9e3e">ARG_LONG_ERRSTRING</a>&#160;&#160;&#160;&quot;option `--%s' requires an argument\n&quot;</td></tr>
+<tr class="separator:a4a29a4ce648380faec22403798ba9e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f9a6fa28588fc0864f970876a7e25d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a4f9a6fa28588fc0864f970876a7e25d0">AMB_ERRSTRING</a>&#160;&#160;&#160;&quot;option `--%s' is ambiguos\n&quot;</td></tr>
+<tr class="separator:a4f9a6fa28588fc0864f970876a7e25d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8db1afca6f018738f51633fddc10c59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#aa8db1afca6f018738f51633fddc10c59">IERR_ERRSTRING</a></td></tr>
+<tr class="separator:aa8db1afca6f018738f51633fddc10c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa00b984960de002d1c0dbaf0fbe1e9f8"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structago__optlist.html">ago_optlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup</a> (struct <a class="el" href="structago__optlist.html">ago_optlist</a> *list, char *arg, int *islong, int *amb)</td></tr>
+<tr class="separator:aa00b984960de002d1c0dbaf0fbe1e9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dda1d28c93a61af0c75965073b1b07"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a22dda1d28c93a61af0c75965073b1b07">strinitcmp</a> (char *a, char *b)</td></tr>
+<tr class="separator:a22dda1d28c93a61af0c75965073b1b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69fd0c7bd1b8d1410d9d4dab0acb2776"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt</a> (int argc, char **argv, struct <a class="el" href="structago__optlist.html">ago_optlist</a> *list)</td></tr>
+<tr class="separator:a69fd0c7bd1b8d1410d9d4dab0acb2776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd0e29fcb17776e5fe3bdd928cdd6b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#abd0e29fcb17776e5fe3bdd928cdd6b8f">ago_gnu_error</a> (char *pname, int <a class="el" href="selpolltest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error</a>)</td></tr>
+<tr class="separator:abd0e29fcb17776e5fe3bdd928cdd6b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73967e5a19294409255f006750f8ccc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#ac73967e5a19294409255f006750f8ccc">ago_set_exception</a> (int except_nr, int(*tester)(void), char *msg)</td></tr>
+<tr class="separator:ac73967e5a19294409255f006750f8ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a1f1a4a2a7e05bfb9e7da55636fa1105b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a1f1a4a2a7e05bfb9e7da55636fa1105b">ago_optarg</a> = NULL</td></tr>
+<tr class="separator:a1f1a4a2a7e05bfb9e7da55636fa1105b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ce569dd6e9e6939ac83d7ae7bfbe7a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a> = NULL</td></tr>
+<tr class="separator:a65ce569dd6e9e6939ac83d7ae7bfbe7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbecdf9d74b32e431fadbab57b196855"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a> = '\0'</td></tr>
+<tr class="separator:adbecdf9d74b32e431fadbab57b196855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7122ae4e757bd282363f3d0a548a64ed"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structago__exception.html">ago_exception</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#a7122ae4e757bd282363f3d0a548a64ed">ago_exceptions</a> [3]</td></tr>
+<tr class="separator:a7122ae4e757bd282363f3d0a548a64ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab301267b792e80e7f39a6a23496d6637"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="antigetopt_8c.html#ab301267b792e80e7f39a6a23496d6637">ago_exception_bits</a> [] = { <a class="el" href="antigetopt_8h.html#a7f65a9e5621c59010f1e7f6ed1ecaa0b">AGO_EXCEPT0</a>, <a class="el" href="antigetopt_8h.html#a6e6759e18089ef276e17d87f26025fe5">AGO_EXCEPT1</a>, <a class="el" href="antigetopt_8h.html#a5877f8d852f6d4d6d4ae397310676c20">AGO_EXCEPT2</a> }</td></tr>
+<tr class="separator:ab301267b792e80e7f39a6a23496d6637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a4f9a6fa28588fc0864f970876a7e25d0" name="a4f9a6fa28588fc0864f970876a7e25d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9a6fa28588fc0864f970876a7e25d0">&#9670;&nbsp;</a></span>AMB_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMB_ERRSTRING&#160;&#160;&#160;&quot;option `--%s' is ambiguos\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a29a4ce648380faec22403798ba9e3e" name="a4a29a4ce648380faec22403798ba9e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a29a4ce648380faec22403798ba9e3e">&#9670;&nbsp;</a></span>ARG_LONG_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARG_LONG_ERRSTRING&#160;&#160;&#160;&quot;option `--%s' requires an argument\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa04f8d97975608ddac88e42e25b24fc2" name="aa04f8d97975608ddac88e42e25b24fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04f8d97975608ddac88e42e25b24fc2">&#9670;&nbsp;</a></span>ARG_SHORT_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARG_SHORT_ERRSTRING&#160;&#160;&#160;&quot;option requires an argument -- %c\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8db1afca6f018738f51633fddc10c59" name="aa8db1afca6f018738f51633fddc10c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8db1afca6f018738f51633fddc10c59">&#9670;&nbsp;</a></span>IERR_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IERR_ERRSTRING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">               <span class="stringliteral">&quot;internal error. ago_gnu_error() called with &quot;</span> \</div>
+<div class="line">               <span class="stringliteral">&quot;a bad error code (%d)\n&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad4df8846af200e17ee3d229cce10cdff" name="ad4df8846af200e17ee3d229cce10cdff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4df8846af200e17ee3d229cce10cdff">&#9670;&nbsp;</a></span>UNK_LONG_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNK_LONG_ERRSTRING&#160;&#160;&#160;&quot;unrecognized option `--%s'\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa241b93f0ebeb8285826a82c4e5e5c53" name="aa241b93f0ebeb8285826a82c4e5e5c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa241b93f0ebeb8285826a82c4e5e5c53">&#9670;&nbsp;</a></span>UNK_SHORT_ERRSTRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNK_SHORT_ERRSTRING&#160;&#160;&#160;&quot;invalid option -- %c\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="abd0e29fcb17776e5fe3bdd928cdd6b8f" name="abd0e29fcb17776e5fe3bdd928cdd6b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd0e29fcb17776e5fe3bdd928cdd6b8f">&#9670;&nbsp;</a></span>ago_gnu_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ago_gnu_error </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>pname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525">AGO_AMBIG</a>, <a class="el" href="antigetopt_8c.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a>, <a class="el" href="antigetopt_8c.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323">AGO_REQARG</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796">AGO_UNKNOWN</a>, <a class="el" href="antigetopt_8c.html#a4f9a6fa28588fc0864f970876a7e25d0">AMB_ERRSTRING</a>, <a class="el" href="antigetopt_8c.html#a4a29a4ce648380faec22403798ba9e3e">ARG_LONG_ERRSTRING</a>, <a class="el" href="antigetopt_8c.html#aa04f8d97975608ddac88e42e25b24fc2">ARG_SHORT_ERRSTRING</a>, <a class="el" href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260">error()</a>, <a class="el" href="antigetopt_8c.html#aa8db1afca6f018738f51633fddc10c59">IERR_ERRSTRING</a>, <a class="el" href="antigetopt_8c.html#ad4df8846af200e17ee3d229cce10cdff">UNK_LONG_ERRSTRING</a> , 以及 <a class="el" href="antigetopt_8c.html#aa241b93f0ebeb8285826a82c4e5e5c53">UNK_SHORT_ERRSTRING</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_cgraph.png" border="0" usemap="#aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_cgraph" alt=""/></div>
+<map name="aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_cgraph" id="aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,109,32"/>
+<area shape="rect" href="filtertest_8c.html#a012a8d8c5ec50aba9e8d09717158c260" title=" " alt="" coords="157,5,205,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_icgraph.png" border="0" usemap="#aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_icgraph" alt=""/></div>
+<map name="aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_icgraph" id="aantigetopt_8c_abd0e29fcb17776e5fe3bdd928cdd6b8f_icgraph">
+<area shape="rect" title=" " alt="" coords="255,5,359,32"/>
+<area shape="rect" href="parseoptions_8c.html#ab24b72cc0c4fdf1754a72b6c66bdf4fc" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa00b984960de002d1c0dbaf0fbe1e9f8" name="aa00b984960de002d1c0dbaf0fbe1e9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00b984960de002d1c0dbaf0fbe1e9f8">&#9670;&nbsp;</a></span>ago_lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structago__optlist.html">ago_optlist</a> * ago_lookup </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structago__optlist.html">ago_optlist</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>islong</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>amb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="antigetopt_8h.html#ab0a120cea19a89750373d6fbf37034ce">AGO_ENDOFLIST</a>, <a class="el" href="antigetopt_8c.html#ab301267b792e80e7f39a6a23496d6637">ago_exception_bits</a>, <a class="el" href="antigetopt_8c.html#a7122ae4e757bd282363f3d0a548a64ed">ago_exceptions</a>, <a class="el" href="antigetopt_8c.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a>, <a class="el" href="antigetopt_8c.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a>, <a class="el" href="structago__optlist.html#abcdc1fa8a161b227ac77c9b2a6884d34">ago_optlist::ao_flags</a>, <a class="el" href="structago__optlist.html#aa57c44e3ccad5e136c3fc5c872895082">ago_optlist::ao_long</a>, <a class="el" href="structago__optlist.html#abacaf673fd7f1f52c471c60a69701999">ago_optlist::ao_short</a>, <a class="el" href="antigetopt_8c.html#a22dda1d28c93a61af0c75965073b1b07">strinitcmp()</a> , 以及 <a class="el" href="structago__exception.html#a47a0df0feee932e25feffca72b4f886d">ago_exception::tester</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_cgraph.png" border="0" usemap="#aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_cgraph" alt=""/></div>
+<map name="aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_cgraph" id="aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" href="antigetopt_8c.html#a22dda1d28c93a61af0c75965073b1b07" title=" " alt="" coords="141,5,220,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_icgraph.png" border="0" usemap="#aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_icgraph" alt=""/></div>
+<map name="aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_icgraph" id="aantigetopt_8c_aa00b984960de002d1c0dbaf0fbe1e9f8_icgraph">
+<area shape="rect" title=" " alt="" coords="381,5,469,32"/>
+<area shape="rect" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776" title=" " alt="" coords="255,5,333,32"/>
+<area shape="rect" href="parseoptions_8c.html#ab24b72cc0c4fdf1754a72b6c66bdf4fc" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac73967e5a19294409255f006750f8ccc" name="ac73967e5a19294409255f006750f8ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73967e5a19294409255f006750f8ccc">&#9670;&nbsp;</a></span>ago_set_exception()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ago_set_exception </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>except_nr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void)&#160;</td>
+          <td class="paramname"><em>tester</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="antigetopt_8c.html#a7122ae4e757bd282363f3d0a548a64ed">ago_exceptions</a>, <a class="el" href="structago__exception.html#a32d2f5216cddb59c7cc8fb2806a7e727">ago_exception::msg</a> , 以及 <a class="el" href="structago__exception.html#a47a0df0feee932e25feffca72b4f886d">ago_exception::tester</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_ac73967e5a19294409255f006750f8ccc_icgraph.png" border="0" usemap="#aantigetopt_8c_ac73967e5a19294409255f006750f8ccc_icgraph" alt=""/></div>
+<map name="aantigetopt_8c_ac73967e5a19294409255f006750f8ccc_icgraph" id="aantigetopt_8c_ac73967e5a19294409255f006750f8ccc_icgraph">
+<area shape="rect" title=" " alt="" coords="255,5,385,32"/>
+<area shape="rect" href="parseoptions_8c.html#ab24b72cc0c4fdf1754a72b6c66bdf4fc" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69fd0c7bd1b8d1410d9d4dab0acb2776" name="a69fd0c7bd1b8d1410d9d4dab0acb2776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69fd0c7bd1b8d1410d9d4dab0acb2776">&#9670;&nbsp;</a></span>antigetopt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int antigetopt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structago__optlist.html">ago_optlist</a> *&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8118c6d6738ab04c3807c464ab04b359">AGO_ALONE</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba035b318ce29430563460d5abd97a4525">AGO_AMBIG</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba24df96646bf41cbd3c94a7bf751e7578">AGO_EOF</a>, <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a>, <a class="el" href="antigetopt_8h.html#a8c65eb4f1441ea5db90177394f41bf88">AGO_NEEDARG</a>, <a class="el" href="antigetopt_8h.html#aede4751cd42aa332c622f8c47939147d">AGO_NOARG</a>, <a class="el" href="antigetopt_8c.html#a1f1a4a2a7e05bfb9e7da55636fa1105b">ago_optarg</a>, <a class="el" href="antigetopt_8h.html#a51a364774e0856e23783cbbfc12cb566">AGO_OPTARG</a>, <a class="el" href="antigetopt_8c.html#adbecdf9d74b32e431fadbab57b196855">ago_optchar</a>, <a class="el" href="antigetopt_8c.html#a65ce569dd6e9e6939ac83d7ae7bfbe7a">ago_optname</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba23a443918b17e81b9cccaeb541330323">AGO_REQARG</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0fa81729045c95781b4938f98c381d98">AGO_RESET</a>, <a class="el" href="antigetopt_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba29e4630e2f2b459dfe7e2aa7ab095796">AGO_UNKNOWN</a>, <a class="el" href="structago__optlist.html#abcdc1fa8a161b227ac77c9b2a6884d34">ago_optlist::ao_flags</a> , 以及 <a class="el" href="structago__optlist.html#a12d8c4d4749a787b1003289d52046219">ago_optlist::ao_id</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_cgraph.png" border="0" usemap="#aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_cgraph" alt=""/></div>
+<map name="aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_cgraph" id="aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8" title=" " alt="" coords="132,5,220,32"/>
+<area shape="rect" href="antigetopt_8c.html#a22dda1d28c93a61af0c75965073b1b07" title=" " alt="" coords="268,5,347,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_icgraph.png" border="0" usemap="#aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_icgraph" alt=""/></div>
+<map name="aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_icgraph" id="aantigetopt_8c_a69fd0c7bd1b8d1410d9d4dab0acb2776_icgraph">
+<area shape="rect" title=" " alt="" coords="255,5,333,32"/>
+<area shape="rect" href="parseoptions_8c.html#ab24b72cc0c4fdf1754a72b6c66bdf4fc" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22dda1d28c93a61af0c75965073b1b07" name="a22dda1d28c93a61af0c75965073b1b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22dda1d28c93a61af0c75965073b1b07">&#9670;&nbsp;</a></span>strinitcmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strinitcmp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="antigetopt_8c_a22dda1d28c93a61af0c75965073b1b07_icgraph.png" border="0" usemap="#aantigetopt_8c_a22dda1d28c93a61af0c75965073b1b07_icgraph" alt=""/></div>
+<map name="aantigetopt_8c_a22dda1d28c93a61af0c75965073b1b07_icgraph" id="aantigetopt_8c_a22dda1d28c93a61af0c75965073b1b07_icgraph">
+<area shape="rect" title=" " alt="" coords="517,5,596,32"/>
+<area shape="rect" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8" title=" " alt="" coords="381,5,469,32"/>
+<area shape="rect" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776" title=" " alt="" coords="255,5,333,32"/>
+<area shape="rect" href="parseoptions_8c.html#ab24b72cc0c4fdf1754a72b6c66bdf4fc" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ab301267b792e80e7f39a6a23496d6637" name="ab301267b792e80e7f39a6a23496d6637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab301267b792e80e7f39a6a23496d6637">&#9670;&nbsp;</a></span>ago_exception_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ago_exception_bits[] = { <a class="el" href="antigetopt_8h.html#a7f65a9e5621c59010f1e7f6ed1ecaa0b">AGO_EXCEPT0</a>, <a class="el" href="antigetopt_8h.html#a6e6759e18089ef276e17d87f26025fe5">AGO_EXCEPT1</a>, <a class="el" href="antigetopt_8h.html#a5877f8d852f6d4d6d4ae397310676c20">AGO_EXCEPT2</a> }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a>.</p>
+
+</div>
+</div>
+<a id="a7122ae4e757bd282363f3d0a548a64ed" name="a7122ae4e757bd282363f3d0a548a64ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7122ae4e757bd282363f3d0a548a64ed">&#9670;&nbsp;</a></span>ago_exceptions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structago__exception.html">ago_exception</a> ago_exceptions[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    { NULL, NULL },</div>
+<div class="line">    { NULL, NULL },</div>
+<div class="line">    { NULL, NULL }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a> , 以及 <a class="el" href="antigetopt_8c.html#ac73967e5a19294409255f006750f8ccc">ago_set_exception()</a>.</p>
+
+</div>
+</div>
+<a id="a1f1a4a2a7e05bfb9e7da55636fa1105b" name="a1f1a4a2a7e05bfb9e7da55636fa1105b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1a4a2a7e05bfb9e7da55636fa1105b">&#9670;&nbsp;</a></span>ago_optarg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ago_optarg = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt()</a> , 以及 <a class="el" href="hping2_8h.html#a7839ef185aa2a98ae0608aa53ece002c">parse_options()</a>.</p>
+
+</div>
+</div>
+<a id="adbecdf9d74b32e431fadbab57b196855" name="adbecdf9d74b32e431fadbab57b196855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbecdf9d74b32e431fadbab57b196855">&#9670;&nbsp;</a></span>ago_optchar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ago_optchar = '\0'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#abd0e29fcb17776e5fe3bdd928cdd6b8f">ago_gnu_error()</a>, <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a> , 以及 <a class="el" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt()</a>.</p>
+
+</div>
+</div>
+<a id="a65ce569dd6e9e6939ac83d7ae7bfbe7a" name="a65ce569dd6e9e6939ac83d7ae7bfbe7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ce569dd6e9e6939ac83d7ae7bfbe7a">&#9670;&nbsp;</a></span>ago_optname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ago_optname = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="antigetopt_8c.html#abd0e29fcb17776e5fe3bdd928cdd6b8f">ago_gnu_error()</a>, <a class="el" href="antigetopt_8c.html#aa00b984960de002d1c0dbaf0fbe1e9f8">ago_lookup()</a> , 以及 <a class="el" href="antigetopt_8c.html#a69fd0c7bd1b8d1410d9d4dab0acb2776">antigetopt()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

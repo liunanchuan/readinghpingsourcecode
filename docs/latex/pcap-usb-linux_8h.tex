@@ -1,0 +1,78 @@
+\hypertarget{pcap-usb-linux_8h}{}\doxysection{libpcap-\/1.1.1/pcap-\/usb-\/linux.h 文件参考}
+\label{pcap-usb-linux_8h}\index{libpcap-\/1.1.1/pcap-\/usb-\/linux.h@{libpcap-\/1.1.1/pcap-\/usb-\/linux.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{pcap-usb-linux_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pcap-usb-linux_8h_a15687eb86e6e27d6dfc3078cceeac6dc}{usb\+\_\+platform\+\_\+finddevs}} (pcap\+\_\+if\+\_\+t $\ast$$\ast$alldevsp, char $\ast$err\+\_\+str)
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{pcap-usb-linux_8h_a245a6056b9c11af916132abb4f43ab5a}{usb\+\_\+create}} (const char $\ast$\mbox{\hyperlink{structdevice}{device}}, char $\ast$ebuf)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pcap-usb-linux_8h_a245a6056b9c11af916132abb4f43ab5a}\label{pcap-usb-linux_8h_a245a6056b9c11af916132abb4f43ab5a}} 
+\index{pcap-\/usb-\/linux.h@{pcap-\/usb-\/linux.h}!usb\_create@{usb\_create}}
+\index{usb\_create@{usb\_create}!pcap-\/usb-\/linux.h@{pcap-\/usb-\/linux.h}}
+\doxysubsubsection{\texorpdfstring{usb\_create()}{usb\_create()}}
+{\footnotesize\ttfamily pcap\+\_\+t $\ast$ usb\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{device,  }\item[{char $\ast$}]{ebuf }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-int_8h_abe06eda470b7e92f65881ae5fe645fb1}{pcap\+\_\+create\+\_\+common()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a6064547ca53b6e06bc2d3fff2a137fa9}{usb\+\_\+activate()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a79459f4198464b94a23dbc29b5f26faa}{pcap\+\_\+create()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8h_a245a6056b9c11af916132abb4f43ab5a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{pcap-usb-linux_8h_a245a6056b9c11af916132abb4f43ab5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pcap-usb-linux_8h_a15687eb86e6e27d6dfc3078cceeac6dc}\label{pcap-usb-linux_8h_a15687eb86e6e27d6dfc3078cceeac6dc}} 
+\index{pcap-\/usb-\/linux.h@{pcap-\/usb-\/linux.h}!usb\_platform\_finddevs@{usb\_platform\_finddevs}}
+\index{usb\_platform\_finddevs@{usb\_platform\_finddevs}!pcap-\/usb-\/linux.h@{pcap-\/usb-\/linux.h}}
+\doxysubsubsection{\texorpdfstring{usb\_platform\_finddevs()}{usb\_platform\_finddevs()}}
+{\footnotesize\ttfamily int usb\+\_\+platform\+\_\+finddevs (\begin{DoxyParamCaption}\item[{pcap\+\_\+if\+\_\+t $\ast$$\ast$}]{alldevsp,  }\item[{char $\ast$}]{err\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-usb-linux_8c_a9be0c3b8b90682365efeb933669dedd0}{PROC\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}}, \mbox{\hyperlink{os-sunos4_8h_a97ce99d5c8dc667647947290cc74a6d8}{sscanf()}}, \mbox{\hyperlink{pcap-usb-linux_8c_ac6a2356a659193639af848b23944ff77}{SYS\+\_\+\+USB\+\_\+\+BUS\+\_\+\+DIR}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a67fa0c92ab06bf8e7aaccfd87fcb7f65}{usb\+\_\+dev\+\_\+add()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-linux_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8h_a15687eb86e6e27d6dfc3078cceeac6dc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcap-usb-linux_8h_a15687eb86e6e27d6dfc3078cceeac6dc_icgraph}
+\end{center}
+\end{figure}

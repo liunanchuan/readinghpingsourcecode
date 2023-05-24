@@ -1,0 +1,98 @@
+\hypertarget{structedge}{}\doxysection{edge结构体 参考}
+\label{structedge}\index{edge@{edge}}
+
+
+{\ttfamily \#include $<$gencode.\+h$>$}
+
+
+
+edge 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{structedge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structedge_a7441ef0865bcb3db9b8064dd7375c1ea}{id}}
+\item 
+int \mbox{\hyperlink{structedge_a45a5b7c00a796a23f01673cef1dbe0a9}{code}}
+\item 
+\mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} \mbox{\hyperlink{structedge_adfba88d639aeab41f881c1fe7721fac0}{edom}}
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{structedge_aba5cfd5267d8b5f0bb3c9816d46ca6d9}{succ}}
+\item 
+struct \mbox{\hyperlink{structblock}{block}} $\ast$ \mbox{\hyperlink{structedge_a0fbec36256fd7f9e4c7294d8e89a7ec3}{pred}}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}} $\ast$ \mbox{\hyperlink{structedge_a630d4f356f8838d54af71f91f3664f4a}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structedge_a45a5b7c00a796a23f01673cef1dbe0a9}\label{structedge_a45a5b7c00a796a23f01673cef1dbe0a9}} 
+\index{edge@{edge}!code@{code}}
+\index{code@{code}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily int code}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a882a605d64e8dff3111abf94c303c079}{fold\+\_\+edge()}} , 以及 \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}.
+
+\mbox{\Hypertarget{structedge_adfba88d639aeab41f881c1fe7721fac0}\label{structedge_adfba88d639aeab41f881c1fe7721fac0}} 
+\index{edge@{edge}!edom@{edom}}
+\index{edom@{edom}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{edom}{edom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gencode_8h_ac6719dd0596f54071ae34400f4ace4c3}{uset}} edom}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_a6724cf6f63b23f795d262146d227b366}{find\+\_\+edom()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}, \mbox{\hyperlink{optimize_8c_ab3cf30a711c271ca87fe10c245a37eed}{opt\+\_\+j()}} , 以及 \mbox{\hyperlink{optimize_8c_a9e287d7bac576363a17b51d215f79f80}{propedom()}}.
+
+\mbox{\Hypertarget{structedge_a7441ef0865bcb3db9b8064dd7375c1ea}\label{structedge_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+\index{edge@{edge}!id@{id}}
+\index{id@{id}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int id}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}} , 以及 \mbox{\hyperlink{optimize_8c_a9e287d7bac576363a17b51d215f79f80}{propedom()}}.
+
+\mbox{\Hypertarget{structedge_a630d4f356f8838d54af71f91f3664f4a}\label{structedge_a630d4f356f8838d54af71f91f3664f4a}} 
+\index{edge@{edge}!next@{next}}
+\index{next@{next}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structedge}{edge}}$\ast$ next}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_aa5b3859be5eba2230b65d3cbb6d7573f}{and\+\_\+pullup()}}, \mbox{\hyperlink{optimize_8c_ae1ef59a20ba6116e9d68ac320de8341f}{link\+\_\+inedge()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}} , 以及 \mbox{\hyperlink{optimize_8c_ab107ce5a86491a65f148236a6c49a820}{or\+\_\+pullup()}}.
+
+\mbox{\Hypertarget{structedge_a0fbec36256fd7f9e4c7294d8e89a7ec3}\label{structedge_a0fbec36256fd7f9e4c7294d8e89a7ec3}} 
+\index{edge@{edge}!pred@{pred}}
+\index{pred@{pred}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{pred}{pred}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}}$\ast$ pred}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_aa5b3859be5eba2230b65d3cbb6d7573f}{and\+\_\+pullup()}}, \mbox{\hyperlink{optimize_8c_a882a605d64e8dff3111abf94c303c079}{fold\+\_\+edge()}}, \mbox{\hyperlink{optimize_8c_a9beb5c3fffe81aa0296528102d6f44ef}{opt\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_abcd8c308b8ac92398ac3d110b8da1059}{opt\+\_\+init()}}, \mbox{\hyperlink{optimize_8c_ab3cf30a711c271ca87fe10c245a37eed}{opt\+\_\+j()}} , 以及 \mbox{\hyperlink{optimize_8c_ab107ce5a86491a65f148236a6c49a820}{or\+\_\+pullup()}}.
+
+\mbox{\Hypertarget{structedge_aba5cfd5267d8b5f0bb3c9816d46ca6d9}\label{structedge_aba5cfd5267d8b5f0bb3c9816d46ca6d9}} 
+\index{edge@{edge}!succ@{succ}}
+\index{succ@{succ}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{succ}{succ}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structblock}{block}}$\ast$ succ}
+
+
+
+被这些函数引用 \mbox{\hyperlink{optimize_8c_afbb1b7213787e3b800af0db050d3d93c}{eq\+\_\+blk()}}, \mbox{\hyperlink{optimize_8c_ab3cf30a711c271ca87fe10c245a37eed}{opt\+\_\+j()}} , 以及 \mbox{\hyperlink{optimize_8c_a9e287d7bac576363a17b51d215f79f80}{propedom()}}.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\mbox{\hyperlink{gencode_8h}{gencode.\+h}}\end{DoxyCompactItemize}

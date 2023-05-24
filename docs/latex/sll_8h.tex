@@ -1,0 +1,92 @@
+\hypertarget{sll_8h}{}\doxysection{libpcap-\/1.1.1/pcap/sll.h 文件参考}
+\label{sll_8h}\index{libpcap-\/1.1.1/pcap/sll.h@{libpcap-\/1.1.1/pcap/sll.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{sll_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsll__header}{sll\+\_\+header}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sll_8h_addd16ab9a840069154dfa8bb5d031fb4}{SLL\+\_\+\+HDR\+\_\+\+LEN}}~16  /$\ast$ total header length $\ast$/
+\item 
+\#define \mbox{\hyperlink{sll_8h_aa9d4dab8f22850b820ad7de1662981af}{SLL\+\_\+\+ADDRLEN}}~8  /$\ast$ length of address field $\ast$/
+\item 
+\#define \mbox{\hyperlink{sll_8h_aedd2e710b810cc94799a0802992b8720}{LINUX\+\_\+\+SLL\+\_\+\+HOST}}~0
+\item 
+\#define \mbox{\hyperlink{sll_8h_ac3b7ad7f0305d5ecfc545f0ef601473f}{LINUX\+\_\+\+SLL\+\_\+\+BROADCAST}}~1
+\item 
+\#define \mbox{\hyperlink{sll_8h_aa9fd4bbef9902107d2238a2e55e0ea73}{LINUX\+\_\+\+SLL\+\_\+\+MULTICAST}}~2
+\item 
+\#define \mbox{\hyperlink{sll_8h_a978e7371a3998dcae8839d9398adec70}{LINUX\+\_\+\+SLL\+\_\+\+OTHERHOST}}~3
+\item 
+\#define \mbox{\hyperlink{sll_8h_ab6c118a4ba304b74a583b1f22273c047}{LINUX\+\_\+\+SLL\+\_\+\+OUTGOING}}~4
+\item 
+\#define \mbox{\hyperlink{sll_8h_a38e12d1d52bdd860f95f988f581bc3c6}{LINUX\+\_\+\+SLL\+\_\+\+P\+\_\+802\+\_\+3}}~0x0001 /$\ast$ Novell 802.\+3 frames without 802.\+2 LLC header $\ast$/
+\item 
+\#define \mbox{\hyperlink{sll_8h_ae4b2750659aca8442eb78dc135ebeb62}{LINUX\+\_\+\+SLL\+\_\+\+P\+\_\+802\+\_\+2}}~0x0004 /$\ast$ 802.\+2 frames (not D/I/X Ethernet) $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{sll_8h_ac3b7ad7f0305d5ecfc545f0ef601473f}\label{sll_8h_ac3b7ad7f0305d5ecfc545f0ef601473f}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_BROADCAST@{LINUX\_SLL\_BROADCAST}}
+\index{LINUX\_SLL\_BROADCAST@{LINUX\_SLL\_BROADCAST}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_BROADCAST}{LINUX\_SLL\_BROADCAST}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+BROADCAST~1}
+
+\mbox{\Hypertarget{sll_8h_aedd2e710b810cc94799a0802992b8720}\label{sll_8h_aedd2e710b810cc94799a0802992b8720}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_HOST@{LINUX\_SLL\_HOST}}
+\index{LINUX\_SLL\_HOST@{LINUX\_SLL\_HOST}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_HOST}{LINUX\_SLL\_HOST}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+HOST~0}
+
+\mbox{\Hypertarget{sll_8h_aa9fd4bbef9902107d2238a2e55e0ea73}\label{sll_8h_aa9fd4bbef9902107d2238a2e55e0ea73}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_MULTICAST@{LINUX\_SLL\_MULTICAST}}
+\index{LINUX\_SLL\_MULTICAST@{LINUX\_SLL\_MULTICAST}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_MULTICAST}{LINUX\_SLL\_MULTICAST}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+MULTICAST~2}
+
+\mbox{\Hypertarget{sll_8h_a978e7371a3998dcae8839d9398adec70}\label{sll_8h_a978e7371a3998dcae8839d9398adec70}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_OTHERHOST@{LINUX\_SLL\_OTHERHOST}}
+\index{LINUX\_SLL\_OTHERHOST@{LINUX\_SLL\_OTHERHOST}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_OTHERHOST}{LINUX\_SLL\_OTHERHOST}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+OTHERHOST~3}
+
+\mbox{\Hypertarget{sll_8h_ab6c118a4ba304b74a583b1f22273c047}\label{sll_8h_ab6c118a4ba304b74a583b1f22273c047}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_OUTGOING@{LINUX\_SLL\_OUTGOING}}
+\index{LINUX\_SLL\_OUTGOING@{LINUX\_SLL\_OUTGOING}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_OUTGOING}{LINUX\_SLL\_OUTGOING}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+OUTGOING~4}
+
+\mbox{\Hypertarget{sll_8h_ae4b2750659aca8442eb78dc135ebeb62}\label{sll_8h_ae4b2750659aca8442eb78dc135ebeb62}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_P\_802\_2@{LINUX\_SLL\_P\_802\_2}}
+\index{LINUX\_SLL\_P\_802\_2@{LINUX\_SLL\_P\_802\_2}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_P\_802\_2}{LINUX\_SLL\_P\_802\_2}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+P\+\_\+802\+\_\+2~0x0004 /$\ast$ 802.\+2 frames (not D/I/X Ethernet) $\ast$/}
+
+\mbox{\Hypertarget{sll_8h_a38e12d1d52bdd860f95f988f581bc3c6}\label{sll_8h_a38e12d1d52bdd860f95f988f581bc3c6}} 
+\index{sll.h@{sll.h}!LINUX\_SLL\_P\_802\_3@{LINUX\_SLL\_P\_802\_3}}
+\index{LINUX\_SLL\_P\_802\_3@{LINUX\_SLL\_P\_802\_3}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{LINUX\_SLL\_P\_802\_3}{LINUX\_SLL\_P\_802\_3}}
+{\footnotesize\ttfamily \#define LINUX\+\_\+\+SLL\+\_\+\+P\+\_\+802\+\_\+3~0x0001 /$\ast$ Novell 802.\+3 frames without 802.\+2 LLC header $\ast$/}
+
+\mbox{\Hypertarget{sll_8h_aa9d4dab8f22850b820ad7de1662981af}\label{sll_8h_aa9d4dab8f22850b820ad7de1662981af}} 
+\index{sll.h@{sll.h}!SLL\_ADDRLEN@{SLL\_ADDRLEN}}
+\index{SLL\_ADDRLEN@{SLL\_ADDRLEN}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{SLL\_ADDRLEN}{SLL\_ADDRLEN}}
+{\footnotesize\ttfamily \#define SLL\+\_\+\+ADDRLEN~8  /$\ast$ length of address field $\ast$/}
+
+\mbox{\Hypertarget{sll_8h_addd16ab9a840069154dfa8bb5d031fb4}\label{sll_8h_addd16ab9a840069154dfa8bb5d031fb4}} 
+\index{sll.h@{sll.h}!SLL\_HDR\_LEN@{SLL\_HDR\_LEN}}
+\index{SLL\_HDR\_LEN@{SLL\_HDR\_LEN}!sll.h@{sll.h}}
+\doxysubsubsection{\texorpdfstring{SLL\_HDR\_LEN}{SLL\_HDR\_LEN}}
+{\footnotesize\ttfamily \#define SLL\+\_\+\+HDR\+\_\+\+LEN~16  /$\ast$ total header length $\ast$/}
+

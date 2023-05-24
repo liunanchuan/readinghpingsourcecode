@@ -1,0 +1,98 @@
+\hypertarget{rtt_8c}{}\doxysection{rtt.\+c 文件参考}
+\label{rtt_8c}\index{rtt.c@{rtt.c}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+rtt.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtt_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rtt_8c_ae548d949068a57833890ac1b3b31fbd1}{minavgmax}} (float ms\+\_\+delay)
+\item 
+int \mbox{\hyperlink{rtt_8c_ae4b580ccace3b0d5f7421742a3937c8f}{rtt}} (int $\ast$seqp, int recvport, float $\ast$ms\+\_\+delay)
+\item 
+void \mbox{\hyperlink{rtt_8c_a5c3d31936b1247d4c9ccd2aedd4bdeb8}{delaytable\+\_\+add}} (int seq, int src, time\+\_\+t sec, time\+\_\+t usec, int status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{rtt_8c_a5c3d31936b1247d4c9ccd2aedd4bdeb8}\label{rtt_8c_a5c3d31936b1247d4c9ccd2aedd4bdeb8}} 
+\index{rtt.c@{rtt.c}!delaytable\_add@{delaytable\_add}}
+\index{delaytable\_add@{delaytable\_add}!rtt.c@{rtt.c}}
+\doxysubsubsection{\texorpdfstring{delaytable\_add()}{delaytable\_add()}}
+{\footnotesize\ttfamily void delaytable\+\_\+add (\begin{DoxyParamCaption}\item[{int}]{seq,  }\item[{int}]{src,  }\item[{time\+\_\+t}]{sec,  }\item[{time\+\_\+t}]{usec,  }\item[{int}]{status }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a9805834b51a8828f55fdc616a8221317}{delaytable}}, \mbox{\hyperlink{globals_8h_ab66b842bb060b363101cd400b9e5fc2b}{delaytable\+\_\+index}}, \mbox{\hyperlink{structdelaytable__element_a1559c6c23b2e6367e59be081c3b76d54}{delaytable\+\_\+element\+::sec}}, \mbox{\hyperlink{structdelaytable__element_a96ef966cdecc2e582959632b5c35eaef}{delaytable\+\_\+element\+::seq}}, \mbox{\hyperlink{structdelaytable__element_aaa998788ffdfc338ed9bc652ca3d2534}{delaytable\+\_\+element\+::src}}, \mbox{\hyperlink{structdelaytable__element_a6e27f49150e9a14580fb313cc2777e00}{delaytable\+\_\+element\+::status}}, \mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}} , 以及 \mbox{\hyperlink{structdelaytable__element_aaf3d31ad523783af88ee41a87c435ca7}{delaytable\+\_\+element\+::usec}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{sendicmp_8c_a1895ef47376ed349366a917e74bbab6a}{send\+\_\+icmp\+\_\+address()}}, \mbox{\hyperlink{sendicmp_8c_ab7ee2606f9c854ef1d8e12daaa989d0a}{send\+\_\+icmp\+\_\+echo()}}, \mbox{\hyperlink{sendicmp_8c_a783066f0b12bfbc163d93ddc215cb1a2}{send\+\_\+icmp\+\_\+timestamp()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}} , 以及 \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtt_8c_a5c3d31936b1247d4c9ccd2aedd4bdeb8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{rtt_8c_ae548d949068a57833890ac1b3b31fbd1}\label{rtt_8c_ae548d949068a57833890ac1b3b31fbd1}} 
+\index{rtt.c@{rtt.c}!minavgmax@{minavgmax}}
+\index{minavgmax@{minavgmax}!rtt.c@{rtt.c}}
+\doxysubsubsection{\texorpdfstring{minavgmax()}{minavgmax()}}
+{\footnotesize\ttfamily void minavgmax (\begin{DoxyParamCaption}\item[{float}]{ms\+\_\+delay }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a1521cc16e96b4a60e4c0f18d6f0a5261}{rtt\+\_\+avg}}, \mbox{\hyperlink{globals_8h_a500bb3dc86c57e2c20341e6b218004b0}{rtt\+\_\+max}} , 以及 \mbox{\hyperlink{globals_8h_a16c2da0f27de9c87f077d2b62b1c57db}{rtt\+\_\+min}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtt_8c_ae548d949068a57833890ac1b3b31fbd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{rtt_8c_ae4b580ccace3b0d5f7421742a3937c8f}\label{rtt_8c_ae4b580ccace3b0d5f7421742a3937c8f}} 
+\index{rtt.c@{rtt.c}!rtt@{rtt}}
+\index{rtt@{rtt}!rtt.c@{rtt.c}}
+\doxysubsubsection{\texorpdfstring{rtt()}{rtt()}}
+{\footnotesize\ttfamily int rtt (\begin{DoxyParamCaption}\item[{int $\ast$}]{seqp,  }\item[{int}]{recvport,  }\item[{float $\ast$}]{ms\+\_\+delay }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{globals_8h_a9805834b51a8828f55fdc616a8221317}{delaytable}}, \mbox{\hyperlink{getusec_8c_aeae3aba9a4e7957c11ecf4c4e4fbacc7}{get\+\_\+usec()}}, \mbox{\hyperlink{rtt_8c_ae548d949068a57833890ac1b3b31fbd1}{minavgmax()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{hping2_8h_a1857c62d736b5ae6b327ea142301a6be}{S\+\_\+\+RECV}}, \mbox{\hyperlink{structdelaytable__element_a1559c6c23b2e6367e59be081c3b76d54}{delaytable\+\_\+element\+::sec}}, \mbox{\hyperlink{structdelaytable__element_a96ef966cdecc2e582959632b5c35eaef}{delaytable\+\_\+element\+::seq}}, \mbox{\hyperlink{structdelaytable__element_a6e27f49150e9a14580fb313cc2777e00}{delaytable\+\_\+element\+::status}}, \mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}}, \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time()}}, \mbox{\hyperlink{structdelaytable__element_aaf3d31ad523783af88ee41a87c435ca7}{delaytable\+\_\+element\+::usec}} , 以及 \mbox{\hyperlink{globals_8h_a179df26f82a603e41f4c556e7a206dcf}{usec\+\_\+delay}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{waitpacket_8c_a49eb359cdc82f7c10b7ef80bcd6598d6}{icmp\+\_\+unreach\+\_\+rtt()}}, \mbox{\hyperlink{waitpacket_8c_ae22d7ab3b3cb6d63746507d598e18222}{log\+\_\+traceroute()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{waitpacket_8c_a7ffe144369534044a0367b0026746519}{recv\+\_\+tcp()}} , 以及 \mbox{\hyperlink{waitpacket_8c_a08c9ecdd9b7df2110373e9ee9edcc486}{recv\+\_\+udp()}}.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{rtt_8c_ae4b580ccace3b0d5f7421742a3937c8f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtt_8c_ae4b580ccace3b0d5f7421742a3937c8f_icgraph}
+\end{center}
+\end{figure}

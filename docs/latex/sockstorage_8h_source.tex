@@ -1,0 +1,44 @@
+\hypertarget{sockstorage_8h_source}{}\doxysection{sockstorage.\+h}
+\label{sockstorage_8h_source}\index{libpcap-\/1.1.1/Win32/Include/sockstorage.h@{libpcap-\/1.1.1/Win32/Include/sockstorage.h}}
+\mbox{\hyperlink{sockstorage_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1999 WIDE Project.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ * }}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. Neither the name of the project nor the names of its contributors}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{15 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{16 \textcolor{comment}{ * }}
+\DoxyCodeLine{17 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{18 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{19 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{20 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{21 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{22 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{23 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{24 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{25 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{26 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{27 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 \textcolor{keyword}{struct }\mbox{\hyperlink{structsockaddr__storage}{sockaddr\_storage}} \{}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef HAVE\_SOCKADDR\_SA\_LEN}}
+\DoxyCodeLine{31     u\_int8\_t \_\_ss\_len;}
+\DoxyCodeLine{32     u\_int8\_t \mbox{\hyperlink{structsockaddr__storage_aab9f7dedb606fd0625149b17b28bcced}{\_\_ss\_family}};}
+\DoxyCodeLine{33     u\_int8\_t \mbox{\hyperlink{structsockaddr__storage_a0bb37132728224a86965ed129e5db604}{fill}}[126];}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{35     u\_int8\_t \mbox{\hyperlink{structsockaddr__storage_aab9f7dedb606fd0625149b17b28bcced}{\_\_ss\_family}};}
+\DoxyCodeLine{36     u\_int8\_t \mbox{\hyperlink{structsockaddr__storage_a0bb37132728224a86965ed129e5db604}{fill}}[127];}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* HAVE\_SOCKADDR\_SA\_LEN */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \};}
+
+\end{DoxyCode}

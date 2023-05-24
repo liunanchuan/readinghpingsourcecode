@@ -1,0 +1,116 @@
+\hypertarget{random_8c}{}\doxysection{random.\+c 文件参考}
+\label{random_8c}\index{random.c@{random.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fixtypes.\+h\char`\"{}}\newline
+random.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{random_8c_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand}} (void)
+\item 
+static void \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \mbox{\hyperlink{random_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}} \mbox{[}256\mbox{]}
+\item 
+static int \mbox{\hyperlink{random_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{random_8c_afd6b6b2544d3a916b1c6cc70709cb7c9}\label{random_8c_afd6b6b2544d3a916b1c6cc70709cb7c9}} 
+\index{random.c@{random.c}!hp\_rand@{hp\_rand}}
+\index{hp\_rand@{hp\_rand}!random.c@{random.c}}
+\doxysubsubsection{\texorpdfstring{hp\_rand()}{hp\_rand()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t hp\+\_\+rand (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}, \mbox{\hyperlink{random_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}} , 以及 \mbox{\hyperlink{random_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest()}} , 以及 \mbox{\hyperlink{send_8c_a8d06dc88b88fbf0c1f5f05b014a2f662}{select\+\_\+next\+\_\+random\+\_\+source()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{random_8c_afd6b6b2544d3a916b1c6cc70709cb7c9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random_8c_afd6b6b2544d3a916b1c6cc70709cb7c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{random_8c_a5b7bb5c4af85c56559afae1ba8955576}\label{random_8c_a5b7bb5c4af85c56559afae1ba8955576}} 
+\index{random.c@{random.c}!hp\_rand\_init@{hp\_rand\_init}}
+\index{hp\_rand\_init@{hp\_rand\_init}!random.c@{random.c}}
+\doxysubsubsection{\texorpdfstring{hp\_rand\_init()}{hp\_rand\_init()}}
+{\footnotesize\ttfamily static void hp\+\_\+rand\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+引用了 \mbox{\hyperlink{os-sunos4_8h_ae152484c890a24e4d9b4980e7b965be0}{close()}}, \mbox{\hyperlink{os-sunos4_8h_a091a762f60d91b0f5441d9520dc2079c}{gettimeofday()}}, \mbox{\hyperlink{random_8c_aec948ef8ee5b83e49ce7bc3d972a1768}{rc4\+\_\+sbox}}, \mbox{\hyperlink{random_8c_a1311983966ac797c879f02267c98b2a7}{rc4\+\_\+seedflag}} , 以及 \mbox{\hyperlink{os-sunos4_8h_a6f85ef730e632194fed8c4b77f21dde9}{read()}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{random_8c_a5b7bb5c4af85c56559afae1ba8955576_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random_8c_a5b7bb5c4af85c56559afae1ba8955576_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{random_8c_aec948ef8ee5b83e49ce7bc3d972a1768}\label{random_8c_aec948ef8ee5b83e49ce7bc3d972a1768}} 
+\index{random.c@{random.c}!rc4\_sbox@{rc4\_sbox}}
+\index{rc4\_sbox@{rc4\_sbox}!random.c@{random.c}}
+\doxysubsubsection{\texorpdfstring{rc4\_sbox}{rc4\_sbox}}
+{\footnotesize\ttfamily unsigned char rc4\+\_\+sbox\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand()}} , 以及 \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}.
+
+\mbox{\Hypertarget{random_8c_a1311983966ac797c879f02267c98b2a7}\label{random_8c_a1311983966ac797c879f02267c98b2a7}} 
+\index{random.c@{random.c}!rc4\_seedflag@{rc4\_seedflag}}
+\index{rc4\_seedflag@{rc4\_seedflag}!random.c@{random.c}}
+\doxysubsubsection{\texorpdfstring{rc4\_seedflag}{rc4\_seedflag}}
+{\footnotesize\ttfamily int rc4\+\_\+seedflag = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_afd6b6b2544d3a916b1c6cc70709cb7c9}{hp\+\_\+rand()}} , 以及 \mbox{\hyperlink{random_8c_a5b7bb5c4af85c56559afae1ba8955576}{hp\+\_\+rand\+\_\+init()}}.
+

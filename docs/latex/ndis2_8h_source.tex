@@ -1,0 +1,565 @@
+\hypertarget{ndis2_8h_source}{}\doxysection{ndis2.\+h}
+\label{ndis2_8h_source}\index{libpcap-\/1.1.1/msdos/ndis2.h@{libpcap-\/1.1.1/msdos/ndis2.h}}
+\mbox{\hyperlink{ndis2_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1993,1994}}
+\DoxyCodeLine{3 \textcolor{comment}{ *      Texas A\&M University.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *      This product includes software developed by Texas A\&M University}}
+\DoxyCodeLine{16 \textcolor{comment}{ *      and its contributors.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE UNIVERSITY AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{23 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{24 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{26 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{27 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{28 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{29 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{30 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{31 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Developers:}}
+\DoxyCodeLine{34 \textcolor{comment}{ *             David K. Hess, Douglas Lee Schales, David R. Safford}}
+\DoxyCodeLine{35 \textcolor{comment}{ *}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Heavily modified for Metaware HighC + GNU C 2.8+}}
+\DoxyCodeLine{37 \textcolor{comment}{ *             Gisle Vanem 1998}}
+\DoxyCodeLine{38 \textcolor{comment}{ */}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef \_\_PCAP\_NDIS\_H}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define \_\_PCAP\_NDIS\_H}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if defined (\_\_HIGHC\_\_)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  \#define pascal          \_CC(\_CALLEE\_POPS\_STACK \& \string~\_REVERSE\_PARMS) }\textcolor{comment}{/* calling convention */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{  \#define CALLBACK(foo)   pascal WORD foo}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{  \#define PAS\_PTR(x,arg)  typedef FAR WORD pascal (*x) arg}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{  \#define GUARD()         \_inline (0x9C,0xFA)   }\textcolor{comment}{/* pushfd, cli */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{  \#define UNGUARD()       \_inline (0x9D)        }\textcolor{comment}{/* popfd */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  \#define FAR             \_far}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{  \#define CALLBACK(foo)   WORD foo \_\_attribute\_\_((stdcall))}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{  \#define PAS\_PTR(x,arg)  typedef WORD (*x) arg \_\_attribute\_\_((stdcall))}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{  \#define GUARD()         \_\_asm\_\_ \_\_volatile\_\_ ("{}pushfd; cli"{}})}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  \#define UNGUARD()       \_\_asm\_\_ \_\_volatile\_\_ ("{}popfd"{}})}
+\DoxyCodeLine{56 \textcolor{preprocessor}{  \#define FAR}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#elif defined (\_\_TURBOC\_\_)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  \#define CALLBACK(foo)   WORD pascal foo}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{  \#define PAS\_PTR(x,arg)  typedef WORD pascal (\_far *x) arg}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{  \#define GUARD()         \_asm \{ pushf; cli \}}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{  \#define UNGUARD()       \_asm \{ popf \}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{  \#define FAR             \_far}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#elif defined (\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{  \#define CALLBACK(foo)   WORD pascal foo}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{  \#define PAS\_PTR(x,arg)  typedef WORD pascal (\_far *x) arg}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{  \#define GUARD()         \_disable()}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{  \#define UNGUARD()       \_enable()}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{  \#define FAR             \_far}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{  \#error Unsupported compiler}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/*}}
+\DoxyCodeLine{78 \textcolor{comment}{ *  Forwards}}
+\DoxyCodeLine{79 \textcolor{comment}{ */}}
+\DoxyCodeLine{80 \textcolor{keyword}{struct }\_ReqBlock;}
+\DoxyCodeLine{81 \textcolor{keyword}{struct }\_TxBufDescr;}
+\DoxyCodeLine{82 \textcolor{keyword}{struct }\_TDBufDescr;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/*}}
+\DoxyCodeLine{85 \textcolor{comment}{ * Protocol Manager API}}
+\DoxyCodeLine{86 \textcolor{comment}{ */}}
+\DoxyCodeLine{87 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (ProtMan, (\textcolor{keyword}{struct} \_ReqBlock FAR*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{comment}{/*}}
+\DoxyCodeLine{90 \textcolor{comment}{ * System request}}
+\DoxyCodeLine{91 \textcolor{comment}{ */}}
+\DoxyCodeLine{92 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (SystemRequest, (\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{/*}}
+\DoxyCodeLine{95 \textcolor{comment}{ * MAC API}}
+\DoxyCodeLine{96 \textcolor{comment}{ */}}
+\DoxyCodeLine{97 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (TransmitChain, (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \textcolor{keyword}{struct} \_TxBufDescr FAR*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{98 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (TransferData,  (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}*,\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \textcolor{keyword}{struct} \_TDBufDescr FAR*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{99 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (Request,       (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{100 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (ReceiveRelease,(\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{101 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (IndicationOn,  (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{102 \mbox{\hyperlink{ndis2_8h_aa88bf1a5064e747632d805801a9c3471}{PAS\_PTR}} (IndicationOff, (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{106         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a7a19a39bb1cb17f46d5386b65917077e}{HARDWARE\_NOT\_INSTALLED}}  = 0,}
+\DoxyCodeLine{107         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2af84f74efa69c7a423d29c83f1bf76b2a}{HARDWARE\_FAILED\_DIAG}}    = 1,}
+\DoxyCodeLine{108         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a91ec424c12076712f6e13c38f0d7499f}{HARDWARE\_FAILED\_CONFIG}}  = 2,}
+\DoxyCodeLine{109         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2affc5aa3f3cfc7e632d70ca7ceac225d9}{HARDWARE\_HARD\_FAULT}}     = 3,}
+\DoxyCodeLine{110         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a35baa0503254b13d64965862ef7b5c0c}{HARDWARE\_SOFT\_FAULT}}     = 4,}
+\DoxyCodeLine{111         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aa28e74004891257567f57daebd15d023}{HARDWARE\_OK}}             = 7,}
+\DoxyCodeLine{112         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a92f163360a74d677a698e1c0d24e3a21}{HARDWARE\_MASK}}           = 0x0007,}
+\DoxyCodeLine{113         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aab9b71bf4be31f67c3542b26e37aac8f}{MAC\_BOUND}}               = 0x0008,}
+\DoxyCodeLine{114         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2a419662cadd7d55e4de11a259527d6da9}{MAC\_OPEN}}                = 0x0010,}
+\DoxyCodeLine{115         \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2aed1a9f2e88de464a36ba0b3c93e795f0}{DIAG\_IN\_PROGRESS}}        = 0x0020}
+\DoxyCodeLine{116       \} \mbox{\hyperlink{ndis2_8h_a666ee3bca944bc5d4b3f2029268fd5d2}{NdisMacStatus}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{119         \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a58faaf6a144a6218870dea1226d917b1}{STATUS\_RING\_STATUS}}      = 1,}
+\DoxyCodeLine{120         \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a101ea09d55a9799081d951a243c30b31}{STATUS\_ADAPTER\_CHECK}}    = 2,}
+\DoxyCodeLine{121         \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388abcae23810ebd4491a56f5fdfa6e28cae}{STATUS\_START\_RESET}}      = 3,}
+\DoxyCodeLine{122         \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388a80685092e34c70fc251680332218219d}{STATUS\_INTERRUPT}}        = 4,}
+\DoxyCodeLine{123         \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388af9ddf03663850f0ccfad43d2e84d3e9f}{STATUS\_END\_RESET}}        = 5}
+\DoxyCodeLine{124       \} \mbox{\hyperlink{ndis2_8h_aa9c33f11b7a187e2ce5012c3c142d388}{NdisStatus}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{127         \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a72c7dc13dab57e0bbbede647034c6945}{FILTER\_DIRECTED}}         = 1,}
+\DoxyCodeLine{128         \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a588b9c7d9d1d1e9d92a76319377138fe}{FILTER\_BROADCAST}}        = 2,}
+\DoxyCodeLine{129         \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6a1ca2f0b2059042ba736f4c0d12efde87}{FILTER\_PROMISCUOUS}}      = 4,}
+\DoxyCodeLine{130         \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6aa84062abc7cdc17af5ab47547113960f}{FILTER\_SOURCE\_ROUTE}}     = 8}
+\DoxyCodeLine{131       \} \mbox{\hyperlink{ndis2_8h_a507d0774734a985df75362a0145e89f6}{NdisPacketFilter}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{134         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfabd624725b5a945a25d9e3e3ac7e6127e}{REQ\_INITIATE\_DIAGNOSTICS}}     = 1,}
+\DoxyCodeLine{135         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadbf86439d679cbd463d48ee7c43a4155}{REQ\_READ\_ERROR\_LOG}}           = 2,}
+\DoxyCodeLine{136         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa0eb2cb0dbe3201eb50636b0466bdf2bf}{REQ\_SET\_STATION\_ADDRESS}}      = 3,}
+\DoxyCodeLine{137         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa41b32cbfeb549a0a556b06f266fc2cf9}{REQ\_OPEN\_ADAPTER}}             = 4,}
+\DoxyCodeLine{138         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfae032e429e20b01ca2e2398e974b01755}{REQ\_CLOSE\_ADAPTER}}            = 5,}
+\DoxyCodeLine{139         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa87fcfaa86573eff6dd4b4c0723327635}{REQ\_RESET\_MAC}}                = 6,}
+\DoxyCodeLine{140         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfadeee397e6321c0555d77ea30e4b76e56}{REQ\_SET\_PACKET\_FILTER}}        = 7,}
+\DoxyCodeLine{141         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfad5b8c6ffd4f78a99d3cfbad013d78f0f}{REQ\_ADD\_MULTICAST\_ADDRESS}}    = 8,}
+\DoxyCodeLine{142         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa76d42e9fabdfee9aa623b5ab4f415467}{REQ\_DELETE\_MULTICAST\_ADDRESS}} = 9,}
+\DoxyCodeLine{143         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfaea5d5b07e1b387dd60894f249fc40653}{REQ\_UPDATE\_STATISTICS}}        = 10,}
+\DoxyCodeLine{144         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfacd173684841e33fcd48978f2ef8b3c57}{REQ\_CLEAR\_STATISTICS}}         = 11,}
+\DoxyCodeLine{145         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfac469d69749fcc9a82c25dd6a29c919c4}{REQ\_INTERRUPT\_REQUEST}}        = 12,}
+\DoxyCodeLine{146         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa46269b571357e9fd3f59e6295158ebab}{REQ\_SET\_FUNCTIONAL\_ADDRESS}}   = 13,}
+\DoxyCodeLine{147         \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cfa8f6b09bf30107cccecf26d981f7c9724}{REQ\_SET\_LOOKAHEAD}}            = 14}
+\DoxyCodeLine{148       \} \mbox{\hyperlink{ndis2_8h_a3f17103d51f7ff459cd61a9be4beb7cf}{NdisGeneralRequest}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{151         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a4856012aa91e02227b24112161bc8e16}{SF\_BROADCAST}}             = 0x00000001L,}
+\DoxyCodeLine{152         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a27fed37c640004bfd7813cfd40cd7b3b}{SF\_MULTICAST}}             = 0x00000002L,}
+\DoxyCodeLine{153         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aafccc97da7a8c2b7d19b8c5c6bacb815}{SF\_FUNCTIONAL}}            = 0x00000004L,}
+\DoxyCodeLine{154         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a1431e43ad01048f2ed7efbfc654f662c}{SF\_PROMISCUOUS}}           = 0x00000008L,}
+\DoxyCodeLine{155         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ac1c963ecd25016eea7c5d1d72ae4d9fb}{SF\_SOFT\_ADDRESS}}          = 0x00000010L,}
+\DoxyCodeLine{156         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a13733e5dd015751a66e1076da8bb03c2}{SF\_STATS\_CURRENT}}         = 0x00000020L,}
+\DoxyCodeLine{157         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553aaf2cae7dcbcc685f2ec39943eb700152}{SF\_INITIATE\_DIAGS}}        = 0x00000040L,}
+\DoxyCodeLine{158         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553ad0987352d155b1014da9d43ab1c05696}{SF\_LOOPBACK}}              = 0x00000080L,}
+\DoxyCodeLine{159         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a226ebb1b0a96546f700f38e63b9bfdd0}{SF\_RECEIVE\_CHAIN}}         = 0x00000100L,}
+\DoxyCodeLine{160         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3e326b9317819ca977846e33ba732f93}{SF\_SOURCE\_ROUTING}}        = 0x00000200L,}
+\DoxyCodeLine{161         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a23eab1d2c68459a14bdde525387337e9}{SF\_RESET\_MAC}}             = 0x00000400L,}
+\DoxyCodeLine{162         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a61582232db6aea051054454a644dfc15}{SF\_OPEN\_CLOSE}}            = 0x00000800L,}
+\DoxyCodeLine{163         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a35815d87fd830b28d36eaf568256fbbc}{SF\_INTERRUPT\_REQUEST}}     = 0x00001000L,}
+\DoxyCodeLine{164         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553a3b388e4b93c5b1e542cad272a14c6655}{SF\_SOURCE\_ROUTING\_BRIDGE}} = 0x00002000L,}
+\DoxyCodeLine{165         \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553acf01e14e80bc51986304fd0e45b564dc}{SF\_VIRTUAL\_ADDRESSES}}     = 0x00004000L}
+\DoxyCodeLine{166       \} \mbox{\hyperlink{ndis2_8h_af66d48cc0b2cf0cd5b4db0b009c48553}{NdisMacServiceFlags}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{169         \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323faa0a6a6a0ab0d59c54fd450eac2d6c0ab}{REQ\_INITIATE\_BIND}}        = 1,}
+\DoxyCodeLine{170         \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323faee10b32f1f89ba05943bd4d862cad2b8}{REQ\_BIND}}                 = 2,}
+\DoxyCodeLine{171         \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323fa5fdd94f9971b0e09fbb4520934d785a3}{REQ\_INITIATE\_PREBIND}}     = 3,}
+\DoxyCodeLine{172         \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323fabac60e75d42fe12d621c9b3132136ac6}{REQ\_INITIATE\_UNBIND}}      = 4,}
+\DoxyCodeLine{173         \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323facbfdd8faf3ba37a2a566708a3a1d3486}{REQ\_UNBIND}}               = 5}
+\DoxyCodeLine{174       \} \mbox{\hyperlink{ndis2_8h_a3110640ff46c94868fab407417d5323f}{NdisSysRequest}};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}  \{}
+\DoxyCodeLine{177         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba3b77926e9ee837d5b50d65962521827a}{PM\_GET\_PROTOCOL\_MANAGER\_INFO}}      = 1,}
+\DoxyCodeLine{178         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab504793f2b5d537c6eace5cc56cb763b}{PM\_REGISTER\_MODULE}}                = 2,}
+\DoxyCodeLine{179         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa904c133bdbc6408de29c3a31ace5efe}{PM\_BIND\_AND\_START}}                 = 3,}
+\DoxyCodeLine{180         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba773cc2eddc6bc5ba1384af232954813f}{PM\_GET\_PROTOCOL\_MANAGER\_LINKAGE}}   = 4,}
+\DoxyCodeLine{181         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba8c88ea4553b6e9a5c4ebad50b38ea327}{PM\_GET\_PROTOCOL\_INI\_PATH}}          = 5,}
+\DoxyCodeLine{182         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba1cc22736dddfea672f21de39ca7e4371}{PM\_REGISTER\_PROTOCOL\_MANAGER\_INFO}} = 6,}
+\DoxyCodeLine{183         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033baa502eecee4b0304a3455365bcbd2b21a}{PM\_INIT\_AND\_REGISTER}}              = 7,}
+\DoxyCodeLine{184         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bab1f323e2a2e8d32ef41b070d10e1103d}{PM\_UNBIND\_AND\_STOP}}                = 8,}
+\DoxyCodeLine{185         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033ba0b1b5a3a4bac72a6a20f6eb17c396730}{PM\_BIND\_STATUS}}                    = 9,}
+\DoxyCodeLine{186         \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033bad3aa38cd1f0df06769248d24da25d0cf}{PM\_REGISTER\_STATUS}}                = 10}
+\DoxyCodeLine{187       \} \mbox{\hyperlink{ndis2_8h_a186ad3538b7515fb6b99acb73f4f033b}{NdisProtManager}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{191         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6d4f18a9728f434ff2d1a64043ebe6e8}{ERR\_SUCCESS}}                      = 0x00,}
+\DoxyCodeLine{192         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaab75e6b7c966a131e06d5206b18c4824}{ERR\_WAIT\_FOR\_RELEASE}}             = 0x01,}
+\DoxyCodeLine{193         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda778ad4413217b37dbd4245f7044c51fd}{ERR\_REQUEST\_QUEUED}}               = 0x02,}
+\DoxyCodeLine{194         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6ce68afd45f31a179592b0886e7a2e5e}{ERR\_FRAME\_NOT\_RECOGNIZED}}         = 0x03,}
+\DoxyCodeLine{195         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8b9a12b75b45baa36bef572323d10eb2}{ERR\_FRAME\_REJECTED}}               = 0x04,}
+\DoxyCodeLine{196         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda39924fed9f0b04abe7dcd83772e2d886}{ERR\_FORWARD\_FRAME}}                = 0x05,}
+\DoxyCodeLine{197         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6721eac2f897be340a7e9e6cdd7dd4fb}{ERR\_OUT\_OF\_RESOURCE}}              = 0x06,}
+\DoxyCodeLine{198         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab9a3824c476f6f195bbbeb82f346c302}{ERR\_INVALID\_PARAMETER}}            = 0x07,}
+\DoxyCodeLine{199         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda7a0a8b9f32f24279f4ec43b5b6cc0a44}{ERR\_INVALID\_FUNCTION}}             = 0x08,}
+\DoxyCodeLine{200         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda994a3ba85904a4ea1ee0b3330aa15609}{ERR\_NOT\_SUPPORTED}}                = 0x09,}
+\DoxyCodeLine{201         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddafa2ef67f34e6cc90d4f92dba015f54c6}{ERR\_HARDWARE\_ERROR}}               = 0x0A,}
+\DoxyCodeLine{202         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddad78712419772ac8e6d7d563f1d067366}{ERR\_TRANSMIT\_ERROR}}               = 0x0B,}
+\DoxyCodeLine{203         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda3851654777b9b88b052f46059285a3dd}{ERR\_NO\_SUCH\_DESTINATION}}          = 0x0C,}
+\DoxyCodeLine{204         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8c0b3dabc67850239a3ad9735f59474c}{ERR\_BUFFER\_TOO\_SMALL}}             = 0x0D,}
+\DoxyCodeLine{205         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda72eec3ccdcfa2a26dce1d246a62ae87f}{ERR\_ALREADY\_STARTED}}              = 0x20,}
+\DoxyCodeLine{206         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda886970abeba8627ab55c6f474fa0befd}{ERR\_INCOMPLETE\_BINDING}}           = 0x21,}
+\DoxyCodeLine{207         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaca973572525b2eef7463d546b7841301}{ERR\_DRIVER\_NOT\_INITIALIZED}}       = 0x22,}
+\DoxyCodeLine{208         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaa8ffd20260869a54e3c0903c4e36bfb6}{ERR\_HARDWARE\_NOT\_FOUND}}           = 0x23,}
+\DoxyCodeLine{209         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6e22ce78f581c722f6f57fb62ccaaf92}{ERR\_HARDWARE\_FAILURE}}             = 0x24,}
+\DoxyCodeLine{210         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda51a256dcfa80ec49c2408db903b40358}{ERR\_CONFIGURATION\_FAILURE}}        = 0x25,}
+\DoxyCodeLine{211         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddac4c736c7ed46e1ed3dd26f4ac85dad56}{ERR\_INTERRUPT\_CONFLICT}}           = 0x26,}
+\DoxyCodeLine{212         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda60503d5f1c024f4182d7bde3b96510e5}{ERR\_INCOMPATIBLE\_MAC}}             = 0x27,}
+\DoxyCodeLine{213         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaaea89791c64b9f5c014c612046d3234b}{ERR\_INITIALIZATION\_FAILED}}        = 0x28,}
+\DoxyCodeLine{214         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda516ee444e4a66a06a56c8e8c382d3c18}{ERR\_NO\_BINDING}}                   = 0x29,}
+\DoxyCodeLine{215         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddab756d17e771420abca29dd5d4951dc17}{ERR\_NETWORK\_MAY\_NOT\_BE\_CONNECTED}} = 0x2A,}
+\DoxyCodeLine{216         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaea8003429837811615b699030fd410c9}{ERR\_INCOMPATIBLE\_OS\_VERSION}}      = 0x2B,}
+\DoxyCodeLine{217         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda8d587f794db36c765219d7d45db3fe9e}{ERR\_ALREADY\_REGISTERED}}           = 0x2C,}
+\DoxyCodeLine{218         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda5fd0a801ac590acee796da2b6e17a2d1}{ERR\_PATH\_NOT\_FOUND}}               = 0x2D,}
+\DoxyCodeLine{219         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda6aa49e61dcd617b5f3ef39ee54cb555b}{ERR\_INSUFFICIENT\_MEMORY}}          = 0x2E,}
+\DoxyCodeLine{220         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4ddaf56675c7d203f2b1d01d75f6c30e2199}{ERR\_INFO\_NOT\_FOUND}}               = 0x2F,}
+\DoxyCodeLine{221         \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dda49a69ae635a7b8fcc823a94202dbbb84}{ERR\_GENERAL\_FAILURE}}              = 0xFF}
+\DoxyCodeLine{222       \} \mbox{\hyperlink{ndis2_8h_aa19a2a37b0e6356d26c5bdc9bc50f4dd}{NdisError}};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define NDIS\_PARAM\_INTEGER   0}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define NDIS\_PARAM\_STRING    1}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define NDIS\_TX\_BUF\_LENGTH   8}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define NDIS\_TD\_BUF\_LENGTH   1}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define NDIS\_RX\_BUF\_LENGTH   8}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define NDIS\_PTR\_PHYSICAL    0}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define NDIS\_PTR\_VIRTUAL     2}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define NDIS\_PATH    "{}PROTMAN\$"{}}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_CommonChars \{}
+\DoxyCodeLine{238         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structCommonChars_a9eeef73a0d48552b88f2304a09eefa51}{tableSize}};}
+\DoxyCodeLine{239         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_a4774f3cdb8f8652bdc3f67a62c0170cb}{majorNdisVersion}};        \textcolor{comment}{/* 2 -\/ Latest version */}}
+\DoxyCodeLine{240         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_acda813c7d726327a9fd5398187ec3fcf}{minorNdisVersion}};        \textcolor{comment}{/* 0                  */}}
+\DoxyCodeLine{241         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structCommonChars_ad8b747e447a8eeee2412838425de74be}{reserved1}};}
+\DoxyCodeLine{242         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_ae5242267e1327040088185af30985846}{majorModuleVersion}};}
+\DoxyCodeLine{243         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_ac43eee83513ba60366df9582504b905c}{minorModuleVersion}};}
+\DoxyCodeLine{244         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{structCommonChars_a1a7e5cbc03f3ea52665f454fd8176a9c}{moduleFlags}};}
+\DoxyCodeLine{245         \textcolor{comment}{/* 0 -\/ Binding at upper boundary supported}}
+\DoxyCodeLine{246 \textcolor{comment}{         * 1 -\/ Binding at lower boundary supported}}
+\DoxyCodeLine{247 \textcolor{comment}{         * 2 -\/ Dynamically bound.}}
+\DoxyCodeLine{248 \textcolor{comment}{         * 3-\/31 -\/ Reserved, must be zero.}}
+\DoxyCodeLine{249 \textcolor{comment}{         */}}
+\DoxyCodeLine{250         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  moduleName[16];}
+\DoxyCodeLine{251         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_a13e56913d241effceefdc2122a99785f}{protocolLevelUpper}};}
+\DoxyCodeLine{252         \textcolor{comment}{/* 1 -\/ MAC}}
+\DoxyCodeLine{253 \textcolor{comment}{         * 2 -\/ Data Link}}
+\DoxyCodeLine{254 \textcolor{comment}{         * 3 -\/ Network}}
+\DoxyCodeLine{255 \textcolor{comment}{         * 4 -\/ Transport}}
+\DoxyCodeLine{256 \textcolor{comment}{         * 5 -\/ Session}}
+\DoxyCodeLine{257 \textcolor{comment}{         * -\/1 -\/ Not specified}}
+\DoxyCodeLine{258 \textcolor{comment}{         */}}
+\DoxyCodeLine{259         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_a4b48c9ec77b0d4692806541b3f44d2a0}{interfaceUpper}};}
+\DoxyCodeLine{260         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_a4cf0c1591cf974dfe42583bf7a4b9b36}{protocolLevelLower}};}
+\DoxyCodeLine{261         \textcolor{comment}{/* 0 -\/ Physical}}
+\DoxyCodeLine{262 \textcolor{comment}{         * 1 -\/ MAC}}
+\DoxyCodeLine{263 \textcolor{comment}{         * 2 -\/ Data Link}}
+\DoxyCodeLine{264 \textcolor{comment}{         * 3 -\/ Network}}
+\DoxyCodeLine{265 \textcolor{comment}{         * 4 -\/ Transport}}
+\DoxyCodeLine{266 \textcolor{comment}{         * 5 -\/ Session}}
+\DoxyCodeLine{267 \textcolor{comment}{         * -\/1 -\/ Not specified}}
+\DoxyCodeLine{268 \textcolor{comment}{         */}}
+\DoxyCodeLine{269         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structCommonChars_aebdef46e661f06882feb98c74b9a8edf}{interfaceLower}};}
+\DoxyCodeLine{270         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structCommonChars_ac524192485f866c6a4d30c0d8b7d82d1}{moduleId}};}
+\DoxyCodeLine{271         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structCommonChars_a364a87acaab7065f7d08c4d6a9d8ecc3}{moduleDS}};}
+\DoxyCodeLine{272         SystemRequest \mbox{\hyperlink{structCommonChars_afd96f74399bf2ed28e62cce134e53557}{systemRequest}};}
+\DoxyCodeLine{273         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_a59fccb9b8715a7fa1dfa22a32ba81dea}{serviceChars}};}
+\DoxyCodeLine{274         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_afcd424089eddc720d6d38ab8633ead5f}{serviceStatus}};}
+\DoxyCodeLine{275         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_ac4e9cf04f219638aafc0754b702866b7}{upperDispatchTable}};}
+\DoxyCodeLine{276         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_a45c07ce14c16af4d9be02b010543c0ff}{lowerDispatchTable}};}
+\DoxyCodeLine{277         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_a8e55ac0846d52bdcc13d013cae31df35}{reserved2}};            \textcolor{comment}{/* Must be NULL */}}
+\DoxyCodeLine{278         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{structCommonChars_acafc3d7d5d97963634299096117b606d}{reserved3}};            \textcolor{comment}{/* Must be NULL */}}
+\DoxyCodeLine{279       \} \mbox{\hyperlink{structCommonChars}{CommonChars}};}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_MulticastList \{}
+\DoxyCodeLine{283         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMulticastList_ab4075162e7ee8fad818df05176b4f0ac}{maxMulticastAddresses}};}
+\DoxyCodeLine{284         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMulticastList_a4a3a727edda1363bd9b8598b335e00b1}{numberMulticastAddresses}};}
+\DoxyCodeLine{285         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   multicastAddress[16][16];}
+\DoxyCodeLine{286       \} \mbox{\hyperlink{structMulticastList}{MulticastList}};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_MacChars \{}
+\DoxyCodeLine{290         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_a9eeef73a0d48552b88f2304a09eefa51}{tableSize}};}
+\DoxyCodeLine{291         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   macName[16];}
+\DoxyCodeLine{292         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_ad925507e7119f66c1eb477b0f1576abf}{addressLength}};}
+\DoxyCodeLine{293         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   permanentAddress[16];}
+\DoxyCodeLine{294         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   currentAddress[16];}
+\DoxyCodeLine{295         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacChars_aa39f18f826f563efd478f39eb3a96047}{currentFunctionalAddress}};}
+\DoxyCodeLine{296         \mbox{\hyperlink{structMulticastList}{MulticastList}} *\mbox{\hyperlink{structMacChars_a28e05cd9eca61f87afe8b7cd716455cd}{multicastList}};}
+\DoxyCodeLine{297         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacChars_a877c966ff233789931cb921cd15b2399}{linkSpeed}};}
+\DoxyCodeLine{298         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacChars_a1ed590b2aa3e026dea02ccce3023ea9b}{serviceFlags}};}
+\DoxyCodeLine{299         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_a1fd321f4d43d8f3eb5c63b1f8b45d2cf}{maxFrameSize}};}
+\DoxyCodeLine{300         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacChars_a207ebe01652b4c63dce5a9c671cc543e}{txBufferSize}};}
+\DoxyCodeLine{301         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_a338e9a640b147a6ece1f31728f43a2a4}{txBufferAllocSize}};}
+\DoxyCodeLine{302         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacChars_a439f0f13acfcbdc71e7ddaa970fe1625}{rxBufferSize}};}
+\DoxyCodeLine{303         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_a5bd864ab4a7904e596d467c97a4b76dd}{rxBufferAllocSize}};}
+\DoxyCodeLine{304         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   ieeeVendor[3];}
+\DoxyCodeLine{305         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   \mbox{\hyperlink{structMacChars_a6298b3ff4e802c3a0367b9669e93ef32}{vendorAdapter}};}
+\DoxyCodeLine{306         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structMacChars_a5fe74fc7097ae2f7f094bafb00c8997e}{vendorAdapterDescription}};}
+\DoxyCodeLine{307         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_aa74490f38744172e27b237b6e04e9609}{interruptLevel}};}
+\DoxyCodeLine{308         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_a1b8c1b525166ffb392dbd38ec7f75235}{txQueueDepth}};}
+\DoxyCodeLine{309         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacChars_aafdb153615d922d0cd88d1eeefee3434}{maxDataBlocks}};}
+\DoxyCodeLine{310       \} \mbox{\hyperlink{structMacChars}{MacChars}};}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_ProtocolChars \{}
+\DoxyCodeLine{314         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structProtocolChars_ac03f72dfd2e32790101f1221796ea289}{length}};}
+\DoxyCodeLine{315         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   name[16];}
+\DoxyCodeLine{316         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structProtocolChars_a06986d26b692d487915ecf21630fa3e2}{type}};}
+\DoxyCodeLine{317       \} \mbox{\hyperlink{structProtocolChars}{ProtocolChars}};}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_MacUpperDispatch \{}
+\DoxyCodeLine{321         \mbox{\hyperlink{structCommonChars}{CommonChars}}      *\mbox{\hyperlink{structMacUpperDispatch_a89201b61af8b7a56cb7842d71b593b7f}{backPointer}};}
+\DoxyCodeLine{322         Request           \mbox{\hyperlink{structMacUpperDispatch_a68268d225f28eeb580103071a868875c}{request}};}
+\DoxyCodeLine{323         TransmitChain     \mbox{\hyperlink{structMacUpperDispatch_a16673946d0dbd8038446ae8dd71d0920}{transmitChain}};}
+\DoxyCodeLine{324         TransferData      \mbox{\hyperlink{structMacUpperDispatch_addd16fdd1579d76557c2ae603b60f251}{transferData}};}
+\DoxyCodeLine{325         ReceiveRelease    \mbox{\hyperlink{structMacUpperDispatch_a89a107e37c943c5d00f5741fea7dda6c}{receiveRelease}};}
+\DoxyCodeLine{326         IndicationOn      \mbox{\hyperlink{structMacUpperDispatch_a456a32ba48ecdc6f2a42f9e42aa340bf}{indicationOn}};}
+\DoxyCodeLine{327         IndicationOff     \mbox{\hyperlink{structMacUpperDispatch_a513f13466324c95ac657d5e184a55835}{indicationOff}};}
+\DoxyCodeLine{328       \} \mbox{\hyperlink{structMacUpperDispatch}{MacUpperDispatch}};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_MacStatusTable \{}
+\DoxyCodeLine{332         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacStatusTable_a9eeef73a0d48552b88f2304a09eefa51}{tableSize}};}
+\DoxyCodeLine{333         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_ae4d444225ab01f7d91f62ef53cd08a16}{lastDiag}};}
+\DoxyCodeLine{334         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a345192c6dc0a19c86a04541c0bd695b4}{macStatus}};}
+\DoxyCodeLine{335         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structMacStatusTable_a3fbba40a2eb33cbd289494e6cad4e494}{packetFilter}};}
+\DoxyCodeLine{336         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structMacStatusTable_aac2bd4c3bce34ad1c884a74f042dd266}{mediaSpecificStats}};}
+\DoxyCodeLine{337         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_ae236c58f018882773b407ff612207c50}{lastClear}};}
+\DoxyCodeLine{338         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a8beddbdee9bc28376b67d026bb0820af}{totalFramesRx}};}
+\DoxyCodeLine{339         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a8e963eda2aa2b8d32f4572eceec24a8f}{totalFramesCrc}};}
+\DoxyCodeLine{340         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a46154d5966f77de7973331ecce1c9f26}{totalBytesRx}};}
+\DoxyCodeLine{341         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a687bea4fee49b8d374878e7da5e9e21b}{totalDiscardBufSpaceRx}};}
+\DoxyCodeLine{342         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a466bfe1a7b727a83e56c0dce3a00ee50}{totalMulticastRx}};}
+\DoxyCodeLine{343         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a1084106729170e489acd2be3b093e874}{totalBroadcastRx}};}
+\DoxyCodeLine{344         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  obsolete1[5];}
+\DoxyCodeLine{345         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_abbb87d7dbf93f0b70dabe9348b0a0c13}{totalDiscardHwErrorRx}};}
+\DoxyCodeLine{346         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a1858c8fbff219840ba862e91ce0b8bab}{totalFramesTx}};}
+\DoxyCodeLine{347         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a1c8b5bdb80746587d7cfb7ebf1a54517}{totalBytesTx}};}
+\DoxyCodeLine{348         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a787c2a38c667d63f99e6a79e535d0e84}{totalMulticastTx}};}
+\DoxyCodeLine{349         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_a58bb9e0cc44450527d661d7f31007dd0}{totalBroadcastTx}};}
+\DoxyCodeLine{350         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  obsolete2[2];}
+\DoxyCodeLine{351         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_af74b269209814a91fe9d0c18cd4abee4}{totalDiscardTimeoutTx}};}
+\DoxyCodeLine{352         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structMacStatusTable_aedb3aae736e9fe5af9ea5cf341f1dfd3}{totalDiscardHwErrorTx}};}
+\DoxyCodeLine{353       \} \mbox{\hyperlink{structMacStatusTable}{MacStatusTable}};}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_ProtDispatch \{}
+\DoxyCodeLine{357         \mbox{\hyperlink{structCommonChars}{CommonChars}} *\mbox{\hyperlink{structProtDispatch_a89201b61af8b7a56cb7842d71b593b7f}{backPointer}};}
+\DoxyCodeLine{358         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}        \mbox{\hyperlink{structProtDispatch_a29bb851466268efcf57e7e81e2d0ab09}{flags}};}
+\DoxyCodeLine{359         \textcolor{comment}{/* 0 -\/ handles non-\/LLC frames}}
+\DoxyCodeLine{360 \textcolor{comment}{         * 1 -\/ handles specific-\/LSAP LLC frames}}
+\DoxyCodeLine{361 \textcolor{comment}{         * 2 -\/ handles specific-\/LSAP LLC frames}}
+\DoxyCodeLine{362 \textcolor{comment}{         * 3-\/31 -\/ reserved must be 0}}
+\DoxyCodeLine{363 \textcolor{comment}{         */}}
+\DoxyCodeLine{364         void  (*requestConfirm) (void);}
+\DoxyCodeLine{365         void  (*transmitConfirm) (void);}
+\DoxyCodeLine{366         void  (*receiveLookahead) (void);}
+\DoxyCodeLine{367         void  (*indicationComplete) (void);}
+\DoxyCodeLine{368         void  (*receiveChain) (void);}
+\DoxyCodeLine{369         void  (*status) (void);}
+\DoxyCodeLine{370       \} \mbox{\hyperlink{structProtDispatch}{ProtDispatch}};}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_ReqBlock \{}
+\DoxyCodeLine{374         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}      \mbox{\hyperlink{structReqBlock_a95347b11175b086b908458f52083bac3}{opcode}};}
+\DoxyCodeLine{375         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}      \mbox{\hyperlink{structReqBlock_ae9b729593cbf756556fd43454ade403f}{status}};}
+\DoxyCodeLine{376         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} FAR *\mbox{\hyperlink{structReqBlock_ad392dcb4d3f3a720e9df3c1447c2f84e}{pointer1}};}
+\DoxyCodeLine{377         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} FAR *\mbox{\hyperlink{structReqBlock_a3d8d4355db3faa9f1b4a878865dacafc}{pointer2}};}
+\DoxyCodeLine{378         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}      \mbox{\hyperlink{structReqBlock_a7aa93e27e84715e4a02bf146d69a92ff}{word1}};}
+\DoxyCodeLine{379       \} \mbox{\hyperlink{structReqBlock}{ReqBlock}};}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_TxBufDescrRec \{}
+\DoxyCodeLine{383         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   \mbox{\hyperlink{structTxBufDescrRec_a6614dcc727f4847ab9e2b00d1053c0da}{txPtrType}};}
+\DoxyCodeLine{384         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   \mbox{\hyperlink{structTxBufDescrRec_a3ffc8981591b00f1567b0d7091e817d1}{dummy}};}
+\DoxyCodeLine{385         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structTxBufDescrRec_a7b2d98435b90e91e7c3593da3af0f1bd}{txDataLen}};}
+\DoxyCodeLine{386         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structTxBufDescrRec_ada0fd548b47977138ac738bfcbf29e96}{txDataPtr}};}
+\DoxyCodeLine{387       \} \mbox{\hyperlink{structTxBufDescrRec}{TxBufDescrRec}};}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_TxBufDescr \{}
+\DoxyCodeLine{391         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}          \mbox{\hyperlink{structTxBufDescr_a70a5b7b1b5c9ffc57324e96e449eb966}{txImmedLen}};}
+\DoxyCodeLine{392         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}         *\mbox{\hyperlink{structTxBufDescr_a03425c6d14118aabef8123f67d6955fd}{txImmedPtr}};}
+\DoxyCodeLine{393         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}          \mbox{\hyperlink{structTxBufDescr_a92da93a061781ecc6fed44ae8db7c4a8}{txDataCount}};}
+\DoxyCodeLine{394         \mbox{\hyperlink{structTxBufDescrRec}{TxBufDescrRec}} txBufDescrRec[\mbox{\hyperlink{ndis2_8h_ac220cf8d5566383229489c715be7d49a}{NDIS\_TX\_BUF\_LENGTH}}];}
+\DoxyCodeLine{395       \} \mbox{\hyperlink{structTxBufDescr}{TxBufDescr}};}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_TDBufDescrRec \{}
+\DoxyCodeLine{399         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   \mbox{\hyperlink{structTDBufDescrRec_af3294405a0711689ea28a9f8e816a53a}{tDPtrType}};}
+\DoxyCodeLine{400         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}   \mbox{\hyperlink{structTDBufDescrRec_a3ffc8981591b00f1567b0d7091e817d1}{dummy}};}
+\DoxyCodeLine{401         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structTDBufDescrRec_a92f454b053a19f00988b444bfa18b4d6}{tDDataLen}};}
+\DoxyCodeLine{402         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structTDBufDescrRec_a423d3db0d98f254d0ab3d9081da34853}{tDDataPtr}};}
+\DoxyCodeLine{403       \} \mbox{\hyperlink{structTDBufDescrRec}{TDBufDescrRec}};}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_TDBufDescr \{}
+\DoxyCodeLine{407         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}          \mbox{\hyperlink{structTDBufDescr_a9a1557e09dc37a373cc33b277cfebaad}{tDDataCount}};}
+\DoxyCodeLine{408         \mbox{\hyperlink{structTDBufDescrRec}{TDBufDescrRec}} tDBufDescrRec[\mbox{\hyperlink{ndis2_8h_a2f3a6a15ce9db6b6ccf8bb7473730fdf}{NDIS\_TD\_BUF\_LENGTH}}];}
+\DoxyCodeLine{409       \} \mbox{\hyperlink{structTDBufDescr}{TDBufDescr}};}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_RxBufDescrRec \{}
+\DoxyCodeLine{413         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}   \mbox{\hyperlink{structRxBufDescrRec_a4e5b576c8c5aae8c2b7c9bdf554c00a6}{rxDataLen}};}
+\DoxyCodeLine{414         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structRxBufDescrRec_a0c9e69b6e3079f45108368f6e85d40dd}{rxDataPtr}};}
+\DoxyCodeLine{415       \} \mbox{\hyperlink{structRxBufDescrRec}{RxBufDescrRec}};}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_RxBufDescr \{}
+\DoxyCodeLine{419         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}          \mbox{\hyperlink{structRxBufDescr_a6d25af6fc34b734173e7ad7862877436}{rxDataCount}};}
+\DoxyCodeLine{420         \mbox{\hyperlink{structRxBufDescrRec}{RxBufDescrRec}} rxBufDescrRec[\mbox{\hyperlink{ndis2_8h_a00b98a95c560e0d0880fbf43b0ba9bf4}{NDIS\_RX\_BUF\_LENGTH}}];}
+\DoxyCodeLine{421       \} \mbox{\hyperlink{structRxBufDescr}{RxBufDescr}};}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_PktBuf \{}
+\DoxyCodeLine{425     \textcolor{keyword}{struct }\_PktBuf *\mbox{\hyperlink{structPktBuf_a9325e058f8938f9d32fd32bfd6997013}{nextLink}};}
+\DoxyCodeLine{426     \textcolor{keyword}{struct }\_PktBuf *\mbox{\hyperlink{structPktBuf_a99308a1ce470913cff4cf8d536d38e1c}{prevLink}};}
+\DoxyCodeLine{427         \textcolor{keywordtype}{int}    \mbox{\hyperlink{structPktBuf_a3127ebf018e9da62fa464d348352037d}{handle}};}
+\DoxyCodeLine{428         \textcolor{keywordtype}{int}    \mbox{\hyperlink{structPktBuf_a9f59b34b1f25fe00023291b678246bcc}{length}};}
+\DoxyCodeLine{429         \textcolor{keywordtype}{int}    \mbox{\hyperlink{structPktBuf_a10e59a3e9436d3753cd4e1d46064e65c}{packetLength}};}
+\DoxyCodeLine{430         \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}  \mbox{\hyperlink{structPktBuf_a8ae5d5027313c26248c36c3dcf205b55}{sequence}};}
+\DoxyCodeLine{431         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  *\mbox{\hyperlink{structPktBuf_a4ec488d25cd057a45ada6fd7c83de21b}{buffer}};}
+\DoxyCodeLine{432       \} \mbox{\hyperlink{structPktBuf}{PktBuf}};}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_CardHandle \{}
+\DoxyCodeLine{436         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}         moduleName[16];}
+\DoxyCodeLine{437         \mbox{\hyperlink{structCommonChars}{CommonChars}} *\mbox{\hyperlink{structCardHandle_a8349e12cda940f7ff36470dd4a0d22fd}{common}};}
+\DoxyCodeLine{438       \} \mbox{\hyperlink{structCardHandle}{CardHandle}};}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_BindingsList \{}
+\DoxyCodeLine{442         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  \mbox{\hyperlink{structBindingsList_aae6bbb67baaa8079174d86dea865e406}{numBindings}};}
+\DoxyCodeLine{443         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  moduleName[2][16];}
+\DoxyCodeLine{444       \} \mbox{\hyperlink{structBindingsList}{BindingsList}};}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_FailingModules \{}
+\DoxyCodeLine{448         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  upperModuleName[16];}
+\DoxyCodeLine{449         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  lowerModuleName[16];}
+\DoxyCodeLine{450       \} \mbox{\hyperlink{structFailingModules}{FailingModules}};}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\_HardwareAddress \{}
+\DoxyCodeLine{454         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  bytes[6];}
+\DoxyCodeLine{455         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}  words[3];}
+\DoxyCodeLine{456         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{457           \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} bytes[6];}
+\DoxyCodeLine{458         \} addr;}
+\DoxyCodeLine{459       \} \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}};}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_FddiHeader \{}
+\DoxyCodeLine{463         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}             \mbox{\hyperlink{structFddiHeader_af48026770597aff8d22d7a34a420333f}{frameControl}};}
+\DoxyCodeLine{464         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structFddiHeader_aec2ec4ba8f3e0900a9bb0edd13c2dca1}{etherDestHost}};}
+\DoxyCodeLine{465         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structFddiHeader_a06f886a27c6e58fff1d8a53eaf0de2f1}{etherSrcHost}};}
+\DoxyCodeLine{466       \} \mbox{\hyperlink{structFddiHeader}{FddiHeader}};}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_EthernetIIHeader \{}
+\DoxyCodeLine{470         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structEthernetIIHeader_aec2ec4ba8f3e0900a9bb0edd13c2dca1}{etherDestHost}};}
+\DoxyCodeLine{471         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structEthernetIIHeader_a06f886a27c6e58fff1d8a53eaf0de2f1}{etherSrcHost}};}
+\DoxyCodeLine{472         \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}             \mbox{\hyperlink{structEthernetIIHeader_a34a261251e83906b006cb6c220083503}{etherType}};}
+\DoxyCodeLine{473       \} \mbox{\hyperlink{structEthernetIIHeader}{EthernetIIHeader}};}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_Ieee802Dot5Header \{}
+\DoxyCodeLine{477         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structIeee802Dot5Header_aec2ec4ba8f3e0900a9bb0edd13c2dca1}{etherDestHost}};}
+\DoxyCodeLine{478         \mbox{\hyperlink{unionHardwareAddress}{HardwareAddress}}  \mbox{\hyperlink{structIeee802Dot5Header_a06f886a27c6e58fff1d8a53eaf0de2f1}{etherSrcHost}};}
+\DoxyCodeLine{479         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}             routeInfo[30];}
+\DoxyCodeLine{480       \} \mbox{\hyperlink{structIeee802Dot5Header}{Ieee802Dot5Header}};}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_Ieee802Dot2SnapHeader \{}
+\DoxyCodeLine{484         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structIeee802Dot2SnapHeader_ace8c8c9022743319402b189a2ab5e385}{dsap}};                      \textcolor{comment}{/* 0xAA */}}
+\DoxyCodeLine{485         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structIeee802Dot2SnapHeader_a90ca7d67816fb6fff486e4b491220a68}{ssap}};                      \textcolor{comment}{/* 0xAA */}}
+\DoxyCodeLine{486         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}  \mbox{\hyperlink{structIeee802Dot2SnapHeader_ab438ca98ba013d187e700753907a8e14}{control}};                   \textcolor{comment}{/* 3    */}}
+\DoxyCodeLine{487         \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} protocolId[5];}
+\DoxyCodeLine{488       \} \mbox{\hyperlink{structIeee802Dot2SnapHeader}{Ieee802Dot2SnapHeader}};}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491 \textcolor{comment}{/*}}
+\DoxyCodeLine{492 \textcolor{comment}{ *  Prototypes}}
+\DoxyCodeLine{493 \textcolor{comment}{ */}}
+\DoxyCodeLine{494 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *\mbox{\hyperlink{ndis2_8h_afa1dc5092907bc687a895ab37a905027}{NdisLastError}}        (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{495 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   \mbox{\hyperlink{ndis2_8h_a5d50ee2f0577c4870c74931448291806}{NdisOpen}}             (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{496 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   \mbox{\hyperlink{ndis2_8h_a24af7d410772c098970b25add87c9433}{NdisInit}}             (\textcolor{keywordtype}{int} promis);}
+\DoxyCodeLine{497 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   \mbox{\hyperlink{ndis2_8h_a5d4ac7ca880e893e16f8e3fa85e3cd1a}{NdisRegisterAndBind}}  (\textcolor{keywordtype}{int} promis);}
+\DoxyCodeLine{498 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  \mbox{\hyperlink{ndis2_8h_a410bec98e5a0ccbb730498d8f7e5a315}{NdisShutdown}}         (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{499 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  \mbox{\hyperlink{ndis2_8h_aba692222a1a2a45691a5fbcec12c13cd}{NdisCheckMacFeatures}} (\textcolor{keyword}{struct} \_CardHandle *card);}
+\DoxyCodeLine{500 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}   \mbox{\hyperlink{ndis2_8h_a549acf75e9268475105ccfd5b51f63e0}{NdisSendPacket}}       (\textcolor{keyword}{struct} \_PktBuf *pktBuf, \textcolor{keywordtype}{int} macId);}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 \textcolor{comment}{/*}}
+\DoxyCodeLine{503 \textcolor{comment}{ *  Assembly "{}glue"{} functions}}
+\DoxyCodeLine{504 \textcolor{comment}{ */}}
+\DoxyCodeLine{505 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_adf60c29d87ed6b3adec2babd85da2549}{systemRequestGlue}}();}
+\DoxyCodeLine{506 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_afdcb18c7566de0a0598722b53edcbf08}{requestConfirmGlue}}();}
+\DoxyCodeLine{507 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_a7eaeec985267fa1e6783066e3872f05d}{transmitConfirmGlue}}();}
+\DoxyCodeLine{508 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_a56d51ab47ccccc025c5e7e09ad38e4d7}{receiveLookaheadGlue}}();}
+\DoxyCodeLine{509 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_a4cef1fc4d01bb9720b3d1c81a6b757cb}{indicationCompleteGlue}}();}
+\DoxyCodeLine{510 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_ad6511574a9325f5d48abf067ba925696}{receiveChainGlue}}();}
+\DoxyCodeLine{511 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_af4cff01b80e35df10ce0f6ce8d3b4d8f}{statusGlue}}();}
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513 \textcolor{comment}{/*}}
+\DoxyCodeLine{514 \textcolor{comment}{ *  IOCTL function}}
+\DoxyCodeLine{515 \textcolor{comment}{ */}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#ifdef \_\_SMALL\_\_}}
+\DoxyCodeLine{517 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \_far \mbox{\hyperlink{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}{NdisGetLinkage}} (\textcolor{keywordtype}{int} handle, \textcolor{keywordtype}{char} *data, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{519 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}{NdisGetLinkage}} (\textcolor{keywordtype}{int} handle, \textcolor{keywordtype}{char} *data, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522 \textcolor{comment}{/*}}
+\DoxyCodeLine{523 \textcolor{comment}{ *  NDIS callback handlers}}
+\DoxyCodeLine{524 \textcolor{comment}{ */}}
+\DoxyCodeLine{525 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisSystemRequest     (\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}},\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{526 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisRequestConfirm    ( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}},\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{527 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisTransmitConfirm   ( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{528 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisReceiveLookahead  ( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}*, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{529 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisReceiveChain      ( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \textcolor{keyword}{struct} \_RxBufDescr*, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{530 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisStatusProc        ( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}*, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}},\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{531 \mbox{\hyperlink{ndis2_8h_a8804013e3a30381af81082b9f8bc3c9d}{CALLBACK}} (NdisIndicationComplete( \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}, \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}));}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 \mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} *\mbox{\hyperlink{ndis2_8h_a1c4d61b0c4156f60ebba3ec08b0dad96}{NdisAllocStack}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{534 \textcolor{keywordtype}{void}  \mbox{\hyperlink{ndis2_8h_a88265435f28f5a25e9f59f9e1ffb98d7}{NdisFreeStack}}  (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}*);}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#ifdef \_\_HIGHC\_\_}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{  \#define RENAME\_ASM\_SYM(x) pragma Alias(x,"{}@"{}} \#x "{}"{})  \textcolor{comment}{/* prepend `@' */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{  \#define RENAME\_C\_SYM(x)   pragma Alias(x,"{}\_"{}} \#x "{}"{})  \textcolor{comment}{/* prepend `\_' */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_adf60c29d87ed6b3adec2babd85da2549}{systemRequestGlue}});}
+\DoxyCodeLine{541   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_afdcb18c7566de0a0598722b53edcbf08}{requestConfirmGlue}});}
+\DoxyCodeLine{542   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_a7eaeec985267fa1e6783066e3872f05d}{transmitConfirmGlue}});}
+\DoxyCodeLine{543   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_a56d51ab47ccccc025c5e7e09ad38e4d7}{receiveLookaheadGlue}});}
+\DoxyCodeLine{544   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_a4cef1fc4d01bb9720b3d1c81a6b757cb}{indicationCompleteGlue}});}
+\DoxyCodeLine{545   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_ad6511574a9325f5d48abf067ba925696}{receiveChainGlue}});}
+\DoxyCodeLine{546   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_af4cff01b80e35df10ce0f6ce8d3b4d8f}{statusGlue}});}
+\DoxyCodeLine{547   RENAME\_ASM\_SYM (\mbox{\hyperlink{ndis2_8h_ac82a5808c1cbf1fa79a3d5f29f3f9fe9}{NdisGetLinkage}});}
+\DoxyCodeLine{548   RENAME\_C\_SYM   (NdisSystemRequest);}
+\DoxyCodeLine{549   RENAME\_C\_SYM   (NdisRequestConfirm);}
+\DoxyCodeLine{550   RENAME\_C\_SYM   (NdisTransmitConfirm);}
+\DoxyCodeLine{551   RENAME\_C\_SYM   (NdisReceiveLookahead);}
+\DoxyCodeLine{552   RENAME\_C\_SYM   (NdisIndicationComplete);}
+\DoxyCodeLine{553   RENAME\_C\_SYM   (NdisReceiveChain);}
+\DoxyCodeLine{554   RENAME\_C\_SYM   (NdisStatusProc);}
+\DoxyCodeLine{555   RENAME\_C\_SYM   (\mbox{\hyperlink{ndis2_8h_a1c4d61b0c4156f60ebba3ec08b0dad96}{NdisAllocStack}});}
+\DoxyCodeLine{556   RENAME\_C\_SYM   (\mbox{\hyperlink{ndis2_8h_a88265435f28f5a25e9f59f9e1ffb98d7}{NdisFreeStack}});}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

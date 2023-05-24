@@ -1,0 +1,236 @@
+\hypertarget{if_8h_source}{}\doxysection{if.\+h}
+\label{if_8h_source}\index{libpcap-\/1.1.1/Win32/Include/net/if.h@{libpcap-\/1.1.1/Win32/Include/net/if.h}}
+\mbox{\hyperlink{if_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (c) 1982, 1986, 1989, 1993}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{7 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{9 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{12 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  This product includes software developed by the University of}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  California, Berkeley and its contributors.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{23 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{24 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{26 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{27 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{28 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{29 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{30 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{31 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  @(\#)if.h    8.1 (Berkeley) 6/10/93}}
+\DoxyCodeLine{34 \textcolor{comment}{ * \$FreeBSD: src/sys/net/if.h,v 1.49.2.1 1999/08/29 16:28:15 peter Exp \$}}
+\DoxyCodeLine{35 \textcolor{comment}{ */}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_NET\_IF\_H\_}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_NET\_IF\_H\_}}
+\DoxyCodeLine{39  }
+\DoxyCodeLine{40 \textcolor{comment}{/*}}
+\DoxyCodeLine{41 \textcolor{comment}{ * <net/if.h> does not depend on <sys/time.h> on most other systems.  This}}
+\DoxyCodeLine{42 \textcolor{comment}{ * helps userland compatability.  (struct timeval ifi\_lastchange)}}
+\DoxyCodeLine{43 \textcolor{comment}{ */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef KERNEL}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pcap-stdinc_8h}{pcap-\/stdinc.h}}>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/*}}
+\DoxyCodeLine{49 \textcolor{comment}{ * Structure describing information about an interface}}
+\DoxyCodeLine{50 \textcolor{comment}{ * which may be of interest to management entities.}}
+\DoxyCodeLine{51 \textcolor{comment}{ */}}
+\DoxyCodeLine{52 \textcolor{keyword}{struct }\mbox{\hyperlink{structif__data}{if\_data}} \{}
+\DoxyCodeLine{53     \textcolor{comment}{/* generic interface information */}}
+\DoxyCodeLine{54     u\_char  \mbox{\hyperlink{structif__data_ad7c9a8e4aeffc3a49e1a5ca3c0d6cc69}{ifi\_type}};       \textcolor{comment}{/* ethernet, tokenring, etc */}}
+\DoxyCodeLine{55     u\_char  \mbox{\hyperlink{structif__data_a6b4f7e62532159efa132e36ed2e36b68}{ifi\_physical}};       \textcolor{comment}{/* e.g., AUI, Thinnet, 10base-\/T, etc */}}
+\DoxyCodeLine{56     u\_char  \mbox{\hyperlink{structif__data_a476875397c01be5c12a555ee3911bc55}{ifi\_addrlen}};     \textcolor{comment}{/* media address length */}}
+\DoxyCodeLine{57     u\_char  \mbox{\hyperlink{structif__data_a75e7151d771f857bd3749177beb0cf6a}{ifi\_hdrlen}};       \textcolor{comment}{/* media header length */}}
+\DoxyCodeLine{58     u\_char  \mbox{\hyperlink{structif__data_aebb699c3908b65c415a35cb59c23c12f}{ifi\_recvquota}};     \textcolor{comment}{/* polling quota for receive intrs */}}
+\DoxyCodeLine{59     u\_char  \mbox{\hyperlink{structif__data_ab64258e92027d4deb87c37ca168ce8d7}{ifi\_xmitquota}};     \textcolor{comment}{/* polling quota for xmit intrs */}}
+\DoxyCodeLine{60     u\_long  \mbox{\hyperlink{structif__data_a5cb4c4e375f4c8feba3a0de6f9bf4376}{ifi\_mtu}};     \textcolor{comment}{/* maximum transmission unit */}}
+\DoxyCodeLine{61     u\_long  \mbox{\hyperlink{structif__data_a7fd1088d6d88791707177ec7217dc912}{ifi\_metric}};       \textcolor{comment}{/* routing metric (external only) */}}
+\DoxyCodeLine{62     u\_long  \mbox{\hyperlink{structif__data_a82055f182ebb5799ad8cbbcaf3340ff1}{ifi\_baudrate}};       \textcolor{comment}{/* linespeed */}}
+\DoxyCodeLine{63     \textcolor{comment}{/* volatile statistics */}}
+\DoxyCodeLine{64     u\_long  \mbox{\hyperlink{structif__data_a66c6e4ef6a7c8545cc853bfc8877c63e}{ifi\_ipackets}};       \textcolor{comment}{/* packets received on interface */}}
+\DoxyCodeLine{65     u\_long  \mbox{\hyperlink{structif__data_a7e36e6e9581470319ed52f08921bb156}{ifi\_ierrors}};     \textcolor{comment}{/* input errors on interface */}}
+\DoxyCodeLine{66     u\_long  \mbox{\hyperlink{structif__data_a70d265d59f8a6489ad4105c16677a8c8}{ifi\_opackets}};       \textcolor{comment}{/* packets sent on interface */}}
+\DoxyCodeLine{67     u\_long  \mbox{\hyperlink{structif__data_a0133967848b25a2a3f811bd5b67e9d76}{ifi\_oerrors}};     \textcolor{comment}{/* output errors on interface */}}
+\DoxyCodeLine{68     u\_long  \mbox{\hyperlink{structif__data_a222bf361c691f79f6f5442c09f69bf6e}{ifi\_collisions}};       \textcolor{comment}{/* collisions on csma interfaces */}}
+\DoxyCodeLine{69     u\_long  \mbox{\hyperlink{structif__data_a452fbe088a6a11845a557dc29f8f1496}{ifi\_ibytes}};       \textcolor{comment}{/* total number of octets received */}}
+\DoxyCodeLine{70     u\_long  \mbox{\hyperlink{structif__data_a53f4e9dad0f0dbf70535643351490809}{ifi\_obytes}};       \textcolor{comment}{/* total number of octets sent */}}
+\DoxyCodeLine{71     u\_long  \mbox{\hyperlink{structif__data_a09d37a862863fa204d0ff0b4373d06b6}{ifi\_imcasts}};     \textcolor{comment}{/* packets received via multicast */}}
+\DoxyCodeLine{72     u\_long  \mbox{\hyperlink{structif__data_ad73f4ec2c0a690f46580f7c08d1f37a3}{ifi\_omcasts}};     \textcolor{comment}{/* packets sent via multicast */}}
+\DoxyCodeLine{73     u\_long  \mbox{\hyperlink{structif__data_a09fda1aa3c5c019c5c3829bc4e84f236}{ifi\_iqdrops}};     \textcolor{comment}{/* dropped on input, this interface */}}
+\DoxyCodeLine{74     u\_long  \mbox{\hyperlink{structif__data_ae595aa24e1decf0c015b78d0f31c1d17}{ifi\_noproto}};     \textcolor{comment}{/* destined for unsupported protocol */}}
+\DoxyCodeLine{75     u\_long  \mbox{\hyperlink{structif__data_a4d72b3de6d7ae6f36c0e9aac70dc2b6e}{ifi\_recvtiming}};       \textcolor{comment}{/* usec spent receiving when timing */}}
+\DoxyCodeLine{76     u\_long  \mbox{\hyperlink{structif__data_a0e9b159d1f339def249a35c6765bcca4}{ifi\_xmittiming}};       \textcolor{comment}{/* usec spent xmitting when timing */}}
+\DoxyCodeLine{77     \textcolor{keyword}{struct  }timeval \mbox{\hyperlink{structif__data_a89c63075006bc9975809764384568246}{ifi\_lastchange}};   \textcolor{comment}{/* time of last administrative change */}}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/* ws2tcpip.h has interface flags: IFF\_* */}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define IFF\_UP      0x1     }\textcolor{comment}{/* interface is up */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define IFF\_BROADCAST   0x2     }\textcolor{comment}{/* broadcast address valid */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define IFF\_DEBUG   0x4     }\textcolor{comment}{/* turn on debugging */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define IFF\_LOOPBACK    0x8     }\textcolor{comment}{/* is a loopback net */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define IFF\_POINTOPOINT 0x10        }\textcolor{comment}{/* interface is point-\/to-\/point link */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 \textcolor{comment}{/*\#define IFF\_NOTRAILERS 0x20        * obsolete: avoid use of trailers */}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define IFF\_RUNNING 0x40        }\textcolor{comment}{/* resources allocated */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define IFF\_NOARP   0x80        }\textcolor{comment}{/* no address resolution protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define IFF\_PROMISC 0x100       }\textcolor{comment}{/* receive all packets */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define IFF\_ALLMULTI    0x200       }\textcolor{comment}{/* receive all multicast packets */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define IFF\_OACTIVE 0x400       }\textcolor{comment}{/* transmission in progress */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define IFF\_SIMPLEX 0x800       }\textcolor{comment}{/* can't hear own transmissions */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define IFF\_LINK0   0x1000      }\textcolor{comment}{/* per link layer defined bit */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define IFF\_LINK1   0x2000      }\textcolor{comment}{/* per link layer defined bit */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define IFF\_LINK2   0x4000      }\textcolor{comment}{/* per link layer defined bit */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define IFF\_ALTPHYS IFF\_LINK2   }\textcolor{comment}{/* use alternate physical connection */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define IFF\_MULTICAST   0x8000      }\textcolor{comment}{/* supports multicast */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* 0 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{/* flags set internally only: */}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define IFF\_CANTCHANGE \(\backslash\)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{    (IFF\_BROADCAST|IFF\_POINTOPOINT|IFF\_RUNNING|IFF\_OACTIVE|\(\backslash\)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{        IFF\_SIMPLEX|IFF\_MULTICAST|IFF\_ALLMULTI)}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define IFQ\_MAXLEN  50}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define IFNET\_SLOWHZ    1       }\textcolor{comment}{/* granularity is 1 second */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/*}}
+\DoxyCodeLine{110 \textcolor{comment}{ * Message format for use in obtaining information about interfaces}}
+\DoxyCodeLine{111 \textcolor{comment}{ * from getkerninfo and the routing socket}}
+\DoxyCodeLine{112 \textcolor{comment}{ */}}
+\DoxyCodeLine{113 \textcolor{keyword}{struct }\mbox{\hyperlink{structif__msghdr}{if\_msghdr}} \{}
+\DoxyCodeLine{114     u\_short \mbox{\hyperlink{structif__msghdr_aa436839fb84016d08293628f0f708394}{ifm\_msglen}};   \textcolor{comment}{/* to skip over non-\/understood messages */}}
+\DoxyCodeLine{115     u\_char  \mbox{\hyperlink{structif__msghdr_ab6d0f1a40ccae0415fd09e872814569b}{ifm\_version}}; \textcolor{comment}{/* future binary compatability */}}
+\DoxyCodeLine{116     u\_char  \mbox{\hyperlink{structif__msghdr_a67c652d9f78700a81c4c421a524a92c9}{ifm\_type}};   \textcolor{comment}{/* message type */}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} \mbox{\hyperlink{structif__msghdr_ae4002d4960aa46ec0a1e324f5b3390ba}{ifm\_addrs}}; \textcolor{comment}{/* like rtm\_addrs */}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} \mbox{\hyperlink{structif__msghdr_a08aa542eaae3a36b8639f26dd7055ab1}{ifm\_flags}}; \textcolor{comment}{/* value of if\_flags */}}
+\DoxyCodeLine{119     u\_short \mbox{\hyperlink{structif__msghdr_a4fb76f7f3797abd2e9201d5ade5c9843}{ifm\_index}}; \textcolor{comment}{/* index for associated ifp */}}
+\DoxyCodeLine{120     \textcolor{keyword}{struct  }\mbox{\hyperlink{structif__data}{if\_data}} \mbox{\hyperlink{structif__msghdr_a3bc518164f3a38ef7e52fd5402b54f70}{ifm\_data}};\textcolor{comment}{/* statistics and other data about if */}}
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{/*}}
+\DoxyCodeLine{124 \textcolor{comment}{ * Message format for use in obtaining information about interface addresses}}
+\DoxyCodeLine{125 \textcolor{comment}{ * from getkerninfo and the routing socket}}
+\DoxyCodeLine{126 \textcolor{comment}{ */}}
+\DoxyCodeLine{127 \textcolor{keyword}{struct }\mbox{\hyperlink{structifa__msghdr}{ifa\_msghdr}} \{}
+\DoxyCodeLine{128     u\_short \mbox{\hyperlink{structifa__msghdr_a979135dfe26a560a37cce47032411d82}{ifam\_msglen}}; \textcolor{comment}{/* to skip over non-\/understood messages */}}
+\DoxyCodeLine{129     u\_char  \mbox{\hyperlink{structifa__msghdr_a5e8f9212b0d7090643b6b50034c150c9}{ifam\_version}};   \textcolor{comment}{/* future binary compatability */}}
+\DoxyCodeLine{130     u\_char  \mbox{\hyperlink{structifa__msghdr_ab497a582550875cbc0ece65ea0b6da88}{ifam\_type}}; \textcolor{comment}{/* message type */}}
+\DoxyCodeLine{131     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifa__msghdr_ac8b875f7bb898ed265c9f52410fc8959}{ifam\_addrs}};   \textcolor{comment}{/* like rtm\_addrs */}}
+\DoxyCodeLine{132     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifa__msghdr_a37198c846db2c3a767197305fa0b3d0d}{ifam\_flags}};   \textcolor{comment}{/* value of ifa\_flags */}}
+\DoxyCodeLine{133     u\_short \mbox{\hyperlink{structifa__msghdr_ac6137a6bd35d73736346551e6bbf2dd6}{ifam\_index}};   \textcolor{comment}{/* index for associated ifp */}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifa__msghdr_a0a44f520b6c41d258320cced5a04b3c1}{ifam\_metric}}; \textcolor{comment}{/* value of ifa\_metric */}}
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{/*}}
+\DoxyCodeLine{138 \textcolor{comment}{ * Message format for use in obtaining information about multicast addresses}}
+\DoxyCodeLine{139 \textcolor{comment}{ * from the routing socket}}
+\DoxyCodeLine{140 \textcolor{comment}{ */}}
+\DoxyCodeLine{141 \textcolor{keyword}{struct }\mbox{\hyperlink{structifma__msghdr}{ifma\_msghdr}} \{}
+\DoxyCodeLine{142     u\_short \mbox{\hyperlink{structifma__msghdr_a07d9a462a2ab9b50639e2beaf752aab4}{ifmam\_msglen}};   \textcolor{comment}{/* to skip over non-\/understood messages */}}
+\DoxyCodeLine{143     u\_char  \mbox{\hyperlink{structifma__msghdr_a74343a580b1f9fd3008deb4f6b1b4e9c}{ifmam\_version}}; \textcolor{comment}{/* future binary compatability */}}
+\DoxyCodeLine{144     u\_char  \mbox{\hyperlink{structifma__msghdr_a49319aa7187dc79394a6a94b7818207b}{ifmam\_type}};   \textcolor{comment}{/* message type */}}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifma__msghdr_a161cd28ae5c0fce79bc7f7c9f99b5991}{ifmam\_addrs}}; \textcolor{comment}{/* like rtm\_addrs */}}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifma__msghdr_a855e179f7d36a7e4ba646b57eb85c5ec}{ifmam\_flags}}; \textcolor{comment}{/* value of ifa\_flags */}}
+\DoxyCodeLine{147     u\_short \mbox{\hyperlink{structifma__msghdr_aa4cd54edb76c92e4ebe246218341181e}{ifmam\_index}}; \textcolor{comment}{/* index for associated ifp */}}
+\DoxyCodeLine{148 \};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/*}}
+\DoxyCodeLine{151 \textcolor{comment}{ * Interface request structure used for socket}}
+\DoxyCodeLine{152 \textcolor{comment}{ * ioctl's.  All interface ioctl's must have parameter}}
+\DoxyCodeLine{153 \textcolor{comment}{ * definitions which begin with ifr\_name.  The}}
+\DoxyCodeLine{154 \textcolor{comment}{ * remainder may be interface specific.}}
+\DoxyCodeLine{155 \textcolor{comment}{ */}}
+\DoxyCodeLine{156 \textcolor{keyword}{struct  }\mbox{\hyperlink{structifreq}{ifreq}} \{}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define IFNAMSIZ    16}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{char}    \mbox{\hyperlink{structifreq_a03e3ec87db4dc6b971c4b1470f21adcc}{ifr\_name}}[\mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}];     \textcolor{comment}{/* if name, e.g. "{}en0"{} */}}
+\DoxyCodeLine{159     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{160         \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifreq_aa896d8107f6b0cb1b0f79492f5ce29da}{ifru\_addr}};}
+\DoxyCodeLine{161         \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifreq_a4ab65a523feaf64ebd9ea1921d08cb6c}{ifru\_dstaddr}};}
+\DoxyCodeLine{162         \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifreq_a4a88f63395acc19af58548339a97e1d3}{ifru\_broadaddr}};}
+\DoxyCodeLine{163         \textcolor{keywordtype}{short}   \mbox{\hyperlink{structifreq_a7bcae7db180f8f46a355848d1a25f0ce}{ifru\_flags}};}
+\DoxyCodeLine{164         \textcolor{keywordtype}{int} \mbox{\hyperlink{structifreq_afa66154bb9880ac13132bee05bb7f81a}{ifru\_metric}};}
+\DoxyCodeLine{165         \textcolor{keywordtype}{int} \mbox{\hyperlink{structifreq_a6187147731f4df210721842fc94fb449}{ifru\_mtu}};}
+\DoxyCodeLine{166         \textcolor{keywordtype}{int} \mbox{\hyperlink{structifreq_a51a8ffd29e3dd0f28e14f33fb867d582}{ifru\_phys}};}
+\DoxyCodeLine{167         \textcolor{keywordtype}{int} \mbox{\hyperlink{structifreq_a3c510d30a66df4eb22d8afc5334b9066}{ifru\_media}};}
+\DoxyCodeLine{168         \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}}  \mbox{\hyperlink{structifreq_ab206a50d78d01f37b34e3430bf4cc75f}{ifru\_data}};}
+\DoxyCodeLine{169     \} \mbox{\hyperlink{structifreq_acf2c49f7ca0db1eee52598e200842b92}{ifr\_ifru}};}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define ifr\_addr    ifr\_ifru.ifru\_addr  }\textcolor{comment}{/* address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define ifr\_dstaddr ifr\_ifru.ifru\_dstaddr   }\textcolor{comment}{/* other end of p-\/to-\/p link */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define ifr\_broadaddr   ifr\_ifru.ifru\_broadaddr }\textcolor{comment}{/* broadcast address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define ifr\_flags   ifr\_ifru.ifru\_flags }\textcolor{comment}{/* flags */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define ifr\_metric  ifr\_ifru.ifru\_metric    }\textcolor{comment}{/* metric */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define ifr\_mtu     ifr\_ifru.ifru\_mtu   }\textcolor{comment}{/* mtu */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define ifr\_phys    ifr\_ifru.ifru\_phys  }\textcolor{comment}{/* physical wire */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define ifr\_media   ifr\_ifru.ifru\_media }\textcolor{comment}{/* physical media */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define ifr\_data    ifr\_ifru.ifru\_data  }\textcolor{comment}{/* for use by interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{179 \};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define \_SIZEOF\_ADDR\_IFREQ(ifr) \(\backslash\)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{    ((ifr).ifr\_addr.sa\_len > sizeof(struct sockaddr) ? \(\backslash\)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{     (sizeof(struct ifreq) -\/ sizeof(struct sockaddr) + \(\backslash\)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{      (ifr).ifr\_addr.sa\_len) : sizeof(struct ifreq))}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{keyword}{struct }\mbox{\hyperlink{structifaliasreq}{ifaliasreq}} \{}
+\DoxyCodeLine{187     \textcolor{keywordtype}{char}    \mbox{\hyperlink{structifaliasreq_ab247dcdab582af63cbe2b86b1d32a3e5}{ifra\_name}}[\mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}];       \textcolor{comment}{/* if name, e.g. "{}en0"{} */}}
+\DoxyCodeLine{188     \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifaliasreq_aee3b18e7608c7dd03e6027d51bd58dbc}{ifra\_addr}};}
+\DoxyCodeLine{189     \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifaliasreq_add8215e3afb95032f0e454c50f6e270c}{ifra\_broadaddr}};}
+\DoxyCodeLine{190     \textcolor{keyword}{struct  }sockaddr \mbox{\hyperlink{structifaliasreq_a6a7bc5f0c2b940a2d941f1bb14fb5d9d}{ifra\_mask}};}
+\DoxyCodeLine{191 \};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{keyword}{struct }\mbox{\hyperlink{structifmediareq}{ifmediareq}} \{}
+\DoxyCodeLine{194     \textcolor{keywordtype}{char}    \mbox{\hyperlink{structifmediareq_a0093a32c0e5a59af447d79e17cebbd6a}{ifm\_name}}[\mbox{\hyperlink{if_8h_acd06da230a96d3b7e6f193c5b3142002}{IFNAMSIZ}}]; \textcolor{comment}{/* if name, e.g. "{}en0"{} */}}
+\DoxyCodeLine{195     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifmediareq_a6d85c169765d8b9f778971b1f5834cfd}{ifm\_current}};     \textcolor{comment}{/* current media options */}}
+\DoxyCodeLine{196     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifmediareq_a708e885b6eb87b6a9e128cf197fbc113}{ifm\_mask}};       \textcolor{comment}{/* don't care mask */}}
+\DoxyCodeLine{197     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifmediareq_af7e7757efea3235857d00b4dc57d69c5}{ifm\_status}};       \textcolor{comment}{/* media status */}}
+\DoxyCodeLine{198     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifmediareq_a383c98ea804827f0914c364293e86382}{ifm\_active}};       \textcolor{comment}{/* active options */}}
+\DoxyCodeLine{199     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifmediareq_a2eeed1df41694f4449bbd1c8caa7f814}{ifm\_count}};     \textcolor{comment}{/* \# entries in ifm\_ulist array */}}
+\DoxyCodeLine{200     \textcolor{keywordtype}{int} *\mbox{\hyperlink{structifmediareq_a1e3baa94ff8441261e44baf325d9fada}{ifm\_ulist}};        \textcolor{comment}{/* media words */}}
+\DoxyCodeLine{201 \};}
+\DoxyCodeLine{202 \textcolor{comment}{/*}}
+\DoxyCodeLine{203 \textcolor{comment}{ * Structure used in SIOCGIFCONF request.}}
+\DoxyCodeLine{204 \textcolor{comment}{ * Used to retrieve interface configuration}}
+\DoxyCodeLine{205 \textcolor{comment}{ * for machine (useful for programs which}}
+\DoxyCodeLine{206 \textcolor{comment}{ * must know all networks accessible).}}
+\DoxyCodeLine{207 \textcolor{comment}{ */}}
+\DoxyCodeLine{208 \textcolor{keyword}{struct  }\mbox{\hyperlink{structifconf}{ifconf}} \{}
+\DoxyCodeLine{209     \textcolor{keywordtype}{int} \mbox{\hyperlink{structifconf_a44e4efcb1ec0a3b46ae43b08cde8f1c7}{ifc\_len}};     \textcolor{comment}{/* size of associated buffer */}}
+\DoxyCodeLine{210     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{211         \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}}  \mbox{\hyperlink{structifconf_a8bff30c2fb638de1e848436461df5364}{ifcu\_buf}};}
+\DoxyCodeLine{212         \textcolor{keyword}{struct  }\mbox{\hyperlink{structifreq}{ifreq}} *\mbox{\hyperlink{structifconf_a6d144b491f22d13e8963cc2d3b33e3ea}{ifcu\_req}};}
+\DoxyCodeLine{213     \} \mbox{\hyperlink{structifconf_aebf75835f58e1768719cc9b62cf33ae8}{ifc\_ifcu}};}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define ifc\_buf ifc\_ifcu.ifcu\_buf   }\textcolor{comment}{/* buffer address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define ifc\_req ifc\_ifcu.ifcu\_req   }\textcolor{comment}{/* array of structures returned */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{216 \};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#ifdef KERNEL}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#ifdef MALLOC\_DECLARE}}
+\DoxyCodeLine{220 MALLOC\_DECLARE(M\_IFADDR);}
+\DoxyCodeLine{221 MALLOC\_DECLARE(M\_IFMADDR);}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{/* XXX -\/ this should go away soon */}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#ifdef KERNEL}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#include <net/if\_var.h>}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !\_NET\_IF\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

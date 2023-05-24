@@ -1,0 +1,92 @@
+\hypertarget{usb_8h}{}\doxysection{libpcap-\/1.1.1/pcap/usb.h 文件参考}
+\label{usb_8h}\index{libpcap-\/1.1.1/pcap/usb.h@{libpcap-\/1.1.1/pcap/usb.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usb_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcap__usb__setup}{pcap\+\_\+usb\+\_\+setup}}
+\item 
+struct \mbox{\hyperlink{structiso__rec}{iso\+\_\+rec}}
+\item 
+struct \mbox{\hyperlink{structpcap__usb__header}{pcap\+\_\+usb\+\_\+header}}
+\item 
+struct \mbox{\hyperlink{structpcap__usb__header__mmapped}{pcap\+\_\+usb\+\_\+header\+\_\+mmapped}}
+\item 
+struct \mbox{\hyperlink{structusb__isodesc}{usb\+\_\+isodesc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{usb_8h_a30004e5c520e90a6f962e17353d83bc3}{URB\+\_\+\+TRANSFER\+\_\+\+IN}}~0x80
+\item 
+\#define \mbox{\hyperlink{usb_8h_ae3dee18352adde4984d4997708d0ee30}{URB\+\_\+\+ISOCHRONOUS}}~0x0
+\item 
+\#define \mbox{\hyperlink{usb_8h_a6b858224e002d1cff87e8e610970882d}{URB\+\_\+\+INTERRUPT}}~0x1
+\item 
+\#define \mbox{\hyperlink{usb_8h_a47381194136626e2d2f4819aa98f5a99}{URB\+\_\+\+CONTROL}}~0x2
+\item 
+\#define \mbox{\hyperlink{usb_8h_a2d8cc94e74099791ff5172de6a46d332}{URB\+\_\+\+BULK}}~0x3
+\item 
+\#define \mbox{\hyperlink{usb_8h_a8bf3878342e512de0e5e5b2d83885c90}{URB\+\_\+\+SUBMIT}}~\textquotesingle{}S\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{usb_8h_af653f72cd66937511923f38ef5db0734}{URB\+\_\+\+COMPLETE}}~\textquotesingle{}C\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{usb_8h_a0e4b5fa98656adf2ad45cbea0df87ec1}{URB\+\_\+\+ERROR}}~\textquotesingle{}E\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{usb_8h_a2d8cc94e74099791ff5172de6a46d332}\label{usb_8h_a2d8cc94e74099791ff5172de6a46d332}} 
+\index{usb.h@{usb.h}!URB\_BULK@{URB\_BULK}}
+\index{URB\_BULK@{URB\_BULK}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_BULK}{URB\_BULK}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+BULK~0x3}
+
+\mbox{\Hypertarget{usb_8h_af653f72cd66937511923f38ef5db0734}\label{usb_8h_af653f72cd66937511923f38ef5db0734}} 
+\index{usb.h@{usb.h}!URB\_COMPLETE@{URB\_COMPLETE}}
+\index{URB\_COMPLETE@{URB\_COMPLETE}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_COMPLETE}{URB\_COMPLETE}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+COMPLETE~\textquotesingle{}C\textquotesingle{}}
+
+\mbox{\Hypertarget{usb_8h_a47381194136626e2d2f4819aa98f5a99}\label{usb_8h_a47381194136626e2d2f4819aa98f5a99}} 
+\index{usb.h@{usb.h}!URB\_CONTROL@{URB\_CONTROL}}
+\index{URB\_CONTROL@{URB\_CONTROL}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_CONTROL}{URB\_CONTROL}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+CONTROL~0x2}
+
+\mbox{\Hypertarget{usb_8h_a0e4b5fa98656adf2ad45cbea0df87ec1}\label{usb_8h_a0e4b5fa98656adf2ad45cbea0df87ec1}} 
+\index{usb.h@{usb.h}!URB\_ERROR@{URB\_ERROR}}
+\index{URB\_ERROR@{URB\_ERROR}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_ERROR}{URB\_ERROR}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+ERROR~\textquotesingle{}E\textquotesingle{}}
+
+\mbox{\Hypertarget{usb_8h_a6b858224e002d1cff87e8e610970882d}\label{usb_8h_a6b858224e002d1cff87e8e610970882d}} 
+\index{usb.h@{usb.h}!URB\_INTERRUPT@{URB\_INTERRUPT}}
+\index{URB\_INTERRUPT@{URB\_INTERRUPT}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_INTERRUPT}{URB\_INTERRUPT}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+INTERRUPT~0x1}
+
+\mbox{\Hypertarget{usb_8h_ae3dee18352adde4984d4997708d0ee30}\label{usb_8h_ae3dee18352adde4984d4997708d0ee30}} 
+\index{usb.h@{usb.h}!URB\_ISOCHRONOUS@{URB\_ISOCHRONOUS}}
+\index{URB\_ISOCHRONOUS@{URB\_ISOCHRONOUS}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_ISOCHRONOUS}{URB\_ISOCHRONOUS}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+ISOCHRONOUS~0x0}
+
+\mbox{\Hypertarget{usb_8h_a8bf3878342e512de0e5e5b2d83885c90}\label{usb_8h_a8bf3878342e512de0e5e5b2d83885c90}} 
+\index{usb.h@{usb.h}!URB\_SUBMIT@{URB\_SUBMIT}}
+\index{URB\_SUBMIT@{URB\_SUBMIT}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_SUBMIT}{URB\_SUBMIT}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+SUBMIT~\textquotesingle{}S\textquotesingle{}}
+
+\mbox{\Hypertarget{usb_8h_a30004e5c520e90a6f962e17353d83bc3}\label{usb_8h_a30004e5c520e90a6f962e17353d83bc3}} 
+\index{usb.h@{usb.h}!URB\_TRANSFER\_IN@{URB\_TRANSFER\_IN}}
+\index{URB\_TRANSFER\_IN@{URB\_TRANSFER\_IN}!usb.h@{usb.h}}
+\doxysubsubsection{\texorpdfstring{URB\_TRANSFER\_IN}{URB\_TRANSFER\_IN}}
+{\footnotesize\ttfamily \#define URB\+\_\+\+TRANSFER\+\_\+\+IN~0x80}
+

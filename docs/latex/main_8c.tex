@@ -1,0 +1,1122 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c 文件参考}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$pcap.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hping2.\+h\char`\"{}}\newline
+main.\+c 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a18025c8e9ed6306d6aeae4bdd42ddad2}{tcp\+\_\+th\+\_\+flags}} = 0
+\item 
+unsigned int \mbox{\hyperlink{main_8c_ad062de78f81964cdcb6cce72bab12f45}{linkhdr\+\_\+size}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a06d158f399b84d0e5a06af1a1f175d2a}{ip\+\_\+tos}} = 0
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a93d855b390b5233e065543bb6fd44882}{set\+\_\+seqnum}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a8c149f286b6ea5d70093287263dc9ff9}{tcp\+\_\+seqnum}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_aee2bef02d678549b2cc5efaa467c69a3}{set\+\_\+ack}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_ac7ef580bdac2e4e8dc2f4fbe18862bff}{h\+\_\+if\+\_\+mtu}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a90ddecdfd283068214166bf9164830a0}{virtual\+\_\+mtu}} = \mbox{\hyperlink{hping2_8h_a8ccc833cd657422e39463ed55fbf876b}{DEFAULT\+\_\+\+VIRTUAL\+\_\+\+MTU}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_acd8c545f2e7670dc0608df5a9b6cb9c3}{ip\+\_\+frag\+\_\+offset}} = 0
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a8bd6583d65e0d285b795ae6e710f3dd3}{signlen}}
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a8f966a11150f357db42ad679f4657799}{lsr\+\_\+length}} = 0
+\item 
+unsigned int \mbox{\hyperlink{main_8c_a13155c4475d7adc98be9c48c91ac7dbe}{ssr\+\_\+length}} = 0
+\item 
+unsigned int \mbox{\hyperlink{main_8c_af01379907bb07fdd57dabeef377fd092}{tcp\+\_\+ack}}
+\item 
+unsigned short int \mbox{\hyperlink{main_8c_acca4bef60e2a57436eb1413dcf482e5f}{data\+\_\+size}} = 0
+\item 
+float \mbox{\hyperlink{main_8c_a16c2da0f27de9c87f077d2b62b1c57db}{rtt\+\_\+min}} = 0
+\item 
+float \mbox{\hyperlink{main_8c_a500bb3dc86c57e2c20341e6b218004b0}{rtt\+\_\+max}} = 0
+\item 
+float \mbox{\hyperlink{main_8c_a1521cc16e96b4a60e4c0f18d6f0a5261}{rtt\+\_\+avg}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a9ab640fbc677c01c857d7c98019846ca}{sockpacket}}
+\item 
+int \mbox{\hyperlink{main_8c_a8deaa534e5c3e5a3d687d1aaccf34c20}{sockraw}}
+\item 
+int \mbox{\hyperlink{main_8c_a09cb00fd8967ae97f149e1fa8efb664c}{sent\+\_\+pkt}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a935054c9eb5f6a70eb4c93981b7b8112}{recv\+\_\+pkt}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a41d10d6d9dd09994f0772d3979b249c3}{out\+\_\+of\+\_\+sequence\+\_\+pkt}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a3a412ae544cb411a594a6439b0e9402f}{sending\+\_\+wait}} = \mbox{\hyperlink{hping2_8h_ac26485c01c167fceea6ae7fb9dc0c39d}{DEFAULT\+\_\+\+SENDINGWAIT}}
+\item 
+int \mbox{\hyperlink{main_8c_af96cc2ab9bdc36c4832e315e1fb0f27d}{opt\+\_\+rawipmode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a590a0ee97a08e5687390742d730a4695}{opt\+\_\+icmpmode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a829a520a76fb048736c250eff24e85e9}{opt\+\_\+udpmode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ae3b996d1c2d960279b890682aa86f8f4}{opt\+\_\+scanmode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ae9439861ce4c9d4aac2eaa1ab5f709ee}{opt\+\_\+listenmode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aa5ceab431a08f1b4eb39510becbf8d97}{opt\+\_\+waitinusec}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aa03fa3634c3a68cb821416acf01c30af}{opt\+\_\+numeric}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a4c818a352be4462d0952223528ad60b9}{opt\+\_\+gethost}} = \mbox{\hyperlink{pcap-dos_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}
+\item 
+int \mbox{\hyperlink{main_8c_a7929d58cee8e286616c8f3c1f565cea3}{opt\+\_\+quiet}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ae70d8695428cf9ef7d6cf16ca1c45eb6}{opt\+\_\+relid}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a7f4ea085bf2d0bc01b00966edb1c49fe}{opt\+\_\+fragment}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ad045ac0fa8dc2af7313302c1080c01e3}{opt\+\_\+df}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a201576c8c944ebbc9c6524e6808f3b2a}{opt\+\_\+mf}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ae4cc9bd75a7c87624a52f8b84ffa83d2}{opt\+\_\+winid\+\_\+order}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a52250405b6953484a30f1480670319b9}{opt\+\_\+keepstill}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a7d84cc1de1587151b8f4e5dbf6edef53}{opt\+\_\+datafromfile}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a273a4d215c7333288b66782bfc34c262}{opt\+\_\+hexdump}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_af6a24de9dab7bf14c58093a5b29c7c1d}{opt\+\_\+contdump}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a0b9fec9eed0aeb69739f27aa82017b9b}{opt\+\_\+sign}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_af74e287fe1a3d45eeee223c1a9bf2ee1}{opt\+\_\+safe}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a924353adc62215ae2439e220925f4c72}{opt\+\_\+end}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a91c529fef1d3cd0002e3fe2ccabe2dd5}{opt\+\_\+traceroute}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a762fb7acc59299bae49670d52e1b8320}{opt\+\_\+seqnum}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a5d838f95efbd6f6d7d28cb66290f9937}{opt\+\_\+incdport}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a8a0925e905101ef98f39d269c4c5d490}{opt\+\_\+force\+\_\+incdport}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a1c1681ef71240d47c5a5b46e45bbb9a3}{opt\+\_\+icmptype}} = \mbox{\hyperlink{hping2_8h_a76fc59cc55fa617fbdca80d5ea24211c}{DEFAULT\+\_\+\+ICMP\+\_\+\+TYPE}}
+\item 
+int \mbox{\hyperlink{main_8c_a4c1585931ddc259e896a3b10542a1e8e}{opt\+\_\+icmpcode}} = \mbox{\hyperlink{hping2_8h_a81ea29c11f39b105fdef2c075b9a57ee}{DEFAULT\+\_\+\+ICMP\+\_\+\+CODE}}
+\item 
+int \mbox{\hyperlink{main_8c_a6a205ebd500802c77d1d9ea715a14c2a}{opt\+\_\+rroute}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_abb22ae25d4a395c6e0b540cc37a63b13}{opt\+\_\+tcpexitcode}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ab43aa22aa083fb340c5db339cef397bf}{opt\+\_\+badcksum}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_af8eb20ec721c88a6f63a3e6ef066624f}{opt\+\_\+tr\+\_\+keep\+\_\+ttl}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ab5e7218629149e8cd4da188fdb486deb}{opt\+\_\+tcp\+\_\+timestamp}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aedbb2664d988fa3a6c271de585fa4260}{opt\+\_\+tr\+\_\+stop}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aa95b4bbd88b261fa4da77a505e0c3353}{opt\+\_\+tr\+\_\+no\+\_\+rtt}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ab38f32bb8dd18bca53ddb3db3d853952}{opt\+\_\+rand\+\_\+dest}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aad551c4bf388639cfdeb5ff979f18675}{opt\+\_\+rand\+\_\+source}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a436df7a5561f1284493767fa1d8df580}{opt\+\_\+lsrr}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_ab19fe47b7cf5b13da371fb9468c26d93}{opt\+\_\+ssrr}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a3640d0ffebfe2a23d4e568d9033ac1fe}{opt\+\_\+cplt\+\_\+rte}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a6971e872b4543ebfa54558f36d51d8b9}{opt\+\_\+beep}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_aab5e857463e118c76b784099d2b04b37}{opt\+\_\+flood}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a073736dd0b8962be665c187c3e5d1fd3}{tcp\+\_\+exitcode}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a6ced2f3734fd89fe4b315d78bf91754c}{src\+\_\+ttl}} = \mbox{\hyperlink{hping2_8h_aa9b73542f958f4edfe5ebea8efe0ff8b}{DEFAULT\+\_\+\+TTL}}
+\item 
+int \mbox{\hyperlink{main_8c_ab6ed860f996b7f424f202a690aa2fb69}{src\+\_\+id}} = -\/1
+\item 
+int \mbox{\hyperlink{main_8c_aa1fa50515de3127fe1150148fb9ee30f}{base\+\_\+dst\+\_\+port}} = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}
+\item 
+int \mbox{\hyperlink{main_8c_adc30891256dc40c2b01f687b30dceff3}{dst\+\_\+port}} = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}
+\item 
+int \mbox{\hyperlink{main_8c_a2d47efc2f2609185cf802853871de027}{src\+\_\+port}}
+\item 
+int \mbox{\hyperlink{main_8c_acc80722d9dd9349cbba06c72d6fb5972}{sequence}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a304ffcaa9eb08837cfcf2bf38277f271}{initsport}} = \mbox{\hyperlink{hping2_8h_a00253957eb440736391c6e70bfe0743b}{DEFAULT\+\_\+\+INITSPORT}}
+\item 
+int \mbox{\hyperlink{main_8c_aa9e178c9fe8deae0a3fc655676877eaf}{src\+\_\+winsize}} = \mbox{\hyperlink{hping2_8h_a24b86cdf4ae6f972191086fad2fac608}{DEFAULT\+\_\+\+SRCWINSIZE}}
+\item 
+int \mbox{\hyperlink{main_8c_a2140fcc67ba0c2730a476f85bf75c99e}{src\+\_\+thoff}} = (\mbox{\hyperlink{hping2_8h_aca86f55de8648ffb0cadb8d8c6b7f272}{TCPHDR\+\_\+\+SIZE}} $>$$>$ 2)
+\item 
+int \mbox{\hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}} = \mbox{\hyperlink{hping2_8h_aa47fa1d9ffcd981f4e1642e84e79c90d}{DEFAULT\+\_\+\+COUNT}}
+\item 
+int \mbox{\hyperlink{main_8c_ae9d9689c7ae8792762932bc040a73af3}{ctrlzbind}} = \mbox{\hyperlink{hping2_8h_a24ba70aa3ff66bf7a08405b8e575d4c9}{DEFAULT\+\_\+\+BIND}}
+\item 
+int \mbox{\hyperlink{main_8c_ab66b842bb060b363101cd400b9e5fc2b}{delaytable\+\_\+index}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a82d20156c4029b3451c259836983dbc7}{eof\+\_\+reached}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_abb6bf383cf9a4c3462093c8aa64af169}{icmp\+\_\+ip\+\_\+version}} = \mbox{\hyperlink{hping2_8h_a628b53413a3ec9ca014d9a20cca755f4}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+VERSION}}
+\item 
+int \mbox{\hyperlink{main_8c_a5fb5a6837ed6fa92ae2df8861ae07ceb}{icmp\+\_\+ip\+\_\+ihl}} = \mbox{\hyperlink{hping2_8h_a34c1fb93332e803f1f0eeb58251b21e2}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+IHL}}
+\item 
+int \mbox{\hyperlink{main_8c_a6996b161ce4e125e530ad8ad1eec1eaa}{icmp\+\_\+ip\+\_\+tos}} = \mbox{\hyperlink{hping2_8h_ae308c4bec9c46aec3a2283d26862f01d}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+TOS}}
+\item 
+int \mbox{\hyperlink{main_8c_afc49eb498bff60c825b1922ecf852987}{icmp\+\_\+ip\+\_\+tot\+\_\+len}} = \mbox{\hyperlink{hping2_8h_a761a11c562759ea4959dd20403738dbf}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+TOT\+\_\+\+LEN}}
+\item 
+int \mbox{\hyperlink{main_8c_aeff67e2007a2d820c01058fb2620cf9f}{icmp\+\_\+ip\+\_\+id}} = \mbox{\hyperlink{hping2_8h_afe13cbd08229a13978ede583450fc198}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+ID}}
+\item 
+int \mbox{\hyperlink{main_8c_a7945d87e890d2d448e047079e9b43e03}{icmp\+\_\+ip\+\_\+protocol}} = \mbox{\hyperlink{hping2_8h_a888d43faddb30b74a71db500bef02223}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+PROTOCOL}}
+\item 
+int \mbox{\hyperlink{main_8c_aa71850cea8b78a2d969b8dcff94c777e}{icmp\+\_\+ip\+\_\+srcport}} = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}
+\item 
+int \mbox{\hyperlink{main_8c_a9c1330d4a92778b0e6536529ce0f110f}{icmp\+\_\+ip\+\_\+dstport}} = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}
+\item 
+int \mbox{\hyperlink{main_8c_a67fa17a1ab6a9c0100215866f4773e4a}{opt\+\_\+force\+\_\+icmp}} = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+int \mbox{\hyperlink{main_8c_a1347ed1eebf1a23857cf507f759d64c7}{icmp\+\_\+cksum}} = \mbox{\hyperlink{hping2_8h_a243acf240ad869bdcf938154e45e93db}{DEFAULT\+\_\+\+ICMP\+\_\+\+CKSUM}}
+\item 
+int \mbox{\hyperlink{main_8c_aed247f7066a0dbafc5e3b952f1aa7b49}{raw\+\_\+ip\+\_\+protocol}} = \mbox{\hyperlink{hping2_8h_a6ec9a51f94c215ea8108a502627dde4b}{DEFAULT\+\_\+\+RAW\+\_\+\+IP\+\_\+\+PROTOCOL}}
+\item 
+char \mbox{\hyperlink{main_8c_ad26b30bfc9fe22970c9598844def20c5}{datafilename}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ae9abba9190a6034a481b0d9321642e18}{targetname}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a400b80d0b852148529200e39e6196d59}{targetstraddr}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}} \mbox{[}1024\mbox{]} = \{\textquotesingle{}\textbackslash{}0\textquotesingle{}\}
+\item 
+char \mbox{\hyperlink{main_8c_a7a3ac7e341ecfdd7a4d27212616a39c7}{ifstraddr}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_af8306fb85ce5170e6f98322734373f70}{spoofaddr}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ac50458b993e8c44e3b9469504e040868}{icmp\+\_\+ip\+\_\+srcip}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ab41d84b68d9786cccfe9bc53e809580b}{icmp\+\_\+ip\+\_\+dstip}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a50d24027e37afba9f659a8cd535860f8}{icmp\+\_\+gwip}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ab810ad4f7c0efd73662227c61460490b}{sign}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_afd9a5333954faea0495f8fa8e6167dd9}{rsign}} \mbox{[}1024\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a7ba769525033ef5dc1c5309edd3de4de}{ip\+\_\+opt}} \mbox{[}40\mbox{]}
+\item 
+char $\ast$ \mbox{\hyperlink{main_8c_a676c85860f4b74ffbf17f5b6a14332ab}{opt\+\_\+scanports}} = \char`\"{}\char`\"{}
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a1c546c2fe27878b8ec8aadada8edf643}{lsr}} \mbox{[}255\mbox{]} = \{0\}
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a07c9c739f8998bca2f2dc9a21e3a0d8a}{ssr}} \mbox{[}255\mbox{]} = \{0\}
+\item 
+unsigned \mbox{\hyperlink{main_8c_aecebf31a0e77d2b193a8ddb751934fe2}{ip\+\_\+optlen}} = 0
+\item 
+struct sockaddr\+\_\+in icmp\+\_\+ip\+\_\+src icmp\+\_\+ip\+\_\+dst icmp\+\_\+gw local \mbox{\hyperlink{main_8c_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}
+\item 
+struct itimerval \mbox{\hyperlink{main_8c_a179df26f82a603e41f4c556e7a206dcf}{usec\+\_\+delay}}
+\item 
+volatile struct \mbox{\hyperlink{structdelaytable__element}{delaytable\+\_\+element}} \mbox{\hyperlink{main_8c_a9805834b51a8828f55fdc616a8221317}{delaytable}} \mbox{[}\mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}}\mbox{]}
+\item 
+struct \mbox{\hyperlink{structhcmphdr}{hcmphdr}} $\ast$ \mbox{\hyperlink{main_8c_a71cd926ca6334092b988bdd35cecad99}{hcmphdr\+\_\+p}}
+\item 
+pcap\+\_\+t $\ast$ \mbox{\hyperlink{main_8c_a2b9bb241b38decf7a4f029f07b4e23f6}{pcapfp}}
+\item 
+char \mbox{\hyperlink{main_8c_a41891cad090df07cd9360f1d8a9f1396}{errbuf}} \mbox{[}\mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}\mbox{]}
+\item 
+struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} \mbox{\hyperlink{main_8c_a63a24b5b22a130df12f883d1d910e490}{hdr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{hping2_8h_aec914613443d034290ec2d33cfdf1180}{BIND\+\_\+\+NONE}}, \mbox{\hyperlink{main_8c_ae9d9689c7ae8792762932bc040a73af3}{ctrlzbind}}, \mbox{\hyperlink{main_8c_acca4bef60e2a57436eb1413dcf482e5f}{data\+\_\+size}}, \mbox{\hyperlink{main_8c_a9805834b51a8828f55fdc616a8221317}{delaytable}}, \mbox{\hyperlink{waitpacket_8c_a601fda698b6f9f2342b169c8e250d2d3}{dst}}, \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{getlhs_8c_aaf84b07cf9b335dc1b5230148a3d28f2}{get\+\_\+linkhdr\+\_\+size()}}, \mbox{\hyperlink{main_8c_ac7ef580bdac2e4e8dc2f4fbe18862bff}{h\+\_\+if\+\_\+mtu}}, \mbox{\hyperlink{hping2_8h_a2ef74c6ab8e0dc9fdd02381daa0ed53b}{hping\+\_\+script()}}, \mbox{\hyperlink{main_8c_a50d24027e37afba9f659a8cd535860f8}{icmp\+\_\+gwip}}, \mbox{\hyperlink{main_8c_ab41d84b68d9786cccfe9bc53e809580b}{icmp\+\_\+ip\+\_\+dstip}}, \mbox{\hyperlink{main_8c_ac50458b993e8c44e3b9469504e040868}{icmp\+\_\+ip\+\_\+srcip}}, \mbox{\hyperlink{hping2_8h_aeee265ddaa2c58698cb245c08889313e}{ICMPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{main_8c_a3036385b4f08b83f3ea8211dfd6cf737}{ifname}}, \mbox{\hyperlink{main_8c_a7a3ac7e341ecfdd7a4d27212616a39c7}{ifstraddr}}, \mbox{\hyperlink{binding_8c_ad28cda14450b7c602003b7621168c2f2}{inc\+\_\+destparm()}}, \mbox{\hyperlink{main_8c_a304ffcaa9eb08837cfcf2bf38277f271}{initsport}}, \mbox{\hyperlink{hping2_8h_a96775901e8ca4b4e16fd4e42a803feff}{IPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{hping2_8h_a401db5ab953431bdaad40714e1113192}{listenmain()}}, \mbox{\hyperlink{hping2_8h_a6a0346a8a480661a78c1fadc6dce1b6d}{memlockall()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}}, \mbox{\hyperlink{hping2_8h_aed3d68218fc4ed1b514990fd73dc53f2}{open\+\_\+sockraw()}}, \mbox{\hyperlink{main_8c_a7d84cc1de1587151b8f4e5dbf6edef53}{opt\+\_\+datafromfile}}, \mbox{\hyperlink{main_8c_af1ab3d2fe7486d30b88de7261fff3130}{opt\+\_\+debug}}, \mbox{\hyperlink{main_8c_aab5e857463e118c76b784099d2b04b37}{opt\+\_\+flood}}, \mbox{\hyperlink{main_8c_a590a0ee97a08e5687390742d730a4695}{opt\+\_\+icmpmode}}, \mbox{\hyperlink{main_8c_ae9439861ce4c9d4aac2eaa1ab5f709ee}{opt\+\_\+listenmode}}, \mbox{\hyperlink{main_8c_ab38f32bb8dd18bca53ddb3db3d853952}{opt\+\_\+rand\+\_\+dest}}, \mbox{\hyperlink{main_8c_af96cc2ab9bdc36c4832e315e1fb0f27d}{opt\+\_\+rawipmode}}, \mbox{\hyperlink{main_8c_af74e287fe1a3d45eeee223c1a9bf2ee1}{opt\+\_\+safe}}, \mbox{\hyperlink{main_8c_ae3b996d1c2d960279b890682aa86f8f4}{opt\+\_\+scanmode}}, \mbox{\hyperlink{main_8c_a676c85860f4b74ffbf17f5b6a14332ab}{opt\+\_\+scanports}}, \mbox{\hyperlink{main_8c_a0b9fec9eed0aeb69739f27aa82017b9b}{opt\+\_\+sign}}, \mbox{\hyperlink{main_8c_a829a520a76fb048736c250eff24e85e9}{opt\+\_\+udpmode}}, \mbox{\hyperlink{main_8c_a68c6795825554fff6f4b5ad6fbed441a}{opt\+\_\+verbose}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{os-sunos4_8h_ad5f1d47e8cc6b2c92be35a2402ad4ed5}{perror()}}, \mbox{\hyperlink{hping2_8h_a6578ac428fac8022b788f3b58499ba81}{print\+\_\+statistics()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{main_8c_aec8b4d4444bcb6dbf710d27cc3554665}{remote}}, \mbox{\hyperlink{hping2_8h_a22ceb1502b4f419e5be97c078dd9e1b9}{resolve()}}, \mbox{\hyperlink{main_8c_afd9a5333954faea0495f8fa8e6167dd9}{rsign}}, \mbox{\hyperlink{hping2_8h_a1d4dcf16f13fdddeff4f64344ea80466}{scanmain()}}, \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}}, \mbox{\hyperlink{main_8c_ab810ad4f7c0efd73662227c61460490b}{sign}}, \mbox{\hyperlink{hping2_8h_a16afeb753915856e50a8bcaeb1345c42}{Signal}}, \mbox{\hyperlink{hping2_8h_a1e797ac335dd26471f8cbb5582e50a9f}{socket\+\_\+broadcast()}}, \mbox{\hyperlink{hping2_8h_a1b61c2998f5801a7c1395912e883b951}{socket\+\_\+iphdrincl()}}, \mbox{\hyperlink{main_8c_a8deaa534e5c3e5a3d687d1aaccf34c20}{sockraw}}, \mbox{\hyperlink{main_8c_af8306fb85ce5170e6f98322734373f70}{spoofaddr}}, \mbox{\hyperlink{main_8c_a2d47efc2f2609185cf802853871de027}{src\+\_\+port}}, \mbox{\hyperlink{pcap-int_8h_aebad41fc6f10b606b4f94a930b153a17}{strlcpy}}, \mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}}, \mbox{\hyperlink{main_8c_ae9abba9190a6034a481b0d9321642e18}{targetname}}, \mbox{\hyperlink{main_8c_a400b80d0b852148529200e39e6196d59}{targetstraddr}}, \mbox{\hyperlink{main_8c_a18025c8e9ed6306d6aeae4bdd42ddad2}{tcp\+\_\+th\+\_\+flags}}, \mbox{\hyperlink{hping2_8h_aca86f55de8648ffb0cadb8d8c6b7f272}{TCPHDR\+\_\+\+SIZE}}, \mbox{\hyperlink{hping2_8h_a362dae974cf06bab2b79b70f0cde524f}{TH\+\_\+\+ACK}}, \mbox{\hyperlink{hping2_8h_a1cec9b372679734fcd8394d779442ddb}{TH\+\_\+\+FIN}}, \mbox{\hyperlink{hping2_8h_a45b9964096064c9a0c84fbddd2c80d38}{TH\+\_\+\+PUSH}}, \mbox{\hyperlink{hping2_8h_a7f2ce15991898c8d3397045087c4381f}{TH\+\_\+\+RST}}, \mbox{\hyperlink{hping2_8h_a91006117f7ae427b957773ab0e80bfa4}{TH\+\_\+\+SYN}}, \mbox{\hyperlink{hping2_8h_a7b18ca973f14696013696a00c5235f32}{TH\+\_\+\+URG}}, \mbox{\hyperlink{hping2_8h_a09952ee8b742f01da9b70a878e39f497}{TH\+\_\+X}}, \mbox{\hyperlink{hping2_8h_ae81f496286a3cf60a33d0e8a2fe6ebea}{TH\+\_\+Y}}, \mbox{\hyperlink{os-sunos4_8h_aae026724f73c36340024c657f4f44dab}{time()}}, \mbox{\hyperlink{hping2_8h_a5dfedca0089aee438c914b591687d695}{UDPHDR\+\_\+\+SIZE}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{main_8c_aa1fa50515de3127fe1150148fb9ee30f}\label{main_8c_aa1fa50515de3127fe1150148fb9ee30f}} 
+\index{main.c@{main.c}!base\_dst\_port@{base\_dst\_port}}
+\index{base\_dst\_port@{base\_dst\_port}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{base\_dst\_port}{base\_dst\_port}}
+{\footnotesize\ttfamily int base\+\_\+dst\+\_\+port = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}}
+
+\mbox{\Hypertarget{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}\label{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}} 
+\index{main.c@{main.c}!count@{count}}
+\index{count@{count}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int count = \mbox{\hyperlink{hping2_8h_aa47fa1d9ffcd981f4e1642e84e79c90d}{DEFAULT\+\_\+\+COUNT}}}
+
+\mbox{\Hypertarget{main_8c_ae9d9689c7ae8792762932bc040a73af3}\label{main_8c_ae9d9689c7ae8792762932bc040a73af3}} 
+\index{main.c@{main.c}!ctrlzbind@{ctrlzbind}}
+\index{ctrlzbind@{ctrlzbind}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ctrlzbind}{ctrlzbind}}
+{\footnotesize\ttfamily int ctrlzbind = \mbox{\hyperlink{hping2_8h_a24ba70aa3ff66bf7a08405b8e575d4c9}{DEFAULT\+\_\+\+BIND}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_acca4bef60e2a57436eb1413dcf482e5f}\label{main_8c_acca4bef60e2a57436eb1413dcf482e5f}} 
+\index{main.c@{main.c}!data\_size@{data\_size}}
+\index{data\_size@{data\_size}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{data\_size}{data\_size}}
+{\footnotesize\ttfamily unsigned short int data\+\_\+size = 0}
+
+
+
+被这些函数引用 \mbox{\hyperlink{datahandler_8c_a56e016b2e2e54a2562e2aa0761ec3a37}{data\+\_\+handler()}}, \mbox{\hyperlink{datafiller_8c_a454f2e8976f15ad6ecf4fa5d2aea8bf4}{datafiller()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{hping2_8h_a4b16ad8c3bf62de65cd843c01dedbfad}{send\+\_\+hcmp()}}, \mbox{\hyperlink{sendicmp_8c_ab7ee2606f9c854ef1d8e12daaa989d0a}{send\+\_\+icmp\+\_\+echo()}}, \mbox{\hyperlink{sendicmp_8c_a561d9b9c1ed04ca6674453535b7058f9}{send\+\_\+icmp\+\_\+other()}}, \mbox{\hyperlink{hping2_8h_a78a83d8c35164efd189a6d3584ba5537}{send\+\_\+rawip()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}} , 以及 \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}}.
+
+\mbox{\Hypertarget{main_8c_ad26b30bfc9fe22970c9598844def20c5}\label{main_8c_ad26b30bfc9fe22970c9598844def20c5}} 
+\index{main.c@{main.c}!datafilename@{datafilename}}
+\index{datafilename@{datafilename}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{datafilename}{datafilename}}
+{\footnotesize\ttfamily char datafilename\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_a9805834b51a8828f55fdc616a8221317}\label{main_8c_a9805834b51a8828f55fdc616a8221317}} 
+\index{main.c@{main.c}!delaytable@{delaytable}}
+\index{delaytable@{delaytable}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delaytable}{delaytable}}
+{\footnotesize\ttfamily volatile struct \mbox{\hyperlink{structdelaytable__element}{delaytable\+\_\+element}} delaytable\mbox{[}\mbox{\hyperlink{hping2_8h_a1baf7829bbaab1395a13dc5ff8d1b1c3}{TABLESIZE}}\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a5c3d31936b1247d4c9ccd2aedd4bdeb8}{delaytable\+\_\+add()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}} , 以及 \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}.
+
+\mbox{\Hypertarget{main_8c_ab66b842bb060b363101cd400b9e5fc2b}\label{main_8c_ab66b842bb060b363101cd400b9e5fc2b}} 
+\index{main.c@{main.c}!delaytable\_index@{delaytable\_index}}
+\index{delaytable\_index@{delaytable\_index}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delaytable\_index}{delaytable\_index}}
+{\footnotesize\ttfamily int delaytable\+\_\+index = 0}
+
+\mbox{\Hypertarget{main_8c_adc30891256dc40c2b01f687b30dceff3}\label{main_8c_adc30891256dc40c2b01f687b30dceff3}} 
+\index{main.c@{main.c}!dst\_port@{dst\_port}}
+\index{dst\_port@{dst\_port}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dst\_port}{dst\_port}}
+{\footnotesize\ttfamily int dst\+\_\+port = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}}
+
+\mbox{\Hypertarget{main_8c_a82d20156c4029b3451c259836983dbc7}\label{main_8c_a82d20156c4029b3451c259836983dbc7}} 
+\index{main.c@{main.c}!eof\_reached@{eof\_reached}}
+\index{eof\_reached@{eof\_reached}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{eof\_reached}{eof\_reached}}
+{\footnotesize\ttfamily int eof\+\_\+reached = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a41891cad090df07cd9360f1d8a9f1396}\label{main_8c_a41891cad090df07cd9360f1d8a9f1396}} 
+\index{main.c@{main.c}!errbuf@{errbuf}}
+\index{errbuf@{errbuf}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{errbuf}{errbuf}}
+{\footnotesize\ttfamily char errbuf\mbox{[}\mbox{\hyperlink{pcap_2pcap_8h_acd448353957d92c98fccc29e1fc8d927}{PCAP\+\_\+\+ERRBUF\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-sita_8c_aa24730e685c231aeb5e4459524dab714}{acn\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap-sita_8c_a3ec30d81b86ee2c515d1c2cbf29754e1}{acn\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{pcap-sita_8c_af35a2937a031c472e78fb5c0f94a4bd0}{acn\+\_\+parse\+\_\+hosts\+\_\+file()}}, \mbox{\hyperlink{inet_8c_ab33d156eb14d2b242dc3cf9218a03c81}{add\+\_\+addr\+\_\+to\+\_\+iflist()}}, \mbox{\hyperlink{fad-win32_8c_a9426bbce4d74e23e38d1add1ecbe92dd}{add\+\_\+addr\+\_\+to\+\_\+list()}}, \mbox{\hyperlink{inet_8c_ad645673beca798d2ccd8218c8a7ca35a}{add\+\_\+or\+\_\+find\+\_\+if()}}, \mbox{\hyperlink{pcap-dag_8c_a6d9e13e5daffb6ef73c72f8323c79921}{dag\+\_\+platform\+\_\+finddevs()}}, \mbox{\hyperlink{pcap-dag_8c_a86cf02a84036cac7f1d200e14f5e622a}{dag\+\_\+setnonblock()}}, \mbox{\hyperlink{pcap-sita_8c_a3473ca0674a8f30b5ee171df472e0feb}{get\+\_\+error\+\_\+response()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a8c8fe9aba6dcd836bda52a57ebf47316}{get\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a04fdcf0b7ca945f526976702001e577c}{get\+\_\+opthdr\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_adafb7dd1b78dceed9c147b7df6cf460f}{get\+\_\+optvalue\+\_\+from\+\_\+block\+\_\+data()}}, \mbox{\hyperlink{findalldevstest_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}}, \mbox{\hyperlink{inet_8c_ae61261e756b0e199b9d361f500c49f17}{pcap\+\_\+add\+\_\+if()}}, \mbox{\hyperlink{fad-win32_8c_aebde42f1910515d28de023a28000917d}{pcap\+\_\+add\+\_\+if\+\_\+win32()}}, \mbox{\hyperlink{sf-pcap_8c_a60648bfb78b9c29bfa80576e04733344}{pcap\+\_\+check\+\_\+header()}}, \mbox{\hyperlink{fad-getad_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}, \mbox{\hyperlink{pcap_2pcap_8h_a08df9283055c03dbd7b14cf14c0490f6}{pcap\+\_\+fopen\+\_\+offline()}}, \mbox{\hyperlink{pcap_8c_ab25dc0bfe06545b86be4103bf010708e}{pcap\+\_\+getnonblock()}}, \mbox{\hyperlink{pcap-libdlpi_8c_ae173c1e07852a1fb1a7e5a757a384d10}{pcap\+\_\+libdlpi\+\_\+err()}}, \mbox{\hyperlink{inet_8c_ad83fbe09ddc9c7f354ab4f2b293f8191}{pcap\+\_\+lookupdev()}}, \mbox{\hyperlink{inet_8c_aa35276d0fa530c51a455f298fa1ec453}{pcap\+\_\+lookupnet()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a86463cfbb11271e3f3e296d042e67dbc}{pcap\+\_\+ng\+\_\+check\+\_\+header()}}, \mbox{\hyperlink{pcap_8c_a4ffc0d48c0a614df0980206517d48f8e}{pcap\+\_\+open\+\_\+live()}}, \mbox{\hyperlink{pcap_2pcap_8h_a0fed514fe3722f2aa5ef7e24aebcf1f3}{pcap\+\_\+open\+\_\+offline()}}, \mbox{\hyperlink{pcap-bpf_8c_a14b88a933c5761e5038182b4c30bf0c8}{pcap\+\_\+platform\+\_\+finddevs()}}, \mbox{\hyperlink{pcap_8c_a3f212141c80b59aad8ac535bb0178275}{pcap\+\_\+setnonblock()}}, \mbox{\hyperlink{pcap-sita_8c_a096343734009d244a97b66ceb480476b}{process\+\_\+client\+\_\+data()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a5c58e37e72e30e3fa1cdf69458969d3b}{process\+\_\+idb\+\_\+options()}}, \mbox{\hyperlink{sf-pcap-ng_8c_ac8d90586b8e5d67f7e6ec0af91f3b9ca}{read\+\_\+block()}}, \mbox{\hyperlink{sf-pcap-ng_8c_ad8faa826aa880980afe173de6feba666}{read\+\_\+bytes()}}, \mbox{\hyperlink{pcap-linux_8c_afb293431bb9ec076f757d3444d875f0f}{scan\+\_\+proc\+\_\+net\+\_\+dev()}}, \mbox{\hyperlink{pcap-linux_8c_a775e9e3fa61d2f1f0baffb4983bfecc7}{scan\+\_\+sys\+\_\+class\+\_\+net()}} , 以及 \mbox{\hyperlink{pcap-septel_8c_acdc1e2f12d872a02062f3047e5375dd3}{septel\+\_\+platform\+\_\+finddevs()}}.
+
+\mbox{\Hypertarget{main_8c_ac7ef580bdac2e4e8dc2f4fbe18862bff}\label{main_8c_ac7ef580bdac2e4e8dc2f4fbe18862bff}} 
+\index{main.c@{main.c}!h\_if\_mtu@{h\_if\_mtu}}
+\index{h\_if\_mtu@{h\_if\_mtu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{h\_if\_mtu}{h\_if\_mtu}}
+{\footnotesize\ttfamily unsigned int h\+\_\+if\+\_\+mtu}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a71cd926ca6334092b988bdd35cecad99}\label{main_8c_a71cd926ca6334092b988bdd35cecad99}} 
+\index{main.c@{main.c}!hcmphdr\_p@{hcmphdr\_p}}
+\index{hcmphdr\_p@{hcmphdr\_p}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hcmphdr\_p}{hcmphdr\_p}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhcmphdr}{hcmphdr}}$\ast$ hcmphdr\+\_\+p}
+
+
+
+被这些函数引用 \mbox{\hyperlink{datahandler_8c_a56e016b2e2e54a2562e2aa0761ec3a37}{data\+\_\+handler()}} , 以及 \mbox{\hyperlink{hping2_8h_a4b16ad8c3bf62de65cd843c01dedbfad}{send\+\_\+hcmp()}}.
+
+\mbox{\Hypertarget{main_8c_a63a24b5b22a130df12f883d1d910e490}\label{main_8c_a63a24b5b22a130df12f883d1d910e490}} 
+\index{main.c@{main.c}!hdr@{hdr}}
+\index{hdr@{hdr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structpcap__pkthdr}{pcap\+\_\+pkthdr}} hdr}
+
+
+
+被这些函数引用 \mbox{\hyperlink{gentables_8c_acc34adab61f7ad978ea4ff589ccc5e6f}{gen\+\_\+basepowtable()}}, \mbox{\hyperlink{gentables_8c_afe4875a8d44d5181ef71d9ee1a8a3712}{gen\+\_\+basetable()}}, \mbox{\hyperlink{gentables_8c_a477f4d5497ac89307a6cdc068718e630}{gen\+\_\+bitstable()}}, \mbox{\hyperlink{gentables_8c_a6ce509e4c9c5c813f5578dc2165040ee}{gen\+\_\+cset()}}, \mbox{\hyperlink{gentables_8c_afafe16e6ec688117742cb6c20b4ff75e}{gen\+\_\+rcset()}}, \mbox{\hyperlink{gentables_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{sf-pcap_8c_a60648bfb78b9c29bfa80576e04733344}{pcap\+\_\+check\+\_\+header()}}, \mbox{\hyperlink{sf-pcap_8c_accb06be00adc4ad8ff2a1661d5a7ea91}{pcap\+\_\+next\+\_\+packet()}}, \mbox{\hyperlink{sf-pcap-ng_8c_a1cc2a2675546c9783703d6bc3d676599}{pcap\+\_\+ng\+\_\+next\+\_\+packet()}}, \mbox{\hyperlink{hping2_8h_a6a53f92871b68acc848b9a3f6011da4e}{pcap\+\_\+recv()}}, \mbox{\hyperlink{pcap-enet_8c_a3fa1952f1268b3fe397e870471b88e75}{readloop()}}, \mbox{\hyperlink{sf-pcap_8c_a8c7be493dc73deb26fedf6bd91d88384}{sf\+\_\+write\+\_\+header()}}, \mbox{\hyperlink{pcap-snf_8c_a49686f4be3ff34a2cf9bf80a500365d2}{snf\+\_\+read()}}, \mbox{\hyperlink{pcap-common_8c_afa059dda75b192db1391a32248ccdb65}{swap\+\_\+linux\+\_\+usb\+\_\+header()}} , 以及 \mbox{\hyperlink{pcap-usb-linux_8c_a072b2bc4dfdb2cb86c2f9a246c04e8e4}{usb\+\_\+read\+\_\+linux\+\_\+mmap()}}.
+
+\mbox{\Hypertarget{main_8c_a1347ed1eebf1a23857cf507f759d64c7}\label{main_8c_a1347ed1eebf1a23857cf507f759d64c7}} 
+\index{main.c@{main.c}!icmp\_cksum@{icmp\_cksum}}
+\index{icmp\_cksum@{icmp\_cksum}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_cksum}{icmp\_cksum}}
+{\footnotesize\ttfamily int icmp\+\_\+cksum = \mbox{\hyperlink{hping2_8h_a243acf240ad869bdcf938154e45e93db}{DEFAULT\+\_\+\+ICMP\+\_\+\+CKSUM}}}
+
+\mbox{\Hypertarget{main_8c_a50d24027e37afba9f659a8cd535860f8}\label{main_8c_a50d24027e37afba9f659a8cd535860f8}} 
+\index{main.c@{main.c}!icmp\_gwip@{icmp\_gwip}}
+\index{icmp\_gwip@{icmp\_gwip}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_gwip}{icmp\_gwip}}
+{\footnotesize\ttfamily char icmp\+\_\+gwip\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ab41d84b68d9786cccfe9bc53e809580b}\label{main_8c_ab41d84b68d9786cccfe9bc53e809580b}} 
+\index{main.c@{main.c}!icmp\_ip\_dstip@{icmp\_ip\_dstip}}
+\index{icmp\_ip\_dstip@{icmp\_ip\_dstip}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_dstip}{icmp\_ip\_dstip}}
+{\footnotesize\ttfamily char icmp\+\_\+ip\+\_\+dstip\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a9c1330d4a92778b0e6536529ce0f110f}\label{main_8c_a9c1330d4a92778b0e6536529ce0f110f}} 
+\index{main.c@{main.c}!icmp\_ip\_dstport@{icmp\_ip\_dstport}}
+\index{icmp\_ip\_dstport@{icmp\_ip\_dstport}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_dstport}{icmp\_ip\_dstport}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+dstport = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}}
+
+\mbox{\Hypertarget{main_8c_aeff67e2007a2d820c01058fb2620cf9f}\label{main_8c_aeff67e2007a2d820c01058fb2620cf9f}} 
+\index{main.c@{main.c}!icmp\_ip\_id@{icmp\_ip\_id}}
+\index{icmp\_ip\_id@{icmp\_ip\_id}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_id}{icmp\_ip\_id}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+id = \mbox{\hyperlink{hping2_8h_afe13cbd08229a13978ede583450fc198}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+ID}}}
+
+\mbox{\Hypertarget{main_8c_a5fb5a6837ed6fa92ae2df8861ae07ceb}\label{main_8c_a5fb5a6837ed6fa92ae2df8861ae07ceb}} 
+\index{main.c@{main.c}!icmp\_ip\_ihl@{icmp\_ip\_ihl}}
+\index{icmp\_ip\_ihl@{icmp\_ip\_ihl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_ihl}{icmp\_ip\_ihl}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+ihl = \mbox{\hyperlink{hping2_8h_a34c1fb93332e803f1f0eeb58251b21e2}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+IHL}}}
+
+\mbox{\Hypertarget{main_8c_a7945d87e890d2d448e047079e9b43e03}\label{main_8c_a7945d87e890d2d448e047079e9b43e03}} 
+\index{main.c@{main.c}!icmp\_ip\_protocol@{icmp\_ip\_protocol}}
+\index{icmp\_ip\_protocol@{icmp\_ip\_protocol}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_protocol}{icmp\_ip\_protocol}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+protocol = \mbox{\hyperlink{hping2_8h_a888d43faddb30b74a71db500bef02223}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+PROTOCOL}}}
+
+\mbox{\Hypertarget{main_8c_ac50458b993e8c44e3b9469504e040868}\label{main_8c_ac50458b993e8c44e3b9469504e040868}} 
+\index{main.c@{main.c}!icmp\_ip\_srcip@{icmp\_ip\_srcip}}
+\index{icmp\_ip\_srcip@{icmp\_ip\_srcip}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_srcip}{icmp\_ip\_srcip}}
+{\footnotesize\ttfamily char icmp\+\_\+ip\+\_\+srcip\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_aa71850cea8b78a2d969b8dcff94c777e}\label{main_8c_aa71850cea8b78a2d969b8dcff94c777e}} 
+\index{main.c@{main.c}!icmp\_ip\_srcport@{icmp\_ip\_srcport}}
+\index{icmp\_ip\_srcport@{icmp\_ip\_srcport}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_srcport}{icmp\_ip\_srcport}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+srcport = \mbox{\hyperlink{hping2_8h_ad10c91a73b3f48fa90142469a3aa6fb0}{DEFAULT\+\_\+\+DPORT}}}
+
+\mbox{\Hypertarget{main_8c_a6996b161ce4e125e530ad8ad1eec1eaa}\label{main_8c_a6996b161ce4e125e530ad8ad1eec1eaa}} 
+\index{main.c@{main.c}!icmp\_ip\_tos@{icmp\_ip\_tos}}
+\index{icmp\_ip\_tos@{icmp\_ip\_tos}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_tos}{icmp\_ip\_tos}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+tos = \mbox{\hyperlink{hping2_8h_ae308c4bec9c46aec3a2283d26862f01d}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+TOS}}}
+
+\mbox{\Hypertarget{main_8c_afc49eb498bff60c825b1922ecf852987}\label{main_8c_afc49eb498bff60c825b1922ecf852987}} 
+\index{main.c@{main.c}!icmp\_ip\_tot\_len@{icmp\_ip\_tot\_len}}
+\index{icmp\_ip\_tot\_len@{icmp\_ip\_tot\_len}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_tot\_len}{icmp\_ip\_tot\_len}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+tot\+\_\+len = \mbox{\hyperlink{hping2_8h_a761a11c562759ea4959dd20403738dbf}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+TOT\+\_\+\+LEN}}}
+
+\mbox{\Hypertarget{main_8c_abb6bf383cf9a4c3462093c8aa64af169}\label{main_8c_abb6bf383cf9a4c3462093c8aa64af169}} 
+\index{main.c@{main.c}!icmp\_ip\_version@{icmp\_ip\_version}}
+\index{icmp\_ip\_version@{icmp\_ip\_version}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{icmp\_ip\_version}{icmp\_ip\_version}}
+{\footnotesize\ttfamily int icmp\+\_\+ip\+\_\+version = \mbox{\hyperlink{hping2_8h_a628b53413a3ec9ca014d9a20cca755f4}{DEFAULT\+\_\+\+ICMP\+\_\+\+IP\+\_\+\+VERSION}}}
+
+\mbox{\Hypertarget{main_8c_a3036385b4f08b83f3ea8211dfd6cf737}\label{main_8c_a3036385b4f08b83f3ea8211dfd6cf737}} 
+\index{main.c@{main.c}!ifname@{ifname}}
+\index{ifname@{ifname}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ifname}{ifname}}
+{\footnotesize\ttfamily char ifname\mbox{[}1024\mbox{]} = \{\textquotesingle{}\textbackslash{}0\textquotesingle{}\}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{hping2_8h_a4a10e3c2d78485a88a6846f317d196a0}{if\+\_\+promisc\+\_\+off()}}, \mbox{\hyperlink{hping2_8h_a298f69a0fbd93d7703e09283998083c6}{if\+\_\+promisc\+\_\+on()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}} , 以及 \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}.
+
+\mbox{\Hypertarget{main_8c_a7a3ac7e341ecfdd7a4d27212616a39c7}\label{main_8c_a7a3ac7e341ecfdd7a4d27212616a39c7}} 
+\index{main.c@{main.c}!ifstraddr@{ifstraddr}}
+\index{ifstraddr@{ifstraddr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ifstraddr}{ifstraddr}}
+{\footnotesize\ttfamily char ifstraddr\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a304ffcaa9eb08837cfcf2bf38277f271}\label{main_8c_a304ffcaa9eb08837cfcf2bf38277f271}} 
+\index{main.c@{main.c}!initsport@{initsport}}
+\index{initsport@{initsport}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{initsport}{initsport}}
+{\footnotesize\ttfamily int initsport = \mbox{\hyperlink{hping2_8h_a00253957eb440736391c6e70bfe0743b}{DEFAULT\+\_\+\+INITSPORT}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_acd8c545f2e7670dc0608df5a9b6cb9c3}\label{main_8c_acd8c545f2e7670dc0608df5a9b6cb9c3}} 
+\index{main.c@{main.c}!ip\_frag\_offset@{ip\_frag\_offset}}
+\index{ip\_frag\_offset@{ip\_frag\_offset}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ip\_frag\_offset}{ip\_frag\_offset}}
+{\footnotesize\ttfamily unsigned int ip\+\_\+frag\+\_\+offset = 0}
+
+\mbox{\Hypertarget{main_8c_a7ba769525033ef5dc1c5309edd3de4de}\label{main_8c_a7ba769525033ef5dc1c5309edd3de4de}} 
+\index{main.c@{main.c}!ip\_opt@{ip\_opt}}
+\index{ip\_opt@{ip\_opt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ip\_opt}{ip\_opt}}
+{\footnotesize\ttfamily char ip\+\_\+opt\mbox{[}40\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_aecebf31a0e77d2b193a8ddb751934fe2}\label{main_8c_aecebf31a0e77d2b193a8ddb751934fe2}} 
+\index{main.c@{main.c}!ip\_optlen@{ip\_optlen}}
+\index{ip\_optlen@{ip\_optlen}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ip\_optlen}{ip\_optlen}}
+{\footnotesize\ttfamily unsigned ip\+\_\+optlen = 0}
+
+\mbox{\Hypertarget{main_8c_a06d158f399b84d0e5a06af1a1f175d2a}\label{main_8c_a06d158f399b84d0e5a06af1a1f175d2a}} 
+\index{main.c@{main.c}!ip\_tos@{ip\_tos}}
+\index{ip\_tos@{ip\_tos}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ip\_tos}{ip\_tos}}
+{\footnotesize\ttfamily unsigned int ip\+\_\+tos = 0}
+
+\mbox{\Hypertarget{main_8c_ad062de78f81964cdcb6cce72bab12f45}\label{main_8c_ad062de78f81964cdcb6cce72bab12f45}} 
+\index{main.c@{main.c}!linkhdr\_size@{linkhdr\_size}}
+\index{linkhdr\_size@{linkhdr\_size}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{linkhdr\_size}{linkhdr\_size}}
+{\footnotesize\ttfamily unsigned int linkhdr\+\_\+size}
+
+\mbox{\Hypertarget{main_8c_a1c546c2fe27878b8ec8aadada8edf643}\label{main_8c_a1c546c2fe27878b8ec8aadada8edf643}} 
+\index{main.c@{main.c}!lsr@{lsr}}
+\index{lsr@{lsr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{lsr}{lsr}}
+{\footnotesize\ttfamily unsigned char lsr\mbox{[}255\mbox{]} = \{0\}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a5b8464b2853447505dd03db6812c1e0d}{ip\+\_\+opt\+\_\+build()}} , 以及 \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}.
+
+\mbox{\Hypertarget{main_8c_a8f966a11150f357db42ad679f4657799}\label{main_8c_a8f966a11150f357db42ad679f4657799}} 
+\index{main.c@{main.c}!lsr\_length@{lsr\_length}}
+\index{lsr\_length@{lsr\_length}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{lsr\_length}{lsr\_length}}
+{\footnotesize\ttfamily unsigned int lsr\+\_\+length = 0}
+
+\mbox{\Hypertarget{main_8c_ab43aa22aa083fb340c5db339cef397bf}\label{main_8c_ab43aa22aa083fb340c5db339cef397bf}} 
+\index{main.c@{main.c}!opt\_badcksum@{opt\_badcksum}}
+\index{opt\_badcksum@{opt\_badcksum}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_badcksum}{opt\_badcksum}}
+{\footnotesize\ttfamily int opt\+\_\+badcksum = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a6971e872b4543ebfa54558f36d51d8b9}\label{main_8c_a6971e872b4543ebfa54558f36d51d8b9}} 
+\index{main.c@{main.c}!opt\_beep@{opt\_beep}}
+\index{opt\_beep@{opt\_beep}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_beep}{opt\_beep}}
+{\footnotesize\ttfamily int opt\+\_\+beep = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_af6a24de9dab7bf14c58093a5b29c7c1d}\label{main_8c_af6a24de9dab7bf14c58093a5b29c7c1d}} 
+\index{main.c@{main.c}!opt\_contdump@{opt\_contdump}}
+\index{opt\_contdump@{opt\_contdump}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_contdump}{opt\_contdump}}
+{\footnotesize\ttfamily int opt\+\_\+contdump = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a3640d0ffebfe2a23d4e568d9033ac1fe}\label{main_8c_a3640d0ffebfe2a23d4e568d9033ac1fe}} 
+\index{main.c@{main.c}!opt\_cplt\_rte@{opt\_cplt\_rte}}
+\index{opt\_cplt\_rte@{opt\_cplt\_rte}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_cplt\_rte}{opt\_cplt\_rte}}
+{\footnotesize\ttfamily int opt\+\_\+cplt\+\_\+rte = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a7d84cc1de1587151b8f4e5dbf6edef53}\label{main_8c_a7d84cc1de1587151b8f4e5dbf6edef53}} 
+\index{main.c@{main.c}!opt\_datafromfile@{opt\_datafromfile}}
+\index{opt\_datafromfile@{opt\_datafromfile}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_datafromfile}{opt\_datafromfile}}
+{\footnotesize\ttfamily int opt\+\_\+datafromfile = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_af1ab3d2fe7486d30b88de7261fff3130}\label{main_8c_af1ab3d2fe7486d30b88de7261fff3130}} 
+\index{main.c@{main.c}!opt\_debug@{opt\_debug}}
+\index{opt\_debug@{opt\_debug}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_debug}{opt\_debug}}
+{\footnotesize\ttfamily int opt\+\_\+debug = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ad045ac0fa8dc2af7313302c1080c01e3}\label{main_8c_ad045ac0fa8dc2af7313302c1080c01e3}} 
+\index{main.c@{main.c}!opt\_df@{opt\_df}}
+\index{opt\_df@{opt\_df}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_df}{opt\_df}}
+{\footnotesize\ttfamily int opt\+\_\+df = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a924353adc62215ae2439e220925f4c72}\label{main_8c_a924353adc62215ae2439e220925f4c72}} 
+\index{main.c@{main.c}!opt\_end@{opt\_end}}
+\index{opt\_end@{opt\_end}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_end}{opt\_end}}
+{\footnotesize\ttfamily int opt\+\_\+end = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_aab5e857463e118c76b784099d2b04b37}\label{main_8c_aab5e857463e118c76b784099d2b04b37}} 
+\index{main.c@{main.c}!opt\_flood@{opt\_flood}}
+\index{opt\_flood@{opt\_flood}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_flood}{opt\_flood}}
+{\footnotesize\ttfamily int opt\+\_\+flood = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a67fa17a1ab6a9c0100215866f4773e4a}\label{main_8c_a67fa17a1ab6a9c0100215866f4773e4a}} 
+\index{main.c@{main.c}!opt\_force\_icmp@{opt\_force\_icmp}}
+\index{opt\_force\_icmp@{opt\_force\_icmp}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_force\_icmp}{opt\_force\_icmp}}
+{\footnotesize\ttfamily int opt\+\_\+force\+\_\+icmp = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a8a0925e905101ef98f39d269c4c5d490}\label{main_8c_a8a0925e905101ef98f39d269c4c5d490}} 
+\index{main.c@{main.c}!opt\_force\_incdport@{opt\_force\_incdport}}
+\index{opt\_force\_incdport@{opt\_force\_incdport}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_force\_incdport}{opt\_force\_incdport}}
+{\footnotesize\ttfamily int opt\+\_\+force\+\_\+incdport = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a7f4ea085bf2d0bc01b00966edb1c49fe}\label{main_8c_a7f4ea085bf2d0bc01b00966edb1c49fe}} 
+\index{main.c@{main.c}!opt\_fragment@{opt\_fragment}}
+\index{opt\_fragment@{opt\_fragment}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_fragment}{opt\_fragment}}
+{\footnotesize\ttfamily int opt\+\_\+fragment = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a4c818a352be4462d0952223528ad60b9}\label{main_8c_a4c818a352be4462d0952223528ad60b9}} 
+\index{main.c@{main.c}!opt\_gethost@{opt\_gethost}}
+\index{opt\_gethost@{opt\_gethost}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_gethost}{opt\_gethost}}
+{\footnotesize\ttfamily int opt\+\_\+gethost = \mbox{\hyperlink{pcap-dos_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}}
+
+\mbox{\Hypertarget{main_8c_a273a4d215c7333288b66782bfc34c262}\label{main_8c_a273a4d215c7333288b66782bfc34c262}} 
+\index{main.c@{main.c}!opt\_hexdump@{opt\_hexdump}}
+\index{opt\_hexdump@{opt\_hexdump}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_hexdump}{opt\_hexdump}}
+{\footnotesize\ttfamily int opt\+\_\+hexdump = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a4c1585931ddc259e896a3b10542a1e8e}\label{main_8c_a4c1585931ddc259e896a3b10542a1e8e}} 
+\index{main.c@{main.c}!opt\_icmpcode@{opt\_icmpcode}}
+\index{opt\_icmpcode@{opt\_icmpcode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_icmpcode}{opt\_icmpcode}}
+{\footnotesize\ttfamily int opt\+\_\+icmpcode = \mbox{\hyperlink{hping2_8h_a81ea29c11f39b105fdef2c075b9a57ee}{DEFAULT\+\_\+\+ICMP\+\_\+\+CODE}}}
+
+\mbox{\Hypertarget{main_8c_a590a0ee97a08e5687390742d730a4695}\label{main_8c_a590a0ee97a08e5687390742d730a4695}} 
+\index{main.c@{main.c}!opt\_icmpmode@{opt\_icmpmode}}
+\index{opt\_icmpmode@{opt\_icmpmode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_icmpmode}{opt\_icmpmode}}
+{\footnotesize\ttfamily int opt\+\_\+icmpmode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a1c1681ef71240d47c5a5b46e45bbb9a3}\label{main_8c_a1c1681ef71240d47c5a5b46e45bbb9a3}} 
+\index{main.c@{main.c}!opt\_icmptype@{opt\_icmptype}}
+\index{opt\_icmptype@{opt\_icmptype}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_icmptype}{opt\_icmptype}}
+{\footnotesize\ttfamily int opt\+\_\+icmptype = \mbox{\hyperlink{hping2_8h_a76fc59cc55fa617fbdca80d5ea24211c}{DEFAULT\+\_\+\+ICMP\+\_\+\+TYPE}}}
+
+\mbox{\Hypertarget{main_8c_a5d838f95efbd6f6d7d28cb66290f9937}\label{main_8c_a5d838f95efbd6f6d7d28cb66290f9937}} 
+\index{main.c@{main.c}!opt\_incdport@{opt\_incdport}}
+\index{opt\_incdport@{opt\_incdport}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_incdport}{opt\_incdport}}
+{\footnotesize\ttfamily int opt\+\_\+incdport = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a52250405b6953484a30f1480670319b9}\label{main_8c_a52250405b6953484a30f1480670319b9}} 
+\index{main.c@{main.c}!opt\_keepstill@{opt\_keepstill}}
+\index{opt\_keepstill@{opt\_keepstill}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_keepstill}{opt\_keepstill}}
+{\footnotesize\ttfamily int opt\+\_\+keepstill = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_ae9439861ce4c9d4aac2eaa1ab5f709ee}\label{main_8c_ae9439861ce4c9d4aac2eaa1ab5f709ee}} 
+\index{main.c@{main.c}!opt\_listenmode@{opt\_listenmode}}
+\index{opt\_listenmode@{opt\_listenmode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_listenmode}{opt\_listenmode}}
+{\footnotesize\ttfamily int opt\+\_\+listenmode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a436df7a5561f1284493767fa1d8df580}\label{main_8c_a436df7a5561f1284493767fa1d8df580}} 
+\index{main.c@{main.c}!opt\_lsrr@{opt\_lsrr}}
+\index{opt\_lsrr@{opt\_lsrr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_lsrr}{opt\_lsrr}}
+{\footnotesize\ttfamily int opt\+\_\+lsrr = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a201576c8c944ebbc9c6524e6808f3b2a}\label{main_8c_a201576c8c944ebbc9c6524e6808f3b2a}} 
+\index{main.c@{main.c}!opt\_mf@{opt\_mf}}
+\index{opt\_mf@{opt\_mf}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_mf}{opt\_mf}}
+{\footnotesize\ttfamily int opt\+\_\+mf = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_aa03fa3634c3a68cb821416acf01c30af}\label{main_8c_aa03fa3634c3a68cb821416acf01c30af}} 
+\index{main.c@{main.c}!opt\_numeric@{opt\_numeric}}
+\index{opt\_numeric@{opt\_numeric}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_numeric}{opt\_numeric}}
+{\footnotesize\ttfamily int opt\+\_\+numeric = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a7929d58cee8e286616c8f3c1f565cea3}\label{main_8c_a7929d58cee8e286616c8f3c1f565cea3}} 
+\index{main.c@{main.c}!opt\_quiet@{opt\_quiet}}
+\index{opt\_quiet@{opt\_quiet}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_quiet}{opt\_quiet}}
+{\footnotesize\ttfamily int opt\+\_\+quiet = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_ab38f32bb8dd18bca53ddb3db3d853952}\label{main_8c_ab38f32bb8dd18bca53ddb3db3d853952}} 
+\index{main.c@{main.c}!opt\_rand\_dest@{opt\_rand\_dest}}
+\index{opt\_rand\_dest@{opt\_rand\_dest}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_rand\_dest}{opt\_rand\_dest}}
+{\footnotesize\ttfamily int opt\+\_\+rand\+\_\+dest = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_aad551c4bf388639cfdeb5ff979f18675}\label{main_8c_aad551c4bf388639cfdeb5ff979f18675}} 
+\index{main.c@{main.c}!opt\_rand\_source@{opt\_rand\_source}}
+\index{opt\_rand\_source@{opt\_rand\_source}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_rand\_source}{opt\_rand\_source}}
+{\footnotesize\ttfamily int opt\+\_\+rand\+\_\+source = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_af96cc2ab9bdc36c4832e315e1fb0f27d}\label{main_8c_af96cc2ab9bdc36c4832e315e1fb0f27d}} 
+\index{main.c@{main.c}!opt\_rawipmode@{opt\_rawipmode}}
+\index{opt\_rawipmode@{opt\_rawipmode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_rawipmode}{opt\_rawipmode}}
+{\footnotesize\ttfamily int opt\+\_\+rawipmode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ae70d8695428cf9ef7d6cf16ca1c45eb6}\label{main_8c_ae70d8695428cf9ef7d6cf16ca1c45eb6}} 
+\index{main.c@{main.c}!opt\_relid@{opt\_relid}}
+\index{opt\_relid@{opt\_relid}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_relid}{opt\_relid}}
+{\footnotesize\ttfamily int opt\+\_\+relid = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a6a205ebd500802c77d1d9ea715a14c2a}\label{main_8c_a6a205ebd500802c77d1d9ea715a14c2a}} 
+\index{main.c@{main.c}!opt\_rroute@{opt\_rroute}}
+\index{opt\_rroute@{opt\_rroute}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_rroute}{opt\_rroute}}
+{\footnotesize\ttfamily int opt\+\_\+rroute = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_af74e287fe1a3d45eeee223c1a9bf2ee1}\label{main_8c_af74e287fe1a3d45eeee223c1a9bf2ee1}} 
+\index{main.c@{main.c}!opt\_safe@{opt\_safe}}
+\index{opt\_safe@{opt\_safe}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_safe}{opt\_safe}}
+{\footnotesize\ttfamily int opt\+\_\+safe = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ae3b996d1c2d960279b890682aa86f8f4}\label{main_8c_ae3b996d1c2d960279b890682aa86f8f4}} 
+\index{main.c@{main.c}!opt\_scanmode@{opt\_scanmode}}
+\index{opt\_scanmode@{opt\_scanmode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_scanmode}{opt\_scanmode}}
+{\footnotesize\ttfamily int opt\+\_\+scanmode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a676c85860f4b74ffbf17f5b6a14332ab}\label{main_8c_a676c85860f4b74ffbf17f5b6a14332ab}} 
+\index{main.c@{main.c}!opt\_scanports@{opt\_scanports}}
+\index{opt\_scanports@{opt\_scanports}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_scanports}{opt\_scanports}}
+{\footnotesize\ttfamily char $\ast$ opt\+\_\+scanports = \char`\"{}\char`\"{}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a762fb7acc59299bae49670d52e1b8320}\label{main_8c_a762fb7acc59299bae49670d52e1b8320}} 
+\index{main.c@{main.c}!opt\_seqnum@{opt\_seqnum}}
+\index{opt\_seqnum@{opt\_seqnum}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_seqnum}{opt\_seqnum}}
+{\footnotesize\ttfamily int opt\+\_\+seqnum = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a0b9fec9eed0aeb69739f27aa82017b9b}\label{main_8c_a0b9fec9eed0aeb69739f27aa82017b9b}} 
+\index{main.c@{main.c}!opt\_sign@{opt\_sign}}
+\index{opt\_sign@{opt\_sign}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_sign}{opt\_sign}}
+{\footnotesize\ttfamily int opt\+\_\+sign = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ab19fe47b7cf5b13da371fb9468c26d93}\label{main_8c_ab19fe47b7cf5b13da371fb9468c26d93}} 
+\index{main.c@{main.c}!opt\_ssrr@{opt\_ssrr}}
+\index{opt\_ssrr@{opt\_ssrr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_ssrr}{opt\_ssrr}}
+{\footnotesize\ttfamily int opt\+\_\+ssrr = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_ab5e7218629149e8cd4da188fdb486deb}\label{main_8c_ab5e7218629149e8cd4da188fdb486deb}} 
+\index{main.c@{main.c}!opt\_tcp\_timestamp@{opt\_tcp\_timestamp}}
+\index{opt\_tcp\_timestamp@{opt\_tcp\_timestamp}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_tcp\_timestamp}{opt\_tcp\_timestamp}}
+{\footnotesize\ttfamily int opt\+\_\+tcp\+\_\+timestamp = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_abb22ae25d4a395c6e0b540cc37a63b13}\label{main_8c_abb22ae25d4a395c6e0b540cc37a63b13}} 
+\index{main.c@{main.c}!opt\_tcpexitcode@{opt\_tcpexitcode}}
+\index{opt\_tcpexitcode@{opt\_tcpexitcode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_tcpexitcode}{opt\_tcpexitcode}}
+{\footnotesize\ttfamily int opt\+\_\+tcpexitcode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_af8eb20ec721c88a6f63a3e6ef066624f}\label{main_8c_af8eb20ec721c88a6f63a3e6ef066624f}} 
+\index{main.c@{main.c}!opt\_tr\_keep\_ttl@{opt\_tr\_keep\_ttl}}
+\index{opt\_tr\_keep\_ttl@{opt\_tr\_keep\_ttl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_tr\_keep\_ttl}{opt\_tr\_keep\_ttl}}
+{\footnotesize\ttfamily int opt\+\_\+tr\+\_\+keep\+\_\+ttl = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_aa95b4bbd88b261fa4da77a505e0c3353}\label{main_8c_aa95b4bbd88b261fa4da77a505e0c3353}} 
+\index{main.c@{main.c}!opt\_tr\_no\_rtt@{opt\_tr\_no\_rtt}}
+\index{opt\_tr\_no\_rtt@{opt\_tr\_no\_rtt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_tr\_no\_rtt}{opt\_tr\_no\_rtt}}
+{\footnotesize\ttfamily int opt\+\_\+tr\+\_\+no\+\_\+rtt = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_aedbb2664d988fa3a6c271de585fa4260}\label{main_8c_aedbb2664d988fa3a6c271de585fa4260}} 
+\index{main.c@{main.c}!opt\_tr\_stop@{opt\_tr\_stop}}
+\index{opt\_tr\_stop@{opt\_tr\_stop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_tr\_stop}{opt\_tr\_stop}}
+{\footnotesize\ttfamily int opt\+\_\+tr\+\_\+stop = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a91c529fef1d3cd0002e3fe2ccabe2dd5}\label{main_8c_a91c529fef1d3cd0002e3fe2ccabe2dd5}} 
+\index{main.c@{main.c}!opt\_traceroute@{opt\_traceroute}}
+\index{opt\_traceroute@{opt\_traceroute}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_traceroute}{opt\_traceroute}}
+{\footnotesize\ttfamily int opt\+\_\+traceroute = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a829a520a76fb048736c250eff24e85e9}\label{main_8c_a829a520a76fb048736c250eff24e85e9}} 
+\index{main.c@{main.c}!opt\_udpmode@{opt\_udpmode}}
+\index{opt\_udpmode@{opt\_udpmode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_udpmode}{opt\_udpmode}}
+{\footnotesize\ttfamily int opt\+\_\+udpmode = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a68c6795825554fff6f4b5ad6fbed441a}\label{main_8c_a68c6795825554fff6f4b5ad6fbed441a}} 
+\index{main.c@{main.c}!opt\_verbose@{opt\_verbose}}
+\index{opt\_verbose@{opt\_verbose}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_verbose}{opt\_verbose}}
+{\footnotesize\ttfamily int opt\+\_\+verbose = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_aa5ceab431a08f1b4eb39510becbf8d97}\label{main_8c_aa5ceab431a08f1b4eb39510becbf8d97}} 
+\index{main.c@{main.c}!opt\_waitinusec@{opt\_waitinusec}}
+\index{opt\_waitinusec@{opt\_waitinusec}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_waitinusec}{opt\_waitinusec}}
+{\footnotesize\ttfamily int opt\+\_\+waitinusec = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_ae4cc9bd75a7c87624a52f8b84ffa83d2}\label{main_8c_ae4cc9bd75a7c87624a52f8b84ffa83d2}} 
+\index{main.c@{main.c}!opt\_winid\_order@{opt\_winid\_order}}
+\index{opt\_winid\_order@{opt\_winid\_order}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{opt\_winid\_order}{opt\_winid\_order}}
+{\footnotesize\ttfamily int opt\+\_\+winid\+\_\+order = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a41d10d6d9dd09994f0772d3979b249c3}\label{main_8c_a41d10d6d9dd09994f0772d3979b249c3}} 
+\index{main.c@{main.c}!out\_of\_sequence\_pkt@{out\_of\_sequence\_pkt}}
+\index{out\_of\_sequence\_pkt@{out\_of\_sequence\_pkt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{out\_of\_sequence\_pkt}{out\_of\_sequence\_pkt}}
+{\footnotesize\ttfamily int out\+\_\+of\+\_\+sequence\+\_\+pkt = 0}
+
+\mbox{\Hypertarget{main_8c_a2b9bb241b38decf7a4f029f07b4e23f6}\label{main_8c_a2b9bb241b38decf7a4f029f07b4e23f6}} 
+\index{main.c@{main.c}!pcapfp@{pcapfp}}
+\index{pcapfp@{pcapfp}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pcapfp}{pcapfp}}
+{\footnotesize\ttfamily pcap\+\_\+t$\ast$ pcapfp}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_ace5f82c0c1d233937e68b94de191a5b5}{close\+\_\+pcap()}}, \mbox{\hyperlink{getlhs_8c_aaf84b07cf9b335dc1b5230148a3d28f2}{get\+\_\+linkhdr\+\_\+size()}}, \mbox{\hyperlink{hping2_8h_a90406c63de74e37976821bf4c5afbc9e}{open\+\_\+pcap()}} , 以及 \mbox{\hyperlink{hping2_8h_a6a53f92871b68acc848b9a3f6011da4e}{pcap\+\_\+recv()}}.
+
+\mbox{\Hypertarget{main_8c_aed247f7066a0dbafc5e3b952f1aa7b49}\label{main_8c_aed247f7066a0dbafc5e3b952f1aa7b49}} 
+\index{main.c@{main.c}!raw\_ip\_protocol@{raw\_ip\_protocol}}
+\index{raw\_ip\_protocol@{raw\_ip\_protocol}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{raw\_ip\_protocol}{raw\_ip\_protocol}}
+{\footnotesize\ttfamily int raw\+\_\+ip\+\_\+protocol = \mbox{\hyperlink{hping2_8h_a6ec9a51f94c215ea8108a502627dde4b}{DEFAULT\+\_\+\+RAW\+\_\+\+IP\+\_\+\+PROTOCOL}}}
+
+\mbox{\Hypertarget{main_8c_a935054c9eb5f6a70eb4c93981b7b8112}\label{main_8c_a935054c9eb5f6a70eb4c93981b7b8112}} 
+\index{main.c@{main.c}!recv\_pkt@{recv\_pkt}}
+\index{recv\_pkt@{recv\_pkt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{recv\_pkt}{recv\_pkt}}
+{\footnotesize\ttfamily int recv\+\_\+pkt = 0}
+
+\mbox{\Hypertarget{main_8c_aec8b4d4444bcb6dbf710d27cc3554665}\label{main_8c_aec8b4d4444bcb6dbf710d27cc3554665}} 
+\index{main.c@{main.c}!remote@{remote}}
+\index{remote@{remote}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{remote}{remote}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in icmp\+\_\+ip\+\_\+src icmp\+\_\+ip\+\_\+dst icmp\+\_\+gw local remote}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}}, \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{scan_8c_acb18701d79099260adfd7ca0945e5d22}{receiver()}}, \mbox{\hyperlink{waitpacket_8c_a10dea52f814d363f8fd045a18f6cd60f}{recv\+\_\+icmp()}}, \mbox{\hyperlink{send_8c_ad855ce8b07912ad09a6f37d4d5adf41f}{select\+\_\+next\+\_\+random\+\_\+dest()}}, \mbox{\hyperlink{hping2_8h_a0fe6f3c9981f5a68cc3c0e4ae48874ca}{send\+\_\+ip()}}, \mbox{\hyperlink{hping2_8h_a7f4517543aca90dd837d76227783ae78}{send\+\_\+ip\+\_\+handler()}}, \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}}, \mbox{\hyperlink{hping2_8h_a984febb545a5d04809ffde7c10a53df6}{send\+\_\+udp()}} , 以及 \mbox{\hyperlink{hping2_8h_a079e5f804a3ee5589defe097e2dd0810}{wait\+\_\+packet()}}.
+
+\mbox{\Hypertarget{main_8c_afd9a5333954faea0495f8fa8e6167dd9}\label{main_8c_afd9a5333954faea0495f8fa8e6167dd9}} 
+\index{main.c@{main.c}!rsign@{rsign}}
+\index{rsign@{rsign}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rsign}{rsign}}
+{\footnotesize\ttfamily char rsign\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a1521cc16e96b4a60e4c0f18d6f0a5261}\label{main_8c_a1521cc16e96b4a60e4c0f18d6f0a5261}} 
+\index{main.c@{main.c}!rtt\_avg@{rtt\_avg}}
+\index{rtt\_avg@{rtt\_avg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rtt\_avg}{rtt\_avg}}
+{\footnotesize\ttfamily float rtt\+\_\+avg = 0}
+
+\mbox{\Hypertarget{main_8c_a500bb3dc86c57e2c20341e6b218004b0}\label{main_8c_a500bb3dc86c57e2c20341e6b218004b0}} 
+\index{main.c@{main.c}!rtt\_max@{rtt\_max}}
+\index{rtt\_max@{rtt\_max}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rtt\_max}{rtt\_max}}
+{\footnotesize\ttfamily float rtt\+\_\+max = 0}
+
+\mbox{\Hypertarget{main_8c_a16c2da0f27de9c87f077d2b62b1c57db}\label{main_8c_a16c2da0f27de9c87f077d2b62b1c57db}} 
+\index{main.c@{main.c}!rtt\_min@{rtt\_min}}
+\index{rtt\_min@{rtt\_min}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rtt\_min}{rtt\_min}}
+{\footnotesize\ttfamily float rtt\+\_\+min = 0}
+
+
+
+被这些函数引用 \mbox{\hyperlink{rtt_8c_ae548d949068a57833890ac1b3b31fbd1}{minavgmax()}} , 以及 \mbox{\hyperlink{hping2_8h_a6578ac428fac8022b788f3b58499ba81}{print\+\_\+statistics()}}.
+
+\mbox{\Hypertarget{main_8c_a3a412ae544cb411a594a6439b0e9402f}\label{main_8c_a3a412ae544cb411a594a6439b0e9402f}} 
+\index{main.c@{main.c}!sending\_wait@{sending\_wait}}
+\index{sending\_wait@{sending\_wait}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sending\_wait}{sending\_wait}}
+{\footnotesize\ttfamily int sending\+\_\+wait = \mbox{\hyperlink{hping2_8h_ac26485c01c167fceea6ae7fb9dc0c39d}{DEFAULT\+\_\+\+SENDINGWAIT}}}
+
+\mbox{\Hypertarget{main_8c_a09cb00fd8967ae97f149e1fa8efb664c}\label{main_8c_a09cb00fd8967ae97f149e1fa8efb664c}} 
+\index{main.c@{main.c}!sent\_pkt@{sent\_pkt}}
+\index{sent\_pkt@{sent\_pkt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sent\_pkt}{sent\_pkt}}
+{\footnotesize\ttfamily int sent\+\_\+pkt = 0}
+
+\mbox{\Hypertarget{main_8c_acc80722d9dd9349cbba06c72d6fb5972}\label{main_8c_acc80722d9dd9349cbba06c72d6fb5972}} 
+\index{main.c@{main.c}!sequence@{sequence}}
+\index{sequence@{sequence}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily int sequence = 0}
+
+\mbox{\Hypertarget{main_8c_aee2bef02d678549b2cc5efaa467c69a3}\label{main_8c_aee2bef02d678549b2cc5efaa467c69a3}} 
+\index{main.c@{main.c}!set\_ack@{set\_ack}}
+\index{set\_ack@{set\_ack}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{set\_ack}{set\_ack}}
+{\footnotesize\ttfamily unsigned int set\+\_\+ack}
+
+\mbox{\Hypertarget{main_8c_a93d855b390b5233e065543bb6fd44882}\label{main_8c_a93d855b390b5233e065543bb6fd44882}} 
+\index{main.c@{main.c}!set\_seqnum@{set\_seqnum}}
+\index{set\_seqnum@{set\_seqnum}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{set\_seqnum}{set\_seqnum}}
+{\footnotesize\ttfamily unsigned int set\+\_\+seqnum = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_ab810ad4f7c0efd73662227c61460490b}\label{main_8c_ab810ad4f7c0efd73662227c61460490b}} 
+\index{main.c@{main.c}!sign@{sign}}
+\index{sign@{sign}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sign}{sign}}
+{\footnotesize\ttfamily char sign\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a8bd6583d65e0d285b795ae6e710f3dd3}\label{main_8c_a8bd6583d65e0d285b795ae6e710f3dd3}} 
+\index{main.c@{main.c}!signlen@{signlen}}
+\index{signlen@{signlen}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{signlen}{signlen}}
+{\footnotesize\ttfamily unsigned int signlen}
+
+\mbox{\Hypertarget{main_8c_a9ab640fbc677c01c857d7c98019846ca}\label{main_8c_a9ab640fbc677c01c857d7c98019846ca}} 
+\index{main.c@{main.c}!sockpacket@{sockpacket}}
+\index{sockpacket@{sockpacket}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sockpacket}{sockpacket}}
+{\footnotesize\ttfamily int sockpacket}
+
+\mbox{\Hypertarget{main_8c_a8deaa534e5c3e5a3d687d1aaccf34c20}\label{main_8c_a8deaa534e5c3e5a3d687d1aaccf34c20}} 
+\index{main.c@{main.c}!sockraw@{sockraw}}
+\index{sockraw@{sockraw}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sockraw}{sockraw}}
+{\footnotesize\ttfamily int sockraw}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_af8306fb85ce5170e6f98322734373f70}\label{main_8c_af8306fb85ce5170e6f98322734373f70}} 
+\index{main.c@{main.c}!spoofaddr@{spoofaddr}}
+\index{spoofaddr@{spoofaddr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{spoofaddr}{spoofaddr}}
+{\footnotesize\ttfamily char spoofaddr\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_ab6ed860f996b7f424f202a690aa2fb69}\label{main_8c_ab6ed860f996b7f424f202a690aa2fb69}} 
+\index{main.c@{main.c}!src\_id@{src\_id}}
+\index{src\_id@{src\_id}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{src\_id}{src\_id}}
+{\footnotesize\ttfamily int src\+\_\+id = -\/1}
+
+\mbox{\Hypertarget{main_8c_a2d47efc2f2609185cf802853871de027}\label{main_8c_a2d47efc2f2609185cf802853871de027}} 
+\index{main.c@{main.c}!src\_port@{src\_port}}
+\index{src\_port@{src\_port}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{src\_port}{src\_port}}
+{\footnotesize\ttfamily int src\+\_\+port}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a2140fcc67ba0c2730a476f85bf75c99e}\label{main_8c_a2140fcc67ba0c2730a476f85bf75c99e}} 
+\index{main.c@{main.c}!src\_thoff@{src\_thoff}}
+\index{src\_thoff@{src\_thoff}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{src\_thoff}{src\_thoff}}
+{\footnotesize\ttfamily int src\+\_\+thoff = (\mbox{\hyperlink{hping2_8h_aca86f55de8648ffb0cadb8d8c6b7f272}{TCPHDR\+\_\+\+SIZE}} $>$$>$ 2)}
+
+\mbox{\Hypertarget{main_8c_a6ced2f3734fd89fe4b315d78bf91754c}\label{main_8c_a6ced2f3734fd89fe4b315d78bf91754c}} 
+\index{main.c@{main.c}!src\_ttl@{src\_ttl}}
+\index{src\_ttl@{src\_ttl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{src\_ttl}{src\_ttl}}
+{\footnotesize\ttfamily int src\+\_\+ttl = \mbox{\hyperlink{hping2_8h_aa9b73542f958f4edfe5ebea8efe0ff8b}{DEFAULT\+\_\+\+TTL}}}
+
+\mbox{\Hypertarget{main_8c_aa9e178c9fe8deae0a3fc655676877eaf}\label{main_8c_aa9e178c9fe8deae0a3fc655676877eaf}} 
+\index{main.c@{main.c}!src\_winsize@{src\_winsize}}
+\index{src\_winsize@{src\_winsize}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{src\_winsize}{src\_winsize}}
+{\footnotesize\ttfamily int src\+\_\+winsize = \mbox{\hyperlink{hping2_8h_a24b86cdf4ae6f972191086fad2fac608}{DEFAULT\+\_\+\+SRCWINSIZE}}}
+
+\mbox{\Hypertarget{main_8c_a07c9c739f8998bca2f2dc9a21e3a0d8a}\label{main_8c_a07c9c739f8998bca2f2dc9a21e3a0d8a}} 
+\index{main.c@{main.c}!ssr@{ssr}}
+\index{ssr@{ssr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ssr}{ssr}}
+{\footnotesize\ttfamily unsigned char ssr\mbox{[}255\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{main_8c_a13155c4475d7adc98be9c48c91ac7dbe}\label{main_8c_a13155c4475d7adc98be9c48c91ac7dbe}} 
+\index{main.c@{main.c}!ssr\_length@{ssr\_length}}
+\index{ssr\_length@{ssr\_length}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ssr\_length}{ssr\_length}}
+{\footnotesize\ttfamily unsigned int ssr\+\_\+length = 0}
+
+\mbox{\Hypertarget{main_8c_ae9abba9190a6034a481b0d9321642e18}\label{main_8c_ae9abba9190a6034a481b0d9321642e18}} 
+\index{main.c@{main.c}!targetname@{targetname}}
+\index{targetname@{targetname}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{targetname}{targetname}}
+{\footnotesize\ttfamily char targetname\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_a400b80d0b852148529200e39e6196d59}\label{main_8c_a400b80d0b852148529200e39e6196d59}} 
+\index{main.c@{main.c}!targetstraddr@{targetstraddr}}
+\index{targetstraddr@{targetstraddr}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{targetstraddr}{targetstraddr}}
+{\footnotesize\ttfamily char targetstraddr\mbox{[}1024\mbox{]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{main_8c_af01379907bb07fdd57dabeef377fd092}\label{main_8c_af01379907bb07fdd57dabeef377fd092}} 
+\index{main.c@{main.c}!tcp\_ack@{tcp\_ack}}
+\index{tcp\_ack@{tcp\_ack}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tcp\_ack}{tcp\_ack}}
+{\footnotesize\ttfamily unsigned int tcp\+\_\+ack}
+
+\mbox{\Hypertarget{main_8c_a073736dd0b8962be665c187c3e5d1fd3}\label{main_8c_a073736dd0b8962be665c187c3e5d1fd3}} 
+\index{main.c@{main.c}!tcp\_exitcode@{tcp\_exitcode}}
+\index{tcp\_exitcode@{tcp\_exitcode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tcp\_exitcode}{tcp\_exitcode}}
+{\footnotesize\ttfamily int tcp\+\_\+exitcode = 0}
+
+\mbox{\Hypertarget{main_8c_a8c149f286b6ea5d70093287263dc9ff9}\label{main_8c_a8c149f286b6ea5d70093287263dc9ff9}} 
+\index{main.c@{main.c}!tcp\_seqnum@{tcp\_seqnum}}
+\index{tcp\_seqnum@{tcp\_seqnum}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tcp\_seqnum}{tcp\_seqnum}}
+{\footnotesize\ttfamily unsigned int tcp\+\_\+seqnum = \mbox{\hyperlink{pcap-dos_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+\mbox{\Hypertarget{main_8c_a18025c8e9ed6306d6aeae4bdd42ddad2}\label{main_8c_a18025c8e9ed6306d6aeae4bdd42ddad2}} 
+\index{main.c@{main.c}!tcp\_th\_flags@{tcp\_th\_flags}}
+\index{tcp\_th\_flags@{tcp\_th\_flags}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tcp\_th\_flags}{tcp\_th\_flags}}
+{\footnotesize\ttfamily unsigned int tcp\+\_\+th\+\_\+flags = 0}
+
+
+
+被这些函数引用 \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}} , 以及 \mbox{\hyperlink{hping2_8h_ac5a608ca63405ccbf5e7cf7dc51b9105}{send\+\_\+tcp()}}.
+
+\mbox{\Hypertarget{main_8c_a179df26f82a603e41f4c556e7a206dcf}\label{main_8c_a179df26f82a603e41f4c556e7a206dcf}} 
+\index{main.c@{main.c}!usec\_delay@{usec\_delay}}
+\index{usec\_delay@{usec\_delay}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{usec\_delay}{usec\_delay}}
+{\footnotesize\ttfamily struct itimerval usec\+\_\+delay}
+
+
+
+被这些函数引用 \mbox{\hyperlink{hping2_8h_a7839ef185aa2a98ae0608aa53ece002c}{parse\+\_\+options()}}, \mbox{\hyperlink{hping2_8h_ae4b580ccace3b0d5f7421742a3937c8f}{rtt()}}, \mbox{\hyperlink{hping2_8h_ad57d328977c476c9325b74a2f95019d9}{send\+\_\+packet()}} , 以及 \mbox{\hyperlink{scan_8c_a6dddfa3e97245047d31975baa6a9690e}{sender()}}.
+
+\mbox{\Hypertarget{main_8c_a90ddecdfd283068214166bf9164830a0}\label{main_8c_a90ddecdfd283068214166bf9164830a0}} 
+\index{main.c@{main.c}!virtual\_mtu@{virtual\_mtu}}
+\index{virtual\_mtu@{virtual\_mtu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{virtual\_mtu}{virtual\_mtu}}
+{\footnotesize\ttfamily unsigned int virtual\+\_\+mtu = \mbox{\hyperlink{hping2_8h_a8ccc833cd657422e39463ed55fbf876b}{DEFAULT\+\_\+\+VIRTUAL\+\_\+\+MTU}}}
+

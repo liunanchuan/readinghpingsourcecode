@@ -1,0 +1,355 @@
+\hypertarget{nameser_8h_source}{}\doxysection{nameser.\+h}
+\label{nameser_8h_source}\index{libpcap-\/1.1.1/Win32/Include/arpa/nameser.h@{libpcap-\/1.1.1/Win32/Include/arpa/nameser.h}}
+\mbox{\hyperlink{nameser_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * ++Copyright++ 1983, 1989, 1993}}
+\DoxyCodeLine{3 \textcolor{comment}{ * -\/}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Copyright (c) 1983, 1989, 1993}}
+\DoxyCodeLine{5 \textcolor{comment}{ *    The Regents of the University of California.  All rights reserved.}}
+\DoxyCodeLine{6 \textcolor{comment}{ * }}
+\DoxyCodeLine{7 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{8 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{9 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{11 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{12 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{13 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{14 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{15 \textcolor{comment}{ * 3. All advertising materials mentioning features or use of this software}}
+\DoxyCodeLine{16 \textcolor{comment}{ *    must display the following acknowledgement:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *  This product includes software developed by the University of}}
+\DoxyCodeLine{18 \textcolor{comment}{ *  California, Berkeley and its contributors.}}
+\DoxyCodeLine{19 \textcolor{comment}{ * 4. Neither the name of the University nor the names of its contributors}}
+\DoxyCodeLine{20 \textcolor{comment}{ *    may be used to endorse or promote products derived from this software}}
+\DoxyCodeLine{21 \textcolor{comment}{ *    without specific prior written permission.}}
+\DoxyCodeLine{22 \textcolor{comment}{ * }}
+\DoxyCodeLine{23 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND}}
+\DoxyCodeLine{24 \textcolor{comment}{ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{26 \textcolor{comment}{ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE}}
+\DoxyCodeLine{27 \textcolor{comment}{ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL}}
+\DoxyCodeLine{28 \textcolor{comment}{ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS}}
+\DoxyCodeLine{29 \textcolor{comment}{ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{30 \textcolor{comment}{ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT}}
+\DoxyCodeLine{31 \textcolor{comment}{ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY}}
+\DoxyCodeLine{32 \textcolor{comment}{ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF}}
+\DoxyCodeLine{33 \textcolor{comment}{ * SUCH DAMAGE.}}
+\DoxyCodeLine{34 \textcolor{comment}{ * -\/}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Portions Copyright (c) 1993 by Digital Equipment Corporation.}}
+\DoxyCodeLine{36 \textcolor{comment}{ * }}
+\DoxyCodeLine{37 \textcolor{comment}{ * Permission to use, copy, modify, and distribute this software for any}}
+\DoxyCodeLine{38 \textcolor{comment}{ * purpose with or without fee is hereby granted, provided that the above}}
+\DoxyCodeLine{39 \textcolor{comment}{ * copyright notice and this permission notice appear in all copies, and that}}
+\DoxyCodeLine{40 \textcolor{comment}{ * the name of Digital Equipment Corporation not be used in advertising or}}
+\DoxyCodeLine{41 \textcolor{comment}{ * publicity pertaining to distribution of the document or software without}}
+\DoxyCodeLine{42 \textcolor{comment}{ * specific, written prior permission.}}
+\DoxyCodeLine{43 \textcolor{comment}{ * }}
+\DoxyCodeLine{44 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{} AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL}}
+\DoxyCodeLine{45 \textcolor{comment}{ * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES}}
+\DoxyCodeLine{46 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT}}
+\DoxyCodeLine{47 \textcolor{comment}{ * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL}}
+\DoxyCodeLine{48 \textcolor{comment}{ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR}}
+\DoxyCodeLine{49 \textcolor{comment}{ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS}}
+\DoxyCodeLine{50 \textcolor{comment}{ * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS}}
+\DoxyCodeLine{51 \textcolor{comment}{ * SOFTWARE.}}
+\DoxyCodeLine{52 \textcolor{comment}{ * -\/}}
+\DoxyCodeLine{53 \textcolor{comment}{ * -\/-\/Copyright-\/-\/}}
+\DoxyCodeLine{54 \textcolor{comment}{ */}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{/*}}
+\DoxyCodeLine{57 \textcolor{comment}{ *      @(\#)nameser.h   8.1 (Berkeley) 6/2/93}}
+\DoxyCodeLine{58 \textcolor{comment}{ *  nameser.h,v 1.2 1995/05/06 14:23:54 hjl Exp}}
+\DoxyCodeLine{59 \textcolor{comment}{ */}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifndef \_NAMESER\_H\_}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define \_NAMESER\_H\_}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifndef WIN32}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <sys/param.h>}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#if (!defined(BSD)) || (BSD < 199306)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\# include <sys/bitypes.h>}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\# include <sys/types.h>}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include <sys/cdefs.h>}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pcap-stdinc_8h}{pcap-\/stdinc.h}}>}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define \_\_LITTLE\_ENDIAN 1}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define \_\_BYTE\_ORDER \_\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/*}}
+\DoxyCodeLine{79 \textcolor{comment}{ * revision information.  this is the release date in YYYYMMDD format.}}
+\DoxyCodeLine{80 \textcolor{comment}{ * it can change every day so the right thing to do with it is use it}}
+\DoxyCodeLine{81 \textcolor{comment}{ * in preprocessor commands such as "{}\#if (\_\_BIND > 19931104)"{}.  do not}}
+\DoxyCodeLine{82 \textcolor{comment}{ * compare for equality; rather, use it to determine whether your resolver}}
+\DoxyCodeLine{83 \textcolor{comment}{ * is new enough to contain a certain feature.}}
+\DoxyCodeLine{84 \textcolor{comment}{ */}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define \_\_BIND      19940417    }\textcolor{comment}{/* interface version stamp */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/*}}
+\DoxyCodeLine{89 \textcolor{comment}{ * Define constants based on rfc883}}
+\DoxyCodeLine{90 \textcolor{comment}{ */}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define PACKETSZ    512     }\textcolor{comment}{/* maximum packet size */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define MAXDNAME    256     }\textcolor{comment}{/* maximum domain name */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define MAXCDNAME   255     }\textcolor{comment}{/* maximum compressed domain name */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define MAXLABEL    63      }\textcolor{comment}{/* maximum length of domain label */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define HFIXEDSZ    12      }\textcolor{comment}{/* \#/bytes of fixed data in header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define QFIXEDSZ    4       }\textcolor{comment}{/* \#/bytes of fixed data in query */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define RRFIXEDSZ   10      }\textcolor{comment}{/* \#/bytes of fixed data in r record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define INT32SZ     4       }\textcolor{comment}{/* for systems without 32-\/bit ints */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define INT16SZ     2       }\textcolor{comment}{/* for systems without 16-\/bit ints */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define INADDRSZ    4       }\textcolor{comment}{/* for sizeof(struct inaddr) != 4 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{/*}}
+\DoxyCodeLine{103 \textcolor{comment}{ * Internet nameserver port number}}
+\DoxyCodeLine{104 \textcolor{comment}{ */}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define NAMESERVER\_PORT 53}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{comment}{/*}}
+\DoxyCodeLine{108 \textcolor{comment}{ * Currently defined opcodes}}
+\DoxyCodeLine{109 \textcolor{comment}{ */}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define QUERY       0x0     }\textcolor{comment}{/* standard query */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define IQUERY      0x1     }\textcolor{comment}{/* inverse query */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define STATUS      0x2     }\textcolor{comment}{/* nameserver status query */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{113 \textcolor{comment}{/*\#define xxx       0x3     */}\textcolor{comment}{/* 0x3 reserved */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define NS\_NOTIFY\_OP    0x4     }\textcolor{comment}{/* notify secondary of SOA change */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#ifdef ALLOW\_UPDATES}}
+\DoxyCodeLine{116     \textcolor{comment}{/* non standard -\/ supports ALLOW\_UPDATES stuff from Mike Schwartz */}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\# define UPDATEA    0x9     }\textcolor{comment}{/* add resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\# define UPDATED    0xa     }\textcolor{comment}{/* delete a specific resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\# define UPDATEDA   0xb     }\textcolor{comment}{/* delete all named resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\# define UPDATEM    0xc     }\textcolor{comment}{/* modify a specific resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\# define UPDATEMA   0xd     }\textcolor{comment}{/* modify all named resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\# define ZONEINIT   0xe     }\textcolor{comment}{/* initial zone transfer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\# define ZONEREF    0xf     }\textcolor{comment}{/* incremental zone referesh */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/*}}
+\DoxyCodeLine{127 \textcolor{comment}{ * Currently defined response codes}}
+\DoxyCodeLine{128 \textcolor{comment}{ */}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#ifdef HAVE\_ADDRINFO}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define NOERROR     0       }\textcolor{comment}{/* no error */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* HAVE\_ADDRINFO */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define FORMERR     1       }\textcolor{comment}{/* format error */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define SERVFAIL    2       }\textcolor{comment}{/* server failure */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define NXDOMAIN    3       }\textcolor{comment}{/* non existent domain */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define NOTIMP      4       }\textcolor{comment}{/* not implemented */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define REFUSED     5       }\textcolor{comment}{/* query refused */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#ifdef ALLOW\_UPDATES}}
+\DoxyCodeLine{138     \textcolor{comment}{/* non standard */}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\# define NOCHANGE   0xf     }\textcolor{comment}{/* update failed to change db */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{/*}}
+\DoxyCodeLine{143 \textcolor{comment}{ * Type values for resources and queries}}
+\DoxyCodeLine{144 \textcolor{comment}{ */}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define T\_A     1       }\textcolor{comment}{/* host address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define T\_NS        2       }\textcolor{comment}{/* authoritative server */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define T\_MD        3       }\textcolor{comment}{/* mail destination */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define T\_MF        4       }\textcolor{comment}{/* mail forwarder */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define T\_CNAME     5       }\textcolor{comment}{/* canonical name */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define T\_SOA       6       }\textcolor{comment}{/* start of authority zone */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define T\_MB        7       }\textcolor{comment}{/* mailbox domain name */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define T\_MG        8       }\textcolor{comment}{/* mail group member */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define T\_MR        9       }\textcolor{comment}{/* mail rename name */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define T\_NULL      10      }\textcolor{comment}{/* null resource record */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define T\_WKS       11      }\textcolor{comment}{/* well known service */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define T\_PTR       12      }\textcolor{comment}{/* domain name pointer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define T\_HINFO     13      }\textcolor{comment}{/* host information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define T\_MINFO     14      }\textcolor{comment}{/* mailbox information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define T\_MX        15      }\textcolor{comment}{/* mail routing information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define T\_TXT       16      }\textcolor{comment}{/* text strings */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define T\_RP        17      }\textcolor{comment}{/* responsible person */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define T\_AFSDB     18      }\textcolor{comment}{/* AFS cell database */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define T\_X25       19      }\textcolor{comment}{/* X\_25 calling address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define T\_ISDN      20      }\textcolor{comment}{/* ISDN calling address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define T\_RT        21      }\textcolor{comment}{/* router */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define T\_NSAP      22      }\textcolor{comment}{/* NSAP address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define T\_NSAP\_PTR  23      }\textcolor{comment}{/* reverse NSAP lookup (deprecated) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define T\_SIG       24      }\textcolor{comment}{/* security signature */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define T\_KEY       25      }\textcolor{comment}{/* security key */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define T\_PX        26      }\textcolor{comment}{/* X.400 mail mapping */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define T\_GPOS      27      }\textcolor{comment}{/* geographical position (withdrawn) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define T\_AAAA      28      }\textcolor{comment}{/* IP6 Address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define T\_LOC       29      }\textcolor{comment}{/* Location Information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{174     \textcolor{comment}{/* non standard */}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define T\_UINFO     100     }\textcolor{comment}{/* user (finger) information */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define T\_UID       101     }\textcolor{comment}{/* user ID */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define T\_GID       102     }\textcolor{comment}{/* group ID */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define T\_UNSPEC    103     }\textcolor{comment}{/* Unspecified format (binary data) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{179     \textcolor{comment}{/* Query type values which do not appear in resource records */}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define T\_AXFR      252     }\textcolor{comment}{/* transfer zone of authority */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define T\_MAILB     253     }\textcolor{comment}{/* transfer mailbox records */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define T\_MAILA     254     }\textcolor{comment}{/* transfer mail agent records */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define T\_ANY       255     }\textcolor{comment}{/* wildcard match */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{/*}}
+\DoxyCodeLine{186 \textcolor{comment}{ * Values for class field}}
+\DoxyCodeLine{187 \textcolor{comment}{ */}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define C\_IN        1       }\textcolor{comment}{/* the arpa internet */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define C\_CHAOS     3       }\textcolor{comment}{/* for chaos net (MIT) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define C\_HS        4       }\textcolor{comment}{/* for Hesiod name server (MIT) (XXX) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{192     \textcolor{comment}{/* Query class values which do not appear in resource records */}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define C\_ANY       255     }\textcolor{comment}{/* wildcard match */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{/*}}
+\DoxyCodeLine{196 \textcolor{comment}{ * Status return codes for T\_UNSPEC conversion routines}}
+\DoxyCodeLine{197 \textcolor{comment}{ */}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define CONV\_SUCCESS    0}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define CONV\_OVERFLOW   (-\/1)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define CONV\_BADFMT (-\/2)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define CONV\_BADCKSUM   (-\/3)}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define CONV\_BADBUFLEN  (-\/4)}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#ifndef \_\_BYTE\_ORDER}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#if (BSD >= 199103)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\# include <machine/endian.h>}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#ifdef linux}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\# include <endian.h>}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define \_\_LITTLE\_ENDIAN 1234    }\textcolor{comment}{/* least-\/significant byte first (vax, pc) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define \_\_BIG\_ENDIAN    4321    }\textcolor{comment}{/* most-\/significant byte first (IBM, net) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define \_\_PDP\_ENDIAN    3412    }\textcolor{comment}{/* LSB first in word, MSW first in long (pdp)*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#if defined(vax) || defined(ns32000) || defined(sun386) || defined(i386) || \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{    defined(MIPSEL) || defined(\_MIPSEL) || defined(BIT\_ZERO\_ON\_RIGHT) || \(\backslash\)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{    defined(\_\_alpha\_\_) || defined(\_\_alpha)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define \_\_BYTE\_ORDER    \_\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#if defined(sel) || defined(pyr) || defined(mc68000) || defined(sparc) || \(\backslash\)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{    defined(is68k) || defined(tahoe) || defined(ibm032) || defined(ibm370) || \(\backslash\)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{    defined(MIPSEB) || defined(\_MIPSEB) || defined(\_IBMR2) || defined(DGUX) ||\(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{    defined(apollo) || defined(\_\_convex\_\_) || defined(\_CRAY) || \(\backslash\)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{    defined(\_\_hppa) || defined(\_\_hp9000) || \(\backslash\)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{    defined(\_\_hp9000s300) || defined(\_\_hp9000s700) || \(\backslash\)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{    defined (BIT\_ZERO\_ON\_LEFT) || defined(m68k)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define \_\_BYTE\_ORDER    \_\_BIG\_ENDIAN}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* linux */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* BSD */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_BYTE\_ORDER */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#if !defined(\_\_BYTE\_ORDER) || \(\backslash\)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{    (\_\_BYTE\_ORDER != \_\_BIG\_ENDIAN \&\& \_\_BYTE\_ORDER != \_\_LITTLE\_ENDIAN \&\& \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{    \_\_BYTE\_ORDER != \_\_PDP\_ENDIAN)}}
+\DoxyCodeLine{237     \textcolor{comment}{/* you must determine what the correct bit order is for}}
+\DoxyCodeLine{238 \textcolor{comment}{     * your compiler -\/ the next line is an intentional error}}
+\DoxyCodeLine{239 \textcolor{comment}{     * which will force your compiles to bomb until you fix}}
+\DoxyCodeLine{240 \textcolor{comment}{     * the above macros.}}
+\DoxyCodeLine{241 \textcolor{comment}{     */}}
+\DoxyCodeLine{242   \mbox{\hyperlink{filtertest_8c_a012a8d8c5ec50aba9e8d09717158c260}{error}} \textcolor{stringliteral}{"{}Undefined or invalid \_\_BYTE\_ORDER"{}};}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{/*}}
+\DoxyCodeLine{246 \textcolor{comment}{ * Structure for query header.  The order of the fields is machine-\/ and}}
+\DoxyCodeLine{247 \textcolor{comment}{ * compiler-\/dependent, depending on the byte/bit order and the layout}}
+\DoxyCodeLine{248 \textcolor{comment}{ * of bit fields.  We use bit fields only in int variables, as this}}
+\DoxyCodeLine{249 \textcolor{comment}{ * is all ANSI requires.  This requires a somewhat confusing rearrangement.}}
+\DoxyCodeLine{250 \textcolor{comment}{ */}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{253     \textcolor{keywordtype}{unsigned}    \mbox{\hyperlink{structHEADER_a50d6aa2bf63622320919cf7b4a294939}{id}} :16;       \textcolor{comment}{/* query identification number */}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#if \_\_BYTE\_ORDER == \_\_BIG\_ENDIAN}}
+\DoxyCodeLine{255             \textcolor{comment}{/* fields in third byte */}}
+\DoxyCodeLine{256     \textcolor{keywordtype}{unsigned}    qr: 1;      \textcolor{comment}{/* response flag */}}
+\DoxyCodeLine{257     \textcolor{keywordtype}{unsigned}    opcode: 4;  \textcolor{comment}{/* purpose of message */}}
+\DoxyCodeLine{258     \textcolor{keywordtype}{unsigned}    aa: 1;      \textcolor{comment}{/* authoritive answer */}}
+\DoxyCodeLine{259     \textcolor{keywordtype}{unsigned}    tc: 1;      \textcolor{comment}{/* truncated message */}}
+\DoxyCodeLine{260     \textcolor{keywordtype}{unsigned}    rd: 1;      \textcolor{comment}{/* recursion desired */}}
+\DoxyCodeLine{261             \textcolor{comment}{/* fields in fourth byte */}}
+\DoxyCodeLine{262     \textcolor{keywordtype}{unsigned}    ra: 1;      \textcolor{comment}{/* recursion available */}}
+\DoxyCodeLine{263     \textcolor{keywordtype}{unsigned}    pr: 1;      \textcolor{comment}{/* primary server req'd (!standard) */}}
+\DoxyCodeLine{264     \textcolor{keywordtype}{unsigned}    unused :2;  \textcolor{comment}{/* unused bits (MBZ as of 4.9.3a3) */}}
+\DoxyCodeLine{265     \textcolor{keywordtype}{unsigned}    rcode :4;   \textcolor{comment}{/* response code */}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#if \_\_BYTE\_ORDER == \_\_LITTLE\_ENDIAN || \_\_BYTE\_ORDER == \_\_PDP\_ENDIAN}}
+\DoxyCodeLine{268             \textcolor{comment}{/* fields in third byte */}}
+\DoxyCodeLine{269     \textcolor{keywordtype}{unsigned}    rd :1;      \textcolor{comment}{/* recursion desired */}}
+\DoxyCodeLine{270     \textcolor{keywordtype}{unsigned}    tc :1;      \textcolor{comment}{/* truncated message */}}
+\DoxyCodeLine{271     \textcolor{keywordtype}{unsigned}    aa :1;      \textcolor{comment}{/* authoritive answer */}}
+\DoxyCodeLine{272     \textcolor{keywordtype}{unsigned}    opcode :4;  \textcolor{comment}{/* purpose of message */}}
+\DoxyCodeLine{273     \textcolor{keywordtype}{unsigned}    qr :1;      \textcolor{comment}{/* response flag */}}
+\DoxyCodeLine{274             \textcolor{comment}{/* fields in fourth byte */}}
+\DoxyCodeLine{275     \textcolor{keywordtype}{unsigned}    rcode :4;   \textcolor{comment}{/* response code */}}
+\DoxyCodeLine{276     \textcolor{keywordtype}{unsigned}    unused :2;  \textcolor{comment}{/* unused bits (MBZ as of 4.9.3a3) */}}
+\DoxyCodeLine{277     \textcolor{keywordtype}{unsigned}    pr :1;      \textcolor{comment}{/* primary server req'd (!standard) */}}
+\DoxyCodeLine{278     \textcolor{keywordtype}{unsigned}    ra :1;      \textcolor{comment}{/* recursion available */}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{280             \textcolor{comment}{/* remaining bytes */}}
+\DoxyCodeLine{281     \textcolor{keywordtype}{unsigned}    \mbox{\hyperlink{structHEADER_ada386612d32a9d73c1d31061b0a15428}{qdcount}} :16; \textcolor{comment}{/* number of question entries */}}
+\DoxyCodeLine{282     \textcolor{keywordtype}{unsigned}    \mbox{\hyperlink{structHEADER_a3c62308acfb5816632406223323b53d1}{ancount}} :16; \textcolor{comment}{/* number of answer entries */}}
+\DoxyCodeLine{283     \textcolor{keywordtype}{unsigned}    \mbox{\hyperlink{structHEADER_a2eecdec4187cfbdae4de216be8dc2398}{nscount}} :16; \textcolor{comment}{/* number of authority entries */}}
+\DoxyCodeLine{284     \textcolor{keywordtype}{unsigned}    \mbox{\hyperlink{structHEADER_ab980b431679e60dc6a1b849e5438bafd}{arcount}} :16; \textcolor{comment}{/* number of resource entries */}}
+\DoxyCodeLine{285 \} \mbox{\hyperlink{structHEADER}{HEADER}};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{comment}{/*}}
+\DoxyCodeLine{288 \textcolor{comment}{ * Defines for handling compressed domain names}}
+\DoxyCodeLine{289 \textcolor{comment}{ */}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define INDIR\_MASK  0xc0}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{/*}}
+\DoxyCodeLine{293 \textcolor{comment}{ * Structure for passing resource records around.}}
+\DoxyCodeLine{294 \textcolor{comment}{ */}}
+\DoxyCodeLine{295 \textcolor{keyword}{struct }\mbox{\hyperlink{structrrec}{rrec}} \{}
+\DoxyCodeLine{296     int16\_t     \mbox{\hyperlink{structrrec_af27de701f4bed9453aeb6c34f8fc46ee}{r\_zone}};           \textcolor{comment}{/* zone number */}}
+\DoxyCodeLine{297     int16\_t     \mbox{\hyperlink{structrrec_a0318534d1b6295c497cf759260a1094c}{r\_class}};     \textcolor{comment}{/* class number */}}
+\DoxyCodeLine{298     int16\_t     \mbox{\hyperlink{structrrec_ab6789c674eb55544b64fc919f3e0ff70}{r\_type}};           \textcolor{comment}{/* type number */}}
+\DoxyCodeLine{299     u\_int32\_t   \mbox{\hyperlink{structrrec_a829032fd532112a718d70b26a18b2d05}{r\_ttl}};         \textcolor{comment}{/* time to live */}}
+\DoxyCodeLine{300     \textcolor{keywordtype}{int}     \mbox{\hyperlink{structrrec_a72b69b2f3e2848762cbd8de89c4f9f0c}{r\_size}};           \textcolor{comment}{/* size of data area */}}
+\DoxyCodeLine{301     \textcolor{keywordtype}{char}        *\mbox{\hyperlink{structrrec_a4298ec565665ee4e72e4b28434546602}{r\_data}};      \textcolor{comment}{/* pointer to data */}}
+\DoxyCodeLine{302 \};}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{//extern    u\_int16\_t   \_getshort \_\_P((const u\_char *));}}
+\DoxyCodeLine{305 \textcolor{comment}{//extern    u\_int32\_t   \_getlong \_\_P((const u\_char *));}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{comment}{/*}}
+\DoxyCodeLine{308 \textcolor{comment}{ * Inline versions of get/put short/long.  Pointer is advanced.}}
+\DoxyCodeLine{309 \textcolor{comment}{ *}}
+\DoxyCodeLine{310 \textcolor{comment}{ * These macros demonstrate the property of C whereby it can be}}
+\DoxyCodeLine{311 \textcolor{comment}{ * portable or it can be elegant but rarely both.}}
+\DoxyCodeLine{312 \textcolor{comment}{ */}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define GETSHORT(s, cp) \{ \(\backslash\)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{    (s) = ((u\_int16\_t)t\_cp[0] << 8) \(\backslash\)}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{        | ((u\_int16\_t)t\_cp[1]) \(\backslash\)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{        ; \(\backslash\)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{    (cp) += INT16SZ; \(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define GETLONG(l, cp) \{ \(\backslash\)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{    (l) = ((u\_int32\_t)t\_cp[0] << 24) \(\backslash\)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{        | ((u\_int32\_t)t\_cp[1] << 16) \(\backslash\)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{        | ((u\_int32\_t)t\_cp[2] << 8) \(\backslash\)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{        | ((u\_int32\_t)t\_cp[3]) \(\backslash\)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{        ; \(\backslash\)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{    (cp) += INT32SZ; \(\backslash\)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define PUTSHORT(s, cp) \{ \(\backslash\)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{    register u\_int16\_t t\_s = (u\_int16\_t)(s); \(\backslash\)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{    *t\_cp++ = t\_s >> 8; \(\backslash\)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{    *t\_cp   = t\_s; \(\backslash\)}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{    (cp) += INT16SZ; \(\backslash\)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define PUTLONG(l, cp) \{ \(\backslash\)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{    register u\_int32\_t t\_l = (u\_int32\_t)(l); \(\backslash\)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{    register u\_char *t\_cp = (u\_char *)(cp); \(\backslash\)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{    *t\_cp++ = t\_l >> 24; \(\backslash\)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{    *t\_cp++ = t\_l >> 16; \(\backslash\)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{    *t\_cp++ = t\_l >> 8; \(\backslash\)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{    *t\_cp   = t\_l; \(\backslash\)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{    (cp) += INT32SZ; \(\backslash\)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !\_NAMESER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

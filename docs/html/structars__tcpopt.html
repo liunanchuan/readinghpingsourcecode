@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hping3s: ars_tcpopt结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hping3s<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">The documentation for hping3s</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle"><div class="title">ars_tcpopt结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ars_8h_source.html">ars.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a5182523bec98d011e06c3bbcc7dded0a"><td class="memItemLeft" align="right" valign="top">u_int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structars__tcpopt.html#a5182523bec98d011e06c3bbcc7dded0a">kind</a></td></tr>
+<tr class="separator:a5182523bec98d011e06c3bbcc7dded0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5695e5ebd05aece35b2d0d88c983fac"><td class="memItemLeft" align="right" valign="top">u_int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structars__tcpopt.html#aa5695e5ebd05aece35b2d0d88c983fac">len</a></td></tr>
+<tr class="separator:aa5695e5ebd05aece35b2d0d88c983fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe38becb96abfa4a5a3ad7e8e5258458"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a8bf1606a45f983cb9473ca4a58c891f0"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:aa24ebf45ec8460edab3749cabc073dc0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int16_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#aa24ebf45ec8460edab3749cabc073dc0">size</a></td></tr>
+<tr class="separator:aa24ebf45ec8460edab3749cabc073dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf1606a45f983cb9473ca4a58c891f0"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a8bf1606a45f983cb9473ca4a58c891f0">mss</a></td></tr>
+<tr class="separator:a8bf1606a45f983cb9473ca4a58c891f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace82fe1d432217f5d64c771cab352e15"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a826530d4b102dbf8286b88f738e5394e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a826530d4b102dbf8286b88f738e5394e">shift</a></td></tr>
+<tr class="separator:a826530d4b102dbf8286b88f738e5394e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace82fe1d432217f5d64c771cab352e15"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#ace82fe1d432217f5d64c771cab352e15">win</a></td></tr>
+<tr class="separator:ace82fe1d432217f5d64c771cab352e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0c4f803dbf3e263d955186c4696e84"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:ae6181a128818bb77ea92fee7c2e8a87b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#ae6181a128818bb77ea92fee7c2e8a87b">origin</a> [4]</td></tr>
+<tr class="separator:ae6181a128818bb77ea92fee7c2e8a87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5964499a359d7077ed7e1e800e414bf4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a5964499a359d7077ed7e1e800e414bf4">size</a> [4]</td></tr>
+<tr class="separator:a5964499a359d7077ed7e1e800e414bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0c4f803dbf3e263d955186c4696e84"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#aae0c4f803dbf3e263d955186c4696e84">sack</a> [4]</td></tr>
+<tr class="separator:aae0c4f803dbf3e263d955186c4696e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe8f35f70c2e4d22232c5b755434797"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:aa48f51965ed460142d6f5764a62a555d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#aa48f51965ed460142d6f5764a62a555d">info</a> [4]</td></tr>
+<tr class="separator:aa48f51965ed460142d6f5764a62a555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe8f35f70c2e4d22232c5b755434797"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a3fe8f35f70c2e4d22232c5b755434797">echo</a></td></tr>
+<tr class="separator:a3fe8f35f70c2e4d22232c5b755434797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e23315ace74ead8b4a23f516a98ed8b"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a9fb98aadc6fbca8722bac71c2a0887b5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a9fb98aadc6fbca8722bac71c2a0887b5">tsval</a> [4]</td></tr>
+<tr class="separator:a9fb98aadc6fbca8722bac71c2a0887b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129383b6ff7dda859904eaf42721cddf"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;u_int8_t&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a129383b6ff7dda859904eaf42721cddf">tsecr</a> [4]</td></tr>
+<tr class="separator:a129383b6ff7dda859904eaf42721cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e23315ace74ead8b4a23f516a98ed8b"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structars__tcpopt.html#a4e23315ace74ead8b4a23f516a98ed8b">timestamp</a></td></tr>
+<tr class="separator:a4e23315ace74ead8b4a23f516a98ed8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe38becb96abfa4a5a3ad7e8e5258458"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structars__tcpopt.html#afe38becb96abfa4a5a3ad7e8e5258458">un</a></td></tr>
+<tr class="separator:afe38becb96abfa4a5a3ad7e8e5258458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a3fe8f35f70c2e4d22232c5b755434797" name="a3fe8f35f70c2e4d22232c5b755434797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe8f35f70c2e4d22232c5b755434797">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  echo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a>, <a class="el" href="apd_8c.html#acf62656a652bb2a82c61ed4922508396">ars_d_set_tcpopt_echo()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="aa48f51965ed460142d6f5764a62a555d" name="aa48f51965ed460142d6f5764a62a555d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48f51965ed460142d6f5764a62a555d">&#9670;&nbsp;</a></span>info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t info[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a>, <a class="el" href="apd_8c.html#acf62656a652bb2a82c61ed4922508396">ars_d_set_tcpopt_echo()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a5182523bec98d011e06c3bbcc7dded0a" name="a5182523bec98d011e06c3bbcc7dded0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5182523bec98d011e06c3bbcc7dded0a">&#9670;&nbsp;</a></span>kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a>, <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a> , 以及 <a class="el" href="split_8c.html#a2725c19b46085b0b1dae7a520009522c">ars_split_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="aa5695e5ebd05aece35b2d0d88c983fac" name="aa5695e5ebd05aece35b2d0d88c983fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5695e5ebd05aece35b2d0d88c983fac">&#9670;&nbsp;</a></span>len</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t len</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a>, <a class="el" href="apd_8c.html#ab8257c335026315da31432e42f14818b">ars_d_set_tcpopt_dumb()</a>, <a class="el" href="apd_8c.html#acf62656a652bb2a82c61ed4922508396">ars_d_set_tcpopt_echo()</a>, <a class="el" href="apd_8c.html#a595a3322687af1a1fd897c4e27cee1dc">ars_d_set_tcpopt_mss()</a>, <a class="el" href="apd_8c.html#a018475deb69ab996e8bd72d1e4c45dae">ars_d_set_tcpopt_sack()</a>, <a class="el" href="apd_8c.html#a3217f6072ae61dd13e0da3e3bea51293">ars_d_set_tcpopt_wscale()</a>, <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a> , 以及 <a class="el" href="split_8c.html#a2725c19b46085b0b1dae7a520009522c">ars_split_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a8bf1606a45f983cb9473ca4a58c891f0" name="a8bf1606a45f983cb9473ca4a58c891f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf1606a45f983cb9473ca4a58c891f0">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  mss</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="apd_8c.html#a595a3322687af1a1fd897c4e27cee1dc">ars_d_set_tcpopt_mss()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="ae6181a128818bb77ea92fee7c2e8a87b" name="ae6181a128818bb77ea92fee7c2e8a87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6181a128818bb77ea92fee7c2e8a87b">&#9670;&nbsp;</a></span>origin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t origin[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="aae0c4f803dbf3e263d955186c4696e84" name="aae0c4f803dbf3e263d955186c4696e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0c4f803dbf3e263d955186c4696e84">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  sack[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a826530d4b102dbf8286b88f738e5394e" name="a826530d4b102dbf8286b88f738e5394e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826530d4b102dbf8286b88f738e5394e">&#9670;&nbsp;</a></span>shift</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t shift</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="apd_8c.html#a3217f6072ae61dd13e0da3e3bea51293">ars_d_set_tcpopt_wscale()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="aa24ebf45ec8460edab3749cabc073dc0" name="aa24ebf45ec8460edab3749cabc073dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24ebf45ec8460edab3749cabc073dc0">&#9670;&nbsp;</a></span>size <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int16_t size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="apd_8c.html#a595a3322687af1a1fd897c4e27cee1dc">ars_d_set_tcpopt_mss()</a>, <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a> , 以及 <a class="el" href="split_8c.html#a2725c19b46085b0b1dae7a520009522c">ars_split_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a5964499a359d7077ed7e1e800e414bf4" name="a5964499a359d7077ed7e1e800e414bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5964499a359d7077ed7e1e800e414bf4">&#9670;&nbsp;</a></span>size <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t size[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e23315ace74ead8b4a23f516a98ed8b" name="a4e23315ace74ead8b4a23f516a98ed8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e23315ace74ead8b4a23f516a98ed8b">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a129383b6ff7dda859904eaf42721cddf" name="a129383b6ff7dda859904eaf42721cddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129383b6ff7dda859904eaf42721cddf">&#9670;&nbsp;</a></span>tsecr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t tsecr[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="a9fb98aadc6fbca8722bac71c2a0887b5" name="a9fb98aadc6fbca8722bac71c2a0887b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb98aadc6fbca8722bac71c2a0887b5">&#9670;&nbsp;</a></span>tsval</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int8_t tsval[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="afe38becb96abfa4a5a3ad7e8e5258458" name="afe38becb96abfa4a5a3ad7e8e5258458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe38becb96abfa4a5a3ad7e8e5258458">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  un</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="ars_8c.html#a8be8fa0a21d7eb92974d3641d81744aa">ars_add_tcpopt()</a>, <a class="el" href="apd_8c.html#acf62656a652bb2a82c61ed4922508396">ars_d_set_tcpopt_echo()</a>, <a class="el" href="apd_8c.html#a595a3322687af1a1fd897c4e27cee1dc">ars_d_set_tcpopt_mss()</a>, <a class="el" href="apd_8c.html#a3217f6072ae61dd13e0da3e3bea51293">ars_d_set_tcpopt_wscale()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<a id="ace82fe1d432217f5d64c771cab352e15" name="ace82fe1d432217f5d64c771cab352e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace82fe1d432217f5d64c771cab352e15">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  win</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="apd_8c.html#a3217f6072ae61dd13e0da3e3bea51293">ars_d_set_tcpopt_wscale()</a> , 以及 <a class="el" href="ars_8h.html#afa4953932c173f84864169674dc1c298">ars_rapd_tcpopt()</a>.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="ars_8h_source.html">ars.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

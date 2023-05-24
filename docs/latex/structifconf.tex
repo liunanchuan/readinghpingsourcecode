@@ -1,0 +1,64 @@
+\hypertarget{structifconf}{}\doxysection{ifconf结构体 参考}
+\label{structifconf}\index{ifconf@{ifconf}}
+
+
+{\ttfamily \#include $<$if.\+h$>$}
+
+
+
+ifconf 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{structifconf__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structifconf_a44e4efcb1ec0a3b46ae43b08cde8f1c7}{ifc\+\_\+len}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\_t}} \mbox{\hyperlink{structifconf_a8bff30c2fb638de1e848436461df5364}{ifcu\_buf}}\\
+\>struct \mbox{\hyperlink{structifreq}{ifreq}} $\ast$ \mbox{\hyperlink{structifconf_a6d144b491f22d13e8963cc2d3b33e3ea}{ifcu\_req}}\\
+\} \mbox{\hyperlink{structifconf_aebf75835f58e1768719cc9b62cf33ae8}{ifc\_ifcu}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structifconf_aebf75835f58e1768719cc9b62cf33ae8}\label{structifconf_aebf75835f58e1768719cc9b62cf33ae8}} 
+\index{ifconf@{ifconf}!ifc\_ifcu@{ifc\_ifcu}}
+\index{ifc\_ifcu@{ifc\_ifcu}!ifconf@{ifconf}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  ifc\+\_\+ifcu}
+
+\mbox{\Hypertarget{structifconf_a44e4efcb1ec0a3b46ae43b08cde8f1c7}\label{structifconf_a44e4efcb1ec0a3b46ae43b08cde8f1c7}} 
+\index{ifconf@{ifconf}!ifc\_len@{ifc\_len}}
+\index{ifc\_len@{ifc\_len}!ifconf@{ifconf}}
+\doxysubsubsection{\texorpdfstring{ifc\_len}{ifc\_len}}
+{\footnotesize\ttfamily int ifc\+\_\+len}
+
+
+
+被这些函数引用 \mbox{\hyperlink{getifname_8c_a7cb4dc3e609a95a4ecbeedd455a0af78}{get\+\_\+if\+\_\+name()}} , 以及 \mbox{\hyperlink{fad-gifc_8c_a7b128eaeef627b408f6a6e2a2f5eb45d}{pcap\+\_\+findalldevs()}}.
+
+\mbox{\Hypertarget{structifconf_a8bff30c2fb638de1e848436461df5364}\label{structifconf_a8bff30c2fb638de1e848436461df5364}} 
+\index{ifconf@{ifconf}!ifcu\_buf@{ifcu\_buf}}
+\index{ifcu\_buf@{ifcu\_buf}!ifconf@{ifconf}}
+\doxysubsubsection{\texorpdfstring{ifcu\_buf}{ifcu\_buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-stdinc_8h_a0c3c2cf6b572d3e4659668a6d2ddc265}{caddr\+\_\+t}} ifcu\+\_\+buf}
+
+\mbox{\Hypertarget{structifconf_a6d144b491f22d13e8963cc2d3b33e3ea}\label{structifconf_a6d144b491f22d13e8963cc2d3b33e3ea}} 
+\index{ifconf@{ifconf}!ifcu\_req@{ifcu\_req}}
+\index{ifcu\_req@{ifcu\_req}!ifconf@{ifconf}}
+\doxysubsubsection{\texorpdfstring{ifcu\_req}{ifcu\_req}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structifreq}{ifreq}}$\ast$ ifcu\+\_\+req}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+libpcap-\/1.\+1.\+1/\+Win32/\+Include/net/\mbox{\hyperlink{if_8h}{if.\+h}}\end{DoxyCompactItemize}

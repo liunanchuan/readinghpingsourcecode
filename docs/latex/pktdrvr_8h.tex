@@ -1,0 +1,893 @@
+\hypertarget{pktdrvr_8h}{}\doxysection{libpcap-\/1.1.1/msdos/pktdrvr.h 文件参考}
+\label{pktdrvr_8h}\index{libpcap-\/1.1.1/msdos/pktdrvr.h@{libpcap-\/1.1.1/msdos/pktdrvr.h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{pktdrvr_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPKT__FRAME}{PKT\+\_\+\+FRAME}}
+\item 
+struct \mbox{\hyperlink{structPKT__INFO}{PKT\+\_\+\+INFO}}
+\item 
+struct \mbox{\hyperlink{structPKT__STAT}{PKT\+\_\+\+STAT}}
+\item 
+struct \mbox{\hyperlink{structTX__ELEMENT}{TX\+\_\+\+ELEMENT}}
+\item 
+struct \mbox{\hyperlink{structRX__ELEMENT}{RX\+\_\+\+ELEMENT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pktdrvr_8h_ad17d551e31d1828c68acf40684849b7e}{PUBLIC}}
+\item 
+\#define \mbox{\hyperlink{pktdrvr_8h_a3758dd5d300a594312c95bc393378df0}{LOCAL}}~static
+\item 
+\#define \mbox{\hyperlink{pktdrvr_8h_a690f985c933da2ce6fe62b6c61dfa662}{RX\+\_\+\+BUF\+\_\+\+SIZE}}~\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}   /$\ast$ buffer size variables. NB !! $\ast$/
+\item 
+\#define \mbox{\hyperlink{pktdrvr_8h_a5d3fb1970e1e98050006978a14b3d95e}{TX\+\_\+\+BUF\+\_\+\+SIZE}}~\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}   /$\ast$ must be same as in pkt\+\_\+rx$\ast$.$\ast$ $\ast$/
+\item 
+\#define \mbox{\hyperlink{pktdrvr_8h_aad2b25e593bc71855e3174fef49a90bc}{PKT\+\_\+\+PARAM\+\_\+\+SIZE}}~14    /$\ast$ members maj\+Ver -\/ post\+EOIintr $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24}{PKT\+\_\+\+CLASS}} \{ \newline
+\mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a1af1b15751d5dd853893f0edbdaeeae2}{PD\+\_\+\+ETHER}} = 1
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a5212cac8a367033a901f4056b132cd73}{PD\+\_\+\+PRONET10}} = 2
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a954a29974339d18fdcb54faee78391c5}{PD\+\_\+\+IEEE8025}} = 3
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4dc0f6639caa61b4e7c69fc39ef9bdfa}{PD\+\_\+\+OMNINET}} = 4
+, \newline
+\mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aab0d255a6499ece8e75d39e195201187}{PD\+\_\+\+APPLETALK}} = 5
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}{PD\+\_\+\+SLIP}} = 6
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a333d73bb6629a621268d247978a802c2}{PD\+\_\+\+STARTLAN}} = 7
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aad1699bfce3de71a164d564c47010cc0}{PD\+\_\+\+ARCNET}} = 8
+, \newline
+\mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a98bb209b6698027da53cb206bbbb9d73}{PD\+\_\+\+AX25}} = 9
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4660b785d0522ed40ab6adb58ad505cb}{PD\+\_\+\+KISS}} = 10
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aa5c1309d68f0ad55dd148234b281322e}{PD\+\_\+\+IEEE8023\+\_\+2}} = 11
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a7de80c0b0a45ce74e7309aabed94a470}{PD\+\_\+\+FDDI8022}} = 12
+, \newline
+\mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a75e34d3354155f7e92a8a13e1209acfc}{PD\+\_\+\+X25}} = 13
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ace2997b442ce7c6b593e57fbb6608508}{PD\+\_\+\+LANstar}} = 14
+, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}{PD\+\_\+\+PPP}} = 18
+ \}
+\item 
+enum \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} \{ \newline
+\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a38cd2c8639d62952b4f7dcf2695b2043}{PDRX\+\_\+\+OFF}} = 1
+, \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537ad9371bb08d9e2c0590f2abfd31940191}{PDRX\+\_\+\+DIRECT}}
+, \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afe3c7edd941d05601d83e9ad4bc13d39}{PDRX\+\_\+\+BROADCAST}}
+, \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afed5de6f64920369a95f63e0bb45f0f4}{PDRX\+\_\+\+MULTICAST1}}
+, \newline
+\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a47a320e7654d9e97ceabcc0268523472}{PDRX\+\_\+\+MULTICAST2}}
+, \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a1efa56c39e589a89a260f7e2a2b8858e}{PDRX\+\_\+\+ALL\+\_\+\+PACKETS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944}{Pkt\+Init\+Driver}} (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} mode)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b}{Pkt\+Exit\+Driver}} (void)
+\item 
+const char $\ast$ \mbox{\hyperlink{pktdrvr_8h_aa4cdc7df0cd88f00b89975f3aac02cad}{Pkt\+Get\+Error\+Str}} (int err\+Num)
+\item 
+const char $\ast$ \mbox{\hyperlink{pktdrvr_8h_ae29b4b488b44ad6d8e09e1896cf24a56}{Pkt\+Get\+Class\+Name}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} class)
+\item 
+const char $\ast$ \mbox{\hyperlink{pktdrvr_8h_ab1decdf0e77ee7ac08c198f1f0c58c8f}{Pkt\+RXmode\+Str}} (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} mode)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_acccb8f2e2678950cddda80a6d6a0ff4a}{Pkt\+Search\+Driver}} (void)
+\item 
+int \mbox{\hyperlink{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984}{Pkt\+Receive}} (\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$buf, int \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}})
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006}{Pkt\+Transmit}} (const void $\ast$eth, int len)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} \mbox{\hyperlink{pktdrvr_8h_ada56fc7ea09856fa7da5239d3077f015}{Pkt\+Rx\+Dropped}} (void)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0}{Pkt\+Release\+Handle}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_afbdb5352cf417bd220143e3f1ea7db08}{Pkt\+Termin\+Handle}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_ac6413b01eae14fea74afe84b6540faa7}{Pkt\+Reset\+Interface}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c}{Pkt\+Set\+Receiver\+Mode}} (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} mode)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a879a02642394e49ed609582cedab58e5}{Pkt\+Get\+Receiver\+Mode}} (\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} $\ast$mode)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838}{Pkt\+Get\+Statistics}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d}{Pkt\+Sess\+Statistics}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15}{Pkt\+Reset\+Statistics}} (\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} handle)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0}{Pkt\+Get\+Address}} (\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} $\ast$addr)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a4977ccea84c7ce421fd54ca5aff8ed61}{Pkt\+Set\+Address}} (const \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} $\ast$addr)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2}{Pkt\+Get\+Driver\+Info}} (void)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} \mbox{\hyperlink{pktdrvr_8h_a46cb814957ac54cbc23546ffd5c7ef89}{Pkt\+Get\+Driver\+Param}} (void)
+\item 
+void \mbox{\hyperlink{pktdrvr_8h_a46c9391d7aeca7a3936277fd529be883}{Pkt\+Queue\+Busy}} (\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} busy)
+\item 
+\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} \mbox{\hyperlink{pktdrvr_8h_a7a15db0515d59abe976d0c4b6ffffac6}{Pkt\+Buffers\+Used}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPKT__STAT}{PKT\+\_\+\+STAT}} \mbox{\hyperlink{pktdrvr_8h_a27a6fae156b7d87243508c54054ff632}{pkt\+Stat}}
+\item 
+\mbox{\hyperlink{structPKT__INFO}{PKT\+\_\+\+INFO}} \mbox{\hyperlink{pktdrvr_8h_aa9f564b8b0a1ad8db3f11fefccfff3c0}{pkt\+Info}}
+\item 
+\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} \mbox{\hyperlink{pktdrvr_8h_a2698f6cb8f258ff6f5c2b11e5c4f2c20}{receive\+Mode}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{pktdrvr_8h_a4a471cdb8d4f4d306f6236f2dfb26014}{my\+Address}}
+\item 
+\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} \mbox{\hyperlink{pktdrvr_8h_ad87661c6ed9e0dcfb3d4e0a54396043c}{eth\+Broadcast}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{pktdrvr_8h_a3758dd5d300a594312c95bc393378df0}\label{pktdrvr_8h_a3758dd5d300a594312c95bc393378df0}} 
+\index{pktdrvr.h@{pktdrvr.h}!LOCAL@{LOCAL}}
+\index{LOCAL@{LOCAL}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{LOCAL}{LOCAL}}
+{\footnotesize\ttfamily \#define LOCAL~static}
+
+\mbox{\Hypertarget{pktdrvr_8h_aad2b25e593bc71855e3174fef49a90bc}\label{pktdrvr_8h_aad2b25e593bc71855e3174fef49a90bc}} 
+\index{pktdrvr.h@{pktdrvr.h}!PKT\_PARAM\_SIZE@{PKT\_PARAM\_SIZE}}
+\index{PKT\_PARAM\_SIZE@{PKT\_PARAM\_SIZE}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PKT\_PARAM\_SIZE}{PKT\_PARAM\_SIZE}}
+{\footnotesize\ttfamily \#define PKT\+\_\+\+PARAM\+\_\+\+SIZE~14    /$\ast$ members maj\+Ver -\/ post\+EOIintr $\ast$/}
+
+\mbox{\Hypertarget{pktdrvr_8h_ad17d551e31d1828c68acf40684849b7e}\label{pktdrvr_8h_ad17d551e31d1828c68acf40684849b7e}} 
+\index{pktdrvr.h@{pktdrvr.h}!PUBLIC@{PUBLIC}}
+\index{PUBLIC@{PUBLIC}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PUBLIC}{PUBLIC}}
+{\footnotesize\ttfamily \#define PUBLIC}
+
+\mbox{\Hypertarget{pktdrvr_8h_a690f985c933da2ce6fe62b6c61dfa662}\label{pktdrvr_8h_a690f985c933da2ce6fe62b6c61dfa662}} 
+\index{pktdrvr.h@{pktdrvr.h}!RX\_BUF\_SIZE@{RX\_BUF\_SIZE}}
+\index{RX\_BUF\_SIZE@{RX\_BUF\_SIZE}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{RX\_BUF\_SIZE}{RX\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define RX\+\_\+\+BUF\+\_\+\+SIZE~\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}   /$\ast$ buffer size variables. NB !! $\ast$/}
+
+\mbox{\Hypertarget{pktdrvr_8h_a5d3fb1970e1e98050006978a14b3d95e}\label{pktdrvr_8h_a5d3fb1970e1e98050006978a14b3d95e}} 
+\index{pktdrvr.h@{pktdrvr.h}!TX\_BUF\_SIZE@{TX\_BUF\_SIZE}}
+\index{TX\_BUF\_SIZE@{TX\_BUF\_SIZE}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{TX\_BUF\_SIZE}{TX\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+BUF\+\_\+\+SIZE~\mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}   /$\ast$ must be same as in pkt\+\_\+rx$\ast$.$\ast$ $\ast$/}
+
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24}} 
+\index{pktdrvr.h@{pktdrvr.h}!PKT\_CLASS@{PKT\_CLASS}}
+\index{PKT\_CLASS@{PKT\_CLASS}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PKT\_CLASS}{PKT\_CLASS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24}{PKT\+\_\+\+CLASS}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_ETHER@{PD\_ETHER}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_ETHER@{PD\_ETHER}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a1af1b15751d5dd853893f0edbdaeeae2}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a1af1b15751d5dd853893f0edbdaeeae2}} 
+PD\+\_\+\+ETHER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_PRONET10@{PD\_PRONET10}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_PRONET10@{PD\_PRONET10}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a5212cac8a367033a901f4056b132cd73}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a5212cac8a367033a901f4056b132cd73}} 
+PD\+\_\+\+PRONET10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_IEEE8025@{PD\_IEEE8025}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_IEEE8025@{PD\_IEEE8025}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a954a29974339d18fdcb54faee78391c5}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a954a29974339d18fdcb54faee78391c5}} 
+PD\+\_\+\+IEEE8025&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_OMNINET@{PD\_OMNINET}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_OMNINET@{PD\_OMNINET}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4dc0f6639caa61b4e7c69fc39ef9bdfa}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4dc0f6639caa61b4e7c69fc39ef9bdfa}} 
+PD\+\_\+\+OMNINET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_APPLETALK@{PD\_APPLETALK}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_APPLETALK@{PD\_APPLETALK}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aab0d255a6499ece8e75d39e195201187}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aab0d255a6499ece8e75d39e195201187}} 
+PD\+\_\+\+APPLETALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_SLIP@{PD\_SLIP}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_SLIP@{PD\_SLIP}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}} 
+PD\+\_\+\+SLIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_STARTLAN@{PD\_STARTLAN}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_STARTLAN@{PD\_STARTLAN}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a333d73bb6629a621268d247978a802c2}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a333d73bb6629a621268d247978a802c2}} 
+PD\+\_\+\+STARTLAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_ARCNET@{PD\_ARCNET}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_ARCNET@{PD\_ARCNET}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aad1699bfce3de71a164d564c47010cc0}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aad1699bfce3de71a164d564c47010cc0}} 
+PD\+\_\+\+ARCNET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_AX25@{PD\_AX25}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_AX25@{PD\_AX25}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a98bb209b6698027da53cb206bbbb9d73}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a98bb209b6698027da53cb206bbbb9d73}} 
+PD\+\_\+\+AX25&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_KISS@{PD\_KISS}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_KISS@{PD\_KISS}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4660b785d0522ed40ab6adb58ad505cb}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4660b785d0522ed40ab6adb58ad505cb}} 
+PD\+\_\+\+KISS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_IEEE8023\_2@{PD\_IEEE8023\_2}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_IEEE8023\_2@{PD\_IEEE8023\_2}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aa5c1309d68f0ad55dd148234b281322e}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aa5c1309d68f0ad55dd148234b281322e}} 
+PD\+\_\+\+IEEE8023\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_FDDI8022@{PD\_FDDI8022}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_FDDI8022@{PD\_FDDI8022}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a7de80c0b0a45ce74e7309aabed94a470}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a7de80c0b0a45ce74e7309aabed94a470}} 
+PD\+\_\+\+FDDI8022&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_X25@{PD\_X25}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_X25@{PD\_X25}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a75e34d3354155f7e92a8a13e1209acfc}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a75e34d3354155f7e92a8a13e1209acfc}} 
+PD\+\_\+\+X25&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_LANstar@{PD\_LANstar}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_LANstar@{PD\_LANstar}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ace2997b442ce7c6b593e57fbb6608508}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ace2997b442ce7c6b593e57fbb6608508}} 
+PD\+\_\+\+LANstar&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_PPP@{PD\_PPP}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PD\_PPP@{PD\_PPP}}}\mbox{\Hypertarget{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}\label{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}} 
+PD\+\_\+\+PPP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}} 
+\index{pktdrvr.h@{pktdrvr.h}!PKT\_RX\_MODE@{PKT\_RX\_MODE}}
+\index{PKT\_RX\_MODE@{PKT\_RX\_MODE}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PKT\_RX\_MODE}{PKT\_RX\_MODE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_OFF@{PDRX\_OFF}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_OFF@{PDRX\_OFF}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a38cd2c8639d62952b4f7dcf2695b2043}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a38cd2c8639d62952b4f7dcf2695b2043}} 
+PDRX\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_DIRECT@{PDRX\_DIRECT}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_DIRECT@{PDRX\_DIRECT}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537ad9371bb08d9e2c0590f2abfd31940191}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537ad9371bb08d9e2c0590f2abfd31940191}} 
+PDRX\+\_\+\+DIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_BROADCAST@{PDRX\_BROADCAST}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_BROADCAST@{PDRX\_BROADCAST}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afe3c7edd941d05601d83e9ad4bc13d39}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afe3c7edd941d05601d83e9ad4bc13d39}} 
+PDRX\+\_\+\+BROADCAST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_MULTICAST1@{PDRX\_MULTICAST1}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_MULTICAST1@{PDRX\_MULTICAST1}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afed5de6f64920369a95f63e0bb45f0f4}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afed5de6f64920369a95f63e0bb45f0f4}} 
+PDRX\+\_\+\+MULTICAST1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_MULTICAST2@{PDRX\_MULTICAST2}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_MULTICAST2@{PDRX\_MULTICAST2}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a47a320e7654d9e97ceabcc0268523472}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a47a320e7654d9e97ceabcc0268523472}} 
+PDRX\+\_\+\+MULTICAST2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDRX\_ALL\_PACKETS@{PDRX\_ALL\_PACKETS}!pktdrvr.h@{pktdrvr.h}}\index{pktdrvr.h@{pktdrvr.h}!PDRX\_ALL\_PACKETS@{PDRX\_ALL\_PACKETS}}}\mbox{\Hypertarget{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a1efa56c39e589a89a260f7e2a2b8858e}\label{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537a1efa56c39e589a89a260f7e2a2b8858e}} 
+PDRX\+\_\+\+ALL\+\_\+\+PACKETS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{pktdrvr_8h_a7a15db0515d59abe976d0c4b6ffffac6}\label{pktdrvr_8h_a7a15db0515d59abe976d0c4b6ffffac6}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktBuffersUsed@{PktBuffersUsed}}
+\index{PktBuffersUsed@{PktBuffersUsed}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktBuffersUsed()}{PktBuffersUsed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}} Pkt\+Buffers\+Used (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_aa1402282ee9cd4229453b857ad83ae3a}{NUM\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{pktdrvr_8c_acf703e5d6ecfbfce933d2018fc7c859e}{rx\+In\+Ofs}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ae2fcfd667785fbd8fe548bfe0f640a40}{rx\+Out\+Ofs}}.
+
+\mbox{\Hypertarget{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b}\label{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktExitDriver@{PktExitDriver}}
+\index{PktExitDriver@{PktExitDriver}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktExitDriver()}{PktExitDriver()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Exit\+Driver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{pktdrvr_8c_a2c3282444844369a2379bd31b4970b41}{int\+Stat}}, \mbox{\hyperlink{pcap-dos_8c_af445df5a1038ac09bfd17b3f8614eaa9}{pcap\+\_\+pkt\+\_\+debug}}, \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537afe3c7edd941d05601d83e9ad4bc13d39}{PDRX\+\_\+\+BROADCAST}}, \mbox{\hyperlink{pktdrvr_8c_adddcbff5e0630dc1b9975a616b4838de}{Pkt\+Free\+Mem()}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_afb5f9a16e4789b77676c5b77b0a34484}{Pkt\+Release\+Handle()}}, \mbox{\hyperlink{pktdrvr_8c_a77f5d734dc30ae1a072a33b644727ac2}{Pkt\+Set\+Receiver\+Mode()}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{pktdrvr_8c_a1a852a203dad3e9e48c9243223672316}{PUTS}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a85c9278df2ce935980c76f85c233d708}{pkt\+\_\+close()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{pktdrvr_8h_a84ca65f34f1adf52ba79822f9267320b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0}\label{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetAddress@{PktGetAddress}}
+\index{PktGetAddress@{PktGetAddress}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetAddress()}{PktGetAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Get\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a7b56d4cbee7f87ff82a6e4bb65ddf845}{pkt\+Temp}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a7a2b2d2091a3202411e4d3893b56c5e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ae29b4b488b44ad6d8e09e1896cf24a56}\label{pktdrvr_8h_ae29b4b488b44ad6d8e09e1896cf24a56}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetClassName@{PktGetClassName}}
+\index{PktGetClassName@{PktGetClassName}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetClassName()}{PktGetClassName()}}
+{\footnotesize\ttfamily const char $\ast$ Pkt\+Get\+Class\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{class }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aab0d255a6499ece8e75d39e195201187}{PD\+\_\+\+APPLETALK}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aad1699bfce3de71a164d564c47010cc0}{PD\+\_\+\+ARCNET}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a98bb209b6698027da53cb206bbbb9d73}{PD\+\_\+\+AX25}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a1af1b15751d5dd853893f0edbdaeeae2}{PD\+\_\+\+ETHER}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a7de80c0b0a45ce74e7309aabed94a470}{PD\+\_\+\+FDDI8022}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24aa5c1309d68f0ad55dd148234b281322e}{PD\+\_\+\+IEEE8023\+\_\+2}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a954a29974339d18fdcb54faee78391c5}{PD\+\_\+\+IEEE8025}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4660b785d0522ed40ab6adb58ad505cb}{PD\+\_\+\+KISS}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ace2997b442ce7c6b593e57fbb6608508}{PD\+\_\+\+LANstar}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a4dc0f6639caa61b4e7c69fc39ef9bdfa}{PD\+\_\+\+OMNINET}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}{PD\+\_\+\+PPP}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a5212cac8a367033a901f4056b132cd73}{PD\+\_\+\+PRONET10}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}{PD\+\_\+\+SLIP}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a333d73bb6629a621268d247978a802c2}{PD\+\_\+\+STARTLAN}} , 以及 \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24a75e34d3354155f7e92a8a13e1209acfc}{PD\+\_\+\+X25}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ae29b4b488b44ad6d8e09e1896cf24a56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2}\label{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetDriverInfo@{PktGetDriverInfo}}
+\index{PktGetDriverInfo@{PktGetDriverInfo}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetDriverInfo()}{PktGetDriverInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Get\+Driver\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structPKT__INFO_a68714b93ef82fd110ef7118d2f37bcb8}{PKT\+\_\+\+INFO\+::class}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a7e343adb647f400f9fe1933eb752f307}{PKT\+\_\+\+INFO\+::funcs}}, \mbox{\hyperlink{structPKT__INFO_a61489439d3a1e7290ec83a8665d656b2}{PKT\+\_\+\+INFO\+::maj\+Ver}}, \mbox{\hyperlink{structPKT__INFO_a11c0941f09abe35c42b73143347885ac}{PKT\+\_\+\+INFO\+::min\+Ver}}, \mbox{\hyperlink{structPKT__INFO_a6fca3e6a75a8500e90e9c48fd834cf55}{PKT\+\_\+\+INFO\+::name}}, \mbox{\hyperlink{structPKT__INFO_aa64b930040e2fad2774601358d56f1c3}{PKT\+\_\+\+INFO\+::number}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}, \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}} , 以及 \mbox{\hyperlink{structPKT__INFO_a06986d26b692d487915ecf21630fa3e2}{PKT\+\_\+\+INFO\+::type}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_aa751d66a71ee19988ff569c70ea460d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a46cb814957ac54cbc23546ffd5c7ef89}\label{pktdrvr_8h_a46cb814957ac54cbc23546ffd5c7ef89}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetDriverParam@{PktGetDriverParam}}
+\index{PktGetDriverParam@{PktGetDriverParam}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetDriverParam()}{PktGetDriverParam()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Get\+Driver\+Param (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a61489439d3a1e7290ec83a8665d656b2}{PKT\+\_\+\+INFO\+::maj\+Ver}}, \mbox{\hyperlink{pktdrvr_8h_aad2b25e593bc71855e3174fef49a90bc}{PKT\+\_\+\+PARAM\+\_\+\+SIZE}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a46cb814957ac54cbc23546ffd5c7ef89_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_aa4cdc7df0cd88f00b89975f3aac02cad}\label{pktdrvr_8h_aa4cdc7df0cd88f00b89975f3aac02cad}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetErrorStr@{PktGetErrorStr}}
+\index{PktGetErrorStr@{PktGetErrorStr}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetErrorStr()}{PktGetErrorStr()}}
+{\footnotesize\ttfamily const char $\ast$ Pkt\+Get\+Error\+Str (\begin{DoxyParamCaption}\item[{int}]{err\+Num }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a8fc6a2907a5d6c8bfa268abb4bff8636}{DIM}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_aa4cdc7df0cd88f00b89975f3aac02cad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a879a02642394e49ed609582cedab58e5}\label{pktdrvr_8h_a879a02642394e49ed609582cedab58e5}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetReceiverMode@{PktGetReceiverMode}}
+\index{PktGetReceiverMode@{PktGetReceiverMode}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetReceiverMode()}{PktGetReceiverMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Get\+Receiver\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} $\ast$}]{mode }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a879a02642394e49ed609582cedab58e5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a879a02642394e49ed609582cedab58e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838}\label{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktGetStatistics@{PktGetStatistics}}
+\index{PktGetStatistics@{PktGetStatistics}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktGetStatistics()}{PktGetStatistics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Get\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a1e2e1285b383a169ade0f1615df40e8a}{pkt\+Stat}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a2ac92ebdfc2a2e5f583c9da4cc49ec50}{Pkt\+Reset\+Statistics()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a6e1c18271cd1468112becee76d42be69}{Pkt\+Sess\+Statistics()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a821dd9fa43818f07f5a6bda3bf9d6838_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944}\label{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktInitDriver@{PktInitDriver}}
+\index{PktInitDriver@{PktInitDriver}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktInitDriver()}{PktInitDriver()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Init\+Driver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structPKT__INFO_a68714b93ef82fd110ef7118d2f37bcb8}{PKT\+\_\+\+INFO\+::class}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pktdrvr_8c_a7e8f3d961b53834f5c77875be6575781}{FIRST\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{structPKT__INFO_a7e343adb647f400f9fe1933eb752f307}{PKT\+\_\+\+INFO\+::funcs}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{structPKT__INFO_a43492ef462ea92b74497d8d8d621f04a}{PKT\+\_\+\+INFO\+::intr}}, \mbox{\hyperlink{structPKT__INFO_a61489439d3a1e7290ec83a8665d656b2}{PKT\+\_\+\+INFO\+::maj\+Ver}}, \mbox{\hyperlink{structPKT__INFO_a11c0941f09abe35c42b73143347885ac}{PKT\+\_\+\+INFO\+::min\+Ver}}, \mbox{\hyperlink{pktdrvr_8c_a94fa13bfab66c3ba82a5a6b51acf3f7d}{my\+Address}}, \mbox{\hyperlink{structPKT__INFO_a6fca3e6a75a8500e90e9c48fd834cf55}{PKT\+\_\+\+INFO\+::name}}, \mbox{\hyperlink{structPKT__INFO_aa64b930040e2fad2774601358d56f1c3}{PKT\+\_\+\+INFO\+::number}}, \mbox{\hyperlink{gencode_8c_a7c96e9bda39249f5b672b9d807cf3275}{offsetof}}, \mbox{\hyperlink{pcap-dos_8c_af445df5a1038ac09bfd17b3f8614eaa9}{pcap\+\_\+pkt\+\_\+debug}}, \mbox{\hyperlink{pktdrvr_8c_adddcbff5e0630dc1b9975a616b4838de}{Pkt\+Free\+Mem()}}, \mbox{\hyperlink{pktdrvr_8c_a0ec35bb5e6dacdb14b92a1a3ea413919}{Pkt\+Get\+Address()}}, \mbox{\hyperlink{pktdrvr_8c_a2a694ac00c0030b4a40b5b06a463fa1f}{Pkt\+Get\+Class\+Name()}}, \mbox{\hyperlink{pktdrvr_8c_a870091f085ab1803b472336d0c50619e}{Pkt\+Get\+Driver\+Info()}}, \mbox{\hyperlink{pktdrvr_8c_a15143d7af5ef7c4dd2153719807a3000}{Pkt\+Get\+Receiver\+Mode()}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a31bcb83171037b77b9a5b7064d9d868f}{Pkt\+Queue\+Busy()}}, \mbox{\hyperlink{pktdrvr_8c_a1793f22a9cbc76efb8cc712787f47476}{Pkt\+Receiver()}}, \mbox{\hyperlink{pktdrvr_8c_a281aebd8ac86c56db2ea3ff086849361}{pkt\+Rx\+End}}, \mbox{\hyperlink{pktdrvr_8c_af828ef1cc018c3bedd6cabce76eca3b8}{Pkt\+RXmode\+Str()}}, \mbox{\hyperlink{pktdrvr_8c_a420f5394922d10e364717729113e3c6d}{Pkt\+Search\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_a47a94336741399ba8751b89a9c410300}{Pkt\+Set\+Access()}}, \mbox{\hyperlink{pktdrvr_8c_a77f5d734dc30ae1a072a33b644727ac2}{Pkt\+Set\+Receiver\+Mode()}}, \mbox{\hyperlink{pktdrvr_8c_a1e2e1285b383a169ade0f1615df40e8a}{pkt\+Stat}}, \mbox{\hyperlink{os-sunos4_8h_ad3275c2da349019932874fbf31fd91c6}{printf()}}, \mbox{\hyperlink{pktdrvr_8c_a1a852a203dad3e9e48c9243223672316}{PUTS}}, \mbox{\hyperlink{structPKT__INFO_a34e0e7602d9696c3f499540a59d06a36}{PKT\+\_\+\+INFO\+::quiet}}, \mbox{\hyperlink{pktdrvr_8c_acf703e5d6ecfbfce933d2018fc7c859e}{rx\+In\+Ofs}}, \mbox{\hyperlink{pktdrvr_8c_ae2fcfd667785fbd8fe548bfe0f640a40}{rx\+Out\+Ofs}}, \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}} , 以及 \mbox{\hyperlink{structPKT__INFO_a06986d26b692d487915ecf21630fa3e2}{PKT\+\_\+\+INFO\+::type}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a6e083a82cc8c3606f437c4340e5f1806}{pkt\+\_\+open()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{pktdrvr_8h_adf800dfbdcaff2695100d6a1bc9e9944_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a46c9391d7aeca7a3936277fd529be883}\label{pktdrvr_8h_a46c9391d7aeca7a3936277fd529be883}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktQueueBusy@{PktQueueBusy}}
+\index{PktQueueBusy@{PktQueueBusy}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktQueueBusy()}{PktQueueBusy()}}
+{\footnotesize\ttfamily void Pkt\+Queue\+Busy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}}}]{busy }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a7e8f3d961b53834f5c77875be6575781}{FIRST\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{pktdrvr_8c_a6fc944ec5db4066e248d4dfac58a35c7}{LAST\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{pktdrvr_8c_a327e0b4724e5d16dccbd797f4d2bb58f}{pkt\+Drop}}, \mbox{\hyperlink{pktdrvr_8c_acf703e5d6ecfbfce933d2018fc7c859e}{rx\+In\+Ofs}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ae2fcfd667785fbd8fe548bfe0f640a40}{rx\+Out\+Ofs}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a6e083a82cc8c3606f437c4340e5f1806}{pkt\+\_\+open()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a46c9391d7aeca7a3936277fd529be883_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984}\label{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktReceive@{PktReceive}}
+\index{PktReceive@{PktReceive}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktReceive()}{PktReceive()}}
+{\footnotesize\ttfamily int Pkt\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{buf,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a879b4737a3ea582c6fdf9b3e95ebc857}{Check\+Element()}}, \mbox{\hyperlink{pktdrvr_8c_a7e8f3d961b53834f5c77875be6575781}{FIRST\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{pktdrvr_8c_a6fc944ec5db4066e248d4dfac58a35c7}{LAST\+\_\+\+RX\+\_\+\+BUF}}, \mbox{\hyperlink{pcap-dos_8h_affe776513b24d84b39af8ab0930fef7f}{max}}, \mbox{\hyperlink{pcap-dos_8h_ac6afabdc09a49a433ee19d8a9486056d}{min}}, \mbox{\hyperlink{pktdrvr_8c_acf703e5d6ecfbfce933d2018fc7c859e}{rx\+In\+Ofs}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ae2fcfd667785fbd8fe548bfe0f640a40}{rx\+Out\+Ofs}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{pktdrvr_8h_ac96e3b674273c273c183dc78f54ee984_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0}\label{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktReleaseHandle@{PktReleaseHandle}}
+\index{PktReleaseHandle@{PktReleaseHandle}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktReleaseHandle()}{PktReleaseHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Release\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a879b4737a3ea582c6fdf9b3e95ebc857}{Check\+Element()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a849ff06677b32cef04f54103d2fc403c}{Pkt\+Exit\+Driver()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a66bd883c94ebb2982d066fc9db84e6a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ac6413b01eae14fea74afe84b6540faa7}\label{pktdrvr_8h_ac6413b01eae14fea74afe84b6540faa7}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktResetInterface@{PktResetInterface}}
+\index{PktResetInterface@{PktResetInterface}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktResetInterface()}{PktResetInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Reset\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ac6413b01eae14fea74afe84b6540faa7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15}\label{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktResetStatistics@{PktResetStatistics}}
+\index{PktResetStatistics@{PktResetStatistics}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktResetStatistics()}{PktResetStatistics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Reset\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{pktdrvr_8c_a449a194448a4fe981a37dec7bb8dc4ce}{initial\+Stat}}, \mbox{\hyperlink{pktdrvr_8c_a02cf21352fb49dfb5e88362b3b3e3140}{Pkt\+Get\+Statistics()}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a1e2e1285b383a169ade0f1615df40e8a}{pkt\+Stat}}, \mbox{\hyperlink{pktdrvr_8c_a9232209d034d05f9084257f847104220}{reset\+Stat}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a6e083a82cc8c3606f437c4340e5f1806}{pkt\+\_\+open()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ad59d35d4b50dd498e18cffd6a6da2f15_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ada56fc7ea09856fa7da5239d3077f015}\label{pktdrvr_8h_ada56fc7ea09856fa7da5239d3077f015}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktRxDropped@{PktRxDropped}}
+\index{PktRxDropped@{PktRxDropped}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktRxDropped()}{PktRxDropped()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}} Pkt\+Rx\+Dropped (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a327e0b4724e5d16dccbd797f4d2bb58f}{pkt\+Drop}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a87136d2b7291dd38e8b784c10c96d7eb}{pkt\+\_\+stats()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{pktdrvr_8h_ada56fc7ea09856fa7da5239d3077f015_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ab1decdf0e77ee7ac08c198f1f0c58c8f}\label{pktdrvr_8h_ab1decdf0e77ee7ac08c198f1f0c58c8f}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktRXmodeStr@{PktRXmodeStr}}
+\index{PktRXmodeStr@{PktRXmodeStr}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktRXmodeStr()}{PktRXmodeStr()}}
+{\footnotesize\ttfamily const char $\ast$ Pkt\+RXmode\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a8fc6a2907a5d6c8bfa268abb4bff8636}{DIM}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ab1decdf0e77ee7ac08c198f1f0c58c8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_acccb8f2e2678950cddda80a6d6a0ff4a}\label{pktdrvr_8h_acccb8f2e2678950cddda80a6d6a0ff4a}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktSearchDriver@{PktSearchDriver}}
+\index{PktSearchDriver@{PktSearchDriver}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktSearchDriver()}{PktSearchDriver()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Search\+Driver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a43492ef462ea92b74497d8d8d621f04a}{PKT\+\_\+\+INFO\+::intr}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a8a1d4940918126afc28aa762d2469f1e}{pkt\+\_\+probe()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_acccb8f2e2678950cddda80a6d6a0ff4a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d}\label{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktSessStatistics@{PktSessStatistics}}
+\index{PktSessStatistics@{PktSessStatistics}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktSessStatistics()}{PktSessStatistics()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Sess\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{structPKT__STAT_ad74c81ff08e8b26e4470bf9bb2054777}{PKT\+\_\+\+STAT\+::in\+Bytes}}, \mbox{\hyperlink{structPKT__STAT_ab434de5a100ffe13f55807872529e28d}{PKT\+\_\+\+STAT\+::in\+Errors}}, \mbox{\hyperlink{pktdrvr_8c_a449a194448a4fe981a37dec7bb8dc4ce}{initial\+Stat}}, \mbox{\hyperlink{structPKT__STAT_ac56ccd167b4e43b3e5581327d8395f87}{PKT\+\_\+\+STAT\+::in\+Packets}}, \mbox{\hyperlink{structPKT__STAT_aaf92cf3b118186f39793dd8b27da9831}{PKT\+\_\+\+STAT\+::lost}}, \mbox{\hyperlink{structPKT__STAT_a597428392075fd19400ac334232ceaba}{PKT\+\_\+\+STAT\+::out\+Bytes}}, \mbox{\hyperlink{structPKT__STAT_a08b1e7f3e452d6e1cef06dd1bf9945f6}{PKT\+\_\+\+STAT\+::out\+Errors}}, \mbox{\hyperlink{structPKT__STAT_ad7c8c4ae86706eaa1f5d39763a1d98a7}{PKT\+\_\+\+STAT\+::out\+Packets}}, \mbox{\hyperlink{pktdrvr_8c_a02cf21352fb49dfb5e88362b3b3e3140}{Pkt\+Get\+Statistics()}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a1e2e1285b383a169ade0f1615df40e8a}{pkt\+Stat}}, \mbox{\hyperlink{pktdrvr_8c_a9232209d034d05f9084257f847104220}{reset\+Stat}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a87136d2b7291dd38e8b784c10c96d7eb}{pkt\+\_\+stats()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a8f42ad59f8ccd7641e64ed90332eef7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a4977ccea84c7ce421fd54ca5aff8ed61}\label{pktdrvr_8h_a4977ccea84c7ce421fd54ca5aff8ed61}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktSetAddress@{PktSetAddress}}
+\index{PktSetAddress@{PktSetAddress}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktSetAddress()}{PktSetAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Set\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a7b56d4cbee7f87ff82a6e4bb65ddf845}{pkt\+Temp}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a4977ccea84c7ce421fd54ca5aff8ed61_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c}\label{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktSetReceiverMode@{PktSetReceiverMode}}
+\index{PktSetReceiverMode@{PktSetReceiverMode}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktSetReceiverMode()}{PktSetReceiverMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Set\+Receiver\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{structPKT__INFO_a68714b93ef82fd110ef7118d2f37bcb8}{PKT\+\_\+\+INFO\+::class}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{structPKT__INFO_a4d15a3a976f2f45426c424165c250f84}{PKT\+\_\+\+INFO\+::handle}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ab0c9b267111ea39c56ff1535102ab7c6}{PD\+\_\+\+PPP}}, \mbox{\hyperlink{pktdrvr_8h_ae4bc3d7e4f6a9b0e437590138c317c24ae2158562b87d877bc1d8b2a7ad8d5a94}{PD\+\_\+\+SLIP}}, \mbox{\hyperlink{pktdrvr_8c_a6bebadd7d08def187a409c6c97d89e58}{pkt\+Info}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_aa4c24a8b23cdcb64baf6129964c01b0b}{receive\+Mode}}, \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}} , 以及 \mbox{\hyperlink{ars_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a849ff06677b32cef04f54103d2fc403c}{Pkt\+Exit\+Driver()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_a2ebd7be5000f4281bce339e1e0184b2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_afbdb5352cf417bd220143e3f1ea7db08}\label{pktdrvr_8h_afbdb5352cf417bd220143e3f1ea7db08}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktTerminHandle@{PktTerminHandle}}
+\index{PktTerminHandle@{PktTerminHandle}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktTerminHandle()}{PktTerminHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Termin\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pcap-dos_8h_a197942eefa7db30960ae396d68339b97}{WORD}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_afbdb5352cf417bd220143e3f1ea7db08_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006}\label{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006}} 
+\index{pktdrvr.h@{pktdrvr.h}!PktTransmit@{PktTransmit}}
+\index{PktTransmit@{PktTransmit}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{PktTransmit()}{PktTransmit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_a050c65e107f0c828f856a231f4b4e788}{BOOL}} Pkt\+Transmit (\begin{DoxyParamCaption}\item[{const void $\ast$}]{eth,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+引用了 \mbox{\hyperlink{pcap-dos_8h_a6f29d2b24a262d91b7158713728d45f2}{ETH\+\_\+\+MTU}}, \mbox{\hyperlink{ars_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a63b7256bc5bd5a44dff9c08fb9991bd2}{pkt\+Tx\+Buf}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a35bb38282ca736eb22ebe1c05aa02170}{reg}}.
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_af1c55f88c466277a54e8e5d34804547a}{pkt\+\_\+xmit()}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{pktdrvr_8h_ac204dde9bf7ac86105953ba2504bc006_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{pktdrvr_8h_ad87661c6ed9e0dcfb3d4e0a54396043c}\label{pktdrvr_8h_ad87661c6ed9e0dcfb3d4e0a54396043c}} 
+\index{pktdrvr.h@{pktdrvr.h}!ethBroadcast@{ethBroadcast}}
+\index{ethBroadcast@{ethBroadcast}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{ethBroadcast}{ethBroadcast}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} eth\+Broadcast}
+
+\mbox{\Hypertarget{pktdrvr_8h_a4a471cdb8d4f4d306f6236f2dfb26014}\label{pktdrvr_8h_a4a471cdb8d4f4d306f6236f2dfb26014}} 
+\index{pktdrvr.h@{pktdrvr.h}!myAddress@{myAddress}}
+\index{myAddress@{myAddress}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{myAddress}{myAddress}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcap-dos_8h_ab56422eb64b88542ff23d535a70021cc}{ETHER}} my\+Address\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}.
+
+\mbox{\Hypertarget{pktdrvr_8h_aa9f564b8b0a1ad8db3f11fefccfff3c0}\label{pktdrvr_8h_aa9f564b8b0a1ad8db3f11fefccfff3c0}} 
+\index{pktdrvr.h@{pktdrvr.h}!pktInfo@{pktInfo}}
+\index{pktInfo@{pktInfo}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{pktInfo}{pktInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPKT__INFO}{PKT\+\_\+\+INFO}} pkt\+Info\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a879b4737a3ea582c6fdf9b3e95ebc857}{Check\+Element()}}, \mbox{\hyperlink{pcap-dos_8c_a1128a6ccf71f8a292f285f6c1f5770d5}{open\+\_\+driver()}}, \mbox{\hyperlink{pcap-dos_8c_a22756b39ec035bc508bd91700ee3d110}{pcap\+\_\+read\+\_\+one()}}, \mbox{\hyperlink{pcap-dos_8c_a6e083a82cc8c3606f437c4340e5f1806}{pkt\+\_\+open()}}, \mbox{\hyperlink{pcap-dos_8c_a87136d2b7291dd38e8b784c10c96d7eb}{pkt\+\_\+stats()}}, \mbox{\hyperlink{pktdrvr_8c_a849ff06677b32cef04f54103d2fc403c}{Pkt\+Exit\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_a0ec35bb5e6dacdb14b92a1a3ea413919}{Pkt\+Get\+Address()}}, \mbox{\hyperlink{pktdrvr_8c_a870091f085ab1803b472336d0c50619e}{Pkt\+Get\+Driver\+Info()}}, \mbox{\hyperlink{pktdrvr_8c_a1f42c649fdf7f60b7427a180f6b1f23d}{Pkt\+Get\+Driver\+Param()}}, \mbox{\hyperlink{pktdrvr_8c_a15143d7af5ef7c4dd2153719807a3000}{Pkt\+Get\+Receiver\+Mode()}}, \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_a342b7e1f477e5297b550812fd4e37ddc}{Pkt\+Interrupt()}}, \mbox{\hyperlink{pktdrvr_8c_a2ac92ebdfc2a2e5f583c9da4cc49ec50}{Pkt\+Reset\+Statistics()}}, \mbox{\hyperlink{pktdrvr_8c_a420f5394922d10e364717729113e3c6d}{Pkt\+Search\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_a6e1c18271cd1468112becee76d42be69}{Pkt\+Sess\+Statistics()}}, \mbox{\hyperlink{pktdrvr_8c_a47a94336741399ba8751b89a9c410300}{Pkt\+Set\+Access()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a77f5d734dc30ae1a072a33b644727ac2}{Pkt\+Set\+Receiver\+Mode()}}.
+
+\mbox{\Hypertarget{pktdrvr_8h_a27a6fae156b7d87243508c54054ff632}\label{pktdrvr_8h_a27a6fae156b7d87243508c54054ff632}} 
+\index{pktdrvr.h@{pktdrvr.h}!pktStat@{pktStat}}
+\index{pktStat@{pktStat}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{pktStat}{pktStat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPKT__STAT}{PKT\+\_\+\+STAT}} pkt\+Stat\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pcap-dos_8c_a87136d2b7291dd38e8b784c10c96d7eb}{pkt\+\_\+stats()}}, \mbox{\hyperlink{pktdrvr_8c_a02cf21352fb49dfb5e88362b3b3e3140}{Pkt\+Get\+Statistics()}}, \mbox{\hyperlink{pktdrvr_8c_ab3073e39d63e7a78caf1782b95496116}{Pkt\+Init\+Driver()}}, \mbox{\hyperlink{pktdrvr_8c_a2ac92ebdfc2a2e5f583c9da4cc49ec50}{Pkt\+Reset\+Statistics()}} , 以及 \mbox{\hyperlink{pktdrvr_8c_a6e1c18271cd1468112becee76d42be69}{Pkt\+Sess\+Statistics()}}.
+
+\mbox{\Hypertarget{pktdrvr_8h_a2698f6cb8f258ff6f5c2b11e5c4f2c20}\label{pktdrvr_8h_a2698f6cb8f258ff6f5c2b11e5c4f2c20}} 
+\index{pktdrvr.h@{pktdrvr.h}!receiveMode@{receiveMode}}
+\index{receiveMode@{receiveMode}!pktdrvr.h@{pktdrvr.h}}
+\doxysubsubsection{\texorpdfstring{receiveMode}{receiveMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pktdrvr_8h_ab9770bd83b63a8bf9524e6660e770537}{PKT\+\_\+\+RX\+\_\+\+MODE}} receive\+Mode\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+被这些函数引用 \mbox{\hyperlink{pktdrvr_8c_a77f5d734dc30ae1a072a33b644727ac2}{Pkt\+Set\+Receiver\+Mode()}}.
+
