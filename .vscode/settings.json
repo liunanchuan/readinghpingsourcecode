@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "byteorder.h": "c",
+        "globals.h": "c",
+        "limits": "c",
+        "route.h": "c",
+        "if.h": "c",
+        "hping2.h": "c",
+        "compare": "c",
+        "*.tcc": "c",
+        "signal.h": "c"
+    }
+}
