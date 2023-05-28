@@ -5,16 +5,18 @@
 
 
 static void handler(int sig){
-    psignal(sig,"\nThe SIGQUIT is deliverd!");
+    psignal(sig,"The SIGQUIT is deliverd!");  
+    fflush(stdout);
 }
 
 int main(int argc,char *argv[]){
 
     sighandler_t ret;
-    sigset_t blockset,oldset;
+    sigset_t blockset,oldset,pendings;
 
     sigemptyset(&blockset);
-    sigaddset(blockset,SIGQUIT);
+    sigemptyset(&oldset);
+    sigaddset(&blockset,SIGQUIT);
 
     printf("Here is beginning\n");
     if((ret = signal(SIGQUIT,handler))==SIG_ERR){
@@ -30,8 +32,10 @@ int main(int argc,char *argv[]){
     for(int i = 0;i<10;i++){
         printf("%d\n",i);
         sleep(1);
-        if(i>5)sigprocmask(SIG_BLOCK,&oldset,NULL);
-        else kill();
+        if(i==5)sigprocmask(SIG_SETMASK,&oldset,NULL);
+        if(i==0) raise(SIGQUIT);
+        if(sigpending(&pendings)==0 && sigismember(&pendings,SIGQUIT)==1)
+            printf("The SIGQUIT has coming.\n");
     }
     printf("Here is end");
     exit(0);
