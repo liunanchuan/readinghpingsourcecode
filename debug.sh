@@ -1,9 +1,9 @@
 file /usr/sbin/hping
-set args -zc 10 -S 192.168.0.1 -p 80
+set args -c 10 -M 3000 -SA 192.168.0.1 -p 80
 layout src
 set logging file ./debug.log
 set logging on
-break antigetopt.c:104
+break main.c:196
 fs cmd
 run
 # display/s targetname

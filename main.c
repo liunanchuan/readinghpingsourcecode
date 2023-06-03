@@ -33,7 +33,7 @@
 
 /* globals */
 unsigned int
-	tcp_th_flags = 0,
+	tcp_th_flags = 0,    //TCP标志位 
 	linkhdr_size,				/* physical layer header size */
 	ip_tos = 0,
 	set_seqnum = FALSE,

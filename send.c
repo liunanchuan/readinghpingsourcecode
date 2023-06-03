@@ -79,7 +79,7 @@ void send_packet (int signal_id)
 	else			send_tcp();
 
 	sent_pkt++;
-	Signal(SIGALRM, send_packet);
+	Signal(SIGALRM, send_packet);//重复注册SIGALRM信号处理器函数？
 
 	if (count != -1 && count == sent_pkt) { /* count reached? */
 		Signal(SIGALRM, print_statistics);

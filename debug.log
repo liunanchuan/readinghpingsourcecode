@@ -430,3 +430,49 @@ $16 = 0x7fffffffe1aa ""
 $17 = 0x7fffffffe1ae "-S"
 $18 = (char **) 0x7fffffffdde0
 $19 = 0x7fffffffe1ae "-S"
+Breakpoint 1 at 0x922e: file antigetopt.c, line 104.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, antigetopt (argc=argc@entry=9, argv=0x7fffffffddb0, argv@entry=0x7fffffffdda8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:104
+warning: Source file is more recent than executable.
+Breakpoint 1 at 0x480a: file main.c, line 196.
+Focus set to cmd window.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=9, argv=0x7fffffffdda8) at main.c:196
+parse_options (argc=argc@entry=9, argv=argv@entry=0x7fffffffdda8) at parseoptions.c:208
+warning: Source file is more recent than executable.
+$1 = (char **) 0x7fffffffdda8
+$2 = 0x7fffffffe18f "/usr/sbin/hping"
+$3 = 9
+$4 = 3000
+antigetopt (argc=argc@entry=9, argv=argv@entry=0x7fffffffdda8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+warning: Source file is more recent than executable.
+$5 = 0x7fffffffe1b1 "192.168.0.1"
+$6 = 0x7fffffffe1b0 ""
+Run till exit from #0  antigetopt (argc=argc@entry=9, argv=argv@entry=0x7fffffffdda8, list=list@entry=0x555555578420 <hping_optlist>) at antigetopt.c:50
+0x000055555555991d in parse_options (argc=argc@entry=9, argv=argv@entry=0x7fffffffdda8) at parseoptions.c:213
+Value returned is $7 = 4001
+$8 = "192.168.0.1", '\000' <repeats 1012 times>
+$9 = 0
+No symbol "IPHDR_SIZE" in current context.
+Run till exit from #0  parse_options (argc=argc@entry=9, argv=argv@entry=0x7fffffffdda8) at parseoptions.c:572
+0x0000555555558814 in main (argc=9, argv=0x7fffffffdda8) at main.c:196
+Value returned is $10 = 1
+$11 = "lo", '\000' <repeats 1021 times>
+$12 = '\000' <repeats 1023 times>
+$13 = -1
+$14 = 2997
+No symbol "TABLESIZE" in current context.
+Undefined command: "N".  Try "help".
+main (argc=9, argv=0x7fffffffdda8) at main.c:292
+Signal (signo=signo@entry=14, func=0x55555555e610 <send_packet>) at signal.c:13
+Run till exit from #0  Signal (signo=signo@entry=14, func=0x55555555e610 <send_packet>) at signal.c:13
+main (argc=9, argv=0x7fffffffdda8) at main.c:295
+Value returned is $15 = (void (*)(int)) 0x0
+"finish" not meaningful in the outermost frame.
+$16 = 1
+$17 = 0

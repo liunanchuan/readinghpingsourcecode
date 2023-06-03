@@ -300,7 +300,7 @@ struct mytcphdr {
 	__u16   th_win;                 /* window */
 	__u16   th_sum;                 /* checksum */
 	__u16   th_urp;                 /* urgent pointer */
-};
+};//liu: size == 20bytes
 
 /*
  * ICMP header
@@ -340,7 +340,7 @@ struct pseudohdr
 	__u16 lenght;  // 除了该伪头部长度，剩下的长度
 };
 
-#define PSEUDOHDR_SIZE sizeof(struct pseudohdr)
+#define PSEUDOHDR_SIZE sizeof(struct pseudohdr)// ==12bytes
 
 /*
  * hping replies delay table
